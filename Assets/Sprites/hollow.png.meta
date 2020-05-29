@@ -1,0 +1,1156 @@
+fileFormatVersion: 2
+guid: 037f801ac6b70a346bc91520a3051c00
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3789026788329696013
+    second: player_falling_01
+  - first:
+      213: -4263705011637948788
+    second: player_falling_02
+  - first:
+      213: 3999126510428233296
+    second: idle01
+  - first:
+      213: 3586440302710773624
+    second: idle02
+  - first:
+      213: 8067203572769360910
+    second: idle03
+  - first:
+      213: 4869842761314555825
+    second: idle04
+  - first:
+      213: 2241723855889352365
+    second: idle05
+  - first:
+      213: -5676457467812358984
+    second: idle06
+  - first:
+      213: 8076151963810472373
+    second: hollow_8
+  - first:
+      213: -8188512885163120172
+    second: hollow_9
+  - first:
+      213: -9105901181905795241
+    second: hollow_10
+  - first:
+      213: -1413842898774248384
+    second: walk01
+  - first:
+      213: -8215214647319251699
+    second: walk02
+  - first:
+      213: -1304722937288734374
+    second: walk03
+  - first:
+      213: 1091262474037385798
+    second: walk04
+  - first:
+      213: -5713639541218304092
+    second: walk05
+  - first:
+      213: 4319254440941907054
+    second: walk06
+  - first:
+      213: 3523068315205556053
+    second: walk07
+  - first:
+      213: 5217315523118740872
+    second: hollow_18
+  - first:
+      213: -5567425610492171952
+    second: hollow_19
+  - first:
+      213: -605585848095481831
+    second: hollow_20
+  - first:
+      213: 492687664959125601
+    second: hollow_21
+  - first:
+      213: -610661470147989766
+    second: turn01
+  - first:
+      213: -7734975220816833190
+    second: turn02
+  - first:
+      213: 5865740316930498262
+    second: hollow_24
+  - first:
+      213: -3624867149341973892
+    second: hollow_25
+  - first:
+      213: 4043811687661593043
+    second: hollow_26
+  - first:
+      213: 8361146736909088176
+    second: hollow_27
+  - first:
+      213: -7563747343906700950
+    second: hollow_28
+  - first:
+      213: 8668300552857645260
+    second: hollow_29
+  - first:
+      213: 4643527901061946456
+    second: hollow_30
+  - first:
+      213: 3024020810949608473
+    second: hollow_31
+  - first:
+      213: 6992513077645690141
+    second: hollow_32
+  - first:
+      213: 5288076187350129958
+    second: hollow_33
+  - first:
+      213: -2552364012414431438
+    second: hollow_34
+  - first:
+      213: 9189685286815640073
+    second: hollow_35
+  - first:
+      213: -8757362148824531533
+    second: hollow_36
+  - first:
+      213: 8648056304047785706
+    second: hollow_37
+  - first:
+      213: 7166230498780534219
+    second: hollow_38
+  - first:
+      213: -4736276581784881480
+    second: hollow_39
+  - first:
+      213: -73716156349691975
+    second: hollow_40
+  - first:
+      213: 1015153165940595326
+    second: hollow_41
+  - first:
+      213: 1832024278464418699
+    second: hollow_42
+  - first:
+      213: 6447596958523618037
+    second: hollow_43
+  - first:
+      213: -5979406426562111970
+    second: hollow_44
+  - first:
+      213: -2752031189484187533
+    second: hollow_45
+  - first:
+      213: -599842119559101349
+    second: hollow_46
+  - first:
+      213: 4597646049330589584
+    second: hollow_47
+  - first:
+      213: -6253839884569516360
+    second: hollow_48
+  - first:
+      213: -9136860508802233000
+    second: hollow_49
+  - first:
+      213: -908285607556447457
+    second: hollow_50
+  - first:
+      213: 3316646292374517190
+    second: hollow_51
+  - first:
+      213: 880481555183060523
+    second: hollow_52
+  - first:
+      213: 2221173084275549566
+    second: hollow_53
+  - first:
+      213: 161859965347047265
+    second: hollow_54
+  - first:
+      213: 6470190816175211632
+    second: hollow_55
+  - first:
+      213: -1078035539966705068
+    second: hollow_56
+  - first:
+      213: -3931133767856722991
+    second: hollow_57
+  - first:
+      213: -1514869058739859763
+    second: hollow_58
+  - first:
+      213: -67710115952925354
+    second: hollow_59
+  - first:
+      213: 5314939439776331683
+    second: hollow_60
+  - first:
+      213: -3177744516058078472
+    second: hollow_61
+  - first:
+      213: 4168136963761175463
+    second: hollow_62
+  - first:
+      213: -1524181214592895923
+    second: hollow_63
+  - first:
+      213: 8776495024212595116
+    second: hollow_64
+  - first:
+      213: 7640064621240103926
+    second: hollow_65
+  - first:
+      213: -8380321060833194754
+    second: hollow_66
+  - first:
+      213: -8034213396848411683
+    second: hollow_67
+  - first:
+      213: 5434192613671510728
+    second: hollow_68
+  - first:
+      213: 2191999894803207434
+    second: hollow_69
+  - first:
+      213: -1488626835428275979
+    second: hollow_70
+  - first:
+      213: 6197358462454752573
+    second: hollow_71
+  - first:
+      213: -5955637568786338605
+    second: hollow_72
+  - first:
+      213: -8182898825926169614
+    second: hollow_73
+  - first:
+      213: 1854186269486190782
+    second: hollow_74
+  - first:
+      213: 3068644159691569180
+    second: hollow_75
+  - first:
+      213: 5154786522493120876
+    second: hollow_76
+  - first:
+      213: -7236342599816197034
+    second: hollow_77
+  - first:
+      213: -1361574363214663671
+    second: hollow_78
+  - first:
+      213: -2471664570319979319
+    second: hollow_79
+  - first:
+      213: -6248307377733355915
+    second: hollow_80
+  - first:
+      213: 4761035789658144731
+    second: hollow_81
+  - first:
+      213: -412364890539484291
+    second: hollow_82
+  - first:
+      213: -7250289287680087391
+    second: jump01
+  - first:
+      213: 1989576949740211601
+    second: jump02
+  - first:
+      213: 8159337087914368469
+    second: hollow_85
+  - first:
+      213: 2953599875472385198
+    second: hollow_86
+  - first:
+      213: -4782513140547063123
+    second: hollow_87
+  - first:
+      213: 8480133831208606055
+    second: hollow_88
+  - first:
+      213: -5537677673215928322
+    second: hollow_89
+  - first:
+      213: -8099485611101348841
+    second: hollow_90
+  - first:
+      213: 5732651471450161901
+    second: hollow_91
+  - first:
+      213: -6891808453938319659
+    second: hollow_92
+  - first:
+      213: 4956024265654198708
+    second: hollow_93
+  - first:
+      213: 1138853499363626176
+    second: attack01
+  - first:
+      213: -5044743094782830193
+    second: attack02
+  - first:
+      213: 7686024244133709998
+    second: attack03
+  - first:
+      213: 1074990916322753802
+    second: attack04
+  - first:
+      213: 6262596433958303933
+    second: hollow_98
+  - first:
+      213: -117524368620218378
+    second: hollow_99
+  - first:
+      213: -2588252075529925888
+    second: hollow_100
+  - first:
+      213: 4783157692250829904
+    second: hollow_101
+  - first:
+      213: 3601032128176747735
+    second: hollow_102
+  - first:
+      213: -5683956007731218496
+    second: hollow_103
+  - first:
+      213: -2972420046041065141
+    second: hollow_104
+  - first:
+      213: -8508088683456367116
+    second: hollow_105
+  - first:
+      213: 4472953926619830111
+    second: hollow_106
+  - first:
+      213: 1557949862551621879
+    second: hollow_107
+  - first:
+      213: -7940622528827424372
+    second: hollow_108
+  - first:
+      213: 3973004934098726374
+    second: hollow_109
+  - first:
+      213: -8959677999065906785
+    second: hollow_110
+  - first:
+      213: 4025122228575221855
+    second: hollow_111
+  - first:
+      213: 8743478807576763137
+    second: hollow_112
+  - first:
+      213: 1888383174618595263
+    second: hollow_113
+  - first:
+      213: -2988458405381188675
+    second: hollow_114
+  - first:
+      213: 6839515714492319953
+    second: hollow_115
+  - first:
+      213: 6692505812032690906
+    second: hollow_116
+  - first:
+      213: -8903475436992408541
+    second: hollow_117
+  - first:
+      213: 653988955689027651
+    second: hollow_118
+  - first:
+      213: 747916592820220452
+    second: hollow_119
+  - first:
+      213: 1319686914130838072
+    second: hollow_120
+  - first:
+      213: 3815800209872224243
+    second: hollow_121
+  - first:
+      213: -7581759830826645689
+    second: hollow_122
+  - first:
+      213: 6454788230644785824
+    second: hollow_123
+  - first:
+      213: -2382294866670083796
+    second: hollow_124
+  - first:
+      213: -4980049793527336376
+    second: hollow_125
+  - first:
+      213: -3300501434540610899
+    second: hollow_126
+  - first:
+      213: 1976948207589875174
+    second: hollow_127
+  - first:
+      213: 828943029658770721
+    second: hollow_128
+  - first:
+      213: 7096956908553187116
+    second: hollow_129
+  - first:
+      213: -5082444239619815676
+    second: hollow_130
+  - first:
+      213: -5816353570546817913
+    second: hollow_131
+  - first:
+      213: -5678996410574687962
+    second: hollow_132
+  - first:
+      213: 2218110318650637085
+    second: hollow_133
+  - first:
+      213: 4208243578833527924
+    second: hollow_134
+  - first:
+      213: -3062690369676078539
+    second: player_idle_01
+  - first:
+      213: -4271483534219535358
+    second: player_idle_02
+  - first:
+      213: -3661132583356975064
+    second: player_idle_03
+  - first:
+      213: -7196763430228112377
+    second: player_idle_04
+  - first:
+      213: 4122205849414563501
+    second: player_idle_05
+  - first:
+      213: 687921631091461322
+    second: player_idle_06
+  - first:
+      213: -3772835529605917112
+    second: player_walk_01
+  - first:
+      213: -6955861889175576121
+    second: player_walk_02
+  - first:
+      213: -3637411623895098452
+    second: player_walk_03
+  - first:
+      213: -6040152113579961756
+    second: player_walk_04
+  - first:
+      213: 3060717844764629631
+    second: player_walk_05
+  - first:
+      213: 1292820079487169871
+    second: player_walk_06
+  - first:
+      213: -3593831231638284331
+    second: player_walk_07
+  - first:
+      213: 1394028174033377279
+    second: player_turn_01
+  - first:
+      213: -630248231740414490
+    second: player_turn_02
+  - first:
+      213: 2187912504411963932
+    second: player_jump_01
+  - first:
+      213: -5358678413805079437
+    second: player_jump_02
+  - first:
+      213: -2963764108878772434
+    second: player_attack_01
+  - first:
+      213: -4536814575876522320
+    second: player_attack_02
+  - first:
+      213: -8523257661908946193
+    second: player_attack_03
+  - first:
+      213: 3516650207170151680
+    second: player_attack_04
+  - first:
+      213: -7110772882428075084
+    second: hollow_98
+  - first:
+      213: -7172055522160500510
+    second: hollow_99
+  - first:
+      213: 3999126510428233296
+    second: player_falling_03
+  - first:
+      213: 3586440302710773624
+    second: hollow_3
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player_idle_01
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1841
+        width: 164
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532927ae5532f75d0800000000000000
+      internalID: -3062690369676078539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_idle_02
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1842
+        width: 164
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c1aee5b54a8b4c0800000000000000
+      internalID: -4271483534219535358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_idle_03
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1842
+        width: 162
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828366d105b013dc0800000000000000
+      internalID: -3661132583356975064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_idle_04
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1842
+        width: 160
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c4bb05ac5ff1c90800000000000000
+      internalID: -7196763430228112377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_idle_05
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1841
+        width: 162
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da674613164053930800000000000000
+      internalID: 4122205849414563501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_idle_06
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 1842
+        width: 163
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc8386241dfb8900800000000000000
+      internalID: 687921631091461322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_01
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1690
+        width: 154
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 846dddd331234abc0800000000000000
+      internalID: -3772835529605917112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_02
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 1690
+        width: 156
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1230d2770d77f90800000000000000
+      internalID: -6955861889175576121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_03
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 1690
+        width: 160
+        height: 126
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab1bdf5661558dc0800000000000000
+      internalID: -3637411623895098452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_04
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1690
+        width: 161
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 462ddb0a7a11d2ca0800000000000000
+      internalID: -6040152113579961756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_05
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 1690
+        width: 160
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a15e6d9aad97a20800000000000000
+      internalID: 3060717844764629631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_06
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1690
+        width: 160
+        height: 126
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45335c330501f110800000000000000
+      internalID: 1292820079487169871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_07
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 1690
+        width: 159
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7de772985202ec0800000000000000
+      internalID: -3593831231638284331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_turn_01
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1539
+        width: 149
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff755280d35985310800000000000000
+      internalID: 1394028174033377279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_turn_02
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1540
+        width: 109
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e56bca8298e047f0800000000000000
+      internalID: -630248231740414490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_jump_01
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 745
+        width: 165
+        height: 131
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c124c19a4d60d5e10800000000000000
+      internalID: 2187912504411963932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_jump_02
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 745
+        width: 169
+        height: 149
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3743897cf5622a5b0800000000000000
+      internalID: -5358678413805079437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_attack_01
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 362
+        width: 185
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e278a34ee389ed6d0800000000000000
+      internalID: -2963764108878772434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_attack_02
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 363
+        width: 187
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0beb0192e2ff901c0800000000000000
+      internalID: -4536814575876522320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_attack_03
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 362
+        width: 272
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe27acc805e47b980800000000000000
+      internalID: -8523257661908946193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_attack_04
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 362
+        width: 201
+        height: 115
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0054ead3bb6adc030800000000000000
+      internalID: 3516650207170151680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hollow_98
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 409
+        width: 4
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3e468ecb5715d90800000000000000
+      internalID: -7110772882428075084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hollow_99
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 395
+        width: 5
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0ae34708db77c90800000000000000
+      internalID: -7172055522160500510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_falling_01
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 102
+        width: 122
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0ba4d2f9c3559430800000000000000
+      internalID: 3789026788329696013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_falling_02
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 101
+        width: 114
+        height: 109
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e644ac1e644d4c0800000000000000
+      internalID: -4263705011637948788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_falling_03
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 102
+        width: 113
+        height: 113
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e1ce97f50cf7730800000000000000
+      internalID: 3999126510428233296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

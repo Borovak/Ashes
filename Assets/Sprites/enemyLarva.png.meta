@@ -1,0 +1,799 @@
+fileFormatVersion: 2
+guid: 59d9080b2b3fe4b4893c6148a03f0d5a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4250492411092199102
+    second: enemyLarva_0
+  - first:
+      213: 4900425955472852255
+    second: enemyLarva_1
+  - first:
+      213: 6651024193493801480
+    second: enemyLarva_Idle1
+  - first:
+      213: -1472565508366530729
+    second: enemyLarva_Idle2
+  - first:
+      213: 8254057476551686377
+    second: enemyLarva_Idle3
+  - first:
+      213: -3538623293779730169
+    second: enemyLarva_Idle4
+  - first:
+      213: -6956832958665487762
+    second: enemyLarva_6
+  - first:
+      213: -2204834023021263929
+    second: enemyLarva_7
+  - first:
+      213: 7780099095156466549
+    second: enemyLarva_8
+  - first:
+      213: 2536366973639015379
+    second: enemyLarva_9
+  - first:
+      213: 2491521066614355346
+    second: enemyLarva_RollStart1
+  - first:
+      213: -5847174466644728212
+    second: enemyLarva_RollStart2
+  - first:
+      213: 3690851837841752690
+    second: enemyLarva_RollStart3
+  - first:
+      213: 3649085446360687957
+    second: enemyLarva_RollStart4
+  - first:
+      213: 8481445309328361369
+    second: enemyLarva_14
+  - first:
+      213: -6750930525093881767
+    second: enemyLarva_15
+  - first:
+      213: 7357941551838829566
+    second: enemyLarva_Roll1
+  - first:
+      213: 3262176256268050737
+    second: enemyLarva_Roll2
+  - first:
+      213: 3065589184843118483
+    second: enemyLarva_Roll3
+  - first:
+      213: 3903654683860800138
+    second: enemyLarva_19
+  - first:
+      213: 269011340283181180
+    second: enemyLarva_20
+  - first:
+      213: 5273950409260502217
+    second: enemyLarva_21
+  - first:
+      213: -1241091397288628683
+    second: enemyLarva_22
+  - first:
+      213: -202219464457387297
+    second: enemyLarva_RollStop1
+  - first:
+      213: -2525271691791548668
+    second: enemyLarva_RollStop2
+  - first:
+      213: 5532219162267404851
+    second: enemyLarva_RollStop3
+  - first:
+      213: -2618062568375072797
+    second: enemyLarva_RollStop4
+  - first:
+      213: 6452518454856187774
+    second: enemyLarva_27
+  - first:
+      213: -8279133084096000988
+    second: enemyLarva_28
+  - first:
+      213: -1487733676558049779
+    second: enemyLarva_29
+  - first:
+      213: -4331924114136696740
+    second: enemyLarva_30
+  - first:
+      213: -2719022890533415108
+    second: enemyLarva_31
+  - first:
+      213: -5720801764914039466
+    second: enemyLarva_32
+  - first:
+      213: -5972982887724742582
+    second: enemyLarva_33
+  - first:
+      213: -8492599661631110148
+    second: enemyLarva_34
+  - first:
+      213: -5102647543853751417
+    second: enemyLarva_35
+  - first:
+      213: -6760226682882580649
+    second: enemyLarva_36
+  - first:
+      213: -5533819439074852864
+    second: enemyLarva_37
+  - first:
+      213: 1411154429007837486
+    second: enemyLarva_38
+  - first:
+      213: 9162815761274688019
+    second: enemyLarva_39
+  - first:
+      213: -4085535158227605197
+    second: enemyLarva_40
+  - first:
+      213: -7258868386609319153
+    second: enemyLarva_41
+  - first:
+      213: -8410458292679533926
+    second: enemyLarva_42
+  - first:
+      213: -8708657243894705750
+    second: enemyLarva_43
+  - first:
+      213: -8115975837701786030
+    second: enemyLarva_44
+  - first:
+      213: -1366055447793815855
+    second: enemyLarva_45
+  - first:
+      213: 8205699210973562660
+    second: enemyLarva_46
+  - first:
+      213: -1817132515727169701
+    second: enemyLarva_47
+  - first:
+      213: 3865389614798159707
+    second: enemyLarva_Death
+  - first:
+      213: 13838566748806447
+    second: enemyLarva_49
+  - first:
+      213: 3571163423651191573
+    second: enemyLarva_50
+  - first:
+      213: -7108536237767923042
+    second: enemyLarva_51
+  - first:
+      213: -5722686308522909605
+    second: enemyLarva_52
+  - first:
+      213: -1759124267375923180
+    second: enemyLarva_53
+  - first:
+      213: -2792791605708947405
+    second: enemyLarva_54
+  - first:
+      213: 5508636453029884471
+    second: enemyLarva_55
+  - first:
+      213: -1196434988757975595
+    second: enemyLarva_56
+  - first:
+      213: 6723710179619629513
+    second: enemyLarva_DeathEnd1
+  - first:
+      213: -3423056247317627822
+    second: enemyLarva_DeathEnd2
+  - first:
+      213: -5115661698998672254
+    second: enemyLarva_DeathEnd3
+  - first:
+      213: -6985169161510784526
+    second: enemyLarva_DeathEnd4
+  - first:
+      213: 8171952491947000554
+    second: enemyLarva_DeathEnd5
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: enemyLarva_Idle1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 711
+        width: 104
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a1abde34f2d4c50800000000000000
+      internalID: 6651024193493801480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_Idle2
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 711
+        width: 107
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757025dd875609be0800000000000000
+      internalID: -1472565508366530729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_Idle3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 712
+        width: 107
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e835850b8d4c8270800000000000000
+      internalID: 8254057476551686377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_Idle4
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 712
+        width: 103
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701265cdcd844eec0800000000000000
+      internalID: -3538623293779730169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_RollStart1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 590
+        width: 124
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29573fd9539a39220800000000000000
+      internalID: 2491521066614355346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_RollStart2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 595
+        width: 105
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6628ef5dc9aadea0800000000000000
+      internalID: -5847174466644728212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_RollStart3
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 598
+        width: 103
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 272c729013a883330800000000000000
+      internalID: 3690851837841752690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_RollStart4
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 589
+        width: 87
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555606931e724a230800000000000000
+      internalID: 3649085446360687957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_Roll1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 489
+        width: 78
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb907b7bd8ac1660800000000000000
+      internalID: 7357941551838829566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_Roll2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 490
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13122957504954d20800000000000000
+      internalID: 3262176256268050737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_Roll3
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 490
+        width: 77
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3977ad51f192b8a20800000000000000
+      internalID: 3065589184843118483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_RollStop1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 368
+        width: 83
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2095ee772913df0800000000000000
+      internalID: -202219464457387297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_RollStop2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 373
+        width: 111
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f3a6996ce64fcd0800000000000000
+      internalID: -2525271691791548668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_RollStop3
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 372
+        width: 134
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ace82640466cc40800000000000000
+      internalID: 5532219162267404851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_RollStop4
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 370
+        width: 119
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7c14417f5caabd0800000000000000
+      internalID: -2618062568375072797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_36
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 267
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f9aad26a9de22a0800000000000000
+      internalID: -6760226682882580649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_38
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 236
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e293b300a7d659310800000000000000
+      internalID: 1411154429007837486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_Death
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 137
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f378cff5f94a530800000000000000
+      internalID: 3865389614798159707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_DeathEnd1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 15
+        width: 78
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9e7ecd8ca6f4d50800000000000000
+      internalID: 6723710179619629513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_DeathEnd2
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 3
+        width: 94
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c737caa7cde70d0800000000000000
+      internalID: -3423056247317627822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_DeathEnd3
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 10
+        width: 100
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284ec18e9c48109b0800000000000000
+      internalID: -5115661698998672254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_DeathEnd4
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 5
+        width: 132
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1f22818a1bf0f90800000000000000
+      internalID: -6985169161510784526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyLarva_DeathEnd5
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 6
+        width: 130
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae28edb9e7b986170800000000000000
+      internalID: 8171952491947000554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
