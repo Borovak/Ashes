@@ -13,11 +13,13 @@ public class PlayerPlatformerController : PhysicsObject
     public AudioClip audioClipAttack;
     public bool frozen;
     public bool isGrounded;
+    public bool doubleJumpUnlocked;
     public bool flipX => _spriteRenderer.flipX;
 
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     private AudioSource _audioSource;
+    private bool _doubleJumpPossible;
 
     // Use this for initialization
     void Awake()
@@ -30,14 +32,26 @@ public class PlayerPlatformerController : PhysicsObject
 
     protected override void ComputeVelocity()
     {
+        if (grounded)
+        {
+            _doubleJumpPossible = true;
+        }
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump"))
         {
-            _animator.SetTrigger("jump");
-            velocity.y = jumpTakeOffSpeed;
+            if (grounded)
+            {
+                _animator.SetTrigger("jump");
+                velocity.y = jumpTakeOffSpeed;
+            }
+            else if (_doubleJumpPossible)
+            {
+                velocity.y = jumpTakeOffSpeed;
+                _doubleJumpPossible = false;
+            }
         }
         else if (Input.GetButtonUp("Jump"))
         {
