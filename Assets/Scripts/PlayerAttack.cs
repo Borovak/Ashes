@@ -14,8 +14,6 @@ public class PlayerAttack : MonoBehaviour
     private float _attackCooldown;
     private Animator _animator;
     private AudioSource _audioSource;
-    private Vector3 _originalAttackPos;
-    private Func<Vector3> _getAttackPos;
 
 
     // Start is called before the first frame update
@@ -23,14 +21,11 @@ public class PlayerAttack : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
-        _originalAttackPos = attackPos.localPosition;
-        _getAttackPos = () => new Vector3(_originalAttackPos.x * (GetComponent<PlayerPlatformerController>().flipX ? 1f : -1f), _originalAttackPos.y, _originalAttackPos.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        attackPos.localPosition = _getAttackPos.Invoke();
         if (_attackCooldown <= 0)
         {
             if (Input.GetButtonDown("Fire1"))

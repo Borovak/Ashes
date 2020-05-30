@@ -15,25 +15,30 @@ public class PlayerPlatformerController : PhysicsObject
     public AudioClip audioClipAttack;
     public bool frozen;
     public bool isGrounded;
-    public bool flipX => _spriteRenderer.flipX;
+    public bool flipX => transform.localScale.x < 0f;
     public Color damageColor;
     public float invinsibilityFlashRate;
 
-    private SpriteRenderer _spriteRenderer;
+    private SpriteRenderer[] _spriteRenderers;
     private Animator _animator;
     private AudioSource _audioSource;
     private bool _doubleJumpPossible;
     private float _invinsibleFor;
     private float _invinsibilityFlash = 0f;
+    private GameObject _idlePose;
+    private GameObject _runPose;
 
     // Use this for initialization
     void Awake()
     {
         playerData = new PlayerData(3, 3, true);
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        //_spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
+        _idlePose = transform.Find("idle").gameObject;
+        _runPose = transform.Find("run").gameObject;
         Instance = this;
+        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
     protected override void ComputeVelocity()
@@ -67,13 +72,21 @@ public class PlayerPlatformerController : PhysicsObject
             {
                 velocity.y = velocity.y * 0.5f;
             }
+            _animator.SetBool("jump", false);
         }
 
-        bool flipSprite = (!_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < -0.01f));
+        bool flipSprite = (transform.localScale.x == -1f ? (move.x > 0.01f) : (move.x < -0.01f));
         if (flipSprite)
         {
-            _spriteRenderer.flipX = !_spriteRenderer.flipX;
+            var scale = transform.localScale;
+            scale.x = -scale.x;
+            transform.localScale = scale;
         }
+        // bool flipSprite = (!_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < -0.01f));
+        // if (flipSprite)
+        // {
+        //     _spriteRenderer.flipX = !_spriteRenderer.flipX;
+        // }
         _animator.SetBool("grounded", grounded);
         _animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
         _animator.SetFloat("velocityY", velocity.y);
@@ -92,14 +105,13 @@ public class PlayerPlatformerController : PhysicsObject
                 _invinsibilityFlash = 2f;
             }
         }
-        _invinsibilityFlash = Mathf.Max(_invinsibilityFlash - invinsibilityFlashRate * Time.deltaTime, 0f);
-        if (_invinsibilityFlash > 1f)
+        _invinsibilityFlash = Mathf.Max(_invinsibilityFlash - invinsibilityFlashRate * Time.deltaTime, 0f);        
+        var c1 = _invinsibilityFlash > 1f ? damageColor : Color.white;
+        var c2 = _invinsibilityFlash > 1f ? Color.white : damageColor;
+        var c = Color.Lerp(c1, c2, _invinsibilityFlash % 1f);
+        foreach (var spriteRenderer in _spriteRenderers)
         {
-            _spriteRenderer.color = Color.Lerp(damageColor, Color.white, _invinsibilityFlash % 1f);
-        }
-        else
-        {
-            _spriteRenderer.color = Color.Lerp(Color.white, damageColor, _invinsibilityFlash % 1f);
+            spriteRenderer.color = c;
         }
     }
 
@@ -130,5 +142,17 @@ public class PlayerPlatformerController : PhysicsObject
     public void AckJump()
     {
         _animator.SetBool("jump", false);
+    }
+
+    public void SetIdlePose()
+    {
+        _idlePose.SetActive(true);
+        _runPose.SetActive(false);
+    }
+
+    public void SetRunPose()
+    {
+        _runPose.SetActive(true);
+        _idlePose.SetActive(false);
     }
 }
