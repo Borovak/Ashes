@@ -6,24 +6,30 @@ public class PlayerPlatformerController : PhysicsObject
 {
 
     public static PlayerPlatformerController Instance;
-    public float maxSpeed = 7;
-    public float jumpTakeOffSpeed = 3;
+    public static PlayerData playerData;
+    public float maxSpeed = 7f;
+    public float jumpTakeOffSpeed = 3f;
+    public float invinsibilityPeriodAfterDamage = 2f;
     public AudioClip audioClipJump;
     public AudioClip audioClipLanding;
     public AudioClip audioClipAttack;
     public bool frozen;
     public bool isGrounded;
-    public bool doubleJumpUnlocked;
     public bool flipX => _spriteRenderer.flipX;
+    public Color damageColor;
+    public float invinsibilityFlashRate;
 
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     private AudioSource _audioSource;
     private bool _doubleJumpPossible;
+    private float _invinsibleFor;
+    private float _invinsibilityFlash = 0f;
 
     // Use this for initialization
     void Awake()
     {
+        playerData = new PlayerData(3, 3, true);
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
@@ -34,8 +40,10 @@ public class PlayerPlatformerController : PhysicsObject
     {
         if (grounded)
         {
-            _doubleJumpPossible = true;
+            _doubleJumpPossible = playerData.HasDoubleJump;
         }
+
+        ManageInvinsibility();
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis("Horizontal");
@@ -72,6 +80,36 @@ public class PlayerPlatformerController : PhysicsObject
 
         targetVelocity = move * maxSpeed;
         isGrounded = grounded;
+    }
+
+    private void ManageInvinsibility()
+    {
+        if (_invinsibleFor > 0)
+        {
+            _invinsibleFor -= Time.deltaTime;
+            if (_invinsibilityFlash == 0f)
+            {
+                _invinsibilityFlash = 2f;
+            }
+        }
+        _invinsibilityFlash = Mathf.Max(_invinsibilityFlash - invinsibilityFlashRate * Time.deltaTime, 0f);
+        if (_invinsibilityFlash > 1f)
+        {
+            _spriteRenderer.color = Color.Lerp(damageColor, Color.white, _invinsibilityFlash % 1f);
+        }
+        else
+        {
+            _spriteRenderer.color = Color.Lerp(Color.white, damageColor, _invinsibilityFlash % 1f);
+        }
+    }
+
+    public void TakeDamage()
+    {
+        if (_invinsibleFor <= 0)
+        {
+            _invinsibleFor = invinsibilityPeriodAfterDamage;
+            playerData.Hp -= 1;
+        }
     }
 
     public void PlayLanding()

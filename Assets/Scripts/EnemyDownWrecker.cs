@@ -75,4 +75,10 @@ public class EnemyDownWrecker : MonoBehaviour
                 break;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collider){
+        if (!collider.gameObject.TryGetComponent<PlayerPlatformerController>(out var player)) return;
+        Debug.Log($"Player took damage from {gameObject.name}");
+        player.TakeDamage();
+    }
 }
