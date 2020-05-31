@@ -39,15 +39,26 @@ public class GameController : MonoBehaviour
         if (CurrentChamber == nextChamber) return;
         Debug.Log($"New chamber entered: {nextChamber.transform.name}");
         _nextChamber = nextChamber;
-        fadeInOutController.FadeOutCompleted += OnFadeOutCompleted;
-        fadeInOutController.FadeOut();
+        if (CurrentChamber != null)
+        {
+            fadeInOutController.FadeOutCompleted += OnFadeOutCompleted;
+            fadeInOutController.FadeOut();
+        }
+        else
+        {
+            OnFadeOutCompleted();
+        }
     }
 
-    private void OnFadeOutCompleted(){
+    private void OnFadeOutCompleted()
+    {
+        if (CurrentChamber != null)
+        {
             fadeInOutController.FadeOutCompleted -= OnFadeOutCompleted;
-            CurrentChamber.transform.Find("Content").gameObject.SetActive(false);
-            _nextChamber.transform.Find("Content").gameObject.SetActive(true);
-            CurrentChamber = _nextChamber;
-            fadeInOutController.FadeIn();
+            CurrentChamber?.transform.Find("Content").gameObject.SetActive(false);
+        }
+        _nextChamber.transform.Find("Content").gameObject.SetActive(true);
+        CurrentChamber = _nextChamber;
+        fadeInOutController.FadeIn();
     }
 }
