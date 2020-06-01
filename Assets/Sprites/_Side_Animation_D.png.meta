@@ -1,0 +1,804 @@
+fileFormatVersion: 2
+guid: 69e57778bbce91940b92b8914e229c2f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -468102346682029136
+    second: Ash_run_leftarmtop
+  - first:
+      213: -1572777044966995231
+    second: Ash_run_leftarmfore
+  - first:
+      213: -1362818674157873249
+    second: Ash_run_head
+  - first:
+      213: 7440347263133664569
+    second: Ash_run_leftarmelbow
+  - first:
+      213: -4932247710499072217
+    second: Ash_run_leftarmwrist
+  - first:
+      213: -54655271909575630
+    second: Ash_run_leftarmsleeve
+  - first:
+      213: 8145399355478233008
+    second: Ash_run_rightarmtop
+  - first:
+      213: -508394821828025820
+    second: _Side_Animation_D_7
+  - first:
+      213: 3168351557464540501
+    second: Ash_run_rope
+  - first:
+      213: 4347064951460224635
+    second: Ash_run_body
+  - first:
+      213: -2080534683293684077
+    second: Ash_run_shakira
+  - first:
+      213: 4398330278903180700
+    second: Ash_run_feather
+  - first:
+      213: -2324999583913935760
+    second: Ash_run_rightarmelbow
+  - first:
+      213: -4250693741388009826
+    second: Ash_run_rightarmfore
+  - first:
+      213: 6528176005030757118
+    second: Ash_run_rightarmwrist
+  - first:
+      213: -3865101061876784830
+    second: Ash_run_rightarmsleeve
+  - first:
+      213: 1229029886227441987
+    second: Ash_run_bag
+  - first:
+      213: 3440711262450496667
+    second: Ash_run_staff
+  - first:
+      213: -4355541838347069533
+    second: Ash_run_leftlegtop
+  - first:
+      213: -8281972627656182671
+    second: Ash_run_rightlegtop
+  - first:
+      213: -5964783986158936404
+    second: Ash_run_rightfoot
+  - first:
+      213: 3351154968529552275
+    second: Ash_run_leftfoot
+  - first:
+      213: -5507317603168237761
+    second: _Side_Animation_D_22
+  - first:
+      213: 5512741010744554053
+    second: _Side_Animation_D_23
+  - first:
+      213: 194285299081011570
+    second: Ash_run_leftknee
+  - first:
+      213: -2181624070484230572
+    second: Ash_run_rightknee
+  - first:
+      213: -5169939134007589265
+    second: Ash_run_leftleglow
+  - first:
+      213: 7244335762042514469
+    second: Ash_run_rightleglow
+  - first:
+      213: -7854525745339949303
+    second: _Side_Animation_D_28
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ash_run_leftarmtop
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 3293
+        width: 88
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5554023, y: 0.9117953}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bbad735567f089f0800000000000000
+      internalID: -468102346682029136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_leftarmfore
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 3093
+        width: 77
+        height: 202
+      alignment: 9
+      pivot: {x: 0.5431709, y: 0.8666322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea8adb4c9f5c2ae0800000000000000
+      internalID: -1572777044966995231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_head
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 2832
+        width: 514
+        height: 587
+      alignment: 9
+      pivot: {x: 0.5648906, y: 0.0707219}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f971d89e2ab461de0800000000000000
+      internalID: -1362818674157873249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_leftarmelbow
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 3222
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935c1a84a6c614760800000000000000
+      internalID: 7440347263133664569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_leftarmwrist
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 3006
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7271877e6d22d8bb0800000000000000
+      internalID: -4932247710499072217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_leftarmsleeve
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 2881
+        width: 62
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7967965}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2343abcd153dd3ff0800000000000000
+      internalID: -54655271909575630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_rightarmtop
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 2407
+        width: 90
+        height: 335
+      alignment: 9
+      pivot: {x: 0.5566614, y: 0.9255283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bfc9f0ce854a0170800000000000000
+      internalID: 8145399355478233008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Side_Animation_D_7
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 2662
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422ea476a91d1f8f0800000000000000
+      internalID: -508394821828025820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_rope
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 2558
+        width: 12
+        height: 85
+      alignment: 9
+      pivot: {x: 0.52127075, y: 0.94755286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555ca3274fe38fb20800000000000000
+      internalID: 3168351557464540501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_body
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 1915
+        width: 310
+        height: 645
+      alignment: 9
+      pivot: {x: 0.5048319, y: 0.04381434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e5657aa80e35c30800000000000000
+      internalID: 4347064951460224635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_shakira
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 2418
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e666b8ab47023e0800000000000000
+      internalID: -2080534683293684077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_feather
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 2286
+        width: 51
+        height: 169
+      alignment: 9
+      pivot: {x: 0.6908725, y: 0.960806}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d6ed6d5120a0d30800000000000000
+      internalID: 4398330278903180700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_rightarmelbow
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 2335
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07cf0e16231fbbfd0800000000000000
+      internalID: -2324999583913935760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_rightarmfore
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 2204
+        width: 75
+        height: 204
+      alignment: 9
+      pivot: {x: 0.5647559, y: 0.8666322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e679730908205c0800000000000000
+      internalID: -4250693741388009826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_rightarmwrist
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 2120
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef246132d7db89a50800000000000000
+      internalID: 6528176005030757118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_rightarmsleeve
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1994
+        width: 60
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8040355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24169d9ff076c5ac0800000000000000
+      internalID: -3865101061876784830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_bag
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1460
+        width: 195
+        height: 253
+      alignment: 9
+      pivot: {x: 0.7822028, y: 0.8507695}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349ecea7b246e0110800000000000000
+      internalID: 1229029886227441987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_staff
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 797
+        width: 218
+        height: 1141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b943c0dd9acdfbf20800000000000000
+      internalID: 3440711262450496667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_leftlegtop
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 1066
+        width: 113
+        height: 442
+      alignment: 9
+      pivot: {x: 0.5132866, y: 0.9366816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a798f056c10e83c0800000000000000
+      internalID: -4355541838347069533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_rightlegtop
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 1045
+        width: 112
+        height: 443
+      alignment: 9
+      pivot: {x: 0.5132865, y: 0.9454105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1747b0166c5801d80800000000000000
+      internalID: -8281972627656182671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_rightfoot
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 1158
+        width: 52
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5287117, y: 0.8525077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caede0f3194d83da0800000000000000
+      internalID: -5964783986158936404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_leftfoot
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 1150
+        width: 52
+        height: 147
+      alignment: 9
+      pivot: {x: 0.5574235, y: 0.8351578}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3934d7e40b1b18e20800000000000000
+      internalID: 3351154968529552275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Side_Animation_D_22
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 1273
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37c6e5a1d31293b0800000000000000
+      internalID: -5507317603168237761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Side_Animation_D_23
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 1213
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5423824ddb0318c40800000000000000
+      internalID: 5512741010744554053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_leftknee
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1058
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271edcc337d32b200800000000000000
+      internalID: 194285299081011570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_rightknee
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 1019
+        width: 65
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e7855777059b1e0800000000000000
+      internalID: -2181624070484230572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_leftleglow
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 747
+        width: 71
+        height: 206
+      alignment: 9
+      pivot: {x: 0.5212585, y: 0.8720192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f664617cfbfa048b0800000000000000
+      internalID: -5169939134007589265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ash_run_rightleglow
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 757
+        width: 70
+        height: 208
+      alignment: 9
+      pivot: {x: 0.4999998, y: 0.8900781}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ce3325efc098460800000000000000
+      internalID: 7244335762042514469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Side_Animation_D_28
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 606
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f1add137e1ff290800000000000000
+      internalID: -7854525745339949303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
