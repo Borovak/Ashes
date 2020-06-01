@@ -17,7 +17,8 @@ public class EditorHelper : MonoBehaviour
         private GameObject _contentFolder;
 
         public void Update()
-        {
+        {            
+            if (Application.isPlaying) return;
             if (chamber == null) return;
             Init();
             // if (_editorHelper.chamberSettings.All(x => x.active == false)){
@@ -68,6 +69,7 @@ public class EditorHelper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Application.isPlaying) return;
         _editorHelper = this;
         foreach (var chamberSetting in chamberSettings)
         {
@@ -103,14 +105,24 @@ public class EditorHelper : MonoBehaviour
     void OnDrawGizmos()
     {
         // Your gizmo drawing thing goes here if required...
-
+        foreach (var chamberSetting in chamberSettings)
+        {
+            var w = chamberSetting.chamber.w * ChamberController.unitSize;
+            var h = chamberSetting.chamber.h * ChamberController.unitSize;
+            var x = chamberSetting.chamber.x * ChamberController.unitSize + w / 2f;
+            var y = chamberSetting.chamber.y * ChamberController.unitSize + h / 2f;
+            var colors = new Dictionary<int, Color> {
+                {1, Color.green},
+                {2, Color.blue}
+            };
+            Gizmos.color = colors.TryGetValue(chamberSetting.chamber.zone, out var c) ? c : Color.magenta;
+            Gizmos.DrawWireCube(new Vector3(x, y, 0f), new Vector3(w, h, 1f));
+        }
 #if UNITY_EDITOR
         // Ensure continuous Update calls.
-        if (!Application.isPlaying)
-        {
-            UnityEditor.EditorApplication.QueuePlayerLoopUpdate();
-            UnityEditor.SceneView.RepaintAll();
-        }
+        if (Application.isPlaying) return;
+        UnityEditor.EditorApplication.QueuePlayerLoopUpdate();
+        UnityEditor.SceneView.RepaintAll();
 #endif
     }
 }

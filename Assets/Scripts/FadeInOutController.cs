@@ -51,6 +51,7 @@ public class FadeInOutController : MonoBehaviour
     // Update is called once per frame
     public void FadeOut()
     {
+        Debug.Log("Fade out");
         timeRemaining = transitionTime;
         isFadeIn = false;
     }
@@ -58,6 +59,7 @@ public class FadeInOutController : MonoBehaviour
     // Update is called once per frame
     public void FadeIn()
     {
+        Debug.Log("Fade in");
         timeRemaining = transitionTime;
         isFadeIn = true;
     }
