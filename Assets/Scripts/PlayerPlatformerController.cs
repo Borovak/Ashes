@@ -127,16 +127,22 @@ public class PlayerPlatformerController : PhysicsObject
     public void PlayLanding()
     {
         _audioSource.PlayOneShot(audioClipLanding);
+        _runPose.SetActive(true);
+        _idlePose.SetActive(false);
     }
 
     public void PlayJump()
     {
         _audioSource.PlayOneShot(audioClipJump);
+        _runPose.SetActive(true);
+        _idlePose.SetActive(false);
     }
 
     public void PlayAttack()
     {
         _audioSource.PlayOneShot(audioClipAttack);
+        _runPose.SetActive(true);
+        _idlePose.SetActive(false);
     }
 
     public void AckJump()
@@ -151,6 +157,12 @@ public class PlayerPlatformerController : PhysicsObject
     }
 
     public void SetRunPose()
+    {
+        _runPose.SetActive(true);
+        _idlePose.SetActive(false);
+    }
+
+    public void SetTakeOffPose()
     {
         _runPose.SetActive(true);
         _idlePose.SetActive(false);
