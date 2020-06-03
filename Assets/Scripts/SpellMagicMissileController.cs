@@ -16,7 +16,8 @@ public class SpellMagicMissileController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        direction = transform.root.Find("Ash").position.x > transform.position.x ? Vector2.left : Vector2.right;
+        var playerTransform = PlayerPlatformerController.Instance.transform;
+        direction = playerTransform.position.x > transform.position.x ? Vector2.left : Vector2.right;
     }
 
     // Update is called once per frame

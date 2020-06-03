@@ -32,13 +32,18 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 _animator.SetTrigger("attack");
-                Instantiate(spellMagicMissile, attackPos.position, Quaternion.identity);
                 var enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
                     if (!enemiesToDamage[i].TryGetComponent<Enemy>(out var enemy)) continue;
                     enemy.TakeDamage(attackDamage, (enemiesToDamage[i].transform.position - attackPos.position).normalized);
                 }
+                _attackCooldown = 1f / attackRate;
+            }
+            else if (Input.GetButtonDown("Fire2"))
+            {
+                _animator.SetTrigger("attack");
+                Instantiate(spellMagicMissile, attackPos.position, Quaternion.identity);
                 _attackCooldown = 1f / attackRate;
             }
         }
@@ -49,7 +54,8 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected(){
+    void OnDrawGizmosSelected()
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
