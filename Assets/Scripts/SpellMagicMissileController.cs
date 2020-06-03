@@ -11,15 +11,18 @@ public class SpellMagicMissileController : MonoBehaviour
     public LayerMask whatIsEnemies;
     public LayerMask whatIsLayout;
 
+    private Vector2 direction;
+
     // Start is called before the first frame update
     void Start()
     {
+        direction = transform.root.Find("Ash").position.x > transform.position.x ? Vector2.left : Vector2.right;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime);
         lifetime -= Time.deltaTime;
         if (lifetime <= 0){
             GameObject.Destroy(gameObject);
