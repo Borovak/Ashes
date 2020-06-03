@@ -375,6 +375,8 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 512
+  spellMagicMissile: {fileID: 753744538606909653, guid: 8e13e91a6111c5c43a49889941330b6e,
+    type: 3}
 --- !u!70 &483266623256006734
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -424,6 +426,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 483266623256006722}
     m_Modifications:
+    - target: {fileID: 281542600801648965, guid: e8adb68c908756341a7749cedb6a36f5,
+        type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 281542600801648965, guid: e8adb68c908756341a7749cedb6a36f5,
+        type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 627337604770439585, guid: e8adb68c908756341a7749cedb6a36f5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -499,6 +511,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 483266623256006722}
     m_Modifications:
+    - target: {fileID: 730660180595723886, guid: 5737b759275922441a4428f43b39dfe9,
+        type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 730660180595723886, guid: 5737b759275922441a4428f43b39dfe9,
+        type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4117993113129980838, guid: 5737b759275922441a4428f43b39dfe9,
         type: 3}
       propertyPath: m_Name

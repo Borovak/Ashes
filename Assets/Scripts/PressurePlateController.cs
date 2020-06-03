@@ -10,14 +10,17 @@ public class PressurePlateController : MonoBehaviour
     public float timeToPress;
     public float positionPressed;
     public float positionUnpressed;
-    public bool state;
+    public bool state => GateController.gates[id];
 
     // Start is called before the first frame update
     void Start()
     {
         if (GateController.gates == null)
         {
-            GateController.gates = new List<GateController>();
+            GateController.gates = new Dictionary<string, bool>();
+        }
+        if (!GateController.gates.ContainsKey(id)){
+            GateController.gates.Add(id, false);
         }
     }
 
@@ -46,11 +49,6 @@ public class PressurePlateController : MonoBehaviour
 
     public void SetState(bool newState)
     {
-        state = newState;
-        var gate = GateController.gates.FirstOrDefault(x => x.id == id);
-        if (gate != null)
-        {
-            gate.state = newState;
-        }
+        GateController.gates[id] = newState;
     }
 }

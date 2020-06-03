@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class GateController : MonoBehaviour
 {
-    public static List<GateController> gates; 
+    public static Dictionary<string, bool> gates;
     public string id;
     public float timeToOpen;
     public float positionOpened;
     public float positionClosed;
-    public bool state;
+    public bool state => gates[id];
 
-    void Awake(){
-        if (gates == null){
-            gates = new List<GateController>();
+    void Awake()
+    {
+        if (gates == null)
+        {
+            gates = new Dictionary<string, bool>();
         }
-        gates.Add(this);
+        if (!gates.ContainsKey(id))
+        {
+            gates.Add(id, false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         var desiredPosition = state ? positionOpened : positionClosed;
-        if (Mathf.Abs(desiredPosition - transform.localPosition.y) > 0.1f){
+        if (Mathf.Abs(desiredPosition - transform.localPosition.y) > 0.1f)
+        {
             var totalDistance = state ? positionOpened - positionClosed : positionClosed - positionOpened;
             var distancePerSecond = totalDistance / Mathf.Max(0.01f, timeToOpen);
             var maxMove = distancePerSecond * Time.deltaTime;

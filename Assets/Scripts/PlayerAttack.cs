@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackDamage;
     public float attackRate;
     public LayerMask whatIsEnemies;
+    public GameObject spellMagicMissile;
 
     private float _attackCooldown;
     private Animator _animator;
@@ -31,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 _animator.SetTrigger("attack");
+                Instantiate(spellMagicMissile, attackPos.position, Quaternion.identity);
                 var enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
