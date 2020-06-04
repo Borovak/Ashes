@@ -54,7 +54,7 @@ public class Enemy : PhysicsObject
 		Vector2 move = Vector2.zero;
 		_playerDifference = PlayerPlatformerController.Instance.transform.position.x - transform.position.x;
 		_directionSmooth += (direction - _directionSmooth) * Time.deltaTime * changeDirectionEase;
-		if (!PlayerPlatformerController.Instance.frozen && _staggeredFor <= 0) {
+		if (_staggeredFor <= 0) {
 			move.x = 1 * _directionSmooth;
 
 			//Flip the graphic depending on the speed

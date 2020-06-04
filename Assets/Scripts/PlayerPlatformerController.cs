@@ -13,7 +13,6 @@ public class PlayerPlatformerController : PhysicsObject
     public AudioClip audioClipJump;
     public AudioClip audioClipLanding;
     public AudioClip audioClipAttack;
-    public bool frozen;
     public bool isGrounded;
     public bool flipX => transform.localScale.x < 0f;
     public Color damageColor;
@@ -31,7 +30,7 @@ public class PlayerPlatformerController : PhysicsObject
     // Use this for initialization
     void Awake()
     {
-        playerData = new PlayerData(3, 3, true);
+        playerData = new PlayerData(3, 3, true, 0);
         //_spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
@@ -105,7 +104,7 @@ public class PlayerPlatformerController : PhysicsObject
                 _invinsibilityFlash = 2f;
             }
         }
-        _invinsibilityFlash = Mathf.Max(_invinsibilityFlash - invinsibilityFlashRate * Time.deltaTime, 0f);        
+        _invinsibilityFlash = Mathf.Max(_invinsibilityFlash - invinsibilityFlashRate * Time.deltaTime, 0f);
         var c1 = _invinsibilityFlash > 1f ? damageColor : Color.white;
         var c2 = _invinsibilityFlash > 1f ? Color.white : damageColor;
         var c = Color.Lerp(c1, c2, _invinsibilityFlash % 1f);
@@ -121,6 +120,14 @@ public class PlayerPlatformerController : PhysicsObject
         {
             _invinsibleFor = invinsibilityPeriodAfterDamage;
             playerData.Hp -= 1;
+            if (playerData.Hp <= 0)
+            {
+                if (CampsiteController.campsites.TryGetValue(playerData.CampsiteId, out var campsite))
+                {
+                    transform.position = campsite.transform.position;
+                    playerData.Hp = playerData.MaxHp;
+                }
+            }
         }
     }
 

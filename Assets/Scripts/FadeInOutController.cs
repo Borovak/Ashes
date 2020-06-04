@@ -31,8 +31,12 @@ public class FadeInOutController : MonoBehaviour
             y = isFadeIn ? 1f - y : y;
             SetAlpha(y);
             timeRemaining -= Time.deltaTime;
-            if (timeRemaining <= 0 && !isFadeIn){
-                FadeOutCompleted?.Invoke();
+            if (timeRemaining <= 0){
+                if (isFadeIn){
+                    PhysicsObject.PhysicsEnabled = true;
+                } else {
+                    FadeOutCompleted?.Invoke();
+                }
             }
         }
         else if (_image.color.a > 0)
@@ -52,6 +56,7 @@ public class FadeInOutController : MonoBehaviour
     public void FadeOut()
     {
         Debug.Log("Fade out");
+        PhysicsObject.PhysicsEnabled = false;
         timeRemaining = transitionTime;
         isFadeIn = false;
     }

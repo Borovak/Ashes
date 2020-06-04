@@ -16,13 +16,15 @@ public class PlayerData
         }
     }
     public bool HasDoubleJump;
+    public int CampsiteId;
 
     private int _hp;
 
-    public PlayerData(int maxHp, int hp, bool hasDoubleJump)
+    public PlayerData(int maxHp, int hp, bool hasDoubleJump, int campsiteId)
     {
         MaxHp = maxHp;
         Hp = hp;
         HasDoubleJump = hasDoubleJump;
+        CampsiteId = campsiteId;
     }
 }

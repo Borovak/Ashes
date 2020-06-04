@@ -5,6 +5,7 @@ using UnityEngine;
 public class PhysicsObject : MonoBehaviour
 {
 
+    public static bool PhysicsEnabled = true;
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
 
@@ -46,6 +47,7 @@ public class PhysicsObject : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!PhysicsObject.PhysicsEnabled) return;
         velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
         velocity.x = targetVelocity.x;
 
