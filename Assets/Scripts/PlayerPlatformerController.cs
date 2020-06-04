@@ -16,6 +16,7 @@ public class PlayerPlatformerController : PhysicsObject
     public bool flipX => transform.localScale.x < 0f;
 
     private SpriteRenderer[] _spriteRenderers;
+    private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     private AudioSource _audioSource;
     private bool _doubleJumpPossible;
@@ -26,7 +27,7 @@ public class PlayerPlatformerController : PhysicsObject
     void Awake()
     {
         playerData = new PlayerData(3, 3, true, 0);
-        //_spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         _idlePose = transform.Find("idle").gameObject;
@@ -122,6 +123,7 @@ public class PlayerPlatformerController : PhysicsObject
     public void PlayLanding()
     {
         _audioSource.PlayOneShot(audioClipLanding);
+        _spriteRenderer.enabled = false;
         _runPose.SetActive(true);
         _idlePose.SetActive(false);
     }
@@ -129,6 +131,7 @@ public class PlayerPlatformerController : PhysicsObject
     public void PlayJump()
     {
         _audioSource.PlayOneShot(audioClipJump);
+        _spriteRenderer.enabled = false;
         _runPose.SetActive(true);
         _idlePose.SetActive(false);
     }
@@ -136,7 +139,8 @@ public class PlayerPlatformerController : PhysicsObject
     public void PlayAttack()
     {
         _audioSource.PlayOneShot(audioClipAttack);
-        _runPose.SetActive(true);
+        _spriteRenderer.enabled = true;
+        _runPose.SetActive(false);
         _idlePose.SetActive(false);
     }
 
@@ -147,18 +151,21 @@ public class PlayerPlatformerController : PhysicsObject
 
     public void SetIdlePose()
     {
+        _spriteRenderer.enabled = false;
         _idlePose.SetActive(true);
         _runPose.SetActive(false);
     }
 
     public void SetRunPose()
     {
+        _spriteRenderer.enabled = false;
         _runPose.SetActive(true);
         _idlePose.SetActive(false);
     }
 
     public void SetTakeOffPose()
     {
+        _spriteRenderer.enabled = false;
         _runPose.SetActive(true);
         _idlePose.SetActive(false);
     }
