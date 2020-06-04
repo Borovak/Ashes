@@ -9,21 +9,16 @@ public class PlayerPlatformerController : PhysicsObject
     public static PlayerData playerData;
     public float maxSpeed = 7f;
     public float jumpTakeOffSpeed = 3f;
-    public float invinsibilityPeriodAfterDamage = 2f;
     public AudioClip audioClipJump;
     public AudioClip audioClipLanding;
     public AudioClip audioClipAttack;
     public bool isGrounded;
     public bool flipX => transform.localScale.x < 0f;
-    public Color damageColor;
-    public float invinsibilityFlashRate;
 
     private SpriteRenderer[] _spriteRenderers;
     private Animator _animator;
     private AudioSource _audioSource;
     private bool _doubleJumpPossible;
-    private float _invinsibleFor;
-    private float _invinsibilityFlash = 0f;
     private GameObject _idlePose;
     private GameObject _runPose;
 
@@ -37,7 +32,7 @@ public class PlayerPlatformerController : PhysicsObject
         _idlePose = transform.Find("idle").gameObject;
         _runPose = transform.Find("run").gameObject;
         Instance = this;
-        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        GameController.ChamberChanged += OnChamberChanged;
     }
 
     protected override void ComputeVelocity()
@@ -47,7 +42,6 @@ public class PlayerPlatformerController : PhysicsObject
             _doubleJumpPossible = playerData.HasDoubleJump;
         }
 
-        ManageInvinsibility();
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis("Horizontal");
@@ -94,41 +88,35 @@ public class PlayerPlatformerController : PhysicsObject
         isGrounded = grounded;
     }
 
-    private void ManageInvinsibility()
+    private void OnChamberChanged(ChamberController chamber)
     {
-        if (_invinsibleFor > 0)
+        Vector2 point;
+        var relativeX = transform.position.x - chamber.transform.position.x;
+        var relativeY = chamber.transform.position.y - transform.position.y;
+        var maxX = chamber.transform.position.x + chamber.w * ChamberController.unitSize;
+        var maxY = chamber.transform.position.y + chamber.h * ChamberController.unitSize;
+        var spawnOffset = 4f;
+        if (relativeX <= 2f)
         {
-            _invinsibleFor -= Time.deltaTime;
-            if (_invinsibilityFlash == 0f)
-            {
-                _invinsibilityFlash = 2f;
-            }
+            point = new Vector2(chamber.transform.position.x + spawnOffset, transform.position.y);
         }
-        _invinsibilityFlash = Mathf.Max(_invinsibilityFlash - invinsibilityFlashRate * Time.deltaTime, 0f);
-        var c1 = _invinsibilityFlash > 1f ? damageColor : Color.white;
-        var c2 = _invinsibilityFlash > 1f ? Color.white : damageColor;
-        var c = Color.Lerp(c1, c2, _invinsibilityFlash % 1f);
-        foreach (var spriteRenderer in _spriteRenderers)
+        else if (relativeX >= chamber.w * ChamberController.unitSize - 2f)
         {
-            spriteRenderer.color = c;
+            point = new Vector2(maxX - spawnOffset, transform.position.y);
         }
-    }
-
-    public void TakeDamage()
-    {
-        if (_invinsibleFor <= 0)
+        else if (relativeY <= 2f)
         {
-            _invinsibleFor = invinsibilityPeriodAfterDamage;
-            playerData.Hp -= 1;
-            if (playerData.Hp <= 0)
-            {
-                if (CampsiteController.campsites.TryGetValue(playerData.CampsiteId, out var campsite))
-                {
-                    transform.position = campsite.transform.position;
-                    playerData.Hp = playerData.MaxHp;
-                }
-            }
+            point = new Vector2(transform.position.x, chamber.transform.position.y + spawnOffset);
         }
+        else if (relativeY >= chamber.y * ChamberController.unitSize - 2f)
+        {
+            point = new Vector2(transform.position.x, maxY - spawnOffset);
+        }
+        else { return; }
+        Debug.Log($"Forced destination => rX: {relativeX}, rY: {relativeY}, maxX: {maxX}, maxY: {maxY}, point: {point}");
+        forcedDestinationEnabled = true;
+        forcedDestinationPoint = point;
+        forcedDestinationSpeed = maxSpeed;
     }
 
     public void PlayLanding()

@@ -77,7 +77,7 @@ public class EnemyDownWrecker : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider){
-        if (!collider.gameObject.TryGetComponent<PlayerPlatformerController>(out var player)) return;
+        if (!collider.gameObject.TryGetComponent<InvinsibilityController>(out var player)) return;
         Debug.Log($"Player took damage from {gameObject.name}");
         player.TakeDamage();
     }

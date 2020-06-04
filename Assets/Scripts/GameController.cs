@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class GameController : MonoBehaviour
 {
+    public static event Action<ChamberController> ChamberChanged;
     public static GameController Instance;
     public ChamberController CurrentChamber;
     public Light2D BackgroundLight;
@@ -59,6 +61,7 @@ public class GameController : MonoBehaviour
         }
         _nextChamber.transform.Find("Content").gameObject.SetActive(true);
         CurrentChamber = _nextChamber;
+        ChamberChanged?.Invoke(CurrentChamber);
         fadeInOutController.FadeIn();
     }
 }

@@ -8,6 +8,9 @@ public class PhysicsObject : MonoBehaviour
     public static bool PhysicsEnabled = true;
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
+    public bool forcedDestinationEnabled;
+    public Vector2 forcedDestinationPoint;
+    public float forcedDestinationSpeed;
 
     protected Vector2 targetVelocity;
     protected bool grounded;
@@ -47,6 +50,20 @@ public class PhysicsObject : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (forcedDestinationEnabled)
+        {
+            var currentPosition = new Vector2(transform.position.x, transform.position.y);
+            var totalMove = forcedDestinationPoint - currentPosition;
+            if (Vector2.Distance(forcedDestinationPoint, currentPosition) <= 0.001f)
+            {
+                forcedDestinationEnabled = false;
+            }
+            else
+            {
+                rb2d.transform.Translate(totalMove * forcedDestinationSpeed * Time.deltaTime);
+                return;
+            }
+        }
         if (!PhysicsObject.PhysicsEnabled) return;
         velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
         velocity.x = targetVelocity.x;
