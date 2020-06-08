@@ -36,9 +36,9 @@ public class PlayerInteractionController : MonoBehaviour
             interactionPosition = campsiteColliders[0].transform.position;
             interactionText = "Camp";
             if (Input.GetButtonDown("Fire3")){
-                var campsiteId = campsiteColliders[0].gameObject.GetComponent<CampsiteController>().id;
-                PlayerPlatformerController.playerData.CampsiteId = campsiteId;
-                Debug.Log($"Campsite changed to {PlayerPlatformerController.playerData.CampsiteId}");
+                PlayerPlatformerController.Instance.campsiteLocation = campsiteColliders[0].transform.position;
+                SaveSystem.Save();
+                Debug.Log($"Campsite changed to {PlayerPlatformerController.Instance.campsiteLocation}");
             }
             return;
         }

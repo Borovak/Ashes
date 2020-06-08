@@ -25,11 +25,11 @@ public class UiLifeController : MonoBehaviour
             var number = Convert.ToInt32(child.name.Substring(4));
             _images.Add(number, child.GetComponent<Image>());
         }
-        PlayerPlatformerController.playerData.HpChanged += OnHpChanged;
+        PlayerPlatformerController.Instance.HpChanged += OnHpChanged;
     }
 
     void OnDisable(){
-        PlayerPlatformerController.playerData.HpChanged -= OnHpChanged;
+        PlayerPlatformerController.Instance.HpChanged -= OnHpChanged;
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class UiLifeController : MonoBehaviour
     {
         if (!_initDone){
             _initDone = true;
-            OnHpChanged(PlayerPlatformerController.playerData.Hp);
+            OnHpChanged(PlayerPlatformerController.Instance.hp);
         }
     }
 

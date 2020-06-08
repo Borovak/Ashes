@@ -43,14 +43,11 @@ public class InvinsibilityController : MonoBehaviour
     {
         if (_invinsibleFor > 0) return;
         _invinsibleFor = invinsibilityPeriodAfterDamage;
-        PlayerPlatformerController.playerData.Hp -= 1;
-        if (PlayerPlatformerController.playerData.Hp <= 0)
+        PlayerPlatformerController.Instance.hp -= 1;
+        if (PlayerPlatformerController.Instance.hp <= 0)
         {
-            if (CampsiteController.campsites.TryGetValue(PlayerPlatformerController.playerData.CampsiteId, out var campsite))
-            {
-                transform.position = campsite.transform.position;
-                PlayerPlatformerController.playerData.Hp = PlayerPlatformerController.playerData.MaxHp;
-            }
+                transform.position = PlayerPlatformerController.Instance.campsiteLocation;
+                PlayerPlatformerController.Instance.hp = PlayerPlatformerController.Instance.maxHp;
         }
     }
 

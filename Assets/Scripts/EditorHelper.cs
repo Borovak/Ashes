@@ -54,6 +54,7 @@ public class EditorHelper : MonoBehaviour
 
     public List<ChamberSetting> chamberSettings = new List<ChamberSetting>();
     public Transform chambersFolder;
+    public bool wipeSaveFiles;
 
     private static EditorHelper _editorHelper;
 
@@ -102,6 +103,7 @@ public class EditorHelper : MonoBehaviour
             }
         }
     }
+
     void OnDrawGizmos()
     {
         // Your gizmo drawing thing goes here if required...
@@ -123,6 +125,10 @@ public class EditorHelper : MonoBehaviour
         if (Application.isPlaying) return;
         UnityEditor.EditorApplication.QueuePlayerLoopUpdate();
         UnityEditor.SceneView.RepaintAll();
+        if (wipeSaveFiles){
+            wipeSaveFiles = false;  
+            SaveSystem.WipeFiles();          
+        }
 #endif
     }
 }

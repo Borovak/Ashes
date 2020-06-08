@@ -16,6 +16,11 @@ public class GateController : MonoBehaviour
         if (gates == null)
         {
             gates = new Dictionary<string, bool>();
+            var worldData = SaveSystem.LoadWorld();
+            for (int i = 0; i < worldData.gatesId.Length; i++)
+            {
+                gates.Add(worldData.gatesId[i], worldData.gatesStatus[i]);
+            }
         }
         if (!gates.ContainsKey(id))
         {

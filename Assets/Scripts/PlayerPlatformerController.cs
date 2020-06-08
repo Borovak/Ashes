@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class PlayerPlatformerController : PhysicsObject
 {
 
     public static PlayerPlatformerController Instance;
-    public static PlayerData playerData;
+    public event Action<int> HpChanged;
     public float maxSpeed = 7f;
     public float jumpTakeOffSpeed = 3f;
     public AudioClip audioClipJump;
@@ -14,6 +15,18 @@ public class PlayerPlatformerController : PhysicsObject
     public AudioClip audioClipAttack;
     public bool isGrounded;
     public bool flipX => transform.localScale.x < 0f;
+    public Vector3 campsiteLocation;
+    public int maxHp;
+    public bool hasDoubleJump;
+    public int hp
+    {
+        get => _hp;
+        set
+        {
+            _hp = value;
+            HpChanged?.Invoke(value);
+        }
+    }
 
     private SpriteRenderer[] _spriteRenderers;
     private SpriteRenderer _spriteRenderer;
@@ -22,25 +35,50 @@ public class PlayerPlatformerController : PhysicsObject
     private bool _doubleJumpPossible;
     private GameObject _idlePose;
     private GameObject _runPose;
+    private int _hp;
 
     // Use this for initialization
     void Awake()
     {
-        playerData = new PlayerData(3, 3, true, 0);
+        Instance = this;
+        var playerData = SaveSystem.LoadPlayer();
+        if (playerData != null)
+        {
+            Debug.Log($"Saved max hp: {playerData.MaxHp}");
+            Debug.Log($"Saved hp: {playerData.Hp}");
+            Debug.Log($"Saved has double jump : {playerData.HasDoubleJump}");
+            Debug.Log($"Saved campsite location : {playerData.CampsiteLocation}");
+            maxHp = playerData.MaxHp;
+            hp = playerData.Hp;
+            hasDoubleJump = playerData.HasDoubleJump;
+            campsiteLocation = playerData.CampsiteLocation != null && playerData.CampsiteLocation.Length == 3 ? new Vector3(playerData.CampsiteLocation[0], playerData.CampsiteLocation[1], playerData.CampsiteLocation[2]) : GameController.Instance.campsiteLocations[0];
+        }
+        else
+        {
+            maxHp = 3;
+            hp = 3;
+            hasDoubleJump = true;
+            campsiteLocation = GameController.Instance.campsiteLocations[0];
+            SaveSystem.SavePlayer();
+        }
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         _idlePose = transform.Find("idle").gameObject;
         _runPose = transform.Find("run").gameObject;
-        Instance = this;
         GameController.ChamberChanged += OnChamberChanged;
+    }
+    void Start()
+    {
+        Debug.Log($"Campsite count: {GameController.Instance.campsiteLocations.Length}");
+        transform.position = campsiteLocation;
     }
 
     protected override void ComputeVelocity()
     {
         if (grounded)
         {
-            _doubleJumpPossible = playerData.HasDoubleJump;
+            _doubleJumpPossible = hasDoubleJump;
         }
 
         Vector2 move = Vector2.zero;
