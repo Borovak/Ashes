@@ -16,17 +16,24 @@ public class ChamberController : MonoBehaviour
     public Color BackgroundLightColor;
     public float TerrainLightIntensity;
     public Color TerrainLightColor;
+    private GameObject _content;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        _content = transform.Find("Content").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x != unitSize * x || transform.position.y != unitSize * y){
+        var enabled = !Application.isPlaying || GameController.Instance.currentChamber == this;
+        if (enabled != _content.activeSelf)
+        {
+            _content.SetActive(enabled);
+        }
+        if (transform.position.x != unitSize * x || transform.position.y != unitSize * y)
+        {
             transform.position = new Vector3(unitSize * x, unitSize * y, 0f);
             var polygonCollider = GetComponent<PolygonCollider2D>();
             var points = new List<Vector2>{
