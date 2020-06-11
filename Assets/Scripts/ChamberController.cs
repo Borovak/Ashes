@@ -27,7 +27,7 @@ public class ChamberController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var enabled = !Application.isPlaying || GameController.Instance.currentChamber == this;
+        var enabled = GameController.currentChamber != null && GameController.currentChamber.gameObject.name == gameObject.name;
         if (enabled != _content.activeSelf)
         {
             _content.SetActive(enabled);
@@ -49,6 +49,7 @@ public class ChamberController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (!Application.isPlaying) return;
         Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         GameController.Instance.ChangeChamber(this);
     }

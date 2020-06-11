@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
+[ExecuteInEditMode]
 public class GameController : MonoBehaviour
 {
     public static event Action<ChamberController> ChamberChanged;
     public static GameController Instance;
-    public ChamberController currentChamber;
+    public static ChamberController currentChamber;
     public Light2D backgroundLight;
     public Light2D terrainLight;
     public FadeInOutController fadeInOutController;
@@ -21,6 +22,7 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        if (!Application.isPlaying) return;
         InitCampsites();
     }
 
@@ -51,6 +53,7 @@ public class GameController : MonoBehaviour
 
     public void ChangeChamber(ChamberController nextChamber)
     {
+        if (!Application.isPlaying) return;
         if (currentChamber == nextChamber) return;
         Debug.Log($"New chamber entered: {nextChamber.transform.name}");
         _nextChamber = nextChamber;
@@ -67,12 +70,11 @@ public class GameController : MonoBehaviour
 
     private void OnFadeOutCompleted()
     {
+        if (!Application.isPlaying) return;
         if (currentChamber != null)
         {
             fadeInOutController.FadeOutCompleted -= OnFadeOutCompleted;
-            currentChamber?.transform.Find("Content").gameObject.SetActive(false);
         }
-        _nextChamber.transform.Find("Content").gameObject.SetActive(true);
         currentChamber = _nextChamber;
         ChamberChanged?.Invoke(currentChamber);
         fadeInOutController.FadeIn();
