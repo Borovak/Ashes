@@ -6,8 +6,7 @@ using System.IO;
 
 public class ChamberManager : EditorWindow
 {
-    List<GameObject> chamberPrefabs;
-    int chamberId;
+    Dictionary<int, List<GameObject>> regions;
 
     [MenuItem("Tools/Chamber Manager")]
     public static void ShowWindow()
@@ -18,29 +17,37 @@ public class ChamberManager : EditorWindow
     // Update is called once per frame
     private void OnGUI()
     {
-        if (chamberPrefabs == null)
+        if (regions == null)
         {
-            chamberPrefabs = new List<GameObject>();
+            regions = new Dictionary<int, List<GameObject>>();
             foreach (var filePath in Directory.GetFiles("./Assets/Resources/Chambers", "*.prefab"))
             {
                 var fileInfo = new FileInfo(filePath);
                 var nameWithoutExt = fileInfo.Name.Split('.')[0];
                 var chamber = Resources.Load<GameObject>($"Chambers/{nameWithoutExt}");
-                chamberPrefabs.Add(chamber);
+                var chamberController = chamber.GetComponent<ChamberController>();
+                if (!regions.ContainsKey(chamberController.region))
+                {
+                    regions.Add(chamberController.region, new List<GameObject>());
+                }
+                regions[chamberController.region].Add(chamber);
             }
         }
-        GUILayout.Label("Chamber Switcher", EditorStyles.boldLabel);
         if (GUILayout.Button("None"))
         {
             ChangeChamber(null);
         }
-        for (int i = 0; i < chamberPrefabs.Count; i++)
+        foreach (var zone in regions)
         {
-            if (GUILayout.Button(chamberPrefabs[i].name))
+            GUILayout.Label(RegionAnnouncementController.GetText(zone.Key), EditorStyles.boldLabel);
+            foreach (var chamber in zone.Value)
             {
-                var chamberController = chamberPrefabs[i].GetComponent<ChamberController>();
-                ChangeChamber(chamberController);
-                break;
+                if (GUILayout.Button(chamber.name))
+                {
+                    var chamberController = chamber.GetComponent<ChamberController>();
+                    ChangeChamber(chamberController);
+                    break;
+                }
             }
         }
     }

@@ -214,7 +214,7 @@ MonoBehaviour:
   y: 0
   w: 2
   h: 1
-  zone: 1
+  region: 1
   Camera: {fileID: 398221318492781064}
   BackgroundLightIntensity: 0.75
   BackgroundLightColor: {r: 0.77415067, g: 0.8867924, b: 0.7654859, a: 1}

@@ -10,7 +10,7 @@ public class ChamberController : MonoBehaviour
     public int y;
     public int w = 1;
     public int h = 1;
-    public int zone;
+    public int region;
     public Cinemachine.CinemachineVirtualCamera Camera;
     public float BackgroundLightIntensity;
     public Color BackgroundLightColor;

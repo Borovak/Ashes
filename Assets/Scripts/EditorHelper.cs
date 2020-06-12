@@ -117,7 +117,7 @@ public class EditorHelper : MonoBehaviour
                 {1, Color.green},
                 {2, Color.blue}
             };
-            Gizmos.color = colors.TryGetValue(chamberSetting.chamber.zone, out var c) ? c : Color.magenta;
+            Gizmos.color = colors.TryGetValue(chamberSetting.chamber.region, out var c) ? c : Color.magenta;
             Gizmos.DrawWireCube(new Vector3(x, y, 0f), new Vector3(w, h, 1f));
         }
 #if UNITY_EDITOR
