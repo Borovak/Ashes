@@ -19,6 +19,7 @@ public class InteractionText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerInteractionController.Instance == null) return;
         _textComponent.text = PlayerInteractionController.Instance.interactionPossible ? PlayerInteractionController.Instance.interactionText : "";
         if (PlayerInteractionController.Instance.interactionPossible){
             _setPosition(PlayerInteractionController.Instance.interactionPosition);

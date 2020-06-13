@@ -26,7 +26,7 @@ public class PlayerInteractionController : MonoBehaviour
         {
             interactionPossible = true;
             interactionPosition = interactionColliders[0].transform.position;
-            interactionText = "Interact";
+            interactionText = "";
             return;
         }
         var campsiteColliders = Physics2D.OverlapCircleAll(transform.position, 1f, whatIsCampsite);

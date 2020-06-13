@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerPlatformerController : PhysicsObject
@@ -37,6 +38,12 @@ public class PlayerPlatformerController : PhysicsObject
     private GameObject _runPose;
     private int _hp;
 
+
+    private struct ChamberPosition{
+        internal float value;
+        internal Func<Vector2> getPoint;
+    }
+
     // Use this for initialization
     void Awake()
     {
@@ -57,7 +64,7 @@ public class PlayerPlatformerController : PhysicsObject
         {
             maxHp = 3;
             hp = 3;
-            hasDoubleJump = true;
+            hasDoubleJump = false;
             campsiteLocation = GameController.Instance.campsiteLocations[0];
             SaveSystem.SavePlayer();
         }
@@ -129,30 +136,22 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void OnChamberChanged(ChamberController chamber)
     {
-        Vector2 point;
-        var relativeX = transform.position.x - chamber.transform.position.x;
-        var relativeY = chamber.transform.position.y - transform.position.y;
-        var maxX = chamber.transform.position.x + chamber.w * ChamberController.unitSize;
-        var maxY = chamber.transform.position.y + chamber.h * ChamberController.unitSize;
-        var spawnOffset = 4f;
-        if (relativeX <= 2f)
-        {
-            point = new Vector2(chamber.transform.position.x + spawnOffset, transform.position.y);
-        }
-        else if (relativeX >= chamber.w * ChamberController.unitSize - 2f)
-        {
-            point = new Vector2(maxX - spawnOffset, transform.position.y);
-        }
-        else if (relativeY <= 2f)
-        {
-            point = new Vector2(transform.position.x, chamber.transform.position.y + spawnOffset);
-        }
-        else if (relativeY >= chamber.y * ChamberController.unitSize - 2f)
-        {
-            point = new Vector2(transform.position.x, maxY - spawnOffset);
-        }
-        else { return; }
-        Debug.Log($"Forced destination => rX: {relativeX}, rY: {relativeY}, maxX: {maxX}, maxY: {maxY}, point: {point}");
+        const float spawnOffset = 3f;
+        var minX = chamber.x * ChamberController.unitSize;
+        var minY = chamber.y * ChamberController.unitSize;
+        var maxX = minX + chamber.w * ChamberController.unitSize;
+        var maxY = minY + chamber.h * ChamberController.unitSize;
+
+        var actions = new List<ChamberPosition>{
+            new ChamberPosition {value = transform.position.x - chamber.x * ChamberController.unitSize, getPoint = () => new Vector2(chamber.transform.position.x + spawnOffset, transform.position.y)},
+            new ChamberPosition {value = transform.position.y - chamber.y * ChamberController.unitSize, getPoint = () => new Vector2(transform.position.x, chamber.transform.position.y + spawnOffset)},
+            new ChamberPosition {value = transform.position.x - (minX + chamber.w * ChamberController.unitSize), getPoint = () => new Vector2(maxX - spawnOffset, transform.position.y)},
+            new ChamberPosition {value = transform.position.y - (minY + chamber.h * ChamberController.unitSize), getPoint = () => new Vector2(transform.position.x, maxY - spawnOffset)}
+        };
+        var min = actions.Min(x => Mathf.Abs(x.value));
+        if (min > 3f) return;
+        var func = actions.First(x => Mathf.Abs(x.value) == min).getPoint;
+        var point = func.Invoke();
         forcedDestinationEnabled = true;
         forcedDestinationPoint = point;
         forcedDestinationSpeed = maxSpeed;
