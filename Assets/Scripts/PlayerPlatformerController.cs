@@ -48,17 +48,16 @@ public class PlayerPlatformerController : PhysicsObject
     void Awake()
     {
         Instance = this;
-        var playerData = SaveSystem.LoadPlayer();
-        if (playerData != null)
+        if (SaveSystem.latestSaveData != null)
         {
-            Debug.Log($"Saved max hp: {playerData.MaxHp}");
-            Debug.Log($"Saved hp: {playerData.Hp}");
-            Debug.Log($"Saved has double jump : {playerData.HasDoubleJump}");
-            Debug.Log($"Saved campsite location : {playerData.CampsiteLocation}");
-            maxHp = playerData.MaxHp;
-            hp = playerData.Hp;
-            hasDoubleJump = playerData.HasDoubleJump;
-            campsiteLocation = playerData.CampsiteLocation != null && playerData.CampsiteLocation.Length == 3 ? new Vector3(playerData.CampsiteLocation[0], playerData.CampsiteLocation[1], playerData.CampsiteLocation[2]) : GameController.Instance.campsiteLocations[0];
+            Debug.Log($"Saved max hp: {SaveSystem.latestSaveData.MaxHp}");
+            Debug.Log($"Saved hp: {SaveSystem.latestSaveData.Hp}");
+            Debug.Log($"Saved has double jump : {SaveSystem.latestSaveData.HasDoubleJump}");
+            Debug.Log($"Saved campsite location : {SaveSystem.latestSaveData.CampsiteLocation}");
+            maxHp = SaveSystem.latestSaveData.MaxHp;
+            hp = SaveSystem.latestSaveData.Hp;
+            hasDoubleJump = SaveSystem.latestSaveData.HasDoubleJump;
+            campsiteLocation = SaveSystem.latestSaveData.CampsiteLocation != null && SaveSystem.latestSaveData.CampsiteLocation.Length == 3 ? new Vector3(SaveSystem.latestSaveData.CampsiteLocation[0], SaveSystem.latestSaveData.CampsiteLocation[1], SaveSystem.latestSaveData.CampsiteLocation[2]) : GameController.Instance.campsiteLocations[0];
         }
         else
         {
@@ -66,7 +65,7 @@ public class PlayerPlatformerController : PhysicsObject
             hp = 3;
             hasDoubleJump = false;
             campsiteLocation = GameController.Instance.campsiteLocations[0];
-            SaveSystem.SavePlayer();
+            SaveSystem.Save();
         }
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();

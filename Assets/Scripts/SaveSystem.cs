@@ -7,39 +7,35 @@ using System;
 
 public static class SaveSystem
 {
+    public static int index = 0;
+    public static SaveData latestSaveData;
 
-    private static string _playerFile = Application.persistentDataPath + "/player.sav";
-    private static string _worldFile = Application.persistentDataPath + "/world.sav";
+    private static string _filePath = Application.persistentDataPath + $"/ashes_{index}.sav";
 
     public static void Save()
     {
-        SavePlayer();
-        SaveWorld();
-    }
-
-    // Start is called before the first frame update
-    public static void SavePlayer()
-    {
         var formatter = new BinaryFormatter();
-        var stream = new FileStream(_playerFile, FileMode.OpenOrCreate);
-        var data = new PlayerData(PlayerPlatformerController.Instance);
+        var stream = new FileStream(_filePath, FileMode.OpenOrCreate);
+        var data = new SaveData(PlayerPlatformerController.Instance);
         formatter.Serialize(stream, data);
         stream.Close();
     }
 
-    public static PlayerData LoadPlayer()
+    public static SaveData Load()
     {
         try
         {
-            if (!File.Exists(_playerFile))
+            if (!File.Exists(_filePath))
             {
                 Debug.LogError("Player save file not found");
                 return null;
             }
             var formatter = new BinaryFormatter();
-            var stream = new FileStream(_playerFile, FileMode.Open);
-            var data = formatter.Deserialize(stream) as PlayerData;
+            var stream = new FileStream(_filePath, FileMode.Open);
+            var data = formatter.Deserialize(stream) as SaveData;
             stream.Close();
+            data.Load();
+            latestSaveData = data;
             return data;
         }
         catch (Exception)
@@ -48,32 +44,8 @@ public static class SaveSystem
         }
     }
 
-    public static void SaveWorld()
-    {
-        var formatter = new BinaryFormatter();
-        var stream = new FileStream(_worldFile, FileMode.OpenOrCreate);
-        var data = new WorldData();
-        formatter.Serialize(stream, data);
-        stream.Close();
-    }
-
-    public static WorldData LoadWorld()
-    {
-        if (!File.Exists(_worldFile))
-        {
-            Debug.LogError("World save file not found");
-            return null;
-        }
-        var formatter = new BinaryFormatter();
-        var stream = new FileStream(_worldFile, FileMode.Open);
-        var data = formatter.Deserialize(stream) as WorldData;
-        stream.Close();
-        return data;
-    }
-
     public static void WipeFiles()
     {
-        System.IO.File.Delete(_playerFile);
-        System.IO.File.Delete(_worldFile);
+        System.IO.File.Delete(_filePath);
     }
 }

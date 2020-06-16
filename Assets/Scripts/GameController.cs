@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     {
         Instance = this;
         if (!Application.isPlaying) return;
+        SaveSystem.Load();
         InitCampsites();
     }
 

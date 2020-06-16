@@ -22,6 +22,7 @@ public class Enemy : PhysicsObject
     public LayerMask layerMask;
     public bool seesLeftWall;
     public bool seesRightWall;
+    public LayerMask whatIsPlayer;
 
     private Animator _animator;
     private float _staggeredFor;
@@ -161,6 +162,7 @@ public class Enemy : PhysicsObject
 	}
 
     public void TakeDamage(float damage, Vector2 knockbackDirection){
+		if (blood == null) return;
         Instantiate(blood, transform.position, Quaternion.identity);
         health -= damage;
         _staggeredFor = staggeredTime;
@@ -183,5 +185,11 @@ public class Enemy : PhysicsObject
 
     public void PlayStepSound (){
         
+    }
+
+    void OnTriggerEnter2D(Collider2D collider){
+        if (!collider.gameObject.TryGetComponent<InvinsibilityController>(out var player)) return;
+        Debug.Log($"Player took damage from {gameObject.name}");
+        player.TakeDamage();
     }
 }

@@ -7,39 +7,51 @@ public class PressurePlateController : MonoBehaviour
 {
 
     public string id;
-    public float timeToPress;
-    public float positionPressed;
-    public float positionUnpressed;
+    public float timeToMove = 1f;
+    public Vector3 positionPressed => positionUnpressed + (Vector3.down * 0.2f);
+    public Vector3 positionUnpressed;
     public bool state => GateController.gates[id];
+    public Vector3 desiredPosition => state ? positionPressed : positionUnpressed;
+    public bool _previousState;
 
     // Start is called before the first frame update
     void Start()
     {
+        positionUnpressed = transform.localPosition;
         if (GateController.gates == null)
         {
             GateController.gates = new Dictionary<string, bool>();
         }
-        if (!GateController.gates.ContainsKey(id)){
+        if (!GateController.gates.ContainsKey(id))
+        {
             GateController.gates.Add(id, false);
         }
+        _previousState = state;
     }
 
     // Update is called once per frame
     void Update()
     {
-        var desiredPosition = state ? positionPressed : positionUnpressed;
-        if (Mathf.Abs(desiredPosition - transform.localPosition.y) > 0.001f)
+        if (_previousState == state) return;
+        StartCoroutine(MoveToPosition(transform, desiredPosition, timeToMove));
+        _previousState = state;
+    }
+
+    public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)
+    {
+        var currentPos = transform.localPosition;
+        var t = 0f;
+        while (t < 1)
         {
-            var totalDistance = state ? positionPressed - positionUnpressed : positionUnpressed - positionPressed;
-            var distancePerSecond = totalDistance / Mathf.Max(0.0001f, timeToPress);
-            var maxMove = distancePerSecond * Time.deltaTime;
-            transform.Translate(Vector3.up * (state ? Mathf.Min(desiredPosition - transform.localPosition.y, maxMove) : Mathf.Max(desiredPosition - transform.localPosition.y, maxMove)));
+            t += Time.deltaTime / timeToMove;
+            transform.localPosition = Vector3.Lerp(currentPos, position, t);
+            yield return null;
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        var triggerCollider = GetComponents<BoxCollider2D>().FirstOrDefault(x => x.isTrigger);
+        var triggerCollider = GetComponent<BoxCollider2D>();
         if (triggerCollider != null)
         {
             triggerCollider.enabled = false;

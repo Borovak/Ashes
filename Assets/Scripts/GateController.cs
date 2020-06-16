@@ -9,29 +9,38 @@ public class GateController : MonoBehaviour
     public float timeToOpen;
     public float positionOpened;
     public float positionClosed;
-    public bool state => gates[id];
+    public bool state => gates.TryGetValue(id, out var value) ? value : false;
+    public bool previousState;
+    private float desiredPosition => state ? positionOpened : positionClosed;
 
     void Awake()
     {
-        if (gates == null)
-        {
+        if (gates == null){
             gates = new Dictionary<string, bool>();
-            var worldData = SaveSystem.LoadWorld();
-            for (int i = 0; i < worldData.gatesId.Length; i++)
-            {
-                gates.Add(worldData.gatesId[i], worldData.gatesStatus[i]);
-            }
         }
+    }
+
+    void Start(){
+        
         if (!gates.ContainsKey(id))
         {
             gates.Add(id, false);
         }
     }
 
+    void OnEnable()
+    {
+        if (state != previousState)
+        {
+            var y = desiredPosition;
+            transform.localPosition = new Vector3(transform.localPosition.x, y, transform.localPosition.z);
+            previousState = state;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        var desiredPosition = state ? positionOpened : positionClosed;
         if (Mathf.Abs(desiredPosition - transform.localPosition.y) > 0.1f)
         {
             var totalDistance = state ? positionOpened - positionClosed : positionClosed - positionOpened;
@@ -39,5 +48,6 @@ public class GateController : MonoBehaviour
             var maxMove = distancePerSecond * Time.deltaTime;
             transform.Translate(Vector3.up * (state ? Mathf.Min(desiredPosition - transform.localPosition.y, maxMove) : Mathf.Max(desiredPosition - transform.localPosition.y, maxMove)));
         }
+        previousState = state;
     }
 }

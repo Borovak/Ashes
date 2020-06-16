@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InvinsibilityController : MonoBehaviour
@@ -10,12 +11,24 @@ public class InvinsibilityController : MonoBehaviour
 
     private float _invinsibleFor;
     private float _invinsibilityFlash = 0f;
-    private SpriteRenderer[] _spriteRenderers;
+    private List<SpriteRenderer> _spriteRenderers;
 
     // Start is called before the first frame update
     void Start()
     {
-        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        _spriteRenderers = new List<SpriteRenderer>();
+        GetSpriteRendererRecursively(ref _spriteRenderers, transform);
+    }
+
+    private void GetSpriteRendererRecursively(ref List<SpriteRenderer> spriteRenderers, Transform childTransform){
+        
+        if (childTransform.TryGetComponent<SpriteRenderer>(out var spriteRenderer)){
+            _spriteRenderers.Add(spriteRenderer);
+        }
+        for (int i = 0; i < childTransform.childCount; i++)
+        {
+            GetSpriteRendererRecursively(ref spriteRenderers, childTransform.GetChild(i));
+        }
     }
 
     // Update is called once per frame

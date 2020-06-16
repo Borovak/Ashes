@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDownWrecker : MonoBehaviour
+public class EnemyDownWrecker : Enemy
 {
 
     private enum States
@@ -16,7 +16,6 @@ public class EnemyDownWrecker : MonoBehaviour
     public float speedUp;
     public float speedDown;
     public LayerMask whatIsLayout;
-    public LayerMask whatIsPlayer;
     private float _width;
     private float _height;
     private float _yWhenUp;
@@ -33,6 +32,7 @@ public class EnemyDownWrecker : MonoBehaviour
         _width = spriteRenderer.bounds.size.x;
         _height = spriteRenderer.bounds.size.y;
         _yWhenUp = transform.position.y;
+        gravityModifier = 0f;
     }
 
     // Update is called once per frame
@@ -76,9 +76,9 @@ public class EnemyDownWrecker : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collider){
-        if (!collider.gameObject.TryGetComponent<InvinsibilityController>(out var player)) return;
-        Debug.Log($"Player took damage from {gameObject.name}");
-        player.TakeDamage();
-    }
+    // void OnTriggerEnter2D(Collider2D collider){
+    //     if (!collider.gameObject.TryGetComponent<InvinsibilityController>(out var player)) return;
+    //     Debug.Log($"Player took damage from {gameObject.name}");
+    //     player.TakeDamage();
+    // }
 }
