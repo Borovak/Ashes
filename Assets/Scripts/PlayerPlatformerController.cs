@@ -8,7 +8,6 @@ public class PlayerPlatformerController : PhysicsObject
 {
 
     public static PlayerPlatformerController Instance;
-    public event Action<int> HpChanged;
     public float maxSpeed = 7f;
     public float jumpTakeOffSpeed = 3f;
     public AudioClip audioClipJump;
@@ -17,29 +16,18 @@ public class PlayerPlatformerController : PhysicsObject
     public bool isGrounded;
     public bool flipX => transform.localScale.x < 0f;
     public Vector3 campsiteLocation;
-    public int maxHp;
     public bool hasDoubleJump;
-    public int hp
-    {
-        get => _hp;
-        set
-        {
-            _hp = value;
-            HpChanged?.Invoke(value);
-        }
-    }
+    public float gameTime;
 
     private SpriteRenderer[] _spriteRenderers;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     private AudioSource _audioSource;
     private bool _doubleJumpPossible;
-    private GameObject _idlePose;
-    private GameObject _runPose;
-    private int _hp;
 
 
-    private struct ChamberPosition{
+    private struct ChamberPosition
+    {
         internal float value;
         internal Func<Vector2> getPoint;
     }
@@ -48,21 +36,16 @@ public class PlayerPlatformerController : PhysicsObject
     void Awake()
     {
         Instance = this;
+        Debug.Log($"Save file present: {SaveSystem.latestSaveData != null}");
         if (SaveSystem.latestSaveData != null)
         {
-            Debug.Log($"Saved max hp: {SaveSystem.latestSaveData.MaxHp}");
-            Debug.Log($"Saved hp: {SaveSystem.latestSaveData.Hp}");
             Debug.Log($"Saved has double jump : {SaveSystem.latestSaveData.HasDoubleJump}");
             Debug.Log($"Saved campsite location : {SaveSystem.latestSaveData.CampsiteLocation}");
-            maxHp = SaveSystem.latestSaveData.MaxHp;
-            hp = SaveSystem.latestSaveData.Hp;
             hasDoubleJump = SaveSystem.latestSaveData.HasDoubleJump;
             campsiteLocation = SaveSystem.latestSaveData.CampsiteLocation != null && SaveSystem.latestSaveData.CampsiteLocation.Length == 3 ? new Vector3(SaveSystem.latestSaveData.CampsiteLocation[0], SaveSystem.latestSaveData.CampsiteLocation[1], SaveSystem.latestSaveData.CampsiteLocation[2]) : GameController.Instance.campsiteLocations[0];
         }
         else
         {
-            maxHp = 3;
-            hp = 3;
             hasDoubleJump = false;
             campsiteLocation = GameController.Instance.campsiteLocations[0];
             SaveSystem.Save();
@@ -70,18 +53,16 @@ public class PlayerPlatformerController : PhysicsObject
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
-        _idlePose = transform.Find("idle").gameObject;
-        _runPose = transform.Find("run").gameObject;
         GameController.ChamberChanged += OnChamberChanged;
     }
     void Start()
     {
-        Debug.Log($"Campsite count: {GameController.Instance.campsiteLocations.Length}");
         transform.position = campsiteLocation;
     }
 
     protected override void ComputeVelocity()
     {
+        gameTime += Time.deltaTime;
         if (grounded)
         {
             _doubleJumpPossible = hasDoubleJump;
@@ -159,50 +140,10 @@ public class PlayerPlatformerController : PhysicsObject
     public void PlayLanding()
     {
         _audioSource.PlayOneShot(audioClipLanding);
-        _spriteRenderer.enabled = false;
-        _runPose.SetActive(true);
-        _idlePose.SetActive(false);
-    }
-
-    public void PlayJump()
-    {
-        _audioSource.PlayOneShot(audioClipJump);
-        _spriteRenderer.enabled = false;
-        _runPose.SetActive(true);
-        _idlePose.SetActive(false);
-    }
-
-    public void PlayAttack()
-    {
-        _audioSource.PlayOneShot(audioClipAttack);
-        _spriteRenderer.enabled = true;
-        _runPose.SetActive(false);
-        _idlePose.SetActive(false);
     }
 
     public void AckJump()
     {
         _animator.SetBool("jump", false);
-    }
-
-    public void SetIdlePose()
-    {
-        _spriteRenderer.enabled = false;
-        _idlePose.SetActive(true);
-        _runPose.SetActive(false);
-    }
-
-    public void SetRunPose()
-    {
-        _spriteRenderer.enabled = false;
-        _runPose.SetActive(true);
-        _idlePose.SetActive(false);
-    }
-
-    public void SetTakeOffPose()
-    {
-        _spriteRenderer.enabled = false;
-        _runPose.SetActive(true);
-        _idlePose.SetActive(false);
     }
 }

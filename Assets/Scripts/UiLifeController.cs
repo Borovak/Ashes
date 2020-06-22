@@ -9,7 +9,8 @@ public class UiLifeController : MonoBehaviour
 
     private Dictionary<int, Image> _images;
     private bool _initDone;
-    
+    private LifeController _playerLifeController;
+
     void Awake()
     {
         _images = new Dictionary<int, Image>();
@@ -25,25 +26,30 @@ public class UiLifeController : MonoBehaviour
             var number = Convert.ToInt32(child.name.Substring(4));
             _images.Add(number, child.GetComponent<Image>());
         }
-        PlayerPlatformerController.Instance.HpChanged += OnHpChanged;
+        _playerLifeController = PlayerPlatformerController.Instance.GetComponent<LifeController>();
+        _playerLifeController.HpChanged += OnHpChanged;
     }
 
-    void OnDisable(){
-        PlayerPlatformerController.Instance.HpChanged -= OnHpChanged;
+    void OnDisable()
+    {
+        _playerLifeController.HpChanged -= OnHpChanged;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!_initDone){
+        if (!_initDone)
+        {
             _initDone = true;
-            OnHpChanged(PlayerPlatformerController.Instance.hp);
+            OnHpChanged(_playerLifeController.hp);
         }
     }
 
-    private void OnHpChanged(int hp){
+    private void OnHpChanged(int hp)
+    {
         Debug.Log($"Player changed to {hp}");
-        foreach (var d in _images){
+        foreach (var d in _images)
+        {
             var c = d.Value.color;
             c.a = hp >= d.Key ? 1f : 0f;
             d.Value.color = c;

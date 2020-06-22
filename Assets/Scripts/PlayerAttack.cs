@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackDamage;
     public float attackRate;
     public LayerMask whatIsEnemies;
-    public GameObject spellMagicMissile;
+    public GameObject fireballPrefab;
 
     private float _attackCooldown;
     private Animator _animator;
@@ -31,26 +31,41 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                _animator.SetTrigger("attack");
-                var enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-                for (int i = 0; i < enemiesToDamage.Length; i++)
-                {
-                    if (!enemiesToDamage[i].TryGetComponent<Enemy>(out var enemy)) continue;
-                    enemy.TakeDamage(attackDamage, (enemiesToDamage[i].transform.position - attackPos.position).normalized);
-                }
+                _animator.SetBool("attack", true);
+                MeleeAttack();
                 _attackCooldown = 1f / attackRate;
             }
-            else if (Input.GetButtonDown("Fire2"))
-            {
-                _animator.SetTrigger("attack");
-                Instantiate(spellMagicMissile, attackPos.position, Quaternion.identity);
-                _attackCooldown = 1f / attackRate;
-            }
+            // else if (Input.GetButtonDown("Fire2"))
+            // {
+            //     _animator.SetTrigger("attack");
+            //     _attackCooldown = 1f / attackRate;
+            // }
         }
         else
         {
             _animator.SetBool("attack", false);
             _attackCooldown -= Time.deltaTime;
+        }
+    }
+
+    void CastFireball()
+    {
+        var fireballObject = Instantiate(fireballPrefab, attackPos.position, Quaternion.identity);
+        var fireball = fireballObject.GetComponent<DirectionalFireball>();
+        fireball.speed = 20f;
+        fireball.damage = 3;
+        fireball.diameter = 0.3f;
+        fireball.destination = attackPos.transform.position.x > transform.position.x ? attackPos.transform.position + Vector3.right * 1000f : attackPos.transform.position + Vector3.left * 1000f;
+        fireball.emitFromPlayer = true;
+    }
+
+    private void MeleeAttack()
+    {
+        var enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+        for (int i = 0; i < enemiesToDamage.Length; i++)
+        {
+            if (!enemiesToDamage[i].TryGetComponent<Enemy>(out var enemy)) continue;
+            enemy.TakeDamage(attackDamage, (enemiesToDamage[i].transform.position - attackPos.position).normalized);
         }
     }
 

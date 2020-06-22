@@ -52,16 +52,11 @@ public class InvinsibilityController : MonoBehaviour
         }
     }
 
-    public void TakeDamage()
+    public bool TryTakeDamage()
     {
-        if (_invinsibleFor > 0) return;
+        if (_invinsibleFor > 0) return false;
         _invinsibleFor = invinsibilityPeriodAfterDamage;
-        PlayerPlatformerController.Instance.hp -= 1;
-        if (PlayerPlatformerController.Instance.hp <= 0)
-        {
-                transform.position = PlayerPlatformerController.Instance.campsiteLocation;
-                PlayerPlatformerController.Instance.hp = PlayerPlatformerController.Instance.maxHp;
-        }
+        return true;
     }
 
 }

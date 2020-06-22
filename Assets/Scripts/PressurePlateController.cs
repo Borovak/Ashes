@@ -10,9 +10,9 @@ public class PressurePlateController : MonoBehaviour
     public float timeToMove = 1f;
     public Vector3 positionPressed => positionUnpressed + (Vector3.down * 0.2f);
     public Vector3 positionUnpressed;
-    public bool state => GateController.gates[id];
+    public bool state => GateController.gates.TryGetValue(id, out var value) ? value : false;
     public Vector3 desiredPosition => state ? positionPressed : positionUnpressed;
-    public bool _previousState;
+    public bool? _previousState;
 
     // Start is called before the first frame update
     void Start()
@@ -26,15 +26,18 @@ public class PressurePlateController : MonoBehaviour
         {
             GateController.gates.Add(id, false);
         }
-        _previousState = state;
+        if (state){
+            transform.localPosition = positionPressed;
+            _previousState = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_previousState == state) return;
-        StartCoroutine(MoveToPosition(transform, desiredPosition, timeToMove));
+        if (_previousState.HasValue && _previousState == state) return;
         _previousState = state;
+        StartCoroutine(MoveToPosition(transform, desiredPosition, timeToMove));
     }
 
     public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)

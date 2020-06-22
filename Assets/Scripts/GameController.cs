@@ -10,21 +10,29 @@ public class GameController : MonoBehaviour
     public static event Action<ChamberController> ChamberChanged;
     public static GameController Instance;
     public static ChamberController currentChamber;
+    public static FadeInOutController fadeInOutController;
+
     public Light2D backgroundLight;
-    public Light2D terrainLight;
-    public FadeInOutController fadeInOutController;
+    public Light2D terrainLight;    
     public Vector3[] campsiteLocations;
     public GameObject campsitePrefab;
 
-    private ChamberController _nextChamber;
+    private static Transform _chambersFolder;
+    private static string _chamberResourcePathToLoad;
 
     // Start is called before the first frame update
     void Awake()
     {
         Instance = this;
         if (!Application.isPlaying) return;
-        SaveSystem.Load();
+        SaveSystem.Load(true);
         InitCampsites();
+    }
+
+    void Start()
+    {
+        _chambersFolder = GameObject.FindGameObjectWithTag("ChambersFolder").transform;
+        fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
     }
 
     // Update is called once per frame
@@ -52,12 +60,10 @@ public class GameController : MonoBehaviour
         terrainLight.color = currentChamber.TerrainLightColor;
     }
 
-    public void ChangeChamber(ChamberController nextChamber)
+    public static void ChangeChamber(string resourcePath)
     {
         if (!Application.isPlaying) return;
-        if (currentChamber == nextChamber) return;
-        Debug.Log($"New chamber entered: {nextChamber.transform.name}");
-        _nextChamber = nextChamber;
+        _chamberResourcePathToLoad = resourcePath;
         if (currentChamber != null)
         {
             fadeInOutController.FadeOutCompleted += OnFadeOutCompleted;
@@ -69,15 +75,19 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void OnFadeOutCompleted()
+    private static void OnFadeOutCompleted()
     {
+        for (int i = _chambersFolder.childCount - 1; i >= 0; i--)
+        {
+            GameObject.DestroyImmediate(_chambersFolder.GetChild(i).gameObject);
+        }
+        var chamber = GameObject.Instantiate(Resources.Load<GameObject>(_chamberResourcePathToLoad), _chambersFolder);
+        currentChamber = chamber.GetComponent<ChamberController>();
         if (!Application.isPlaying) return;
         if (currentChamber != null)
         {
             fadeInOutController.FadeOutCompleted -= OnFadeOutCompleted;
         }
-        currentChamber = _nextChamber;
         ChamberChanged?.Invoke(currentChamber);
-        fadeInOutController.FadeIn();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -16,22 +17,21 @@ public class ChamberController : MonoBehaviour
     public Color BackgroundLightColor;
     public float TerrainLightIntensity;
     public Color TerrainLightColor;
-    private GameObject _content;
 
     // Start is called before the first frame update
     void Start()
     {
-        _content = transform.Find("Content").gameObject;
+        var player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            var virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
+            virtualCamera.Follow = player.transform;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        var enabled = GameController.currentChamber != null && GameController.currentChamber.gameObject.name == gameObject.name;
-        if (enabled != _content.activeSelf)
-        {
-            _content.SetActive(enabled);
-        }
         if (transform.position.x != unitSize * x || transform.position.y != unitSize * y)
         {
             transform.position = new Vector3(unitSize * x, unitSize * y, 0f);
@@ -45,12 +45,5 @@ public class ChamberController : MonoBehaviour
             };
             polygonCollider.points = points.ToArray();
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (!Application.isPlaying) return;
-        Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
-        GameController.Instance.ChangeChamber(this);
     }
 }

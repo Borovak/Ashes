@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6353722462849968874}
   - component: {fileID: 2260640617882721567}
   - component: {fileID: 2260640617882721552}
+  - component: {fileID: -7289969849351159087}
+  - component: {fileID: -5710888690175983078}
   m_Layer: 9
   m_Name: EnemyLarva
   m_TagString: Untagged
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1533808395
-  m_SortingLayer: -6
+  m_SortingLayer: -5
   m_SortingOrder: 0
   m_Sprite: {fileID: 6651024193493801480, guid: 59d9080b2b3fe4b4893c6148a03f0d5a,
     type: 3}
@@ -136,6 +138,7 @@ MonoBehaviour:
   followRange: 0
   jumpTakeOffSpeed: 2
   blood: {fileID: 3752627110417903709, guid: f2ca1030ad645484c91d58e2ff493935, type: 3}
+  bloodOffset: {x: 0, y: 0}
   raycastOffset: {x: -0.4, y: 0}
   layerMask:
     serializedVersion: 2
@@ -219,3 +222,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-7289969849351159087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260640617882721556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf261eee15d08b14f9aa98d47f9a8240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localMaxHp: 6
+  localHp: 6
+  destroyOnDeath: 1
+--- !u!114 &-5710888690175983078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260640617882721556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd65787c14f5f741afdc73172bfc35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invinsibilityPeriodAfterDamage: 0.5
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  invinsibilityFlashRate: 1

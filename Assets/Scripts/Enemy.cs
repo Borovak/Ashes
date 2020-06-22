@@ -18,13 +18,14 @@ public class Enemy : PhysicsObject
 	public float followRange;
     public float jumpTakeOffSpeed;
     public ParticleSystem blood;
+    public Vector2 bloodOffset;
     public Vector2 raycastOffset;
     public LayerMask layerMask;
     public bool seesLeftWall;
     public bool seesRightWall;
     public LayerMask whatIsPlayer;
 
-    private Animator _animator;
+    protected Animator _animator;
     private float _staggeredFor;
 	private RaycastHit2D _ground;
     private RaycastHit2D _leftWall;
@@ -163,7 +164,7 @@ public class Enemy : PhysicsObject
 
     public void TakeDamage(float damage, Vector2 knockbackDirection){
 		if (blood == null) return;
-        Instantiate(blood, transform.position, Quaternion.identity);
+        Instantiate(blood, transform.position + new Vector3(bloodOffset.x, bloodOffset.y, 0f), Quaternion.identity);
         health -= damage;
         _staggeredFor = staggeredTime;
         var knockBackVector = knockbackDirection * knockbackForce;
@@ -188,8 +189,8 @@ public class Enemy : PhysicsObject
     }
 
     void OnTriggerEnter2D(Collider2D collider){
-        if (!collider.gameObject.TryGetComponent<InvinsibilityController>(out var player)) return;
+        if (!collider.gameObject.TryGetComponent<LifeController>(out var player)) return;
         Debug.Log($"Player took damage from {gameObject.name}");
-        player.TakeDamage();
+        player.TakeDamage(1);
     }
 }

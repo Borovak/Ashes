@@ -12,7 +12,6 @@ public class EnemyDownWrecker : Enemy
         GoingUp
     }
 
-    public float vision;
     public float speedUp;
     public float speedDown;
     public LayerMask whatIsLayout;
@@ -21,7 +20,6 @@ public class EnemyDownWrecker : Enemy
     private float _yWhenUp;
     private float _yWhenDown = float.MinValue;
     private States state;
-    private Animator _animator;
 
 
     // Start is called before the first frame update
@@ -42,16 +40,16 @@ public class EnemyDownWrecker : Enemy
         var biasCheck = Vector2.right * (_width / 2f);
         if (_yWhenDown == float.MinValue)
         {
-            var hitLeftLayout = Physics2D.Raycast(currentPosition - biasCheck, Vector2.down, vision, whatIsLayout);
-            var hitRightLayout = Physics2D.Raycast(currentPosition + biasCheck, Vector2.down, vision, whatIsLayout);
+            var hitLeftLayout = Physics2D.Raycast(currentPosition - biasCheck, Vector2.down, visionRange, whatIsLayout);
+            var hitRightLayout = Physics2D.Raycast(currentPosition + biasCheck, Vector2.down, visionRange, whatIsLayout);
             _yWhenDown = (hitLeftLayout.point.y + hitRightLayout.point.y) / 2f + (_height / 2f);
         }
         float newY;
         switch (state)
         {
             case States.Idle:
-                var hitLeft = Physics2D.Raycast(currentPosition - biasCheck, Vector2.down, vision, whatIsPlayer);
-                var hitRight = Physics2D.Raycast(currentPosition + biasCheck, Vector2.down, vision, whatIsPlayer);
+                var hitLeft = Physics2D.Raycast(currentPosition - biasCheck, Vector2.down, visionRange, whatIsPlayer);
+                var hitRight = Physics2D.Raycast(currentPosition + biasCheck, Vector2.down, visionRange, whatIsPlayer);
                 if (hitLeft.collider == null && hitRight.collider == null) break;
                 state = States.GoingDown;
                 _animator.SetBool("attack", true);

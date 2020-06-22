@@ -36,6 +36,7 @@ public class FadeInOutController : MonoBehaviour
                     PhysicsObject.PhysicsEnabled = true;
                 } else {
                     FadeOutCompleted?.Invoke();
+                    FadeIn();
                 }
             }
         }
@@ -52,7 +53,6 @@ public class FadeInOutController : MonoBehaviour
         _image.color = c;
     }
 
-    // Update is called once per frame
     public void FadeOut()
     {
         Debug.Log("Fade out");
@@ -61,7 +61,6 @@ public class FadeInOutController : MonoBehaviour
         isFadeIn = false;
     }
 
-    // Update is called once per frame
     public void FadeIn()
     {
         Debug.Log("Fade in");

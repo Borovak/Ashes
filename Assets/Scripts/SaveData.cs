@@ -10,14 +10,18 @@ public class SaveData
     public int Hp;
     public string[] gatesId;
     public bool[] gatesStatus;
+    public float GameTime;
 
-    public SaveData(PlayerPlatformerController player)
+    public SaveData()
     {
         //Player
-        MaxHp = player.maxHp;
-        Hp = player.hp;
-        HasDoubleJump = player.hasDoubleJump;
-        CampsiteLocation = new float[] { player.campsiteLocation.x, player.campsiteLocation.y, player.campsiteLocation.z };
+        var lifeController = PlayerPlatformerController.Instance.GetComponent<LifeController>();
+        MaxHp = lifeController.maxHp;
+        Hp = lifeController.hp;
+        HasDoubleJump = PlayerPlatformerController.Instance.hasDoubleJump;
+        var campsiteLocation = PlayerPlatformerController.Instance.campsiteLocation;
+        CampsiteLocation = new float[] { campsiteLocation.x, campsiteLocation.y, campsiteLocation.z };
+        GameTime = PlayerPlatformerController.Instance.gameTime;
         //World
         var count = GateController.gates?.Count ?? 0;
         if (count > 0)
