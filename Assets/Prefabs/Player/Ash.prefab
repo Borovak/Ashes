@@ -184,7 +184,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1567155121
-  m_SortingLayer: -4
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7659011651537786146, guid: 0b62242c18d7a594e94b751f44a8c831,
     type: 3}
@@ -379,7 +379,7 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 512
-  fireball: {fileID: 0}
+  fireballPrefab: {fileID: 0}
 --- !u!70 &483266623256006734
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -621,6 +621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229852107182263479, guid: 1549d14b8edf4ee4b94bc856db049e26,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1549d14b8edf4ee4b94bc856db049e26, type: 3}

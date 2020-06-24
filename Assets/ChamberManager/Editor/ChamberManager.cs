@@ -95,6 +95,11 @@ public class ChamberManager : EditorWindow
 
     private void ChangeChamber(string resourcePath)
     {
+        var chambersFolder = GameObject.FindGameObjectWithTag("ChambersFolder").transform;
+        for (int i = 0; i < chambersFolder.childCount; i++)
+        {
+            GameObject.DestroyImmediate(chambersFolder.GetChild(i).gameObject);
+        }        
         GameController.ChangeChamber(resourcePath);
         UnityEditor.EditorApplication.QueuePlayerLoopUpdate();
         UnityEditor.SceneView.RepaintAll();

@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public static FadeInOutController fadeInOutController;
 
     public Light2D backgroundLight;
-    public Light2D terrainLight;    
+    public Light2D terrainLight;
     public Vector3[] campsiteLocations;
     public GameObject campsitePrefab;
 
@@ -33,6 +33,13 @@ public class GameController : MonoBehaviour
     {
         _chambersFolder = GameObject.FindGameObjectWithTag("ChambersFolder").transform;
         fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
+        if (Application.isPlaying)
+        {
+            for (int i = 0; i < _chambersFolder.transform.childCount; i++)
+            {
+                GameObject.Destroy(_chambersFolder.GetChild(i).gameObject);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -62,7 +69,8 @@ public class GameController : MonoBehaviour
 
     public static void ChangeChamber(string resourcePath)
     {
-        if (!Application.isPlaying) return;
+        //if (!Application.isPlaying) return;
+        fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
         _chamberResourcePathToLoad = resourcePath;
         if (currentChamber != null)
         {
@@ -77,6 +85,7 @@ public class GameController : MonoBehaviour
 
     private static void OnFadeOutCompleted()
     {
+        _chambersFolder = GameObject.FindGameObjectWithTag("ChambersFolder").transform;
         for (int i = _chambersFolder.childCount - 1; i >= 0; i--)
         {
             GameObject.DestroyImmediate(_chambersFolder.GetChild(i).gameObject);

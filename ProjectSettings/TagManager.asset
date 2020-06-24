@@ -54,6 +54,9 @@ TagManager:
   - name: Ground
     uniqueID: 63550313
     locked: 0
+  - name: GroundOverlay
+    uniqueID: 2412231099
+    locked: 0
   - name: Enemy
     uniqueID: 1533808395
     locked: 0
@@ -62,9 +65,6 @@ TagManager:
     locked: 0
   - name: Gates
     uniqueID: 1150357249
-    locked: 0
-  - name: GroundOverlay
-    uniqueID: 2412231099
     locked: 0
   - name: Foreground
     uniqueID: 1950422495
