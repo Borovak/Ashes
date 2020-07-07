@@ -44,6 +44,7 @@ public class SaveData
         if (GateController.gates == null)
         {
             GateController.gates = new Dictionary<string, bool>();
+            if (gatesId == null) return;
             for (int i = 0; i < gatesId.Length; i++)
             {
                 if (!GateController.gates.ContainsKey(gatesId[i]))

@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
     private float _attackCooldown;
     private Animator _animator;
     private AudioSource _audioSource;
+    private PlayerInputs _inputs;
 
 
     // Start is called before the first frame update
@@ -22,29 +23,54 @@ public class PlayerAttack : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
+        _inputs = GetComponent<PlayerInputs>();
+        _inputs.Attack += Attack;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_attackCooldown <= 0)
+        if (_attackCooldown > 0)
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                _animator.SetBool("attack", true);
-                MeleeAttack();
-                _attackCooldown = 1f / attackRate;
-            }
-            // else if (Input.GetButtonDown("Fire2"))
-            // {
-            //     _animator.SetTrigger("attack");
-            //     _attackCooldown = 1f / attackRate;
-            // }
-        }
-        else
-        {
-            _animator.SetBool("attack", false);
             _attackCooldown -= Time.deltaTime;
+        }
+        // if (_attackCooldown <= 0)
+        // {
+        //     if (Input.GetButtonDown("Fire1"))
+        //     {
+        //         _animator.SetBool("attack", true);
+        //         MeleeAttack();
+        //         _attackCooldown = 1f / attackRate;
+        //     }
+        //     // else if (Input.GetButtonDown("Fire2"))
+        //     // {
+        //     //     _animator.SetTrigger("attack");
+        //     //     _attackCooldown = 1f / attackRate;
+        //     // }
+        // }
+        // else
+        // {
+        //     _animator.SetBool("attack", false);
+        //     _attackCooldown -= Time.deltaTime;
+        // }
+    }
+
+    private void Attack()
+    {
+        Debug.Log("Attack");
+        if (_attackCooldown > 0) return;
+        _animator.SetTrigger("attack");
+        MeleeAttack();
+        _attackCooldown = 1f / attackRate;
+    }
+
+    private void MeleeAttack()
+    {
+        var enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+        for (int i = 0; i < enemiesToDamage.Length; i++)
+        {
+            if (!enemiesToDamage[i].TryGetComponent<Enemy>(out var enemy)) continue;
+            enemy.TakeDamage(attackDamage, (enemiesToDamage[i].transform.position - attackPos.position).normalized);
         }
     }
 
@@ -57,16 +83,6 @@ public class PlayerAttack : MonoBehaviour
         fireball.diameter = 0.3f;
         fireball.destination = attackPos.transform.position.x > transform.position.x ? attackPos.transform.position + Vector3.right * 1000f : attackPos.transform.position + Vector3.left * 1000f;
         fireball.emitFromPlayer = true;
-    }
-
-    private void MeleeAttack()
-    {
-        var enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-        for (int i = 0; i < enemiesToDamage.Length; i++)
-        {
-            if (!enemiesToDamage[i].TryGetComponent<Enemy>(out var enemy)) continue;
-            enemy.TakeDamage(attackDamage, (enemiesToDamage[i].transform.position - attackPos.position).normalized);
-        }
     }
 
     void OnDrawGizmosSelected()

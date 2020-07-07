@@ -17,16 +17,27 @@ public class ChamberController : MonoBehaviour
     public Color BackgroundLightColor;
     public float TerrainLightIntensity;
     public Color TerrainLightColor;
+    public AudioClip _ambientSound;
+
+    private AudioSource _audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (!Application.isPlaying) return;
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             var virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
             virtualCamera.Follow = player.transform;
         }
+        if (_ambientSound != null){
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            _audioSource.loop = true;
+            _audioSource.clip = _ambientSound;
+            _audioSource.Play();
+        }
+        
     }
 
     // Update is called once per frame

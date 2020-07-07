@@ -10,27 +10,32 @@ public static class SaveSystem
 
     private static string _filePath => Application.persistentDataPath + $"/ashes_{index}.sav";
 
-    public static void Save()
+    public static string Save()
     {
-        var formatter = new BinaryFormatter();
-        var stream = new FileStream(_filePath, FileMode.OpenOrCreate);
-        var data = new SaveData();
-        formatter.Serialize(stream, data);
-        stream.Close();
+        var filePath = _filePath;
+        try
+        {
+            var formatter = new BinaryFormatter();
+            var stream = new FileStream(filePath, FileMode.OpenOrCreate);
+            var data = new SaveData();
+            formatter.Serialize(stream, data);
+            stream.Close();
+            return filePath;
+        }
+        catch (System.Exception)
+        {
+            return "";
+        }
     }
 
-    public static SaveData Load(bool loadGame)
+    public static string Load()
     {
         try
         {
             if (!File.Exists(_filePath))
             {
-                if (loadGame)
-                {
-                    Debug.Log("Player save file not found");
-                }
                 latestSaveData = null;
-                return null;
+                return "Game file not found";
             }
             var formatter = new BinaryFormatter();
             var stream = new FileStream(_filePath, FileMode.Open);
@@ -38,11 +43,11 @@ public static class SaveSystem
             stream.Close();
             data.Load();
             latestSaveData = data;
-            return data;
+            return "";
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            return null;
+            return ex.ToString();
         }
     }
 

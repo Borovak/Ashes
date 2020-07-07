@@ -7,6 +7,7 @@ tpsheetFileNames:
 - Assets/Sprites/Boss1/Boss1.tpsheet
 - Assets/Sprites/Decor/Flag1/flag1.tpsheet
 - Assets/Sprites/GroundOverlay/CathedralFloor.tpsheet
+- Assets/Sprites/MainMenu/Ash/Ash_sit.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Ash/ash.png
@@ -14,8 +15,10 @@ textureFileNames:
 - Assets/Sprites/Boss1/Boss1.png
 - Assets/Sprites/Decor/Flag1/waving.png
 - Assets/Sprites/GroundOverlay/CathedralFloor.png
+- Assets/Sprites/MainMenu/Ash/Ash_sit.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 

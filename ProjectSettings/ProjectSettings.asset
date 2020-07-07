@@ -141,6 +141,7 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 11400000, guid: 11ae4a252fd27ed4ba8424d20d052fc7, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -885,6 +886,6 @@ PlayerSettings:
   organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 1
-  disableOldInputManagerSupport: 0
+  disableOldInputManagerSupport: 1
   legacyClampBlendShapeWeights: 1
   virtualTexturingSupportEnabled: 0

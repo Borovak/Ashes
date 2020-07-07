@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerJumpBehaviour : StateMachineBehaviour
 {
+    public AudioClip jumpSound;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {       
         //Audio
         var audioSource = animator.GetComponent<AudioSource>();
-        var player = animator.GetComponent<PlayerPlatformerController>();
-        audioSource.PlayOneShot(player.audioClipJump);
+        audioSource.PlayOneShot(jumpSound);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

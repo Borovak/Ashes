@@ -6,10 +6,17 @@ using UnityEngine;
 
 public class PlayerPlatformerController : PhysicsObject
 {
+    public enum RollingStates
+    {
+        NotRolling,
+        Rolling,
+        RollingNoMotion
+    }
 
     public static PlayerPlatformerController Instance;
     public float maxSpeed = 7f;
     public float jumpTakeOffSpeed = 3f;
+    public float rollSpeed = 1f;
     public AudioClip audioClipJump;
     public AudioClip audioClipLanding;
     public AudioClip audioClipAttack;
@@ -18,12 +25,17 @@ public class PlayerPlatformerController : PhysicsObject
     public Vector3 campsiteLocation;
     public bool hasDoubleJump;
     public float gameTime;
+    public GameObject landingPuffPrefab;
+    public RollingStates rollingState;
 
     private SpriteRenderer[] _spriteRenderers;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     private AudioSource _audioSource;
     private bool _doubleJumpPossible;
+    private bool _previousGrounded;
+    private Animator _mainCameraAnimator;
+    private PlayerInputs _inputs;
 
 
     private struct ChamberPosition
@@ -47,13 +59,18 @@ public class PlayerPlatformerController : PhysicsObject
         else
         {
             hasDoubleJump = false;
-            campsiteLocation = GameController.Instance.campsiteLocations[0];
+            campsiteLocation = new Vector3(-173f, 33f, 0f);
             SaveSystem.Save();
         }
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
+        _inputs = GetComponent<PlayerInputs>();
+        _mainCameraAnimator = Camera.main.transform.GetChild(0).GetComponent<Animator>();
         GameController.ChamberChanged += OnChamberChanged;
+        _inputs.Jump += Jump;
+        _inputs.JumpRelease += JumpRelease;
+        _inputs.Roll += Roll;
     }
     void Start()
     {
@@ -63,55 +80,79 @@ public class PlayerPlatformerController : PhysicsObject
     protected override void ComputeVelocity()
     {
         gameTime += Time.deltaTime;
-        if (grounded)
-        {
-            _doubleJumpPossible = hasDoubleJump;
-        }
+        CheckIfLanding();
 
         Vector2 move = Vector2.zero;
-
-        move.x = Input.GetAxis("Horizontal");
-
-        if (Input.GetButtonDown("Jump"))
+        if (rollingState == RollingStates.NotRolling)
         {
-            if (grounded)
+            move.x = _inputs.movement.x;
+
+            bool flipSprite = (transform.localScale.x == -1f ? (move.x > 0.01f) : (move.x < -0.01f));
+            if (flipSprite)
             {
-                _animator.SetTrigger("jump");
-                velocity.y = jumpTakeOffSpeed;
-            }
-            else if (_doubleJumpPossible)
-            {
-                velocity.y = jumpTakeOffSpeed;
-                _doubleJumpPossible = false;
+                var scale = transform.localScale;
+                scale.x = -scale.x;
+                transform.localScale = scale;
             }
         }
-        else if (Input.GetButtonUp("Jump"))
+        else if (rollingState == RollingStates.Rolling)
         {
-            if (velocity.y > 0)
-            {
-                velocity.y = velocity.y * 0.5f;
-            }
-            _animator.SetBool("jump", false);
+            move.x = transform.localScale.x * rollSpeed;
         }
 
-        bool flipSprite = (transform.localScale.x == -1f ? (move.x > 0.01f) : (move.x < -0.01f));
-        if (flipSprite)
-        {
-            var scale = transform.localScale;
-            scale.x = -scale.x;
-            transform.localScale = scale;
-        }
-        // bool flipSprite = (!_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < -0.01f));
-        // if (flipSprite)
-        // {
-        //     _spriteRenderer.flipX = !_spriteRenderer.flipX;
-        // }
         _animator.SetBool("grounded", grounded);
         _animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
         _animator.SetFloat("velocityY", velocity.y);
 
         targetVelocity = move * maxSpeed;
         isGrounded = grounded;
+    }
+
+    private void CheckIfLanding()
+    {
+        if (grounded)
+        {
+            if (!_previousGrounded)
+            {
+                var landingPuff = GameObject.Instantiate(landingPuffPrefab);
+                landingPuff.transform.position = transform.position;
+                _mainCameraAnimator.SetTrigger("Shake");
+            }
+            _doubleJumpPossible = hasDoubleJump;
+        }
+        _previousGrounded = grounded;
+    }
+
+    private void Jump()
+    {
+        if (grounded)
+        {
+            _animator.SetBool("jump", true);
+            velocity.y = jumpTakeOffSpeed;
+        }
+        else if (_doubleJumpPossible)
+        {
+            velocity.y = jumpTakeOffSpeed;
+            _doubleJumpPossible = false;
+        }
+    }
+
+    private void JumpRelease()
+    {
+        if (velocity.y > 0)
+        {
+            velocity.y = velocity.y * 0.5f;
+        }
+    }
+
+    private void Roll()
+    {
+        _animator.SetTrigger("roll");
+    }
+
+    private void RollStopMotion()
+    {
+        rollingState = RollingStates.RollingNoMotion;
     }
 
     private void OnChamberChanged(ChamberController chamber)
@@ -140,10 +181,5 @@ public class PlayerPlatformerController : PhysicsObject
     public void PlayLanding()
     {
         _audioSource.PlayOneShot(audioClipLanding);
-    }
-
-    public void AckJump()
-    {
-        _animator.SetBool("jump", false);
     }
 }

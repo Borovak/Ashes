@@ -542,7 +542,6 @@
                 <false/>
             </struct>
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Attack0049.png</key>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0003.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.333333,1</point_f>
@@ -1259,297 +1258,6 @@
                 <rect>80,23,159,47</rect>
                 <key>scale9Paddings</key>
                 <rect>80,23,159,47</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Fall0001.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.227545,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Fall0003.png</key>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Fall0005.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.203593,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Fall0007.png</key>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Fall0009.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.185629,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Fall0011.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.191617,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Fall0013.png</key>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Fall0015.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.209581,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Fall0017.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.221557,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0001.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.371257,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0003.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.35625,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0005.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.334395,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0007.png</key>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0013.png</key>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0011.png</key>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/RunToStop0021.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.3,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0009.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.310651,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0011.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.304878,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0015.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.264045,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0017.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.265896,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0019.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.275,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0021.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.318841,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0023.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.362903,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0025.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.382114,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0027.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.377049,1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
-                <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -2485,135 +2193,842 @@
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0001.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.368852,1</point_f>
+                <point_f>0.666667,1</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
+                <rect>31,79,61,159</rect>
                 <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
+                <rect>31,79,61,159</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0003.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.663043,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>33,78,65,156</rect>
+                <key>scale9Paddings</key>
+                <rect>33,78,65,156</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0005.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.28169,1</point_f>
+                <point_f>0.619565,1</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
+                <rect>36,71,71,143</rect>
                 <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
+                <rect>36,71,71,143</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0007.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.265306,1</point_f>
+                <point_f>0.532609,1</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
+                <rect>37,62,74,123</rect>
                 <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
+                <rect>37,62,74,123</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0009.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.303704,1</point_f>
+                <point_f>0.402174,1</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
+                <rect>34,61,67,121</rect>
                 <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
+                <rect>34,61,67,121</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0011.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.300971,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>36,69,71,137</rect>
+                <key>scale9Paddings</key>
+                <rect>36,69,71,137</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0013.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.316547,1</point_f>
+                <point_f>0.274809,1</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
+                <rect>35,79,70,159</rect>
                 <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
+                <rect>35,79,70,159</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0015.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.352459,1</point_f>
+                <point_f>0.238095,1</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
+                <rect>31,80,61,159</rect>
                 <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
+                <rect>31,80,61,159</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0017.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.314103,1</point_f>
+                <point_f>0.227586,1</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
+                <rect>39,71,79,141</rect>
                 <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
+                <rect>39,71,79,141</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0019.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.348571,1</point_f>
+                <point_f>0.259542,1</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
+                <rect>44,59,87,117</rect>
                 <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
+                <rect>44,59,87,117</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0021.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.331325,1</point_f>
+                <point_f>0.286957,1</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>300,300,600,600</rect>
+                <rect>42,54,83,109</rect>
                 <key>scale9Paddings</key>
-                <rect>300,300,600,600</rect>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0023.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.40367,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0025.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.39604,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0027.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.372549,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0029.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.378641,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0031.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.37037,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0033.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.375,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0035.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.369369,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0037.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.311321,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0039.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.314815,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0041.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.336735,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0043.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.414141,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0045.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.515789,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0047.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.597826,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0049.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.637363,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0051.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.659341,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0053.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.663043,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0055.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump0057.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.666667,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9Paddings</key>
+                <rect>42,54,83,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0001.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.357724,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,79,61,159</rect>
+                <key>scale9Paddings</key>
+                <rect>31,79,61,159</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0003.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.380597,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>34,79,67,157</rect>
+                <key>scale9Paddings</key>
+                <rect>34,79,67,157</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0005.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.401274,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>39,77,79,153</rect>
+                <key>scale9Paddings</key>
+                <rect>39,77,79,153</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0007.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.375691,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>45,75,91,150</rect>
+                <key>scale9Paddings</key>
+                <rect>45,75,91,150</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0009.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.231183,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>47,71,93,141</rect>
+                <key>scale9Paddings</key>
+                <rect>47,71,93,141</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0011.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.128342,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>47,64,93,128</rect>
+                <key>scale9Paddings</key>
+                <rect>47,64,93,128</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0013.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.15122,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,58,103,117</rect>
+                <key>scale9Paddings</key>
+                <rect>51,58,103,117</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0015.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.216667,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>60,54,120,107</rect>
+                <key>scale9Paddings</key>
+                <rect>60,54,120,107</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0017.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.292254,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>71,48,142,95</rect>
+                <key>scale9Paddings</key>
+                <rect>71,48,142,95</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0019.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>75,39,150,77</rect>
+                <key>scale9Paddings</key>
+                <rect>75,39,150,77</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0021.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>74,38,149,75</rect>
+                <key>scale9Paddings</key>
+                <rect>74,38,149,75</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0023.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.419708,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>69,38,137,75</rect>
+                <key>scale9Paddings</key>
+                <rect>69,38,137,75</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0025.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.495575,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>57,48,113,96</rect>
+                <key>scale9Paddings</key>
+                <rect>57,48,113,96</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0027.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.592357,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>39,49,79,97</rect>
+                <key>scale9Paddings</key>
+                <rect>39,49,79,97</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0029.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.624,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,43,63,86</rect>
+                <key>scale9Paddings</key>
+                <rect>31,43,63,86</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0031.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.810458,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>38,34,77,69</rect>
+                <key>scale9Paddings</key>
+                <rect>38,34,77,69</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0033.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.61809,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>50,36,99,72</rect>
+                <key>scale9Paddings</key>
+                <rect>50,36,99,72</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0035.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.44382,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>45,44,89,89</rect>
+                <key>scale9Paddings</key>
+                <rect>45,44,89,89</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0037.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.337931,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>36,50,73,100</rect>
+                <key>scale9Paddings</key>
+                <rect>36,50,73,100</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0039.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.312977,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>33,57,65,114</rect>
+                <key>scale9Paddings</key>
+                <rect>33,57,65,114</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0041.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.262774,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>34,63,69,125</rect>
+                <key>scale9Paddings</key>
+                <rect>34,63,69,125</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0043.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.25,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>35,68,70,135</rect>
+                <key>scale9Paddings</key>
+                <rect>35,68,70,135</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0045.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.246377,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>35,72,69,144</rect>
+                <key>scale9Paddings</key>
+                <rect>35,72,69,144</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0047.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.246269,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>34,76,67,151</rect>
+                <key>scale9Paddings</key>
+                <rect>34,76,67,151</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0049.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.308271,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>33,79,67,157</rect>
+                <key>scale9Paddings</key>
+                <rect>33,79,67,157</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0051.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.333333,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>32,80,63,159</rect>
+                <key>scale9Paddings</key>
+                <rect>32,80,63,159</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0053.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.341463,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,80,61,159</rect>
+                <key>scale9Paddings</key>
+                <rect>31,80,61,159</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0055.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0057.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.349594,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,79,61,159</rect>
+                <key>scale9Paddings</key>
+                <rect>31,79,61,159</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -2902,6 +3317,308 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/RunToStop0021.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.3,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>300,300,600,600</rect>
+                <key>scale9Paddings</key>
+                <rect>300,300,600,600</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0001.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0003.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0005.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0007.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0009.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0011.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0013.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0015.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0113.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0207.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0209.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0219.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0221.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0223.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0225.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0227.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0229.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0231.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0233.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0235.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0237.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,53,61,106</rect>
+                <key>scale9Paddings</key>
+                <rect>30,53,61,106</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0017.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0089.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0091.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0093.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0095.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0097.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0099.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0101.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0103.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0105.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0107.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0109.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0111.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0211.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0213.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0215.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0217.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,53,60,106</rect>
+                <key>scale9Paddings</key>
+                <rect>30,53,60,106</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0019.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0021.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0023.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0025.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0027.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0029.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0031.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0033.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0035.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0037.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0039.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0041.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0043.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0045.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0047.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0049.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0051.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0053.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0055.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0057.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0059.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0061.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0063.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0065.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0067.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0069.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0079.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0081.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0083.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0085.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0087.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,53,59,106</rect>
+                <key>scale9Paddings</key>
+                <rect>30,53,59,106</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0071.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0073.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0075.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0077.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,53,59,105</rect>
+                <key>scale9Paddings</key>
+                <rect>30,53,59,105</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0115.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0117.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0119.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0121.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0203.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0205.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,53,61,106</rect>
+                <key>scale9Paddings</key>
+                <rect>31,53,61,106</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0123.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0125.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0127.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0129.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0131.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0133.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0135.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0137.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0139.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0141.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0143.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0145.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0147.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0149.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0151.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0153.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0155.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0201.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,53,62,106</rect>
+                <key>scale9Paddings</key>
+                <rect>31,53,62,106</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0157.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,53,63,106</rect>
+                <key>scale9Paddings</key>
+                <rect>31,53,63,106</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0159.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0161.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0163.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0197.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>32,53,63,105</rect>
+                <key>scale9Paddings</key>
+                <rect>32,53,63,105</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0165.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0195.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>32,53,64,105</rect>
+                <key>scale9Paddings</key>
+                <rect>32,53,64,105</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0167.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0169.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0171.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0193.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>32,53,65,105</rect>
+                <key>scale9Paddings</key>
+                <rect>32,53,65,105</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0173.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0175.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0177.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0179.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0181.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0183.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0185.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0187.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0189.png</key>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0191.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>33,53,65,105</rect>
+                <key>scale9Paddings</key>
+                <rect>33,53,65,105</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Sit0199.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>1,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,53,63,105</rect>
+                <key>scale9Paddings</key>
+                <rect>31,53,63,105</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
         </map>
         <key>fileList</key>
         <array>
@@ -2933,29 +3650,6 @@
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Attack0051.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Attack0053.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Attack0055.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Fall0001.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Fall0003.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Fall0005.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Fall0007.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Fall0009.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Fall0011.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Fall0013.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Fall0015.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Fall0017.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0001.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0003.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0005.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0007.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0009.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0011.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0013.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0015.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0017.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0019.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0021.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0023.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0025.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/FallToLand0027.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Idle0001.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Idle0003.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Idle0005.png</filename>
@@ -2987,17 +3681,6 @@
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Idle0057.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Idle0059.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Idle0061.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0001.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0003.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0005.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0007.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0009.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0011.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0013.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0015.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0017.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0019.png</filename>
-            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0021.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Run0001.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Run0003.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Run0005.png</filename>
@@ -3148,6 +3831,183 @@
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Death0083.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Death0085.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Death0087.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0001.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0003.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0005.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0007.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0009.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0011.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0013.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0015.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0017.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0019.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0021.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0023.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0025.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0027.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0029.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0031.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0033.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0035.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0037.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0039.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0041.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0043.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0045.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0047.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0049.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0051.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0053.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0055.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Roll0057.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0001.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0003.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0005.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0007.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0009.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0011.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0013.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0015.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0017.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0019.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0021.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0023.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0025.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0027.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0029.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0031.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0033.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0035.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0037.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0039.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0041.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0043.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0045.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0047.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0049.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0051.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0053.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0055.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump0057.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0001.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0003.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0005.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0007.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0009.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0011.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0013.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0015.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0017.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0019.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0021.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0023.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0025.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0027.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0029.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0031.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0033.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0035.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0037.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0039.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0041.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0043.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0045.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0047.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0049.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0051.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0053.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0055.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0057.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0059.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0061.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0063.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0065.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0067.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0069.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0071.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0073.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0075.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0077.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0079.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0081.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0083.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0085.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0087.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0089.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0091.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0093.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0095.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0097.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0099.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0101.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0103.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0105.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0107.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0109.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0111.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0113.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0115.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0117.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0119.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0121.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0123.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0125.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0127.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0129.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0131.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0133.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0135.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0137.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0139.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0141.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0143.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0145.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0147.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0149.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0151.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0153.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0155.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0157.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0159.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0161.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0163.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0165.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0167.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0169.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0171.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0173.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0175.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0177.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0179.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0181.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0183.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0185.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0187.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0189.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0191.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0193.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0195.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0197.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0199.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0201.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0203.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0205.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0207.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0209.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0211.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0213.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0215.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0217.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0219.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0221.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0223.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0225.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0227.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0229.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0231.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0233.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0235.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Sit0237.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

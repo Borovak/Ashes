@@ -25,7 +25,8 @@ public class GameController : MonoBehaviour
     {
         Instance = this;
         if (!Application.isPlaying) return;
-        SaveSystem.Load(true);
+        var loadMessage = SaveSystem.Load();
+        Debug.Log(loadMessage != "" ? loadMessage : "Game loaded successfully");
         InitCampsites();
     }
 
@@ -88,7 +89,15 @@ public class GameController : MonoBehaviour
         _chambersFolder = GameObject.FindGameObjectWithTag("ChambersFolder").transform;
         for (int i = _chambersFolder.childCount - 1; i >= 0; i--)
         {
-            GameObject.DestroyImmediate(_chambersFolder.GetChild(i).gameObject);
+            var gameObjectToDelete = _chambersFolder.GetChild(i).gameObject;
+            if (Application.isPlaying)
+            {
+                GameObject.Destroy(gameObjectToDelete);
+            }
+            else
+            {
+                GameObject.DestroyImmediate(gameObjectToDelete);
+            }
         }
         var chamber = GameObject.Instantiate(Resources.Load<GameObject>(_chamberResourcePathToLoad), _chambersFolder);
         currentChamber = chamber.GetComponent<ChamberController>();

@@ -43,7 +43,8 @@ public class RegionAnnouncementController : MonoBehaviour
     {
         var zoneText = new Dictionary<int, string> {
             {1, "Elder Woods"},
-            {2, "Cathedral of Whispers"}
+            {2, "Cathedral of Whispers"},
+            {3, "Grand River"}
         };
         return zoneText.TryGetValue(zone, out var text) ? text : "";
     }

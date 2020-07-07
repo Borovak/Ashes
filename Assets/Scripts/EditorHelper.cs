@@ -35,7 +35,8 @@ public class EditorHelper : MonoBehaviour
             var y = chamberController.y * ChamberController.unitSize + h / 2f;
             var colors = new Dictionary<int, Color> {
                 {1, Color.green},
-                {2, Color.blue}
+                {2, Color.red},
+                {3, Color.blue}
             };
             Gizmos.color = colors.TryGetValue(chamberController.region, out var c) ? c : Color.magenta;
             Gizmos.DrawWireCube(new Vector3(x, y, 0f), new Vector3(w, h, 1f));

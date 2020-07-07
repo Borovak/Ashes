@@ -8,58 +8,55 @@ public class LifeController : MonoBehaviour
     public event Action<int> HpChanged;
     public int maxHp
     {
-        get => _isPlayer ? SaveSystem.latestSaveData.MaxHp : localMaxHp;
+        get => _maxHp;
         set
         {
-            localMaxHp = value;
-            if (_isPlayer)
-            {
-                SaveSystem.latestSaveData.MaxHp = localMaxHp;
-            }
+            _maxHp = value;
         }
     }
     public int hp
     {
-        get => _isPlayer ? SaveSystem.latestSaveData.Hp : localHp;
+        get => _localHp;
         set
         {
             if (value > 0)
             {
-                dead = false;
+                _dead = false;
             }
-            localHp = value;
-            if (_isPlayer)
-            {
-                SaveSystem.latestSaveData.Hp = localHp;
-            }
+            _localHp = value;
             HpChanged?.Invoke(value);
         }
     }
-
-    public int localMaxHp;
-    public int localHp;
     public bool destroyOnDeath = true;
     private bool _isPlayer;
     private InvinsibilityController _invinsibilityController;
-    private bool dead;
+    private bool _dead;
+
+    private int _maxHp;
+    private int _localHp;
 
     // Start is called before the first frame update
     void Start()
     {
         _isPlayer = gameObject.tag == "Player";
+        if (_isPlayer)
+        {
+            hp = SaveSystem.latestSaveData?.Hp ?? 3;
+            maxHp = SaveSystem.latestSaveData?.MaxHp ?? 3;
+        }
         TryGetComponent<InvinsibilityController>(out _invinsibilityController);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (localHp != hp)
+        if (_localHp != hp)
         {
-            localHp = hp;
+            _localHp = hp;
         }
-        if (hp <= 0 && !dead)
+        if (hp <= 0 && !_dead)
         {
-            dead = true;
+            _dead = true;
             if (destroyOnDeath)
             {
                 GameObject.Destroy(gameObject);

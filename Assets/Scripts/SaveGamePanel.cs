@@ -40,7 +40,9 @@ public class SaveGamePanel : MonoBehaviour, IPointerEnterHandler, IPointerClickH
     {
         SaveSystem.index = index;
         transform.Find("Id").GetComponent<Text>().text = $"Save {index + 1}";
-        var data = SaveSystem.Load(false);
+        var loadMessage = SaveSystem.Load();
+        if (loadMessage != null) return;
+        var data = SaveSystem.latestSaveData;
         _newGame.SetActive(data == null);
         _zoneName.SetActive(data != null);
         _gameTime.SetActive(data != null);

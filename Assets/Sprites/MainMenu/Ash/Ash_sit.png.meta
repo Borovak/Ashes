@@ -1,0 +1,3252 @@
+fileFormatVersion: 2
+guid: 83ae6b572c2727a40bf266151b2c3f0d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9005325234916152552
+    second: Sit0001
+  - first:
+      213: 3720905169427793508
+    second: Sit0003
+  - first:
+      213: 3841669617726547528
+    second: Sit0005
+  - first:
+      213: 1243254466455409255
+    second: Sit0007
+  - first:
+      213: -680385384858313181
+    second: Sit0009
+  - first:
+      213: -4116970549678223312
+    second: Sit0011
+  - first:
+      213: -5254963592621046964
+    second: Sit0013
+  - first:
+      213: 6031997773775836966
+    second: Sit0015
+  - first:
+      213: 2374082455266112958
+    second: Sit0017
+  - first:
+      213: 4103902248017839051
+    second: Sit0019
+  - first:
+      213: -2003686757523034124
+    second: Sit0021
+  - first:
+      213: 8742473137766944689
+    second: Sit0023
+  - first:
+      213: 8978159697135073463
+    second: Sit0025
+  - first:
+      213: 5244809952224247497
+    second: Sit0027
+  - first:
+      213: -1072656832403855510
+    second: Sit0029
+  - first:
+      213: 8208101099521567749
+    second: Sit0031
+  - first:
+      213: -6069823552659522804
+    second: Sit0033
+  - first:
+      213: 8158181896452877538
+    second: Sit0035
+  - first:
+      213: -6339902851206223197
+    second: Sit0037
+  - first:
+      213: 2358680907483515351
+    second: Sit0039
+  - first:
+      213: 8326235382431938730
+    second: Sit0041
+  - first:
+      213: -209964141270447525
+    second: Sit0043
+  - first:
+      213: 3430834225146084130
+    second: Sit0045
+  - first:
+      213: 3138781796508478347
+    second: Sit0047
+  - first:
+      213: -6885026686073437313
+    second: Sit0049
+  - first:
+      213: -2868961461832419252
+    second: Sit0051
+  - first:
+      213: 960833438036793178
+    second: Sit0053
+  - first:
+      213: 7396307848331809368
+    second: Sit0055
+  - first:
+      213: 8801341886499590967
+    second: Sit0057
+  - first:
+      213: 5971658617782904184
+    second: Sit0059
+  - first:
+      213: -9168227167697642858
+    second: Sit0061
+  - first:
+      213: 6800496771440418064
+    second: Sit0063
+  - first:
+      213: -5037665380007535288
+    second: Sit0065
+  - first:
+      213: -4138271718888283013
+    second: Sit0067
+  - first:
+      213: -2565091687801313442
+    second: Sit0069
+  - first:
+      213: -5347649271571209051
+    second: Sit0071
+  - first:
+      213: -7516431199343092759
+    second: Sit0073
+  - first:
+      213: 6915882897603946409
+    second: Sit0075
+  - first:
+      213: 8908588390926013012
+    second: Sit0077
+  - first:
+      213: 765376724539446371
+    second: Sit0079
+  - first:
+      213: 3000568183840773814
+    second: Sit0081
+  - first:
+      213: 8101662736241810588
+    second: Sit0083
+  - first:
+      213: -1719968112734278993
+    second: Sit0085
+  - first:
+      213: -6922888313271308514
+    second: Sit0087
+  - first:
+      213: 1036958873411384387
+    second: Sit0089
+  - first:
+      213: -5604225936967584135
+    second: Sit0091
+  - first:
+      213: 110404169379461174
+    second: Sit0093
+  - first:
+      213: -8683986306343083750
+    second: Sit0095
+  - first:
+      213: 4003779289801851820
+    second: Sit0097
+  - first:
+      213: 2867354436922383047
+    second: Sit0099
+  - first:
+      213: 2516071299512246001
+    second: Sit0101
+  - first:
+      213: 5721366474631680797
+    second: Sit0103
+  - first:
+      213: 5204535402573263085
+    second: Sit0105
+  - first:
+      213: 4361780632995158168
+    second: Sit0107
+  - first:
+      213: -4811489098143206216
+    second: Sit0109
+  - first:
+      213: -1417769716597855828
+    second: Sit0111
+  - first:
+      213: 4763309000991026960
+    second: Sit0113
+  - first:
+      213: -3717200479899872373
+    second: Sit0115
+  - first:
+      213: -7033755540332113541
+    second: Sit0117
+  - first:
+      213: 7762667984791107588
+    second: Sit0119
+  - first:
+      213: 8665635235829867542
+    second: Sit0121
+  - first:
+      213: 4714949675878683661
+    second: Sit0123
+  - first:
+      213: -9210899496995494963
+    second: Sit0125
+  - first:
+      213: -7265054337630805496
+    second: Sit0127
+  - first:
+      213: -75684644268607887
+    second: Sit0129
+  - first:
+      213: 1259774784232395949
+    second: Sit0131
+  - first:
+      213: -7116303587487185809
+    second: Sit0133
+  - first:
+      213: -7712522001020627492
+    second: Sit0135
+  - first:
+      213: 1164826308158023609
+    second: Sit0137
+  - first:
+      213: 8227356175380479299
+    second: Sit0139
+  - first:
+      213: 8847395241620876158
+    second: Sit0141
+  - first:
+      213: 8319251587633383866
+    second: Sit0143
+  - first:
+      213: 3824162213838747589
+    second: Sit0145
+  - first:
+      213: 3505056601734860897
+    second: Sit0147
+  - first:
+      213: 5974322405357848646
+    second: Sit0149
+  - first:
+      213: -8200391742612464663
+    second: Sit0151
+  - first:
+      213: -5943074013888657583
+    second: Sit0153
+  - first:
+      213: 3292726724429658141
+    second: Sit0155
+  - first:
+      213: -667779008898899571
+    second: Sit0157
+  - first:
+      213: -5825217787866142883
+    second: Sit0159
+  - first:
+      213: -6575331317907279286
+    second: Sit0161
+  - first:
+      213: -8185693513031746250
+    second: Sit0163
+  - first:
+      213: 4008566295884622116
+    second: Sit0165
+  - first:
+      213: 519352047829590752
+    second: Sit0167
+  - first:
+      213: 5265586904416229785
+    second: Sit0169
+  - first:
+      213: -7729226250564181115
+    second: Sit0171
+  - first:
+      213: -5887901767311286796
+    second: Sit0173
+  - first:
+      213: 8664500054570296297
+    second: Sit0175
+  - first:
+      213: -2471304972668965576
+    second: Sit0177
+  - first:
+      213: 6813963998478034800
+    second: Sit0179
+  - first:
+      213: -3500482567336443755
+    second: Sit0181
+  - first:
+      213: 659986566701344918
+    second: Sit0183
+  - first:
+      213: -2668841723117733068
+    second: Sit0185
+  - first:
+      213: -3974610909266880297
+    second: Sit0187
+  - first:
+      213: -5976615126253825877
+    second: Sit0189
+  - first:
+      213: 7437226100792004017
+    second: Sit0191
+  - first:
+      213: 5678407038605037980
+    second: Sit0193
+  - first:
+      213: -1566197218818396482
+    second: Sit0195
+  - first:
+      213: 4608243025668010110
+    second: Sit0197
+  - first:
+      213: 6119352430501745264
+    second: Sit0199
+  - first:
+      213: -1280162748856397143
+    second: Sit0201
+  - first:
+      213: -6108256770246048859
+    second: Sit0203
+  - first:
+      213: -38768974298017631
+    second: Sit0205
+  - first:
+      213: -4760057142085688933
+    second: Sit0207
+  - first:
+      213: 1953592476956540685
+    second: Sit0209
+  - first:
+      213: 958368506913818514
+    second: Sit0211
+  - first:
+      213: 2784402914925825185
+    second: Sit0213
+  - first:
+      213: -5301224019892581318
+    second: Sit0215
+  - first:
+      213: 1049766407153243207
+    second: Sit0217
+  - first:
+      213: -2943751836207246833
+    second: Sit0219
+  - first:
+      213: -4766318573419321803
+    second: Sit0221
+  - first:
+      213: -4042917043369880357
+    second: Sit0223
+  - first:
+      213: -966048278552571228
+    second: Sit0225
+  - first:
+      213: -1289616403647260598
+    second: Sit0227
+  - first:
+      213: -6354167301437782693
+    second: Sit0229
+  - first:
+      213: 7157653275619442234
+    second: Sit0231
+  - first:
+      213: 4940912134314698567
+    second: Sit0233
+  - first:
+      213: 7305624553570958256
+    second: Sit0235
+  - first:
+      213: 8127511151037207991
+    second: Sit0237
+  - first:
+      213: -6668431811598584567
+    second: Sit0239
+  - first:
+      213: -6161287335971068325
+    second: Sit0241
+  - first:
+      213: -1019215904057300291
+    second: Sit0243
+  - first:
+      213: 4146207424998419660
+    second: Sit0245
+  - first:
+      213: 1723770592997900802
+    second: Sit0247
+  - first:
+      213: -7587566564674189756
+    second: Sit0249
+  - first:
+      213: 8812841706944084310
+    second: Sit0251
+  - first:
+      213: 3992664547791341745
+    second: Sit0253
+  - first:
+      213: 6200316302899562566
+    second: Sit0255
+  - first:
+      213: 3552718230770995367
+    second: Sit0257
+  - first:
+      213: -5287305962370220615
+    second: Sit0259
+  - first:
+      213: 3739425917755767217
+    second: Sit0261
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sit0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b26fd3968a60380800000000000000
+      internalID: -9005325234916152552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0003
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46688a2998f43a330800000000000000
+      internalID: 3720905169427793508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0005
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 846600dc92a505530800000000000000
+      internalID: 3841669617726547528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0007
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7621e76a95de04110800000000000000
+      internalID: 1243254466455409255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0009
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e1729e819ce86f0800000000000000
+      internalID: -680385384858313181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0011
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0305fa309159dd6c0800000000000000
+      internalID: -4116970549678223312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0013
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43463a547e9217b0800000000000000
+      internalID: -5254963592621046964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0015
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6271bdf2406f5b350800000000000000
+      internalID: 6031997773775836966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0017
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb5bf952a6f62f020800000000000000
+      internalID: 2374082455266112958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0019
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc3c706e95df3f830800000000000000
+      internalID: 4103902248017839051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0021
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff6fa092897134e0800000000000000
+      internalID: -2003686757523034124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0023
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf4efacff0835970800000000000000
+      internalID: 8742473137766944689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0025
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8f67c1da4d89c70800000000000000
+      internalID: 8978159697135073463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0027
+      rect:
+        serializedVersion: 2
+        x: 3016
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce72c40dde49c840800000000000000
+      internalID: 5244809952224247497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0029
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a672caa4b482d11f0800000000000000
+      internalID: -1072656832403855510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0031
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ce97d267809e170800000000000000
+      internalID: 8208101099521567749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0033
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 3673
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0bfd6e53a7a3cba0800000000000000
+      internalID: -6069823552659522804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0035
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eca81ff53fa73170800000000000000
+      internalID: 8158181896452877538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0037
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aaed5372f32408a0800000000000000
+      internalID: -6339902851206223197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0039
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d90d0dd9c7bbb020800000000000000
+      internalID: 2358680907483515351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0041
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8f42e47fabc8370800000000000000
+      internalID: 8326235382431938730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0043
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a4108d9be061df0800000000000000
+      internalID: -209964141270447525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0045
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22bb519ec85cc9f20800000000000000
+      internalID: 3430834225146084130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0047
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ba958f9613f8b20800000000000000
+      internalID: 3138781796508478347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0049
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f73028b15b87370a0800000000000000
+      internalID: -6885026686073437313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0051
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48713930c66f28d0800000000000000
+      internalID: -2868961461832419252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0053
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a571082dbe0955d00800000000000000
+      internalID: 960833438036793178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0055
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 852504dfcc6f4a660800000000000000
+      internalID: 7396307848331809368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0057
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 733139370d5a42a70800000000000000
+      internalID: 8801341886499590967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0059
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875a9d8afd79fd250800000000000000
+      internalID: 5971658617782904184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0061
+      rect:
+        serializedVersion: 2
+        x: 3016
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69adb4167f9e3c080800000000000000
+      internalID: -9168227167697642858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0063
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01d95e578c7306e50800000000000000
+      internalID: 6800496771440418064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0065
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d1e5f070e961ab0800000000000000
+      internalID: -5037665380007535288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0067
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 3250
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b746e931cc7e196c0800000000000000
+      internalID: -4138271718888283013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0069
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2828
+        width: 232
+        height: 422
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.75592417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57ab4c43b6f66cd0800000000000000
+      internalID: -2565091687801313442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0071
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 2828
+        width: 232
+        height: 422
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.75592417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a42f90125559c5b0800000000000000
+      internalID: -5347649271571209051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0073
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 2828
+        width: 232
+        height: 422
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.75592417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ebdd70e5a540b790800000000000000
+      internalID: -7516431199343092759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0075
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 2828
+        width: 232
+        height: 422
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.75592417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7e1eb7ad62aff50800000000000000
+      internalID: 6915882897603946409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0077
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 2828
+        width: 232
+        height: 422
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.75592417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 452505b11f9a1ab70800000000000000
+      internalID: 8908588390926013012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0079
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3649689631a2f9a00800000000000000
+      internalID: 765376724539446371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0081
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b61b229dd824a920800000000000000
+      internalID: 3000568183840773814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0083
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9c56bb8553ee6070800000000000000
+      internalID: 8101662736241810588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0085
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa697f3d127128e0800000000000000
+      internalID: -1719968112734278993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0087
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1fa2c312c5fcef90800000000000000
+      internalID: -6922888313271308514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0089
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344ff50f994046e00800000000000000
+      internalID: 1036958873411384387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0091
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 976340ae33ac932b0800000000000000
+      internalID: -5604225936967584135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0093
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638b591d10c388100800000000000000
+      internalID: 110404169379461174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0095
+      rect:
+        serializedVersion: 2
+        x: 3016
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a116010d6784c7780800000000000000
+      internalID: -8683986306343083750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0097
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca384b71d08409730800000000000000
+      internalID: 4003779289801851820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0099
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca16e12ba3eac720800000000000000
+      internalID: 2867354436922383047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0101
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 2827
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe9bf42481eae220800000000000000
+      internalID: 2516071299512246001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0103
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2404
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13104ede70666f40800000000000000
+      internalID: 5721366474631680797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0105
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 2404
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0f253bf593a3840800000000000000
+      internalID: 5204535402573263085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0107
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 2404
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898dad14068288c30800000000000000
+      internalID: 4361780632995158168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0109
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 2404
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4728858282a3db0800000000000000
+      internalID: -4811489098143206216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0111
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 2404
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca9e0e454f1135ce0800000000000000
+      internalID: -1417769716597855828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0113
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 2404
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01fad7f9c4caa1240800000000000000
+      internalID: 4763309000991026960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0115
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 2404
+        width: 234
+        height: 423
+      alignment: 9
+      pivot: {x: 0.31196582, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8318acabd9d96cc0800000000000000
+      internalID: -3717200479899872373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0117
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 2403
+        width: 237
+        height: 424
+      alignment: 9
+      pivot: {x: 0.3206751, y: 0.7523585}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b71919d3a94136e90800000000000000
+      internalID: -7033755540332113541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0119
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 2404
+        width: 239
+        height: 423
+      alignment: 9
+      pivot: {x: 0.32635984, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40875ce57698abb60800000000000000
+      internalID: 7762667984791107588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0121
+      rect:
+        serializedVersion: 2
+        x: 2102
+        y: 2404
+        width: 240
+        height: 423
+      alignment: 9
+      pivot: {x: 0.32916668, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6146fb0a555824870800000000000000
+      internalID: 8665635235829867542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0123
+      rect:
+        serializedVersion: 2
+        x: 2342
+        y: 2404
+        width: 240
+        height: 423
+      alignment: 9
+      pivot: {x: 0.32916668, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d049794dfbdde6140800000000000000
+      internalID: 4714949675878683661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0125
+      rect:
+        serializedVersion: 2
+        x: 2582
+        y: 2404
+        width: 241
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33195022, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc362cb75bf4c2080800000000000000
+      internalID: -9210899496995494963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0127
+      rect:
+        serializedVersion: 2
+        x: 2823
+        y: 2404
+        width: 241
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33195022, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802ea9362975d2b90800000000000000
+      internalID: -7265054337630805496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0129
+      rect:
+        serializedVersion: 2
+        x: 3064
+        y: 2404
+        width: 241
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33195022, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176fa6f873d13fef0800000000000000
+      internalID: -75684644268607887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0131
+      rect:
+        serializedVersion: 2
+        x: 3305
+        y: 2404
+        width: 241
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33195022, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da49a2fdd7e9b7110800000000000000
+      internalID: 1259774784232395949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0133
+      rect:
+        serializedVersion: 2
+        x: 3546
+        y: 2404
+        width: 242
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33471075, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f640df9479fcd3d90800000000000000
+      internalID: -7116303587487185809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0135
+      rect:
+        serializedVersion: 2
+        x: 3788
+        y: 2404
+        width: 242
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33471075, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5d7ce4a1e97f490800000000000000
+      internalID: -7712522001020627492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0137
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1980
+        width: 241
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33195022, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7e9c21b5b4a2010800000000000000
+      internalID: 1164826308158023609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0139
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1980
+        width: 241
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33195022, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34d7b22e9d07d2270800000000000000
+      internalID: 8227356175380479299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0141
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1980
+        width: 241
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33195022, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b2b44c81348ca70800000000000000
+      internalID: 8847395241620876158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0143
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1980
+        width: 242
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33471075, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab90efddd3be37370800000000000000
+      internalID: 8319251587633383866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0145
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 1980
+        width: 242
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33471075, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7745fa547221530800000000000000
+      internalID: 3824162213838747589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0147
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1980
+        width: 241
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33195022, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1605b00a86674a030800000000000000
+      internalID: 3505056601734860897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0149
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 1980
+        width: 241
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33195022, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6480309039e09e250800000000000000
+      internalID: 5974322405357848646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0151
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 1980
+        width: 241
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33195022, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eb998a582b523e80800000000000000
+      internalID: -8200391742612464663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0153
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 1980
+        width: 242
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33471075, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 157cf401ca5f58da0800000000000000
+      internalID: -5943074013888657583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0155
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 1980
+        width: 243
+        height: 423
+      alignment: 9
+      pivot: {x: 0.33744857, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18b010a28d12bd20800000000000000
+      internalID: 3292726724429658141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0157
+      rect:
+        serializedVersion: 2
+        x: 2415
+        y: 1980
+        width: 244
+        height: 423
+      alignment: 9
+      pivot: {x: 0.34016395, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d816e1a87829bb6f0800000000000000
+      internalID: -667779008898899571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0159
+      rect:
+        serializedVersion: 2
+        x: 2659
+        y: 1981
+        width: 246
+        height: 422
+      alignment: 9
+      pivot: {x: 0.34552845, y: 0.75592417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57a3f6094ba82fa0800000000000000
+      internalID: -5825217787866142883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0161
+      rect:
+        serializedVersion: 2
+        x: 2905
+        y: 1981
+        width: 248
+        height: 422
+      alignment: 9
+      pivot: {x: 0.35080644, y: 0.75592417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a42b2a3010bbfb4a0800000000000000
+      internalID: -6575331317907279286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0163
+      rect:
+        serializedVersion: 2
+        x: 3153
+        y: 1982
+        width: 250
+        height: 421
+      alignment: 9
+      pivot: {x: 0.356, y: 0.7577197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63df58b9e13966e80800000000000000
+      internalID: -8185693513031746250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0165
+      rect:
+        serializedVersion: 2
+        x: 3403
+        y: 1982
+        width: 251
+        height: 421
+      alignment: 9
+      pivot: {x: 0.35856575, y: 0.7577197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4296ecccec941a730800000000000000
+      internalID: 4008566295884622116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0167
+      rect:
+        serializedVersion: 2
+        x: 3654
+        y: 1983
+        width: 252
+        height: 420
+      alignment: 9
+      pivot: {x: 0.3611111, y: 0.7595238}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e221449feb153700800000000000000
+      internalID: 519352047829590752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0169
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1560
+        width: 253
+        height: 420
+      alignment: 9
+      pivot: {x: 0.36363637, y: 0.7595238}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9999dab246f131940800000000000000
+      internalID: 5265586904416229785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0171
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1561
+        width: 254
+        height: 419
+      alignment: 9
+      pivot: {x: 0.36614174, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5836f722da54cb490800000000000000
+      internalID: -7729226250564181115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0173
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 1561
+        width: 255
+        height: 419
+      alignment: 9
+      pivot: {x: 0.36862746, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd140fb988f94ea0800000000000000
+      internalID: -5887901767311286796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0175
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1561
+        width: 256
+        height: 419
+      alignment: 9
+      pivot: {x: 0.37109375, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3e305a4ec7e3870800000000000000
+      internalID: 8664500054570296297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0177
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 1561
+        width: 256
+        height: 419
+      alignment: 9
+      pivot: {x: 0.37109375, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83de86c883924bdd0800000000000000
+      internalID: -2471304972668965576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0179
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1561
+        width: 256
+        height: 419
+      alignment: 9
+      pivot: {x: 0.37109375, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07765999720109e50800000000000000
+      internalID: 6813963998478034800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0181
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 1561
+        width: 256
+        height: 419
+      alignment: 9
+      pivot: {x: 0.37109375, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 590c67fb6a9cb6fc0800000000000000
+      internalID: -3500482567336443755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0183
+      rect:
+        serializedVersion: 2
+        x: 1786
+        y: 1561
+        width: 256
+        height: 419
+      alignment: 9
+      pivot: {x: 0.37109375, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69863c0294eb82900800000000000000
+      internalID: 659986566701344918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0185
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 1561
+        width: 256
+        height: 419
+      alignment: 9
+      pivot: {x: 0.37109375, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43b73dbc79e56fad0800000000000000
+      internalID: -2668841723117733068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0187
+      rect:
+        serializedVersion: 2
+        x: 2298
+        y: 1561
+        width: 256
+        height: 419
+      alignment: 9
+      pivot: {x: 0.37109375, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d851c8bf6857d8c0800000000000000
+      internalID: -3974610909266880297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0189
+      rect:
+        serializedVersion: 2
+        x: 2554
+        y: 1561
+        width: 255
+        height: 419
+      alignment: 9
+      pivot: {x: 0.36862746, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba01a68453cce0da0800000000000000
+      internalID: -5976615126253825877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0191
+      rect:
+        serializedVersion: 2
+        x: 2809
+        y: 1561
+        width: 254
+        height: 419
+      alignment: 9
+      pivot: {x: 0.36614174, y: 0.7613365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd88fb0cb5563760800000000000000
+      internalID: 7437226100792004017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0193
+      rect:
+        serializedVersion: 2
+        x: 3063
+        y: 1560
+        width: 252
+        height: 420
+      alignment: 9
+      pivot: {x: 0.3611111, y: 0.7595238}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c91912abd11cdce40800000000000000
+      internalID: 5678407038605037980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0195
+      rect:
+        serializedVersion: 2
+        x: 3315
+        y: 1559
+        width: 249
+        height: 421
+      alignment: 9
+      pivot: {x: 0.35341364, y: 0.7577197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebeef147defb34ae0800000000000000
+      internalID: -1566197218818396482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0197
+      rect:
+        serializedVersion: 2
+        x: 3564
+        y: 1558
+        width: 245
+        height: 422
+      alignment: 9
+      pivot: {x: 0.34285715, y: 0.75592417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e70fc97cd94c3ff30800000000000000
+      internalID: 4608243025668010110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0199
+      rect:
+        serializedVersion: 2
+        x: 3809
+        y: 1558
+        width: 242
+        height: 422
+      alignment: 9
+      pivot: {x: 0.33471075, y: 0.75592417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072da732d9e4ce450800000000000000
+      internalID: 6119352430501745264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0201
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1135
+        width: 239
+        height: 423
+      alignment: 9
+      pivot: {x: 0.32635984, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a21ab333c2fb3ee0800000000000000
+      internalID: -1280162748856397143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0203
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1135
+        width: 236
+        height: 423
+      alignment: 9
+      pivot: {x: 0.31779662, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a30c9494dc1b3ba0800000000000000
+      internalID: -6108256770246048859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0205
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 1135
+        width: 233
+        height: 423
+      alignment: 9
+      pivot: {x: 0.3090129, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a019a2c2d3467ff0800000000000000
+      internalID: -38768974298017631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0207
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b91eb67cf31e0fdb0800000000000000
+      internalID: -4760057142085688933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0209
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0fbed8d10e8c1b10800000000000000
+      internalID: 1953592476956540685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0211
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2970582541fcc4d00800000000000000
+      internalID: 958368506913818514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0213
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac47bfd2bf24a620800000000000000
+      internalID: 2784402914925825185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0215
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3cc88b47d44e66b0800000000000000
+      internalID: -5301224019892581318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0217
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 744d1834cf4819e00800000000000000
+      internalID: 1049766407153243207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0219
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0296f73d41b527d0800000000000000
+      internalID: -2943751836207246833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0221
+      rect:
+        serializedVersion: 2
+        x: 2332
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536aef0b282aaddb0800000000000000
+      internalID: -4766318573419321803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0223
+      rect:
+        serializedVersion: 2
+        x: 2564
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4d09d8e5ca4e7c0800000000000000
+      internalID: -4042917043369880357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0225
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a21ff08538e792f0800000000000000
+      internalID: -966048278552571228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0227
+      rect:
+        serializedVersion: 2
+        x: 3028
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a48961ca6bc5a1ee0800000000000000
+      internalID: -1289616403647260598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0229
+      rect:
+        serializedVersion: 2
+        x: 3260
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b550662518671d7a0800000000000000
+      internalID: -6354167301437782693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0231
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e35b63bb7155360800000000000000
+      internalID: 7157653275619442234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0233
+      rect:
+        serializedVersion: 2
+        x: 3724
+        y: 1135
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 747ae387865a19440800000000000000
+      internalID: 4940912134314698567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0235
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bbf7f913dac26560800000000000000
+      internalID: 7305624553570958256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0237
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b559999458bac070800000000000000
+      internalID: 8127511151037207991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0239
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90570c42998f473a0800000000000000
+      internalID: -6668431811598584567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0241
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b56e454dfc5be7aa0800000000000000
+      internalID: -6161287335971068325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0243
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba6c3909840bd1f0800000000000000
+      internalID: -1019215904057300291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0245
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc2e1c7fa94a8930800000000000000
+      internalID: 4146207424998419660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0247
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20287eda8301ce710800000000000000
+      internalID: 1723770592997900802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0249
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 446c6faf86c83b690800000000000000
+      internalID: -7587566564674189756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0251
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659362c07d08d4a70800000000000000
+      internalID: 8812841706944084310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0253
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b8066e804bc86730800000000000000
+      internalID: 3992664547791341745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0255
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6484469a3d2fb0650800000000000000
+      internalID: 6200316302899562566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0257
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0d824686acd4130800000000000000
+      internalID: 3552718230770995367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0259
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd3e169d37bf96b0800000000000000
+      internalID: -5287305962370220615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sit0261
+      rect:
+        serializedVersion: 2
+        x: 3016
+        y: 712
+        width: 232
+        height: 423
+      alignment: 9
+      pivot: {x: 0.30603448, y: 0.7541371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b9b8b35f0c15e330800000000000000
+      internalID: 3739425917755767217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
