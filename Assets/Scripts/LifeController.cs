@@ -19,6 +19,7 @@ public class LifeController : MonoBehaviour
         get => _localHp;
         set
         {
+            Debug.Log($"HP changed to {value}");
             if (value > 0)
             {
                 _dead = false;
@@ -32,8 +33,8 @@ public class LifeController : MonoBehaviour
     private InvinsibilityController _invinsibilityController;
     private bool _dead;
 
-    private int _maxHp;
-    private int _localHp;
+    private int _maxHp = 3;
+    private int _localHp = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -50,10 +51,6 @@ public class LifeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_localHp != hp)
-        {
-            _localHp = hp;
-        }
         if (hp <= 0 && !_dead)
         {
             _dead = true;
@@ -64,6 +61,7 @@ public class LifeController : MonoBehaviour
             }
             else if (TryGetComponent<Animator>(out var animator))
             {
+                Debug.Log("Death triggered");
                 animator.SetBool("death", true);
             }
         }

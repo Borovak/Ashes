@@ -25,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _inputs = GetComponent<PlayerInputs>();
         _inputs.Attack += Attack;
+        _inputs.Cast += Cast;
     }
 
     // Update is called once per frame
@@ -57,10 +58,16 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("Attack");
         if (_attackCooldown > 0) return;
         _animator.SetTrigger("attack");
         MeleeAttack();
+        _attackCooldown = 1f / attackRate;
+    }
+
+    private void Cast()
+    {
+        if (_attackCooldown > 0) return;
+        _animator.SetTrigger("fireball");
         _attackCooldown = 1f / attackRate;
     }
 

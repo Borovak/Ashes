@@ -80,8 +80,9 @@ public class PlayerPlatformerController : PhysicsObject
     protected override void ComputeVelocity()
     {
         gameTime += Time.deltaTime;
+        _animator.SetBool("horizontalMoveDesired", Mathf.Abs(_inputs.movement.x) > 0.1);
         CheckIfLanding();
-
+        
         Vector2 move = Vector2.zero;
         if (rollingState == RollingStates.NotRolling)
         {

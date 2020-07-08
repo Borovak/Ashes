@@ -10,20 +10,6 @@ public class EditorHelper : MonoBehaviour
     public Transform chambersFolder;
     public bool wipeSaveFiles;
 
-    private static EditorHelper _editorHelper;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Application.isPlaying) return;
-        _editorHelper = this;
-    }
-
     void OnDrawGizmos()
     {        
         for (int i = 0; i < chambersFolder.childCount; i++)
