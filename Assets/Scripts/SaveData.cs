@@ -5,9 +5,11 @@ using System.Collections.Generic;
 public class SaveData
 {
     public int MaxHp;
+    public int Hp;
+    public float MaxMp;
+    public float Mp;
     public bool HasDoubleJump;
     public float[] CampsiteLocation;
-    public int Hp;
     public string[] gatesId;
     public bool[] gatesStatus;
     public float GameTime;
@@ -18,6 +20,9 @@ public class SaveData
         var lifeController = PlayerPlatformerController.Instance.GetComponent<LifeController>();
         MaxHp = lifeController.maxHp;
         Hp = lifeController.hp;
+        var manaController = PlayerPlatformerController.Instance.GetComponent<ManaController>();
+        MaxMp = manaController.maxMp;
+        Mp = manaController.maxMp;
         HasDoubleJump = PlayerPlatformerController.Instance.hasDoubleJump;
         var campsiteLocation = PlayerPlatformerController.Instance.campsiteLocation;
         CampsiteLocation = new float[] { campsiteLocation.x, campsiteLocation.y, campsiteLocation.z };

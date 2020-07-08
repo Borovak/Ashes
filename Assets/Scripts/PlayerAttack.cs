@@ -16,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator _animator;
     private AudioSource _audioSource;
     private PlayerInputs _inputs;
+    private ManaController _manaController;
 
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         _inputs = GetComponent<PlayerInputs>();
+        _manaController = GetComponent<ManaController>();
         _inputs.Attack += Attack;
         _inputs.Cast += Cast;
     }
@@ -67,6 +69,7 @@ public class PlayerAttack : MonoBehaviour
     private void Cast()
     {
         if (_attackCooldown > 0) return;
+        if (!_manaController.TryCastSpell(3f)) return;
         _animator.SetTrigger("fireball");
         _attackCooldown = 1f / attackRate;
     }
