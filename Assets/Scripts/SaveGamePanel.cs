@@ -6,9 +6,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SaveGamePanel : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
+public class SaveGamePanel : MonoBehaviour
 {
-    public static int currentIndex = -1;
     public int index;
 
     private Image _panel;
@@ -31,9 +30,6 @@ public class SaveGamePanel : MonoBehaviour, IPointerEnterHandler, IPointerClickH
     // Update is called once per frame
     void Update()
     {
-        var color = _panel.color;
-        color.a = currentIndex == index ? 0.05f : 0.025f;
-        _panel.color = color;
     }
 
     public void Load()
@@ -41,19 +37,14 @@ public class SaveGamePanel : MonoBehaviour, IPointerEnterHandler, IPointerClickH
         SaveSystem.index = index;
         transform.Find("Id").GetComponent<Text>().text = $"Save {index + 1}";
         var loadMessage = SaveSystem.Load();
-        if (loadMessage != null) return;
         var data = SaveSystem.latestSaveData;
         _newGame.SetActive(data == null);
         _zoneName.SetActive(data != null);
         _gameTime.SetActive(data != null);
         _doubleJump.SetActive(data != null && data.HasDoubleJump);
-        for (int i = 0; i < 12; i++)
-        {
-            transform.Find($"Heart{i}").gameObject.SetActive(data != null && i < data.MaxHp);
-        }
         if (data != null)
         {
-            _zoneName.GetComponent<Text>().text = data.CampsiteLocation[0].ToString();
+            _zoneName.GetComponent<Text>().text = data.ZoneName;
             var t = data.GameTime;
             var h = Convert.ToInt32(t / 3600f);
             t -= h * 3600f;
@@ -62,14 +53,4 @@ public class SaveGamePanel : MonoBehaviour, IPointerEnterHandler, IPointerClickH
         }
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        currentIndex = index;
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        SaveSystem.index = index;
-        SceneManager.LoadScene("Main");
-    }
 }

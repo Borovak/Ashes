@@ -65,8 +65,9 @@ public class UiFlaskController : MonoBehaviour
         {
             var image = images[i];
             var offset = image.uvRect;
-            offset.x += (Mathf.PerlinNoise(Convert.ToSingle(index * i), 0f) - 0.5f) * offsetScale;
-            offset.y += (Mathf.PerlinNoise(Convert.ToSingle(index * i) - 1000f, 0f) - 0.5f) * offsetScale;
+            var direction = GetDirection(i);
+            offset.x += (Mathf.PerlinNoise(Convert.ToSingle(index * i), 0f) - 0.5f) * offsetScale * direction.x;
+            offset.y += (Mathf.PerlinNoise(Convert.ToSingle(index * i) - 1000f, 0f) - 0.5f) * offsetScale * direction.y;
             image.uvRect = offset;
         }
         index++;
@@ -74,5 +75,19 @@ public class UiFlaskController : MonoBehaviour
         {
             index = 0;
         }
+    }
+
+    private Vector2 GetDirection(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                return new Vector2(1f, 1f);
+            case 1:
+                return new Vector2(1f, -1f);
+            case 2:
+                return new Vector2(-1f, 1f);
+        }
+        return new Vector2(-1f, -1f);
     }
 }

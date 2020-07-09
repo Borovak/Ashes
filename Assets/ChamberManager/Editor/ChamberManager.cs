@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class ChamberManager : EditorWindow
 {
@@ -21,6 +22,7 @@ public class ChamberManager : EditorWindow
     // Update is called once per frame
     private void OnGUI()
     {
+        if (SceneManager.GetActiveScene().name != "Main") return;
         if (regions == null)
         {
             var colliderFolder = GameObject.FindGameObjectWithTag("ChamberCollidersFolder").transform;

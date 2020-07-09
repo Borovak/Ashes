@@ -9,6 +9,7 @@ TagManager:
   - ChamberCollidersFolder
   - FadeInOut
   - LayoutTilemap
+  - Canvas
   layers:
   - Default
   - TransparentFX

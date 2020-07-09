@@ -4,6 +4,7 @@ using System.Collections.Generic;
 [Serializable]
 public class SaveData
 {
+    public string ZoneName;
     public int MaxHp;
     public int Hp;
     public float MaxMp;
@@ -28,6 +29,7 @@ public class SaveData
         CampsiteLocation = new float[] { campsiteLocation.x, campsiteLocation.y, campsiteLocation.z };
         GameTime = PlayerPlatformerController.Instance.gameTime;
         //World
+        ZoneName = RegionAnnouncementController.LastRegionVisited;
         var count = GateController.gates?.Count ?? 0;
         if (count > 0)
         {

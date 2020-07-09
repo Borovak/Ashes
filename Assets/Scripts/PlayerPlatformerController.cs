@@ -53,6 +53,7 @@ public class PlayerPlatformerController : PhysicsObject
         {
             Debug.Log($"Saved has double jump : {SaveSystem.latestSaveData.HasDoubleJump}");
             Debug.Log($"Saved campsite location : {SaveSystem.latestSaveData.CampsiteLocation}");
+            gameTime = SaveSystem.latestSaveData.GameTime;
             hasDoubleJump = SaveSystem.latestSaveData.HasDoubleJump;
             campsiteLocation = SaveSystem.latestSaveData.CampsiteLocation != null && SaveSystem.latestSaveData.CampsiteLocation.Length == 3 ? new Vector3(SaveSystem.latestSaveData.CampsiteLocation[0], SaveSystem.latestSaveData.CampsiteLocation[1], SaveSystem.latestSaveData.CampsiteLocation[2]) : GameController.Instance.campsiteLocations[0];
         }

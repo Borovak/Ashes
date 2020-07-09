@@ -47,6 +47,7 @@ public static class SaveSystem
         }
         catch (Exception ex)
         {
+            latestSaveData = null;
             return ex.ToString();
         }
     }

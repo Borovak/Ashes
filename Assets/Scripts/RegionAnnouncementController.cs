@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class RegionAnnouncementController : MonoBehaviour
 {
 
+    public static string LastRegionVisited = "";
     public float timeShown;
     public float fadeOutTime;
 
@@ -46,7 +47,7 @@ public class RegionAnnouncementController : MonoBehaviour
             {2, "Cathedral of Whispers"},
             {3, "Grand River"}
         };
-        return zoneText.TryGetValue(zone, out var text) ? text : "";
+        return zoneText.TryGetValue(zone, out LastRegionVisited) ? LastRegionVisited : "";
     }
 
     private void SetAlpha(){        
