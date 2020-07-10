@@ -59,6 +59,7 @@ public class PlayerPlatformerController : PhysicsObject
             hasDoubleJump = false;
             campsiteLocation = new Vector3(-173f, 33f, 0f);
             SaveSystem.Save();
+            GameObject.FindGameObjectWithTag("Canvas").GetComponent<Animator>().SetBool("Cutscene", true);
         }
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();

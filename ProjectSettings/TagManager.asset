@@ -10,6 +10,7 @@ TagManager:
   - FadeInOut
   - LayoutTilemap
   - Canvas
+  - SubCamera
   layers:
   - Default
   - TransparentFX
