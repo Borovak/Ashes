@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
     public static ChamberController currentChamber;
     public static FadeInOutController fadeInOutController;
+    public static bool paused;
 
     public Light2D backgroundLight;
     public Light2D terrainLight;
@@ -23,6 +24,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        currentChamber = null;
+        fadeInOutController = null;
         Instance = this;
         if (!Application.isPlaying) return;
         var loadMessage = SaveSystem.Load();

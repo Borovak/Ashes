@@ -978,7 +978,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2000955944}
-  - component: {fileID: 2000955946}
   m_Layer: 5
   m_Name: SaveGamePanel
   m_TagString: Untagged
@@ -1009,14 +1008,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -500}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2000955946
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000955943}
-  m_CullTransparentMesh: 0
 --- !u!1 &2053621330
 GameObject:
   m_ObjectHideFlags: 0

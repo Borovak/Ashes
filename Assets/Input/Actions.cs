@@ -339,6 +339,14 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7b16516-bd5e-4777-968d-d1797892724d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -484,6 +492,28 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c623395-cf4b-4fbe-b166-973a84af560f"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""13fab130-7a11-4d68-9622-63ccf38c16a5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -530,6 +560,7 @@ public class @Actions : IInputActionCollection, IDisposable
         m_Menu_SelectionChange = m_Menu.FindAction("Selection Change", throwIfNotFound: true);
         m_Menu_Select = m_Menu.FindAction("Select", throwIfNotFound: true);
         m_Menu_Back = m_Menu.FindAction("Back", throwIfNotFound: true);
+        m_Menu_Start = m_Menu.FindAction("Start", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -655,6 +686,7 @@ public class @Actions : IInputActionCollection, IDisposable
     private readonly InputAction m_Menu_SelectionChange;
     private readonly InputAction m_Menu_Select;
     private readonly InputAction m_Menu_Back;
+    private readonly InputAction m_Menu_Start;
     public struct MenuActions
     {
         private @Actions m_Wrapper;
@@ -662,6 +694,7 @@ public class @Actions : IInputActionCollection, IDisposable
         public InputAction @SelectionChange => m_Wrapper.m_Menu_SelectionChange;
         public InputAction @Select => m_Wrapper.m_Menu_Select;
         public InputAction @Back => m_Wrapper.m_Menu_Back;
+        public InputAction @Start => m_Wrapper.m_Menu_Start;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -680,6 +713,9 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Back.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
                 @Back.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
                 @Back.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
+                @Start.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -693,6 +729,9 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Back.started += instance.OnBack;
                 @Back.performed += instance.OnBack;
                 @Back.canceled += instance.OnBack;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
             }
         }
     }
@@ -720,5 +759,6 @@ public class @Actions : IInputActionCollection, IDisposable
         void OnSelectionChange(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
     }
 }

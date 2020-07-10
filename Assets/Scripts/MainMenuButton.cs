@@ -18,6 +18,9 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
         LoadSave1 = 4,
         LoadSave2 = 5,
         LoadSave3 = 6,
+        Resume = 7,
+        ExitToMenu = 8,
+        ExitToDesktop = 9,
     }
 
     private struct MainMenuButtonInfo
@@ -49,6 +52,9 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
             {ButtonIds.LoadSave1, new MainMenuButtonInfo{text = "Save 1", actionOnClick = () => LoadSaveFile(0)}},
             {ButtonIds.LoadSave2, new MainMenuButtonInfo{text = "Save 2", actionOnClick = () => LoadSaveFile(1)}},
             {ButtonIds.LoadSave3, new MainMenuButtonInfo{text = "Save 3", actionOnClick = () => LoadSaveFile(2)}},
+            {ButtonIds.Resume, new MainMenuButtonInfo{text = "Resume", actionOnClick = () => _animator.SetTrigger("Back")}},
+            {ButtonIds.ExitToMenu, new MainMenuButtonInfo{text = "Exit to Menu", actionOnClick = () => SceneManager.LoadScene("MainMenu")}},
+            {ButtonIds.ExitToDesktop, new MainMenuButtonInfo{text = "Exit to Desktop", actionOnClick = Application.Quit}},
         };
         SetText();
     }
@@ -96,7 +102,7 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
     private void LoadSaveFile(int index)
     {
         SaveSystem.index = index;
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Game");
     }
 
     private void OnSelect()

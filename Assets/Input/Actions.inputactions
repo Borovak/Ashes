@@ -326,6 +326,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "d7b16516-bd5e-4777-968d-d1797892724d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -469,6 +477,28 @@
                     "processors": "",
                     "groups": "Control Scheme Alpha",
                     "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c623395-cf4b-4fbe-b166-973a84af560f",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "13fab130-7a11-4d68-9622-63ccf38c16a5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class MenuInputs : MonoBehaviour
 {
+    public event Action Start;
     public event Action Select;
     public event Action Back;
     public event Action SelectionChangePositive;
@@ -18,6 +19,7 @@ public class MenuInputs : MonoBehaviour
         _actions = new Actions();
         _pairingDictionary = new Dictionary<InputAction, Action<InputAction.CallbackContext>>
         {
+            {_actions.Menu.Start, OnStart},
             {_actions.Menu.Select, OnSelect},
             {_actions.Menu.Back, OnBack},
             {_actions.Menu.SelectionChange, OnSelectionChange}
@@ -42,6 +44,11 @@ public class MenuInputs : MonoBehaviour
         }
     }
 
+    public void OnStart(InputAction.CallbackContext context)
+    {
+        Start?.Invoke();
+    }
+    
     public void OnSelect(InputAction.CallbackContext context)
     {
         Select?.Invoke();

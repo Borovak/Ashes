@@ -2,19 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackBehaviour : StateMachineBehaviour
+public class GameMenuRootBehaviour : StateMachineBehaviour
 {
-
-    public AudioClip attackSound;
-
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {       
-        if (attackSound == null) return;
-        //Audio
-        var audioSource = animator.GetComponent<AudioSource>();
-        var player = animator.GetComponent<PlayerPlatformerController>();
-        audioSource.PlayOneShot(attackSound);
+    {
+       GameController.paused = true;
+       GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().enabled = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

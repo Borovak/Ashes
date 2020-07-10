@@ -50,33 +50,39 @@ public class PlayerInputs : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
+        if (GameController.paused) return;
         Attack?.Invoke();
     }
 
     public void OnCast(InputAction.CallbackContext context)
     {
+        if (GameController.paused) return;
         Cast?.Invoke();
     }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
+        if (GameController.paused) return;
         Interact?.Invoke();
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        if (GameController.paused) return;
         var a = context.ReadValue<float>() > 0.1f ? Jump : JumpRelease;
         a?.Invoke();
     }
 
     public void OnMovement(InputAction.CallbackContext context)
     {
+        if (GameController.paused) return;
         movement = context.ReadValue<Vector2>();
         //Movement?.Invoke(context.ReadValue<Vector2>());
     }
 
     public void OnRoll(InputAction.CallbackContext context)
     {
+        if (GameController.paused) return;
         Roll?.Invoke();
     }
 }

@@ -39,6 +39,7 @@ public class PhysicsObject : MonoBehaviour
 
     void Update()
     {
+        if (GameController.paused) return;
         targetVelocity = Vector2.zero;
         ComputeVelocity();
     }
@@ -50,6 +51,7 @@ public class PhysicsObject : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (GameController.paused) return;
         if (forcedDestinationEnabled)
         {
             var currentPosition = new Vector2(transform.position.x, transform.position.y);
