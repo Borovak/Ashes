@@ -140,6 +140,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5855487513016864488, guid: 5a804b67320c14b4a906d0e11b43c418,
+        type: 3}
+      propertyPath: m_TagString
+      value: MenuButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6239303544645818785, guid: 5a804b67320c14b4a906d0e11b43c418,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1190,6 +1195,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5855487513016864488, guid: 5a804b67320c14b4a906d0e11b43c418,
+        type: 3}
+      propertyPath: m_TagString
+      value: MenuButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6239303544645818785, guid: 5a804b67320c14b4a906d0e11b43c418,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1449,7 +1459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ddc26114ca505419211c51b2feb16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxIndex: 0
 --- !u!1 &718395212
 GameObject:
   m_ObjectHideFlags: 0
@@ -85652,6 +85661,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuButton (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5855487513016864488, guid: 5a804b67320c14b4a906d0e11b43c418,
+        type: 3}
+      propertyPath: m_TagString
+      value: MenuButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6239303544645818785, guid: 5a804b67320c14b4a906d0e11b43c418,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -86710,6 +86724,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainMenuButton (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5855487513016864488, guid: 5a804b67320c14b4a906d0e11b43c418,
+        type: 3}
+      propertyPath: m_TagString
+      value: MenuButton
       objectReference: {fileID: 0}
     - target: {fileID: 6239303544645818785, guid: 5a804b67320c14b4a906d0e11b43c418,
         type: 3}

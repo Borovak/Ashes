@@ -27,9 +27,25 @@ public class SaveGamePanel : MonoBehaviour
         Load();
     }
 
+    void OnEnable()
+    {
+        SaveSystem.SaveDeleted += Reload;
+    }
+
+    void OnDiable()
+    {
+        SaveSystem.SaveDeleted -= Reload;
+    }
+
     // Update is called once per frame
     void Update()
     {
+    }
+
+    private void Reload(int i)
+    {
+        if (i != index) return;
+        Load();
     }
 
     public void Load()

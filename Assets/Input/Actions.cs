@@ -318,9 +318,9 @@ public class @Actions : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Selection Change"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""73ad625c-24af-4615-9c30-f74c4d79b233"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Dpad"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -353,7 +353,7 @@ public class @Actions : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Gamepad D-Pad"",
                     ""id"": ""782963b0-5df3-47e5-bc26-00b1441c9096"",
-                    ""path"": ""1DAxis"",
+                    ""path"": ""2DVector"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
@@ -362,7 +362,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""Up"",
                     ""id"": ""dbc8b3b9-8e16-4196-a807-41d2cf8f9902"",
                     ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
@@ -373,7 +373,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""Down"",
                     ""id"": ""39884546-08b7-4ba7-a6e6-edd51e1e9e35"",
                     ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
@@ -384,9 +384,31 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Left"",
+                    ""id"": ""bd61f318-c6b6-4bc3-8503-e09433d85f9c"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Selection Change"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""cb70dc0d-3291-401f-9624-8d22c54190d7"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Selection Change"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""Gamepad Joystick"",
                     ""id"": ""0e845577-def0-4f68-a7e5-027f94bf9d77"",
-                    ""path"": ""1DAxis"",
+                    ""path"": ""2DVector"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
@@ -395,7 +417,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""Up"",
                     ""id"": ""f44c7cbb-8452-4be1-870c-59310a61c692"",
                     ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
@@ -406,7 +428,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""Down"",
                     ""id"": ""5dd49a5c-490e-4c04-af89-aca7d38771ba"",
                     ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
@@ -417,9 +439,31 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Left"",
+                    ""id"": ""c6014b5d-dec1-4c1a-9b70-f0bad0aa7716"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Selection Change"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""bf3bfe95-e43d-4ff0-b56c-74a70d897169"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Selection Change"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""Keyboard Arrows"",
                     ""id"": ""4f0d36d2-7482-4c2e-b0e9-8e16024643d5"",
-                    ""path"": ""1DAxis"",
+                    ""path"": ""2DVector"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
@@ -428,7 +472,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""Up"",
                     ""id"": ""7c2ec27a-c71b-47c2-8892-7dbd68b642d1"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
@@ -439,12 +483,34 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""Down"",
                     ""id"": ""b6a620da-154a-476b-885c-d68aba14806d"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Selection Change"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""cff9cf58-400a-45a0-8ebf-8abb2c327e18"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Selection Change"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""76105637-e735-4436-b810-1230b6d3d547"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""Selection Change"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true

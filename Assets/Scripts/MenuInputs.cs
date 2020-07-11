@@ -8,8 +8,10 @@ public class MenuInputs : MonoBehaviour
     public event Action Start;
     public event Action Select;
     public event Action Back;
-    public event Action SelectionChangePositive;
-    public event Action SelectionChangeNegative;
+    public event Action SelectionChangeUp;
+    public event Action SelectionChangeDown;
+    public event Action SelectionChangeLeft;
+    public event Action SelectionChangeRight;
     public Actions _actions;
 
     private Dictionary<InputAction, Action<InputAction.CallbackContext>> _pairingDictionary;
@@ -61,8 +63,15 @@ public class MenuInputs : MonoBehaviour
 
     public void OnSelectionChange(InputAction.CallbackContext context)
     {
-        var value = context.ReadValue<float>();
-        var a = value > 0.1f ? SelectionChangePositive : SelectionChangeNegative;
-        a?.Invoke();
+        var value = context.ReadValue<Vector2>();
+        if (value.y < -0.1f){
+            SelectionChangeUp?.Invoke();
+        } else if (value.y > 0.1f){
+            SelectionChangeDown?.Invoke();
+        } else if (value.x < -0.1f){
+            SelectionChangeLeft?.Invoke();
+        } else if (value.x > 0.1f){
+            SelectionChangeRight?.Invoke();
+        }
     }
 }

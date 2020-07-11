@@ -7,6 +7,7 @@ public static class SaveSystem
 {
     public static int index = 0;
     public static SaveData latestSaveData;
+    public static event Action<int> SaveDeleted;
 
     private static string _filePath => Application.persistentDataPath + $"/ashes_{index}.sav";
 
@@ -50,6 +51,14 @@ public static class SaveSystem
             latestSaveData = null;
             return ex.ToString();
         }
+    }
+
+    public static void Delete(int i)
+    {
+        index = i;
+        System.IO.File.Delete(_filePath);
+        index = 0;
+        SaveDeleted?.Invoke(i);
     }
 
     public static void WipeFiles()

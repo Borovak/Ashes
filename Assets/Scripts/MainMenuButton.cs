@@ -21,6 +21,9 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
         Resume = 7,
         ExitToMenu = 8,
         ExitToDesktop = 9,
+        DeleteSave1 = 10,
+        DeleteSave2 = 11,
+        DeleteSave3 = 12,
     }
 
     private struct MainMenuButtonInfo
@@ -31,6 +34,7 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
 
     public ButtonIds id;
     public int contextIndex;
+    public int subContextIndex;
 
     private Color _colorWhenSelected = new Color(1f, 1f, 1f, 0.1f);
     private Color _colorWhenUnselected = new Color(1f, 1f, 1f, 0.02f);
@@ -55,6 +59,9 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
             {ButtonIds.Resume, new MainMenuButtonInfo{text = "Resume", actionOnClick = () => _animator.SetTrigger("Back")}},
             {ButtonIds.ExitToMenu, new MainMenuButtonInfo{text = "Exit to Menu", actionOnClick = () => SceneManager.LoadScene("MainMenu")}},
             {ButtonIds.ExitToDesktop, new MainMenuButtonInfo{text = "Exit to Desktop", actionOnClick = Application.Quit}},
+            {ButtonIds.DeleteSave1, new MainMenuButtonInfo{text = "X", actionOnClick = () => ConfirmDeletion(0)}},
+            {ButtonIds.DeleteSave2, new MainMenuButtonInfo{text = "X", actionOnClick = () => ConfirmDeletion(1)}},
+            {ButtonIds.DeleteSave3, new MainMenuButtonInfo{text = "X", actionOnClick = () => ConfirmDeletion(2)}},
         };
         SetText();
     }
@@ -79,12 +86,13 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
     // Update is called once per frame
     void Update()
     {
-        _buttonBack.color = contextIndex == MenuController.index ? _colorWhenSelected : _colorWhenUnselected;
+        _buttonBack.color = contextIndex == MenuController.index && subContextIndex == MenuController.subContextIndex ? _colorWhenSelected : _colorWhenUnselected;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         MenuController.index = contextIndex;
+        MenuController.subContextIndex = subContextIndex;
         _animator.SetInteger("Index", Convert.ToInt32(id));
     }
 
@@ -101,13 +109,14 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
 
     private void LoadSaveFile(int index)
     {
+        Debug.Log(index);
         SaveSystem.index = index;
         SceneManager.LoadScene("Game");
     }
 
     private void OnSelect()
     {
-        if (contextIndex != MenuController.index) return;
+        if (contextIndex != MenuController.index || subContextIndex != MenuController.subContextIndex) return;
         ExecuteAction();
     }
 
@@ -115,5 +124,10 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
     {
         if (!_buttons.TryGetValue(id, out var buttonInfo)) return;
         buttonInfo.actionOnClick?.Invoke();
+    }
+
+    private void ConfirmDeletion(int index)
+    {
+        SaveSystem.Delete(index);
     }
 }
