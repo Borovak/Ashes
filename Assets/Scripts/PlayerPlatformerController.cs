@@ -6,12 +6,6 @@ using UnityEngine;
 
 public class PlayerPlatformerController : PhysicsObject
 {
-    public enum RollingStates
-    {
-        NotRolling,
-        Rolling,
-        RollingNoMotion
-    }
 
     public static PlayerPlatformerController Instance;
     public float maxSpeed = 7f;
@@ -22,8 +16,9 @@ public class PlayerPlatformerController : PhysicsObject
     public Vector3 campsiteLocation;
     public bool hasDoubleJump;
     public float gameTime;
+    public bool freezeMovement;
+    public bool isRolling;
     public GameObject landingPuffPrefab;
-    public RollingStates rollingState;
 
     private SpriteRenderer[] _spriteRenderers;
     private SpriteRenderer _spriteRenderer;
@@ -92,7 +87,7 @@ public class PlayerPlatformerController : PhysicsObject
         CheckIfLanding();
 
         Vector2 move = Vector2.zero;
-        if (rollingState == RollingStates.NotRolling)
+        if (!freezeMovement)
         {
             move.x = _inputs.movement.x;
 
@@ -104,7 +99,7 @@ public class PlayerPlatformerController : PhysicsObject
                 transform.localScale = scale;
             }
         }
-        else if (rollingState == RollingStates.Rolling)
+        else if (isRolling)
         {
             move.x = transform.localScale.x * rollSpeed;
         }
@@ -157,11 +152,6 @@ public class PlayerPlatformerController : PhysicsObject
     private void Roll()
     {
         _animator.SetTrigger("roll");
-    }
-
-    private void RollStopMotion()
-    {
-        rollingState = RollingStates.RollingNoMotion;
     }
 
     private void OnChamberChanged(ChamberController chamber)

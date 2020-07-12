@@ -3718,6 +3718,471 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0001.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.251572,0.989583</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>40,72,79,144</rect>
+                <key>scale9Paddings</key>
+                <rect>40,72,79,144</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0003.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.266234,0.989655</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>39,73,77,145</rect>
+                <key>scale9Paddings</key>
+                <rect>39,73,77,145</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0005.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.207447,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>47,61,94,123</rect>
+                <key>scale9Paddings</key>
+                <rect>47,61,94,123</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0007.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.149254,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>50,50,101,100</rect>
+                <key>scale9Paddings</key>
+                <rect>50,50,101,100</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0009.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.121827,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>49,51,99,103</rect>
+                <key>scale9Paddings</key>
+                <rect>49,51,99,103</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0011.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0247525,1.03559</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,70,101,141</rect>
+                <key>scale9Paddings</key>
+                <rect>51,70,101,141</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0013.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0263158,1.07519</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>38,67,76,133</rect>
+                <key>scale9Paddings</key>
+                <rect>38,67,76,133</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0015.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0792079,1.12195</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>25,62,51,123</rect>
+                <key>scale9Paddings</key>
+                <rect>25,62,51,123</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0017.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0545455,1.08264</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>28,61,55,121</rect>
+                <key>scale9Paddings</key>
+                <rect>28,61,55,121</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0019.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0333333,1.05929</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,63,60,127</rect>
+                <key>scale9Paddings</key>
+                <rect>30,63,60,127</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0021.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0384615,1.03717</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>33,67,65,135</rect>
+                <key>scale9Paddings</key>
+                <rect>33,67,65,135</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0023.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0194805,1.01684</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>39,74,77,149</rect>
+                <key>scale9Paddings</key>
+                <rect>39,74,77,149</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0025.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0384615,0.990566</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>33,80,65,159</rect>
+                <key>scale9Paddings</key>
+                <rect>33,80,65,159</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0027.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0316456,0.973684</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>40,57,79,114</rect>
+                <key>scale9Paddings</key>
+                <rect>40,57,79,114</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0029.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.00956938,0.918129</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>52,43,105,85</rect>
+                <key>scale9Paddings</key>
+                <rect>52,43,105,85</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0031.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.00473934,0.921466</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>53,48,105,95</rect>
+                <key>scale9Paddings</key>
+                <rect>53,48,105,95</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0033.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.00925926,0.916256</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>54,51,108,101</rect>
+                <key>scale9Paddings</key>
+                <rect>54,51,108,101</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0035.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0178571,0.925</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>56,50,112,100</rect>
+                <key>scale9Paddings</key>
+                <rect>56,50,112,100</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0037.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.00909091,0.925</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>55,50,110,100</rect>
+                <key>scale9Paddings</key>
+                <rect>55,50,110,100</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0039.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0339806,0.943128</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>52,53,103,105</rect>
+                <key>scale9Paddings</key>
+                <rect>52,53,103,105</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0041.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0157895,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>48,59,95,117</rect>
+                <key>scale9Paddings</key>
+                <rect>48,59,95,117</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0043.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.044586,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>39,65,79,130</rect>
+                <key>scale9Paddings</key>
+                <rect>39,65,79,130</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0045.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.337838,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>37,71,74,141</rect>
+                <key>scale9Paddings</key>
+                <rect>37,71,74,141</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0047.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.639456,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>37,74,73,148</rect>
+                <key>scale9Paddings</key>
+                <rect>37,74,73,148</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0049.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.786667,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>38,75,75,150</rect>
+                <key>scale9Paddings</key>
+                <rect>38,75,75,150</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0051.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.72549,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>38,74,77,147</rect>
+                <key>scale9Paddings</key>
+                <rect>38,74,77,147</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0053.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.670968,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>39,72,77,144</rect>
+                <key>scale9Paddings</key>
+                <rect>39,72,77,144</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0055.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.66242,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>39,72,79,144</rect>
+                <key>scale9Paddings</key>
+                <rect>39,72,79,144</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0057.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.694268,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>39,73,79,146</rect>
+                <key>scale9Paddings</key>
+                <rect>39,73,79,146</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0059.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.710692,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>40,74,79,147</rect>
+                <key>scale9Paddings</key>
+                <rect>40,74,79,147</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0061.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.71519,1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>40,74,79,149</rect>
+                <key>scale9Paddings</key>
+                <rect>40,74,79,149</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
         </map>
         <key>fileList</key>
         <array>
@@ -4164,6 +4629,37 @@
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Attack0047.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Attack0049.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/Attack0051.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0001.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0003.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0005.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0007.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0009.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0011.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0013.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0015.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0017.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0019.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0021.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0023.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0025.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0027.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0029.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0031.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0033.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0035.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0037.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0039.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0041.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0043.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0045.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0047.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0049.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0051.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0053.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0055.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0057.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0059.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/RenderNotCropped/GroundBreak0061.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

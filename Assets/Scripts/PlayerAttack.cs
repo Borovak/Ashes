@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     private AudioSource _audioSource;
     private PlayerInputs _inputs;
     private ManaController _manaController;
+    private LifeController _lifeController;
 
 
     // Start is called before the first frame update
@@ -26,8 +27,11 @@ public class PlayerAttack : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _inputs = GetComponent<PlayerInputs>();
         _manaController = GetComponent<ManaController>();
+        _lifeController = GetComponent<LifeController>();
         _inputs.Attack += Attack;
-        _inputs.Cast += Cast;
+        _inputs.AttackSpell += AttackSpell;
+        _inputs.SelfSpell += SelfSpell;
+        _inputs.GroundBreak += GroundBreak;
     }
 
     // Update is called once per frame
@@ -66,13 +70,31 @@ public class PlayerAttack : MonoBehaviour
         _attackCooldown = 1f / attackRate;
     }
 
-    private void Cast()
+    private void AttackSpell()
     {
         if (_attackCooldown > 0) return;
         if (!_manaController.TryCastSpell(3f)) return;
         _animator.SetTrigger("fireball");
         _attackCooldown = 1f / attackRate;
     }
+
+    private void SelfSpell()
+    {
+        if (_attackCooldown > 0) return;
+        if (!_manaController.TryCastSpell(5f)) return;
+        _animator.SetTrigger("heal");
+        _lifeController.Heal(1);
+        _attackCooldown = 1f / attackRate;
+    }
+
+    private void GroundBreak()
+    {
+        if (_attackCooldown > 0) return;
+        if (!_manaController.TryCastSpell(5f)) return;
+        _animator.SetTrigger("groundBreak");
+        _attackCooldown = 1f / attackRate;
+    }
+
 
     private void MeleeAttack()
     {

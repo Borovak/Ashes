@@ -72,4 +72,9 @@ public class LifeController : MonoBehaviour
         if (_invinsibilityController != null && !_invinsibilityController.TryTakeDamage()) return;
         hp -= damage;
     }
+
+    public void Heal(int value)
+    {
+        hp = System.Math.Min(hp + value, maxHp);
+    }
 }

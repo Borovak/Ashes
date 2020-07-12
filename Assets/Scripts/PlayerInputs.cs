@@ -6,11 +6,13 @@ using UnityEngine.InputSystem;
 public class PlayerInputs : MonoBehaviour
 {
     public event Action Attack;
-    public event Action Cast;
+    public event Action AttackSpell;
     public event Action Interact;
     public event Action Jump;
     public event Action JumpRelease;
     public event Action Roll;
+    public event Action GroundBreak;
+    public event Action SelfSpell;
     public Vector2 movement;
     public Actions _actions;
 
@@ -22,7 +24,8 @@ public class PlayerInputs : MonoBehaviour
         _pairingDictionary = new Dictionary<InputAction, Action<InputAction.CallbackContext>>
         {
             {_actions.Player.Attack, OnAttack},
-            {_actions.Player.Cast, OnCast},
+            {_actions.Player.AttackSpell, OnAttackSpell},
+            {_actions.Player.SelfSpell, OnSelfSpell},
             {_actions.Player.Interact, OnInteract},
             {_actions.Player.Jump, OnJump},
             {_actions.Player.Movement, OnMovement},
@@ -54,10 +57,16 @@ public class PlayerInputs : MonoBehaviour
         Attack?.Invoke();
     }
 
-    public void OnCast(InputAction.CallbackContext context)
+    public void OnAttackSpell(InputAction.CallbackContext context)
     {
         if (GameController.paused) return;
-        Cast?.Invoke();
+        AttackSpell?.Invoke();
+    }
+
+    public void OnSelfSpell(InputAction.CallbackContext context)
+    {
+        if (GameController.paused) return;
+        SelfSpell?.Invoke();
     }
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -83,6 +92,10 @@ public class PlayerInputs : MonoBehaviour
     public void OnRoll(InputAction.CallbackContext context)
     {
         if (GameController.paused) return;
-        Roll?.Invoke();
+        if (movement.y < -0.1f){
+            GroundBreak?.Invoke();
+        } else {            
+            Roll?.Invoke();
+        }
     }
 }
