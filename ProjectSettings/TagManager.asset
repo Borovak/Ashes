@@ -31,7 +31,7 @@ TagManager:
   - Background
   - Post Processing
   - ChamberCollider
-  - 
+  - GroundOverlay
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
   m_SortingLayers:
   - name: Sky
     uniqueID: 3934235945
+    locked: 0
+  - name: Water
+    uniqueID: 4257067975
     locked: 0
   - name: Background
     uniqueID: 3936676035

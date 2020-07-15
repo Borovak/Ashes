@@ -22,7 +22,11 @@ public class ChamberManager : EditorWindow
     // Update is called once per frame
     private void OnGUI()
     {
-        if (SceneManager.GetActiveScene().name != "Main") return;
+        if (GUILayout.Button("Wipe save files"))
+        {
+            SaveSystem.WipeFiles();    
+        }
+        if (SceneManager.GetActiveScene().name != "Game") return;
         if (regions == null)
         {
             var colliderFolder = GameObject.FindGameObjectWithTag("ChamberCollidersFolder").transform;

@@ -8,7 +8,6 @@ using UnityEngine;
 public class EditorHelper : MonoBehaviour
 {
     public Transform chambersFolder;
-    public bool wipeSaveFiles;
 
     void OnDrawGizmos()
     {        
@@ -27,15 +26,5 @@ public class EditorHelper : MonoBehaviour
             Gizmos.color = colors.TryGetValue(chamberController.region, out var c) ? c : Color.magenta;
             Gizmos.DrawWireCube(new Vector3(x, y, 0f), new Vector3(w, h, 1f));
         }
-#if UNITY_EDITOR
-        // Ensure continuous Update calls.
-        if (Application.isPlaying) return;
-        UnityEditor.EditorApplication.QueuePlayerLoopUpdate();
-        UnityEditor.SceneView.RepaintAll();
-        if (wipeSaveFiles){
-            wipeSaveFiles = false;  
-            SaveSystem.WipeFiles();          
-        }
-#endif
     }
 }

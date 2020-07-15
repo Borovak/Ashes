@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Material_Water_Top_Unlit
-  m_Shader: {fileID: -6465566751694194690, guid: e996c1cdac5d8f6449a8619c351dc439,
+  m_Shader: {fileID: -6465566751694194690, guid: 7c6230131a9e0c644beaafaee74b95ea,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -21,7 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3ABD3B8C:
-        m_Texture: {fileID: 8400000, guid: ce4996625dc12b74ab31806af2d04dd5, type: 2}
+        m_Texture: {fileID: 8400000, guid: 20eb2097a4c0a2c40921cf59283e523c, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_78F4DEAC:
+        m_Texture: {fileID: 8400000, guid: 20eb2097a4c0a2c40921cf59283e523c, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_81D0ED11:

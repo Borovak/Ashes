@@ -19,6 +19,7 @@ public class PlayerPlatformerController : PhysicsObject
     public bool freezeMovement;
     public bool isRolling;
     public GameObject landingPuffPrefab;
+    public Vector3 defaultLocation;
 
     private SpriteRenderer[] _spriteRenderers;
     private SpriteRenderer _spriteRenderer;
@@ -52,7 +53,7 @@ public class PlayerPlatformerController : PhysicsObject
         else
         {
             hasDoubleJump = false;
-            campsiteLocation = new Vector3(-173f, 33f, 0f);
+            campsiteLocation = defaultLocation;
             SaveSystem.Save();
             GameObject.FindGameObjectWithTag("Canvas").GetComponent<Animator>().SetBool("Cutscene", true);
         }
