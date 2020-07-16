@@ -21,11 +21,12 @@ public class RegionAnnouncementController : MonoBehaviour
 
     void Update()
     {
-        if (GameController.currentChamber != null && GameController.currentChamber.region != _previousRegion)
+        if (LocationManager.currentChamberId >= 0)
         {
-            _previousRegion = GameController.currentChamber.region;
+            var chamber = LocationManager.GetChamber();
+            _previousRegion = chamber.zoneId;
             _timeLeft = timeShown;
-            _text.text = GetText(_previousRegion);
+            _text.text = chamber.zoneName;
             _alpha = 1f;
             SetAlpha();
         }
@@ -38,16 +39,6 @@ public class RegionAnnouncementController : MonoBehaviour
             _alpha -= (1f / fadeOutTime) * Time.deltaTime;
             SetAlpha();
         }
-    }
-
-    public static string GetText(int zone)
-    {
-        var zoneText = new Dictionary<int, string> {
-            {1, "Elder Woods"},
-            {2, "Cathedral of Whispers"},
-            {3, "Frezasa Town"}
-        };
-        return zoneText.TryGetValue(zone, out LastRegionVisited) ? LastRegionVisited : "";
     }
 
     private void SetAlpha(){        

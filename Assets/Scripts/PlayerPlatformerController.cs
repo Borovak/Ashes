@@ -48,7 +48,7 @@ public class PlayerPlatformerController : PhysicsObject
             Debug.Log($"Saved campsite location : {SaveSystem.latestSaveData.CampsiteLocation}");
             gameTime = SaveSystem.latestSaveData.GameTime;
             hasDoubleJump = SaveSystem.latestSaveData.HasDoubleJump;
-            campsiteLocation = SaveSystem.latestSaveData.CampsiteLocation != null && SaveSystem.latestSaveData.CampsiteLocation.Length == 3 ? new Vector3(SaveSystem.latestSaveData.CampsiteLocation[0], SaveSystem.latestSaveData.CampsiteLocation[1], SaveSystem.latestSaveData.CampsiteLocation[2]) : GameController.Instance.campsiteLocations[0];
+            campsiteLocation = SaveSystem.latestSaveData.CampsiteLocation != null && SaveSystem.latestSaveData.CampsiteLocation.Length == 3 ? new Vector3(SaveSystem.latestSaveData.CampsiteLocation[0], SaveSystem.latestSaveData.CampsiteLocation[1], SaveSystem.latestSaveData.CampsiteLocation[2]) : defaultLocation;
         }
         else
         {
@@ -62,7 +62,6 @@ public class PlayerPlatformerController : PhysicsObject
         _audioSource = GetComponent<AudioSource>();
         _inputs = GetComponent<PlayerInputs>();
         _mainCameraAnimator = Camera.main.transform.GetChild(0).GetComponent<Animator>();
-        GameController.ChamberChanged += OnChamberChanged;
         _inputs.Jump += Jump;
         _inputs.JumpRelease += JumpRelease;
         _inputs.Roll += Roll;
@@ -70,7 +69,6 @@ public class PlayerPlatformerController : PhysicsObject
 
     void OnDisable()
     {
-        GameController.ChamberChanged -= OnChamberChanged;
         _inputs.Jump -= Jump;
         _inputs.JumpRelease -= JumpRelease;
         _inputs.Roll -= Roll;
@@ -157,24 +155,24 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void OnChamberChanged(ChamberController chamber)
     {
-        const float spawnOffset = 3f;
-        var minX = chamber.x * ChamberController.unitSize;
-        var minY = chamber.y * ChamberController.unitSize;
-        var maxX = minX + chamber.w * ChamberController.unitSize;
-        var maxY = minY + chamber.h * ChamberController.unitSize;
+        // const float spawnOffset = 3f;
+        // var minX = chamber.x * ChamberController.unitSize;
+        // var minY = chamber.y * ChamberController.unitSize;
+        // var maxX = minX + chamber.w * ChamberController.unitSize;
+        // var maxY = minY + chamber.h * ChamberController.unitSize;
 
-        var actions = new List<ChamberPosition>{
-            new ChamberPosition {value = transform.position.x - chamber.x * ChamberController.unitSize, getPoint = () => new Vector2(chamber.transform.position.x + spawnOffset, transform.position.y)},
-            new ChamberPosition {value = transform.position.y - chamber.y * ChamberController.unitSize, getPoint = () => new Vector2(transform.position.x, chamber.transform.position.y + spawnOffset)},
-            new ChamberPosition {value = transform.position.x - (minX + chamber.w * ChamberController.unitSize), getPoint = () => new Vector2(maxX - spawnOffset, transform.position.y)},
-            new ChamberPosition {value = transform.position.y - (minY + chamber.h * ChamberController.unitSize), getPoint = () => new Vector2(transform.position.x, maxY - spawnOffset)}
-        };
-        var min = actions.Min(x => Mathf.Abs(x.value));
-        if (min > 3f) return;
-        var func = actions.First(x => Mathf.Abs(x.value) == min).getPoint;
-        var point = func.Invoke();
-        forcedDestinationEnabled = true;
-        forcedDestinationPoint = point;
-        forcedDestinationSpeed = maxSpeed;
+        // var actions = new List<ChamberPosition>{
+        //     new ChamberPosition {value = transform.position.x - chamber.x * ChamberController.unitSize, getPoint = () => new Vector2(chamber.transform.position.x + spawnOffset, transform.position.y)},
+        //     new ChamberPosition {value = transform.position.y - chamber.y * ChamberController.unitSize, getPoint = () => new Vector2(transform.position.x, chamber.transform.position.y + spawnOffset)},
+        //     new ChamberPosition {value = transform.position.x - (minX + chamber.w * ChamberController.unitSize), getPoint = () => new Vector2(maxX - spawnOffset, transform.position.y)},
+        //     new ChamberPosition {value = transform.position.y - (minY + chamber.h * ChamberController.unitSize), getPoint = () => new Vector2(transform.position.x, maxY - spawnOffset)}
+        // };
+        // var min = actions.Min(x => Mathf.Abs(x.value));
+        // if (min > 3f) return;
+        // var func = actions.First(x => Mathf.Abs(x.value) == min).getPoint;
+        // var point = func.Invoke();
+        // forcedDestinationEnabled = true;
+        // forcedDestinationPoint = point;
+        // forcedDestinationSpeed = maxSpeed;
     }
 }

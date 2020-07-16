@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <zone id="0" name="Frezasa Town"/>
+    <chamber id="0" name="Marina" zone="0" scene="Marina"/>
+    <chamber id="1" name="Market" zone="0" scene="Market"/>
+</root>

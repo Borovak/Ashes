@@ -5,13 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Campsite
-  - ChambersFolder
-  - ChamberCollidersFolder
   - FadeInOut
   - LayoutTilemap
   - Canvas
   - SubCamera
   - MenuButton
+  - Chamber
   layers:
   - Default
   - TransparentFX

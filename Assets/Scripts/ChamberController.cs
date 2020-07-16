@@ -2,59 +2,53 @@
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
-[ExecuteInEditMode]
 public class ChamberController : MonoBehaviour
 {
     public const float unitSize = 50f;
-    public int x;
-    public int y;
-    public int w = 1;
-    public int h = 1;
-    public int region;
-    public Cinemachine.CinemachineVirtualCamera Camera;
+    public Vector2 normalizedSize = new Vector2(1, 1);
+    public Vector2 size => normalizedSize * unitSize;
+    public int chamberId;
     public float BackgroundLightIntensity;
     public Color BackgroundLightColor;
     public float TerrainLightIntensity;
     public Color TerrainLightColor;
     public AudioClip _ambientSound;
+    public Light2D backgroundLight;
+    public Light2D terrainLight;
 
     private AudioSource _audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (!Application.isPlaying) return;
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             var virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
             virtualCamera.Follow = player.transform;
         }
-        if (_ambientSound != null){
+        if (_ambientSound != null)
+        {
             _audioSource = gameObject.AddComponent<AudioSource>();
             _audioSource.loop = true;
             _audioSource.clip = _ambientSound;
             _audioSource.Play();
         }
-        
+        SetLighting();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x != unitSize * x || transform.position.y != unitSize * y)
-        {
-            transform.position = new Vector3(unitSize * x, unitSize * y, 0f);
-            var polygonCollider = GetComponent<PolygonCollider2D>();
-            var points = new List<Vector2>{
-                new Vector2(0f, 0f),
-                new Vector2(25f, 0f),
-                new Vector2(unitSize * w, 0f),
-                new Vector2(unitSize * w, unitSize * h),
-                new Vector2(0f, unitSize * h),
-            };
-            polygonCollider.points = points.ToArray();
-        }
+    }
+
+    private void SetLighting()
+    {
+        backgroundLight.intensity = BackgroundLightIntensity;
+        backgroundLight.color = BackgroundLightColor;
+        terrainLight.intensity = TerrainLightIntensity;
+        terrainLight.color = TerrainLightColor;
     }
 }
