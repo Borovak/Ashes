@@ -5,6 +5,7 @@ using UnityEngine;
 
 public static class LocationManager
 {
+    public static bool init;
     public static Dictionary<int, string> zones;
     public static Dictionary<int, ChamberInfo> chambers;
     public static int currentChamberId = -1;
@@ -20,10 +21,12 @@ public static class LocationManager
 
     public static void Load()
     {
+        if (init) return;
+        init = true;
         zones = new Dictionary<int, string>();
         chambers = new Dictionary<int, ChamberInfo>();
         TextAsset textAsset;
-        var filePath = "chambers.xml";
+        var filePath = "chambers";
         try
         {
             textAsset = Resources.Load<TextAsset>(filePath);
@@ -68,23 +71,23 @@ public static class LocationManager
                 throw new Exception($"Cannot parse one chamber element name in location information file '{filePath}'");
             }
             var sZoneId = xe.Attribute("zoneId")?.Value ?? "";
-            if (!int.TryParse(sId, out var zoneId))
+            if (!int.TryParse(sZoneId, out var zoneId))
             {
                 throw new Exception($"Cannot parse one chamber element zoneId in location information file '{filePath}'");
             }
-            var sceneName = xe.Attribute("sceneName")?.Value ?? "";
+            var scene = xe.Attribute("sceneName")?.Value ?? "";
             if (name == "")
             {
                 throw new Exception($"Cannot parse one chamber element sceneName in location information file '{filePath}'");
             }
-            chambers.Add(id, new ChamberInfo { id = id, name = name, zoneId = zoneId, sceneName = sceneName });
+            chambers.Add(id, new ChamberInfo { id = id, name = name, zoneId = zoneId, sceneName = scene });
         }
 
     }
 
-    public static ChamberInfo GetChamber(int id = -1)
+    public static ChamberInfo GetChamber(int id)
     {
-        return id == -1 ? chambers[currentChamberId] : chambers[id];
+        return chambers[id];
     }
 
 }

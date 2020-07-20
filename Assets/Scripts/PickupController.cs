@@ -21,7 +21,7 @@ public class PickupController : MonoBehaviour
         {
         new Dictionary<Pickups, System.Action<bool>>
         {
-            {Pickups.DoubleJump, value => PlayerPlatformerController.Instance.hasDoubleJump = value}
+            {Pickups.DoubleJump, value => SaveData.workingData.HasDoubleJump = value}
         }[pickup].Invoke(value);
         }
     }

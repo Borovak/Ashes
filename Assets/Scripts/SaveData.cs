@@ -4,13 +4,17 @@ using System.Collections.Generic;
 [Serializable]
 public class SaveData
 {
-    public string ZoneName;
+    const int defaultHp = 3;
+    const int defaultMp = 30;
+
+    public static SaveData workingData;
     public int MaxHp;
     public int Hp;
     public float MaxMp;
     public float Mp;
     public bool HasDoubleJump;
-    public float[] CampsiteLocation;
+    public int SavePointChamberId;
+    public int SavePointId;
     public string[] gatesId;
     public bool[] gatesStatus;
     public float GameTime;
@@ -18,18 +22,15 @@ public class SaveData
     public SaveData()
     {
         //Player
-        var lifeController = PlayerPlatformerController.Instance.GetComponent<LifeController>();
-        MaxHp = lifeController.maxHp;
-        Hp = lifeController.hp;
-        var manaController = PlayerPlatformerController.Instance.GetComponent<ManaController>();
-        MaxMp = manaController.maxMp;
-        Mp = manaController.maxMp;
-        HasDoubleJump = PlayerPlatformerController.Instance.hasDoubleJump;
-        var campsiteLocation = PlayerPlatformerController.Instance.campsiteLocation;
-        CampsiteLocation = new float[] { campsiteLocation.x, campsiteLocation.y, campsiteLocation.z };
-        GameTime = PlayerPlatformerController.Instance.gameTime;
+        MaxHp = workingData?.MaxHp ?? defaultHp;
+        Hp = workingData?.Hp ?? defaultHp;
+        MaxMp = workingData?.MaxMp ?? defaultMp;
+        Mp = workingData?.Mp ?? defaultMp;
+        HasDoubleJump = workingData?.HasDoubleJump ?? false;
+        SavePointChamberId = workingData?.SavePointChamberId ?? 0;
+        SavePointId = workingData?.SavePointId ?? 0;
+        GameTime = workingData?.GameTime ?? 0;
         //World
-        ZoneName = RegionAnnouncementController.LastRegionVisited;
         var count = GateController.gates?.Count ?? 0;
         if (count > 0)
         {
@@ -46,7 +47,7 @@ public class SaveData
     }
 
     public void Load()
-    {
+    {        
         //World
         if (GateController.gates == null)
         {

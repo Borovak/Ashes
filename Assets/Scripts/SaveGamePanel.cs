@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class SaveGamePanel : MonoBehaviour
 {
     public int index;
+    public bool dataPresent;
 
     private Image _panel;
     private GameObject _newGame;
@@ -52,15 +53,15 @@ public class SaveGamePanel : MonoBehaviour
     {
         SaveSystem.index = index;
         transform.Find("Id").GetComponent<Text>().text = $"Save {index + 1}";
-        var loadMessage = SaveSystem.Load();
-        var data = SaveSystem.latestSaveData;
+        dataPresent = SaveSystem.Load(out var data, out _);
         _newGame.SetActive(data == null);
         _zoneName.SetActive(data != null);
         _gameTime.SetActive(data != null);
         _doubleJump.SetActive(data != null && data.HasDoubleJump);
         if (data != null)
         {
-            _zoneName.GetComponent<Text>().text = data.ZoneName;
+            var chamber = LocationManager.GetChamber(data.SavePointChamberId);
+            _zoneName.GetComponent<Text>().text = $"{chamber.zoneName} - {chamber.name}";
             var t = data.GameTime;
             var h = Convert.ToInt32(t / 3600f);
             t -= h * 3600f;

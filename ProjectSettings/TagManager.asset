@@ -4,13 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Campsite
   - FadeInOut
   - LayoutTilemap
   - Canvas
   - SubCamera
   - MenuButton
   - Chamber
+  - EntrancePoint
+  - ChamberCollidersFolder
+  - ChambersFolder
+  - SavePoint
+  - Announcement
   layers:
   - Default
   - TransparentFX
@@ -26,7 +30,7 @@ TagManager:
   - Chamber
   - Interaction
   - Player
-  - Campsite
+  - SavePoint
   - Background
   - Post Processing
   - ChamberCollider

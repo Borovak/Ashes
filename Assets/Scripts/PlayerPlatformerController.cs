@@ -11,15 +11,13 @@ public class PlayerPlatformerController : PhysicsObject
     public float maxSpeed = 7f;
     public float jumpTakeOffSpeed = 3f;
     public float rollSpeed = 1f;
+    public float transitionTime = 1f;
     public bool isGrounded;
-    public bool flipX => transform.localScale.x < 0f;
-    public Vector3 campsiteLocation;
-    public bool hasDoubleJump;
-    public float gameTime;
+    public bool hasDoubleJump => SaveData.workingData.HasDoubleJump;
     public bool freezeMovement;
     public bool isRolling;
     public GameObject landingPuffPrefab;
-    public Vector3 defaultLocation;
+    public static Vector3 transitionMovement;
 
     private SpriteRenderer[] _spriteRenderers;
     private SpriteRenderer _spriteRenderer;
@@ -30,33 +28,10 @@ public class PlayerPlatformerController : PhysicsObject
     private Animator _mainCameraAnimator;
     private PlayerInputs _inputs;
 
-
-    private struct ChamberPosition
-    {
-        internal float value;
-        internal Func<Vector2> getPoint;
-    }
-
     // Use this for initialization
     void Awake()
     {
         Instance = this;
-        Debug.Log($"Save file present: {SaveSystem.latestSaveData != null}");
-        if (SaveSystem.latestSaveData != null)
-        {
-            Debug.Log($"Saved has double jump : {SaveSystem.latestSaveData.HasDoubleJump}");
-            Debug.Log($"Saved campsite location : {SaveSystem.latestSaveData.CampsiteLocation}");
-            gameTime = SaveSystem.latestSaveData.GameTime;
-            hasDoubleJump = SaveSystem.latestSaveData.HasDoubleJump;
-            campsiteLocation = SaveSystem.latestSaveData.CampsiteLocation != null && SaveSystem.latestSaveData.CampsiteLocation.Length == 3 ? new Vector3(SaveSystem.latestSaveData.CampsiteLocation[0], SaveSystem.latestSaveData.CampsiteLocation[1], SaveSystem.latestSaveData.CampsiteLocation[2]) : defaultLocation;
-        }
-        else
-        {
-            hasDoubleJump = false;
-            campsiteLocation = defaultLocation;
-            SaveSystem.Save();
-            GameObject.FindGameObjectWithTag("Canvas").GetComponent<Animator>().SetBool("Cutscene", true);
-        }
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
@@ -76,39 +51,52 @@ public class PlayerPlatformerController : PhysicsObject
 
     void Start()
     {
-        transform.position = campsiteLocation;
     }
 
     protected override void ComputeVelocity()
     {
-        gameTime += Time.deltaTime;
-        _animator.SetBool("horizontalMoveDesired", Mathf.Abs(_inputs.movement.x) > 0.1);
         CheckIfLanding();
 
         Vector2 move = Vector2.zero;
-        if (!freezeMovement)
+        if (_gameController.gameState == GameController.GameStates.TransitionIn || _gameController.gameState == GameController.GameStates.TransitionOut)
+        {
+            if ((_gameController.gameState == GameController.GameStates.TransitionIn && transitionTime < 0f) || transitionMovement == Vector3.zero)
+            {
+                _gameController.gameState = GameController.GameStates.Running;
+                return;
+            }
+            transitionTime -= Time.deltaTime;
+            move.x = transitionMovement.x;
+            SpriteFlipping(ref move);
+        }
+        else if (!freezeMovement)
         {
             move.x = _inputs.movement.x;
-
-            bool flipSprite = (transform.localScale.x == -1f ? (move.x > 0.01f) : (move.x < -0.01f));
-            if (flipSprite)
-            {
-                var scale = transform.localScale;
-                scale.x = -scale.x;
-                transform.localScale = scale;
-            }
+            SpriteFlipping(ref move);
         }
         else if (isRolling)
         {
             move.x = transform.localScale.x * rollSpeed;
         }
 
+        _animator.SetBool("horizontalMoveDesired", Mathf.Abs(move.x) > 0.1);
         _animator.SetBool("grounded", grounded);
         _animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
         _animator.SetFloat("velocityY", velocity.y);
 
         targetVelocity = move * maxSpeed;
         isGrounded = grounded;
+    }
+
+    private void SpriteFlipping(ref Vector2 move)
+    {
+        bool flipSprite = (transform.localScale.x == -1f ? (move.x > 0.01f) : (move.x < -0.01f));
+        if (flipSprite)
+        {
+            var scale = transform.localScale;
+            scale.x = -scale.x;
+            transform.localScale = scale;
+        }
     }
 
     private void CheckIfLanding()
@@ -151,28 +139,5 @@ public class PlayerPlatformerController : PhysicsObject
     private void Roll()
     {
         _animator.SetTrigger("roll");
-    }
-
-    private void OnChamberChanged(ChamberController chamber)
-    {
-        // const float spawnOffset = 3f;
-        // var minX = chamber.x * ChamberController.unitSize;
-        // var minY = chamber.y * ChamberController.unitSize;
-        // var maxX = minX + chamber.w * ChamberController.unitSize;
-        // var maxY = minY + chamber.h * ChamberController.unitSize;
-
-        // var actions = new List<ChamberPosition>{
-        //     new ChamberPosition {value = transform.position.x - chamber.x * ChamberController.unitSize, getPoint = () => new Vector2(chamber.transform.position.x + spawnOffset, transform.position.y)},
-        //     new ChamberPosition {value = transform.position.y - chamber.y * ChamberController.unitSize, getPoint = () => new Vector2(transform.position.x, chamber.transform.position.y + spawnOffset)},
-        //     new ChamberPosition {value = transform.position.x - (minX + chamber.w * ChamberController.unitSize), getPoint = () => new Vector2(maxX - spawnOffset, transform.position.y)},
-        //     new ChamberPosition {value = transform.position.y - (minY + chamber.h * ChamberController.unitSize), getPoint = () => new Vector2(transform.position.x, maxY - spawnOffset)}
-        // };
-        // var min = actions.Min(x => Mathf.Abs(x.value));
-        // if (min > 3f) return;
-        // var func = actions.First(x => Mathf.Abs(x.value) == min).getPoint;
-        // var point = func.Invoke();
-        // forcedDestinationEnabled = true;
-        // forcedDestinationPoint = point;
-        // forcedDestinationSpeed = maxSpeed;
     }
 }

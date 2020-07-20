@@ -45,8 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  linkChamberId: 0
+  linkEntranceId: 0
   size: 0
   entranceType: 1
+  cubeSize: {x: 0, y: 0, z: 0}
+  cubeCenter: {x: 0, y: 0, z: 0}
 --- !u!61 &7182929986490522962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57,7 +61,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

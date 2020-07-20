@@ -18,13 +18,18 @@ public class MenuController : MonoBehaviour
     private int _maxIndex;
     private int _maxSubIndex;
 
+    void Awake()
+    {
+        LocationManager.Load();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         _choices = new List<Vector2>();
         _animator = GetComponent<Animator>();
         _inputs = GetComponent<MenuInputs>();
-        _inputs.Back += () => _animator.SetTrigger("Back");
+        _inputs.Back += BackPressed;
         _inputs.Start += StartPressed;
         _inputs.Select += SelectPressed;
         _inputs.SelectionChangeUp += MoveUpPressed;
@@ -37,6 +42,23 @@ public class MenuController : MonoBehaviour
     {
         index = 0;
         subContextIndex = 0;
+    }
+
+    void OnDisable()
+    {
+        if (_inputs == null) return;
+        _inputs.Back -= BackPressed;
+        _inputs.Start -= StartPressed;
+        _inputs.Select -= SelectPressed;
+        _inputs.SelectionChangeUp -= MoveUpPressed;
+        _inputs.SelectionChangeDown -= MoveDownPressed;
+        _inputs.SelectionChangeLeft -= MoveLeftPressed;
+        _inputs.SelectionChangeRight -= MoveRightPressed;
+    }
+
+    private void BackPressed()
+    {
+        _animator.SetTrigger("Back");
     }
 
     void Update()

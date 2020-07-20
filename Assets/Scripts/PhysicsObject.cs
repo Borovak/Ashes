@@ -8,9 +8,6 @@ public class PhysicsObject : MonoBehaviour
     public static bool PhysicsEnabled = true;
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
-    public bool forcedDestinationEnabled;
-    public Vector2 forcedDestinationPoint;
-    public float forcedDestinationSpeed;
 
     protected Vector2 targetVelocity;
     protected bool grounded;
@@ -24,6 +21,8 @@ public class PhysicsObject : MonoBehaviour
 
     protected const float minMoveDistance = 0.001f;
     protected const float shellRadius = 0.01f;
+
+    protected GameController _gameController;
 
     void OnEnable()
     {
@@ -39,7 +38,11 @@ public class PhysicsObject : MonoBehaviour
 
     void Update()
     {
-        if (GameController.paused) return;
+        if (_gameController == null)
+        {
+            _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        }
+        if (_gameController.gameState == GameController.GameStates.Paused) return;
         targetVelocity = Vector2.zero;
         ComputeVelocity();
     }
@@ -51,21 +54,11 @@ public class PhysicsObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GameController.paused) return;
-        if (forcedDestinationEnabled)
+        if (_gameController == null)
         {
-            var currentPosition = new Vector2(transform.position.x, transform.position.y);
-            var totalMove = forcedDestinationPoint - currentPosition;
-            if (Vector2.Distance(forcedDestinationPoint, currentPosition) <= 0.001f)
-            {
-                forcedDestinationEnabled = false;
-            }
-            else
-            {
-                rb2d.transform.Translate(totalMove * forcedDestinationSpeed * Time.deltaTime);
-                return;
-            }
+            _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }
+        if (_gameController.gameState == GameController.GameStates.Paused) return;
         if (!PhysicsObject.PhysicsEnabled) return;
         velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
         velocity.x = targetVelocity.x;

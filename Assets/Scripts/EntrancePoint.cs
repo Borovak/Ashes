@@ -16,30 +16,57 @@ public class EntrancePoint : MonoBehaviour
         Bottom
     }
 
+    public enum VerticalSpawnSides
+    {
+        Left = 0,
+        Right = 1,
+    }
+
     private const float width = 3f;
 
     public int id;
+    public int linkChamberId;
+    public int linkEntranceId;
     public int size = 3;
     public EntranceTypes entranceType;
+    public VerticalSpawnSides verticalSpawnSide;
     public Vector3 cubeSize;
     public Vector3 cubeCenter;
+    public bool isNumb;
+    public Vector3 entranceMovement;
+    public Vector3 exitMovement;
 
     private GameController _gameController;
     private ChamberController _chamber;
+    private BoxCollider2D _collider;
     private Vector3 _previousPosition;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         _chamber = transform.parent.GetComponent<ChamberController>();
+        _collider = GetComponent<BoxCollider2D>();
+        if (Application.isPlaying)
+        {
+            DetermineDestinationMovement();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Application.isPlaying) return;
         if (transform.localPosition == _previousPosition) return;
         _previousPosition = transform.localPosition;
+        DetermineType();
+        DetermineSize();
+        DeterminePosition();
+        DetermineDestinationMovement();
+        SetCollider();
+    }
+
+    private void DetermineType()
+    {
         if (transform.localPosition.x == 0)
         {
             entranceType = EntranceTypes.Left;
@@ -65,17 +92,9 @@ public class EntrancePoint : MonoBehaviour
             entranceType = EntranceTypes.Inner;
         }
     }
-    
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag != "Player") return;
-        Debug.Log($"Entrance point touched entered: {id}");
-        _gameController.ChangeChamber(id);
-    }
 
-    void OnDrawGizmos()
+    private void DetermineSize()
     {
-        Gizmos.color = entranceType == EntranceTypes.Error ? Color.red : Color.green;
         cubeSize = Vector3.zero;
         switch (entranceType)
         {
@@ -92,6 +111,10 @@ public class EntrancePoint : MonoBehaviour
                 cubeSize.y = width;
                 break;
         }
+    }
+
+    private void DeterminePosition()
+    {
         cubeCenter = Vector3.zero;
         switch (entranceType)
         {
@@ -114,6 +137,60 @@ public class EntrancePoint : MonoBehaviour
                 cubeCenter.y = transform.localPosition.y - width / 2f;
                 break;
         }
+    }
+
+    private void DetermineDestinationMovement()
+    {
+        switch (entranceType)
+        {
+            case EntranceTypes.Inner:
+            case EntranceTypes.Error:
+                entranceMovement = Vector3.zero;
+                exitMovement = Vector3.zero;
+                break;
+            case EntranceTypes.Left:
+                entranceMovement = Vector3.right;
+                exitMovement = Vector3.left;
+                break;
+            case EntranceTypes.Right:
+                entranceMovement = Vector3.left;
+                exitMovement = Vector3.right;
+                break;
+            case EntranceTypes.Top:
+                entranceMovement = Vector3.zero;
+                exitMovement = Vector3.up;
+                break;
+            case EntranceTypes.Bottom:
+                entranceMovement = verticalSpawnSide == VerticalSpawnSides.Left ? Vector3.left : Vector3.right;
+                exitMovement = Vector3.down;
+                break;
+        }
+    }
+
+    private void SetCollider()
+    {
+        _collider.size = cubeSize;
+        _collider.offset = cubeCenter - transform.localPosition;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (linkChamberId == -1 || isNumb || col.gameObject.tag != "Player") return;
+        Debug.Log($"Entrance point touched entered: {id}");
+        PlayerPlatformerController.transitionMovement = exitMovement;
+        _gameController.gameState = GameController.GameStates.TransitionOut;
+        _gameController.ChangeChamber(linkChamberId, linkEntranceId);
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag != "Player") return;
+        isNumb = false;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = entranceType == EntranceTypes.Error ? Color.red : Color.green;
         Gizmos.DrawCube(cubeCenter, cubeSize);
     }
 

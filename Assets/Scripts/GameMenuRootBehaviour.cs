@@ -7,7 +7,11 @@ public class GameMenuRootBehaviour : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       GameController.paused = true;
+        var gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        if (gameController.gameState == GameController.GameStates.Running)
+        {
+            gameController.gameState = GameController.GameStates.Paused;
+        }
        GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().enabled = false;
     }
 

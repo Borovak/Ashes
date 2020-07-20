@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInteractionController : MonoBehaviour
 {
     public LayerMask whatIsInteraction;
-    public LayerMask whatIsCampsite;
+    public LayerMask whatIsSavePoint;
     public static PlayerInteractionController Instance;
     public bool interactionIsCamp;
     public bool interactionPossible;
@@ -34,12 +34,12 @@ public class PlayerInteractionController : MonoBehaviour
             interactionText = "";
             return;
         }
-        var campsiteColliders = Physics2D.OverlapCircleAll(transform.position, 1f, whatIsCampsite);
-        if (campsiteColliders.Length > 0)
+        var savePointColliders = Physics2D.OverlapCircleAll(transform.position, 1f, whatIsSavePoint);
+        if (savePointColliders.Length > 0)
         {
             interactionIsCamp = true;
             interactionPossible = true;
-            interactionPosition = campsiteColliders[0].transform.position;
+            interactionPosition = savePointColliders[0].transform.position;
             interactionText = "Camp";
             return;
         }
@@ -50,17 +50,12 @@ public class PlayerInteractionController : MonoBehaviour
     {
         if (interactionIsCamp)
         {
-            PlayerPlatformerController.Instance.campsiteLocation = interactionPosition;
-            var saveFilePath = SaveSystem.Save();
-            if (saveFilePath != "")
-            {
-                Debug.Log($"Game saved at {saveFilePath}");
-            }
-            else
-            {
-                Debug.Log($"Game save unsuccessful");
-            }
-            Debug.Log($"Campsite changed to {PlayerPlatformerController.Instance.campsiteLocation}");
+            var chamber = GameObject.FindGameObjectWithTag("Chamber").GetComponent<ChamberController>();
+            SaveData.workingData.SavePointChamberId = chamber.chamberId;
+            SaveData.workingData.SavePointId = -1;
+            Debug.Log($"Save point changed to {SaveData.workingData.SavePointChamberId},{SaveData.workingData.SavePointId}");
+            var saveSuccess = SaveSystem.Save(out var saveErrorMessage);
+            Debug.Log(saveSuccess ? $"Game saved" : $"Game save unsuccessful : {saveErrorMessage}");
         }
     }
 }

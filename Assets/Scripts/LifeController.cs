@@ -25,6 +25,9 @@ public class LifeController : MonoBehaviour
                 _dead = false;
             }
             _localHp = value;
+            if (_isPlayer){
+                SaveData.workingData.Hp = _localHp;
+            }
             HpChanged?.Invoke(value);
         }
     }
@@ -42,8 +45,8 @@ public class LifeController : MonoBehaviour
         _isPlayer = gameObject.tag == "Player";
         if (_isPlayer)
         {
-            hp = SaveSystem.latestSaveData?.Hp ?? 3;
-            maxHp = SaveSystem.latestSaveData?.MaxHp ?? 3;
+            hp = SaveData.workingData.Hp;
+            maxHp = SaveData.workingData.MaxHp;
         }
         TryGetComponent<InvinsibilityController>(out _invinsibilityController);
     }

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ManaController : MonoBehaviour
 {
-    public float maxMp = 50f;
-    public float mp = 50f;
+    public float maxMp => SaveData.workingData.MaxMp;
+    public float mp {
+        get => SaveData.workingData.Mp;
+        set => SaveData.workingData.Mp = value;
+    }
     public float mpRegenPerSec;
 
     // Start is called before the first frame update
@@ -19,7 +22,7 @@ public class ManaController : MonoBehaviour
     {
         if (mp < maxMp)
         {
-            mp += mpRegenPerSec * Time.deltaTime;
+            mp = System.Math.Min(maxMp, mp + mpRegenPerSec * Time.deltaTime);
         }
     }
 

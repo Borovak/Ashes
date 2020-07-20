@@ -109,9 +109,21 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
 
     private void LoadSaveFile(int index)
     {
-        Debug.Log(index);
         SaveSystem.index = index;
-        SceneManager.LoadScene("Game");
+        var dataPresent = GetComponent<SaveGamePanel>().dataPresent;
+        if (!dataPresent)
+        {
+            SaveSystem.Save(out _);
+        }
+        if (SaveSystem.Load(out var data, out var errorMessage))
+        {
+            var sceneName = LocationManager.GetChamber(data.SavePointChamberId).sceneName;
+            SceneManager.LoadScene(sceneName);
+        }
+        else
+        {
+            Debug.Log(errorMessage);
+        }
     }
 
     private void OnSelect()

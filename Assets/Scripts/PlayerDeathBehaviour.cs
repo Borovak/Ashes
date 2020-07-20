@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerDeathBehaviour : StateMachineBehaviour
 {
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("death", false);
-        animator.SetBool("respawning", true);
+        animator.SetBool("death", true);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,11 +20,11 @@ public class PlayerDeathBehaviour : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        var player = animator.GetComponent<PlayerPlatformerController>();
-        player.transform.position = player.campsiteLocation;
-        var lifeController = animator.GetComponent<LifeController>();
-        lifeController.hp = lifeController.maxHp;
-        animator.SetBool("respawning", false);
+        var gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        SaveData.workingData.Hp = SaveData.workingData.MaxHp;
+        SaveData.workingData.Mp = SaveData.workingData.MaxMp;
+        gameController.ChangeChamber(SaveData.workingData.SavePointChamberId, SaveData.workingData.SavePointId);
+
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

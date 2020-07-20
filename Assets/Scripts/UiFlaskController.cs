@@ -38,16 +38,15 @@ public class UiFlaskController : MonoBehaviour
             offset.y = UnityEngine.Random.Range(0f, 1f);
             image.uvRect = offset;
         }
-        var player = GameObject.FindGameObjectWithTag("Player");
         switch (flaskType)
         {
             case FlaskTypes.Health:
-                _getValue = () => Convert.ToSingle(player.GetComponent<LifeController>().hp);
-                _getMax = () => Convert.ToSingle(player.GetComponent<LifeController>().maxHp);
+                _getValue = () => Convert.ToSingle(SaveData.workingData.Hp);
+                _getMax = () => Convert.ToSingle(SaveData.workingData.MaxHp);
                 break;
             case FlaskTypes.Mana:
-                _getValue = () => player.GetComponent<ManaController>().mp;
-                _getMax = () => player.GetComponent<ManaController>().maxMp;
+                _getValue = () => Convert.ToSingle(SaveData.workingData.Mp);
+                _getMax = () => Convert.ToSingle(SaveData.workingData.MaxMp);
                 break;
         }
         liquidBottom.color = color;
