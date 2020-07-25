@@ -42,12 +42,16 @@ public class ChamberController : MonoBehaviour
 
     private void SetCollider()
     {
+        var points = new List<Vector2>
+        {
+            { new Vector2(0f, 0f) },
+            { new Vector2(25f, 0f) },
+            { new Vector2(size.x, 0f) },
+            { new Vector2(size.x, size.y) },
+            { new Vector2(0f, size.y) }
+        };
         var collider = GetComponent<PolygonCollider2D>();
-        collider.points[0] = new Vector2(0f, 0f);
-        collider.points[1] = new Vector2(25f, 0f);
-        collider.points[2] = new Vector2(size.x * unitSize, 0f);
-        collider.points[3] = new Vector2(size.x * unitSize, size.y * unitSize);
-        collider.points[4] = new Vector2(0f, size.y * unitSize);
+        collider.SetPath(0, points);
     }
 
     private void SetLighting()

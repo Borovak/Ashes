@@ -49,6 +49,7 @@ public class EntrancePoint : MonoBehaviour
         if (Application.isPlaying)
         {
             DetermineDestinationMovement();
+            SpawnOutsideFloor();
         }
     }
 
@@ -167,6 +168,12 @@ public class EntrancePoint : MonoBehaviour
         }
     }
 
+    private void SpawnOutsideFloor()
+    {
+        var collider = gameObject.AddComponent<EdgeCollider2D>();
+        var points = new List<Vector2>();
+    }
+
     private void SetCollider()
     {
         _collider.size = cubeSize;
@@ -179,7 +186,7 @@ public class EntrancePoint : MonoBehaviour
         Debug.Log($"Entrance point touched entered: {id}");
         PlayerPlatformerController.transitionMovement = exitMovement;
         _gameController.gameState = GameController.GameStates.TransitionOut;
-        _gameController.ChangeChamber(linkChamberId, linkEntranceId);
+        _gameController.ChangeChamber(linkChamberId, linkEntranceId, entranceType);
     }
 
     void OnTriggerExit2D(Collider2D col)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -21,7 +22,7 @@ public class GameController : MonoBehaviour
     public GameStates gameState;
 
     private FadeInOutController _fadeInOutController;
-
+    private CinemachineVirtualCamera _virtualCamera;
 
     // Start is called before the first frame update
     void Awake()
@@ -47,11 +48,17 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        SpawnPlayer(out var playerTransform, out var entranceType);
         _fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
-        SpawnPlayer();
+        _fadeInOutController.FadeIn(entranceType);
+        _virtualCamera = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
+        _virtualCamera.Follow = playerTransform;
+        _virtualCamera.LookAt = playerTransform;
     }
 
-    private void SpawnPlayer(){
+    private void SpawnPlayer(out Transform playerTransform,  out EntrancePoint.EntranceTypes entranceType)
+    {
+        entranceType = EntrancePoint.EntranceTypes.Error;
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -62,6 +69,7 @@ public class GameController : MonoBehaviour
         {
             var savePoint = GameObject.FindGameObjectWithTag("SavePoint");
             playerSpawnPosition = savePoint.transform.position;
+            entranceType = EntrancePoint.EntranceTypes.Inner;
         }
         else
         {
@@ -73,11 +81,11 @@ public class GameController : MonoBehaviour
                 playerSpawnPosition = entrancePoint.transform.position;
                 PlayerPlatformerController.transitionMovement = entrancePoint.entranceMovement;
                 entrancePoint.isNumb = true;
-                Debug.Log($"Entrance point detected");
+                entranceType = entrancePoint.entranceType;
                 break;
             }
         }
-        GameObject.Instantiate(playerPrefab, playerSpawnPosition, Quaternion.identity);
+        playerTransform = GameObject.Instantiate(playerPrefab, playerSpawnPosition, Quaternion.identity).transform;
     }
 
     // Update is called once per frame
@@ -89,16 +97,19 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void ChangeChamber(int id, int entranceId)
+    public void ChangeChamber(int id, int entranceId, EntrancePoint.EntranceTypes entranceType)
     {
         SaveData.workingData.SavePointId = entranceId;
-        _fadeInOutController.FadeOut();
+        _virtualCamera.Follow = null;
+        _virtualCamera.LookAt = null;
+        Debug.Log($"Camera {_virtualCamera} follows {_virtualCamera.Follow}");
         _fadeInOutController.FadeOutCompleted += () =>
         {
             Debug.Log($"Changing location for chamber {id}");
             var chamber = LocationManager.GetChamber(id);
             UnityEngine.SceneManagement.SceneManager.LoadScene(chamber.sceneName);
         };
+        _fadeInOutController.FadeOut(entranceType);
     }
 
 }

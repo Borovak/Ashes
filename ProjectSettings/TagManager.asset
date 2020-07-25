@@ -15,6 +15,7 @@ TagManager:
   - ChambersFolder
   - SavePoint
   - Announcement
+  - VirtualCamera
   layers:
   - Default
   - TransparentFX

@@ -60,11 +60,6 @@ public class PlayerPlatformerController : PhysicsObject
         Vector2 move = Vector2.zero;
         if (_gameController.gameState == GameController.GameStates.TransitionIn || _gameController.gameState == GameController.GameStates.TransitionOut)
         {
-            if ((_gameController.gameState == GameController.GameStates.TransitionIn && transitionTime < 0f) || transitionMovement == Vector3.zero)
-            {
-                _gameController.gameState = GameController.GameStates.Running;
-                return;
-            }
             transitionTime -= Time.deltaTime;
             move.x = transitionMovement.x;
             SpriteFlipping(ref move);
