@@ -214,9 +214,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  gravityModifier: 3
+  gravityModifier: 4
   maxSpeed: 7
-  jumpTakeOffSpeed: 14
+  jumpTakeOffSpeed: 18
   rollSpeed: 1.4
   transitionTime: 0.75
   isGrounded: 0
@@ -456,8 +456,9 @@ MonoBehaviour:
   whatIsSavePoint:
     serializedVersion: 2
     m_Bits: 16384
-  interactionIsCamp: 0
+  interactionIsSavePoint: 0
   interactionPossible: 0
+  interactionGuid: 
   interactionPosition: {x: 0, y: 0, z: 0}
   interactionText: 
 --- !u!114 &2443589944824094619

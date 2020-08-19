@@ -65,10 +65,19 @@ public class GameController : MonoBehaviour
             Destroy(player);
         }
         var playerSpawnPosition = Vector3.zero;
-        if (SaveData.workingData.SavePointGuid == string.Empty)
+        if (SaveData.workingData.SavePointGuid != string.Empty)
+        {   
+            foreach (var savePointGameObject in GameObject.FindGameObjectsWithTag("SavePoint"))
+            {
+                var savePointController = savePointGameObject.GetComponent<SavePointController>();
+                if (savePointController.guid != SaveData.workingData.SavePointGuid) continue;
+                playerSpawnPosition = savePointGameObject.transform.position;
+                break;
+            }
+        }
+        if (playerSpawnPosition == Vector3.zero)
         {
-            var savePoint = GameObject.FindGameObjectWithTag("SavePoint");
-            playerSpawnPosition = savePoint.transform.position;
+            playerSpawnPosition = new Vector3(163f, 78f, 0f);
         }
         playerTransform = GameObject.Instantiate(playerPrefab, playerSpawnPosition, Quaternion.identity).transform;
     }
