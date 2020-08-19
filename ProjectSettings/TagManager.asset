@@ -11,12 +11,15 @@ TagManager:
   - MenuButton
   - Chamber
   - EntrancePoint
-  - ChamberCollidersFolder
   - ChambersFolder
   - SavePoint
   - Announcement
   - VirtualCamera
   - Tilemap
+  - Grid
+  - ChamberCollider
+  - BackgroundLight
+  - TerrainLight
   layers:
   - Default
   - TransparentFX

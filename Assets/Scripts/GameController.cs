@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
 
     public static bool init;
     public static bool loadedAlone;
+    public static ChamberController currentChamber = null;
     public GameObject playerPrefab;
     public GameStates gameState;
 
@@ -30,7 +31,7 @@ public class GameController : MonoBehaviour
         if (!init)
         {
             init = true;
-            LocationManager.Load();
+            LocationInformation.Init();
         }
         //Loading default save if none loaded
         if (SaveData.workingData == null)
@@ -48,42 +49,26 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        SpawnPlayer(out var playerTransform, out var entranceType);
+        SpawnPlayer(out var playerTransform);
         _fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
-        _fadeInOutController.FadeIn(entranceType);
+        _fadeInOutController.FadeIn();
         _virtualCamera = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         _virtualCamera.Follow = playerTransform;
         _virtualCamera.LookAt = playerTransform;
     }
 
-    private void SpawnPlayer(out Transform playerTransform,  out EntrancePoint.EntranceTypes entranceType)
+    private void SpawnPlayer(out Transform playerTransform)
     {
-        entranceType = EntrancePoint.EntranceTypes.Error;
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             Destroy(player);
         }
         var playerSpawnPosition = Vector3.zero;
-        if (SaveData.workingData.SavePointId == -1)
+        if (SaveData.workingData.SavePointGuid == string.Empty)
         {
             var savePoint = GameObject.FindGameObjectWithTag("SavePoint");
             playerSpawnPosition = savePoint.transform.position;
-            entranceType = EntrancePoint.EntranceTypes.Inner;
-        }
-        else
-        {
-            var entrancePoints = GameObject.FindGameObjectsWithTag("EntrancePoint");
-            foreach (var entrancePointObject in entrancePoints)
-            {
-                var entrancePoint = entrancePointObject.GetComponent<EntrancePoint>();
-                if (entrancePoint.id != SaveData.workingData.SavePointId) continue;
-                playerSpawnPosition = entrancePoint.transform.position;
-                PlayerPlatformerController.transitionMovement = entrancePoint.entranceMovement;
-                entrancePoint.isNumb = true;
-                entranceType = entrancePoint.entranceType;
-                break;
-            }
         }
         playerTransform = GameObject.Instantiate(playerPrefab, playerSpawnPosition, Quaternion.identity).transform;
     }
@@ -97,19 +82,16 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void ChangeChamber(int id, int entranceId, EntrancePoint.EntranceTypes entranceType)
+    public void GoToSavePoint(string savePointGuid)
     {
-        SaveData.workingData.SavePointId = entranceId;
-        _virtualCamera.Follow = null;
-        _virtualCamera.LookAt = null;
-        Debug.Log($"Camera {_virtualCamera} follows {_virtualCamera.Follow}");
         _fadeInOutController.FadeOutCompleted += () =>
         {
-            Debug.Log($"Changing location for chamber {id}");
-            var chamber = LocationManager.GetChamber(id);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(chamber.sceneName);
+            var savePoint = LocationInformation.SavePoints[savePointGuid];
+            Debug.Log($"Changing location for chamber {savePoint.Chamber.Name}");
+            //var chamber = LocationManager.GetChamber(id);
+            //UnityEngine.SceneManagement.SceneManager.LoadScene(chamber.sceneName);
         };
-        _fadeInOutController.FadeOut(entranceType);
+        _fadeInOutController.FadeOut();
     }
 
 }

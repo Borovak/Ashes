@@ -23,7 +23,7 @@ public class PlayerDeathBehaviour : StateMachineBehaviour
         var gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         SaveData.workingData.Hp = SaveData.workingData.MaxHp;
         SaveData.workingData.Mp = SaveData.workingData.MaxMp;
-        gameController.ChangeChamber(SaveData.workingData.SavePointChamberId, SaveData.workingData.SavePointId, EntrancePoint.EntranceTypes.Inner);
+        gameController.GoToSavePoint(SaveData.workingData.SavePointGuid);
 
     }
 

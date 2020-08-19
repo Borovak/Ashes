@@ -7,8 +7,9 @@ public class PlayerInteractionController : MonoBehaviour
     public LayerMask whatIsInteraction;
     public LayerMask whatIsSavePoint;
     public static PlayerInteractionController Instance;
-    public bool interactionIsCamp;
+    public bool interactionIsSavePoint;
     public bool interactionPossible;
+    public string interactionGuid;
     public Vector3 interactionPosition;
     public string interactionText;
 
@@ -28,7 +29,7 @@ public class PlayerInteractionController : MonoBehaviour
         var interactionColliders = Physics2D.OverlapCircleAll(transform.position, 1f, whatIsInteraction);
         if (interactionColliders.Length > 0)
         {
-            interactionIsCamp = false;
+            interactionIsSavePoint = false;
             interactionPossible = true;
             interactionPosition = interactionColliders[0].transform.position;
             interactionText = "";
@@ -37,10 +38,12 @@ public class PlayerInteractionController : MonoBehaviour
         var savePointColliders = Physics2D.OverlapCircleAll(transform.position, 1f, whatIsSavePoint);
         if (savePointColliders.Length > 0)
         {
-            interactionIsCamp = true;
+            interactionIsSavePoint = true;
             interactionPossible = true;
             interactionPosition = savePointColliders[0].transform.position;
-            interactionText = "Camp";
+            var savePoint = savePointColliders[0].gameObject.GetComponent<SavePointController>();
+            interactionGuid = savePoint.guid;
+            interactionText = "Save";
             return;
         }
         interactionPossible = false;
@@ -48,12 +51,11 @@ public class PlayerInteractionController : MonoBehaviour
 
     public void Interact()
     {
-        if (interactionIsCamp)
+        if (interactionIsSavePoint)
         {
             var chamber = GameObject.FindGameObjectWithTag("Chamber").GetComponent<ChamberController>();
-            SaveData.workingData.SavePointChamberId = chamber.chamberId;
-            SaveData.workingData.SavePointId = -1;
-            Debug.Log($"Save point changed to {SaveData.workingData.SavePointChamberId},{SaveData.workingData.SavePointId}");
+            SaveData.workingData.SavePointGuid = interactionGuid;
+            Debug.Log($"Save point changed to {SaveData.workingData.SavePointGuid}");
             var saveSuccess = SaveSystem.Save(out var saveErrorMessage);
             Debug.Log(saveSuccess ? $"Game saved" : $"Game save unsuccessful : {saveErrorMessage}");
         }

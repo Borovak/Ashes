@@ -18,11 +18,6 @@ public class MenuController : MonoBehaviour
     private int _maxIndex;
     private int _maxSubIndex;
 
-    void Awake()
-    {
-        LocationManager.Load();
-    }
-
     // Start is called before the first frame update
     void Start()
     {

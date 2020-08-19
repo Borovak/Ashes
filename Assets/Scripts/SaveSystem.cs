@@ -52,8 +52,7 @@ public static class SaveSystem
         xePlayer.SetAttributeValue("maxMp", SaveData.workingData.MaxMp);
         xePlayer.SetAttributeValue("mp", SaveData.workingData.Mp);
         xePlayer.SetAttributeValue("hasDoubleJump", SaveData.workingData.HasDoubleJump);
-        xePlayer.SetAttributeValue("savePointChamberId", SaveData.workingData.SavePointChamberId);
-        xePlayer.SetAttributeValue("savePointId", SaveData.workingData.SavePointId);
+        xePlayer.SetAttributeValue("savePointGuid", SaveData.workingData.SavePointGuid);
         var xeGates = new XElement("Gates");
         xeRoot.Add(xeGates);
         if (SaveData.workingData.gatesId != null)
@@ -117,8 +116,7 @@ public static class SaveSystem
         if (!float.TryParse(xePlayer.Attribute("maxMp").Value, out data.MaxMp)) return false;
         if (!float.TryParse(xePlayer.Attribute("mp").Value, out data.Mp)) return false;
         if (!bool.TryParse(xePlayer.Attribute("hasDoubleJump").Value, out data.HasDoubleJump)) return false;
-        if (!int.TryParse(xePlayer.Attribute("savePointChamberId").Value, out data.SavePointChamberId)) return false;
-        if (!int.TryParse(xePlayer.Attribute("savePointId").Value, out data.SavePointId)) return false;
+        data.SavePointGuid = xePlayer.Attribute("savePointGuid").Value ?? string.Empty;
         var xeGates = xeRoot.Element("Gates");
         var gatesId = new List<string>();
         var gatesStatus = new List<bool>();

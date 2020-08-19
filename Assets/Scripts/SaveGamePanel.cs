@@ -60,8 +60,8 @@ public class SaveGamePanel : MonoBehaviour
         _doubleJump.SetActive(data != null && data.HasDoubleJump);
         if (data != null)
         {
-            var chamber = LocationManager.GetChamber(data.SavePointChamberId);
-            _zoneName.GetComponent<Text>().text = $"{chamber.zoneName} - {chamber.name}";
+            var chamber = LocationInformation.SavePoints[data.SavePointGuid].Chamber;
+            _zoneName.GetComponent<Text>().text = $"{chamber.ZoneName}/{chamber.Name}";
             var t = data.GameTime;
             var h = Convert.ToInt32(t / 3600f);
             t -= h * 3600f;

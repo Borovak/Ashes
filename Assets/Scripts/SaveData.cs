@@ -13,8 +13,7 @@ public class SaveData
     public float MaxMp;
     public float Mp;
     public bool HasDoubleJump;
-    public int SavePointChamberId;
-    public int SavePointId;
+    public string SavePointGuid;
     public string[] gatesId;
     public bool[] gatesStatus;
     public float GameTime;
@@ -27,8 +26,7 @@ public class SaveData
         MaxMp = workingData?.MaxMp ?? defaultMp;
         Mp = workingData?.Mp ?? defaultMp;
         HasDoubleJump = workingData?.HasDoubleJump ?? false;
-        SavePointChamberId = workingData?.SavePointChamberId ?? 0;
-        SavePointId = workingData?.SavePointId ?? 0;
+        SavePointGuid = workingData?.SavePointGuid ?? string.Empty;
         GameTime = workingData?.GameTime ?? 0;
         //World
         var count = GateController.gates?.Count ?? 0;

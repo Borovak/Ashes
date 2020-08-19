@@ -117,8 +117,7 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
         }
         if (SaveSystem.Load(out var data, out var errorMessage))
         {
-            var sceneName = LocationManager.GetChamber(data.SavePointChamberId).sceneName;
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene("LevelDesignerLoader");
         }
         else
         {

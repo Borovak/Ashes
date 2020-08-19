@@ -26,7 +26,14 @@ public class ChamberManager : EditorWindow
         }
         if (GUILayout.Button("Load Tilemap From Level Designer"))
         {
-            LoadTilemapFromLevelDesigner();  
+            var path = EditorUtility.OpenFilePanel("Select level designer file", "", "xml");
+            if (string.IsNullOrEmpty(path)) return;
+            if (!System.IO.File.Exists(path))
+            {
+                EditorUtility.DisplayDialog("Select level designer file", "The path is invalid", "OK");
+                return;
+            }
+            LoadTilemapFromLevelDesigner(path);  
         }
         //if (SceneManager.GetActiveScene().name != "Game") return;
         // if (regions == null)
@@ -101,10 +108,11 @@ public class ChamberManager : EditorWindow
     //     }
     // }
     
-    private void LoadTilemapFromLevelDesigner(){
-        var path = @"C:\Users\Borovak\Documents\1.mcm";
-        if (!System.IO.File.Exists(path)){
-            throw(new Exception($"Cannot find file '{path}'"));
+    private void LoadTilemapFromLevelDesigner(string path){
+        var chambersFolder = GameObject.FindGameObjectWithTag("ChambersFolder");
+        if (chambersFolder == null){
+            chambersFolder = new GameObject("Chambers");
+            chambersFolder.tag = "ChambersFolder";
         }
         XElement xeRoot = null;
         try{
@@ -112,57 +120,109 @@ public class ChamberManager : EditorWindow
         } catch (Exception){
             throw(new Exception("Cannot parse file"));
         }
-        var sceneName = SceneManager.GetActiveScene().name;
-        var tilemapObject = GameObject.FindGameObjectWithTag("Tilemap");
-        if (tilemapObject == null){            
-            throw(new Exception($"Tilemap tag not set"));
-        }
-        var tilemap = tilemapObject.GetComponent<Tilemap>();
-        var tiles = GetTiles();
         var xeRooms = xeRoot.Element("Rooms");
         if (xeRooms == null){            
             throw(new Exception($"Invalid file (no 'Rooms' element)"));
         }
-        foreach (var xeRoom in xeRooms.Elements("Room")){
-            var xaName = xeRoom.Attribute("name");
-            if (xaName == null || xaName.Value != sceneName) continue;
-            var xaCells = xeRoom.Attribute("cells");
-            if (xaCells == null)
+        var scene = SceneManager.GetActiveScene();    
+        //Deleting previous objects
+        while(chambersFolder.transform.childCount != 0){
+             DestroyImmediate(chambersFolder.transform.GetChild(0).gameObject);
+         }
+        //Finding tile size
+        var scale = 2f / Convert.ToSingle(xeRoot.Element("Ash").Attribute("height").Value);
+        //Generating rooms
+        var chamberResource = Resources.Load<GameObject>("Chamber");
+        var tiles = GetTiles();
+        foreach (var xeRoom in xeRoot.Element("Rooms").Elements("Room")){
+            var chamberGuid = xeRoom.Attribute("guid")?.Value ?? string.Empty;
+            if (chamberGuid == string.Empty) 
+            {            
+                throw(new Exception($"Invalid file (no 'guid' attribute)"));
+            }
+            var chamberName = xeRoom.Attribute("name")?.Value ?? string.Empty;
+            if (chamberName == string.Empty) 
+            {            
+                throw(new Exception($"Invalid file (no 'name' attribute)"));
+            }
+            var zoneGuid = xeRoom.Attribute("zoneGuid")?.Value ?? string.Empty;
+            if (zoneGuid == string.Empty)
+            {            
+                throw(new Exception($"Invalid file (no 'zoneGuid' attribute)"));
+            }
+            var cellsConcat = xeRoom.Attribute("cells")?.Value ?? "!";
+            if (cellsConcat == "!")
             {            
                 throw(new Exception($"Invalid file (no 'cells' attribute)"));
             }
-            var xaWidth = xeRoom.Attribute("w");
-            if (xaWidth == null)
+            if (!int.TryParse(xeRoom.Attribute("x")?.Value ?? string.Empty, out var chamberX))
+            {            
+                throw(new Exception($"Invalid file (no 'x' attribute)"));
+            }
+            if (!int.TryParse(xeRoom.Attribute("y")?.Value ?? string.Empty, out var chamberY))
+            {            
+                throw(new Exception($"Invalid file (no 'y' attribute)"));
+            }
+            if (!int.TryParse(xeRoom.Attribute("w")?.Value ?? string.Empty, out var chamberWidth))
             {            
                 throw(new Exception($"Invalid file (no 'w' attribute)"));
             }
-            var xaHeight = xeRoom.Attribute("h");
-            if (xaHeight == null)
+            if (!int.TryParse(xeRoom.Attribute("h")?.Value ?? string.Empty, out var chamberHeight))
             {            
                 throw(new Exception($"Invalid file (no 'h' attribute)"));
             }
-            var cellsInfo = xaCells.Value.Split(';');
-            var cells = new int[Convert.ToInt32(xaWidth.Value), Convert.ToInt32(xaHeight.Value)];
-            foreach (var cellInfo in cellsInfo){
-                var cell = cellInfo.Split(',');
-                var x = Convert.ToInt32(cell[0]);
-                var y = Convert.ToInt32(cell[1]);
-                var b = Convert.ToInt32(cell[2]);
-                cells[x,y] = b;
+            var chamberGameObject = GameObject.Instantiate<GameObject>(chamberResource, chambersFolder.transform);
+            if (chamberGameObject == null){            
+                throw(new Exception($"Chamber resource not found"));
             }
+            var gridGameObject = new List<GameObject>(GameObject.FindGameObjectsWithTag("Grid")).Find(g => g.transform.IsChildOf(chamberGameObject.transform));
+            if (gridGameObject == null){            
+                throw(new Exception($"Grid not found"));
+            }
+            var tilemap = gridGameObject.GetComponentInChildren<Tilemap>();
+            if (tilemap == null){            
+                throw(new Exception($"Tilemap not found"));
+            }
+            chamberGameObject.name = $"Chamber_{chamberName}";
+            var chamber = chamberGameObject.GetComponentInChildren<ChamberController>();
+            var position = new Vector2(Convert.ToSingle(chamberX) * scale, -Convert.ToSingle(chamberY) * scale);
+            var size = new Vector2(Convert.ToSingle(chamberWidth) * scale, Convert.ToSingle(chamberHeight) * scale);
+            chamber.SetBasicSettings(chamberGuid, position, size, scale);
+            gridGameObject.transform.position = new Vector3(position.x, position.y + 50f, 0f);
+            gridGameObject.transform.localScale = new Vector3(scale, -scale, 1f);
+            var cells = new int[chamberWidth, chamberHeight];
+            if (cellsConcat != string.Empty){         
+            var cellsInfo = cellsConcat.Split(';');
+                foreach (var cellInfo in cellsInfo){
+                    var cell = cellInfo.Split(',');
+                    var x = Convert.ToInt32(cell[0]);
+                    var y = Convert.ToInt32(cell[1]);
+                    var b = Convert.ToInt32(cell[2]);
+                    cells[x,y] = b;
+                }
+            }    
             for (int x = 0; x < cells.GetLength(0); x++)
             {
                 for (int y = 0; y < cells.GetLength(1); y++)
                 {                
                     var b = cells[x,y];
                     var tile = tiles[b == 0 ? 0 : 1];
-                    tilemap.SetTile(new Vector3Int(x, cells.GetLength(0) - 1 - y, 0), tile);
+                    tilemap.SetTile(new Vector3Int(x, y, 0), tile);
                 }
             }
-            Debug.Log($"Tilemap updated successfully");
-            return;
+            foreach (var xeSavePoint in xeRoom.Elements("SavePoint")){
+                var savePointResource = Resources.Load<GameObject>("SavePoint");
+                var savePointGameObject = GameObject.Instantiate<GameObject>(savePointResource, chamberGameObject.transform);
+                var savePointUnscaledX = int.TryParse(xeSavePoint.Attribute("x")?.Value ?? "", out var x) ? Convert.ToSingle(x + 1) : 0f;
+                var savePointUnscaledY = int.TryParse(xeSavePoint.Attribute("y")?.Value ?? "", out var y) ? Convert.ToSingle(y + 1) : 0f;
+                var savePointX = savePointUnscaledX * scale;
+                var savePointY = savePointUnscaledY * scale;
+                savePointGameObject.transform.position = new Vector3(position.x + savePointX, position.y + (chamberHeight - savePointUnscaledY) * scale, 0f);
+                var savePointController = savePointGameObject.GetComponent<SavePointController>();
+                savePointController.guid = xeSavePoint.Attribute("guid").Value;
+            }
         }
-        throw(new Exception($"No room data found matching this scene"));
+        Debug.Log($"Chambers updated successfully");
     }
 
     private List<Tile> GetTiles(){

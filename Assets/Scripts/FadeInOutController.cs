@@ -22,36 +22,14 @@ public class FadeInOutController : MonoBehaviour
 
     }
 
-    public void FadeIn(EntrancePoint.EntranceTypes entranceType)
+    public void FadeIn()
     {
-        switch (entranceType)
-        {
-            case EntrancePoint.EntranceTypes.Left:
-                _animator.SetInteger("FadeInType", 2);
-                break;
-            case EntrancePoint.EntranceTypes.Right:
-                _animator.SetInteger("FadeInType", 3);
-                break;
-            default:
-                _animator.SetInteger("FadeInType", 1);
-                break;
-        }
+        _animator.SetInteger("FadeInType", 1);
     }
 
-    public void FadeOut(EntrancePoint.EntranceTypes entranceType)
+    public void FadeOut()
     {
-        switch (entranceType)
-        {
-            case EntrancePoint.EntranceTypes.Left:
-                _animator.SetInteger("FadeOutType", 2);
-                break;
-            case EntrancePoint.EntranceTypes.Right:
-                _animator.SetInteger("FadeOutType", 3);
-                break;
-            default:
-                _animator.SetInteger("FadeOutType", 1);
-                break;
-        }
+        _animator.SetInteger("FadeOutType", 1);
     }
 
     public void TriggerFadeOutCompleted(){

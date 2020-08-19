@@ -12,7 +12,7 @@ public class AnnouncementController : MonoBehaviour
     public Text smallAnnouncement;
     private float _timeLeft;
     private float _alpha;
-    private static int _previousZone = -1;
+    private static string _previousZoneName = string.Empty;
 
     void Start()
     {
@@ -45,12 +45,11 @@ public class AnnouncementController : MonoBehaviour
 
     private void ZoneChange()
     {
-        if (LocationManager.currentChamberId == -1) return;
-        var chamber = LocationManager.GetChamber(LocationManager.currentChamberId);
-        if (chamber.zoneId == _previousZone) return;
-        _previousZone = chamber.zoneId;
-        Debug.Log($"Zone change to {chamber.zoneId}");
-        ShowMessage(chamber.zoneName, chamber.name);
+        if (GameController.currentChamber == null) return;
+        if (GameController.currentChamber.zoneName == _previousZoneName) return;
+        _previousZoneName = GameController.currentChamber.zoneName;
+        Debug.Log($"Zone change to {GameController.currentChamber.chamberName}");
+        ShowMessage(GameController.currentChamber.zoneName, GameController.currentChamber.chamberName);
     }
 
     private void ShowMessage(string largeMessage, string smallMessage)
