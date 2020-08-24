@@ -216,7 +216,7 @@ MonoBehaviour:
   minGroundNormalY: 0.65
   gravityModifier: 4
   maxSpeed: 7
-  jumpTakeOffSpeed: 18
+  jumpTakeOffSpeed: 21
   rollSpeed: 1.4
   transitionTime: 0.75
   isGrounded: 0

@@ -51,7 +51,7 @@ public class PlayerInteractionController : MonoBehaviour
 
     public void Interact()
     {
-        if (interactionIsSavePoint)
+        if (interactionPossible && interactionIsSavePoint)
         {
             var chamber = GameObject.FindGameObjectWithTag("Chamber").GetComponent<ChamberController>();
             SaveData.workingData.SavePointGuid = interactionGuid;

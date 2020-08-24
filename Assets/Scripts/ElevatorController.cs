@@ -17,15 +17,16 @@ public class ElevatorController : MonoBehaviour
     public States state;
 
     private float _standbyTime;
+    private Rigidbody2D _rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         switch (state){
             case States.ToA:
@@ -45,7 +46,7 @@ public class ElevatorController : MonoBehaviour
     }
 
     private void MoveTo(Vector3 destination, States followUpState){
-        transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+        _rb.MovePosition(Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime));
         if (Vector3.Distance(transform.position, destination) < 0.001f){
             state = followUpState;
             _standbyTime = standbyTimeAtDestination;

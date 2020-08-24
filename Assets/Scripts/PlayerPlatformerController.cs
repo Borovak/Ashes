@@ -27,6 +27,7 @@ public class PlayerPlatformerController : PhysicsObject
     private bool _previousGrounded;
     private Animator _mainCameraAnimator;
     private PlayerInputs _inputs;
+    private float _timeSinceGrounded;
 
     // Use this for initialization
     void Awake()
@@ -81,6 +82,8 @@ public class PlayerPlatformerController : PhysicsObject
 
         targetVelocity = move * maxSpeed;
         isGrounded = grounded;
+        _timeSinceGrounded = isGrounded ? 0f : _timeSinceGrounded + Time.deltaTime;
+        _animator.SetFloat("timeSinceGrounded", _timeSinceGrounded);
     }
 
     private void SpriteFlipping(ref Vector2 move)
@@ -111,7 +114,7 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void Jump()
     {
-        if (grounded)
+        if (grounded || (velocity.y <= 0.1f && _timeSinceGrounded <= 0.2f))
         {
             _animator.SetBool("jump", true);
             velocity.y = jumpTakeOffSpeed;

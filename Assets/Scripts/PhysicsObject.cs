@@ -7,10 +7,11 @@ public class PhysicsObject : MonoBehaviour
 
     public static bool PhysicsEnabled = true;
     public float minGroundNormalY = .65f;
-    public float gravityModifier = 1f;
+    public float gravityModifier = 3f;
 
     protected Vector2 targetVelocity;
     protected bool grounded;
+    protected Transform elevator;
     protected Vector2 groundNormal;
     protected Rigidbody2D rb2d;
     protected Vector2 velocity;
@@ -64,6 +65,7 @@ public class PhysicsObject : MonoBehaviour
         velocity.x = targetVelocity.x;
 
         grounded = false;
+        elevator = null;
 
         Vector2 deltaPosition = velocity * Time.deltaTime;
 
