@@ -9,6 +9,7 @@ public class Enemy : PhysicsObject
     public float health;
     public float maxSpeed;
     public float direction;
+	public float _directionSmooth = 1f;
 	[SerializeField] public float changeDirectionEase = 1f;
     public float staggeredTime;
     public float knockbackForce;
@@ -24,6 +25,8 @@ public class Enemy : PhysicsObject
     public bool seesLeftWall;
     public bool seesRightWall;
     public LayerMask whatIsPlayer;
+    public float groundCheckLength = 1f;
+    public float wallCheckLength = 1f;
 
     protected Animator _animator;
     private float _staggeredFor;
@@ -34,8 +37,8 @@ public class Enemy : PhysicsObject
     private RaycastHit2D _rightLedge;
     private SpriteRenderer _spriteRenderer;
 	private float _launch = 1f;
-	private float _directionSmooth = 1f;
 	private float _playerDifference;
+	private float _scale;
 	[SerializeField] private GameObject _graphic;
 
     // Start is called before the first frame update
@@ -44,6 +47,7 @@ public class Enemy : PhysicsObject
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _animator.SetBool("isRunning", true);
+		_scale = transform.localScale.x;
         if (_graphic == null){
             _graphic = gameObject;
         }
@@ -51,30 +55,37 @@ public class Enemy : PhysicsObject
 
     // Update is called once per frame
     protected override void ComputeVelocity()
-    {
-       
+    {       
 		Vector2 move = Vector2.zero;
 		_playerDifference = PlayerPlatformerController.Instance.transform.position.x - transform.position.x;
 		_directionSmooth += (direction - _directionSmooth) * Time.deltaTime * changeDirectionEase;
-		if (_staggeredFor <= 0) {
-			move.x = 1 * _directionSmooth;
+		if (_staggeredFor > 0){
+			WhenStaggered(ref move);
+		} else {			
+			WhenNormal(ref move);
+		}			
+		_animator.SetBool ("grounded", grounded);
+        _animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
+        targetVelocity = move * maxSpeed;
+    }
+
+	private void WhenNormal(ref Vector2 move){
+		move.x = 1 * _directionSmooth;
 
 			//Flip the graphic depending on the speed
 			if (move.x > 0.01f) {
-				if (_graphic.transform.localScale.x == -1) {
-					_graphic.transform.localScale = new Vector3 (1, transform.localScale.y, transform.localScale.z);
+				if (_graphic.transform.localScale.x < 0) {
+					_graphic.transform.localScale = new Vector3 (_scale, _scale, transform.localScale.z);
 				}
 			} else if (move.x < -0.01f) {
-				if (_graphic.transform.localScale.x == 1) {
-					_graphic.transform.localScale = new Vector3 (-1, transform.localScale.y, transform.localScale.z);
+				if (_graphic.transform.localScale.x > 0) {
+					_graphic.transform.localScale = new Vector3 (-_scale, _scale, transform.localScale.z);
 				}
 			}
 
 			//Check floor type
 			_ground = Physics2D.Raycast (transform.position, -Vector2.up);
 			Debug.DrawRay (transform.position, -Vector2.up, Color.magenta);
-
-
 
 			//Check if player is within range to follow
 
@@ -100,7 +111,7 @@ public class Enemy : PhysicsObject
 
 
 			//Check for walls
-			_rightWall = Physics2D.Raycast (new Vector2 (transform.position.x + raycastOffset.x, transform.position.y + raycastOffset.y), Vector2.right, 1f, layerMask);
+			_rightWall = Physics2D.Raycast (new Vector2 (transform.position.x + raycastOffset.x, transform.position.y + raycastOffset.y), Vector2.right, wallCheckLength, layerMask);
 			Debug.DrawRay (new Vector2 (transform.position.x, transform.position.y + raycastOffset.y), Vector2.right, Color.yellow);
 
 			if (_rightWall.collider != null) {
@@ -112,7 +123,7 @@ public class Enemy : PhysicsObject
 
 			}
 
-			_leftWall = Physics2D.Raycast (new Vector2 (transform.position.x - raycastOffset.x, transform.position.y + raycastOffset.y), Vector2.left, 1f, layerMask);
+			_leftWall = Physics2D.Raycast (new Vector2 (transform.position.x - raycastOffset.x, transform.position.y + raycastOffset.y), Vector2.left, wallCheckLength, layerMask);
 			Debug.DrawRay (new Vector2 (transform.position.x, transform.position.y + raycastOffset.y), Vector2.left, Color.blue);
 
 			if (_leftWall.collider != null) {
@@ -126,33 +137,26 @@ public class Enemy : PhysicsObject
 
 			//Check for ledges
 			if (!followPlayer) {
-				_rightLedge = Physics2D.Raycast (new Vector2 (transform.position.x + raycastOffset.x, transform.position.y), Vector2.down, .5f);
+				_rightLedge = Physics2D.Raycast (new Vector2 (transform.position.x + raycastOffset.x, transform.position.y), Vector2.down, groundCheckLength);
 				Debug.DrawRay (new Vector2 (transform.position.x + raycastOffset.x, transform.position.y), Vector2.down, Color.blue);
 				if (_rightLedge.collider == null) {
 					direction = -1;
 				}
 
-				_leftLedge = Physics2D.Raycast (new Vector2 (transform.position.x - raycastOffset.x, transform.position.y), Vector2.down, .5f);
+				_leftLedge = Physics2D.Raycast (new Vector2 (transform.position.x - raycastOffset.x, transform.position.y), Vector2.down, groundCheckLength);
 				Debug.DrawRay (new Vector2 (transform.position.x - raycastOffset.x, transform.position.y), Vector2.down, Color.blue);
 
 				if (_leftLedge.collider == null) {
 					direction = 1;
 				}
 			}
-		
+	}
 
-
-		//Recovery after being hit
-		} else if (_staggeredFor > 0) {
-			_staggeredFor -= Time.deltaTime;
-			move.x = _launch;
-			_launch += (0 - _launch) * Time.deltaTime;
-		}
-			
-		_animator.SetBool ("grounded", grounded);
-        _animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
-        targetVelocity = move * maxSpeed;
-    }
+	private void WhenStaggered(ref Vector2 move){
+		_staggeredFor -= Time.deltaTime;
+		move.x = _launch;
+		_launch += (0 - _launch) * Time.deltaTime;
+	}
 
 	public void Jump(){
 		if (grounded) {

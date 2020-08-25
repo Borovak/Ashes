@@ -8,8 +8,11 @@ public class PhysicsObject : MonoBehaviour
     public static bool PhysicsEnabled = true;
     public float minGroundNormalY = .65f;
     public float gravityModifier = 3f;
+    public float distance;
+    public int hitBufferCount;
+    public bool canFly;
 
-    protected Vector2 targetVelocity;
+    public Vector2 targetVelocity;
     protected bool grounded;
     protected Transform elevator;
     protected Vector2 groundNormal;
@@ -71,7 +74,7 @@ public class PhysicsObject : MonoBehaviour
 
         Vector2 moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
 
-        Vector2 move = moveAlongGround * deltaPosition.x;
+        Vector2 move = canFly ? Vector2.right * deltaPosition.x : moveAlongGround * deltaPosition.x;
 
         Movement(move, false);
 
@@ -82,7 +85,7 @@ public class PhysicsObject : MonoBehaviour
 
     void Movement(Vector2 move, bool yMovement)
     {
-        float distance = move.magnitude;
+        distance = move.magnitude;
 
         if (distance > minMoveDistance)
         {
@@ -92,7 +95,7 @@ public class PhysicsObject : MonoBehaviour
             {
                 hitBufferList.Add(hitBuffer[i]);
             }
-
+            hitBufferCount = hitBufferList.Count;
             for (int i = 0; i < hitBufferList.Count; i++)
             {
                 Vector2 currentNormal = hitBufferList[i].normal;
@@ -115,7 +118,6 @@ public class PhysicsObject : MonoBehaviour
                 float modifiedDistance = hitBufferList[i].distance - shellRadius;
                 distance = modifiedDistance < distance ? modifiedDistance : distance;
             }
-
 
         }
 
