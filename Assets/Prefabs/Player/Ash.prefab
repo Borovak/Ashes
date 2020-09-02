@@ -215,6 +215,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
   gravityModifier: 4
+  distance: 0
+  hitBufferCount: 0
+  canFly: 0
+  targetVelocity: {x: 0, y: 0}
   maxSpeed: 7
   jumpTakeOffSpeed: 21
   rollSpeed: 1.4
@@ -473,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf261eee15d08b14f9aa98d47f9a8240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyOnDeath: 0
+  destroyOnDeath: 1
 --- !u!114 &2443589945988948346
 MonoBehaviour:
   m_ObjectHideFlags: 0

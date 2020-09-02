@@ -20,10 +20,8 @@ public class PlayerDeathBehaviour : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        var gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        SaveData.workingData.Hp = SaveData.workingData.MaxHp;
-        SaveData.workingData.Mp = SaveData.workingData.MaxMp;
-        gameController.GoToSavePoint(SaveData.workingData.SavePointGuid);
+        var fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
+        fadeInOutController.FadeOut();
 
     }
 

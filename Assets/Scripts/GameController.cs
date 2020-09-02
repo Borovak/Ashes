@@ -28,6 +28,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        _fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
+        _fadeInOutController.FadeOutCompleted += SpawnPlayer;
         if (!init)
         {
             init = true;
@@ -36,7 +38,6 @@ public class GameController : MonoBehaviour
         //Loading default save if none loaded
         if (SaveData.workingData == null)
         {
-            Debug.Log($"Save data not present on start");
             var loadSuccessful = SaveSystem.Load(out _, out var errorMessage);
             if (!loadSuccessful)
             {
@@ -49,21 +50,18 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        SpawnPlayer(out var playerTransform);
-        _fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
-        _fadeInOutController.FadeIn();
-        _virtualCamera = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
-        _virtualCamera.Follow = playerTransform;
-        _virtualCamera.LookAt = playerTransform;
+        SpawnPlayer();
     }
 
-    private void SpawnPlayer(out Transform playerTransform)
+    private void SpawnPlayer()
     {
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             Destroy(player);
         }
+        SaveData.workingData.Hp = SaveData.workingData.MaxHp;
+        SaveData.workingData.Mp = SaveData.workingData.MaxMp; 
         var playerSpawnPosition = Vector3.zero;
         if (SaveData.workingData.SavePointGuid != string.Empty)
         {   
@@ -79,7 +77,12 @@ public class GameController : MonoBehaviour
         {
             playerSpawnPosition = new Vector3(163f, 78f, 0f);
         }
-        playerTransform = GameObject.Instantiate(playerPrefab, playerSpawnPosition, Quaternion.identity).transform;
+        var playerTransform = GameObject.Instantiate(playerPrefab, playerSpawnPosition, Quaternion.identity).transform;
+        Debug.Log("Player spawned");
+        _virtualCamera = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
+        _virtualCamera.Follow = playerTransform;
+        _virtualCamera.LookAt = playerTransform;
+        _fadeInOutController.FadeIn();
     }
 
     // Update is called once per frame
@@ -89,18 +92,6 @@ public class GameController : MonoBehaviour
         {
             SaveData.workingData.GameTime += Time.deltaTime;
         }
-    }
-
-    public void GoToSavePoint(string savePointGuid)
-    {
-        _fadeInOutController.FadeOutCompleted += () =>
-        {
-            var savePoint = LocationInformation.SavePoints[savePointGuid];
-            Debug.Log($"Changing location for chamber {savePoint.Chamber.Name}");
-            //var chamber = LocationManager.GetChamber(id);
-            //UnityEngine.SceneManagement.SceneManager.LoadScene(chamber.sceneName);
-        };
-        _fadeInOutController.FadeOut();
     }
 
 }

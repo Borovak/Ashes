@@ -68,14 +68,14 @@ TagManager:
   - name: GroundBackground
     uniqueID: 247722665
     locked: 0
+  - name: Player
+    uniqueID: 2727812175
+    locked: 0
   - name: Ground
     uniqueID: 63550313
     locked: 0
   - name: Enemy
     uniqueID: 1533808395
-    locked: 0
-  - name: Player
-    uniqueID: 2727812175
     locked: 0
   - name: GroundOverlay
     uniqueID: 2412231099

@@ -54,19 +54,16 @@ public class LifeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp <= 0 && !_dead)
+        if (hp > 0 || _dead) return;
+        _dead = true;        
+        if (TryGetComponent<Animator>(out var animator))
         {
-            _dead = true;
-            if (destroyOnDeath)
-            {
-                GameObject.Destroy(gameObject);
-                return;
-            }
-            else if (TryGetComponent<Animator>(out var animator))
-            {
-                Debug.Log("Death triggered");
-                animator.SetBool("death", true);
-            }
+            Debug.Log("Death triggered");
+            animator.SetTrigger("dying");
+        } 
+        else if (destroyOnDeath)
+        {            
+            GameObject.Destroy(gameObject);
         }
     }
 

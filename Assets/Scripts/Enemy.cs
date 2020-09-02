@@ -46,7 +46,7 @@ public class Enemy : PhysicsObject
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
-        _animator.SetBool("isRunning", true);
+        //_animator.SetBool("isRunning", true);
 		_scale = transform.localScale.x;
         if (_graphic == null){
             _graphic = gameObject;
@@ -64,8 +64,8 @@ public class Enemy : PhysicsObject
 		} else {			
 			WhenNormal(ref move);
 		}			
-		_animator.SetBool ("grounded", grounded);
-        _animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
+		//_animator.SetBool ("grounded", grounded);
+        //_animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
         targetVelocity = move * maxSpeed;
     }
 

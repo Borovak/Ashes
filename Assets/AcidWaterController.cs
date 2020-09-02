@@ -25,7 +25,7 @@ public class AcidWaterController : MonoBehaviour
     void Update()
     {
         _spriteRenderer.color = isAcid ? colorWhenAcid : colorWhenWater;
-        if (_playerLifeController != null)
+        if (isAcid && _playerLifeController != null)
         {
             if (_damageDelay <= 0)
             {
@@ -40,12 +40,12 @@ public class AcidWaterController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider){
-        if (!isAcid || !collider.gameObject.TryGetComponent<LifeController>(out var player)) return;
+        if (!collider.gameObject.TryGetComponent<LifeController>(out var player)) return;
         _playerLifeController = player;
         _damageDelay = 0;  
     }
     void OnTriggerExit2D(Collider2D collider){
-        if (!isAcid || !collider.gameObject.TryGetComponent<LifeController>(out _)) return;
+        if (!collider.gameObject.TryGetComponent<LifeController>(out _)) return;
         _playerLifeController = null;
     }
 }

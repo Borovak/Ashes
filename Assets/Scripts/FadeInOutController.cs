@@ -24,16 +24,18 @@ public class FadeInOutController : MonoBehaviour
 
     public void FadeIn()
     {
-        _animator.SetInteger("FadeInType", 1);
+        _animator.SetTrigger("FadeIn");
     }
 
     public void FadeOut()
     {
-        _animator.SetInteger("FadeOutType", 1);
+        _animator.SetTrigger("FadeOut");
     }
 
     public void TriggerFadeOutCompleted(){
         FadeOutCompleted?.Invoke();
+        var player = GameObject.FindGameObjectWithTag("Player");
+        GameObject.Destroy(player);
     }
     
 }
