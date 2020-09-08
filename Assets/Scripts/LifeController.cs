@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LifeController : MonoBehaviour
 {
+    public const int AcidDamage = 1;
+    public float recurrentDamageDelay = 1f;
+    
     public event Action<int> HpChanged;
     public int maxHp
     {
@@ -32,12 +36,15 @@ public class LifeController : MonoBehaviour
         }
     }
     public bool destroyOnDeath = true;
+    public bool isInAcid => _acidWaters.Count(x => x.isAcid) > 0;
+
     private bool _isPlayer;
     private InvinsibilityController _invinsibilityController;
     private bool _dead;
-
     private int _maxHp = 3;
     private int _localHp = 3;
+    private float _damageDelay;
+    private List<AcidWaterController> _acidWaters = new List<AcidWaterController>();
 
     // Start is called before the first frame update
     void Start()
@@ -54,16 +61,36 @@ public class LifeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp > 0 || _dead) return;
-        _dead = true;        
-        if (TryGetComponent<Animator>(out var animator))
+        if (_dead) return;
+        else if (hp <= 0)
         {
-            Debug.Log("Death triggered");
-            animator.SetTrigger("dying");
+            _dead = true;        
+            if (TryGetComponent<Animator>(out var animator))
+            {
+                Debug.Log("Death triggered");
+                animator.SetTrigger("dying");
+            } 
+            else if (destroyOnDeath)
+            {            
+                GameObject.Destroy(gameObject);
+            }
+            return;
+        }
+        else if (isInAcid)
+        {
+            if (_damageDelay <= 0)
+            {
+                TakeDamage(AcidDamage);
+                _damageDelay = recurrentDamageDelay;
+            } 
+            else 
+            {
+                _damageDelay -= Time.deltaTime;
+            }
         } 
-        else if (destroyOnDeath)
-        {            
-            GameObject.Destroy(gameObject);
+        else 
+        {
+            _damageDelay = 0;
         }
     }
 
@@ -76,5 +103,19 @@ public class LifeController : MonoBehaviour
     public void Heal(int value)
     {
         hp = System.Math.Min(hp + value, maxHp);
+    }
+
+    public void RegisterAcidWater(AcidWaterController acidWater)
+    {
+        if (!_acidWaters.Contains(acidWater)){
+            _acidWaters.Add(acidWater);
+        }
+    }
+
+    public void UnregisterAcidWater(AcidWaterController acidWater)
+    {
+        if (_acidWaters.Contains(acidWater)){
+            _acidWaters.Remove(acidWater);
+        }
     }
 }
