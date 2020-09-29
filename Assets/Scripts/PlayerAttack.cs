@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public Transform attackPos;
     public float attackRange;
-    public float attackDamage;
+    public int attackDamage;
     public float attackRate;
     public LayerMask whatIsEnemies;
     public GameObject fireballPrefab;
@@ -101,8 +101,8 @@ public class PlayerAttack : MonoBehaviour
         var enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
         for (int i = 0; i < enemiesToDamage.Length; i++)
         {
-            if (!enemiesToDamage[i].TryGetComponent<Enemy>(out var enemy)) continue;
-            enemy.TakeDamage(attackDamage, (enemiesToDamage[i].transform.position - attackPos.position).normalized);
+            if (!enemiesToDamage[i].TryGetComponent<EnemyLifeController>(out var enemy)) continue;
+            enemy.TakeDamage(attackDamage, gameObject.name);
         }
     }
 

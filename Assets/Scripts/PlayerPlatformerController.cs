@@ -19,8 +19,6 @@ public class PlayerPlatformerController : PhysicsObject
     public GameObject landingPuffPrefab;
     public static Vector3 transitionMovement;
 
-    private bool _isAlive => _lifeController.hp > 0;
-
     private SpriteRenderer[] _spriteRenderers;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
@@ -118,7 +116,7 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void Jump()
     {
-        if (!_isAlive) return;
+        if (!_lifeController.IsAlive) return;
         if (grounded || (velocity.y <= 0.1f && _timeSinceGrounded <= 0.2f))
         {
             _animator.SetBool("jump", true);
@@ -141,7 +139,7 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void Roll()
     {
-        if (!_isAlive) return;
+        if (!_lifeController.IsAlive) return;
         _animator.SetTrigger("roll");
     }
 }

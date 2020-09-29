@@ -18,8 +18,6 @@ public class Enemy : PhysicsObject
     public bool followPlayer;
 	public float followRange;
     public float jumpTakeOffSpeed;
-    public ParticleSystem blood;
-    public Vector2 bloodOffset;
     public Vector2 raycastOffset;
     public LayerMask layerMask;
     public bool seesLeftWall;
@@ -166,19 +164,6 @@ public class Enemy : PhysicsObject
 		}
 	}
 
-    public void TakeDamage(float damage, Vector2 knockbackDirection){
-		if (blood == null) return;
-        Instantiate(blood, transform.position + new Vector3(bloodOffset.x, bloodOffset.y, 0f), Quaternion.identity);
-        health -= damage;
-        _staggeredFor = staggeredTime;
-        var knockBackVector = knockbackDirection * knockbackForce;
-        targetVelocity = knockBackVector;
-        Debug.Log($"Enemy took {damage} damage, {health} hp remaining, knockback at {knockBackVector}");
-            if (health <= 0){
-            Destroy(gameObject);
-        }
-    }
-
     void OnDrawGizmosSelected(){
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, visionRange);
@@ -190,11 +175,5 @@ public class Enemy : PhysicsObject
 
     public void PlayStepSound (){
         
-    }
-
-    void OnTriggerEnter2D(Collider2D collider){
-        if (!collider.gameObject.TryGetComponent<LifeController>(out var player)) return;
-        Debug.Log($"Player took damage from {gameObject.name}");
-        player.TakeDamage(1);
     }
 }

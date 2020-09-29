@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3227445877664571964}
   - component: {fileID: 3227445877664571963}
   - component: {fileID: 3227445878280851168}
+  - component: {fileID: 4621850192587934418}
   m_Layer: 9
   m_Name: EnemyDownWrecker
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1533808395
-  m_SortingLayer: -6
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 4437836900894019745, guid: 47cea0a3cb3396b488015a31d215145d,
     type: 3}
@@ -146,12 +147,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
   gravityModifier: 0
-  forcedDestinationEnabled: 0
-  forcedDestinationPoint: {x: 0, y: 0}
-  forcedDestinationSpeed: 0
+  distance: 0
+  hitBufferCount: 0
+  canFly: 0
+  targetVelocity: {x: 0, y: 0}
   health: 0
   maxSpeed: 0
   direction: 0
+  _directionSmooth: 1
   changeDirectionEase: 1
   staggeredTime: 0
   knockbackForce: 0
@@ -161,6 +164,7 @@ MonoBehaviour:
   followRange: 0
   jumpTakeOffSpeed: 0
   blood: {fileID: 0}
+  bloodOffset: {x: 0, y: 0}
   raycastOffset: {x: 0, y: 0}
   layerMask:
     serializedVersion: 2
@@ -170,8 +174,9 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8192
+  groundCheckLength: 1
+  wallCheckLength: 1
   _graphic: {fileID: 0}
-  vision: 5
   speedUp: 1
   speedDown: 5
   whatIsLayout:
@@ -198,3 +203,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4621850192587934418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227445877664571961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064185161a255f34ebc42dc6ce174b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

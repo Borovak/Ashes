@@ -6,7 +6,7 @@ public class SpellMagicMissileController : MonoBehaviour
 {
     public float speed;
     public float radius;
-    public float damage;
+    public int damage;
     public float lifetime;
     public LayerMask whatIsEnemies;
     public LayerMask whatIsLayout;
@@ -32,8 +32,8 @@ public class SpellMagicMissileController : MonoBehaviour
         var enemiesToDamage = Physics2D.OverlapCircleAll(transform.position, radius, whatIsEnemies);
         for (int i = 0; i < enemiesToDamage.Length; i++)
         {
-            if (!enemiesToDamage[i].TryGetComponent<Enemy>(out var enemy)) continue;
-            enemy.TakeDamage(damage, (enemiesToDamage[i].transform.position - transform.position).normalized);
+            if (!enemiesToDamage[i].TryGetComponent<EnemyLifeController>(out var enemy)) continue;
+            enemy.TakeDamage(damage, gameObject.name);
             GameObject.Destroy(gameObject);
             return;
         }

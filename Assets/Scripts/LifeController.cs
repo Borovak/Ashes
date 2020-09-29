@@ -4,70 +4,47 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class LifeController : MonoBehaviour
+public abstract class LifeController : MonoBehaviour
 {
     public const int AcidDamage = 1;
     public float recurrentDamageDelay = 1f;
     
-    public event Action<int> HpChanged;
-    public int maxHp
-    {
-        get => _maxHp;
-        set
-        {
-            _maxHp = value;
-        }
-    }
-    public int hp
-    {
-        get => _localHp;
-        set
-        {
-            Debug.Log($"HP changed to {value}");
-            if (value > 0)
-            {
-                _dead = false;
-            }
-            _localHp = value;
-            if (_isPlayer){
-                SaveData.workingData.Hp = _localHp;
-            }
-            HpChanged?.Invoke(value);
-        }
-    }
     public bool destroyOnDeath = true;
     public bool isInAcid => _acidWaters.Count(x => x.isAcid) > 0;
+    protected abstract void AfterStart();
+    protected abstract void AfterUpdate();
+    protected abstract int GetMaxHp();
+    protected abstract void SetMaxHp(int value);
+    protected abstract int GetHp();
+    protected abstract void SetHp(int value);
+    public bool IsAlive => GetHp() > 0;
+    public float HealthRatio => Convert.ToSingle(GetHp()) / Convert.ToSingle(GetMaxHp());
+    public ParticleSystem blood;
+    public Vector2 bloodOffset;
 
-    private bool _isPlayer;
+    protected bool _isPlayer;
     private InvinsibilityController _invinsibilityController;
     private bool _dead;
-    private int _maxHp = 3;
-    private int _localHp = 3;
     private float _damageDelay;
     private List<AcidWaterController> _acidWaters = new List<AcidWaterController>();
 
     // Start is called before the first frame update
     void Start()
     {
-        _isPlayer = gameObject.tag == "Player";
-        if (_isPlayer)
-        {
-            hp = SaveData.workingData.Hp;
-            maxHp = SaveData.workingData.MaxHp;
-        }
         TryGetComponent<InvinsibilityController>(out _invinsibilityController);
+        AfterStart();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (_dead) return;
-        else if (hp <= 0)
+        else if (!IsAlive)
         {
             _dead = true;        
             if (TryGetComponent<Animator>(out var animator))
             {
-                Debug.Log("Death triggered");
+                Debug.Log($"{gameObject.name} dies");
                 animator.SetTrigger("dying");
             } 
             else if (destroyOnDeath)
@@ -80,7 +57,7 @@ public class LifeController : MonoBehaviour
         {
             if (_damageDelay <= 0)
             {
-                TakeDamage(AcidDamage);
+                TakeDamage(AcidDamage, "Acid");
                 _damageDelay = recurrentDamageDelay;
             } 
             else 
@@ -92,17 +69,23 @@ public class LifeController : MonoBehaviour
         {
             _damageDelay = 0;
         }
+        AfterUpdate();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, string attackerName)
     {
         if (_invinsibilityController != null && !_invinsibilityController.TryTakeDamage()) return;
-        hp -= damage;
+        if (blood != null){
+            Instantiate(blood, transform.position + new Vector3(bloodOffset.x, bloodOffset.y, 0f), Quaternion.identity);
+        }
+        SetHp(GetHp() - damage);
+        Debug.Log($"{attackerName} damages {gameObject.name} for {damage} damage, {GetHp()} hp remaining");
     }
 
     public void Heal(int value)
     {
-        hp = System.Math.Min(hp + value, maxHp);
+        var newHp = System.Math.Min(GetHp() + value, GetMaxHp());
+        SetHp(newHp);
     }
 
     public void RegisterAcidWater(AcidWaterController acidWater)

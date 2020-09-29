@@ -31,7 +31,7 @@ public class DirectionalFireball : MonoBehaviour
         for (int i = 0; i < entitiesToDamage.Length; i++)
         {
             if (!entitiesToDamage[i].TryGetComponent<LifeController>(out var entity)) continue;
-            entity.TakeDamage(damage);
+            entity.TakeDamage(damage, gameObject.name);
             GameObject.Destroy(gameObject);
             return;
         }
