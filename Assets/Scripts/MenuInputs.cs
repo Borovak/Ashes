@@ -7,6 +7,7 @@ public class MenuInputs : MonoBehaviour
 {
     public event Action Start;
     public event Action Select;
+    public event Action OK;
     public event Action Back;
     public event Action SelectionChangeUp;
     public event Action SelectionChangeDown;
@@ -23,6 +24,7 @@ public class MenuInputs : MonoBehaviour
         {
             {_actions.Menu.Start, OnStart},
             {_actions.Menu.Select, OnSelect},
+            {_actions.Menu.OK, OnOK},
             {_actions.Menu.Back, OnBack},
             {_actions.Menu.SelectionChange, OnSelectionChange}
         };
@@ -54,6 +56,11 @@ public class MenuInputs : MonoBehaviour
     public void OnSelect(InputAction.CallbackContext context)
     {
         Select?.Invoke();
+    }
+    
+    public void OnOK(InputAction.CallbackContext context)
+    {
+        OK?.Invoke();
     }
 
     public void OnBack(InputAction.CallbackContext context)

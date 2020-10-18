@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
         TransitionIn,
         Paused,
         Running,
+        ActionMenu,
         TransitionOut,
     }
 
@@ -46,6 +47,7 @@ public class GameController : MonoBehaviour
                 Debug.Log(saveSuccess ? $"Game saved" : $"Game save unsuccessful : {saveErrorMessage}");
             }
         }
+        DropController.Init();
     }
 
     void Start()

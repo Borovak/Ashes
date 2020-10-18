@@ -286,7 +286,7 @@
                 {
                     "name": "",
                     "id": "81f02893-9718-4033-a7a2-7b8e6ea827d2",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
@@ -331,7 +331,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Select",
+                    "name": "OK",
                     "type": "Button",
                     "id": "a2f7b40b-4c5d-46ce-a32d-c8c855dc2a8f",
                     "expectedControlType": "Button",
@@ -350,6 +350,14 @@
                     "name": "Start",
                     "type": "Button",
                     "id": "d7b16516-bd5e-4777-968d-d1797892724d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "a36ab08a-a456-49c4-9d52-e879d0198f7d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -528,7 +536,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Select",
+                    "action": "OK",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -539,7 +547,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Select",
+                    "action": "OK",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -584,6 +592,28 @@
                     "processors": "",
                     "groups": "Control Scheme Alpha",
                     "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9ca0538-155d-492e-94a6-8da90ed64b9a",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "228f4c78-723d-42f5-bea4-2583b7beaf71",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

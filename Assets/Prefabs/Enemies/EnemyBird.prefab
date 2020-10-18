@@ -10,14 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6578095032138821344}
   - component: {fileID: 6578095032138821347}
-  - component: {fileID: 6578095032138821346}
-  - component: {fileID: 6578095032138821359}
   - component: {fileID: 6578095032138821345}
-  - component: {fileID: 8406996473360593387}
   - component: {fileID: 3529127994469024388}
   - component: {fileID: 3628824772683422955}
   - component: {fileID: 8489875942526694785}
+  - component: {fileID: 8406996473360593387}
   - component: {fileID: 4576902517986676342}
+  - component: {fileID: 6987412189762833751}
   m_Layer: 9
   m_Name: EnemyBird
   m_TagString: Untagged
@@ -79,9 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 1533808395
   m_SortingLayer: -4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6152859711687644726, guid: 0d6a575fe5e72d14da34ac169ce88193,
-    type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 94ca80ae521cf7b40831a9a690133ebb, type: 3}
+  m_Color: {r: 0.52798903, g: 0.8962264, b: 0.46925062, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -91,67 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6578095032138821346
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6578095032138821349}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 13ca211d6cd77cd44a8bc8cf8443e5fb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6578095032138821359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6578095032138821349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb01a8a9ba9bd68409491112e0161064, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minGroundNormalY: 0.65
-  gravityModifier: 0
-  distance: 0
-  hitBufferCount: 0
-  canFly: 0
-  targetVelocity: {x: 0, y: 0}
-  health: 9
-  maxSpeed: 3
-  direction: 1
-  _directionSmooth: 1
-  changeDirectionEase: 1
-  staggeredTime: 1
-  knockbackForce: 2
-  visionRange: 2
-  enemyType: 0
-  followPlayer: 0
-  followRange: 0
-  jumpTakeOffSpeed: 2
-  raycastOffset: {x: -0.4, y: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  seesLeftWall: 0
-  seesRightWall: 0
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 8192
-  groundCheckLength: 1
-  wallCheckLength: 1
-  _graphic: {fileID: 0}
 --- !u!50 &6578095032138821345
 Rigidbody2D:
   serializedVersion: 4
@@ -173,21 +110,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &8406996473360593387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6578095032138821349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cd65787c14f5f741afdc73172bfc35a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invinsibilityPeriodAfterDamage: 0.5
-  damageColor: {r: 1, g: 0, b: 0, a: 1}
-  invinsibilityFlashRate: 1
 --- !u!61 &3529127994469024388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204,8 +126,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.21662712}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.45527488, y: 0.72575426}
-    oldSize: {x: 2.12, y: 1.98}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1.04, y: 0.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -230,8 +152,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.21071434}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.45527488, y: 0.72575426}
-    oldSize: {x: 2.12, y: 1.98}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1.04, y: 0.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -252,12 +174,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df80ca5cdd56def4ba980cd12c52a836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damageColor: {r: 1, g: 0, b: 0, a: 1}
   recurrentDamageDelay: 1
   destroyOnDeath: 1
   blood: {fileID: 3752627110417903709, guid: f2ca1030ad645484c91d58e2ff493935, type: 3}
   bloodOffset: {x: 0, y: 0}
+  id: 3
   maxHp: 3
   hp: 0
+  isBoss: 0
+  awake: 0
+--- !u!114 &8406996473360593387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6578095032138821349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd65787c14f5f741afdc73172bfc35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invinsibilityPeriodAfterDamage: 0.5
 --- !u!114 &4576902517986676342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,3 +210,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &6987412189762833751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6578095032138821349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed187b7ab735084ea8d2a2cfa363776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minGroundNormalY: 0.65
+  gravityModifier: 3
+  distance: 0
+  hitBufferCount: 0
+  targetVelocity: {x: 0, y: 0}
+  maxSpeed: 1
+  direction: 1
+  changeDirectionEase: 1
+  knockbackForce: 0
+  visionRange: 0
+  enemyType: 0
+  followPlayer: 0
+  followRange: 0
+  raycastOffset: {x: 0, y: 0}
+  seesLeftWall: 0
+  seesRightWall: 0
+  wallCheckLength: 1
+  _graphic: {fileID: 0}

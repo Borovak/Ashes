@@ -14,6 +14,9 @@ public class PlayerPlatformerController : PhysicsObject
     public float transitionTime = 1f;
     public bool isGrounded;
     public bool hasDoubleJump => SaveData.workingData.HasDoubleJump;
+
+    public override bool canFly => false;
+
     public bool freezeMovement;
     public bool isRolling;
     public GameObject landingPuffPrefab;

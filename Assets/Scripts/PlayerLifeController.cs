@@ -37,4 +37,8 @@ public class PlayerLifeController : LifeController
     {
         return SaveData.workingData.Hp;
     }
+
+    protected override void OnDeath()
+    {
+    }
 }

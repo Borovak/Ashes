@@ -17,6 +17,7 @@ public class SaveData
     public string[] gatesId;
     public bool[] gatesStatus;
     public float GameTime;
+    public string InventoryString;
 
     public SaveData()
     {
@@ -28,6 +29,8 @@ public class SaveData
         HasDoubleJump = workingData?.HasDoubleJump ?? false;
         SavePointGuid = workingData?.SavePointGuid ?? string.Empty;
         GameTime = workingData?.GameTime ?? 0;
+        InventoryString = workingData?.InventoryString ?? "";
+        Inventory.SetInventoryString(InventoryString);
         //World
         var count = GateController.gates?.Count ?? 0;
         if (count > 0)

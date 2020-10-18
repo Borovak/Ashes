@@ -9,7 +9,7 @@ public class MenuController : MonoBehaviour
 
     public static int index;
     public static int subContextIndex;
-    public static event Action OnSelect;
+    public static event Action OnOK;
     public List<Vector2> choices => _choices.ToList();
 
     private Animator _animator;
@@ -24,9 +24,10 @@ public class MenuController : MonoBehaviour
         _choices = new List<Vector2>();
         _animator = GetComponent<Animator>();
         _inputs = GetComponent<MenuInputs>();
-        _inputs.Back += BackPressed;
         _inputs.Start += StartPressed;
         _inputs.Select += SelectPressed;
+        _inputs.OK += OKPressed;
+        _inputs.Back += BackPressed;
         _inputs.SelectionChangeUp += MoveUpPressed;
         _inputs.SelectionChangeDown += MoveDownPressed;
         _inputs.SelectionChangeLeft += MoveLeftPressed;
@@ -42,6 +43,7 @@ public class MenuController : MonoBehaviour
     void OnDisable()
     {
         if (_inputs == null) return;
+        _inputs.OK -= OKPressed;
         _inputs.Back -= BackPressed;
         _inputs.Start -= StartPressed;
         _inputs.Select -= SelectPressed;
@@ -80,22 +82,27 @@ public class MenuController : MonoBehaviour
 
     private void StartPressed()
     {
-        _animator.SetBool("Select", false);
+        _animator.SetBool("OK", false);
         _animator.SetBool("Back", false);
         _animator.SetTrigger("Start");
     }
 
     private void SelectPressed()
     {
-        OnSelect?.Invoke();
         _animator.SetTrigger("Select");
+    }
+
+    private void OKPressed()
+    {
+        OnOK?.Invoke();
+        _animator.SetTrigger("OK");
     }
 
     private void MoveUpPressed()
     {
         index = index + 1 > _maxIndex ? index = 0 : index + 1;
         subContextIndex = 0;
-        _animator.SetBool("Select", false);
+        _animator.SetBool("OK", false);
         _animator.SetInteger("Index", index);
     }
 
@@ -103,19 +110,19 @@ public class MenuController : MonoBehaviour
     {
         index = index - 1 < 0 ? index = _maxIndex : index - 1;
         subContextIndex = 0;
-        _animator.SetBool("Select", false);
+        _animator.SetBool("OK", false);
         _animator.SetInteger("Index", index);
     }
 
     private void MoveLeftPressed()
     {
         subContextIndex = subContextIndex + 1 > _maxSubIndex ? _maxSubIndex = 0 : subContextIndex + 1;
-        _animator.SetBool("Select", false);
+        _animator.SetBool("OK", false);
     }
 
     private void MoveRightPressed()
     {
         subContextIndex = subContextIndex - 1 < 0 ? _maxSubIndex : subContextIndex - 1;
-        _animator.SetBool("Select", false);
+        _animator.SetBool("OK", false);
     }
 }

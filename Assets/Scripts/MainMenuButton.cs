@@ -24,6 +24,8 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
         DeleteSave1 = 10,
         DeleteSave2 = 11,
         DeleteSave3 = 12,
+        Inventory = 13,
+        Map = 14,
     }
 
     private struct MainMenuButtonInfo
@@ -62,18 +64,20 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
             {ButtonIds.DeleteSave1, new MainMenuButtonInfo{text = "X", actionOnClick = () => ConfirmDeletion(0)}},
             {ButtonIds.DeleteSave2, new MainMenuButtonInfo{text = "X", actionOnClick = () => ConfirmDeletion(1)}},
             {ButtonIds.DeleteSave3, new MainMenuButtonInfo{text = "X", actionOnClick = () => ConfirmDeletion(2)}},
+            {ButtonIds.Inventory, new MainMenuButtonInfo{text = "Inventory"}},
+            {ButtonIds.Map, new MainMenuButtonInfo{text = "Map"}},
         };
         SetText();
     }
 
     void OnEnable()
     {
-        MenuController.OnSelect += OnSelect;
+        //MenuController.OnOK += OnOK;
     }
 
     void OnDisable()
     {
-        MenuController.OnSelect -= OnSelect;
+        //MenuController.OnOK -= OnOK;
     }
 
     private void SetText()
@@ -101,7 +105,7 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
         ExecuteAction();
     }
 
-    private void MenuNavigation(int index)
+     private void MenuNavigation(int index)
     {
         _animator.SetInteger("Index", index);
         _animator.SetTrigger("Select");

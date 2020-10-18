@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 2443589944824094619}
   - component: {fileID: 2443589945988948346}
   - component: {fileID: 2443589945988948347}
+  - component: {fileID: 6976387328991834489}
   m_Layer: 13
   m_Name: Ash
   m_TagString: Player
@@ -440,8 +441,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invinsibilityPeriodAfterDamage: 2
-  damageColor: {r: 1, g: 0, b: 0, a: 1}
-  invinsibilityFlashRate: 3
 --- !u!114 &1680620171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,8 +476,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf310b3f354a424891a5f88919bbaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damageColor: {r: 1, g: 0, b: 0, a: 1}
   recurrentDamageDelay: 1
   destroyOnDeath: 1
+  blood: {fileID: 0}
+  bloodOffset: {x: 0, y: 0}
 --- !u!114 &2443589945988948346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +507,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mpRegenPerSec: 1
+--- !u!114 &6976387328991834489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483266623256006727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf310b3f354a424891a5f88919bbaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageColor: {r: 1, g: 0, b: 0, a: 1}
+  recurrentDamageDelay: 1
+  destroyOnDeath: 1
+  blood: {fileID: 0}
+  bloodOffset: {x: 0, y: 0}
 --- !u!1 &719303405740212996
 GameObject:
   m_ObjectHideFlags: 0

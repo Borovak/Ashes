@@ -6,8 +6,11 @@ using UnityEngine;
 
 public class EnemyLifeController : LifeController
 {    
+    public int id;
     public int maxHp = 3;
     public int hp;
+    public bool isBoss;
+    public bool awake;
 
     protected override void AfterStart(){
         hp = maxHp;
@@ -39,5 +42,11 @@ public class EnemyLifeController : LifeController
     protected override int GetHp()
     {
         return hp;
+    }
+
+    protected override void OnDeath()
+    {
+        if (!DropController.GetDrops(transform.position, id, out var drops)) return;
+        Debug.Log($"Enemy {gameObject.name} drops {drops.Count} items: ({string.Join(",", drops.Select(x => x.name))})");
     }
 }

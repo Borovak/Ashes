@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss1Controller : Enemy
+public class Boss1Controller : MonoBehaviour
 {
     public Vector2 min = new Vector2(4, 35);
     public Vector2 max = new Vector2(46, 43);

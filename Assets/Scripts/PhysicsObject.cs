@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhysicsObject : MonoBehaviour
+public abstract class PhysicsObject : MonoBehaviour
 {
 
     public static bool PhysicsEnabled = true;
@@ -10,7 +10,7 @@ public class PhysicsObject : MonoBehaviour
     public float gravityModifier = 3f;
     public float distance;
     public int hitBufferCount;
-    public bool canFly;
+    public abstract bool canFly {get;}
 
     public Vector2 targetVelocity;
     protected bool grounded;
