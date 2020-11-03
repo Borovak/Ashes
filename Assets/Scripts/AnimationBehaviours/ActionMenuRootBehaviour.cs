@@ -12,7 +12,6 @@ public class ActionMenuRootBehaviour : StateMachineBehaviour
         {
             gameController.gameState = GameController.GameStates.ActionMenu;
         }
-       GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().enabled = false;
     }
 
 

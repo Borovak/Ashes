@@ -44,23 +44,17 @@ public static class Inventory
         }
     }
 
-    public static bool GetItemAtIndex(int index, out Item item, out int count)
+    public static void GetItemsAndCounts(out List<Item> items, out List<int> counts)
     {
-        item = null;
-        count = -1;
-        if (index >= _items.Count) return false;
-        var i = 0;
-        foreach (var k in _items)
+        items = new List<Item>();
+        counts = new List<int>();
+        foreach (var entry in _items)
         {
-            if (index < i)
-            {
-                i++;
-                continue;
-            }            
-            item = DropController.GetDropInfo(k.Key);
-            count = k.Value;
-            return true;
+            if (entry.Value == 0) continue;
+            var item = DropController.GetDropInfo(entry.Key);
+            var count = entry.Value;
+            items.Add(item);
+            counts.Add(count);
         }
-        return false;
     }
 }

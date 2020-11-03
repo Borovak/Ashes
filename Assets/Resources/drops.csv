@@ -1,6 +1,6 @@
 ,,ID,1,2,1000
 ,,Name,Brimstone,Lye,Double Jump
-,,Art File,ing_brimstone,ing_lye,skill_doublejump
+,,Art File,Ingredients/ing_brimstone,Ingredients/ing_lye,Skills/skill_doublejump
 ID,Name,,,,
 1,Wolf Boss,,,,1
 2,Forest Larva,,0.5,0.25,

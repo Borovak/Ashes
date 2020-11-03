@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using UnityEngine;
 
 public static class GlobalFunctions
@@ -9,11 +11,14 @@ public static class GlobalFunctions
         var fileData = textAsset.text;
         var lines = fileData.Split("\n"[0]);
         var dt = new DataTable();
-        foreach (var line in lines){
+        foreach (var line in lines)
+        {
             if (string.IsNullOrEmpty(line)) continue;
             var lineData = (line.Trim()).Split(","[0]);
-            if (dt.Columns.Count == 0){
-                foreach (var cell in lineData){
+            if (dt.Columns.Count == 0)
+            {
+                foreach (var cell in lineData)
+                {
                     dt.Columns.Add();
                 }
             }
@@ -26,8 +31,26 @@ public static class GlobalFunctions
         return dt;
     }
 
-    public static GameController GetGameController(){
+    public static GameController GetGameController()
+    {
         var gameObject = GameObject.FindGameObjectWithTag("GameController");
         return gameObject.GetComponent<GameController>();
+    }
+
+    public static List<GameObject> FindChildrenWithTag(GameObject parent, string tag, bool includeParent)
+    {
+        var gameObjects = new List<GameObject>();
+        if (includeParent && parent.tag == tag){
+            gameObjects.Add(parent);
+        }
+        foreach (Transform tr in parent.transform)
+        {
+            var gameObjectsFound = FindChildrenWithTag(tr.gameObject, tag, true);
+            if (gameObjectsFound.Any())
+            {
+                gameObjects.AddRange(gameObjectsFound);
+            }
+        }
+        return gameObjects;
     }
 }

@@ -50,7 +50,7 @@ public static class DropController
             {
                 var currentDrop = drop.Instantiate(position);
                 currentDrop.name = drop.name;
-                currentDrops.Add(currentDrop);
+                currentDrops.Add(currentDrop);                
             }
         }
         return currentDrops.Any();

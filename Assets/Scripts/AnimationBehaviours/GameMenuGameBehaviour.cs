@@ -8,7 +8,7 @@ public class GameMenuGameBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         var gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        if (gameController.gameState == GameController.GameStates.Paused)
+        if (gameController.gameState == GameController.GameStates.Paused || gameController.gameState == GameController.GameStates.ActionMenu)
         {
             gameController.gameState = GameController.GameStates.Running;
         }

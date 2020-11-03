@@ -6,6 +6,7 @@ using UnityEngine;
 public class VirtualCameraPlayerBinding : MonoBehaviour
 {
 
+    public bool isPlayerInsideChamber;
     private CinemachineVirtualCamera _virtualCamera;
     private CinemachineConfiner _confiner;
 
@@ -19,7 +20,7 @@ public class VirtualCameraPlayerBinding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _virtualCamera.enabled = IsPlayerInsideChamber();
+        isPlayerInsideChamber = _virtualCamera.enabled = IsPlayerInsideChamber();
         if (_virtualCamera.Follow == null)
         {
             var player = GameObject.FindGameObjectWithTag("Player");

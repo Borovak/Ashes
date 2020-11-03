@@ -22,6 +22,8 @@ TagManager:
   - TerrainLight
   - Elevator
   - SavePointsFolder
+  - Enemy
+  - ChamberContainer
   layers:
   - Default
   - TransparentFX

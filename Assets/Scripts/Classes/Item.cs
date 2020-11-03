@@ -18,13 +18,16 @@ public class Item
         var itemController = currentDrop.GetComponent<ItemController>();
         itemController.id = id;
         var spriteRenderer = currentDrop.GetComponent<SpriteRenderer>();
-        var sprite = Resources.Load<Sprite>($"Ingredients/{artFilePath}");
-        spriteRenderer.sprite = sprite;
+        spriteRenderer.sprite = GetArt();
         var colliders2D = currentDrop.GetComponents<BoxCollider2D>();
         foreach (var collider2D in colliders2D)
         {
             collider2D.size = spriteRenderer.bounds.size + (collider2D.isTrigger ? new Vector3(0.05f, 0.05f, 0f) : Vector3.zero);
         }
         return currentDrop;
+    }
+
+    public Sprite GetArt(){
+        return Resources.Load<Sprite>($"{artFilePath}");
     }
 }
