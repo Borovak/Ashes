@@ -18,12 +18,12 @@ public class ChamberController : MonoBehaviour
     public float TerrainLightIntensity;
     public Color TerrainLightColor;
     public GameObject chamberContainer;
+    public Vector2 position;
+    public Vector2 size;
+    public float scale;
 
     private AudioClip _ambientSound;
     private AudioSource _audioSource;
-    private Vector2 _size;
-    private Vector2 _position;
-    private float _scale;
     private Transform _enemyFolder;
     private VirtualCameraPlayerBinding _virtualCameraPlayerBinding;
     private bool _isPlayerInsideChamber;
@@ -42,6 +42,7 @@ public class ChamberController : MonoBehaviour
         //Spawning/despawning enemies
         if (_isPlayerInsideChamber && !_virtualCameraPlayerBinding.isPlayerInsideChamber)
         {
+            Debug.Log($"Chamber {chamber.Name} exited");
             var enemiesToDelete = GlobalFunctions.FindChildrenWithTag(_enemyFolder.gameObject, "Enemy", false);
             foreach (var enemy in enemiesToDelete)
             {
@@ -50,9 +51,10 @@ public class ChamberController : MonoBehaviour
         }
         else if (!_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
         {
+            Debug.Log($"Chamber {chamber.Name} entered, {chamber.Enemies.Count} enemies present");
             foreach (var enemy in chamber.Enemies)
             {
-                GameObject.Instantiate<GameObject>(enemy, enemy.transform.position, Quaternion.identity, _enemyFolder);
+                enemy.Instantiate(_enemyFolder, position, size, scale);
             }
         }
         else return;
@@ -68,26 +70,25 @@ public class ChamberController : MonoBehaviour
             _audioSource.clip = _ambientSound;
             _audioSource.Play();
         }
-        SetCollider();
         SetLighting();
     }
 
     public void SetBasicSettings(string guid, Vector2 position, Vector2 size, float scale)
     {
         chamberGuid = guid;
-        _position = position;
-        _size = size;
-        _scale = scale;
+        this.position = position;
+        this.size = size;
+        this.scale = scale;
         SetCollider();
     }
 
     private void SetCollider()
     {
-        var minX = _position.x;
-        var maxX = _position.x + _size.x;
-        var biasY = 50f - _size.y;
-        var minY = _position.y + biasY;
-        var maxY = _position.y + _size.y + biasY;
+        var minX = position.x;
+        var maxX = position.x + size.x;
+        var biasY = 50f - size.y;
+        var minY = position.y + biasY;
+        var maxY = position.y + size.y + biasY;
         var points = new List<Vector2>
         {
             { new Vector2(minX, minY) },
