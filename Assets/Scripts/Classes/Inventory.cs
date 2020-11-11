@@ -32,7 +32,7 @@ public static class Inventory
         return string.Join(";", lst);
     }
 
-    public static void SetInventoryString(string data)
+    public static void SetInventoryFromString(string data)
     {
         _items.Clear();
         if (string.IsNullOrEmpty(data)) return;

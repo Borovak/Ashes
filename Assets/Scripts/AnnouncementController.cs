@@ -40,6 +40,7 @@ public class AnnouncementController : MonoBehaviour
 
     private void OnGameSaved()
     {
+        Debug.Log("Should show message");
         ShowMessage("Game saved", "");
     }
 
@@ -48,7 +49,6 @@ public class AnnouncementController : MonoBehaviour
         if (GameController.currentChamber == null) return;
         if (GameController.currentChamber.zoneName == _previousZoneName) return;
         _previousZoneName = GameController.currentChamber.zoneName;
-        Debug.Log($"Zone change to {GameController.currentChamber.chamberName}");
         ShowMessage(GameController.currentChamber.zoneName, GameController.currentChamber.chamberName);
     }
 

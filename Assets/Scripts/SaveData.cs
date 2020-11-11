@@ -7,7 +7,14 @@ public class SaveData
     const int defaultHp = 3;
     const int defaultMp = 30;
 
-    public static SaveData workingData;
+    public static SaveData workingData
+    {
+        get => _workingdata;
+        set
+        {
+            _workingdata = value;
+        }
+    }
     public int MaxHp;
     public int Hp;
     public float MaxMp;
@@ -17,7 +24,8 @@ public class SaveData
     public string[] gatesId;
     public bool[] gatesStatus;
     public float GameTime;
-    public string InventoryString;
+
+    private static SaveData _workingdata;
 
     public SaveData()
     {
@@ -29,8 +37,6 @@ public class SaveData
         HasDoubleJump = workingData?.HasDoubleJump ?? false;
         SavePointGuid = workingData?.SavePointGuid ?? string.Empty;
         GameTime = workingData?.GameTime ?? 0;
-        InventoryString = workingData?.InventoryString ?? "";
-        Inventory.SetInventoryString(InventoryString);
         //World
         var count = GateController.gates?.Count ?? 0;
         if (count > 0)
@@ -48,7 +54,7 @@ public class SaveData
     }
 
     public void Load()
-    {        
+    {
         //World
         if (GateController.gates == null)
         {
