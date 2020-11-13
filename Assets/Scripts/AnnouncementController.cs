@@ -1,32 +1,37 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AnnouncementController : MonoBehaviour
 {
-
-
     public float timeShown;
     public float fadeOutTime;
-    public Text largeAnnouncement;
-    public Text smallAnnouncement;
+    public TextMeshProUGUI largeAnnouncement;
+    public TextMeshProUGUI smallAnnouncement;
     private float _timeLeft;
     private float _alpha;
-    private static string _previousZoneName = string.Empty;
 
     void Start()
     {
-        SaveSystem.GameSaved += OnGameSaved;
+        largeAnnouncement.text = "";
+        smallAnnouncement.text = "";
+    }
+
+    void OnEnable()
+    {
+        //SaveSystem.GameSaved += OnGameSaved;
+        ChamberController.ZoneChanged += OnZoneChanged;
     }
 
     void OnDisable()
     {
-        SaveSystem.GameSaved -= OnGameSaved;
+        //SaveSystem.GameSaved -= OnGameSaved;
+        ChamberController.ZoneChanged -= OnZoneChanged;
     }
 
     void Update()
     {
-        ZoneChange();
         if (_timeLeft > 0)
         {
             _timeLeft -= Time.deltaTime;
@@ -40,16 +45,12 @@ public class AnnouncementController : MonoBehaviour
 
     private void OnGameSaved()
     {
-        Debug.Log("Should show message");
         ShowMessage("Game saved", "");
     }
 
-    private void ZoneChange()
+    private void OnZoneChanged(string zoneName, string chamberName)
     {
-        if (GameController.currentChamber == null) return;
-        if (GameController.currentChamber.zoneName == _previousZoneName) return;
-        _previousZoneName = GameController.currentChamber.zoneName;
-        ShowMessage(GameController.currentChamber.zoneName, GameController.currentChamber.chamberName);
+        ShowMessage(zoneName, chamberName);
     }
 
     private void ShowMessage(string largeMessage, string smallMessage)

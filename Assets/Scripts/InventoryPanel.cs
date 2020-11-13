@@ -43,7 +43,8 @@ public class InventoryPanel : MonoBehaviour
     {
         if (!refreshNeeded) return;
         refreshNeeded = false;
-        Inventory.GetItemsAndCounts(out var items, out var counts);
+        var playerInventory = GlobalFunctions.GetPlayerInventory();
+        playerInventory.GetItemsAndCounts(out var items, out var counts);
         for (int i = 0; i < slotCount; i++)
         {
             var slot = _slots[i];

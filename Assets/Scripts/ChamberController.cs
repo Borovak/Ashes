@@ -8,11 +8,12 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class ChamberController : MonoBehaviour
 {
+    public static event Action<string, string> ZoneChanged;
     public string chamberGuid;
     public LocationInformation.Chamber chamber => LocationInformation.Chambers[chamberGuid];
     public string chamberName => chamber.Name;
+    public LocationInformation.Zone zone => LocationInformation.Zones[chamber.ZoneGuid];
     public string zoneGuid => chamber.ZoneGuid;
-    public string zoneName => chamber.ZoneName;
     public float BackgroundLightIntensity;
     public Color BackgroundLightColor;
     public float TerrainLightIntensity;
@@ -22,6 +23,7 @@ public class ChamberController : MonoBehaviour
     public Vector2 size;
     public float scale;
 
+    private static LocationInformation.Zone _lastZoneEntered;
     private AudioClip _ambientSound;
     private AudioSource _audioSource;
     private Transform _enemyFolder;
@@ -52,6 +54,11 @@ public class ChamberController : MonoBehaviour
         else if (!_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
         {
             Debug.Log($"Chamber {chamber.Name} entered, {chamber.Enemies.Count} enemies present");
+            if (_lastZoneEntered == null || _lastZoneEntered.Guid != chamber.ZoneGuid)
+            {
+                _lastZoneEntered = chamber.Zone;
+                ZoneChanged?.Invoke(chamber.ZoneName, chamber.Name);
+            }
             foreach (var enemy in chamber.Enemies)
             {
                 enemy.Instantiate(_enemyFolder, position, size, scale);

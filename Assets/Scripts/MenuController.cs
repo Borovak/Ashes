@@ -71,7 +71,8 @@ public class MenuController : MonoBehaviour
         if (tempChoices.Count > 0)
         {
             _maxIndex = Convert.ToInt32(tempChoices.Max(x => x.x));
-            _maxSubIndex = Convert.ToInt32(tempChoices.Where(x => x.x == index).Max(x => x.y));
+            var subIndexChoices = tempChoices.Where(x => x.x == index).ToList();
+            _maxSubIndex = subIndexChoices.Count > 0 ? Convert.ToInt32(subIndexChoices.Max(x => x.y)) : 0;
         }
         else
         {

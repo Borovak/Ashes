@@ -5,38 +5,32 @@ using System.Collections.Generic;
 public class SaveData
 {
     const int defaultHp = 3;
-    const int defaultMp = 30;
+    const float defaultMp = 30f;
+    const float defaultMpRegenPerSec = 0.2f;
 
-    public static SaveData workingData
-    {
-        get => _workingdata;
-        set
-        {
-            _workingdata = value;
-        }
-    }
     public int MaxHp;
     public int Hp;
     public float MaxMp;
     public float Mp;
+    public float MpRegenPerSec;
     public bool HasDoubleJump;
     public string SavePointGuid;
     public string[] gatesId;
     public bool[] gatesStatus;
     public float GameTime;
-
-    private static SaveData _workingdata;
+    public string Inventory;
 
     public SaveData()
     {
         //Player
-        MaxHp = workingData?.MaxHp ?? defaultHp;
-        Hp = workingData?.Hp ?? defaultHp;
-        MaxMp = workingData?.MaxMp ?? defaultMp;
-        Mp = workingData?.Mp ?? defaultMp;
-        HasDoubleJump = workingData?.HasDoubleJump ?? false;
-        SavePointGuid = workingData?.SavePointGuid ?? string.Empty;
-        GameTime = workingData?.GameTime ?? 0;
+        MaxHp = defaultHp;
+        Hp = defaultHp;
+        MaxMp = defaultMp;
+        Mp = defaultMp;
+        MpRegenPerSec = defaultMpRegenPerSec;
+        HasDoubleJump = false;
+        SavePointGuid = string.Empty;
+        GameTime = 0;
         //World
         var count = GateController.gates?.Count ?? 0;
         if (count > 0)

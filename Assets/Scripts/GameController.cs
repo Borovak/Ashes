@@ -17,11 +17,12 @@ public class GameController : MonoBehaviour
         TransitionOut,
     }
 
-    public static bool init;
     public static bool loadedAlone;
     public static ChamberController currentChamber = null;
+    public static event Action<GameObject> PlayerSpawned;
     public GameObject playerPrefab;
     public GameStates gameState;
+    public float gameTime;
 
     private FadeInOutController _fadeInOutController;
     private CinemachineVirtualCamera _virtualCamera;
@@ -31,21 +32,13 @@ public class GameController : MonoBehaviour
     {
         _fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
         _fadeInOutController.FadeOutCompleted += SpawnPlayer;
-        if (!init)
+        LocationInformation.Init(out _);
+        var loadSuccessful = SaveSystem.Load(out SaveSystem.LastLoadedSave, out var errorMessage);
+        if (!loadSuccessful)
         {
-            init = true;
-            LocationInformation.Init();
-        }
-        //Loading default save if none loaded
-        if (SaveData.workingData == null)
-        {
-            var loadSuccessful = SaveSystem.Load(out _, out var errorMessage);
-            if (!loadSuccessful)
-            {
-                Debug.Log(errorMessage);
-                var saveSuccess = SaveSystem.Save(out var saveErrorMessage);
-                Debug.Log(saveSuccess ? $"Game saved" : $"Game save unsuccessful : {saveErrorMessage}");
-            }
+            Debug.Log(errorMessage);
+            var saveSuccess = SaveSystem.Save("", true, out var saveErrorMessage);
+            Debug.Log(saveSuccess ? $"Game saved" : $"Game save unsuccessful : {saveErrorMessage}");
         }
         DropController.Init();
     }
@@ -62,15 +55,13 @@ public class GameController : MonoBehaviour
         {
             Destroy(player);
         }
-        SaveData.workingData.Hp = SaveData.workingData.MaxHp;
-        SaveData.workingData.Mp = SaveData.workingData.MaxMp; 
         var playerSpawnPosition = Vector3.zero;
-        if (SaveData.workingData.SavePointGuid != string.Empty)
-        {   
+        if (SaveSystem.LastLoadedSave.SavePointGuid != string.Empty)
+        {
             foreach (var savePointGameObject in GameObject.FindGameObjectsWithTag("SavePoint"))
             {
                 var savePointController = savePointGameObject.GetComponent<SavePointController>();
-                if (savePointController.guid != SaveData.workingData.SavePointGuid) continue;
+                if (savePointController.guid != SaveSystem.LastLoadedSave.SavePointGuid) continue;
                 playerSpawnPosition = savePointGameObject.transform.position;
                 break;
             }
@@ -80,7 +71,7 @@ public class GameController : MonoBehaviour
             playerSpawnPosition = new Vector3(163f, 78f, 0f);
         }
         var playerTransform = GameObject.Instantiate(playerPrefab, playerSpawnPosition, Quaternion.identity).transform;
-        Debug.Log("Player spawned");
+        PlayerSpawned?.Invoke(playerTransform.gameObject);
         _virtualCamera = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         _virtualCamera.Follow = playerTransform;
         _virtualCamera.LookAt = playerTransform;
@@ -92,7 +83,7 @@ public class GameController : MonoBehaviour
     {
         if (gameState != GameStates.Paused)
         {
-            SaveData.workingData.GameTime += Time.deltaTime;
+            gameTime += Time.deltaTime;
         }
     }
 

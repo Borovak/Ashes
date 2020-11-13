@@ -29,6 +29,7 @@ public class UiFlaskController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameController.PlayerSpawned += OnPlayerSpawned;
         index = Convert.ToInt32(UnityEngine.Random.Range(0f, 5000f));
         for (int i = 0; i < images.Length; i++)
         {
@@ -38,24 +39,15 @@ public class UiFlaskController : MonoBehaviour
             offset.y = UnityEngine.Random.Range(0f, 1f);
             image.uvRect = offset;
         }
-        switch (flaskType)
-        {
-            case FlaskTypes.Health:
-                _getValue = () => Convert.ToSingle(SaveData.workingData.Hp);
-                _getMax = () => Convert.ToSingle(SaveData.workingData.MaxHp);
-                break;
-            case FlaskTypes.Mana:
-                _getValue = () => Convert.ToSingle(SaveData.workingData.Mp);
-                _getMax = () => Convert.ToSingle(SaveData.workingData.MaxMp);
-                break;
-        }
         liquidBottom.color = color;
         liquidLineImage.color = color;
+        OnPlayerSpawned(GameObject.FindGameObjectWithTag("Player"));
     }
 
-    // Update is called once per frame
+    // Update is called once per fraame
     void Update()
     {
+        if (_getValue == null) return;
         var rect = quantityMaskRectTransform.rect;
         var liquidHeight = _getValue() / _getMax() * heightAtFull;
         quantityMaskRectTransform.sizeDelta = new Vector2(rect.width, liquidHeight);
@@ -73,6 +65,23 @@ public class UiFlaskController : MonoBehaviour
         if (index > 100000)
         {
             index = 0;
+        }
+    }
+
+    private void OnPlayerSpawned(GameObject player)
+    {
+        switch (flaskType)
+        {
+            case FlaskTypes.Health:
+                var playerLifeController = player.GetComponent<PlayerLifeController>();
+                _getValue = () => Convert.ToSingle(playerLifeController.hp);
+                _getMax = () => Convert.ToSingle(playerLifeController.maxHp);
+                break;
+            case FlaskTypes.Mana:
+                var playerManaController = player.GetComponent<ManaController>();
+                _getValue = () => Convert.ToSingle(playerManaController.mp);
+                _getMax = () => Convert.ToSingle(playerManaController.maxMp);
+                break;
         }
     }
 

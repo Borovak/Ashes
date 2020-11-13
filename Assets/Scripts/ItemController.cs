@@ -29,8 +29,8 @@ public class ItemController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider2D){
         Debug.Log($"{gameObject.name} touched by {collider2D.gameObject.name}");
-        if (!collider2D.gameObject.TryGetComponent<PlayerLifeController>(out _)) return;
-        Inventory.Add(id);
+        if (!collider2D.gameObject.TryGetComponent<PlayerInventory>(out var inventory)) return;
+        inventory.Add(id);
         GameObject.Destroy(gameObject);
     }
 }

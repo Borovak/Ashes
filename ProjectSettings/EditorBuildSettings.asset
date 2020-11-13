@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: aca7bf8fd6fec3e42b9e81c8f0a22b7b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Marina.unity
     guid: 5e26ec5e1f67b50478765a6967762ef8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Market.unity
     guid: 399147b509fbb014193c5256ebdd9307
+  - enabled: 1
+    path: Assets/Scenes/LevelDesignerLoader.unity
+    guid: 4bb845885ce8790498aedd4fb5aae0a3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 11ae4a252fd27ed4ba8424d20d052fc7,
       type: 2}

@@ -37,6 +37,30 @@ public static class GlobalFunctions
         return gameObject.GetComponent<GameController>();
     }
 
+    public static PlayerPlatformerController GetPlayerPlatformerController()
+    {
+        var gameObject = GameObject.FindGameObjectWithTag("Player");
+        return gameObject.GetComponent<PlayerPlatformerController>();
+    }
+
+    public static PlayerLifeController GetPlayerLifeController()
+    {
+        var gameObject = GameObject.FindGameObjectWithTag("Player");
+        return gameObject.GetComponent<PlayerLifeController>();
+    }
+
+    public static ManaController GetPlayerManaController()
+    {
+        var gameObject = GameObject.FindGameObjectWithTag("Player");
+        return gameObject.GetComponent<ManaController>();
+    }
+
+    public static PlayerInventory GetPlayerInventory()
+    {
+        var gameObject = GameObject.FindGameObjectWithTag("Player");
+        return gameObject.GetComponent<PlayerInventory>();
+    }
+
     public static List<GameObject> FindChildrenWithTag(GameObject parent, string tag, bool includeParent)
     {
         var gameObjects = new List<GameObject>();

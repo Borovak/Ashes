@@ -117,7 +117,7 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClick
         var dataPresent = GetComponent<SaveGamePanel>().dataPresent;
         if (!dataPresent)
         {
-            SaveSystem.Save(out _);
+            SaveSystem.Save("", true, out _);
         }
         if (SaveSystem.Load(out var data, out var errorMessage))
         {
