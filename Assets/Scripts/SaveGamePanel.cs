@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -26,7 +27,7 @@ public class SaveGamePanel : MonoBehaviour
         _gameTime = transform.Find("GameTime").gameObject;
         _doubleJump = transform.Find("DoubleJump").gameObject;
         Debug.Log(LocationInformation.Init(out var summary) ? $"LocationInformation init succeeded: {summary}" : "LocationInformation init failed");
-        Load();
+        UpdateData();
     }
 
     void OnEnable()
@@ -47,13 +48,13 @@ public class SaveGamePanel : MonoBehaviour
     private void Reload(int i)
     {
         if (i != index) return;
-        Load();
+        UpdateData();
     }
 
-    public void Load()
+    public void UpdateData()
     {
         SaveSystem.index = index;
-        transform.Find("Id").GetComponent<Text>().text = $"Save {index + 1}";
+        transform.Find("Id").GetComponent<TextMeshProUGUI>().text = $"Save {index + 1}";
         dataPresent = SaveSystem.Load(out var data, out var errorMessage);
         _newGame.SetActive(data == null);
         _zoneName.SetActive(data != null);
@@ -63,12 +64,30 @@ public class SaveGamePanel : MonoBehaviour
         {
             Debug.Log(LocationInformation.SavePoints.Count);
             var chamber = LocationInformation.SavePoints[data.SavePointGuid].Chamber;
-            _zoneName.GetComponent<Text>().text = $"{chamber.ZoneName}/{chamber.Name}";
+            _zoneName.GetComponent<TextMeshProUGUI>().text = $"{chamber.ZoneName}/{chamber.Name}";
             var t = data.GameTime;
             var h = Convert.ToInt32(t / 3600f);
             t -= h * 3600f;
             var m = Convert.ToInt32(t / 60f);
-            _gameTime.GetComponent<Text>().text = $"{h}:{m.ToString("00")}";
+            _gameTime.GetComponent<TextMeshProUGUI>().text = $"{h}:{m.ToString("00")}";
+        }
+    }
+
+    public void LoadSaveFile()
+    {
+        SaveSystem.index = index;
+        var dataPresent = GetComponent<SaveGamePanel>().dataPresent;
+        if (!dataPresent)
+        {
+            SaveSystem.Save("", true, out _);
+        }
+        if (SaveSystem.Load(out var data, out var errorMessage))
+        {
+            SceneManager.LoadScene("LevelDesignerLoader");
+        }
+        else
+        {
+            Debug.Log(errorMessage);
         }
     }
 
