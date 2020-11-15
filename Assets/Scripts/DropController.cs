@@ -7,9 +7,12 @@ public static class DropController
 {
     private static Dictionary<int, Item> _drops = new Dictionary<int, Item>();
     private static Dictionary<int, Dictionary<int, float>> _enemies = new Dictionary<int, Dictionary<int, float>>();
+    private static bool _initDone;
 
     public static void Init()
     {
+        if (_initDone) return;
+        _initDone = true;
         var dtDrops = GlobalFunctions.ParseCsv("drops");
         for (int i = 3; i < dtDrops.Columns.Count; i++)
         {
