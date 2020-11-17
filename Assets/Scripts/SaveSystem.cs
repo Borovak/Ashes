@@ -19,7 +19,7 @@ public static class SaveSystem
         var filePath = _filePath;
         try
         {
-            var saveData = PrepareSaveData(savePointGuid, healOnSave);
+            var saveData = PrepareSaveData(false, savePointGuid, healOnSave);
             //SaveBinary(filePath);
             SaveXml(filePath, saveData);
             errorMessage = "";
@@ -33,8 +33,28 @@ public static class SaveSystem
         }
     }
 
-    private static SaveData PrepareSaveData(string savePointGuid, bool healOnSave){
+    public static bool SaveVirgin(out string errorMessage)
+    {
+        var filePath = _filePath;
+        try
+        {
+            var saveData = PrepareSaveData(true, "", false);
+            //SaveBinary(filePath);
+            SaveXml(filePath, saveData);
+            errorMessage = "";
+            GameSaved?.Invoke(false);
+            return true;
+        }
+        catch (System.Exception ex)
+        {
+            errorMessage = ex.ToString();
+            return false;
+        }
+    }
+
+    private static SaveData PrepareSaveData(bool isVirginSave, string savePointGuid, bool healOnSave){
         var saveData = new SaveData();
+        if (isVirginSave) return saveData;
         var gameController = GlobalFunctions.GetGameController();
         var playerPlatformerController = GlobalFunctions.GetPlayerPlatformerController();
         var playerLifeController = GlobalFunctions.GetPlayerLifeController();

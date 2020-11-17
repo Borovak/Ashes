@@ -10,7 +10,6 @@ public class MenuController : MonoBehaviour
     public List<Vector2> choices => _choices.ToList();
 
     private Animator _animator;
-    private MenuInputs _inputs;
     private List<Vector2> _choices;
     private int _maxIndex;
     private int _maxSubIndex;
@@ -20,15 +19,14 @@ public class MenuController : MonoBehaviour
     {
         _choices = new List<Vector2>();
         _animator = GetComponent<Animator>();
-        _inputs = GetComponent<MenuInputs>();
-        _inputs.Start += StartPressed;
-        _inputs.Select += SelectPressed;
-        _inputs.OK += OKPressed;
-        _inputs.Back += BackPressed;
-        _inputs.SelectionChangeUp += MoveUpPressed;
-        _inputs.SelectionChangeDown += MoveDownPressed;
-        _inputs.SelectionChangeLeft += MoveLeftPressed;
-        _inputs.SelectionChangeRight += MoveRightPressed;
+        MenuInputs.Start += StartPressed;
+        MenuInputs.Select += SelectPressed;
+        MenuInputs.OK += OKPressed;
+        MenuInputs.Back += BackPressed;
+        MenuInputs.SelectionChangeUp += MoveUpPressed;
+        MenuInputs.SelectionChangeDown += MoveDownPressed;
+        MenuInputs.SelectionChangeLeft += MoveLeftPressed;
+        MenuInputs.SelectionChangeRight += MoveRightPressed;
     }
 
     void OnEnable()
@@ -37,15 +35,14 @@ public class MenuController : MonoBehaviour
 
     void OnDisable()
     {
-        if (_inputs == null) return;
-        _inputs.OK -= OKPressed;
-        _inputs.Back -= BackPressed;
-        _inputs.Start -= StartPressed;
-        _inputs.Select -= SelectPressed;
-        _inputs.SelectionChangeUp -= MoveUpPressed;
-        _inputs.SelectionChangeDown -= MoveDownPressed;
-        _inputs.SelectionChangeLeft -= MoveLeftPressed;
-        _inputs.SelectionChangeRight -= MoveRightPressed;
+        MenuInputs.OK -= OKPressed;
+        MenuInputs.Back -= BackPressed;
+        MenuInputs.Start -= StartPressed;
+        MenuInputs.Select -= SelectPressed;
+        MenuInputs.SelectionChangeUp -= MoveUpPressed;
+        MenuInputs.SelectionChangeDown -= MoveDownPressed;
+        MenuInputs.SelectionChangeLeft -= MoveLeftPressed;
+        MenuInputs.SelectionChangeRight -= MoveRightPressed;
     }
 
     private void BackPressed()
@@ -72,7 +69,6 @@ public class MenuController : MonoBehaviour
     private void OKPressed()
     {
         OnOK?.Invoke();
-        _animator.SetTrigger("OK");
     }
 
     private void MoveUpPressed()

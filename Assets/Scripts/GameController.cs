@@ -37,8 +37,11 @@ public class GameController : MonoBehaviour
         if (!loadSuccessful)
         {
             Debug.Log(errorMessage);
-            var saveSuccess = SaveSystem.Save("", true, out var saveErrorMessage);
+            var saveSuccess = SaveSystem.SaveVirgin(out var saveErrorMessage);
             Debug.Log(saveSuccess ? $"Game saved" : $"Game save unsuccessful : {saveErrorMessage}");
+            if (saveSuccess){
+                SaveSystem.Load(out SaveSystem.LastLoadedSave, out errorMessage);
+            }
         }
         DropController.Init();
     }

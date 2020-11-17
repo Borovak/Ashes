@@ -78,8 +78,8 @@ public class SaveGamePanel : MonoBehaviour
         SaveSystem.index = index;
         var dataPresent = GetComponent<SaveGamePanel>().dataPresent;
         if (!dataPresent)
-        {
-            SaveSystem.Save("", true, out _);
+        {            
+            SaveSystem.SaveVirgin(out _);
         }
         if (SaveSystem.Load(out var data, out var errorMessage))
         {

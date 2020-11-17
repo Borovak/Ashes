@@ -30,6 +30,7 @@ public class SaveData
         MpRegenPerSec = defaultMpRegenPerSec;
         HasDoubleJump = false;
         SavePointGuid = string.Empty;
+        Inventory = string.Empty;
         GameTime = 0;
         //World
         var count = GateController.gates?.Count ?? 0;

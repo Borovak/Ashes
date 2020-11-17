@@ -5,16 +5,16 @@ using UnityEngine.InputSystem;
 
 public class MenuInputs : MonoBehaviour
 {
-    public event Action Start;
-    public event Action Select;
-    public event Action OK;
-    public event Action Back;
-    public event Action SelectionChangeUp;
-    public event Action SelectionChangeDown;
-    public event Action SelectionChangeLeft;
-    public event Action SelectionChangeRight;
-    public Actions _actions;
+    public static event Action Start;
+    public static event Action Select;
+    public static event Action OK;
+    public static event Action Back;
+    public static event Action SelectionChangeUp;
+    public static event Action SelectionChangeDown;
+    public static event Action SelectionChangeLeft;
+    public static event Action SelectionChangeRight;
 
+    private Actions _actions;
     private Dictionary<InputAction, Action<InputAction.CallbackContext>> _pairingDictionary;
 
     void Awake()
