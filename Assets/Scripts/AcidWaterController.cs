@@ -1,34 +1,69 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AcidWaterController : MonoBehaviour
 {
-    public static Color colorWhenWater = new Color(0.4f, 0.75f, 0.75f, 1f);
-    public static Color colorWhenAcid = new Color(0.4f, 0.75f, 0.4f, 1f);
+    const string TextureName = "Texture2D_78F4DEAC";
+    const int resolution = 128;
+
+    public Color colorWhenWater = new Color(0.4f, 0.75f, 0.75f, 1f);
+    public Color colorWhenAcid = new Color(0.4f, 0.75f, 0.4f, 1f);
 
     public bool isAcid;
-
-    private SpriteRenderer _spriteRenderer;
+    
+    private GameObject _reflectionObject;
+    private SpriteRenderer _spriteRendererBack;
+    private SpriteRenderer _spriteRendererReflection;
 
     // Start is called before the first frame update
     void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRendererBack = GetComponent<SpriteRenderer>();
+        //adjust camera size
+        var camera = GetComponentInChildren<Camera>();
+        if (camera != null)
+        {
+            camera.orthographicSize = 0.5f * transform.localScale.y;
+        }
+        //Adjust reflection texture size
+        _reflectionObject = gameObject.transform.Find("Reflection")?.gameObject;
+        if (_reflectionObject != null)
+        {
+            var ratio = transform.localScale.x / transform.localScale.y;
+            var w = Convert.ToInt32(ratio > 1f ? resolution * ratio : resolution);
+            var h = Convert.ToInt32(ratio < 1f ? resolution / ratio : resolution);
+            if (camera.targetTexture != null)
+            {
+                camera.targetTexture.Release();
+            }
+            camera.targetTexture = new RenderTexture(w, h, 24);
+            _spriteRendererReflection = _reflectionObject.GetComponent<SpriteRenderer>();
+            _spriteRendererReflection.material.SetTexture(TextureName, camera.targetTexture);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        _spriteRenderer.color = isAcid ? colorWhenAcid : colorWhenWater;
+        _spriteRendererBack.color = isAcid ? colorWhenAcid : colorWhenWater;
+        if (_spriteRendererReflection != null){
+            _spriteRendererReflection.color = isAcid ? colorWhenAcid : colorWhenWater;
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D collider){
+    void OnTriggerEnter2D(Collider2D collider)
+    {
         if (!collider.gameObject.TryGetComponent<LifeController>(out var lifeController)) return;
+
         lifeController.RegisterAcidWater(this);
+        _reflectionObject.SetActive(false);
     }
-    void OnTriggerExit2D(Collider2D collider){
+    void OnTriggerExit2D(Collider2D collider)
+    {
         if (!collider.gameObject.TryGetComponent<LifeController>(out var lifeController)) return;
+        _reflectionObject.SetActive(true);
         lifeController.UnregisterAcidWater(this);
     }
 }
