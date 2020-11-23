@@ -10,16 +10,21 @@ public abstract class LifeController : MonoBehaviour
     {
         internal SpriteRenderer spriteRenderer;
         internal Color defaultColor;
+        internal Color overrideColor;
+        internal bool hasColorOverride;
     }
 
     public const int AcidDamage = 1;
     public const float _damageFlashTimeTotal = 1f;
     public const float _damageFlashRate = 0.5f;
     public Color _damageColor = Color.red;
+    public Color _waterColor = Color.blue;
+    public Color _acidColor = Color.green;
 
-    public float recurrentDamageDelay = 1f;    
+    public float recurrentDamageDelay = 1f;
     public bool destroyOnDeath = true;
     public bool isInAcid => _acidWaters.Count(x => x.isAcid) > 0;
+    public bool isInWater => _acidWaters.Count(x => !x.isAcid) > 0;
     protected abstract void AfterStart();
     protected abstract void AfterUpdate();
     protected abstract int GetMaxHp();
@@ -68,15 +73,15 @@ public abstract class LifeController : MonoBehaviour
         if (_dead) return;
         else if (!IsAlive)
         {
-            _dead = true;  
-            OnDeath();   
-            Debug.Log($"{gameObject.name} dies");   
+            _dead = true;
+            OnDeath();
+            Debug.Log($"{gameObject.name} dies");
             if (TryGetComponent<Animator>(out var animator))
             {
                 animator.SetTrigger("dying");
-            } 
+            }
             else if (destroyOnDeath)
-            {   
+            {
                 GameObject.Destroy(gameObject);
             }
             return;
@@ -87,34 +92,72 @@ public abstract class LifeController : MonoBehaviour
             {
                 TakeDamage(AcidDamage, "Acid");
                 _damageDelay = recurrentDamageDelay;
-            } 
-            else 
+            }
+            else
             {
                 _damageDelay -= Time.deltaTime;
             }
-        } 
-        else 
+            AddColorOverride(_acidColor);
+        }
+        else
         {
+            if (isInWater)
+            {
+                AddColorOverride(_waterColor);
+            }
+            else
+            {
+                RemoveColorOverride();
+            }
             _damageDelay = 0;
         }
-        if (_damageFlashTimeRemaining > 0){
+        if (_damageFlashTimeRemaining > 0)
+        {
             var flashRatio = _damageFlashTimeRemaining % _damageFlashRate / _damageFlashRate;
             foreach (var spriteColor in _spriteColors)
             {
                 var c1 = flashRatio > 0.5f ? _damageColor : spriteColor.defaultColor;
                 var c2 = flashRatio > 0.5f ? spriteColor.defaultColor : _damageColor;
                 var c = Color.Lerp(c1, c2, flashRatio);
-                spriteColor.spriteRenderer.color = c;
+                AddColorOverride(c);
+                //spriteColor.spriteRenderer.color = c;
             }
             _damageFlashTimeRemaining -= Time.deltaTime;
         }
+        ApplyColor();
         AfterUpdate();
+    }
+
+    private void AddColorOverride(Color color)
+    {
+        foreach (var spriteColor in _spriteColors)
+        {
+            spriteColor.overrideColor = color;
+            spriteColor.hasColorOverride = true;
+        }
+    }
+
+    private void RemoveColorOverride()
+    {
+        foreach (var spriteColor in _spriteColors)
+        {
+            spriteColor.hasColorOverride = false;
+        }
+    }
+
+    private void ApplyColor()
+    {
+        foreach (var spriteColor in _spriteColors)
+        {
+            spriteColor.spriteRenderer.color = spriteColor.hasColorOverride ? spriteColor.overrideColor : spriteColor.defaultColor;
+        }
     }
 
     public void TakeDamage(int damage, string attackerName)
     {
         if (_invinsibilityController != null && !_invinsibilityController.TryTakeDamage()) return;
-        if (blood != null){
+        if (blood != null)
+        {
             Instantiate(blood, transform.position + new Vector3(bloodOffset.x, bloodOffset.y, 0f), Quaternion.identity, transform);
         }
         SetHp(GetHp() - damage);
@@ -130,14 +173,16 @@ public abstract class LifeController : MonoBehaviour
 
     public void RegisterAcidWater(AcidWaterController acidWater)
     {
-        if (!_acidWaters.Contains(acidWater)){
+        if (!_acidWaters.Contains(acidWater))
+        {
             _acidWaters.Add(acidWater);
         }
     }
 
     public void UnregisterAcidWater(AcidWaterController acidWater)
     {
-        if (_acidWaters.Contains(acidWater)){
+        if (_acidWaters.Contains(acidWater))
+        {
             _acidWaters.Remove(acidWater);
         }
     }

@@ -10,7 +10,7 @@ public abstract class PhysicsObject : MonoBehaviour
     public float gravityModifier = 3f;
     public float distance;
     public int hitBufferCount;
-    public abstract bool canFly {get;}
+    public abstract bool canFly { get; }
 
     public Vector2 targetVelocity;
     protected bool grounded;
@@ -98,6 +98,10 @@ public abstract class PhysicsObject : MonoBehaviour
             hitBufferCount = hitBufferList.Count;
             for (int i = 0; i < hitBufferList.Count; i++)
             {
+                if (!hitBufferList[i].transform.name.Contains("Tilemap"))
+                {
+                    continue;
+                }
                 Vector2 currentNormal = hitBufferList[i].normal;
                 if (currentNormal.y > minGroundNormalY)
                 {

@@ -56,14 +56,13 @@ public class AcidWaterController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (!collider.gameObject.TryGetComponent<LifeController>(out var lifeController)) return;
-
         lifeController.RegisterAcidWater(this);
-        _reflectionObject.SetActive(false);
+        //_reflectionObject.SetActive(false);
     }
     void OnTriggerExit2D(Collider2D collider)
     {
         if (!collider.gameObject.TryGetComponent<LifeController>(out var lifeController)) return;
-        _reflectionObject.SetActive(true);
         lifeController.UnregisterAcidWater(this);
+        //_reflectionObject.SetActive(true);
     }
 }

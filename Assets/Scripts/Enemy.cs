@@ -46,7 +46,7 @@ public abstract class Enemy : PhysicsObject
         {
             _graphic = gameObject;
         }
-		AfterStart();
+        AfterStart();
     }
 
     // Update is called once per frame
@@ -91,70 +91,22 @@ public abstract class Enemy : PhysicsObject
         //Check floor type
         _ground = Physics2D.Raycast(transform.position, -Vector2.up);
         Debug.DrawRay(transform.position, -Vector2.up, Color.magenta);
-
-        //Check if player is within range to follow
-
-        if (enemyType == EnemyType.Zombie)
-        {
-            if ((Mathf.Abs(_playerDifference) < followRange))
-            {
-                followPlayer = true;
-            }
-            else
-            {
-                followPlayer = false;
-            }
-        }
-
-        if (followPlayer)
-        {
-            if (_playerDifference < 0)
-            {
-                direction = -1;
-            }
-            else
-            {
-                direction = 1;
-            }
-        }
-        else
-        {
-            //Allow enemy to instantly change direction when not following player
-            _directionSmooth = direction;
-        }
+        _directionSmooth = direction;
 
         //Check for walls
         _rightWall = Physics2D.Raycast(new Vector2(transform.position.x + raycastOffset.x, transform.position.y + raycastOffset.y), Vector2.right, wallCheckLength, LayerManagement.Layout);
+        _leftWall = Physics2D.Raycast(new Vector2(transform.position.x - raycastOffset.x, transform.position.y + raycastOffset.y), Vector2.left, wallCheckLength, LayerManagement.Layout);
         Debug.DrawRay(new Vector2(transform.position.x, transform.position.y + raycastOffset.y), Vector2.right, Color.yellow);
+        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y + raycastOffset.y), Vector2.left, Color.blue);
 
         if (_rightWall.collider != null)
         {
-            if (!followPlayer)
-            {
-                direction = -1;
-            }
-            else
-            {
-                Jump();
-            }
-
+            direction = -1;
         }
-
-        _leftWall = Physics2D.Raycast(new Vector2(transform.position.x - raycastOffset.x, transform.position.y + raycastOffset.y), Vector2.left, wallCheckLength, LayerManagement.Layout);
-        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y + raycastOffset.y), Vector2.left, Color.blue);
-
-        if (_leftWall.collider != null)
+        else if (_leftWall.collider != null)
         {
-            if (!followPlayer)
-            {
-                direction = 1;
-            }
-            else if (GetType() == typeof(GroundedEnemyController))
-            {
-                Jump();
-            }
+            direction = 1;
         }
-
         CheckForLedges();
     }
 
@@ -165,13 +117,14 @@ public abstract class Enemy : PhysicsObject
         _launch += (0 - _launch) * Time.deltaTime;
     }
 
-    public void Jump()
-    {
-        if (!grounded) return;
-        velocity.y = jumpTakeOffSpeed;
-        PlayJumpSound();
-        PlayStepSound();
-    }
+    // public void Jump()
+    // {
+    //     Debug.Log($"{gameObject.name} jumps");
+    //     if (!grounded) return;
+    //     velocity.y = jumpTakeOffSpeed;
+    //     PlayJumpSound();
+    //     PlayStepSound();
+    // }
 
     void OnDrawGizmosSelected()
     {
