@@ -4,6 +4,7 @@ tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 - Assets/Sprites/Ash/ash.tpsheet
 - Assets/Sprites/Ash/ash_attack.tpsheet
+- Assets/Sprites/AutoDecor/forest.tpsheet
 - Assets/Sprites/Boss1/Boss1.tpsheet
 - Assets/Sprites/Decor/Flag1/flag1.tpsheet
 - Assets/Sprites/GroundOverlay/CathedralFloor.tpsheet
@@ -12,12 +13,14 @@ textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Ash/ash.png
 - Assets/Sprites/Ash/ash_attack.png
+- Assets/Sprites/AutoDecor/forest.png
 - Assets/Sprites/Boss1/Boss1.png
 - Assets/Sprites/Decor/Flag1/waving.png
 - Assets/Sprites/GroundOverlay/CathedralFloor.png
 - Assets/Sprites/MainMenu/Ash/Ash_sit.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 

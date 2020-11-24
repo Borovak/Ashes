@@ -24,6 +24,7 @@ TagManager:
   - SavePointsFolder
   - Enemy
   - ChamberContainer
+  - DecorContainer
   layers:
   - Default
   - TransparentFX

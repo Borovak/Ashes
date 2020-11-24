@@ -5,6 +5,7 @@ using System.Linq;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.Tilemaps;
 
 public class ChamberController : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class ChamberController : MonoBehaviour
     public Vector2 position;
     public Vector2 size;
     public float scale;
+    [SerializeField] public bool[,] map;
 
     private static LocationInformation.Zone _lastZoneEntered;
     private AudioClip _ambientSound;
@@ -36,6 +38,8 @@ public class ChamberController : MonoBehaviour
         _virtualCameraPlayerBinding = GetComponentInChildren<VirtualCameraPlayerBinding>();
         _enemyFolder = new GameObject("Enemies").transform;
         _enemyFolder.parent = transform;
+        var tilemapRenderer = GetComponentInChildren<TilemapRenderer>();
+        tilemapRenderer.enabled = false;
     }
 
     // Update is called once per frame
