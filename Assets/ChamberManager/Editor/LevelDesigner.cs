@@ -59,12 +59,16 @@ public static class LevelDesigner
             //Loading attributes
             if (!LoadedAttribute<string>.Load(xeRoom.Attribute("guid"), out var chamberGuid)) return;
             if (!LoadedAttribute<string>.Load(xeRoom.Attribute("name"), out var chamberName)) return;
+            if (!LoadedAttribute<string>.Load(xeRoom.Attribute("theme"), out var theme)) return;
             if (!LoadedAttribute<string>.Load(xeRoom.Attribute("zoneGuid"), out var zoneGuid)) return;
             if (!LoadedAttribute<string>.Load(xeRoom.Attribute("cells"), out var cellsConcat)) return;
             if (!LoadedAttribute<int>.Load(xeRoom.Attribute("x"), out var chamberX)) return;
             if (!LoadedAttribute<int>.Load(xeRoom.Attribute("y"), out var chamberY)) return;
             if (!LoadedAttribute<int>.Load(xeRoom.Attribute("w"), out var chamberWidth)) return;
             if (!LoadedAttribute<int>.Load(xeRoom.Attribute("h"), out var chamberHeight)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("colorShiftR"), out var colorShiftR)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("colorShiftG"), out var colorShiftG)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("colorShiftB"), out var colorShiftB)) return;
             //Creating game object
             var chamberGameObject = GameObject.Instantiate<GameObject>(chamberResource, chambersFolder.transform);
             if (chamberGameObject == null) throw (new Exception($"Chamber resource not found"));
@@ -74,6 +78,11 @@ public static class LevelDesigner
             if (tilemap == null) throw (new Exception($"Tilemap not found"));
             chamberGameObject.name = $"Chamber_{chamberName}";
             var chamber = chamberGameObject.GetComponentInChildren<ChamberController>();
+            chamber.chamberName = chamberName;
+            chamber.theme = theme;
+            chamber.colorShiftR = colorShiftR;
+            chamber.colorShiftG = colorShiftG;
+            chamber.colorShiftB = colorShiftB;
             var chamberPosition = new Vector2(Convert.ToSingle(chamberX) * scale, -Convert.ToSingle(chamberY) * scale);
             var chamberSize = new Vector2(Convert.ToSingle(chamberWidth) * scale, Convert.ToSingle(chamberHeight) * scale);
             chamber.SetBasicSettings(chamberGuid, chamberPosition, chamberSize, scale);
@@ -104,7 +113,6 @@ public static class LevelDesigner
                 }
             }
             var savePointResource = Resources.Load<GameObject>("SavePoint");
-            var ans = new int[] { 83, 102 };
             foreach (var xeSavePoint in xeRoom.Elements("SavePoint"))
             {
                 var savePointGameObject = GameObject.Instantiate<GameObject>(savePointResource, savePointsFolder.transform);

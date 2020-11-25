@@ -12,7 +12,7 @@ public class ChamberController : MonoBehaviour
     public static event Action<string, string> ZoneChanged;
     public string chamberGuid;
     public LocationInformation.Chamber chamber => LocationInformation.Chambers[chamberGuid];
-    public string chamberName => chamber.Name;
+    public string chamberName;
     public LocationInformation.Zone zone => LocationInformation.Zones[chamber.ZoneGuid];
     public string zoneGuid => chamber.ZoneGuid;
     public float BackgroundLightIntensity;
@@ -24,6 +24,11 @@ public class ChamberController : MonoBehaviour
     public Vector2 size;
     public float scale;
     [SerializeField] public bool[,] map;
+    [SerializeField] public string theme;
+    [SerializeField] public float colorShiftR;
+    [SerializeField] public float colorShiftG;
+    [SerializeField] public float colorShiftB;
+
 
     private static LocationInformation.Zone _lastZoneEntered;
     private AudioClip _ambientSound;

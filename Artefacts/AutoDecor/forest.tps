@@ -181,7 +181,37 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">forest_01_01_00.png</key>
+            <key type="filename">forest_00.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0,0</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9Paddings</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">forest_01.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0,0</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>16,16,32,32</rect>
+                <key>scale9Paddings</key>
+                <rect>16,16,32,32</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">forest_02.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0,0</point_f>
@@ -196,7 +226,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">forest_02_02_00.png</key>
+            <key type="filename">forest_03.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0,0</point_f>
@@ -211,7 +241,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">forest_04_02_00.png</key>
+            <key type="filename">forest_04.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0,0</point_f>
@@ -226,7 +256,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">forest_04_04_00.png</key>
+            <key type="filename">forest_05.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0,0</point_f>
@@ -238,16 +268,34 @@
                 <rect>128,128,256,256</rect>
                 <key>scale9Paddings</key>
                 <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">forest_06.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0,0</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>256,256,512,512</rect>
+                <key>scale9Paddings</key>
+                <rect>256,256,512,512</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>forest_01_01_00.png</filename>
-            <filename>forest_02_02_00.png</filename>
-            <filename>forest_04_02_00.png</filename>
-            <filename>forest_04_04_00.png</filename>
+            <filename>forest_00.png</filename>
+            <filename>forest_01.png</filename>
+            <filename>forest_02.png</filename>
+            <filename>forest_03.png</filename>
+            <filename>forest_04.png</filename>
+            <filename>forest_05.png</filename>
+            <filename>forest_06.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
