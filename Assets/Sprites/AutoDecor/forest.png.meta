@@ -35,6 +35,9 @@ TextureImporter:
   - first:
       213: 543404554693034644
     second: forest_06
+  - first:
+      213: -5281393174783135526
+    second: forest_00a
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,12 +130,12 @@ TextureImporter:
       name: forest_00
       rect:
         serializedVersion: 2
-        x: 1
-        y: 21
-        width: 32
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 75
+        y: 47
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0.1, y: 0.9}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,15 +148,36 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: forest_00a
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 7
+        width: 38
+        height: 38
+      alignment: 9
+      pivot: {x: 0.10526316, y: 0.8947368}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad0f0e9b3e8b4b6b0800000000000000
+      internalID: -5281393174783135526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: forest_01
       rect:
         serializedVersion: 2
         x: 1
-        y: 55
-        width: 64
-        height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        y: 15
+        width: 72
+        height: 72
+      alignment: 9
+      pivot: {x: 0.055555556, y: 0.9444444}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,11 +194,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 121
-        width: 128
-        height: 128
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        y: 89
+        width: 136
+        height: 136
+      alignment: 9
+      pivot: {x: 0.029411765, y: 0.9705882}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,12 +214,12 @@ TextureImporter:
       name: forest_03
       rect:
         serializedVersion: 2
-        x: 515
-        y: 765
-        width: 256
-        height: 256
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 523
+        y: 749
+        width: 264
+        height: 264
+      alignment: 9
+      pivot: {x: 0.01515152, y: 0.9848485}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,11 +236,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 251
-        width: 512
-        height: 256
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        y: 227
+        width: 520
+        height: 264
+      alignment: 9
+      pivot: {x: 0.0076923077, y: 0.9848485}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -233,11 +257,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 509
-        width: 512
-        height: 512
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        y: 493
+        width: 520
+        height: 520
+      alignment: 9
+      pivot: {x: 0.0076923077, y: 0.99230766}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,11 +278,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 1023
-        width: 1024
-        height: 1024
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        y: 1015
+        width: 1032
+        height: 1032
+      alignment: 9
+      pivot: {x: 0.004844961, y: 0.996124}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

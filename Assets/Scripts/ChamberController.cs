@@ -36,6 +36,7 @@ public class ChamberController : MonoBehaviour
     private Transform _enemyFolder;
     private VirtualCameraPlayerBinding _virtualCameraPlayerBinding;
     private bool _isPlayerInsideChamber;
+    private GameObject _container;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,8 @@ public class ChamberController : MonoBehaviour
         _enemyFolder.parent = transform;
         var tilemapRenderer = GetComponentInChildren<TilemapRenderer>();
         tilemapRenderer.enabled = false;
+        _container = GameObject.FindGameObjectsWithTag("ChamberContainer").FirstOrDefault(x => x.name == gameObject.name);
+        _container?.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,7 +61,8 @@ public class ChamberController : MonoBehaviour
             foreach (var enemy in enemiesToDelete)
             {
                 GameObject.Destroy(enemy);
-            }
+            }            
+            _container?.SetActive(false);
         }
         else if (!_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
         {
@@ -72,6 +76,7 @@ public class ChamberController : MonoBehaviour
             {
                 enemy.Instantiate(_enemyFolder, position, size, scale);
             }
+            _container?.SetActive(true);
         }
         else return;
         _isPlayerInsideChamber = _virtualCameraPlayerBinding.isPlayerInsideChamber;
