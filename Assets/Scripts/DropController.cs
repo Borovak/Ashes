@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using Mono.Data.Sqlite;
 using UnityEngine;
 
 public static class DropController
 {
-    private static Dictionary<int, Item> _drops = new Dictionary<int, Item>();
+    private static Dictionary<int, Item> _items = new Dictionary<int, Item>();
     private static Dictionary<int, Dictionary<int, float>> _enemies = new Dictionary<int, Dictionary<int, float>>();
     private static bool _initDone;
 
@@ -13,31 +16,39 @@ public static class DropController
     {
         if (_initDone) return;
         _initDone = true;
-        var dtDrops = GlobalFunctions.ParseCsv("drops");
-        for (int i = 3; i < dtDrops.Columns.Count; i++)
+        if (GetTable("items", out var dtItems))
         {
-            var id = int.Parse(dtDrops.Rows[0][i].ToString());
-            var name = dtDrops.Rows[1][i].ToString();
-            var artFilePath = dtDrops.Rows[2][i].ToString();
-            _drops.Add(id, new Item { id = id, name = name, artFilePath = artFilePath });
-            //Debug.Log($"Drop loaded: {id}, {name}, {artFilePath}");
-        }
-        for (int i = 4; i < dtDrops.Rows.Count; i++)
-        {
-            var id = int.Parse(dtDrops.Rows[i][0].ToString());
-            var name = dtDrops.Rows[i][1].ToString();
-            var rates = new Dictionary<int, float>();
-            _enemies.Add(id, rates);
-            for (int k = 3; k < dtDrops.Columns.Count; k++)
+            foreach (DataRow dr in dtItems.Rows)
             {
-                var prob = dtDrops.Rows[i][k].ToString();
-                if (string.IsNullOrEmpty(prob)) continue;
-                var dropId = int.Parse(dtDrops.Rows[0][k].ToString());
-                rates.Add(dropId, float.Parse(prob));
+                var id = Convert.ToInt32(dr["id"]);
+                var name = dr["name"].ToString();
+                var description = dr["description"].ToString();
+                var artFilePath = $"Ingredients/{dr["path"].ToString()}";
+                _items.Add(id, new Item { id = id, name = name, description = description, artFilePath = artFilePath });
             }
-            //Debug.Log($"Enemy drop rates loaded: {id}, {name}, {rates.Count} drops");
         }
-        Debug.Log($"Drops loaded: {_drops.Count} drops for {_enemies.Count} enemies");
+        if (GetTable("enemies", out var dtEnemies))
+        {
+            foreach (DataRow dr in dtEnemies.Rows)
+            {
+                var id = Convert.ToInt32(dr["id"]);
+                var name = dr["name"].ToString();
+                var description = dr["description"].ToString();
+                var artFilePath = $"Ingredients/{dr["path"].ToString()}";
+                _enemies.Add(id, new Dictionary<int, float>());
+            }
+        }
+        if (GetTable("drops", out var dtDrops))
+        {
+            foreach (DataRow dr in dtDrops.Rows)
+            {
+                var monsterId = Convert.ToInt32(dr["enemies_id"]);
+                var itemId = Convert.ToInt32(dr["items_id"]);
+                var dropRate = Convert.ToSingle(dr["droprate"]);
+                _enemies[monsterId].Add(itemId, dropRate);
+            }
+        }
+        Debug.Log($"Drops loaded: {_items.Count} items for {_enemies.Count} enemies");
     }
 
     public static bool GetDrops(Vector3 position, int enemyId, out List<GameObject> currentDrops)
@@ -46,14 +57,14 @@ public static class DropController
         if (!_enemies.ContainsKey(enemyId)) return false;
         foreach (var dropRate in _enemies[enemyId])
         {
-            var drop = _drops[dropRate.Key];
+            var drop = _items[dropRate.Key];
             var diceRoll = UnityEngine.Random.Range(0f, 1f);
             Debug.Log($"Item drop dice roll ({drop.name}): {diceRoll} vs {dropRate.Value}");
             if (diceRoll <= dropRate.Value)
             {
                 var currentDrop = drop.Instantiate(position);
                 currentDrop.name = drop.name;
-                currentDrops.Add(currentDrop);                
+                currentDrops.Add(currentDrop);
             }
         }
         return currentDrops.Any();
@@ -61,6 +72,46 @@ public static class DropController
 
     public static Item GetDropInfo(int id)
     {
-        return _drops[id];
+        return _items[id];
+    }
+
+    private static bool ConnectToDb(out SqliteConnection connection)
+    {
+        var path = $"{Application.dataPath}/Resources/ashes.db";
+        if (!System.IO.File.Exists(path))
+        {
+            Debug.Log($"Cannot find database file {path}");
+            connection = null;
+            return false;
+        }
+        string connectionString = $"URI=file:{path}";
+        connection = new SqliteConnection(connectionString);
+        try
+        {
+            connection.Open();
+        }
+        catch (Exception ex)
+        {
+            Debug.Log($"Error opening connection to database file {path}: {ex.ToString()}");
+            return false;
+        }
+        return true;
+    }
+
+    private static bool GetTable(string tableName, out DataTable dt)
+    {
+        if (!ConnectToDb(out var connection))
+        {
+            dt = null;
+            return false;
+        }
+        dt = new DataTable();
+        var commandString = $"SELECT * FROM {tableName}";
+        using (var da = new SqliteDataAdapter(commandString, connection))
+        {
+            da.Fill(dt);
+        }
+        connection.Close();
+        return true;
     }
 }

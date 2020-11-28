@@ -8,30 +8,21 @@ using UnityEngine.UI;
 public class InventoryPanel : MonoBehaviour
 {
 
-    public GameObject slotPrefab;
-    public int slotCount;
-    public int slotsPerRow;
-    public float margin;
     public bool refreshNeeded = true;
 
-    private List<GameObject> _slots;
+    private List<InventoryItemController> _inventoryItemControllers;
 
     // Start is called before the first frame update
     void Start()
     {
-        _slots = new List<GameObject>();
-        for (int i = 0; i < slotCount; i++)
+        var inventoryItemControllers = new List<InventoryItemController>();
+        for (int i = 0; i < transform.childCount; i++)
         {
-            var slot = GameObject.Instantiate(slotPrefab);
-            slot.transform.SetParent(transform);
-            _slots.Add(slot);
-            //Position
-            var rectTransform = slot.GetComponent<RectTransform>();
-            var position = rectTransform.anchoredPosition;
-            position.x = (i % slotsPerRow) * (rectTransform.rect.size.x + margin) + margin;
-            position.y = Convert.ToInt32(i / slotsPerRow) * -(rectTransform.rect.size.y + margin) - margin;
-            rectTransform.anchoredPosition = position;
+            var t = transform.GetChild(i);
+            if (!t.TryGetComponent<InventoryItemController>(out var inventoryItemController)) continue;
+            inventoryItemControllers.Add(inventoryItemController);
         }
+        _inventoryItemControllers = inventoryItemControllers.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ThenBy(x => x.transform.GetComponent<RectTransform>().anchoredPosition.x).ToList();
     }
 
     void OnEnable(){
@@ -45,21 +36,12 @@ public class InventoryPanel : MonoBehaviour
         refreshNeeded = false;
         var playerInventory = GlobalFunctions.GetPlayerInventory();
         playerInventory.GetItemsAndCounts(out var items, out var counts);
-        for (int i = 0; i < slotCount; i++)
+        var index = 0;
+        foreach (var inventoryItemController in _inventoryItemControllers)
         {
-            var slot = _slots[i];
-            var image = slot.GetComponentsInChildren<Image>().Where(x => x.gameObject.name == "ItemImage").ToList()[0];
-            var text = slot.GetComponentsInChildren<Text>().Where(x => x.gameObject.name == "ItemCount").ToList()[0];
-            if (i >= items.Count)
-            {
-                image.sprite = null;
-                image.color = new Color(0f,0f,0f,0f);
-                text.text = "";
-                continue;
-            }
-            image.sprite = items[i].GetArt();
-            image.color = new Color(1f,1f,1f,1f);
-            text.text = counts[i].ToString();
+            inventoryItemController.Item = index < items.Count ? items[index] : null;
+            inventoryItemController.Count = index < counts.Count ? counts[index] : -1;
+            index++;
         }
     }
 }

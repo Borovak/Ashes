@@ -14,7 +14,7 @@ public static class GlobalFunctions
         foreach (var line in lines)
         {
             if (string.IsNullOrEmpty(line)) continue;
-            var lineData = (line.Trim()).Split(","[0]);
+            var lineData = (line.Trim()).Split("|"[0]);
             if (dt.Columns.Count == 0)
             {
                 foreach (var cell in lineData)
