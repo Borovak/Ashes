@@ -101,7 +101,7 @@ public static class LevelDesigner
                     cells[x, y] = b;
                 }
             }
-            chamber.map = new bool[cells.GetLength(0), cells.GetLength(1)];
+            chamber.map = new int[cells.GetLength(0), cells.GetLength(1)];
             for (int x = 0; x < cells.GetLength(0); x++)
             {
                 for (int y = 0; y < cells.GetLength(1); y++)
@@ -109,7 +109,7 @@ public static class LevelDesigner
                     var b = cells[x, y];
                     var tile = tiles[b == 0 ? 0 : 1];
                     tilemap.SetTile(new Vector3Int(x, y, 0), tile);
-                    chamber.map[x, chamber.map.GetLength(1) - y - 1] = b != 0;
+                    chamber.map[x, chamber.map.GetLength(1) - y - 1] = b;
                 }
             }
             var savePointResource = Resources.Load<GameObject>("SavePoint");

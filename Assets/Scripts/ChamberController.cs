@@ -23,7 +23,7 @@ public class ChamberController : MonoBehaviour
     public Vector2 position;
     public Vector2 size;
     public float scale;
-    [SerializeField] public bool[,] map;
+    [SerializeField] public int[,] map;
     [SerializeField] public string theme;
     [SerializeField] public float colorShiftR;
     [SerializeField] public float colorShiftG;

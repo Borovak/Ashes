@@ -10,7 +10,6 @@ public class TerrainDecor
     const string TAG_CHAMBER = "Chamber";
     const string TAG_DECORCONTAINER = "DecorContainer";
     const string NAME_DECORCONTAINER = "Decor";
-    const int DECORRESOLUTION = 32;
 
     private class DecorAsset
     {
@@ -58,28 +57,52 @@ public class TerrainDecor
                 }
             }
             if (string.IsNullOrEmpty(chamber.theme)) continue;
-            var assetGroups = GetDecorAssets(chamber.theme);
             if (!GetMap(chamber, out var map, decorContainer.transform))
             {
                 Debug.Log($"Cannot get map for {chamber.chamberName}");
                 return;
             }
             var autoDecorPrefab = Resources.Load<GameObject>("AutoDecor/AutoDecor");
+            //Ground            
+            var assetGroups = GetDecorAssets(chamber.theme, "Ground", 32);
+            var workingMap = CopyMap(map);
             foreach (var assetGroup in assetGroups.OrderByDescending(x => x.Key))
             {
                 // if (assetGroup.Value.Count > 1){
                 //     Debug.Log(string.Join(", ", assetGroup.Value.Select(x => x.Sprite.name)));
                 // }
-                for (int x = 0; x < map.GetLength(0); x++)
+                for (int x = 0; x < workingMap.GetLength(0); x++)
                 {
-                    for (int y = 0; y < map.GetLength(1); y++)
+                    for (int y = 0; y < workingMap.GetLength(1); y++)
                     {
-                        if (IsRangeAvailable(map, x, y, assetGroup.Value[0].W, assetGroup.Value[0].H))
+                        if (IsRangeEmptyAbove(workingMap, x, y, assetGroup.Value[0].W))
                         {
                             var index = UnityEngine.Random.Range(0, assetGroup.Value.Count);
                             var asset = assetGroup.Value[index];
-                            InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y);
-                            SetRangeInArray(map, false, x, y, asset.W, asset.H);
+                            InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y, 1000);
+                            SetRangeInArray(workingMap, -1, x, y, asset.W, asset.H);
+                        }
+                    }
+                }
+            }
+            //Auto decor
+            assetGroups = GetDecorAssets(chamber.theme, "AutoDecor", 32);
+            //var workingMap = CopyMap(map);
+            foreach (var assetGroup in assetGroups.OrderByDescending(x => x.Key))
+            {
+                // if (assetGroup.Value.Count > 1){
+                //     Debug.Log(string.Join(", ", assetGroup.Value.Select(x => x.Sprite.name)));
+                // }
+                for (int x = 0; x < workingMap.GetLength(0); x++)
+                {
+                    for (int y = 0; y < workingMap.GetLength(1); y++)
+                    {
+                        if (IsRangeAvailable(workingMap, x, y, assetGroup.Value[0].W, assetGroup.Value[0].H))
+                        {
+                            var index = UnityEngine.Random.Range(0, assetGroup.Value.Count);
+                            var asset = assetGroup.Value[index];
+                            InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y, 0);
+                            SetRangeInArray(workingMap, -1, x, y, asset.W, asset.H);
                         }
                     }
                 }
@@ -87,20 +110,21 @@ public class TerrainDecor
         }
     }
 
-    private static Dictionary<int, List<DecorAsset>> GetDecorAssets(string theme)
+    private static Dictionary<int, List<DecorAsset>> GetDecorAssets(string theme, string type, int resolution)
     {
         var assetGroups = new Dictionary<int, List<DecorAsset>>();
-        var path = $"Assets/Sprites/AutoDecor/{theme.ToLower()}.png";
+        var path = $"Assets/Sprites/{type}/{theme.ToLower()}.png";
         var data = AssetDatabase.LoadAllAssetsAtPath(path);
         Debug.Log($"{data.Count()} assets found at {path}");
         foreach (var item in data)
         {
             var sprite = item as Sprite;
             if (sprite == null) continue;
-            var w = Convert.ToInt32(sprite.rect.width) / DECORRESOLUTION;
-            var h = Convert.ToInt32(sprite.rect.height) / DECORRESOLUTION;
+            var w = Convert.ToInt32(sprite.rect.width) / resolution;
+            var h = Convert.ToInt32(sprite.rect.height) / resolution;
             var asset = new DecorAsset { Sprite = sprite, W = w, H = h };
-            if (!assetGroups.ContainsKey(asset.size)){
+            if (!assetGroups.ContainsKey(asset.size))
+            {
                 assetGroups.Add(asset.size, new List<DecorAsset>());
             }
             assetGroups[asset.size].Add(asset);
@@ -108,35 +132,45 @@ public class TerrainDecor
         return assetGroups;
     }
 
-    private static bool GetMap(ChamberController chamberController, out bool[,] map, Transform decorContainer)
+    private static bool GetMap(ChamberController chamberController, out int[,] map, Transform decorContainer)
     {
         var chamberGameObject = GameObject.FindGameObjectsWithTag(TAG_CHAMBER).FirstOrDefault<GameObject>(x => x.name == chamberController.chamberName);
         if (chamberGameObject == null)
         {
-            map = new bool[0, 0];
+            map = new int[0, 0];
             return false;
         }
         var y = chamberGameObject.GetComponentInChildren<Grid>().gameObject.transform.position.y - chamberController.size.y;
         decorContainer.localPosition = new Vector3(chamberController.position.x, y + 0.5f);
-        map = new bool[chamberController.map.GetLength(0), chamberController.map.GetLength(1)];
-        Array.Copy(chamberController.map, 0, map, 0, chamberController.map.Length);
+        map = CopyMap(chamberController.map);
         return map != null;
     }
 
-    private static bool IsRangeAvailable(bool[,] map, int ox, int oy, int w, int h)
+    private static bool IsRangeAvailable(int[,] map, int ox, int oy, int w, int h)
     {
         if (ox + w >= map.GetLength(0) || oy + h >= map.GetLength(1)) return false;
         for (int x = ox; x < ox + w; x++)
         {
             for (int y = oy; y < oy + h; y++)
             {
-                if (!map[x, y]) return false;
+                if (map[x, y] <= 0) return false;
             }
         }
         return true;
     }
 
-    private static void SetRangeInArray(bool[,] map, bool value, int ox, int oy, int w, int h)
+    private static bool IsRangeEmptyAbove(int[,] map, int ox, int y, int w)
+    {
+        if (ox + w >= map.GetLength(0) || y >= map.GetLength(1) - 1) return false;
+        for (int x = ox; x < ox + w; x++)
+        {
+            if (map[x,y] >= 1 && map[x, y + 1] == 0) continue;
+            return false;
+        }
+        return true;
+    }
+
+    private static void SetRangeInArray(int[,] map, int value, int ox, int oy, int w, int h)
     {
         for (int x = ox; x < System.Math.Min(map.GetLength(0), ox + w); x++)
         {
@@ -147,7 +181,7 @@ public class TerrainDecor
         }
     }
 
-    private static void InstantiateAssetAtPosition(ChamberController chamber, GameObject prefab, Transform decorContainer, DecorAsset asset, int x, int y)
+    private static void InstantiateAssetAtPosition(ChamberController chamber, GameObject prefab, Transform decorContainer, DecorAsset asset, int x, int y, int sortingOrder)
     {
         var scale = 0.5f;
         var obj = GameObject.Instantiate<GameObject>(prefab);
@@ -161,6 +195,13 @@ public class TerrainDecor
         c.b -= UnityEngine.Random.Range(0f, chamber.colorShiftB);
         spriteRenderer.color = c;
         spriteRenderer.sprite = asset.Sprite;
-        spriteRenderer.sortingOrder = UnityEngine.Random.Range(-1000,1000);
+        spriteRenderer.sortingOrder = UnityEngine.Random.Range(sortingOrder - 1000, sortingOrder);
+    }
+
+    private static int[,] CopyMap(int[,] map)
+    {
+        var newMap = new int[map.GetLength(0), map.GetLength(1)];
+        Array.Copy(map, 0, newMap, 0, map.Length);
+        return newMap;
     }
 }
