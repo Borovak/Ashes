@@ -1,9 +1,0 @@
-sep=|
-||ID|1|2|1000
-||Name|Brimstone|Lye|Double Jump
-||Art File|Ingredients/ing_brimstone|Ingredients/ing_lye|Skills/skill_doublejump
-||Description|Chemical element with the symbol S and atomic number 16. It is abundant, multivalent and nonmetallic. Under normal conditions, sulfur atoms form cyclic octatomic molecules with a chemical formula S8. Elemental sulfur is a bright yellow| crystalline solid at room temperature.|Metal hydroxide traditionally obtained by leaching wood ashes, or a strong alkali which is highly soluble in water producing caustic basic solutions. "Lye" most commonly refers to sodium hydroxide (NaOH), but historically has been used for potassium hydroxide (KOH).|
-ID|Name||||
-1|Wolf Boss||||1
-2|Forest Larva||0.5|0.25|
-3|Forest Bird|||0.75|

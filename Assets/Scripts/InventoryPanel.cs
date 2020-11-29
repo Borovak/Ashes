@@ -27,6 +27,15 @@ public class InventoryPanel : MonoBehaviour
 
     void OnEnable(){
         refreshNeeded = true;
+        PlayerInventory.InventoryChanged += RequestRefresh;
+    }
+
+    void OnDisable(){
+        PlayerInventory.InventoryChanged -= RequestRefresh;
+    }
+
+    private void RequestRefresh(){
+        refreshNeeded = true;
     }
 
     // Update is called once per frame

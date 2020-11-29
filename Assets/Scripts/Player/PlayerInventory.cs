@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public static event Action InventoryChanged;
     private Dictionary<int, int> _items = new Dictionary<int, int>();
 
     void Start()
@@ -10,16 +12,30 @@ public class PlayerInventory : MonoBehaviour
         SetInventoryFromString(SaveSystem.LastLoadedSave.Inventory);
     }
 
-    public void Add(int id)
+    public void Add(int id, int quantity = 1)
     {
         if (!_items.ContainsKey(id))
         {
-            _items.Add(id, 1);
+            _items.Add(id, quantity);
         }
         else
         {
-            _items[id] = _items[id] + 1;
+            _items[id] = _items[id] + quantity;
         }
+        InventoryChanged?.Invoke();
+    }
+
+    public void Remove(int id, int quantity = 1)
+    {
+        if (!_items.ContainsKey(id))
+        {
+            _items.Add(id, 0);
+        }
+        else
+        {
+            _items[id] = System.Math.Max(_items[id] - quantity, 0);
+        }
+        InventoryChanged?.Invoke();
     }
 
     public int GetCount(int id)
@@ -62,5 +78,20 @@ public class PlayerInventory : MonoBehaviour
             items.Add(item);
             counts.Add(count);
         }
+    }
+
+    public void Add(Item item, int quantity = 1)
+    {
+        Add(item.id, quantity);
+    }
+
+    public void Remove(Item item, int quantity = 1)
+    {
+        Remove(item.id, quantity);
+    }
+
+    public int GetCount(Item item)
+    {
+        return GetCount(item.id);
     }
 }

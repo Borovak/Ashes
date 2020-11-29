@@ -21,7 +21,7 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
             if (_item == null)
             {
                 _image.sprite = null;
-                _image.color = new Color(0f, 0f, 0f, 0f);
+                _image.color = _colorWhenNull;
                 Count = -1;
             }
             else
@@ -47,8 +47,11 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
     private Image _back;
     private Image _image;
     private TextMeshProUGUI _text;
-    private Color _colorWhenSelected = new Color(0.6f, 0.6f, 0.6f, 0.73f);
+    private Color _colorWhenSelected = new Color(0.4f, 0.6f, 0.4f, 0.73f);
+    private Color _colorWhenHovered = new Color(0.6f, 0.6f, 0.6f, 0.73f);
     private Color _colorWhenNotSelected = new Color(0.283f, 0.283f, 0.283f, 0.73f);
+    private Color _colorWhenNull = new Color(0f, 0f, 0f, 0f);
+    private bool _isHovered;
 
     // Start is called before the first frame update
     void Start()
@@ -61,24 +64,38 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
     // Update is called once per frame
     void Update()
     {
-
+        if (CraftingDescriptionController.SelectedItem == Item && Item != null)
+        {
+            _back.color = _colorWhenSelected;
+        }
+        else
+        {
+            _back.color = _isHovered ? _colorWhenHovered : _colorWhenNotSelected;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (_item != null)
         {
-            _back.color = _colorWhenSelected;
-            SelectedItemChanged?.Invoke(_item);
+            _isHovered = true;
         }
     }
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
+        if (_item != null)
+        {
+            SelectedItemChanged?.Invoke(_item);
+            CraftingDescriptionController.SelectedItem = Item;
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _back.color = _colorWhenNotSelected;
+        if (_item != null)
+        {
+            _isHovered = false;
+        }
     }
 }

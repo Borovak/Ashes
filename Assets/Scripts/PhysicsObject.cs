@@ -46,7 +46,7 @@ public abstract class PhysicsObject : MonoBehaviour
         {
             _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }
-        if (_gameController.gameState == GameController.GameStates.Paused) return;
+        if (_gameController.gameState != GameController.GameStates.Running) return;
         targetVelocity = Vector2.zero;
         ComputeVelocity();
     }
@@ -62,7 +62,7 @@ public abstract class PhysicsObject : MonoBehaviour
         {
             _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }
-        if (_gameController.gameState == GameController.GameStates.Paused) return;
+        if (_gameController.gameState != GameController.GameStates.Running) return;
         if (!PhysicsObject.PhysicsEnabled) return;
         velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
         velocity.x = targetVelocity.x;

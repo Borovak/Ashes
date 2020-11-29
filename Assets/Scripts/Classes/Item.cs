@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class Item
 {
+
     public int id;
     public string name;
     public string artFilePath;
     public string description;
+    public int value;
+    public bool isCraftable;
 
     public GameObject _baseDrop;
 
@@ -29,6 +32,10 @@ public class Item
     }
 
     public Sprite GetArt(){
-        return Resources.Load<Sprite>($"{artFilePath}");
+        var sprite = Resources.Load<Sprite>($"{artFilePath}");
+        if (sprite == null){
+            Debug.Log($"Art not found: {artFilePath}");
+        }
+        return sprite;
     }
 }

@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     {
         _fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
         _fadeInOutController.FadeOutCompleted += SpawnPlayer;
+        DataHandling.Init();
         LocationInformation.Init(out _);
         var loadSuccessful = SaveSystem.Load(out SaveSystem.LastLoadedSave, out var errorMessage);
         if (!loadSuccessful)
@@ -84,7 +85,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameState != GameStates.Paused)
+        if (gameState == GameStates.Running)
         {
             gameTime += Time.deltaTime;
         }
