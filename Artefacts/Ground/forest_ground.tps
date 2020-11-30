@@ -196,6 +196,22 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">forest_ground_00a.png</key>
+            <key type="filename">forest_ground_00b.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0294118,0.1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>34,10,68,20</rect>
+                <key>scale9Paddings</key>
+                <rect>34,10,68,20</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">forest_ground_01.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -232,6 +248,8 @@
             <filename>forest_ground_00.png</filename>
             <filename>forest_ground_01.png</filename>
             <filename>forest_ground_02.png</filename>
+            <filename>forest_ground_00a.png</filename>
+            <filename>forest_ground_00b.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

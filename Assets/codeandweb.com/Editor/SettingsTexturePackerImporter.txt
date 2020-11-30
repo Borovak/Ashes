@@ -11,7 +11,7 @@ tpsheetFileNames:
 - Assets/Sprites/Ground/forest.tpsheet
 - Assets/Sprites/GroundOverlay/CathedralFloor.tpsheet
 - Assets/Sprites/MainMenu/Ash/Ash_sit.tpsheet
-- Assets/Sprites/Overhang/forest_overhang.tpsheet
+- Assets/Sprites/Overhang/forest.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Ash/ash.png
@@ -23,7 +23,7 @@ textureFileNames:
 - Assets/Sprites/Ground/forest.png
 - Assets/Sprites/GroundOverlay/CathedralFloor.png
 - Assets/Sprites/MainMenu/Ash/Ash_sit.png
-- Assets/Sprites/Overhang/forest_overhang.png
+- Assets/Sprites/Overhang/forest.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
 - 

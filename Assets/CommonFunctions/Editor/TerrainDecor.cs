@@ -107,19 +107,48 @@ public class TerrainDecor
                     }
                 }
             }
+            //Hanging
+            workingMap = CopyMap(map);
+            var overhangs = GetSpritesAtPath(chamber.theme, "Overhang");
+            if (overhangs.Any())
+            {
+                for (int y = 2; y < workingMap.GetLength(1) - 1; y++)
+                {
+                    for (int x = 1; x < workingMap.GetLength(0) - 1; x++)
+                    {
+                        if (workingMap[x, y] >= 1 && workingMap[x, y - 1] == 0 && workingMap[x, y + 1] >= 1 && workingMap[x - 1, y] >= 1 && workingMap[x + 1, y] >= 1)
+                        {
+                            if (UnityEngine.Random.Range(0f, 1f) > 0.35f) continue;
+                            var index = UnityEngine.Random.Range(0, overhangs.Count);
+                            InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, overhangs[index], 0, x, y, 2000, -0.05f);
+                            x++;
+                        }
+                    }
+                }
+            }
         }
+    }
+
+    private static List<Sprite> GetSpritesAtPath(string theme, string type)
+    {
+        var path = $"Assets/Sprites/{type}/{theme.ToLower()}.png";
+        var data = AssetDatabase.LoadAllAssetsAtPath(path);
+        var sprites = new List<Sprite>();
+        foreach (var item in data)
+        {
+            var sprite = item as Sprite;
+            if (sprite == null) continue;
+            sprites.Add(sprite);
+        }
+        return sprites;
     }
 
     private static Dictionary<int, List<DecorAsset>> GetDecorAssets(string theme, string type, int resolution)
     {
         var assetGroups = new Dictionary<int, List<DecorAsset>>();
-        var path = $"Assets/Sprites/{type}/{theme.ToLower()}.png";
-        var data = AssetDatabase.LoadAllAssetsAtPath(path);
-        Debug.Log($"{data.Count()} assets found at {path}");
-        foreach (var item in data)
+        var sprites = GetSpritesAtPath(theme, type);
+        foreach (var sprite in sprites)
         {
-            var sprite = item as Sprite;
-            if (sprite == null) continue;
             var w = Convert.ToInt32(sprite.rect.width) / resolution;
             var h = Convert.ToInt32(sprite.rect.height) / resolution;
             var asset = new DecorAsset { Sprite = sprite, W = w, H = h };
@@ -164,7 +193,7 @@ public class TerrainDecor
         if (ox + w >= map.GetLength(0) || y >= map.GetLength(1) - 1) return false;
         for (int x = ox; x < ox + w; x++)
         {
-            if (map[x,y] >= 1 && map[x, y + 1] == 0) continue;
+            if (map[x, y] >= 1 && map[x, y + 1] == 0) continue;
             return false;
         }
         return true;
@@ -183,18 +212,23 @@ public class TerrainDecor
 
     private static void InstantiateAssetAtPosition(ChamberController chamber, GameObject prefab, Transform decorContainer, DecorAsset asset, int x, int y, int sortingOrder)
     {
+        InstantiateAssetAtPosition(chamber, prefab, decorContainer, asset.Sprite, asset.H, x, y, sortingOrder);
+    }
+
+    private static void InstantiateAssetAtPosition(ChamberController chamber, GameObject prefab, Transform decorContainer, Sprite sprite, int h, int x, int y, int sortingOrder, float yOffset = 0f)
+    {
         var scale = 0.5f;
         var obj = GameObject.Instantiate<GameObject>(prefab);
-        obj.name = asset.Sprite.name;
+        obj.name = sprite.name;
         obj.transform.parent = decorContainer;
-        obj.transform.localPosition = new Vector3(x * scale, (y + asset.H - 1f) * scale, 0);
+        obj.transform.localPosition = new Vector3(x * scale, (y + h - 1f) * scale + yOffset, 0);
         var spriteRenderer = obj.GetComponent<SpriteRenderer>();
         var c = spriteRenderer.color;
         c.r -= UnityEngine.Random.Range(0f, chamber.colorShiftR);
         c.g -= UnityEngine.Random.Range(0f, chamber.colorShiftG);
         c.b -= UnityEngine.Random.Range(0f, chamber.colorShiftB);
         spriteRenderer.color = c;
-        spriteRenderer.sprite = asset.Sprite;
+        spriteRenderer.sprite = sprite;
         spriteRenderer.sortingOrder = UnityEngine.Random.Range(sortingOrder - 1000, sortingOrder);
     }
 

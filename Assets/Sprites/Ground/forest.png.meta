@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: 938039559233405582
     second: forest_ground_02
+  - first:
+      213: -2437842220465325312
+    second: forest_ground_00a
+  - first:
+      213: 5459830900865456309
+    second: forest_ground_00b
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -104,7 +110,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 23
+        y: 87
         width: 136
         height: 40
       alignment: 9
@@ -121,15 +127,57 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: forest_ground_00a
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 45
+        width: 136
+        height: 40
+      alignment: 9
+      pivot: {x: 0.029411765, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00bf6beaa6b0b2ed0800000000000000
+      internalID: -2437842220465325312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ground_00b
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 136
+        height: 40
+      alignment: 9
+      pivot: {x: 0.029411765, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b859c3e64735cb40800000000000000
+      internalID: 5459830900865456309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: forest_ground_01
       rect:
         serializedVersion: 2
         x: 139
-        y: 23
+        y: 87
         width: 72
         height: 40
       alignment: 9
-      pivot: {x: 0.055555556, y: 0.9}
+      pivot: {x: 0.0555556, y: 0.9}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,7 +194,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 213
-        y: 23
+        y: 87
         width: 40
         height: 40
       alignment: 9
