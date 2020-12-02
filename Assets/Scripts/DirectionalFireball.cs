@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class DirectionalFireball : MonoBehaviour
 {
-
-    public LayerMask whatIsPlayer;
-    public LayerMask whatIsEnemy;
-    public LayerMask whatIsLayout;
     public Vector3 destination;
     public float speed;
     public float diameter;
@@ -27,18 +23,13 @@ public class DirectionalFireball : MonoBehaviour
     void Update()
     {
         transform.Translate(_direction * speed * Time.deltaTime);
-        var entitiesToDamage = Physics2D.OverlapCircleAll(transform.position, diameter / 2f, emitFromPlayer ? whatIsEnemy : whatIsPlayer);
+        var entitiesToDamage = Physics2D.OverlapCircleAll(transform.position, diameter / 2f, emitFromPlayer ? LayerManagement.Enemies : LayerManagement.Player);
         for (int i = 0; i < entitiesToDamage.Length; i++)
         {
             if (!entitiesToDamage[i].TryGetComponent<LifeController>(out var entity)) continue;
             entity.TakeDamage(damage, gameObject.name);
             GameObject.Destroy(gameObject);
             return;
-        }
-        var layout = Physics2D.OverlapCircleAll(transform.position, diameter / 2f, whatIsLayout);
-        if (layout.Length > 0)
-        {
-            GameObject.Destroy(gameObject);
         }
     }
 }

@@ -7,6 +7,8 @@ tpsheetFileNames:
 - Assets/Sprites/AutoDecor/forest.tpsheet
 - Assets/Sprites/AutoDecor/town.tpsheet
 - Assets/Sprites/Boss1/Boss1.tpsheet
+- Assets/Sprites/CornerLeft/forest.tpsheet
+- Assets/Sprites/CornerRight/forest.tpsheet
 - Assets/Sprites/Decor/Flag1/flag1.tpsheet
 - Assets/Sprites/Ground/forest.tpsheet
 - Assets/Sprites/GroundOverlay/CathedralFloor.tpsheet
@@ -19,6 +21,8 @@ textureFileNames:
 - Assets/Sprites/AutoDecor/forest.png
 - Assets/Sprites/AutoDecor/town.png
 - Assets/Sprites/Boss1/Boss1.png
+- Assets/Sprites/CornerLeft/forest.png
+- Assets/Sprites/CornerRight/forest.png
 - Assets/Sprites/Decor/Flag1/waving.png
 - Assets/Sprites/Ground/forest.png
 - Assets/Sprites/GroundOverlay/CathedralFloor.png
@@ -26,6 +30,8 @@ textureFileNames:
 - Assets/Sprites/Overhang/forest.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
 - 
 - 
 - 

@@ -10,4 +10,9 @@ public class DamagePlayerOnTouch : MonoBehaviour
         if (!collider.gameObject.TryGetComponent<PlayerLifeController>(out var player)) return;
         player.TakeDamage(damage, gameObject.name);
     }
+
+    void OnCollisionEnter2D(Collision2D collision){
+        if (!collision.gameObject.TryGetComponent<ShieldController>(out var shield)) return;
+        shield.ShowContact(collision.GetContact(0).point);
+    }
 }

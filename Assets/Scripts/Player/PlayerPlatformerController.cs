@@ -45,14 +45,14 @@ public class PlayerPlatformerController : PhysicsObject
         _mainCameraAnimator = Camera.main.transform.GetChild(0).GetComponent<Animator>();
         _inputs.Jump += Jump;
         _inputs.JumpRelease += JumpRelease;
-        _inputs.Roll += Roll;
+        _inputs.Dash += Dash;
     }
 
     void OnDisable()
     {
         _inputs.Jump -= Jump;
         _inputs.JumpRelease -= JumpRelease;
-        _inputs.Roll -= Roll;
+        _inputs.Dash -= Dash;
     }
 
     void Start()
@@ -140,7 +140,7 @@ public class PlayerPlatformerController : PhysicsObject
         }
     }
 
-    private void Roll()
+    private void Dash()
     {
         if (!_lifeController.IsAlive) return;
         _animator.SetTrigger("roll");

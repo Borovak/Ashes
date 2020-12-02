@@ -5,7 +5,7 @@ using UnityEngine;
 public class ManaController : MonoBehaviour
 {
     public float maxMp;
-    public float mp;    
+    public float mp;
     public float mpRegenPerSec;
 
     // Start is called before the first frame update
@@ -35,6 +35,22 @@ public class ManaController : MonoBehaviour
         }
         else
         {
+            return false;
+        }
+    }
+
+    public bool TrySpendMana(float cost, out float manaNotSpent)
+    {
+        if (mp >= cost)
+        {
+            mp -= cost;
+            manaNotSpent = 0;
+            return true;
+        }
+        else
+        {
+            manaNotSpent = cost - mp;
+            mp = 0;
             return false;
         }
     }

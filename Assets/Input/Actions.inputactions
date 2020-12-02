@@ -30,12 +30,12 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "Roll",
+                    "name": "Dash",
                     "type": "Button",
                     "id": "398e4370-ba97-4ae5-ae25-e2610f298994",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press(behavior=2)"
                 },
                 {
                     "name": "AttackSpell",
@@ -60,6 +60,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Shield",
+                    "type": "Button",
+                    "id": "34143677-6945-4869-a85d-6d0aa2872df6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
                 }
             ],
             "bindings": [
@@ -220,7 +228,7 @@
                 {
                     "name": "",
                     "id": "0dadef5c-d3a9-41fe-a13d-1587e6b68be0",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
@@ -231,11 +239,11 @@
                 {
                     "name": "",
                     "id": "8e55a037-1e57-42f1-b4c3-5615691b8e5e",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Roll",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -246,14 +254,14 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Roll",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "23d5d04c-aa83-43d2-9554-00d604708f3b",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
@@ -264,7 +272,7 @@
                 {
                     "name": "",
                     "id": "db6a2788-ddcf-4764-80ce-f6e55e001405",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
@@ -313,6 +321,28 @@
                     "processors": "",
                     "groups": "Control Scheme Alpha",
                     "action": "AttackSpell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "548618ea-927f-496b-9e49-8b617b7921ed",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Shield",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79f9bb0d-aa25-4221-8797-4e1c0437c8eb",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Shield",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

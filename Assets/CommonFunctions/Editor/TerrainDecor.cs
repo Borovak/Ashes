@@ -63,25 +63,64 @@ public class TerrainDecor
                 return;
             }
             var autoDecorPrefab = Resources.Load<GameObject>("AutoDecor/AutoDecor");
-            //Ground            
-            var assetGroups = GetDecorAssets(chamber.theme, "Ground", 32);
             var workingMap = CopyMap(map);
+            //Corner Left
+            var assetGroups = GetDecorAssets(chamber.theme, "CornerLeft", 32);
             foreach (var assetGroup in assetGroups.OrderByDescending(x => x.Key))
             {
-                // if (assetGroup.Value.Count > 1){
-                //     Debug.Log(string.Join(", ", assetGroup.Value.Select(x => x.Sprite.name)));
-                // }
+                var w = assetGroup.Value.First().W;
+                var h = assetGroup.Value.First().H;
+                for (int x = 1; x < workingMap.GetLength(0); x++)
+                {
+                    for (int y = 0; y < workingMap.GetLength(1); y++)
+                    {
+                        if (!IsRangeAvailable(workingMap, x, y, w, h)) continue;
+                        if (!IsRangeEmptyAbove(workingMap, x, y, w, h)) continue;
+                        if (!IsRangeEmptyOnTheLeft(workingMap, x, y, h)) continue;
+                        var index = UnityEngine.Random.Range(0, assetGroup.Value.Count);
+                        var asset = assetGroup.Value[index];
+                        InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y, 4000);
+                        SetRangeInArray(workingMap, -1, x, y, asset.W, asset.H);
+                    }
+                }
+            }
+            //Corner Right
+            assetGroups = GetDecorAssets(chamber.theme, "CornerRight", 32);
+            foreach (var assetGroup in assetGroups.OrderByDescending(x => x.Key))
+            {
+                var w = assetGroup.Value.First().W;
+                var h = assetGroup.Value.First().H;
+                for (int x = 1; x < workingMap.GetLength(0); x++)
+                {
+                    for (int y = 0; y < workingMap.GetLength(1); y++)
+                    {
+                        if (!IsRangeAvailable(workingMap, x, y, w, h)) continue;
+                        if (!IsRangeEmptyAbove(workingMap, x, y, w, h)) continue;
+                        if (!IsRangeEmptyOnTheRight(workingMap, x, y, w, h)) continue;
+                        var index = UnityEngine.Random.Range(0, assetGroup.Value.Count);
+                        var asset = assetGroup.Value[index];
+                        InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y, 5000);
+                        SetRangeInArray(workingMap, -1, x, y, asset.W, asset.H);
+                    }
+                }
+            }
+            //Ground            
+            assetGroups = GetDecorAssets(chamber.theme, "Ground", 32);
+            foreach (var assetGroup in assetGroups.OrderByDescending(x => x.Key))
+            {
+                var w = assetGroup.Value.First().W;
+                var h = assetGroup.Value.First().H;
                 for (int x = 0; x < workingMap.GetLength(0); x++)
                 {
                     for (int y = 0; y < workingMap.GetLength(1); y++)
                     {
-                        if (IsRangeEmptyAbove(workingMap, x, y, assetGroup.Value[0].W))
-                        {
-                            var index = UnityEngine.Random.Range(0, assetGroup.Value.Count);
-                            var asset = assetGroup.Value[index];
-                            InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y, 1000);
-                            SetRangeInArray(workingMap, -1, x, y, asset.W, asset.H);
-                        }
+                        if (!IsRangeAvailable(workingMap, x, y, w, h)) continue;
+                        if (!IsRangeEmptyAbove(workingMap, x, y, w, h)) continue;
+                        var index = UnityEngine.Random.Range(0, assetGroup.Value.Count);
+                        var asset = assetGroup.Value[index];
+                        InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y, 1000);
+                        SetRangeInArray(workingMap, -1, x, y, w, h);
+
                     }
                 }
             }
@@ -175,25 +214,44 @@ public class TerrainDecor
         return map != null;
     }
 
-    private static bool IsRangeAvailable(int[,] map, int ox, int oy, int w, int h)
+    private static bool IsRangeAvailable(int[,] map, int x, int y, int w, int h)
     {
-        if (ox + w >= map.GetLength(0) || oy + h >= map.GetLength(1)) return false;
-        for (int x = ox; x < ox + w; x++)
+        if (x + w >= map.GetLength(0) || y + h >= map.GetLength(1)) return false;
+        for (int ox = x; ox < x + w; ox++)
         {
-            for (int y = oy; y < oy + h; y++)
+            for (int oy = y; oy < y + h; oy++)
             {
-                if (map[x, y] <= 0) return false;
+                if (map[ox, oy] <= 0) return false;
             }
         }
         return true;
     }
 
-    private static bool IsRangeEmptyAbove(int[,] map, int ox, int y, int w)
+    private static bool IsRangeEmptyAbove(int[,] map, int x, int y, int w, int h)
     {
-        if (ox + w >= map.GetLength(0) || y >= map.GetLength(1) - 1) return false;
-        for (int x = ox; x < ox + w; x++)
+        if (x + w >= map.GetLength(0) || y >= map.GetLength(1) - h) return false;
+        for (int ox = x; ox < x + w; ox++)
         {
-            if (map[x, y] >= 1 && map[x, y + 1] == 0) continue;
+            if (map[ox, y + h] != 0) return false;
+        }
+        return true;
+    }
+
+    private static bool IsRangeEmptyOnTheLeft(int[,] map, int x, int y, int h)
+    {
+        if (y - h < 0 || x - 1 < 0) return false;
+        for (int oy = y; oy < y + h; oy++)
+        {
+            if (map[x - 1, oy] != 0) return false;
+        }
+        return true;
+    }
+    private static bool IsRangeEmptyOnTheRight(int[,] map, int x, int y, int w, int h)
+    {
+        if (y - h < 0 || x + w >= map.GetLength(0)) return false;
+        for (int oy = y; oy < y + h; oy++)
+        {
+            if (map[x + w, oy] == 0) continue;
             return false;
         }
         return true;

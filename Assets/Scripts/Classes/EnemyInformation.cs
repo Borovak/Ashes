@@ -17,7 +17,7 @@ public class EnemyInformation
         {
             if (!LoadResource(Id, out enemyPrefab)) return;
         }
-        var position = new Vector3(chamberOffset.x + (X * chamberScale), chamberOffset.y + 50f - Y * chamberScale, 0f);
+        var position = new Vector3(chamberOffset.x + (X * chamberScale), chamberOffset.y + 50f - Y * chamberScale - 0.5f, 0f);
         GameObject.Instantiate<GameObject>(enemyPrefab, position, Quaternion.identity, parent);
     }
 
@@ -34,18 +34,12 @@ public class EnemyInformation
 
     private bool GetResourceName(int id, out string resourceName)
     {
-        switch (Id)
+        if (!DataHandling.GetInfo($"SELECT prefabname FROM enemies WHERE id = {id}", out var dt) || dt.Rows.Count == 0)
         {
-            case 1:
-                resourceName = "EnemyLarva";
-                break;
-            case 2:
-                resourceName = "EnemyBird";
-                break;
-            default:
-                resourceName = string.Empty;
-                return false;
+            resourceName = string.Empty;
+            return false;
         }
+        resourceName = dt.Rows[0][0].ToString();
         return true;
     }
 

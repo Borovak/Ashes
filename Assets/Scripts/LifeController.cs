@@ -39,6 +39,7 @@ public abstract class LifeController : MonoBehaviour
 
     protected bool _isPlayer;
     private InvinsibilityController _invinsibilityController;
+    private ShieldController _shieldController;
     private bool _dead;
     private float _damageDelay;
     private List<AcidWaterController> _acidWaters = new List<AcidWaterController>();
@@ -49,6 +50,7 @@ public abstract class LifeController : MonoBehaviour
     void Start()
     {
         TryGetComponent<InvinsibilityController>(out _invinsibilityController);
+        TryGetComponent<ShieldController>(out _shieldController);
         AfterStart();
         _spriteColors = new List<SpriteColor>();
         GetSpriteRendererRecursively(ref _spriteColors, transform);
@@ -90,7 +92,7 @@ public abstract class LifeController : MonoBehaviour
         {
             if (_damageDelay <= 0)
             {
-                TakeDamage(AcidDamage, "Acid");
+                TakeDamage(AcidDamage, "Acid", true);
                 _damageDelay = recurrentDamageDelay;
             }
             else
@@ -153,8 +155,12 @@ public abstract class LifeController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage, string attackerName)
+    public void TakeDamage(int damage, string attackerName, bool bypassShield = false)
     {
+        if (_shieldController != null && !bypassShield){
+            if (_shieldController.AbsorbHit(damage, out var newDamage)) return;
+            damage = Convert.ToInt32(newDamage);
+        }
         if (_invinsibilityController != null && !_invinsibilityController.TryTakeDamage()) return;
         if (blood != null)
         {

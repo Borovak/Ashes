@@ -10,14 +10,17 @@ public class PlayerInputs : MonoBehaviour
     public event Action Interact;
     public event Action Jump;
     public event Action JumpRelease;
-    public event Action Roll;
+    public event Action Dash;
     public event Action GroundBreak;
     public event Action SelfSpell;
+    public event Action Shield;
+    public event Action ShieldRelease;
     public Vector2 movement;
     public Actions _actions;
 
     private Dictionary<InputAction, Action<InputAction.CallbackContext>> _pairingDictionary;
     private GameController _gameController;
+    
 
     void Awake()
     {
@@ -30,7 +33,8 @@ public class PlayerInputs : MonoBehaviour
             {_actions.Player.Interact, OnInteract},
             {_actions.Player.Jump, OnJump},
             {_actions.Player.Movement, OnMovement},
-            {_actions.Player.Roll,OnRoll}
+            {_actions.Player.Dash, OnDash},
+            {_actions.Player.Shield, OnShield},
         };
         _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
@@ -90,13 +94,20 @@ public class PlayerInputs : MonoBehaviour
         movement = context.ReadValue<Vector2>();
     }
 
-    public void OnRoll(InputAction.CallbackContext context)
+    public void OnDash(InputAction.CallbackContext context)
     {
         if (_gameController.gameState != GameController.GameStates.Running) return;
         if (movement.y < -0.1f){
             GroundBreak?.Invoke();
         } else {            
-            Roll?.Invoke();
+            Dash?.Invoke();
         }
+    }
+
+    public void OnShield(InputAction.CallbackContext context)
+    {
+        if (_gameController.gameState != GameController.GameStates.Running) return;
+        var a = context.ReadValue<float>() > 0.1f ? Shield : ShieldRelease;
+        a?.Invoke();
     }
 }
