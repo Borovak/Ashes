@@ -25,6 +25,7 @@ public class StandardProjectileController : MonoBehaviour
         {
             _layerMaskToConsider.Add(LayerManagement.Enemies);
         }
+        transform.localScale = new Vector3(diameter, diameter, 1f);
     }
 
     // Update is called once per frame

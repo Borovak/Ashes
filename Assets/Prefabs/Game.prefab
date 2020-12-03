@@ -47,6 +47,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 483266623256006727, guid: 6d5fc09a97b6e9b4bb4e0cbcd7b8b370,
     type: 3}
   gameState: 0
+  gameTime: 0
 --- !u!114 &6485850250554492190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,3 +66,9 @@ MonoBehaviour:
   layoutLayer:
     serializedVersion: 2
     m_Bits: 1024
+  enemiesLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  waterLayer:
+    serializedVersion: 2
+    m_Bits: 16

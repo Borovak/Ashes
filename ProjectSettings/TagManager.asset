@@ -25,6 +25,7 @@ TagManager:
   - Enemy
   - ChamberContainer
   - DecorContainer
+  - PlayerTarget
   layers:
   - Default
   - TransparentFX

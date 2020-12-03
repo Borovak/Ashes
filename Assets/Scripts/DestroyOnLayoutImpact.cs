@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class DestroyOnLayoutImpact : MonoBehaviour
 {
-    public LayerMask whatIsLayout;
-    public float checkDiameter;
-
+    public bool alsoOnWater;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +14,8 @@ public class DestroyOnLayoutImpact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        var layout = Physics2D.OverlapCircleAll(transform.position, checkDiameter / 2f, whatIsLayout);
-        if (layout.Length > 0)
+        var hit = Physics2D.OverlapCircle(transform.position, transform.localScale.x / 2f, LayerManagement.Layout.value + (alsoOnWater ? LayerManagement.Water.value : 0));
+        if (hit != null)
         {
             GameObject.Destroy(gameObject);
         }

@@ -224,3 +224,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660fd5a11a435a743b8cc5a2c51a87de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 7938668220886776587, guid: 369157ea01a028f4eb6eb561f1d34cd3,
+    type: 3}
+  offset: {x: 0, y: -0.5, z: 0}
+  seeksPlayer: 1
+  visionRange: 12
+  forcedDirection: {x: 0, y: 0, z: 0}
+  projectilesPerSecond: 1
+  projectileSpeed: 3
+  projectileDamage: 1
+  projectileDiameter: 0.3
+  canHitPlayer: 1
+  canHitEnemies: 0
+  distance: 0
+  objectSeen: 
