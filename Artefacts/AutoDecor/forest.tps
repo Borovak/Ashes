@@ -181,7 +181,55 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">forest_00.png</key>
+            <key type="filename">forest_000_00.png</key>
+            <key type="filename">forest_001_00.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0875,0.0875</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>40,40,80,80</rect>
+                <key>scale9Paddings</key>
+                <rect>40,40,80,80</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">forest_002_00.png</key>
+            <key type="filename">forest_002_01.png</key>
+            <key type="filename">forest_002_02.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0294118,0.1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>34,10,68,20</rect>
+                <key>scale9Paddings</key>
+                <rect>34,10,68,20</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">forest_004_00.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0555556,0.1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>18,10,36,20</rect>
+                <key>scale9Paddings</key>
+                <rect>18,10,36,20</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">forest_005_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.1,0.1</point_f>
@@ -190,16 +238,31 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>8,8,16,16</rect>
+                <rect>10,10,20,20</rect>
                 <key>scale9Paddings</key>
-                <rect>8,8,16,16</rect>
+                <rect>10,10,20,20</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">forest_00a.png</key>
+            <key type="filename">forest_006_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.105263,0.105263</point_f>
+                <point_f>0,0.1</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>10,10,20,20</rect>
+                <key>scale9Paddings</key>
+                <rect>10,10,20,20</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">forest_006_01.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0,0.0526316</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -211,7 +274,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">forest_01.png</key>
+            <key type="filename">forest_007_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.0555556,0.0555556</point_f>
@@ -220,13 +283,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>16,16,32,32</rect>
+                <rect>18,18,36,36</rect>
                 <key>scale9Paddings</key>
-                <rect>16,16,32,32</rect>
+                <rect>18,18,36,36</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">forest_02.png</key>
+            <key type="filename">forest_008_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.0294118,0.0294118</point_f>
@@ -235,13 +298,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>32,32,64,64</rect>
+                <rect>34,34,68,68</rect>
                 <key>scale9Paddings</key>
-                <rect>32,32,64,64</rect>
+                <rect>34,34,68,68</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">forest_03.png</key>
+            <key type="filename">forest_009_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.0151515,0.0151515</point_f>
@@ -250,13 +313,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>64,64,128,128</rect>
+                <rect>66,66,132,132</rect>
                 <key>scale9Paddings</key>
-                <rect>64,64,128,128</rect>
+                <rect>66,66,132,132</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">forest_04.png</key>
+            <key type="filename">forest_010_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.00769231,0.0151515</point_f>
@@ -265,13 +328,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>128,64,256,128</rect>
+                <rect>130,66,260,132</rect>
                 <key>scale9Paddings</key>
-                <rect>128,64,256,128</rect>
+                <rect>130,66,260,132</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">forest_05.png</key>
+            <key type="filename">forest_011_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.00769231,0.00769231</point_f>
@@ -280,38 +343,45 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>128,128,256,256</rect>
+                <rect>130,130,260,260</rect>
                 <key>scale9Paddings</key>
-                <rect>128,128,256,256</rect>
+                <rect>130,130,260,260</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">forest_06.png</key>
+            <key type="filename">forest_012_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.00484496,0.00387597</point_f>
+                <point_f>0.00387597,0.00387597</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>256,256,512,512</rect>
+                <rect>258,258,516,516</rect>
                 <key>scale9Paddings</key>
-                <rect>256,256,512,512</rect>
+                <rect>258,258,516,516</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>forest_00.png</filename>
-            <filename>forest_01.png</filename>
-            <filename>forest_02.png</filename>
-            <filename>forest_03.png</filename>
-            <filename>forest_04.png</filename>
-            <filename>forest_05.png</filename>
-            <filename>forest_06.png</filename>
-            <filename>forest_00a.png</filename>
+            <filename>forest_000_00.png</filename>
+            <filename>forest_001_00.png</filename>
+            <filename>forest_002_00.png</filename>
+            <filename>forest_002_01.png</filename>
+            <filename>forest_002_02.png</filename>
+            <filename>forest_004_00.png</filename>
+            <filename>forest_005_00.png</filename>
+            <filename>forest_006_00.png</filename>
+            <filename>forest_006_01.png</filename>
+            <filename>forest_007_00.png</filename>
+            <filename>forest_008_00.png</filename>
+            <filename>forest_009_00.png</filename>
+            <filename>forest_010_00.png</filename>
+            <filename>forest_011_00.png</filename>
+            <filename>forest_012_00.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

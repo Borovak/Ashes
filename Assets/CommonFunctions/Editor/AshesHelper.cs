@@ -20,7 +20,7 @@ public class AshesHelper : EditorWindow
             {"Wipe save files", SaveSystem.WipeFiles},
             {"Load level designer file", LevelDesigner.LoadSpecific},
             {"Load default level designer file", LevelDesigner.LoadDefault},
-            {"Generate terrain decor", TerrainDecor.Generate},
+            {"Generate terrain decor", AutoDecor.Generate},
         };
         foreach (var button in buttons)
         {

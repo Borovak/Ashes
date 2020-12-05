@@ -17,6 +17,21 @@ TextureImporter:
   - first:
       213: 3243353439765672964
     second: town_04
+  - first:
+      213: -5099968521361031248
+    second: town_006_00
+  - first:
+      213: 2075210863113091766
+    second: town_007_00
+  - first:
+      213: 5171674002709370493
+    second: town_008_00
+  - first:
+      213: -3560056677928195433
+    second: town_009_00
+  - first:
+      213: -5267197729675032343
+    second: town_011_00
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: town_00
+      name: town_006_00
       rect:
         serializedVersion: 2
         x: 1
@@ -120,14 +135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2be2bd92a535aea0800000000000000
-      internalID: -5862220367406109909
+      spriteID: 0bff99e86a54939b0800000000000000
+      internalID: -5099968521361031248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: town_01
+      name: town_007_00
       rect:
         serializedVersion: 2
         x: 1
@@ -141,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3aa6587189253f90800000000000000
-      internalID: -6974622811866879427
+      spriteID: 6ba33e9f841accc10800000000000000
+      internalID: 2075210863113091766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: town_02
+      name: town_008_00
       rect:
         serializedVersion: 2
         x: 1
@@ -162,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd74ea66dbd79f010800000000000000
-      internalID: 1223147026232788959
+      spriteID: d765d91da1a75c740800000000000000
+      internalID: 5171674002709370493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: town_03
+      name: town_009_00
       rect:
         serializedVersion: 2
         x: 1
@@ -183,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc60cfbea47530dd0800000000000000
-      internalID: -2521075387098986804
+      spriteID: 79a25db3053289ec0800000000000000
+      internalID: -3560056677928195433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: town_04
+      name: town_011_00
       rect:
         serializedVersion: 2
         x: 1
@@ -204,8 +219,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 404364af4c4b20d20800000000000000
-      internalID: 3243353439765672964
+      spriteID: 9e8c9f8529727e6b0800000000000000
+      internalID: -5267197729675032343
       vertices: []
       indices: 
       edges: []

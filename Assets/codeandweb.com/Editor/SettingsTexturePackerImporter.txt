@@ -4,7 +4,9 @@ tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 - Assets/Sprites/Ash/ash.tpsheet
 - Assets/Sprites/Ash/ash_attack.tpsheet
+- Assets/Sprites/AutoDecor/filters.tpsheet
 - Assets/Sprites/AutoDecor/forest.tpsheet
+- Assets/Sprites/AutoDecor/forest_filters.tpsheet
 - Assets/Sprites/AutoDecor/town.tpsheet
 - Assets/Sprites/Boss1/Boss1.tpsheet
 - Assets/Sprites/CornerLeft/forest.tpsheet
@@ -18,7 +20,9 @@ textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Ash/ash.png
 - Assets/Sprites/Ash/ash_attack.png
+- Assets/Sprites/AutoDecor/forest_filters.png
 - Assets/Sprites/AutoDecor/forest.png
+- Assets/Sprites/AutoDecor/forest_filters.png
 - Assets/Sprites/AutoDecor/town.png
 - Assets/Sprites/Boss1/Boss1.png
 - Assets/Sprites/CornerLeft/forest.png
@@ -30,6 +34,8 @@ textureFileNames:
 - Assets/Sprites/Overhang/forest.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
 - 
 - 
 - 
