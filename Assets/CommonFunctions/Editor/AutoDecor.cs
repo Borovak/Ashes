@@ -42,7 +42,7 @@ public class AutoDecor
         internal int OccupiedCount;
         internal int PlaceholderCount;
         internal int DontCareCount;
-        internal int ContraintCount => EmptyCount + OccupiedCount + PlaceholderCount;
+        internal int ContraintCount => EmptyCount + OccupiedCount;
         internal Filter(int id, int w, int h)
         {
             Id = id;
@@ -66,6 +66,7 @@ public class AutoDecor
         {
             var chamberController = chamberGameObject.GetComponent<ChamberController>();
             ManageDecorContainer(chamberController, out var decorContainer);
+            //if (chamberController.chamberName != "Forest1") continue;
             //Identifying theme
             if (string.IsNullOrEmpty(chamberController.theme)) continue;
             //Obtaining map
@@ -79,125 +80,31 @@ public class AutoDecor
             var autoDecorPrefab = Resources.Load<GameObject>("AutoDecor/AutoDecor");
             //Loading assets
             var assetGroups = GetDecorAssets(chamberController.theme, "AutoDecor", 32);
-            foreach (var assetGroupKvp in assetGroups.OrderByDescending(x => _filters[x.Key].ContraintCount).ThenByDescending(x => _filters[x.Key].EmptyCount))
+            foreach (var assetGroupKvp in assetGroups.OrderByDescending(x => _filters[x.Key].OccupiedCount).ThenByDescending(x => _filters[x.Key].EmptyCount).ThenByDescending(x => _filters[x.Key].PlaceholderCount))
             {
                 var assetGroup = assetGroupKvp.Value;
                 var w = assetGroup.First().W;
                 var h = assetGroup.First().H;
                 var filter = assetGroup.First().Filter;
-                for (int x = 0; x < workingMap.GetLength(0); x++)
+                //if (filter.Id != 0) continue;
+                for (int y = 0; y < workingMap.GetLength(1); y++)
                 {
-                    for (int y = 0; y < workingMap.GetLength(1); y++)
+                    for (int x = 0; x < workingMap.GetLength(0); x++)
                     {
-                        if (!IsFilterMatching(workingMap, filter, x, y, w, h)) continue;
+                        if (!IsFilterMatching(workingMap, filter, x, y, w, h, out var filledCells)) continue;
                         var index = UnityEngine.Random.Range(0, assetGroup.Count);
                         var decorAsset = assetGroup[index];
-                        InstantiateAssetAtPosition(chamberController, autoDecorPrefab, decorContainer.transform, decorAsset, x, y, 0);
-                        SetRangeInArray(workingMap, -1, x, y, w, h);
-                    }
-                }
-            }
-            // //Corner Left
-            // var assetGroups = GetDecorAssets(chamberController.theme, "CornerLeft", 32);
-            // foreach (var assetGroup in assetGroups.OrderByDescending(x => x.Key))
-            // {
-            //     var w = assetGroup.Value.First().W;
-            //     var h = assetGroup.Value.First().H;
-            //     for (int x = 1; x < workingMap.GetLength(0); x++)
-            //     {
-            //         for (int y = 0; y < workingMap.GetLength(1); y++)
-            //         {
-            //             if (!IsRangeAvailable(workingMap, x, y, w, h)) continue;
-            //             if (!IsRangeEmptyAbove(workingMap, x, y, w, h)) continue;
-            //             if (!IsRangeEmptyOnTheLeft(workingMap, x, y, h)) continue;
-            //             var index = UnityEngine.Random.Range(0, assetGroup.Value.Count);
-            //             var asset = assetGroup.Value[index];
-            //             InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y, 4000);
-            //             SetRangeInArray(workingMap, -1, x, y, asset.W, asset.H);
-            //         }
-            //     }
-            // }
-            // //Corner Right
-            // assetGroups = GetDecorAssets(chamber.theme, "CornerRight", 32);
-            // foreach (var assetGroup in assetGroups.OrderByDescending(x => x.Key))
-            // {
-            //     var w = assetGroup.Value.First().W;
-            //     var h = assetGroup.Value.First().H;
-            //     for (int x = 1; x < workingMap.GetLength(0); x++)
-            //     {
-            //         for (int y = 0; y < workingMap.GetLength(1); y++)
-            //         {
-            //             if (!IsRangeAvailable(workingMap, x, y, w, h)) continue;
-            //             if (!IsRangeEmptyAbove(workingMap, x, y, w, h)) continue;
-            //             if (!IsRangeEmptyOnTheRight(workingMap, x, y, w, h)) continue;
-            //             var index = UnityEngine.Random.Range(0, assetGroup.Value.Count);
-            //             var asset = assetGroup.Value[index];
-            //             InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y, 5000);
-            //             SetRangeInArray(workingMap, -1, x, y, asset.W, asset.H);
-            //         }
-            //     }
-            // }
-            // //Ground            
-            // assetGroups = GetDecorAssets(chamber.theme, "Ground", 32);
-            // foreach (var assetGroup in assetGroups.OrderByDescending(x => x.Key))
-            // {
-            //     var w = assetGroup.Value.First().W;
-            //     var h = assetGroup.Value.First().H;
-            //     for (int x = 0; x < workingMap.GetLength(0); x++)
-            //     {
-            //         for (int y = 0; y < workingMap.GetLength(1); y++)
-            //         {
-            //             if (!IsRangeAvailable(workingMap, x, y, w, h)) continue;
-            //             if (!IsRangeEmptyAbove(workingMap, x, y, w, h)) continue;
-            //             var index = UnityEngine.Random.Range(0, assetGroup.Value.Count);
-            //             var asset = assetGroup.Value[index];
-            //             InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y, 1000);
-            //             SetRangeInArray(workingMap, -1, x, y, w, h);
-
-            //         }
-            //     }
-            // }
-            // //Auto decor
-            // assetGroups = GetDecorAssets(chamber.theme, "AutoDecor", 32);
-            // //var workingMap = CopyMap(map);
-            // foreach (var assetGroup in assetGroups.OrderByDescending(x => x.Key))
-            // {
-            //     // if (assetGroup.Value.Count > 1){
-            //     //     Debug.Log(string.Join(", ", assetGroup.Value.Select(x => x.Sprite.name)));
-            //     // }
-            //     for (int x = 0; x < workingMap.GetLength(0); x++)
-            //     {
-            //         for (int y = 0; y < workingMap.GetLength(1); y++)
-            //         {
-            //             if (IsRangeAvailable(workingMap, x, y, assetGroup.Value[0].W, assetGroup.Value[0].H))
-            //             {
-            //                 var index = UnityEngine.Random.Range(0, assetGroup.Value.Count);
-            //                 var asset = assetGroup.Value[index];
-            //                 InstantiateAssetAtPosition(chamber, autoDecorPrefab, decorContainer.transform, asset, x, y, 0);
-            //                 SetRangeInArray(workingMap, -1, x, y, asset.W, asset.H);
-            //             }
-            //         }
-            //     }
-            // }
-            //Hanging
-            workingMap = CopyMap(map);
-            var overhangs = GetSpritesAtPath(chamberController.theme, "Overhang");
-            if (overhangs.Any())
-            {
-                for (int y = 2; y < workingMap.GetLength(1) - 1; y++)
-                {
-                    for (int x = 1; x < workingMap.GetLength(0) - 1; x++)
-                    {
-                        if (workingMap[x, y] >= 1 && workingMap[x, y - 1] == 0 && workingMap[x, y + 1] >= 1 && workingMap[x - 1, y] >= 1 && workingMap[x + 1, y] >= 1)
+                        InstantiateAssetAtPosition(chamberController, autoDecorPrefab, decorContainer.transform, decorAsset, x + filter.Offset.x, y + filter.Offset.y, 0);
+                        Debug.Log($"{chamberController.chamberName} {filter.Id} {x} {filter.Offset.x} {y} {filter.Offset.y}");
+                        foreach (var cell in filledCells)
                         {
-                            if (UnityEngine.Random.Range(0f, 1f) > 0.35f) continue;
-                            var index = UnityEngine.Random.Range(0, overhangs.Count);
-                            InstantiateAssetAtPosition(chamberController, autoDecorPrefab, decorContainer.transform, overhangs[index], 0, x, y, 2000, -0.05f);
-                            x++;
+                            workingMap[cell.x, cell.y] = -1;
                         }
                     }
                 }
             }
+            //Hanging
+            //ApplyOverhang(map, chamberController, autoDecorPrefab, decorContainer);
         }
     }
 
@@ -283,19 +190,20 @@ public class AutoDecor
         return map != null;
     }
 
-    private static bool IsFilterMatching(int[,] map, Filter filter, int x, int y, int w, int h)
+    private static bool IsFilterMatching(int[,] map, Filter filter, int x, int y, int w, int h, out List<Vector2Int> filledCells)
     {
-        if (x - filter.Offset.x < 0) return false;
-        if (x - filter.Offset.x + filter.W >= map.GetLength(0)) return false;
-        if (y + filter.Offset.y >= map.GetLength(1)) return false;
-        if (y + filter.Offset.y - filter.H < 0) return false;
+        filledCells = new List<Vector2Int>();
+        if (x < 0) return false;
+        if (x + filter.W >= map.GetLength(0)) return false;
+        if (y < 0) return false;
+        if (y + filter.H >= map.GetLength(1)) return false;
         for (int ox = 0; ox < filter.W; ox++)
         {
             for (int oy = 0; oy < filter.H; oy++)
             {
                 var filterValue = filter.Values[ox, oy];
-                var mapX = x + ox - filter.Offset.x;
-                var mapY = y - oy + filter.Offset.y;
+                var mapX = x + ox;
+                var mapY = y + oy;
                 var mapValue = map[mapX, mapY];
                 switch (filterValue)
                 {
@@ -304,55 +212,13 @@ public class AutoDecor
                         break;
                     case FilterValues.Placeholder:
                         if (mapValue < 1) return false;
+                        filledCells.Add(new Vector2Int(mapX, mapY));
                         break;
                     case FilterValues.Occupied:
                         if (mapValue == 0) return false;
                         break;
                 }
             }
-        }
-        return true;
-    }
-
-    private static bool IsRangeAvailable(int[,] map, int x, int y, int w, int h)
-    {
-        if (x + w >= map.GetLength(0) || y + h >= map.GetLength(1)) return false;
-        for (int ox = x; ox < x + w; ox++)
-        {
-            for (int oy = y; oy < y + h; oy++)
-            {
-                if (map[ox, oy] <= 0) return false;
-            }
-        }
-        return true;
-    }
-
-    private static bool IsRangeEmptyAbove(int[,] map, int x, int y, int w, int h)
-    {
-        if (x + w >= map.GetLength(0) || y >= map.GetLength(1) - h) return false;
-        for (int ox = x; ox < x + w; ox++)
-        {
-            if (map[ox, y + h] != 0) return false;
-        }
-        return true;
-    }
-
-    private static bool IsRangeEmptyOnTheLeft(int[,] map, int x, int y, int h)
-    {
-        if (y - h < 0 || x - 1 < 0) return false;
-        for (int oy = y; oy < y + h; oy++)
-        {
-            if (map[x - 1, oy] != 0) return false;
-        }
-        return true;
-    }
-    private static bool IsRangeEmptyOnTheRight(int[,] map, int x, int y, int w, int h)
-    {
-        if (y - h < 0 || x + w >= map.GetLength(0)) return false;
-        for (int oy = y; oy < y + h; oy++)
-        {
-            if (map[x + w, oy] == 0) continue;
-            return false;
         }
         return true;
     }
@@ -390,6 +256,7 @@ public class AutoDecor
             var filter = new Filter(id, w, h);
             var valuesString = xeFilter.Attribute("values").Value;
             var valuesSplit = valuesString.Split(',');
+            var offsetSet = false;
             for (int i = 0; i < valuesSplit.Length; i++)
             {
                 var x = i % w;
@@ -402,6 +269,12 @@ public class AutoDecor
                         break;
                     case FilterValues.Placeholder:
                         filter.PlaceholderCount++;
+                        if (!offsetSet)
+                        {
+                            offsetSet = true;
+                            filter.Offset.x = x;
+                            filter.Offset.y = y;
+                        }
                         break;
                     case FilterValues.Occupied:
                         filter.OccupiedCount++;
@@ -426,7 +299,7 @@ public class AutoDecor
         var obj = GameObject.Instantiate<GameObject>(prefab);
         obj.name = sprite.name;
         obj.transform.parent = decorContainer;
-        obj.transform.localPosition = new Vector3(x * scale, (y + h - 1f) * scale + yOffset, 0);
+        obj.transform.localPosition = new Vector3(x * scale, y * scale - scale + yOffset, 0);
         var spriteRenderer = obj.GetComponent<SpriteRenderer>();
         var c = spriteRenderer.color;
         c.r -= UnityEngine.Random.Range(0f, chamber.colorShiftR);
@@ -442,5 +315,27 @@ public class AutoDecor
         var newMap = new int[map.GetLength(0), map.GetLength(1)];
         Array.Copy(map, 0, newMap, 0, map.Length);
         return newMap;
+    }
+
+    private static void ApplyOverhang(int[,] map, ChamberController chamberController, GameObject autoDecorPrefab, GameObject decorContainer)
+    {
+        var workingMap = CopyMap(map);
+        var overhangs = GetSpritesAtPath(chamberController.theme, "Overhang");
+        if (overhangs.Any())
+        {
+            for (int y = 2; y < workingMap.GetLength(1) - 1; y++)
+            {
+                for (int x = 1; x < workingMap.GetLength(0) - 1; x++)
+                {
+                    if (workingMap[x, y] >= 1 && workingMap[x, y - 1] == 0 && workingMap[x, y + 1] >= 1 && workingMap[x - 1, y] >= 1 && workingMap[x + 1, y] >= 1)
+                    {
+                        if (UnityEngine.Random.Range(0f, 1f) > 0.35f) continue;
+                        var index = UnityEngine.Random.Range(0, overhangs.Count);
+                        InstantiateAssetAtPosition(chamberController, autoDecorPrefab, decorContainer.transform, overhangs[index], 0, x, y, 2000, -0.05f);
+                        x++;
+                    }
+                }
+            }
+        }
     }
 }

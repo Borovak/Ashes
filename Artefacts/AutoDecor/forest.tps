@@ -185,7 +185,7 @@
             <key type="filename">forest_001_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.0875,0.0875</point_f>
+                <point_f>0.0875,0.9125</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -202,7 +202,7 @@
             <key type="filename">forest_002_02.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.0294118,0.1</point_f>
+                <point_f>0.0294118,0.9</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -217,7 +217,7 @@
             <key type="filename">forest_004_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.0555556,0.1</point_f>
+                <point_f>0.0555556,0.9</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -230,24 +230,10 @@
                 <false/>
             </struct>
             <key type="filename">forest_005_00.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.1,0.1</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>10,10,20,20</rect>
-                <key>scale9Paddings</key>
-                <rect>10,10,20,20</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
             <key type="filename">forest_006_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0,0.1</point_f>
+                <point_f>0.1,0.9</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -262,7 +248,7 @@
             <key type="filename">forest_006_01.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0,0.0526316</point_f>
+                <point_f>0.105263,0.894737</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -277,7 +263,7 @@
             <key type="filename">forest_007_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.0555556,0.0555556</point_f>
+                <point_f>0.0555556,0.944444</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -292,7 +278,7 @@
             <key type="filename">forest_008_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.0294118,0.0294118</point_f>
+                <point_f>0.0294118,0.970588</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -307,7 +293,7 @@
             <key type="filename">forest_009_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.0151515,0.0151515</point_f>
+                <point_f>0.0151515,0.984848</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -322,7 +308,7 @@
             <key type="filename">forest_010_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.00769231,0.0151515</point_f>
+                <point_f>0.00769231,0.984848</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -337,7 +323,7 @@
             <key type="filename">forest_011_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.00769231,0.00769231</point_f>
+                <point_f>0.00769231,0.992308</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -352,7 +338,7 @@
             <key type="filename">forest_012_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.00387597,0.00387597</point_f>
+                <point_f>0.00387597,0.996124</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
