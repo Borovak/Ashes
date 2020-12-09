@@ -1,0 +1,648 @@
+fileFormatVersion: 2
+guid: dda302ac3645e4c45b9b1bf247eb07bf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4988040511016657145
+    second: SaveIcon (1)
+  - first:
+      213: 3667926813161103068
+    second: SaveIcon (2)
+  - first:
+      213: -5652247860374432755
+    second: SaveIcon (3)
+  - first:
+      213: 8312893860228753298
+    second: SaveIcon (4)
+  - first:
+      213: 2825694556886620704
+    second: SaveIcon (5)
+  - first:
+      213: -4938517728215649860
+    second: SaveIcon (6)
+  - first:
+      213: 5913435218553947820
+    second: SaveIcon (7)
+  - first:
+      213: -6920220899346698057
+    second: SaveIcon (8)
+  - first:
+      213: -1365295003733439355
+    second: SaveIcon (9)
+  - first:
+      213: -6714578596076551056
+    second: SaveIcon (10)
+  - first:
+      213: 9070118261254861810
+    second: SaveIcon (11)
+  - first:
+      213: -8095036278884961358
+    second: SaveIcon (12)
+  - first:
+      213: 873110665762230008
+    second: SaveIcon (13)
+  - first:
+      213: 76262050644905370
+    second: SaveIcon (14)
+  - first:
+      213: -243973065104400794
+    second: SaveIcon (15)
+  - first:
+      213: 492280387396424469
+    second: SaveIcon (16)
+  - first:
+      213: -73869901545364159
+    second: SaveIcon (17)
+  - first:
+      213: -3124704704991660905
+    second: SaveIcon (18)
+  - first:
+      213: 8985039792075861264
+    second: SaveIcon (19)
+  - first:
+      213: 2301757203661529990
+    second: SaveIcon (20)
+  - first:
+      213: -8298428423640594405
+    second: SaveIcon00
+  - first:
+      213: 7404193098393547287
+    second: SaveIcon01
+  - first:
+      213: -5385056814568026790
+    second: SaveIcon02
+  - first:
+      213: -3573964372820472011
+    second: SaveIcon03
+  - first:
+      213: 8940598511950909699
+    second: SaveIcon04
+  - first:
+      213: 4806392107275852078
+    second: SaveIcon05
+  - first:
+      213: 4652735877627428611
+    second: SaveIcon06
+  - first:
+      213: -462787815925163126
+    second: SaveIcon07
+  - first:
+      213: -5929138965536099972
+    second: SaveIcon08
+  - first:
+      213: -1666625155686143287
+    second: SaveIcon09
+  - first:
+      213: 5228078413995963230
+    second: SaveIcon10
+  - first:
+      213: 816593128167458439
+    second: SaveIcon11
+  - first:
+      213: -6023214421648794056
+    second: SaveIcon12
+  - first:
+      213: -6038759846566795130
+    second: SaveIcon13
+  - first:
+      213: 9201983175381063058
+    second: SaveIcon14
+  - first:
+      213: -8853641747119585991
+    second: SaveIcon15
+  - first:
+      213: 6513418126596156428
+    second: SaveIcon16
+  - first:
+      213: -6797165672450262961
+    second: SaveIcon17
+  - first:
+      213: 5761278082245647940
+    second: SaveIcon18
+  - first:
+      213: 7452767509952225702
+    second: SaveIcon19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SaveIcon00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1791
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18c5eec05f06dc80800000000000000
+      internalID: -8298428423640594405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon01
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1791
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7127526d46af0c660800000000000000
+      internalID: 7404193098393547287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon02
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1791
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d4060cb5f6445b0800000000000000
+      internalID: -5385056814568026790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1533
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f422ea65ab66ec0800000000000000
+      internalID: -3573964372820472011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon04
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1533
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30158303af2631c70800000000000000
+      internalID: 8940598511950909699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon05
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1533
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e291b6df72cb3b240800000000000000
+      internalID: 4806392107275852078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1275
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30fb2b321a6d19040800000000000000
+      internalID: 4652735877627428611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon07
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1275
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8bd661fee8d399f0800000000000000
+      internalID: -462787815925163126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon08
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1275
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c713b47568777bda0800000000000000
+      internalID: -5929138965536099972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon09
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1017
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cae8954045fed8e0800000000000000
+      internalID: -1666625155686143287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon10
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1017
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53fd143e9ddd8840800000000000000
+      internalID: 5228078413995963230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon11
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1017
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7864272af1f155b00800000000000000
+      internalID: 816593128167458439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 759
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e1d97556e396ca0800000000000000
+      internalID: -6023214421648794056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 501
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6886e7d0ae3023ca0800000000000000
+      internalID: -6038759846566795130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 243
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29595bd91f204bf70800000000000000
+      internalID: 9201983175381063058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon15
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 759
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9354e565dbb812580800000000000000
+      internalID: -8853641747119585991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon16
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 759
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0caa5dc64f446a50800000000000000
+      internalID: 6513418126596156428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon17
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 501
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f487f1675dd9ba1a0800000000000000
+      internalID: -6797165672450262961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon18
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 243
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44ede7824eb24ff40800000000000000
+      internalID: 5761278082245647940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaveIcon19
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 501
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a16648509c8d6760800000000000000
+      internalID: 7452767509952225702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

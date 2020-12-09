@@ -6,6 +6,8 @@ public class PlayerInventory : MonoBehaviour
 {
     public static event Action InventoryChanged;
     private Dictionary<int, int> _items = new Dictionary<int, int>();
+    public GameObject ItemGainedPrefab;
+    public bool AddItem;
 
     void Start()
     {
@@ -23,6 +25,12 @@ public class PlayerInventory : MonoBehaviour
             _items[id] = _items[id] + quantity;
         }
         InventoryChanged?.Invoke();
+        //Instantiate item gained paneld
+        var gameUITransform = GameObject.FindGameObjectWithTag("GameUI").transform;
+        var itemGained = GameObject.Instantiate(ItemGainedPrefab, gameUITransform);
+        var itemGainedController = itemGained.GetComponent<ItemGainedController>();
+        itemGainedController.itemId = id;
+        itemGainedController.itemQuantity = quantity;
     }
 
     public void Remove(int id, int quantity = 1)
@@ -93,5 +101,11 @@ public class PlayerInventory : MonoBehaviour
     public int GetCount(Item item)
     {
         return GetCount(item.id);
+    }
+
+    void Update(){
+        if (!AddItem) return;
+        AddItem = false;
+        Add(1,1);
     }
 }

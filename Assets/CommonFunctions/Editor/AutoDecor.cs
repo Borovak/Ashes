@@ -95,7 +95,6 @@ public class AutoDecor
                         var index = UnityEngine.Random.Range(0, assetGroup.Count);
                         var decorAsset = assetGroup[index];
                         InstantiateAssetAtPosition(chamberController, autoDecorPrefab, decorContainer.transform, decorAsset, x + filter.Offset.x, y + filter.Offset.y, 0);
-                        Debug.Log($"{chamberController.chamberName} {filter.Id} {x} {filter.Offset.x} {y} {filter.Offset.y}");
                         foreach (var cell in filledCells)
                         {
                             workingMap[cell.x, cell.y] = -1;

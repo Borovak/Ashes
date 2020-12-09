@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -5,6 +6,7 @@ using UnityEngine;
 
 public static class GlobalFunctions
 {
+    
     public static DataTable ParseCsv(string path)
     {
         var textAsset = Resources.Load<TextAsset>(path);

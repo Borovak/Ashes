@@ -12,10 +12,12 @@ tpsheetFileNames:
 - Assets/Sprites/CornerLeft/forest.tpsheet
 - Assets/Sprites/CornerRight/forest.tpsheet
 - Assets/Sprites/Decor/Flag1/flag1.tpsheet
+- Assets/Sprites/Enemies/bosswolf.tpsheet
 - Assets/Sprites/Ground/forest.tpsheet
 - Assets/Sprites/GroundOverlay/CathedralFloor.tpsheet
 - Assets/Sprites/MainMenu/Ash/Ash_sit.tpsheet
 - Assets/Sprites/Overhang/forest.tpsheet
+- Assets/Sprites/UI/SaveIcon/SaveIcon.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Ash/ash.png
@@ -28,12 +30,16 @@ textureFileNames:
 - Assets/Sprites/CornerLeft/forest.png
 - Assets/Sprites/CornerRight/forest.png
 - Assets/Sprites/Decor/Flag1/waving.png
+- Assets/Sprites/Enemies/bosswolf.png
 - Assets/Sprites/Ground/forest.png
 - Assets/Sprites/GroundOverlay/CathedralFloor.png
 - Assets/Sprites/MainMenu/Ash/Ash_sit.png
 - Assets/Sprites/Overhang/forest.png
+- Assets/Sprites/UI/SaveIcon/SaveIcon.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
 - 
 - 
 - 

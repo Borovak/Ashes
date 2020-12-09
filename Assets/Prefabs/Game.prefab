@@ -72,3 +72,9 @@ MonoBehaviour:
   waterLayer:
     serializedVersion: 2
     m_Bits: 16
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+  savePointLayer:
+    serializedVersion: 2
+    m_Bits: 16384

@@ -34,6 +34,6 @@
          Vector2 proportionalPosition = new Vector2(ViewportPosition.x * _canvas.sizeDelta.x, ViewportPosition.y * _canvas.sizeDelta.y);
          
          // Set the position and remove the screen offset
-         this.rectTransform.localPosition = proportionalPosition - uiOffset;
+         this.rectTransform.anchoredPosition = proportionalPosition - uiOffset;
      }
  }

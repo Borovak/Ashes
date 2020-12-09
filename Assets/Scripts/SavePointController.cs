@@ -1,19 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class SavePointController : MonoBehaviour
+public class SavePointController : InteractionController
 {
-    public string guid;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public override string interactionText => "Save";
 
-    // Update is called once per frame
-    void Update()
+    public override Constants.InteractionTypes interactionType => Constants.InteractionTypes.SavePoint;
+
+    public override void Interact()
     {
-        
+        var saveSuccess = SaveSystem.Save(guid, true, out var saveErrorMessage);
+        Debug.Log(saveSuccess ? $"Game saved" : $"Game save unsuccessful : {saveErrorMessage}");
     }
 }

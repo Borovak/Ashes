@@ -1,0 +1,300 @@
+fileFormatVersion: 2
+guid: 3a84803107606f247bcf960a26bb2424
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5186716277255945252
+    second: bosswolf_walking (1)
+  - first:
+      213: 2289623575088917662
+    second: bosswolf_walking (2)
+  - first:
+      213: -8814847040144532908
+    second: bosswolf_walking (3)
+  - first:
+      213: 7298353592758155719
+    second: bosswolf_walking (4)
+  - first:
+      213: 4659808761845102261
+    second: bosswolf_walking (5)
+  - first:
+      213: 804073057627819600
+    second: bosswolf_walking (6)
+  - first:
+      213: 4288210533117805861
+    second: bosswolf_walking (7)
+  - first:
+      213: -7063199978473442650
+    second: bosswolf_walking (8)
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bosswolf_walking (1)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1014
+        width: 1047
+        height: 515
+      alignment: 9
+      pivot: {x: 0.51862466, y: 0.018640777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd34c67b6051508b0800000000000000
+      internalID: -5186716277255945252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosswolf_walking (2)
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1017
+        width: 1045
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5244019, y: 0.01484375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ce886b28066cf10800000000000000
+      internalID: 2289623575088917662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosswolf_walking (3)
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 508
+        width: 1050
+        height: 507
+      alignment: 9
+      pivot: {x: 0.5228571, y: 0.014990138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a18cee15f5ba580800000000000000
+      internalID: -8814847040144532908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosswolf_walking (4)
+      rect:
+        serializedVersion: 2
+        x: 2097
+        y: 1029
+        width: 1044
+        height: 506
+      alignment: 9
+      pivot: {x: 0.5181992, y: 0.016996047}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c9bb8d9ce5f84560800000000000000
+      internalID: 7298353592758155719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosswolf_walking (5)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1531
+        width: 1069
+        height: 516
+      alignment: 9
+      pivot: {x: 0.5126286, y: 0.018604651}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6b7035167faa040800000000000000
+      internalID: 4659808761845102261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosswolf_walking (6)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 499
+        width: 1167
+        height: 513
+      alignment: 9
+      pivot: {x: 0.4695801, y: 0.01871345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e4e5d8f24a82b00800000000000000
+      internalID: 804073057627819600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosswolf_walking (7)
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 1537
+        width: 1051
+        height: 510
+      alignment: 9
+      pivot: {x: 0.527117, y: 0.020784313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 525439c82c8c28b30800000000000000
+      internalID: 4288210533117805861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosswolf_walking (8)
+      rect:
+        serializedVersion: 2
+        x: 2125
+        y: 1541
+        width: 1043
+        height: 506
+      alignment: 9
+      pivot: {x: 0.5206136, y: 0.018972332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a23b81ca097afd90800000000000000
+      internalID: -7063199978473442650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

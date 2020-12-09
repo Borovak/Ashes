@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class SaveIconController : MonoBehaviour
 {
+    public float InDuration;
+    public float Duration;
+    public float OutDuration;
+
+    private Animator _animator;
+
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
         gameObject.transform.LeanScale(Vector3.zero, 0f);
     }
 
@@ -22,12 +29,13 @@ public class SaveIconController : MonoBehaviour
 
     private void OnGameSaved(bool healOnSave)
     {
-        var lt = LeanTween.scale(gameObject, new Vector3(1f,1f,1f), 1.2f);
+        _animator.SetTrigger("active");
+        var lt = LeanTween.scale(gameObject, new Vector3(1f,1f,1f), InDuration);
         lt.setEase(LeanTweenType.easeInOutSine);
         lt.setOnComplete(() => {
-            lt = LeanTween.scale(gameObject, new Vector3(1f,1f,1f), 1.2f);
+            lt = LeanTween.scale(gameObject, new Vector3(1f,1f,1f), Duration);
             lt.setOnComplete(() => {
-                lt = LeanTween.scale(gameObject, Vector3.zero, 1.2f);
+                lt = LeanTween.scale(gameObject, Vector3.zero, OutDuration);
                 lt.setEase(LeanTweenType.easeInOutSine);
             });
         });

@@ -26,6 +26,8 @@ TagManager:
   - ChamberContainer
   - DecorContainer
   - PlayerTarget
+  - GameUI
+  - Shop
   layers:
   - Default
   - TransparentFX
