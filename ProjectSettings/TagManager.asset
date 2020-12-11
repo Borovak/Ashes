@@ -18,8 +18,6 @@ TagManager:
   - Tilemap
   - Grid
   - ChamberCollider
-  - BackgroundLight
-  - TerrainLight
   - Elevator
   - SavePointsFolder
   - Enemy
@@ -28,6 +26,7 @@ TagManager:
   - PlayerTarget
   - GameUI
   - Shop
+  - Campsite
   layers:
   - Default
   - TransparentFX

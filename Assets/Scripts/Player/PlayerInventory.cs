@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    private class ItemGainedQueueItem
+    {
+        internal int id;
+        internal int quantity;
+    }
+    
     public static event Action InventoryChanged;
     private Dictionary<int, int> _items = new Dictionary<int, int>();
     public GameObject ItemGainedPrefab;
     public bool AddItem;
 
+    private List<ItemGainedQueueItem> _itemGainedQueue;
+
     void Start()
     {
+        _itemGainedQueue = new List<ItemGainedQueueItem>();
         SetInventoryFromString(SaveSystem.LastLoadedSave.Inventory);
     }
 

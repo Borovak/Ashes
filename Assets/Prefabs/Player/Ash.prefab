@@ -73,11 +73,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LightType: 4
+  m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.756
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.55
+  m_Intensity: 0.25
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 4f1c97a2
   m_LightCookieSprite: {fileID: 0}
@@ -422,17 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac1160b18e241524ab425b7754e3e026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatIsInteraction:
-    serializedVersion: 2
-    m_Bits: 4096
-  whatIsSavePoint:
-    serializedVersion: 2
-    m_Bits: 16384
-  interactionIsSavePoint: 0
-  interactionPossible: 0
-  interactionGuid: 
-  interactionPosition: {x: 0, y: 0, z: 0}
-  interactionText: 
+  interactionController: {fileID: 0}
 --- !u!114 &2443589944824094619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemGainedPrefab: {fileID: 4638995184884077089, guid: 6c4fec426562a2647afe8bd1c18489e7,
     type: 3}
+  AddItem: 0
 --- !u!114 &2443589945988948347
 MonoBehaviour:
   m_ObjectHideFlags: 0

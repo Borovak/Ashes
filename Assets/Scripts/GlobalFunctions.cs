@@ -6,7 +6,8 @@ using UnityEngine;
 
 public static class GlobalFunctions
 {
-    
+    public static event Action OpenShopTriggered;
+
     public static DataTable ParseCsv(string path)
     {
         var textAsset = Resources.Load<TextAsset>(path);
@@ -66,7 +67,8 @@ public static class GlobalFunctions
     public static List<GameObject> FindChildrenWithTag(GameObject parent, string tag, bool includeParent)
     {
         var gameObjects = new List<GameObject>();
-        if (includeParent && parent.tag == tag){
+        if (includeParent && parent.tag == tag)
+        {
             gameObjects.Add(parent);
         }
         foreach (Transform tr in parent.transform)
@@ -80,9 +82,35 @@ public static class GlobalFunctions
         return gameObjects;
     }
 
-    public static float Bound(float value, float min, float max){
+    public static float Bound(float value, float min, float max)
+    {
         if (value > max) return max;
         if (value < min) return min;
         return value;
+    }
+
+    public static bool TryGetNpcSprite(Constants.Npc npc, out Sprite sprite)
+    {
+        string resourceName;
+        switch (npc)
+        {
+            case Constants.Npc.Shopkeeper:
+                resourceName = "Shopkeeper";
+                break;
+            case Constants.Npc.HoboTom:
+                resourceName = "HoboTom";
+                break;
+            default:
+                sprite = null;
+                return false;
+        }
+        sprite = Resources.Load<Sprite>($"Npc/{resourceName}");
+        return sprite != null;
+    }
+
+    public static void OpenShop()
+    {
+        Debug.Log("Shop interface test");
+        OpenShopTriggered?.Invoke();
     }
 }

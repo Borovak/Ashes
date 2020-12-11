@@ -119,11 +119,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 1014
-        width: 1047
-        height: 515
+        y: 999
+        width: 1054
+        height: 522
       alignment: 9
-      pivot: {x: 0.51862466, y: 0.018640777}
+      pivot: {x: 0.5218216, y: 0.029885057}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,12 +139,12 @@ TextureImporter:
       name: bosswolf_walking (2)
       rect:
         serializedVersion: 2
-        x: 1050
-        y: 1017
-        width: 1045
-        height: 512
+        x: 1173
+        y: 1528
+        width: 1055
+        height: 519
       alignment: 9
-      pivot: {x: 0.5244019, y: 0.01484375}
+      pivot: {x: 0.521327, y: 0.020423893}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: bosswolf_walking (3)
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 508
-        width: 1050
-        height: 507
+        x: 1057
+        y: 1002
+        width: 1072
+        height: 519
       alignment: 9
-      pivot: {x: 0.5228571, y: 0.014990138}
+      pivot: {x: 0.51772386, y: 0.031984586}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: bosswolf_walking (4)
       rect:
         serializedVersion: 2
-        x: 2097
-        y: 1029
-        width: 1044
-        height: 506
+        x: 2230
+        y: 1534
+        width: 1053
+        height: 513
       alignment: 9
-      pivot: {x: 0.5181992, y: 0.016996047}
+      pivot: {x: 0.5185185, y: 0.028460039}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,11 +203,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 1531
-        width: 1069
-        height: 516
+        y: 476
+        width: 1080
+        height: 521
       alignment: 9
-      pivot: {x: 0.5126286, y: 0.018604651}
+      pivot: {x: 0.5101852, y: 0.026103647}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,11 +224,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 499
-        width: 1167
-        height: 513
+        y: 1523
+        width: 1170
+        height: 524
       alignment: 9
-      pivot: {x: 0.4695801, y: 0.01871345}
+      pivot: {x: 0.47094017, y: 0.031679388}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: bosswolf_walking (7)
       rect:
         serializedVersion: 2
-        x: 1072
-        y: 1537
-        width: 1051
-        height: 510
+        x: 2131
+        y: 1010
+        width: 1065
+        height: 516
       alignment: 9
-      pivot: {x: 0.527117, y: 0.020784313}
+      pivot: {x: 0.5248826, y: 0.026356589}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,12 +265,12 @@ TextureImporter:
       name: bosswolf_walking (8)
       rect:
         serializedVersion: 2
-        x: 2125
-        y: 1541
-        width: 1043
-        height: 506
+        x: 1083
+        y: 483
+        width: 1067
+        height: 517
       alignment: 9
-      pivot: {x: 0.5206136, y: 0.018972332}
+      pivot: {x: 0.5154639, y: 0.034042552}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

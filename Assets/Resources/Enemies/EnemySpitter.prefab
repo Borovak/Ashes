@@ -230,8 +230,8 @@ MonoBehaviour:
   seeksPlayer: 1
   visionRange: 12
   forcedDirection: {x: 0, y: 0, z: 0}
-  projectilesPerSecond: 1
-  projectileSpeed: 3
+  projectilesPerSecond: 0.7
+  projectileSpeed: 2
   projectileDamage: 1
   projectileDiameter: 0.3
   canHitPlayer: 1

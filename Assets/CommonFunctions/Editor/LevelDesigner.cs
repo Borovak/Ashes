@@ -69,6 +69,14 @@ public static class LevelDesigner
             if (!LoadedAttribute<float>.Load(xeRoom.Attribute("colorShiftR"), out var colorShiftR)) return;
             if (!LoadedAttribute<float>.Load(xeRoom.Attribute("colorShiftG"), out var colorShiftG)) return;
             if (!LoadedAttribute<float>.Load(xeRoom.Attribute("colorShiftB"), out var colorShiftB)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("backgroundLightIntensity"), out var backgroundLightIntensity)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("backgroundLightColorR"), out var backgroundLightColorR)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("backgroundLightColorG"), out var backgroundLightColorG)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("backgroundLightColorB"), out var backgroundLightColorB)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("terrainLightIntensity"), out var terrainLightIntensity)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("terrainLightColorR"), out var terrainLightColorR)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("terrainLightColorG"), out var terrainLightColorG)) return;
+            if (!LoadedAttribute<float>.Load(xeRoom.Attribute("terrainLightColorB"), out var terrainLightColorB)) return;
             //Creating game object
             var chamberGameObject = GameObject.Instantiate<GameObject>(chamberResource, chambersFolder.transform);
             if (chamberGameObject == null) throw (new Exception($"Chamber resource not found"));
@@ -81,6 +89,12 @@ public static class LevelDesigner
             chamber.chamberName = chamberName;
             chamber.theme = theme;
             chamber.colorShiftR = colorShiftR;
+            chamber.colorShiftG = colorShiftG;
+            chamber.colorShiftB = colorShiftB;
+            chamber.BackgroundLightIntensity = backgroundLightIntensity;
+            chamber.BackgroundLightColor = new Color(backgroundLightColorR, backgroundLightColorG, backgroundLightColorB);
+            chamber.TerrainLightIntensity = terrainLightIntensity;
+            chamber.TerrainLightColor = new Color(terrainLightColorR, terrainLightColorG, terrainLightColorB);
             chamber.colorShiftG = colorShiftG;
             chamber.colorShiftB = colorShiftB;
             var chamberPosition = new Vector2(Convert.ToSingle(chamberX) * scale, -Convert.ToSingle(chamberY) * scale);
@@ -123,7 +137,7 @@ public static class LevelDesigner
                 var ay = (chamberPosition.y + 50f - savePointUnscaledY * scale);
                 savePointGameObject.transform.position = new Vector3(chamberPosition.x + savePointX, ay, 0f);
                 var savePointController = savePointGameObject.GetComponent<SavePointController>();
-                savePointController.guid = xeSavePoint.Attribute("guid").Value;
+                savePointController.forcedGuid = xeSavePoint.Attribute("guid").Value;
                 index++;
             }
         }

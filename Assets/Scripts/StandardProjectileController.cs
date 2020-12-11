@@ -8,8 +8,11 @@ public class StandardProjectileController : MonoBehaviour
     public float speed;
     public int damage;
     public float diameter = 1f;
+    public float angle;
     public bool canHitPlayer;
     public bool canHitEnemies;
+    public Transform particleSystemTransform;
+    public GameObject splashPrefab;
 
     private List<LayerMask> _layerMaskToConsider;
 
@@ -26,6 +29,10 @@ public class StandardProjectileController : MonoBehaviour
             _layerMaskToConsider.Add(LayerManagement.Enemies);
         }
         transform.localScale = new Vector3(diameter, diameter, 1f);
+        if (particleSystemTransform != null)
+        {
+            particleSystemTransform.Rotate(new Vector3(0f, 0f, angle), Space.Self);
+        }
     }
 
     // Update is called once per frame
@@ -39,6 +46,11 @@ public class StandardProjectileController : MonoBehaviour
             {
                 if (!entitiesToDamage[i].TryGetComponent<LifeController>(out var entity)) continue;
                 entity.TakeDamage(damage, gameObject.name);
+                if (splashPrefab != null)
+                {
+                    var splash = GameObject.Instantiate<GameObject>(splashPrefab, transform.position, Quaternion.identity);
+                    GameObject.Destroy(splash, 2f);
+                }
                 GameObject.Destroy(gameObject);
                 return;
             }

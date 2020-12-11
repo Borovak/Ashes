@@ -61,7 +61,7 @@ public class ChamberController : MonoBehaviour
             foreach (var enemy in enemiesToDelete)
             {
                 GameObject.Destroy(enemy);
-            }            
+            }
             _container?.SetActive(false);
         }
         else if (!_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
@@ -77,6 +77,7 @@ public class ChamberController : MonoBehaviour
                 enemy.Instantiate(_enemyFolder, position, size, scale);
             }
             _container?.SetActive(true);
+            Apply();
         }
         else return;
         _isPlayerInsideChamber = _virtualCameraPlayerBinding.isPlayerInsideChamber;
@@ -91,7 +92,7 @@ public class ChamberController : MonoBehaviour
             _audioSource.clip = _ambientSound;
             _audioSource.Play();
         }
-        SetLighting();
+        GlobalLightController.UpdateLights(BackgroundLightIntensity, BackgroundLightColor, TerrainLightIntensity, TerrainLightColor);
     }
 
     public void SetBasicSettings(string guid, Vector2 position, Vector2 size, float scale)
@@ -121,17 +122,5 @@ public class ChamberController : MonoBehaviour
         var colliderGameObject = new List<GameObject>(GameObject.FindGameObjectsWithTag("ChamberCollider")).Find(g => g.transform.IsChildOf(transform));
         var collider = colliderGameObject.GetComponent<PolygonCollider2D>();
         collider.SetPath(0, points);
-    }
-
-    private void SetLighting()
-    {
-        var backgroundLightGameObject = GameObject.FindGameObjectWithTag("BackgroundLight");
-        var backgroundLight = backgroundLightGameObject.GetComponent<Light2D>();
-        backgroundLight.intensity = BackgroundLightIntensity;
-        backgroundLight.color = BackgroundLightColor;
-        var terrainLightGameObject = GameObject.FindGameObjectWithTag("TerrainLight");
-        var terrainLight = backgroundLightGameObject.GetComponent<Light2D>();
-        terrainLight.intensity = TerrainLightIntensity;
-        terrainLight.color = TerrainLightColor;
     }
 }

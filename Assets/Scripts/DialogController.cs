@@ -1,15 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DialogController : MonoBehaviour
+public class DialogController : MonoBehaviour, IPointerClickHandler
 {
-    public static event Action<DialogItem> DialogUpdated;
+    public static event Action<IDialogItem> DialogUpdated;
 
-    public DialogItem dialogItem;
+    public IDialogItem dialogItem;
     public Image panel;
     public Image foliage;
     public Image imageNpcPortrait;
@@ -23,8 +25,9 @@ public class DialogController : MonoBehaviour
         ClearDialog();
     }
 
-    private void RefreshDialog(DialogItem dialogItem) 
+    private void RefreshDialog(IDialogItem newDialogItem) 
     {
+        dialogItem = newDialogItem;
         panel.enabled = true;
         foliage.enabled = true;
         imageNpcPortrait.enabled = true;
@@ -42,8 +45,14 @@ public class DialogController : MonoBehaviour
         textDialog.text = "";
     }
 
-    public static void UpdateDialog(DialogItem dialogItem)
+    public static void UpdateDialog(IDialogItem dialogItem)
     {
         DialogUpdated?.Invoke(dialogItem);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        ClearDialog();
+        dialogItem?.ActionOnOk?.Invoke();
     }
 }

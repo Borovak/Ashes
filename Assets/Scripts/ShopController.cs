@@ -10,6 +10,6 @@ public class ShopController : InteractionController
 
     public override void Interact()
     {
-        Debug.Log("Shop interaction");
+        DialogController.UpdateDialog(new DialogShopMarket());
     }
 }

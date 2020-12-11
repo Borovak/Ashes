@@ -8,6 +8,15 @@ public static class Constants
     {
         None,
         SavePoint,
-        Shop
+        Shop,
+        Talk
+    }
+
+    [Serializable]
+    public enum Npc
+    {
+        None,
+        Shopkeeper,
+        HoboTom
     }
 }
