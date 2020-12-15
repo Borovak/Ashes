@@ -86,6 +86,12 @@ TextureImporter:
   - first:
       213: 6831977154143218653
     second: forest_013_00
+  - first:
+      213: -7255483428619155405
+    second: forest_014_00
+  - first:
+      213: -2020973159090366391
+    second: forest_015_00
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -179,7 +185,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1557
-        y: 1684
+        y: 1517
         width: 158
         height: 158
       alignment: 9
@@ -199,8 +205,8 @@ TextureImporter:
       name: forest_001_00
       rect:
         serializedVersion: 2
-        x: 1759
-        y: 1627
+        x: 1717
+        y: 1388
         width: 154
         height: 154
       alignment: 9
@@ -220,8 +226,8 @@ TextureImporter:
       name: forest_002_00
       rect:
         serializedVersion: 2
-        x: 1695
-        y: 1585
+        x: 1873
+        y: 1502
         width: 136
         height: 40
       alignment: 9
@@ -241,8 +247,8 @@ TextureImporter:
       name: forest_002_01
       rect:
         serializedVersion: 2
-        x: 1833
-        y: 1585
+        x: 1873
+        y: 1460
         width: 136
         height: 40
       alignment: 9
@@ -262,8 +268,8 @@ TextureImporter:
       name: forest_002_02
       rect:
         serializedVersion: 2
-        x: 1695
-        y: 1543
+        x: 1873
+        y: 1418
         width: 136
         height: 40
       alignment: 9
@@ -283,8 +289,8 @@ TextureImporter:
       name: forest_004_00
       rect:
         serializedVersion: 2
-        x: 1915
-        y: 1667
+        x: 1947
+        y: 1376
         width: 72
         height: 40
       alignment: 9
@@ -304,7 +310,7 @@ TextureImporter:
       name: forest_005_00
       rect:
         serializedVersion: 2
-        x: 1717
+        x: 1722
         y: 1802
         width: 40
         height: 40
@@ -325,7 +331,7 @@ TextureImporter:
       name: forest_006_00
       rect:
         serializedVersion: 2
-        x: 1717
+        x: 1722
         y: 1760
         width: 40
         height: 40
@@ -346,7 +352,7 @@ TextureImporter:
       name: forest_006_01
       rect:
         serializedVersion: 2
-        x: 1717
+        x: 1722
         y: 1720
         width: 38
         height: 38
@@ -367,8 +373,8 @@ TextureImporter:
       name: forest_007_00
       rect:
         serializedVersion: 2
-        x: 1915
-        y: 1709
+        x: 1873
+        y: 1344
         width: 72
         height: 72
       alignment: 9
@@ -389,7 +395,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1557
-        y: 1546
+        y: 1379
         width: 136
         height: 136
       alignment: 9
@@ -431,7 +437,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1035
-        y: 1056
+        y: 889
         width: 520
         height: 264
       alignment: 9
@@ -452,7 +458,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1035
-        y: 1322
+        y: 1155
         width: 520
         height: 520
       alignment: 9
@@ -506,6 +512,48 @@ TextureImporter:
       bones: []
       spriteID: ddb6a4a360f00de50800000000000000
       internalID: 6831977154143218653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_014_00
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 1544
+        width: 235
+        height: 237
+      alignment: 9
+      pivot: {x: 0.10212766, y: 0.07172996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3380c6b43485f4b90800000000000000
+      internalID: -7255483428619155405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_015_00
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1677
+        width: 685
+        height: 165
+      alignment: 9
+      pivot: {x: 0.030656934, y: 0.1030303}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948d1df8e9f04f3e0800000000000000
+      internalID: -2020973159090366391
       vertices: []
       indices: 
       edges: []

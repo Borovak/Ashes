@@ -8,7 +8,8 @@ public class ProjectileShooterController : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Vector3 offset;
-    public bool seeksPlayer;
+    public bool aimsAtPlayer;
+    public bool homingProjectiles;
     public float visionRange;
     public Vector3 forcedDirection;
     public float projectilesPerSecond;
@@ -33,19 +34,19 @@ public class ProjectileShooterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (seeksPlayer)
+        if (aimsAtPlayer)
         {
             if (_playerTarget == null)
             {
                 _playerTarget = GameObject.FindGameObjectWithTag("PlayerTarget").transform;
             }
             distance = Vector3.Distance(_playerTarget.position, _shootsFrom);
-            var direction = (_playerTarget.position - _shootsFrom) * 2f;
+            var direction = _playerTarget.position - _shootsFrom;
             var hitPlayer = Physics2D.Raycast(_shootsFrom, direction, visionRange, LayerManagement.Player);
             var hitTilemap = Physics2D.Raycast(_shootsFrom, direction, visionRange, LayerManagement.Layout);
             if (hitPlayer.distance > 0 && hitPlayer.distance < visionRange && (hitTilemap.distance == 0 || hitTilemap.distance > hitPlayer.distance))
             {
-                TryShoot((_playerTarget.position - _shootsFrom).normalized);
+                TryShoot((_playerTarget.position - _shootsFrom).normalized, _playerTarget);
             }
         }
         else
@@ -54,7 +55,7 @@ public class ProjectileShooterController : MonoBehaviour
         }
     }
 
-    private void TryShoot(Vector3 direction)
+    private void TryShoot(Vector3 direction, Transform target = null)
     {
         if (_waitDelay > 0)
         {
@@ -70,23 +71,7 @@ public class ProjectileShooterController : MonoBehaviour
         projectileController.canHitEnemies = canHitEnemies;
         projectileController.canHitPlayer = canHitPlayer;
         projectileController.damage = projectileDamage;
-        projectileController.angle = GetAngle(Vector3.zero, direction);
-    }
-
-    public float GetAngle(Vector3 reference, Vector3 target)
-    {
-        return GetAngle(new Vector2(reference.x, reference.y), new Vector2(target.x, target.y));
-    }
-
-    public float GetAngle(Vector2 reference, Vector2 target)
-    {
-        double dx = target.x - reference.x;
-        // Minus to correct for coord re-mapping
-        double dy = target.y - reference.y;
-        double inRads = Math.Atan2(dy, dx);
-        // We need to map to coord system when 0 degree is at 3 O'clock, 270 at 12 O'clock
-        inRads = inRads < 0 ? Math.Abs(inRads) : 2 * Math.PI - inRads;
-        return 360f - Convert.ToSingle((180 / Math.PI) * inRads);
+        projectileController.target = homingProjectiles ? target : null;
     }
 
     void OnDrawGizmos()

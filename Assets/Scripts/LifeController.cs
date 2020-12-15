@@ -35,6 +35,7 @@ public abstract class LifeController : MonoBehaviour
     public bool IsAlive => GetHp() > 0;
     public float HealthRatio => Convert.ToSingle(GetHp()) / Convert.ToSingle(GetMaxHp());
     public ParticleSystem blood;
+    public GameObject contactPrefab;
     public Vector2 bloodOffset;
 
     protected bool _isPlayer;
@@ -165,6 +166,12 @@ public abstract class LifeController : MonoBehaviour
         if (blood != null)
         {
             Instantiate(blood, transform.position + new Vector3(bloodOffset.x, bloodOffset.y, 0f), Quaternion.identity, transform);
+        }
+        if (contactPrefab != null)
+        {            
+            var contact = Instantiate(contactPrefab, transform.position, Quaternion.identity);
+            GameObject.Destroy(contact, 0.05f);
+
         }
         SetHp(GetHp() - damage);
         _damageFlashTimeRemaining = _damageFlashTimeTotal;

@@ -113,4 +113,20 @@ public static class GlobalFunctions
         Debug.Log("Shop interface test");
         OpenShopTriggered?.Invoke();
     }
+
+    public static float GetAngleFromPoints(Vector3 reference, Vector3 target)
+    {
+        return GetAngleFromPoints(new Vector2(reference.x, reference.y), new Vector2(target.x, target.y));
+    }
+
+    public static float GetAngleFromPoints(Vector2 reference, Vector2 target)
+    {
+        double dx = target.x - reference.x;
+        // Minus to correct for coord re-mapping
+        double dy = target.y - reference.y;
+        double inRads = Math.Atan2(dy, dx);
+        // We need to map to coord system when 0 degree is at 3 O'clock, 270 at 12 O'clock
+        inRads = inRads < 0 ? Math.Abs(inRads) : 2 * Math.PI - inRads;
+        return 360f - Convert.ToSingle((180 / Math.PI) * inRads);
+    }
 }

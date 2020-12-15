@@ -4,27 +4,30 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private class ItemGainedQueueItem
-    {
-        internal int id;
-        internal int quantity;
-    }
-    
     public static event Action InventoryChanged;
-    private Dictionary<int, int> _items = new Dictionary<int, int>();
     public GameObject ItemGainedPrefab;
-    public bool AddItem;
+    public bool AddItemTest;
+    public float timeBetweenItemGainedPanel = 0.5f;
+    public int money = 0;
 
-    private List<ItemGainedQueueItem> _itemGainedQueue;
+    private List<ItemBundle> _itemGainedQueue;
+    private Dictionary<int, int> _items;
+    private float _timeSinceLastItemGainedPanel = 0f;
 
     void Start()
     {
-        _itemGainedQueue = new List<ItemGainedQueueItem>();
+        _items = new Dictionary<int, int>();
+        _itemGainedQueue = new List<ItemBundle>();
         SetInventoryFromString(SaveSystem.LastLoadedSave.Inventory);
     }
 
     public void Add(int id, int quantity = 1)
     {
+        if (id == Constants.MONEY_ID)
+        {
+            money += quantity;
+            return;
+        }
         if (!_items.ContainsKey(id))
         {
             _items.Add(id, quantity);
@@ -34,16 +37,22 @@ public class PlayerInventory : MonoBehaviour
             _items[id] = _items[id] + quantity;
         }
         InventoryChanged?.Invoke();
-        //Instantiate item gained paneld
-        var gameUITransform = GameObject.FindGameObjectWithTag("GameUI").transform;
-        var itemGained = GameObject.Instantiate(ItemGainedPrefab, gameUITransform);
-        var itemGainedController = itemGained.GetComponent<ItemGainedController>();
-        itemGainedController.itemId = id;
-        itemGainedController.itemQuantity = quantity;
+        //Instantiate item gained panel
+        _itemGainedQueue.Add(new ItemBundle(id, quantity));
+    }
+
+    public void Add(Item item, int quantity = 1)
+    {
+        Add(item.id, quantity);
     }
 
     public void Remove(int id, int quantity = 1)
     {
+        if (id == Constants.MONEY_ID)
+        {
+            money = System.Math.Max(money - quantity, 0);
+            return;
+        }
         if (!_items.ContainsKey(id))
         {
             _items.Add(id, 0);
@@ -53,6 +62,11 @@ public class PlayerInventory : MonoBehaviour
             _items[id] = System.Math.Max(_items[id] - quantity, 0);
         }
         InventoryChanged?.Invoke();
+    }
+
+    public void Remove(Item item, int quantity = 1)
+    {
+        Remove(item.id, quantity);
     }
 
     public int GetCount(int id)
@@ -68,43 +82,35 @@ public class PlayerInventory : MonoBehaviour
             if (item.Value == 0) continue;
             lst.Add($"{item.Key},{item.Value}");
         }
-        return string.Join(";", lst);
+        return string.Join(";", lst) + $"|{money}";
     }
+
 
     public void SetInventoryFromString(string data)
     {
         _items.Clear();
         if (string.IsNullOrEmpty(data)) return;
-        var items = data.Split(';');
+        var groups = data.Split('|');
+        var items = groups[0].Split(';');
         foreach (var item in items)
         {
             var x = item.Split(',');
             _items[int.Parse(x[0])] = int.Parse(x[1]);
         }
-    }
-
-    public void GetItemsAndCounts(out List<Item> items, out List<int> counts)
-    {
-        items = new List<Item>();
-        counts = new List<int>();
-        foreach (var entry in _items)
+        if (groups.Length > 1)
         {
-            if (entry.Value == 0) continue;
-            var item = DropController.GetDropInfo(entry.Key);
-            var count = entry.Value;
-            items.Add(item);
-            counts.Add(count);
+            money = Convert.ToInt32(groups[1]);
         }
     }
 
-    public void Add(Item item, int quantity = 1)
+    public void GetItemsAndCounts(out List<ItemBundle> itemBundles)
     {
-        Add(item.id, quantity);
-    }
-
-    public void Remove(Item item, int quantity = 1)
-    {
-        Remove(item.id, quantity);
+        itemBundles = new List<ItemBundle>();
+        foreach (var entry in _items)
+        {
+            if (entry.Value == 0) continue;
+            itemBundles.Add(new ItemBundle(entry.Key, entry.Value));
+        }
     }
 
     public int GetCount(Item item)
@@ -112,9 +118,33 @@ public class PlayerInventory : MonoBehaviour
         return GetCount(item.id);
     }
 
-    void Update(){
-        if (!AddItem) return;
-        AddItem = false;
-        Add(1,1);
+    void Update()
+    {
+        if (AddItemTest)
+        {
+            AddItemTest = false;
+            Add(1, 1);
+        }
+        if (_timeSinceLastItemGainedPanel <= 0)
+        {
+            if (_itemGainedQueue.Count > 0)   
+            {
+                _timeSinceLastItemGainedPanel = timeBetweenItemGainedPanel;
+                InstantiateItemGainedPanel(_itemGainedQueue[0]);
+                _itemGainedQueue.RemoveAt(0);
+            }
+        }
+        else
+        {
+            _timeSinceLastItemGainedPanel -= Time.deltaTime;
+        }
+    }
+
+    private void InstantiateItemGainedPanel(ItemBundle itemBundle)
+    {
+        var gameUITransform = GameObject.FindGameObjectWithTag("GameUI").transform;
+        var itemGained = GameObject.Instantiate(ItemGainedPrefab, gameUITransform);
+        var itemGainedController = itemGained.GetComponent<ItemGainedController>();
+        itemGainedController.itemBundle = itemBundle;
     }
 }

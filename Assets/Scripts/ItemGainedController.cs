@@ -10,8 +10,7 @@ public class ItemGainedController : MonoBehaviour
 
     public Image image;
     public TextMeshProUGUI text;
-    public int itemId;
-    public int itemQuantity;
+    public ItemBundle itemBundle;
     public float TimeIn = 0.5f;
     public float TimeBetween = 2f;
     public float TimeOut = 0.5f;
@@ -26,9 +25,8 @@ public class ItemGainedController : MonoBehaviour
         _panel = GetComponent<Image>();
         _rectTransform = GetComponent<RectTransform>();
         //Setting initial info
-        var item = DropController.GetDropInfo(itemId);
-        image.sprite = item.GetArt();
-        text.text = $"x{itemQuantity} {item.name} acquired";
+        image.sprite = itemBundle.Item.GetArt();
+        text.text = $"x{itemBundle.Quantity} {itemBundle.Item.name} acquired";
         //Getting default colors
         var panelColor = _panel.color;
         var imageColor = image.color;

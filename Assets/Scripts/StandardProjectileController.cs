@@ -13,6 +13,7 @@ public class StandardProjectileController : MonoBehaviour
     public bool canHitEnemies;
     public Transform particleSystemTransform;
     public GameObject splashPrefab;
+    public Transform target;
 
     private List<LayerMask> _layerMaskToConsider;
 
@@ -29,15 +30,17 @@ public class StandardProjectileController : MonoBehaviour
             _layerMaskToConsider.Add(LayerManagement.Enemies);
         }
         transform.localScale = new Vector3(diameter, diameter, 1f);
-        if (particleSystemTransform != null)
-        {
-            particleSystemTransform.Rotate(new Vector3(0f, 0f, angle), Space.Self);
-        }
+        UpdateAngle();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (target != null)
+        {            
+            direction = (target.position - transform.position).normalized;
+            UpdateAngle();
+        }
         transform.Translate(direction * speed * Time.deltaTime);
         foreach (var layer in _layerMaskToConsider)
         {
@@ -54,6 +57,14 @@ public class StandardProjectileController : MonoBehaviour
                 GameObject.Destroy(gameObject);
                 return;
             }
+        }
+    }
+
+    private void UpdateAngle(){        
+        angle = GlobalFunctions.GetAngleFromPoints(Vector3.zero, direction);
+        if (particleSystemTransform != null)
+        {
+            particleSystemTransform.localEulerAngles = new Vector3(0f, 0f, angle);
         }
     }
 }

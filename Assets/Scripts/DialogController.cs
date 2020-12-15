@@ -10,6 +10,8 @@ using UnityEngine.UI;
 public class DialogController : MonoBehaviour, IPointerClickHandler
 {
     public static event Action<IDialogItem> DialogUpdated;
+    public static event Action<Action> ActionToBeExecuted;
+    public static bool isVisible;
 
     public IDialogItem dialogItem;
     public Image panel;
@@ -17,15 +19,17 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
     public Image imageNpcPortrait;
     public TextMeshProUGUI textNpcName;
     public TextMeshProUGUI textDialog;
+    public DialogChoicePanel[] dialogChoicePanels;
 
     // Start is called before the first frame update
     void Start()
     {
         DialogUpdated += RefreshDialog;
+        ActionToBeExecuted += OnActionToBeExecuted;
         ClearDialog();
     }
 
-    private void RefreshDialog(IDialogItem newDialogItem) 
+    private void RefreshDialog(IDialogItem newDialogItem)
     {
         dialogItem = newDialogItem;
         panel.enabled = true;
@@ -34,6 +38,30 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
         imageNpcPortrait.sprite = dialogItem.npcSprite;
         textNpcName.text = dialogItem.npcName;
         textDialog.text = dialogItem.text;
+        isVisible = true;
+        SetFollowUp();
+    }
+
+    private void SetFollowUp()
+    {
+        var dialogItemChoices = dialogItem as IDialogItemChoices;
+        if (dialogItemChoices != null)
+        {
+            var choices = dialogItemChoices.followUp.ToList();
+            for (int i = 0; i < dialogChoicePanels.Length; i++)
+            {
+                var isActive = i < choices.Count;
+                dialogChoicePanels[i].gameObject.SetActive(isActive);
+                if (isActive)
+                {
+                    dialogChoicePanels[i].UpdateContent(choices[i].Key, choices[i].Value);
+                }
+            }
+        }
+        else
+        {
+            DesactivateChoices();
+        }
     }
 
     private void ClearDialog()
@@ -43,6 +71,16 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
         imageNpcPortrait.enabled = false;
         textNpcName.text = "";
         textDialog.text = "";
+        isVisible = false;
+        DesactivateChoices();
+    }
+
+    private void DesactivateChoices()
+    {
+        foreach (var choice in dialogChoicePanels)
+        {
+            choice.gameObject.SetActive(false);
+        }
     }
 
     public static void UpdateDialog(IDialogItem dialogItem)
@@ -52,7 +90,20 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        var dialogItemSimple = dialogItem as IDialogItemSimple;
+        if (dialogItemSimple == null) return;
         ClearDialog();
-        dialogItem?.ActionOnOk?.Invoke();
+        dialogItemSimple.ActionOnOk?.Invoke();
+    }
+
+    public static void DoAction(Action action)
+    {
+        ActionToBeExecuted?.Invoke(action);
+    }
+
+    public void OnActionToBeExecuted(Action action)
+    {
+        ClearDialog();
+        action.Invoke();
     }
 }

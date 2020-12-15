@@ -5,12 +5,21 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public Transform attackPos;
+    private enum AttackStates
+    {
+        Idle,
+        Charging,
+        Attack
+    }
+
+    public SpriteRenderer attackSpriteRenderer;
     public float attackRange;
     public int attackDamage;
     public float attackRate;
     public LayerMask whatIsEnemies;
     public GameObject fireballPrefab;
+    public float chargingDuration = 0.05f;
+    public float attackDuration = 0.05f;
 
     private float _attackCooldown;
     private Animator _animator;
@@ -18,6 +27,8 @@ public class PlayerAttack : MonoBehaviour
     private PlayerInputs _inputs;
     private ManaController _manaController;
     private LifeController _lifeController;
+    private AttackStates _attackState;
+    private float _attackStateTimeRemaining;
 
 
     // Start is called before the first frame update
@@ -41,6 +52,25 @@ public class PlayerAttack : MonoBehaviour
         {
             _attackCooldown -= Time.deltaTime;
         }
+        attackSpriteRenderer.enabled = _attackState == AttackStates.Attack;
+        if (_attackState != AttackStates.Idle)
+        {
+            _attackStateTimeRemaining -= Time.deltaTime;
+            if (_attackStateTimeRemaining <= 0)
+            {
+                switch (_attackState)
+                {
+                    case AttackStates.Charging:
+                        _attackState = AttackStates.Attack;
+                        _attackStateTimeRemaining = attackDuration;
+                        break;
+                    case AttackStates.Attack:
+                        _attackState = AttackStates.Idle;
+                        break;
+                }
+            }
+        }
+
         // if (_attackCooldown <= 0)
         // {
         //     if (Input.GetButtonDown("Fire1"))
@@ -68,6 +98,8 @@ public class PlayerAttack : MonoBehaviour
         _animator.SetTrigger("attack");
         MeleeAttack();
         _attackCooldown = 1f / attackRate;
+        _attackState = AttackStates.Charging;
+        _attackStateTimeRemaining = chargingDuration;
     }
 
     private void AttackSpell()
@@ -98,7 +130,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void MeleeAttack()
     {
-        var enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+        var enemiesToDamage = Physics2D.OverlapCircleAll(attackSpriteRenderer.transform.position, attackRange, whatIsEnemies);
         for (int i = 0; i < enemiesToDamage.Length; i++)
         {
             if (!enemiesToDamage[i].TryGetComponent<EnemyLifeController>(out var enemy)) continue;
@@ -108,18 +140,18 @@ public class PlayerAttack : MonoBehaviour
 
     void CastFireball()
     {
-        var fireballObject = Instantiate(fireballPrefab, attackPos.position, Quaternion.identity);
+        var fireballObject = Instantiate(fireballPrefab, attackSpriteRenderer.transform.position, Quaternion.identity);
         var fireball = fireballObject.GetComponent<DirectionalFireball>();
         fireball.speed = 20f;
         fireball.damage = 3;
         fireball.diameter = 0.3f;
-        fireball.destination = attackPos.transform.position.x > transform.position.x ? attackPos.transform.position + Vector3.right * 1000f : attackPos.transform.position + Vector3.left * 1000f;
+        fireball.destination = attackSpriteRenderer.transform.transform.position.x > transform.position.x ? attackSpriteRenderer.transform.transform.position + Vector3.right * 1000f : attackSpriteRenderer.transform.transform.position + Vector3.left * 1000f;
         fireball.emitFromPlayer = true;
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        Gizmos.DrawWireSphere(attackSpriteRenderer.transform.position, attackRange);
     }
 }

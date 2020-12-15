@@ -19,4 +19,6 @@ public static class Constants
         Shopkeeper,
         HoboTom
     }
+    
+    public const int MONEY_ID = 0;
 }

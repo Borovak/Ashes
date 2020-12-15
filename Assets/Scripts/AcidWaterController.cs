@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class AcidWaterController : MonoBehaviour
 {
@@ -9,10 +11,10 @@ public class AcidWaterController : MonoBehaviour
     const int resolution = 128;
 
     public Color colorWhenWater = new Color(0.4f, 0.75f, 0.75f, 1f);
-    public Color colorWhenAcid = new Color(0.4f, 0.75f, 0.4f, 1f);
-
+    public Color colorWhenAcid = new Color(0.3f, 0.9f, 0.3f, 1f);
     public bool isAcid;
-    
+    public Light2D light2D;
+
     private GameObject _reflectionObject;
     private SpriteRenderer _spriteRendererBack;
     private SpriteRenderer _spriteRendererReflection;
@@ -48,8 +50,11 @@ public class AcidWaterController : MonoBehaviour
     void Update()
     {
         _spriteRendererBack.color = isAcid ? colorWhenAcid : colorWhenWater;
-        if (_spriteRendererReflection != null){
+        if (_spriteRendererReflection != null)
+        {
             _spriteRendererReflection.color = isAcid ? colorWhenAcid : colorWhenWater;
+            light2D.color = isAcid ? colorWhenAcid : Color.white;
+            light2D.intensity = isAcid ? 1f : 0.2f;
         }
     }
 

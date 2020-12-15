@@ -44,12 +44,12 @@ public class InventoryPanel : MonoBehaviour
         if (!refreshNeeded) return;
         refreshNeeded = false;
         var playerInventory = GlobalFunctions.GetPlayerInventory();
-        playerInventory.GetItemsAndCounts(out var items, out var counts);
+        playerInventory.GetItemsAndCounts(out var itemBundles);
         var index = 0;
         foreach (var inventoryItemController in _inventoryItemControllers)
         {
-            inventoryItemController.Item = index < items.Count ? items[index] : null;
-            inventoryItemController.Count = index < counts.Count ? counts[index] : -1;
+            inventoryItemController.Item = index < itemBundles.Count ? itemBundles[index].Item : null;
+            inventoryItemController.Count = index < itemBundles.Count ? itemBundles[index].Quantity : -1;
             index++;
         }
     }

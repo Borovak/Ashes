@@ -80,6 +80,7 @@ public class AutoDecor
             var autoDecorPrefab = Resources.Load<GameObject>("AutoDecor/AutoDecor");
             //Loading assets
             var assetGroups = GetDecorAssets(chamberController.theme, "AutoDecor", 32);
+            var sortingOrder = 31000;
             foreach (var assetGroupKvp in assetGroups.OrderByDescending(x => _filters[x.Key].OccupiedCount).ThenByDescending(x => _filters[x.Key].EmptyCount).ThenByDescending(x => _filters[x.Key].PlaceholderCount))
             {
                 var assetGroup = assetGroupKvp.Value;
@@ -94,13 +95,14 @@ public class AutoDecor
                         if (!IsFilterMatching(workingMap, filter, x, y, w, h, out var filledCells)) continue;
                         var index = UnityEngine.Random.Range(0, assetGroup.Count);
                         var decorAsset = assetGroup[index];
-                        InstantiateAssetAtPosition(chamberController, autoDecorPrefab, decorContainer.transform, decorAsset, x + filter.Offset.x, y + filter.Offset.y, 0);
+                        InstantiateAssetAtPosition(chamberController, autoDecorPrefab, decorContainer.transform, decorAsset, x + filter.Offset.x, y + filter.Offset.y, sortingOrder);
                         foreach (var cell in filledCells)
                         {
                             workingMap[cell.x, cell.y] = -1;
                         }
                     }
                 }
+                sortingOrder -= 1000;
             }
             //Hanging
             //ApplyOverhang(map, chamberController, autoDecorPrefab, decorContainer);

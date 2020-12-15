@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogShopMarket : IDialogItem
+public class DialogShopMarket : IDialogItemChoices
 {
     Sprite IDialogItem.npcSprite => GlobalFunctions.TryGetNpcSprite(Constants.Npc.Shopkeeper, out var sprite) ? sprite : null;
 
@@ -11,7 +11,9 @@ public class DialogShopMarket : IDialogItem
 
     string IDialogItem.text => "Welcome to my shop youngling";
 
-    Action IDialogItem.ActionOnOk => GlobalFunctions.OpenShop;
-
-    Dictionary<string, IDialogItem> IDialogItem.followUp => null;
+    Dictionary<string, Action> IDialogItemChoices.followUp => new Dictionary<string, Action>
+    {
+        {"Shop", () => DialogController.DoAction(GlobalFunctions.OpenShop)},
+        {"Who are you?", () => DialogController.UpdateDialog(new DialogShopMarket0())}
+    };
 }

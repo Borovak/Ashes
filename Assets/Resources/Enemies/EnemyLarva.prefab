@@ -175,9 +175,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageColor: {r: 1, g: 0, b: 0, a: 1}
+  _waterColor: {r: 0, g: 0, b: 1, a: 1}
+  _acidColor: {r: 0, g: 1, b: 0, a: 1}
   recurrentDamageDelay: 1
   destroyOnDeath: 1
   blood: {fileID: 3752627110417903709, guid: f2ca1030ad645484c91d58e2ff493935, type: 3}
+  contactPrefab: {fileID: 3434948392850978845, guid: c6e39aa7fa3b5114296dd683b03d45e1,
+    type: 3}
   bloodOffset: {x: 0, y: 0}
   id: 2
   maxHp: 3
