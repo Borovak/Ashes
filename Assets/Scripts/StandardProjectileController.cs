@@ -8,7 +8,9 @@ public class StandardProjectileController : MonoBehaviour
     public float speed;
     public int damage;
     public float diameter = 1f;
-    public float angle;
+    public float desiredAngle;
+    public float currentAngle;
+    public float angleChangeRate = 5f;
     public bool canHitPlayer;
     public bool canHitEnemies;
     public Transform particleSystemTransform;
@@ -30,7 +32,7 @@ public class StandardProjectileController : MonoBehaviour
             _layerMaskToConsider.Add(LayerManagement.Enemies);
         }
         transform.localScale = new Vector3(diameter, diameter, 1f);
-        UpdateAngle();
+        UpdateAngle(true);
     }
 
     // Update is called once per frame
@@ -39,16 +41,17 @@ public class StandardProjectileController : MonoBehaviour
         if (target != null)
         {            
             direction = (target.position - transform.position).normalized;
-            UpdateAngle();
+            UpdateAngle(false);
         }
         transform.Translate(direction * speed * Time.deltaTime);
         foreach (var layer in _layerMaskToConsider)
         {
-            var entitiesToDamage = Physics2D.OverlapCircleAll(transform.position, diameter / 2f, layer);
-            for (int i = 0; i < entitiesToDamage.Length; i++)
+        var hits = Physics2D.CircleCastAll(transform.position, diameter / 2f, Vector2.zero, 0f, layer);
+            for (int i = 0; i < hits.Length; i++)
             {
-                if (!entitiesToDamage[i].TryGetComponent<LifeController>(out var entity)) continue;
-                entity.TakeDamage(damage, gameObject.name);
+                var hit = hits[i];
+                if (!hit.collider.gameObject.TryGetComponent<LifeController>(out var entity)) continue;
+                entity.TakeDamage(damage, gameObject.name, hit.point);
                 if (splashPrefab != null)
                 {
                     var splash = GameObject.Instantiate<GameObject>(splashPrefab, transform.position, Quaternion.identity);
@@ -60,11 +63,12 @@ public class StandardProjectileController : MonoBehaviour
         }
     }
 
-    private void UpdateAngle(){        
-        angle = GlobalFunctions.GetAngleFromPoints(Vector3.zero, direction);
+    private void UpdateAngle(bool instantChange){         
+        desiredAngle = GlobalFunctions.GetAngleFromPoints(Vector3.zero, direction);
+        currentAngle = instantChange ? desiredAngle : currentAngle + (angleChangeRate * Time.deltaTime * (desiredAngle > currentAngle ? 1f : -1f));
         if (particleSystemTransform != null)
         {
-            particleSystemTransform.localEulerAngles = new Vector3(0f, 0f, angle);
+            particleSystemTransform.localEulerAngles = new Vector3(0f, 0f, currentAngle);
         }
     }
 }

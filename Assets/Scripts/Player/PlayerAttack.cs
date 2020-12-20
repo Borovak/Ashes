@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject fireballPrefab;
     public float chargingDuration = 0.05f;
     public float attackDuration = 0.05f;
+    public Light2D attackLight;
 
     private float _attackCooldown;
     private Animator _animator;
@@ -53,6 +55,7 @@ public class PlayerAttack : MonoBehaviour
             _attackCooldown -= Time.deltaTime;
         }
         attackSpriteRenderer.enabled = _attackState == AttackStates.Attack;
+        attackLight.enabled = _attackState == AttackStates.Attack;
         if (_attackState != AttackStates.Idle)
         {
             _attackStateTimeRemaining -= Time.deltaTime;
@@ -130,11 +133,12 @@ public class PlayerAttack : MonoBehaviour
 
     private void MeleeAttack()
     {
-        var enemiesToDamage = Physics2D.OverlapCircleAll(attackSpriteRenderer.transform.position, attackRange, whatIsEnemies);
-        for (int i = 0; i < enemiesToDamage.Length; i++)
+        var hits = Physics2D.CircleCastAll(attackSpriteRenderer.transform.position, attackRange, Vector2.zero, 0f, whatIsEnemies);
+        for (int i = 0; i < hits.Length; i++)
         {
-            if (!enemiesToDamage[i].TryGetComponent<EnemyLifeController>(out var enemy)) continue;
-            enemy.TakeDamage(attackDamage, gameObject.name);
+            var hit = hits[i];            
+            if (!hit.collider.gameObject.TryGetComponent<EnemyLifeController>(out var enemy)) continue;
+            enemy.TakeDamage(attackDamage, gameObject.name, hit.point);
         }
     }
 

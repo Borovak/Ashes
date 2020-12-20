@@ -23,11 +23,12 @@ public class DirectionalFireball : MonoBehaviour
     void Update()
     {
         transform.Translate(_direction * speed * Time.deltaTime);
-        var entitiesToDamage = Physics2D.OverlapCircleAll(transform.position, diameter / 2f, emitFromPlayer ? LayerManagement.Enemies : LayerManagement.Player);
-        for (int i = 0; i < entitiesToDamage.Length; i++)
+        var hits = Physics2D.CircleCastAll(transform.position, diameter / 2f, Vector2.zero, 0f, emitFromPlayer ? LayerManagement.Enemies : LayerManagement.Player);
+        for (int i = 0; i < hits.Length; i++)
         {
-            if (!entitiesToDamage[i].TryGetComponent<LifeController>(out var entity)) continue;
-            entity.TakeDamage(damage, gameObject.name);
+            var hit = hits[i];
+            if (!hit.collider.gameObject.TryGetComponent<LifeController>(out var entity)) continue;
+            entity.TakeDamage(damage, gameObject.name, hit.point);
             GameObject.Destroy(gameObject);
             return;
         }

@@ -59,7 +59,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
-  m_PointLightOuterRadius: 2
+  m_PointLightOuterRadius: 4
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -4979,12 +4979,15 @@ MonoBehaviour:
   speed: 0
   damage: 0
   diameter: 1
-  angle: 0
+  desiredAngle: 0
+  currentAngle: 0
+  angleChangeRate: 90
   canHitPlayer: 0
   canHitEnemies: 0
   particleSystemTransform: {fileID: 3039316547128313371}
   splashPrefab: {fileID: 4901821205327565972, guid: ed3bc4c40f52f994baa94747616f0306,
     type: 3}
+  target: {fileID: 0}
 --- !u!114 &5882326213682277611
 MonoBehaviour:
   m_ObjectHideFlags: 0

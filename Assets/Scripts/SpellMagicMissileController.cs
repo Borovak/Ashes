@@ -29,11 +29,12 @@ public class SpellMagicMissileController : MonoBehaviour
             GameObject.Destroy(gameObject);
             return;
         }
-        var enemiesToDamage = Physics2D.OverlapCircleAll(transform.position, radius, whatIsEnemies);
-        for (int i = 0; i < enemiesToDamage.Length; i++)
+        var hits = Physics2D.CircleCastAll(transform.position, radius, Vector2.zero, 0f, LayerManagement.Enemies);
+        for (int i = 0; i < hits.Length; i++)
         {
-            if (!enemiesToDamage[i].TryGetComponent<EnemyLifeController>(out var enemy)) continue;
-            enemy.TakeDamage(damage, gameObject.name);
+            var hit = hits[i];
+            if (!hit.collider.gameObject.TryGetComponent<EnemyLifeController>(out var enemy)) continue;
+            enemy.TakeDamage(damage, gameObject.name, hit.point);
             GameObject.Destroy(gameObject);
             return;
         }

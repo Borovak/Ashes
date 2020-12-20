@@ -13,7 +13,7 @@ public class PlayerRollBehaviour : StateMachineBehaviour
     {
         animator.SetBool("canRoll", false);
         _player = animator.GetComponent<PlayerPlatformerController>();
-        _player.isRolling = true;
+        _player.isDashing = true;
         var audioSource = animator.GetComponent<AudioSource>();
         audioSource.PlayOneShot(rollingSound);
     }
@@ -27,9 +27,8 @@ public class PlayerRollBehaviour : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("canRoll", true);
         animator.SetBool("roll", false);
-        _player.isRolling = false;
+        _player.isDashing = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

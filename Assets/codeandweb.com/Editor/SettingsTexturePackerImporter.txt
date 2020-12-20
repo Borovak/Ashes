@@ -8,6 +8,7 @@ tpsheetFileNames:
 - Assets/Sprites/AutoDecor/forest.tpsheet
 - Assets/Sprites/AutoDecor/forest_filters.tpsheet
 - Assets/Sprites/AutoDecor/town.tpsheet
+- Assets/Sprites/BackgroundDecor/backgroundDecor_forest.tpsheet
 - Assets/Sprites/Boss1/Boss1.tpsheet
 - Assets/Sprites/CornerLeft/forest.tpsheet
 - Assets/Sprites/CornerRight/forest.tpsheet
@@ -15,6 +16,7 @@ tpsheetFileNames:
 - Assets/Sprites/Enemies/bosswolf.tpsheet
 - Assets/Sprites/Ground/forest.tpsheet
 - Assets/Sprites/GroundOverlay/CathedralFloor.tpsheet
+- Assets/Sprites/Hits/contacts.tpsheet
 - Assets/Sprites/MainMenu/Ash/Ash_sit.tpsheet
 - Assets/Sprites/Overhang/forest.tpsheet
 - Assets/Sprites/UI/SaveIcon/SaveIcon.tpsheet
@@ -26,6 +28,7 @@ textureFileNames:
 - Assets/Sprites/AutoDecor/forest.png
 - Assets/Sprites/AutoDecor/forest_filters.png
 - Assets/Sprites/AutoDecor/town.png
+- Assets/Sprites/BackgroundDecor/backgroundDecor_forest.png
 - Assets/Sprites/Boss1/Boss1.png
 - Assets/Sprites/CornerLeft/forest.png
 - Assets/Sprites/CornerRight/forest.png
@@ -33,11 +36,14 @@ textureFileNames:
 - Assets/Sprites/Enemies/bosswolf.png
 - Assets/Sprites/Ground/forest.png
 - Assets/Sprites/GroundOverlay/CathedralFloor.png
+- Assets/Sprites/Hits/contacts.png
 - Assets/Sprites/MainMenu/Ash/Ash_sit.png
 - Assets/Sprites/Overhang/forest.png
 - Assets/Sprites/UI/SaveIcon/SaveIcon.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
 - 
 - 
 - 

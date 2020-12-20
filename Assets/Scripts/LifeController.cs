@@ -93,7 +93,7 @@ public abstract class LifeController : MonoBehaviour
         {
             if (_damageDelay <= 0)
             {
-                TakeDamage(AcidDamage, "Acid", true);
+                TakeDamage(AcidDamage, "Acid", Vector2.negativeInfinity, true);
                 _damageDelay = recurrentDamageDelay;
             }
             else
@@ -156,7 +156,7 @@ public abstract class LifeController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage, string attackerName, bool bypassShield = false)
+    public void TakeDamage(int damage, string attackerName, Vector2 hitPosition, bool bypassShield = false)
     {
         if (_shieldController != null && !bypassShield){
             if (_shieldController.AbsorbHit(damage, out var newDamage)) return;
@@ -167,9 +167,9 @@ public abstract class LifeController : MonoBehaviour
         {
             Instantiate(blood, transform.position + new Vector3(bloodOffset.x, bloodOffset.y, 0f), Quaternion.identity, transform);
         }
-        if (contactPrefab != null)
+        if (contactPrefab != null && hitPosition != Vector2.negativeInfinity)
         {            
-            var contact = Instantiate(contactPrefab, transform.position, Quaternion.identity);
+            var contact = Instantiate(contactPrefab, hitPosition, Quaternion.identity);
             GameObject.Destroy(contact, 0.05f);
 
         }

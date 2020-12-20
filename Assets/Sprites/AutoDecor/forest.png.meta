@@ -92,6 +92,9 @@ TextureImporter:
   - first:
       213: -2020973159090366391
     second: forest_015_00
+  - first:
+      213: 7519042866597088590
+    second: forest_016_00
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -205,8 +208,8 @@ TextureImporter:
       name: forest_001_00
       rect:
         serializedVersion: 2
-        x: 1717
-        y: 1388
+        x: 1557
+        y: 1255
         width: 154
         height: 154
       alignment: 9
@@ -226,8 +229,8 @@ TextureImporter:
       name: forest_002_00
       rect:
         serializedVersion: 2
-        x: 1873
-        y: 1502
+        x: 1713
+        y: 1369
         width: 136
         height: 40
       alignment: 9
@@ -247,8 +250,8 @@ TextureImporter:
       name: forest_002_01
       rect:
         serializedVersion: 2
-        x: 1873
-        y: 1460
+        x: 1851
+        y: 1364
         width: 136
         height: 40
       alignment: 9
@@ -268,8 +271,8 @@ TextureImporter:
       name: forest_002_02
       rect:
         serializedVersion: 2
-        x: 1873
-        y: 1418
+        x: 1713
+        y: 1327
         width: 136
         height: 40
       alignment: 9
@@ -289,8 +292,8 @@ TextureImporter:
       name: forest_004_00
       rect:
         serializedVersion: 2
-        x: 1947
-        y: 1376
+        x: 1925
+        y: 1322
         width: 72
         height: 40
       alignment: 9
@@ -373,8 +376,8 @@ TextureImporter:
       name: forest_007_00
       rect:
         serializedVersion: 2
-        x: 1873
-        y: 1344
+        x: 1851
+        y: 1290
         width: 72
         height: 72
       alignment: 9
@@ -394,8 +397,8 @@ TextureImporter:
       name: forest_008_00
       rect:
         serializedVersion: 2
-        x: 1557
-        y: 1379
+        x: 1896
+        y: 1406
         width: 136
         height: 136
       alignment: 9
@@ -554,6 +557,27 @@ TextureImporter:
       bones: []
       spriteID: 948d1df8e9f04f3e0800000000000000
       internalID: -2020973159090366391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_016_00
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 1411
+        width: 337
+        height: 104
+      alignment: 9
+      pivot: {x: 0.017804155, y: 0.24038461}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d447a46a1095860800000000000000
+      internalID: 7519042866597088590
       vertices: []
       indices: 
       edges: []

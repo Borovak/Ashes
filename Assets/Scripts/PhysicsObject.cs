@@ -11,6 +11,7 @@ public abstract class PhysicsObject : MonoBehaviour
     public float distance;
     public int hitBufferCount;
     public abstract bool canFly { get; }
+    public bool isGravityEnabled = true;
 
     public Vector2 targetVelocity;
     protected bool grounded;
@@ -64,7 +65,14 @@ public abstract class PhysicsObject : MonoBehaviour
         }
         if (_gameController.gameState != GameController.GameStates.Running) return;
         if (!PhysicsObject.PhysicsEnabled) return;
-        velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+        if (isGravityEnabled)
+        {
+            velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+        }
+        else
+        {
+            velocity.y = 0f;
+        }
         velocity.x = targetVelocity.x;
 
         grounded = false;

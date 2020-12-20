@@ -10,7 +10,7 @@ public class PlayerPlatformerController : PhysicsObject
     public static PlayerPlatformerController Instance;
     public float maxSpeed = 7f;
     public float jumpTakeOffSpeed = 3f;
-    public float rollSpeed = 1f;
+    public float dashSpeed = 1f;
     public float transitionTime = 1f;
     public bool isGrounded;
     public bool hasDoubleJump;
@@ -18,7 +18,7 @@ public class PlayerPlatformerController : PhysicsObject
     public override bool canFly => false;
 
     public bool freezeMovement;
-    public bool isRolling;
+    public bool isDashing;
     public GameObject landingPuffPrefab;
     public static Vector3 transitionMovement;
 
@@ -64,6 +64,7 @@ public class PlayerPlatformerController : PhysicsObject
         CheckIfLanding();
 
         Vector2 move = Vector2.zero;
+        isGravityEnabled = !isDashing;
         if (_gameController.gameState == GameController.GameStates.TransitionIn || _gameController.gameState == GameController.GameStates.TransitionOut)
         {
             transitionTime -= Time.deltaTime;
@@ -75,11 +76,14 @@ public class PlayerPlatformerController : PhysicsObject
             move.x = _inputs.movement.x;
             SpriteFlipping(ref move);
         }
-        else if (isRolling)
+        else if (isDashing)
         {
-            move.x = transform.localScale.x * rollSpeed;
+            move.x = transform.localScale.x * dashSpeed;
         }
-
+        if (grounded)
+        {            
+            _animator.SetBool("canRoll", true);
+        }
         _animator.SetBool("horizontalMoveDesired", Mathf.Abs(move.x) > 0.1);
         _animator.SetBool("grounded", grounded);
         _animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
@@ -111,6 +115,7 @@ public class PlayerPlatformerController : PhysicsObject
                 var landingPuff = GameObject.Instantiate(landingPuffPrefab);
                 landingPuff.transform.position = transform.position;
                 _mainCameraAnimator.SetTrigger("Shake");
+                _animator.SetBool("roll", false);
             }
             _doubleJumpPossible = hasDoubleJump;
         }
