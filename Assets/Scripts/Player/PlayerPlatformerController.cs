@@ -82,7 +82,7 @@ public class PlayerPlatformerController : PhysicsObject
         }
         if (grounded)
         {            
-            _animator.SetBool("canRoll", true);
+            _animator.SetBool("canDash", true);
         }
         _animator.SetBool("horizontalMoveDesired", Mathf.Abs(move.x) > 0.1);
         _animator.SetBool("grounded", grounded);
@@ -115,7 +115,7 @@ public class PlayerPlatformerController : PhysicsObject
                 var landingPuff = GameObject.Instantiate(landingPuffPrefab);
                 landingPuff.transform.position = transform.position;
                 _mainCameraAnimator.SetTrigger("Shake");
-                _animator.SetBool("roll", false);
+                _animator.SetBool("dash", false);
             }
             _doubleJumpPossible = hasDoubleJump;
         }
@@ -148,6 +148,6 @@ public class PlayerPlatformerController : PhysicsObject
     private void Dash()
     {
         if (!_lifeController.IsAlive) return;
-        _animator.SetTrigger("roll");
+        _animator.SetTrigger("dash");
     }
 }
