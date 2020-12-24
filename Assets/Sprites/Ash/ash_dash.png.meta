@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: 4abde39501611de46860d1513f24874c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3737410885849771803
+    second: ash_dash_00
+  - first:
+      213: 8514541546854588630
+    second: ash_dash_01
+  - first:
+      213: -6565320098164043702
+    second: ash_dash_02
+  - first:
+      213: -1210201635373709264
+    second: ash_dash_03
+  - first:
+      213: 4785358574528836582
+    second: ash_dash_04
+  - first:
+      213: 5539968327325423379
+    second: ash_dash_05
+  - first:
+      213: 6840190601604865186
+    second: ash_dash_06
+  - first:
+      213: -2555661942118146237
+    second: ash_dash_07
+  - first:
+      213: 7412232057226142845
+    second: ash_dash_08
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 192
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ash_dash_00
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 835
+        width: 137
+        height: 187
+      alignment: 9
+      pivot: {x: 1, y: 0.5508021}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1fe0c62663fdd330800000000000000
+      internalID: 3737410885849771803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ash_dash_01
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 815
+        width: 206
+        height: 267
+      alignment: 9
+      pivot: {x: 1, y: 0.5805243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d0a295cc6ab92670800000000000000
+      internalID: 8514541546854588630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ash_dash_02
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 644
+        width: 292
+        height: 378
+      alignment: 9
+      pivot: {x: 1, y: 0.56349206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a401330c72c43e4a0800000000000000
+      internalID: -6565320098164043702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ash_dash_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1046
+        width: 384
+        height: 487
+      alignment: 9
+      pivot: {x: 1, y: 0.52566737}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03804f84600843fe0800000000000000
+      internalID: -1210201635373709264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ash_dash_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1535
+        width: 508
+        height: 512
+      alignment: 9
+      pivot: {x: 1.007874, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e339a50542096240800000000000000
+      internalID: 4785358574528836582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ash_dash_05
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1535
+        width: 448
+        height: 512
+      alignment: 9
+      pivot: {x: 1.1428572, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 317952977dbe1ec40800000000000000
+      internalID: 5539968327325423379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ash_dash_06
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1024
+        width: 367
+        height: 509
+      alignment: 9
+      pivot: {x: 1.3460491, y: 0.502947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac9f9c7c1d3dee50800000000000000
+      internalID: 6840190601604865186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ash_dash_07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 561
+        width: 297
+        height: 483
+      alignment: 9
+      pivot: {x: 1.6632997, y: 0.48033127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f101e0107788cd0800000000000000
+      internalID: -2555661942118146237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ash_dash_08
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 1084
+        width: 228
+        height: 449
+      alignment: 9
+      pivot: {x: 2.1447368, y: 0.46993318}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d742abbc8c98dd660800000000000000
+      internalID: 7412232057226142845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

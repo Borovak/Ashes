@@ -3309,6 +3309,546 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40001.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.596639,0.981073</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,79,59,159</rect>
+                <key>scale9Paddings</key>
+                <rect>30,79,59,159</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40003.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.644068,0.962025</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,79,59,158</rect>
+                <key>scale9Paddings</key>
+                <rect>30,79,59,158</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40005.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.574627,0.913462</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>34,78,67,156</rect>
+                <key>scale9Paddings</key>
+                <rect>34,78,67,156</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40007.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.559748,0.859935</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>40,77,79,153</rect>
+                <key>scale9Paddings</key>
+                <rect>40,77,79,153</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40009.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.550562,0.799331</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>45,75,89,149</rect>
+                <key>scale9Paddings</key>
+                <rect>45,75,89,149</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40011.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.570652,0.802676</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>46,75,92,149</rect>
+                <key>scale9Paddings</key>
+                <rect>46,75,92,149</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40013.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.563158,0.802676</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>48,75,95,149</rect>
+                <key>scale9Paddings</key>
+                <rect>48,75,95,149</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40015.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.561856,0.805369</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>49,75,97,149</rect>
+                <key>scale9Paddings</key>
+                <rect>49,75,97,149</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40017.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.567839,0.820946</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>50,74,99,148</rect>
+                <key>scale9Paddings</key>
+                <rect>50,74,99,148</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40019.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.547264,0.812925</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>50,74,101,147</rect>
+                <key>scale9Paddings</key>
+                <rect>50,74,101,147</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40021.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.50495,0.800687</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,73,101,145</rect>
+                <key>scale9Paddings</key>
+                <rect>51,73,101,145</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40023.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.490196,0.794425</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,72,102,143</rect>
+                <key>scale9Paddings</key>
+                <rect>51,72,102,143</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40025.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.463415,0.787234</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,71,103,141</rect>
+                <key>scale9Paddings</key>
+                <rect>51,71,103,141</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40027.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.453659,0.781022</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,69,103,137</rect>
+                <key>scale9Paddings</key>
+                <rect>51,69,103,137</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40029.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.455882,0.807273</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,69,102,137</rect>
+                <key>scale9Paddings</key>
+                <rect>51,69,102,137</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40031.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.475248,0.841155</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,69,101,139</rect>
+                <key>scale9Paddings</key>
+                <rect>51,69,101,139</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40033.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.467662,0.856631</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>50,70,101,139</rect>
+                <key>scale9Paddings</key>
+                <rect>50,70,101,139</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40035.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.472362,0.882143</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>50,70,99,140</rect>
+                <key>scale9Paddings</key>
+                <rect>50,70,99,140</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40037.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.477157,0.91844</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>49,71,99,141</rect>
+                <key>scale9Paddings</key>
+                <rect>49,71,99,141</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40039.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.471795,0.940351</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>49,71,97,143</rect>
+                <key>scale9Paddings</key>
+                <rect>49,71,97,143</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40041.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.450777,0.965278</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>48,72,97,144</rect>
+                <key>scale9Paddings</key>
+                <rect>48,72,97,144</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40043.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.434555,0.982877</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>48,73,95,146</rect>
+                <key>scale9Paddings</key>
+                <rect>48,73,95,146</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40045.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.414894,0.993311</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>47,75,94,149</rect>
+                <key>scale9Paddings</key>
+                <rect>47,75,94,149</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40047.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.459302,0.990099</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>43,76,86,151</rect>
+                <key>scale9Paddings</key>
+                <rect>43,76,86,151</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40049.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.523179,0.990196</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>38,77,75,153</rect>
+                <key>scale9Paddings</key>
+                <rect>38,77,75,153</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40051.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.610687,0.993485</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>33,77,65,153</rect>
+                <key>scale9Paddings</key>
+                <rect>33,77,65,153</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40053.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.688525,0.987013</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,77,61,154</rect>
+                <key>scale9Paddings</key>
+                <rect>31,77,61,154</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40055.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.719008,0.986885</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,76,61,153</rect>
+                <key>scale9Paddings</key>
+                <rect>30,76,61,153</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40057.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.694215,0.986711</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,75,61,151</rect>
+                <key>scale9Paddings</key>
+                <rect>30,75,61,151</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40059.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.699187,0.979661</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,74,61,147</rect>
+                <key>scale9Paddings</key>
+                <rect>31,74,61,147</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40061.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.677419,0.986014</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,72,62,143</rect>
+                <key>scale9Paddings</key>
+                <rect>31,72,62,143</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40063.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.646154,0.971119</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>33,69,65,139</rect>
+                <key>scale9Paddings</key>
+                <rect>33,69,65,139</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40065.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.616667,0.975862</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,73,60,145</rect>
+                <key>scale9Paddings</key>
+                <rect>30,73,60,145</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40067.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.618644,0.976821</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,76,59,151</rect>
+                <key>scale9Paddings</key>
+                <rect>30,76,59,151</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40069.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.613445,0.980645</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,78,59,155</rect>
+                <key>scale9Paddings</key>
+                <rect>30,78,59,155</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Jump40071.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.613445,0.984177</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,79,59,158</rect>
+                <key>scale9Paddings</key>
+                <rect>30,79,59,158</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">../../../../../../Desktop/TestMixamoMerge/Render/Roll0001.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -4788,6 +5328,42 @@
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/GroundBreak0057.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/GroundBreak0059.png</filename>
             <filename>../../../../../../Desktop/TestMixamoMerge/Render/GroundBreak0061.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40001.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40003.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40005.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40007.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40009.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40011.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40013.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40015.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40017.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40019.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40021.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40023.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40025.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40027.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40029.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40031.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40033.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40035.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40037.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40039.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40041.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40043.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40045.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40047.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40049.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40051.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40053.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40055.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40057.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40059.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40061.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40063.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40065.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40067.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40069.png</filename>
+            <filename>../../../../../../Desktop/TestMixamoMerge/Render/Jump40071.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

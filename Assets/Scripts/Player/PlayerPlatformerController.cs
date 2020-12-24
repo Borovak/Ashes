@@ -81,10 +81,14 @@ public class PlayerPlatformerController : PhysicsObject
             move.x = transform.localScale.x * dashSpeed;
         }
         if (grounded)
-        {            
+        {
             _animator.SetBool("canDash", true);
         }
         _animator.SetBool("horizontalMoveDesired", Mathf.Abs(move.x) > 0.1);
+        if (!grounded)
+        {
+            _animator.SetBool("skipLand", _timeSinceGrounded < 0.5f);
+        }
         _animator.SetBool("grounded", grounded);
         _animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
         _animator.SetFloat("velocityY", velocity.y);
@@ -92,7 +96,6 @@ public class PlayerPlatformerController : PhysicsObject
         targetVelocity = move * maxSpeed;
         isGrounded = grounded;
         _timeSinceGrounded = isGrounded ? 0f : _timeSinceGrounded + Time.deltaTime;
-        _animator.SetFloat("timeSinceGrounded", _timeSinceGrounded);
     }
 
     private void SpriteFlipping(ref Vector2 move)
