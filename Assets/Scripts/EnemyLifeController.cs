@@ -47,6 +47,6 @@ public class EnemyLifeController : LifeController
     protected override void OnDeath()
     {
         if (!DropController.GetDrops(transform.position, id, out var drops)) return;
-        Debug.Log($"Enemy {gameObject.name} drops {drops.Count} items: ({string.Join(",", drops.Select(x => x.name))})");
+        //Debug.Log($"Enemy {gameObject.name} drops {drops.Count} items: ({string.Join(",", drops.Select(x => x.name))})");
     }
 }

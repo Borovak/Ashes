@@ -27,6 +27,8 @@ TagManager:
   - GameUI
   - Shop
   - Campsite
+  - EnvironmentContainer
+  - DeathScreen
   layers:
   - Default
   - TransparentFX

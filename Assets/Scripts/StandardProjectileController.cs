@@ -16,6 +16,8 @@ public class StandardProjectileController : MonoBehaviour
     public Transform particleSystemTransform;
     public GameObject splashPrefab;
     public Transform target;
+    public bool isHoming;
+    public AudioClip[] contactSounds;
 
     private List<LayerMask> _layerMaskToConsider;
     private Rigidbody2D _rb;
@@ -40,15 +42,13 @@ public class StandardProjectileController : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
-        if (target != null)
+        if (target != null && isHoming)
         {
             direction = (target.position - transform.position).normalized;
             var a = GetAngle();
             transform.rotation = Quaternion.Slerp(transform.rotation, a, Time.deltaTime * angleChangeRate);
-            //UpdateAngle(false);
         }
         _rb.velocity = direction * speed;
-        //transform.Translate(direction * speed * Time.deltaTime);
         foreach (var layer in _layerMaskToConsider)
         {
             var enemiesHit = new HashSet<GameObject>();
@@ -64,19 +64,10 @@ public class StandardProjectileController : MonoBehaviour
                     var splash = GameObject.Instantiate<GameObject>(splashPrefab, transform.position, Quaternion.identity);
                     GameObject.Destroy(splash, 2f);
                 }
+                GlobalFunctions.PlayRandomSound(contactSounds, transform.position);
                 GameObject.Destroy(gameObject);
                 return;
             }
-        }
-    }
-
-    private void UpdateAngle(bool instantChange)
-    {
-        desiredAngle = GlobalFunctions.GetAngleFromPoints(Vector3.zero, direction);
-        currentAngle = instantChange ? desiredAngle : currentAngle + (angleChangeRate * Time.deltaTime * (desiredAngle > currentAngle ? 1f : -1f));
-        if (particleSystemTransform != null)
-        {
-            particleSystemTransform.localEulerAngles = new Vector3(0f, 0f, currentAngle);
         }
     }
 

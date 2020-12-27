@@ -25,11 +25,14 @@ public class ProjectileShooterController : MonoBehaviour
     public float minAngle = -180f;
     public float maxAngle = 180f;
     public Vector3 shootingDirection;
+    public ParticleSystem shootingParticleSystem;
+    public AudioClip shootingSound;
 
     private Transform _playerTarget;
     private Vector3 _shootsFrom => shootsFromTransform != null ? shootsFromTransform.position : transform.position;
     private bool _targetInSight;
     private Animator _animator;
+    private bool _shouldShoot;
 
     // Start is called before the first frame update
     void Start()
@@ -68,17 +71,23 @@ public class ProjectileShooterController : MonoBehaviour
             if (hitPlayer.distance > 0 && hitPlayer.distance < visionRange && (hitTilemap.distance == 0 || hitTilemap.distance > hitPlayer.distance) && _targetInSight)
             {
                 shootingDirection = (_playerTarget.position - _shootsFrom).normalized;
+                _shouldShoot = true;
+            }
+            else
+            {
+                _shouldShoot = false;
             }
         }
         else
         {
             shootingDirection = forcedDirection;
+            _shouldShoot = true;
         }
         if (_animator != null)
         {
             _animator.SetBool("targetInSight", _targetInSight);
             _animator.SetFloat("chargeSpeed", projectilesPerSecond);
-            _animator.SetBool("shoot", true);
+            _animator.SetBool("shoot", _shouldShoot);
         }
     }
 
@@ -93,6 +102,9 @@ public class ProjectileShooterController : MonoBehaviour
         projectileController.canHitPlayer = canHitPlayer;
         projectileController.damage = projectileDamage;
         projectileController.target = _playerTarget;
+        projectileController.isHoming = homingProjectiles;
+        shootingParticleSystem.Play();
+        GlobalFunctions.PlaySound(shootingSound, _shootsFrom);
     }
 
     void OnDrawGizmos()

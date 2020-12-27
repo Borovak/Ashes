@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: 69553e4cffdd0bc4c9653a4625dc68d7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6950059575452592841
+    second: enemy_forestLarva (1)
+  - first:
+      213: -1503266146504323559
+    second: enemy_forestLarva (2)
+  - first:
+      213: 1569952130111447019
+    second: enemy_forestLarva (3)
+  - first:
+      213: 829305432731924786
+    second: enemy_forestLarva (4)
+  - first:
+      213: 4105797925060945198
+    second: enemy_forestLarva (5)
+  - first:
+      213: 5509605782723495690
+    second: enemy_forestLarva (6)
+  - first:
+      213: -7286701641800737992
+    second: enemy_forestLarva (7)
+  - first:
+      213: -6687990099183924729
+    second: enemy_forestLarva (8)
+  - first:
+      213: 6152542815562399677
+    second: enemy_forestLarva (9)
+  - first:
+      213: 3605657932987431797
+    second: enemy_forestLarva (10)
+  - first:
+      213: 607331374503558827
+    second: enemy_forestLarva (11)
+  - first:
+      213: 1990957097867618788
+    second: enemy_forestLarva (12)
+  - first:
+      213: 7937880708468410118
+    second: enemy_forestLarva (13)
+  - first:
+      213: 2567102963021580710
+    second: enemy_forestLarva (14)
+  - first:
+      213: 5854635375847621361
+    second: enemy_forestLarva (15)
+  - first:
+      213: 7201979328098326833
+    second: enemy_forestLarva (16)
+  - first:
+      213: 1512127687205297917
+    second: enemy_forestLarva (17)
+  - first:
+      213: -4330226677144056220
+    second: enemy_forestLarva (18)
+  - first:
+      213: -3053307971733811492
+    second: enemy_forestLarva (19)
+  - first:
+      213: 7206849241885267744
+    second: enemy_forestLarva (20)
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 192
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: enemy_forestLarva (1)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1012
+        width: 453
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04225352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca67a26c52937060800000000000000
+      internalID: 6950059575452592841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (2)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 868
+        width: 453
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04225352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e4db68763532be0800000000000000
+      internalID: -1503266146504323559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (3)
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 580
+        width: 452
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04225352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef19a5f42799c510800000000000000
+      internalID: 1569952130111447019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (4)
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 868
+        width: 453
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04225352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239b940b5e8428b00800000000000000
+      internalID: 829305432731924786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (5)
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1156
+        width: 453
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04166667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e252bca9579baf830800000000000000
+      internalID: 4105797925060945198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (6)
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 1302
+        width: 454
+        height: 145
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04137931}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a070caba44d067c40800000000000000
+      internalID: 5509605782723495690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (7)
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1449
+        width: 455
+        height: 147
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04081633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b1630a67f60ea90800000000000000
+      internalID: -7286701641800737992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (8)
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1747
+        width: 456
+        height: 149
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04026846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a00d4707c7f23a0800000000000000
+      internalID: -6687990099183924729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (9)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1596
+        width: 456
+        height: 149
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04026846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf7afad719326550800000000000000
+      internalID: 6152542815562399677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (10)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1898
+        width: 457
+        height: 149
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04026846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57bf84559ced90230800000000000000
+      internalID: 3605657932987431797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (11)
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1898
+        width: 456
+        height: 149
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04026846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baefb36daacad6800800000000000000
+      internalID: 607331374503558827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (12)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1747
+        width: 456
+        height: 149
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04026846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e921759eec41ab10800000000000000
+      internalID: 1990957097867618788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (13)
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1598
+        width: 455
+        height: 147
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04081633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6078fa99274092e60800000000000000
+      internalID: 7937880708468410118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (14)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1449
+        width: 454
+        height: 145
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04137931}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a901c43b8e20a320800000000000000
+      internalID: 2567102963021580710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (15)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1302
+        width: 454
+        height: 145
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04137931}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f245daead7df3150800000000000000
+      internalID: 5854635375847621361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (16)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1156
+        width: 453
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04166667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 139d10b8a0292f360800000000000000
+      internalID: 7201979328098326833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (17)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 723
+        width: 452
+        height: 143
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04195804}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe97e2be182cf410800000000000000
+      internalID: 1512127687205297917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (18)
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 724
+        width: 452
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04225352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46e88e797c1f7e3c0800000000000000
+      internalID: -4330226677144056220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (19)
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1012
+        width: 453
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04225352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde00faa39870a5d0800000000000000
+      internalID: -3053307971733811492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestLarva (20)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1012
+        width: 453
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04225352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0275d54b33fd30460800000000000000
+      internalID: 7206849241885267744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

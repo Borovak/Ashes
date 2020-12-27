@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using System;
 using UnityEngine.Tilemaps;
 using System.Reflection;
+using System.Linq;
 
 public static class LevelDesigner
 {
@@ -33,8 +34,8 @@ public static class LevelDesigner
     {
         Utils.ClearLogConsole();
         //Find or create folders
-        var chambersFolder = FindCreateFolder("ChambersFolder", "Chambers");
-        var savePointsFolder = FindCreateFolder("SavePointsFolder", "SavePoints");
+        var chambersFolder = FindCreateFolder("ChambersFolder", "Chambers", false);
+        var savePointsFolder = FindCreateFolder("SavePointsFolder", "SavePoints", true);
         //Reading xml layout
         XElement xeRoot = null;
         try
@@ -51,7 +52,7 @@ public static class LevelDesigner
         //Finding tile size
         var scale = 2f / Convert.ToSingle(xeRoot.Element("Ash").Attribute("height").Value);
         //Generating rooms
-        var chamberResource = Resources.Load<GameObject>("Chamber");
+        var chamberPrefab = Resources.Load<GameObject>("Chamber");
         var tiles = GetTiles();
         var index = 0;
         foreach (var xeRoom in xeRoot.Element("Rooms").Elements("Room"))
@@ -78,9 +79,12 @@ public static class LevelDesigner
             if (!LoadedAttribute<float>.Load(xeRoom.Attribute("terrainLightColorG"), out var terrainLightColorG)) return;
             if (!LoadedAttribute<float>.Load(xeRoom.Attribute("terrainLightColorB"), out var terrainLightColorB)) return;
             //Creating game object
-            var chamberGameObject = GameObject.Instantiate<GameObject>(chamberResource, chambersFolder.transform);
-            if (chamberGameObject == null) throw (new Exception($"Chamber resource not found"));
-            var gridGameObject = new List<GameObject>(GameObject.FindGameObjectsWithTag("Grid")).Find(g => g.transform.IsChildOf(chamberGameObject.transform));
+            if (!TryGetExistingChamber(chamberGuid, out var chamberGameObject))
+            {
+                chamberGameObject = GameObject.Instantiate<GameObject>(chamberPrefab, chambersFolder.transform);
+                if (chamberGameObject == null) throw (new Exception($"Chamber resource not found"));
+            }
+            var gridGameObject = GlobalFunctions.FindChildrenWithTag(chamberGameObject, "Grid", false).FirstOrDefault();
             if (gridGameObject == null) throw (new Exception($"Grid not found"));
             var tilemap = gridGameObject.GetComponentInChildren<Tilemap>();
             if (tilemap == null) throw (new Exception($"Tilemap not found"));
@@ -144,8 +148,21 @@ public static class LevelDesigner
         Debug.Log($"Chambers updated successfully");
 
     }
-    
-    private static GameObject FindCreateFolder(string tag, string name)
+
+    private static bool TryGetExistingChamber(string guid, out GameObject chamberGameObject)
+    {
+        chamberGameObject = null;
+        foreach (var chamberLoopItem in GameObject.FindGameObjectsWithTag("Chamber"))
+        {
+            if (!chamberLoopItem.TryGetComponent<ChamberController>(out var chamberControllerLoopItem)) continue;
+            if (chamberControllerLoopItem.chamberGuid != guid) continue;
+            chamberGameObject = chamberLoopItem;
+            break;
+        }
+        return chamberGameObject != null;
+    }
+
+    private static GameObject FindCreateFolder(string tag, string name, bool deleteContent)
     {
         var folder = GameObject.FindGameObjectWithTag(tag);
         if (folder == null)
@@ -156,9 +173,12 @@ public static class LevelDesigner
         else
         {
             //Deleting previous objects
-            while (folder.transform.childCount != 0)
+            if (deleteContent)
             {
-                GameObject.DestroyImmediate(folder.transform.GetChild(0).gameObject);
+                while (folder.transform.childCount != 0)
+                {
+                    GameObject.DestroyImmediate(folder.transform.GetChild(0).gameObject);
+                }
             }
         }
         return folder;

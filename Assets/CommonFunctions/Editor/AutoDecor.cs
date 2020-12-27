@@ -7,10 +7,9 @@ using System.Xml.Linq;
 
 public class AutoDecor
 {
-    const string TAG_CHAMBERCONTAINER = "ChamberContainer";
     const string TAG_CHAMBER = "Chamber";
     const string TAG_DECORCONTAINER = "DecorContainer";
-    const string NAME_DECORCONTAINER = "Decor";
+    const string NAME_DECORCONTAINER = "AutoDecor";
 
     private enum FilterValues
     {
@@ -111,19 +110,12 @@ public class AutoDecor
 
     private static void ManageDecorContainer(ChamberController chamberController, out GameObject decorContainer)
     {
-        var chamberContainer = GameObject.FindGameObjectsWithTag(TAG_CHAMBERCONTAINER).ToList().FirstOrDefault<GameObject>(x => x.name == chamberController.chamberName);
-        if (chamberContainer == null)
-        {
-            Debug.Log($"Chamber container {chamberController.chamberName} not found, creating new");
-            chamberContainer = new GameObject(chamberController.chamberName);
-            chamberContainer.tag = TAG_CHAMBERCONTAINER;
-        }
-        decorContainer = GlobalFunctions.FindChildrenWithTag(chamberContainer, TAG_DECORCONTAINER, false).FirstOrDefault();
+        decorContainer = GlobalFunctions.FindChildrenWithTag(chamberController.gameObject, TAG_DECORCONTAINER, false).FirstOrDefault();
         if (decorContainer == null)
         {
             Debug.Log($"Decor container not found, creating new");
             decorContainer = new GameObject(NAME_DECORCONTAINER);
-            decorContainer.transform.parent = chamberContainer.transform;
+            decorContainer.transform.parent = chamberController.gameObject.transform;
             decorContainer.tag = TAG_DECORCONTAINER;
         }
         else

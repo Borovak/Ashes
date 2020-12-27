@@ -7,6 +7,7 @@ public class DestroyOnLayoutImpact : MonoBehaviour
     public bool alsoOnWater;
     public GameObject splashPrefab;
     public GameObject waterSplashPrefab;
+    public AudioClip[] contactSounds;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class DestroyOnLayoutImpact : MonoBehaviour
                 var splash = GameObject.Instantiate<GameObject>(splashPrefabUsed, transform.position, Quaternion.identity);
                 GameObject.Destroy(splash, 2f);
             }
+            GlobalFunctions.PlayRandomSound(contactSounds, transform.position);
             GameObject.Destroy(gameObject);
         }
     }

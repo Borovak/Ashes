@@ -8,6 +8,7 @@ public class PlayerLifeController : LifeController
 {
     public int hp;
     public int maxHp;
+    public AudioClip deathMusic;
 
     protected override void AfterStart()
     {
@@ -44,6 +45,8 @@ public class PlayerLifeController : LifeController
 
     protected override void OnDeath()
     {
+        LeanAudio.play(deathMusic);
+        GameController.deathScreen.SetActive(true);
     }
 
     private void OnGameSaved(bool healOnSave)

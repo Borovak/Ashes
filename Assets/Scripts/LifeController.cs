@@ -36,6 +36,7 @@ public abstract class LifeController : MonoBehaviour
     public float HealthRatio => Convert.ToSingle(GetHp()) / Convert.ToSingle(GetMaxHp());
     public ParticleSystem blood;
     public GameObject contactPrefab;
+    public AudioClip[] contactSounds;
     public Vector2 bloodOffset;
 
     protected bool _isPlayer;
@@ -83,7 +84,7 @@ public abstract class LifeController : MonoBehaviour
             {
                 animator.SetTrigger("dying");
             }
-            else if (destroyOnDeath)
+            if (destroyOnDeath)
             {
                 GameObject.Destroy(gameObject);
             }
@@ -158,6 +159,7 @@ public abstract class LifeController : MonoBehaviour
 
     public void TakeDamage(int damage, string attackerName, Vector2 hitPosition, bool bypassShield = false)
     {
+        if (_dead) return;
         if (_shieldController != null && !bypassShield)
         {
             if (_shieldController.AbsorbHit(damage, out var newDamage)) return;
@@ -172,9 +174,13 @@ public abstract class LifeController : MonoBehaviour
         {
             Instantiate(contactPrefab, hitPosition, Quaternion.identity);
         }
+        if (hitPosition != Vector2.negativeInfinity)
+        {
+            GlobalFunctions.PlayRandomSound(contactSounds, hitPosition);
+        }
         SetHp(GetHp() - damage);
         _damageFlashTimeRemaining = _damageFlashTimeTotal;
-        Debug.Log($"{attackerName} hits {gameObject.name} for {damage} damage");
+        //Debug.Log($"{attackerName} hits {gameObject.name} for {damage} damage");
     }
 
     public void Heal(int value)

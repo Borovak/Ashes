@@ -414,13 +414,16 @@ MonoBehaviour:
   _waterColor: {r: 0, g: 0, b: 1, a: 1}
   _acidColor: {r: 0, g: 1, b: 0, a: 1}
   recurrentDamageDelay: 1
-  destroyOnDeath: 1
+  destroyOnDeath: 0
   blood: {fileID: 0}
   contactPrefab: {fileID: 1963103172379129743, guid: 3ca90232d60df4d489ff5adf4c742cba,
     type: 3}
+  contactSounds:
+  - {fileID: 8300000, guid: c6784fc88c11d2a45bf0096ef5821fc3, type: 3}
   bloodOffset: {x: 0, y: 0}
   hp: 0
   maxHp: 0
+  deathMusic: {fileID: 8300000, guid: b6f1478fb19640b4b9f97bd1510bddbd, type: 3}
 --- !u!114 &483266623256006735
 MonoBehaviour:
   m_ObjectHideFlags: 0

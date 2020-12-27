@@ -185,6 +185,9 @@ MonoBehaviour:
   splashPrefab: {fileID: 4901821205327565972, guid: ed3bc4c40f52f994baa94747616f0306,
     type: 3}
   target: {fileID: 0}
+  isHoming: 0
+  contactSounds:
+  - {fileID: 8300000, guid: 4d65241bf4f4a3c48b5846fb44ef3d83, type: 3}
 --- !u!114 &5743095293072490966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +204,8 @@ MonoBehaviour:
   splashPrefab: {fileID: 4901821205327565972, guid: ed3bc4c40f52f994baa94747616f0306,
     type: 3}
   waterSplashPrefab: {fileID: 0}
+  contactSounds:
+  - {fileID: 8300000, guid: 4d65241bf4f4a3c48b5846fb44ef3d83, type: 3}
 --- !u!50 &6399641348450652034
 Rigidbody2D:
   serializedVersion: 4

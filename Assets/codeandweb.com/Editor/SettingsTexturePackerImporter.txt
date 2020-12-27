@@ -16,6 +16,7 @@ tpsheetFileNames:
 - Assets/Sprites/Contacts/contacts.tpsheet
 - Assets/Sprites/Decor/Flag1/flag1.tpsheet
 - Assets/Sprites/Enemies/bosswolf.tpsheet
+- Assets/Sprites/Enemies/enemy_forestLarva.tpsheet
 - Assets/Sprites/Enemies/enemy_forestSpitter.tpsheet
 - Assets/Sprites/Ground/forest.tpsheet
 - Assets/Sprites/GroundOverlay/CathedralFloor.tpsheet
@@ -38,6 +39,7 @@ textureFileNames:
 - Assets/Sprites/Contacts/contacts.png
 - Assets/Sprites/Decor/Flag1/waving.png
 - Assets/Sprites/Enemies/bosswolf.png
+- Assets/Sprites/Enemies/enemy_forestLarva.png
 - Assets/Sprites/Enemies/enemy_forestSpitter.png
 - Assets/Sprites/Ground/forest.png
 - Assets/Sprites/GroundOverlay/CathedralFloor.png
@@ -46,6 +48,7 @@ textureFileNames:
 - Assets/Sprites/UI/SaveIcon/SaveIcon.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 

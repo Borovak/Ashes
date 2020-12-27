@@ -28,26 +28,39 @@ public class ChamberController : MonoBehaviour
     [SerializeField] public float colorShiftR;
     [SerializeField] public float colorShiftG;
     [SerializeField] public float colorShiftB;
+    public AudioClip ambientSound;
+
 
 
     private static LocationInformation.Zone _lastZoneEntered;
-    private AudioClip _ambientSound;
     private AudioSource _audioSource;
     private Transform _enemyFolder;
     private VirtualCameraPlayerBinding _virtualCameraPlayerBinding;
     private bool _isPlayerInsideChamber;
-    private GameObject _container;
+    private List<GameObject> _containersToEnableDisable;
 
     // Start is called before the first frame update
     void Start()
     {
+        _audioSource = gameObject.AddComponent<AudioSource>();
         _virtualCameraPlayerBinding = GetComponentInChildren<VirtualCameraPlayerBinding>();
         _enemyFolder = new GameObject("Enemies").transform;
         _enemyFolder.parent = transform;
         var tilemapRenderer = GetComponentInChildren<TilemapRenderer>();
         tilemapRenderer.enabled = false;
-        _container = GameObject.FindGameObjectsWithTag("ChamberContainer").FirstOrDefault(x => x.name == gameObject.name);
-        _container?.SetActive(false);
+        //Find containers to enable/disable
+        var tags = new[] { "DecorContainer", "EnvironmentContainer" };
+        _containersToEnableDisable = new List<GameObject>();
+        foreach (var tag in tags)
+        {
+            var obj = GameObject.FindGameObjectsWithTag("DecorContainer").FirstOrDefault(x => x.transform.parent.name == gameObject.name);
+            if (obj == null) continue;
+            _containersToEnableDisable.Add(obj);
+        }
+        foreach (var container in _containersToEnableDisable)
+        {
+            container?.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -62,7 +75,11 @@ public class ChamberController : MonoBehaviour
             {
                 GameObject.Destroy(enemy);
             }
-            _container?.SetActive(false);
+            foreach (var container in _containersToEnableDisable)
+            {
+                container?.SetActive(false);
+            }
+            _audioSource.Stop();
         }
         else if (!_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
         {
@@ -76,7 +93,10 @@ public class ChamberController : MonoBehaviour
             {
                 enemy.Instantiate(_enemyFolder, position, size, scale);
             }
-            _container?.SetActive(true);
+            foreach (var container in _containersToEnableDisable)
+            {
+                container?.SetActive(true);
+            }
             Apply();
         }
         else return;
@@ -85,11 +105,10 @@ public class ChamberController : MonoBehaviour
 
     void Apply()
     {
-        if (_ambientSound != null)
+        if (ambientSound != null)
         {
-            _audioSource = gameObject.AddComponent<AudioSource>();
             _audioSource.loop = true;
-            _audioSource.clip = _ambientSound;
+            _audioSource.clip = ambientSound;
             _audioSource.Play();
         }
         GlobalLightController.UpdateLights(BackgroundLightIntensity, BackgroundLightColor, TerrainLightIntensity, TerrainLightColor);

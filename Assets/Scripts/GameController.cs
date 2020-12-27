@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     public GameObject playerPrefab;
     public GameStates gameState;
     public float gameTime;
+    public static GameObject deathScreen;
 
     private FadeInOutController _fadeInOutController;
     private CinemachineVirtualCamera _virtualCamera;
@@ -30,6 +31,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        deathScreen = GameObject.FindGameObjectWithTag("DeathScreen");
         _fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
         _fadeInOutController.FadeOutCompleted += SpawnPlayer;
         DataHandling.Init();
@@ -59,6 +61,7 @@ public class GameController : MonoBehaviour
         {
             Destroy(player);
         }
+        deathScreen.SetActive(false);
         var playerSpawnPosition = Vector3.zero;
         if (SaveSystem.LastLoadedSave.SavePointGuid != string.Empty)
         {

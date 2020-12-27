@@ -129,4 +129,17 @@ public static class GlobalFunctions
         inRads = inRads < 0 ? Math.Abs(inRads) : 2 * Math.PI - inRads;
         return 360f - Convert.ToSingle((180 / Math.PI) * inRads);
     }
+
+    public static void PlaySound(AudioClip audioClip, Vector3 position)
+    {
+        if (audioClip == null) return;
+        LeanAudio.playClipAt(audioClip, position);
+    }
+
+    public static void PlayRandomSound(AudioClip[] audioClips, Vector3 position)
+    {
+        if (audioClips.Length == 0) return;
+        var index = UnityEngine.Random.Range(0, audioClips.Length);
+        LeanAudio.playClipAt(audioClips[index], position);
+    }
 }
