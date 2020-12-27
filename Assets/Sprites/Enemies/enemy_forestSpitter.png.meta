@@ -41,6 +41,114 @@ TextureImporter:
   - first:
       213: 8929340682826928145
     second: enemy_forestSpitter_core
+  - first:
+      213: -5516019591568886703
+    second: enemy_forestSpitter_back (1)
+  - first:
+      213: 6725069527548766850
+    second: enemy_forestSpitter_back (2)
+  - first:
+      213: -8161780309200284606
+    second: enemy_forestSpitter_back (3)
+  - first:
+      213: -2971351513276836888
+    second: enemy_forestSpitter_back (4)
+  - first:
+      213: 8920763023310549048
+    second: enemy_forestSpitter_back (5)
+  - first:
+      213: -6650970391286463240
+    second: enemy_forestSpitter_back (6)
+  - first:
+      213: -8805325746644504141
+    second: enemy_forestSpitter_back (7)
+  - first:
+      213: 5155174419095269181
+    second: enemy_forestSpitter_back (8)
+  - first:
+      213: -3189259786787411407
+    second: enemy_forestSpitter_back (9)
+  - first:
+      213: -1657606563776059595
+    second: enemy_forestSpitter_back (10)
+  - first:
+      213: 4468825899337273828
+    second: enemy_forestSpitter_back (11)
+  - first:
+      213: 2275257345992179213
+    second: enemy_forestSpitter_back (12)
+  - first:
+      213: 2611468907055762202
+    second: enemy_forestSpitter_core (1)
+  - first:
+      213: -5026981709474639404
+    second: enemy_forestSpitter_core (2)
+  - first:
+      213: -6666966103922400565
+    second: enemy_forestSpitter_core (3)
+  - first:
+      213: -5848162653258364754
+    second: enemy_forestSpitter_core (4)
+  - first:
+      213: 5328339346306093518
+    second: enemy_forestSpitter_core (5)
+  - first:
+      213: 5585985793273116218
+    second: enemy_forestSpitter_core (6)
+  - first:
+      213: -7850263480327797762
+    second: enemy_forestSpitter_core (7)
+  - first:
+      213: -7659635638680676708
+    second: enemy_forestSpitter_core (8)
+  - first:
+      213: -3079402913685320429
+    second: enemy_forestSpitter_core (9)
+  - first:
+      213: 6167417264773495986
+    second: enemy_forestSpitter_core (10)
+  - first:
+      213: 2671054572774916577
+    second: enemy_forestSpitter_core (11)
+  - first:
+      213: 8145588670945531838
+    second: enemy_forestSpitter_core (12)
+  - first:
+      213: -4354176649004461779
+    second: enemy_forestSpitter_front (1)
+  - first:
+      213: 1748908953466431353
+    second: enemy_forestSpitter_front (2)
+  - first:
+      213: 5880650996411670598
+    second: enemy_forestSpitter_front (3)
+  - first:
+      213: 5946507050761143666
+    second: enemy_forestSpitter_front (4)
+  - first:
+      213: 7085514027636192362
+    second: enemy_forestSpitter_front (5)
+  - first:
+      213: 5904104680881382564
+    second: enemy_forestSpitter_front (6)
+  - first:
+      213: -9201313073937666523
+    second: enemy_forestSpitter_front (7)
+  - first:
+      213: -7354205760779684181
+    second: enemy_forestSpitter_front (8)
+  - first:
+      213: 7839917342844577722
+    second: enemy_forestSpitter_front (9)
+  - first:
+      213: -6421109568843419802
+    second: enemy_forestSpitter_front (10)
+  - first:
+      213: 725489246328227295
+    second: enemy_forestSpitter_front (11)
+  - first:
+      213: 2218778623806506152
+    second: enemy_forestSpitter_front (12)
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,274 +238,757 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy_forestSpitter_base (1)
+      name: enemy_forestSpitter_back (1)
       rect:
         serializedVersion: 2
-        x: 515
-        y: 1896
+        x: 700
+        y: 620
+        width: 202
+        height: 107
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.056074765}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 154f07618692373b0800000000000000
+      internalID: -5516019591568886703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (2)
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 512
+        width: 202
+        height: 106
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.056603774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a2957ba1f345d50800000000000000
+      internalID: 6725069527548766850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (3)
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 404
+        width: 202
+        height: 106
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.056603774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244d65f3d088bbe80800000000000000
+      internalID: -8161780309200284606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (4)
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 395
+        width: 202
+        height: 106
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.056603774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e39054aa83a3c6d0800000000000000
+      internalID: -2971351513276836888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (5)
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 371
+        width: 202
+        height: 106
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.056603774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8307dd994baeccb70800000000000000
+      internalID: 8920763023310549048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (6)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 154
+        width: 202
+        height: 105
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.057142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f4cabfdaa103b3a0800000000000000
+      internalID: -6650970391286463240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (7)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 48
+        width: 202
+        height: 104
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.057692308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b137a3d2e23dc580800000000000000
+      internalID: -8805325746644504141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (8)
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 155
+        width: 202
+        height: 104
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.057692308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3faa5522dbda8740800000000000000
+      internalID: 5155174419095269181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (9)
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 265
+        width: 202
+        height: 104
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.057692308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a29101f197db3d0800000000000000
+      internalID: -3189259786787411407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (10)
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 50
+        width: 202
+        height: 103
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.058252428}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 537a5c4dc9ffef8e0800000000000000
+      internalID: -1657606563776059595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (11)
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 160
+        width: 202
+        height: 103
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.058252428}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e150158a75740e30800000000000000
+      internalID: 4468825899337273828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_back (12)
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 291
+        width: 202
+        height: 102
+      alignment: 9
+      pivot: {x: 0.34653464, y: 0.05882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e36785086539f10800000000000000
+      internalID: 2275257345992179213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (1)
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 479
+        width: 217
+        height: 249
+      alignment: 9
+      pivot: {x: 0.47926268, y: 0.01606426}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b4903822dcd3420800000000000000
+      internalID: 2611468907055762202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (2)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 261
+        width: 217
+        height: 248
+      alignment: 9
+      pivot: {x: 0.49308756, y: 0.016129032}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d1d062f4c29c3ab0800000000000000
+      internalID: -5026981709474639404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (3)
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 503
+        width: 219
+        height: 244
+      alignment: 9
+      pivot: {x: 0.4977169, y: 0.01639344}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc2a22ec6ad2a73a0800000000000000
+      internalID: -6666966103922400565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (4)
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 729
+        width: 222
+        height: 239
+      alignment: 9
+      pivot: {x: 0.4864865, y: 0.0167364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea844df3d0727dea0800000000000000
+      internalID: -5848162653258364754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (5)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 511
+        width: 227
+        height: 234
+      alignment: 9
+      pivot: {x: 0.4845815, y: 0.017094018}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec1df4b976012f940800000000000000
+      internalID: 5328339346306093518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (6)
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 730
+        width: 232
+        height: 228
+      alignment: 9
+      pivot: {x: 0.49137932, y: 0.01754386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a363c60bb78658d40800000000000000
+      internalID: 5585985793273116218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (7)
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 749
+        width: 237
+        height: 221
+      alignment: 9
+      pivot: {x: 0.48523206, y: 0.018099548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef307d505f24e0390800000000000000
+      internalID: -7850263480327797762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (8)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 747
+        width: 242
+        height: 215
+      alignment: 9
+      pivot: {x: 0.47107437, y: 0.01860465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c96148718f183b590800000000000000
+      internalID: -7659635638680676708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (9)
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 960
+        width: 246
+        height: 208
+      alignment: 9
+      pivot: {x: 0.46747968, y: 0.01923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31dcb798d53c345d0800000000000000
+      internalID: -3079402913685320429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (10)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 964
+        width: 250
+        height: 204
+      alignment: 9
+      pivot: {x: 0.48, y: 0.019607844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc7f607351179550800000000000000
+      internalID: 6167417264773495986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (11)
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 970
+        width: 252
+        height: 201
+      alignment: 9
+      pivot: {x: 0.48809525, y: 0.0199005}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e18ee96bfd711520800000000000000
+      internalID: 2671054572774916577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core (12)
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 972
+        width: 254
+        height: 199
+      alignment: 9
+      pivot: {x: 0.48425198, y: 0.020100502}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb797223db1fa0170800000000000000
+      internalID: 8145588670945531838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_front (1)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1314
+        width: 499
+        height: 144
+      alignment: 9
+      pivot: {x: 0.46092185, y: 0.027777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d21d9ca386bd293c0800000000000000
+      internalID: -4354176649004461779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_front (2)
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1173
+        width: 499
+        height: 143
+      alignment: 9
+      pivot: {x: 0.46092185, y: 0.027972028}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 977edd35d6f554810800000000000000
+      internalID: 1748908953466431353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_front (3)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1170
+        width: 499
+        height: 142
+      alignment: 9
+      pivot: {x: 0.46092185, y: 0.028169014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6402a299ce44c9150800000000000000
+      internalID: 5880650996411670598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_front (4)
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1318
+        width: 501
+        height: 141
+      alignment: 9
+      pivot: {x: 0.45908183, y: 0.028368793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27549fe18ac368250800000000000000
+      internalID: 5946507050761143666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_front (5)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1460
+        width: 501
+        height: 142
+      alignment: 9
+      pivot: {x: 0.45908183, y: 0.028169014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a647d4ca77dc45260800000000000000
+      internalID: 7085514027636192362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_front (6)
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 1461
+        width: 502
+        height: 142
+      alignment: 9
+      pivot: {x: 0.45816734, y: 0.028169014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a4e7ac0de79fe150800000000000000
+      internalID: 5904104680881382564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_front (7)
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1605
+        width: 504
+        height: 144
+      alignment: 9
+      pivot: {x: 0.4563492, y: 0.027777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ea9c8828e5e4080800000000000000
+      internalID: -9201313073937666523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_front (8)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1604
+        width: 504
+        height: 144
+      alignment: 9
+      pivot: {x: 0.4563492, y: 0.027777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba6789723dc90f990800000000000000
+      internalID: -7354205760779684181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_front (9)
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1751
         width: 506
-        height: 151
+        height: 146
       alignment: 9
-      pivot: {x: 0.46442688, y: 0.0794702}
+      pivot: {x: 0.45454547, y: 0.02739726}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 17e60bc7e7b79e030800000000000000
-      internalID: 3524483966582156913
+      spriteID: ab7eca0294bfccc60800000000000000
+      internalID: 7839917342844577722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_forestSpitter_base (2)
+      name: enemy_forestSpitter_front (10)
       rect:
         serializedVersion: 2
-        x: 515
-        y: 1743
+        x: 1
+        y: 1750
         width: 506
-        height: 151
+        height: 147
       alignment: 9
-      pivot: {x: 0.46442688, y: 0.0794702}
+      pivot: {x: 0.45454547, y: 0.027210884}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 54b9452ca731cc9c0800000000000000
-      internalID: -3905725358869800123
+      spriteID: 66fe93d1ed2a3e6a0800000000000000
+      internalID: -6421109568843419802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_forestSpitter_base (3)
-      rect:
-        serializedVersion: 2
-        x: 514
-        y: 1429
-        width: 509
-        height: 154
-      alignment: 9
-      pivot: {x: 0.45972496, y: 0.071428575}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ae3551c7b163d7370800000000000000
-      internalID: 8321867178124334058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_forestSpitter_base (4)
-      rect:
-        serializedVersion: 2
-        x: 513
-        y: 1120
-        width: 510
-        height: 153
-      alignment: 9
-      pivot: {x: 0.45686275, y: 0.078431375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c8eca083c47971eb0800000000000000
-      internalID: -4749160928425357684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_forestSpitter_base (5)
+      name: enemy_forestSpitter_front (11)
       rect:
         serializedVersion: 2
         x: 1
-        y: 1428
-        width: 511
-        height: 151
+        y: 1899
+        width: 506
+        height: 148
       alignment: 9
-      pivot: {x: 0.45792565, y: 0.0794702}
+      pivot: {x: 0.45454547, y: 0.027027028}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e01c4c5a61c448660800000000000000
-      internalID: 7387112948948582670
+      spriteID: fd582cf20a4711a00800000000000000
+      internalID: 725489246328227295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_forestSpitter_base (6)
+      name: enemy_forestSpitter_front (12)
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1117
-        width: 505
-        height: 151
+        x: 509
+        y: 1899
+        width: 506
+        height: 148
       alignment: 9
-      pivot: {x: 0.45940593, y: 0.0794702}
+      pivot: {x: 0.45454547, y: 0.027027028}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 50ebf0d6065488e40800000000000000
-      internalID: 5658849212239953413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_forestSpitter_base (7)
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1736
-        width: 511
-        height: 157
-      alignment: 9
-      pivot: {x: 0.4598826, y: 0.07643312}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f5bf1478bf082f40800000000000000
-      internalID: 5703826212961367545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_forestSpitter_base (8)
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1581
-        width: 511
-        height: 153
-      alignment: 9
-      pivot: {x: 0.45792565, y: 0.09150327}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 113f4cc6286dd8f30800000000000000
-      internalID: 4579552251764601617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_forestSpitter_base (9)
-      rect:
-        serializedVersion: 2
-        x: 514
-        y: 1275
-        width: 509
-        height: 152
-      alignment: 9
-      pivot: {x: 0.45972496, y: 0.08552632}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a647bf0d2c7322b0800000000000000
-      internalID: -5610504177794464089
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_forestSpitter_base (10)
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1895
-        width: 512
-        height: 152
-      alignment: 9
-      pivot: {x: 0.45898438, y: 0.08552632}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fad4adf5bcfdc2d90800000000000000
-      internalID: -7121070846200099409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_forestSpitter_base (11)
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1270
-        width: 510
-        height: 156
-      alignment: 9
-      pivot: {x: 0.46078432, y: 0.08974359}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9596b16d961aa6cf0800000000000000
-      internalID: -258216552684623527
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_forestSpitter_base (12)
-      rect:
-        serializedVersion: 2
-        x: 514
-        y: 1585
-        width: 509
-        height: 156
-      alignment: 9
-      pivot: {x: 0.45972496, y: 0.08974359}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0302ada8734149ef0800000000000000
-      internalID: -102434662737371088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_forestSpitter_core
-      rect:
-        serializedVersion: 2
-        x: 508
-        y: 863
-        width: 229
-        height: 255
-      alignment: 9
-      pivot: {x: 0.49344978, y: 0.06666667}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 110d7569a046beb70800000000000000
-      internalID: 8929340682826928145
+      spriteID: 8a4873b176faace10800000000000000
+      internalID: 2218778623806506152
       vertices: []
       indices: 
       edges: []

@@ -21,17 +21,20 @@ public class ProjectileShooterController : MonoBehaviour
     public string objectSeen;
     public Transform movingCoreTransform;
     public Transform shootsFromTransform;
+    public bool angleRestriction;
     public float minAngle = -180f;
     public float maxAngle = 180f;
+    public Vector3 shootingDirection;
 
     private Transform _playerTarget;
-    private float _waitDelay;
     private Vector3 _shootsFrom => shootsFromTransform != null ? shootsFromTransform.position : transform.position;
+    private bool _targetInSight;
+    private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        transform.Find("Core")?.TryGetComponent<Animator>(out _animator);
     }
 
     // Update is called once per frame
@@ -47,43 +50,49 @@ public class ProjectileShooterController : MonoBehaviour
             var direction = _playerTarget.position - _shootsFrom;
             var hitPlayer = Physics2D.Raycast(_shootsFrom, direction, visionRange, LayerManagement.Player);
             var hitTilemap = Physics2D.Raycast(_shootsFrom, direction, visionRange, LayerManagement.Layout);
-            if (hitPlayer.distance > 0 && hitPlayer.distance < visionRange && (hitTilemap.distance == 0 || hitTilemap.distance > hitPlayer.distance))
-            {
-                TryShoot((_playerTarget.position - _shootsFrom).normalized, _playerTarget);
-            }
+            //Moving core
             if (movingCoreTransform != null)
             {
                 direction = (_playerTarget.position - movingCoreTransform.position).normalized;
-                var a = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-                a = GlobalFunctions.Bound(a, minAngle, maxAngle);
-                Debug.Log(a);
-                var rotateToTarget = Quaternion.AngleAxis(a, Vector3.forward);
+                var targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+                var restrictedAngle = angleRestriction ? GlobalFunctions.Bound(targetAngle, minAngle, maxAngle) : targetAngle;
+                _targetInSight = targetAngle == restrictedAngle;
+                var rotateToTarget = Quaternion.AngleAxis(restrictedAngle, Vector3.forward);
                 movingCoreTransform.localRotation = Quaternion.Slerp(movingCoreTransform.localRotation, rotateToTarget, Time.deltaTime * 5f);
+            }
+            else
+            {
+                _targetInSight = true;
+            }
+            //Check if shooting possible
+            if (hitPlayer.distance > 0 && hitPlayer.distance < visionRange && (hitTilemap.distance == 0 || hitTilemap.distance > hitPlayer.distance) && _targetInSight)
+            {
+                shootingDirection = (_playerTarget.position - _shootsFrom).normalized;
             }
         }
         else
         {
-            TryShoot(forcedDirection);
+            shootingDirection = forcedDirection;
+        }
+        if (_animator != null)
+        {
+            _animator.SetBool("targetInSight", _targetInSight);
+            _animator.SetFloat("chargeSpeed", projectilesPerSecond);
+            _animator.SetBool("shoot", true);
         }
     }
 
-    private void TryShoot(Vector3 direction, Transform target = null)
+    public void Shoot()
     {
-        if (_waitDelay > 0)
-        {
-            _waitDelay -= Time.deltaTime;
-            return;
-        }
-        _waitDelay = 1f / projectilesPerSecond;
         var projectile = GameObject.Instantiate<GameObject>(projectilePrefab, _shootsFrom, Quaternion.identity);
         var projectileController = projectile.GetComponent<StandardProjectileController>();
-        projectileController.direction = direction;
+        projectileController.direction = shootingDirection;
         projectileController.speed = projectileSpeed;
         projectileController.diameter = projectileDiameter;
         projectileController.canHitEnemies = canHitEnemies;
         projectileController.canHitPlayer = canHitPlayer;
         projectileController.damage = projectileDamage;
-        projectileController.target = homingProjectiles ? target : null;
+        projectileController.target = _playerTarget;
     }
 
     void OnDrawGizmos()

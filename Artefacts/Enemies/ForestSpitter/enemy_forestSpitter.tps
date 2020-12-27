@@ -181,35 +181,10 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">enemy_forestSpitter_base (1).png</key>
-            <key type="filename">enemy_forestSpitter_base (2).png</key>
-            <key type="filename">enemy_forestSpitter_base (3).png</key>
-            <key type="filename">enemy_forestSpitter_base (4).png</key>
+            <key type="filename">enemy_forestSpitter_back (1).png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.458984,0.628906</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>256,128,512,256</rect>
-                <key>scale9Paddings</key>
-                <rect>256,128,512,256</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">enemy_forestSpitter_base (10).png</key>
-            <key type="filename">enemy_forestSpitter_base (11).png</key>
-            <key type="filename">enemy_forestSpitter_base (12).png</key>
-            <key type="filename">enemy_forestSpitter_base (5).png</key>
-            <key type="filename">enemy_forestSpitter_base (6).png</key>
-            <key type="filename">enemy_forestSpitter_base (7).png</key>
-            <key type="filename">enemy_forestSpitter_base (8).png</key>
-            <key type="filename">enemy_forestSpitter_base (9).png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.458984,0.628906</point_f>
+                <point_f>0.346535,0.943925</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -221,10 +196,408 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">enemy_forestSpitter_core.png</key>
+            <key type="filename">enemy_forestSpitter_back (10).png</key>
+            <key type="filename">enemy_forestSpitter_back (11).png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.464844,0.589844</point_f>
+                <point_f>0.346535,0.941748</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_back (12).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.346535,0.941176</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_back (2).png</key>
+            <key type="filename">enemy_forestSpitter_back (3).png</key>
+            <key type="filename">enemy_forestSpitter_back (4).png</key>
+            <key type="filename">enemy_forestSpitter_back (5).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.346535,0.943396</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_back (6).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.346535,0.942857</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_back (7).png</key>
+            <key type="filename">enemy_forestSpitter_back (8).png</key>
+            <key type="filename">enemy_forestSpitter_back (9).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.346535,0.942308</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (1).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.479263,0.983936</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (10).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.48,0.980392</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (11).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.488095,0.9801</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (12).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.484252,0.979899</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (2).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.493088,0.983871</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (3).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.497717,0.983607</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (4).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.486486,0.983264</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (5).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.484581,0.982906</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (6).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.491379,0.982456</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (7).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.485232,0.9819</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (8).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.471074,0.981395</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_core (9).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.46748,0.980769</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_front (1).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.460922,0.972222</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_front (10).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.454545,0.972789</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_front (11).png</key>
+            <key type="filename">enemy_forestSpitter_front (12).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.454545,0.972973</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_front (2).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.460922,0.972028</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_front (3).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.460922,0.971831</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_front (4).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.459082,0.971631</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_front (5).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.459082,0.971831</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_front (6).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.458167,0.971831</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_front (7).png</key>
+            <key type="filename">enemy_forestSpitter_front (8).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.456349,0.972222</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">enemy_forestSpitter_front (9).png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.454545,0.972603</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -239,19 +612,42 @@
         </map>
         <key>fileList</key>
         <array>
-            <filename>enemy_forestSpitter_base (1).png</filename>
-            <filename>enemy_forestSpitter_base (2).png</filename>
-            <filename>enemy_forestSpitter_base (3).png</filename>
-            <filename>enemy_forestSpitter_base (4).png</filename>
-            <filename>enemy_forestSpitter_core.png</filename>
-            <filename>enemy_forestSpitter_base (10).png</filename>
-            <filename>enemy_forestSpitter_base (11).png</filename>
-            <filename>enemy_forestSpitter_base (12).png</filename>
-            <filename>enemy_forestSpitter_base (5).png</filename>
-            <filename>enemy_forestSpitter_base (6).png</filename>
-            <filename>enemy_forestSpitter_base (7).png</filename>
-            <filename>enemy_forestSpitter_base (8).png</filename>
-            <filename>enemy_forestSpitter_base (9).png</filename>
+            <filename>enemy_forestSpitter_back (1).png</filename>
+            <filename>enemy_forestSpitter_back (10).png</filename>
+            <filename>enemy_forestSpitter_back (11).png</filename>
+            <filename>enemy_forestSpitter_back (12).png</filename>
+            <filename>enemy_forestSpitter_back (2).png</filename>
+            <filename>enemy_forestSpitter_back (3).png</filename>
+            <filename>enemy_forestSpitter_back (4).png</filename>
+            <filename>enemy_forestSpitter_back (5).png</filename>
+            <filename>enemy_forestSpitter_back (6).png</filename>
+            <filename>enemy_forestSpitter_back (7).png</filename>
+            <filename>enemy_forestSpitter_back (8).png</filename>
+            <filename>enemy_forestSpitter_back (9).png</filename>
+            <filename>enemy_forestSpitter_core (1).png</filename>
+            <filename>enemy_forestSpitter_core (10).png</filename>
+            <filename>enemy_forestSpitter_core (11).png</filename>
+            <filename>enemy_forestSpitter_core (12).png</filename>
+            <filename>enemy_forestSpitter_core (2).png</filename>
+            <filename>enemy_forestSpitter_core (3).png</filename>
+            <filename>enemy_forestSpitter_core (4).png</filename>
+            <filename>enemy_forestSpitter_core (5).png</filename>
+            <filename>enemy_forestSpitter_core (6).png</filename>
+            <filename>enemy_forestSpitter_core (7).png</filename>
+            <filename>enemy_forestSpitter_core (8).png</filename>
+            <filename>enemy_forestSpitter_core (9).png</filename>
+            <filename>enemy_forestSpitter_front (1).png</filename>
+            <filename>enemy_forestSpitter_front (10).png</filename>
+            <filename>enemy_forestSpitter_front (11).png</filename>
+            <filename>enemy_forestSpitter_front (12).png</filename>
+            <filename>enemy_forestSpitter_front (2).png</filename>
+            <filename>enemy_forestSpitter_front (3).png</filename>
+            <filename>enemy_forestSpitter_front (4).png</filename>
+            <filename>enemy_forestSpitter_front (5).png</filename>
+            <filename>enemy_forestSpitter_front (6).png</filename>
+            <filename>enemy_forestSpitter_front (7).png</filename>
+            <filename>enemy_forestSpitter_front (8).png</filename>
+            <filename>enemy_forestSpitter_front (9).png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -34,10 +34,7 @@ public class StandardProjectileController : MonoBehaviour
             _layerMaskToConsider.Add(LayerManagement.Enemies);
         }
         transform.localScale = new Vector3(diameter, diameter, 1f);
-        if (target == null)
-        {
-            UpdateAngle(true);
-        }
+        transform.rotation = GetAngle();
     }
 
     // Update is called once per frame 
@@ -46,9 +43,8 @@ public class StandardProjectileController : MonoBehaviour
         if (target != null)
         {
             direction = (target.position - transform.position).normalized;
-            var a = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            var rotateToTarget = Quaternion.AngleAxis(a, Vector3.forward);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotateToTarget, Time.deltaTime * angleChangeRate);
+            var a = GetAngle();
+            transform.rotation = Quaternion.Slerp(transform.rotation, a, Time.deltaTime * angleChangeRate);
             //UpdateAngle(false);
         }
         _rb.velocity = direction * speed;
@@ -82,5 +78,11 @@ public class StandardProjectileController : MonoBehaviour
         {
             particleSystemTransform.localEulerAngles = new Vector3(0f, 0f, currentAngle);
         }
+    }
+
+    private Quaternion GetAngle()
+    {
+        var a = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        return Quaternion.AngleAxis(a, Vector3.forward);
     }
 }
