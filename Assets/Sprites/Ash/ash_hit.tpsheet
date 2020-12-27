@@ -1,0 +1,21 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:096d8aed5ef0e74a9b4a325d55168ceb:e8bc5f8aa73be7e0455941377e36deca:62213df70605a9db7fe09928ff1126bc$
+#
+:format=40300
+:texture=ash_hit.png
+:size=2048x2048
+:pivotpoints=enabled
+:borders=disabled
+:alphahandling=ClearTransparentPixels
+
+ash_hit_00;1;1535;512;512; 0.5;0.5; 0;0;0;0
+ash_hit_01;1;1021;512;512; 0.5;0.5; 0;0;0;0
+ash_hit_02;1;507;512;512; 0.5;0.5; 0;0;0;0
+ash_hit_03;515;1535;512;512; 0.5;0.5; 0;0;0;0
+ash_hit_04;1029;1535;512;512; 0.5;0.5; 0;0;0;0
+ash_hit_05;515;1021;512;512; 0.5;0.5; 0;0;0;0

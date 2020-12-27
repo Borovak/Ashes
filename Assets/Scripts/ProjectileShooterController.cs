@@ -7,7 +7,6 @@ using UnityEngine;
 public class ProjectileShooterController : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    public Vector3 offset;
     public bool aimsAtPlayer;
     public bool homingProjectiles;
     public float visionRange;
@@ -20,10 +19,14 @@ public class ProjectileShooterController : MonoBehaviour
     public bool canHitEnemies;
     public float distance;
     public string objectSeen;
+    public Transform movingCoreTransform;
+    public Transform shootsFromTransform;
+    public float minAngle = -180f;
+    public float maxAngle = 180f;
 
     private Transform _playerTarget;
     private float _waitDelay;
-    private Vector3 _shootsFrom => transform.position + offset;
+    private Vector3 _shootsFrom => shootsFromTransform != null ? shootsFromTransform.position : transform.position;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +50,15 @@ public class ProjectileShooterController : MonoBehaviour
             if (hitPlayer.distance > 0 && hitPlayer.distance < visionRange && (hitTilemap.distance == 0 || hitTilemap.distance > hitPlayer.distance))
             {
                 TryShoot((_playerTarget.position - _shootsFrom).normalized, _playerTarget);
+            }
+            if (movingCoreTransform != null)
+            {
+                direction = (_playerTarget.position - movingCoreTransform.position).normalized;
+                var a = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+                a = GlobalFunctions.Bound(a, minAngle, maxAngle);
+                Debug.Log(a);
+                var rotateToTarget = Quaternion.AngleAxis(a, Vector3.forward);
+                movingCoreTransform.localRotation = Quaternion.Slerp(movingCoreTransform.localRotation, rotateToTarget, Time.deltaTime * 5f);
             }
         }
         else

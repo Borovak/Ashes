@@ -13,7 +13,6 @@ public class PlayerAttack : MonoBehaviour
         Attack
     }
 
-    public SpriteRenderer attackSpriteRenderer;
     public float attackRange;
     public int attackDamage;
     public float attackRate;
@@ -22,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
     public float chargingDuration = 0.05f;
     public float attackDuration = 0.05f;
     public Light2D attackLight;
+    public GameObject attackPrefab;
 
     private float _attackCooldown;
     private Animator _animator;
@@ -54,7 +54,6 @@ public class PlayerAttack : MonoBehaviour
         {
             _attackCooldown -= Time.deltaTime;
         }
-        attackSpriteRenderer.enabled = _attackState == AttackStates.Attack;
         attackLight.enabled = _attackState == AttackStates.Attack;
         if (_attackState != AttackStates.Idle)
         {
@@ -66,6 +65,7 @@ public class PlayerAttack : MonoBehaviour
                     case AttackStates.Charging:
                         _attackState = AttackStates.Attack;
                         _attackStateTimeRemaining = attackDuration;
+                        GameObject.Instantiate(attackPrefab, attackLight.transform.position, Quaternion.identity, attackLight.transform);
                         break;
                     case AttackStates.Attack:
                         _attackState = AttackStates.Idle;
@@ -73,26 +73,6 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
         }
-
-        // if (_attackCooldown <= 0)
-        // {
-        //     if (Input.GetButtonDown("Fire1"))
-        //     {
-        //         _animator.SetBool("attack", true);
-        //         MeleeAttack();
-        //         _attackCooldown = 1f / attackRate;
-        //     }
-        //     // else if (Input.GetButtonDown("Fire2"))
-        //     // {
-        //     //     _animator.SetTrigger("attack");
-        //     //     _attackCooldown = 1f / attackRate;
-        //     // }
-        // }
-        // else
-        // {
-        //     _animator.SetBool("attack", false);
-        //     _attackCooldown -= Time.deltaTime;
-        // }
     }
 
     private void Attack()
@@ -133,29 +113,31 @@ public class PlayerAttack : MonoBehaviour
 
     private void MeleeAttack()
     {
-        var hits = Physics2D.CircleCastAll(attackSpriteRenderer.transform.position, attackRange, Vector2.zero, 0f, whatIsEnemies);
+        var enemiesHit = new HashSet<GameObject>();
+        var hits = Physics2D.CircleCastAll(attackLight.transform.position, attackRange, Vector2.zero, 0f, whatIsEnemies);
         for (int i = 0; i < hits.Length; i++)
         {
             var hit = hits[i];            
-            if (!hit.collider.gameObject.TryGetComponent<EnemyLifeController>(out var enemy)) continue;
+            if (!hit.collider.gameObject.TryGetComponent<EnemyLifeController>(out var enemy) || enemiesHit.Contains(hit.collider.gameObject)) continue;
+            enemiesHit.Add(hit.collider.gameObject);
             enemy.TakeDamage(attackDamage, gameObject.name, hit.point);
         }
     }
 
     void CastFireball()
     {
-        var fireballObject = Instantiate(fireballPrefab, attackSpriteRenderer.transform.position, Quaternion.identity);
+        var fireballObject = Instantiate(fireballPrefab, attackLight.transform.position, Quaternion.identity);
         var fireball = fireballObject.GetComponent<DirectionalFireball>();
         fireball.speed = 20f;
         fireball.damage = 3;
         fireball.diameter = 0.3f;
-        fireball.destination = attackSpriteRenderer.transform.transform.position.x > transform.position.x ? attackSpriteRenderer.transform.transform.position + Vector3.right * 1000f : attackSpriteRenderer.transform.transform.position + Vector3.left * 1000f;
+        fireball.destination = attackLight.transform.transform.position.x > transform.position.x ? attackLight.transform.transform.position + Vector3.right * 1000f : attackLight.transform.transform.position + Vector3.left * 1000f;
         fireball.emitFromPlayer = true;
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackSpriteRenderer.transform.position, attackRange);
+        Gizmos.DrawWireSphere(attackLight.transform.position, attackRange);
     }
 }

@@ -1,0 +1,420 @@
+fileFormatVersion: 2
+guid: 583e04efb39a83d458f3d50da2b58825
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3524483966582156913
+    second: enemy_forestSpitter_base (1)
+  - first:
+      213: -3905725358869800123
+    second: enemy_forestSpitter_base (2)
+  - first:
+      213: 8321867178124334058
+    second: enemy_forestSpitter_base (3)
+  - first:
+      213: -4749160928425357684
+    second: enemy_forestSpitter_base (4)
+  - first:
+      213: 7387112948948582670
+    second: enemy_forestSpitter_base (5)
+  - first:
+      213: 5658849212239953413
+    second: enemy_forestSpitter_base (6)
+  - first:
+      213: 5703826212961367545
+    second: enemy_forestSpitter_base (7)
+  - first:
+      213: 4579552251764601617
+    second: enemy_forestSpitter_base (8)
+  - first:
+      213: -5610504177794464089
+    second: enemy_forestSpitter_base (9)
+  - first:
+      213: -7121070846200099409
+    second: enemy_forestSpitter_base (10)
+  - first:
+      213: -258216552684623527
+    second: enemy_forestSpitter_base (11)
+  - first:
+      213: -102434662737371088
+    second: enemy_forestSpitter_base (12)
+  - first:
+      213: 8929340682826928145
+    second: enemy_forestSpitter_core
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 192
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (1)
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1896
+        width: 506
+        height: 151
+      alignment: 9
+      pivot: {x: 0.46442688, y: 0.0794702}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17e60bc7e7b79e030800000000000000
+      internalID: 3524483966582156913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (2)
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1743
+        width: 506
+        height: 151
+      alignment: 9
+      pivot: {x: 0.46442688, y: 0.0794702}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54b9452ca731cc9c0800000000000000
+      internalID: -3905725358869800123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (3)
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1429
+        width: 509
+        height: 154
+      alignment: 9
+      pivot: {x: 0.45972496, y: 0.071428575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3551c7b163d7370800000000000000
+      internalID: 8321867178124334058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (4)
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 1120
+        width: 510
+        height: 153
+      alignment: 9
+      pivot: {x: 0.45686275, y: 0.078431375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8eca083c47971eb0800000000000000
+      internalID: -4749160928425357684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (5)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1428
+        width: 511
+        height: 151
+      alignment: 9
+      pivot: {x: 0.45792565, y: 0.0794702}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e01c4c5a61c448660800000000000000
+      internalID: 7387112948948582670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (6)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1117
+        width: 505
+        height: 151
+      alignment: 9
+      pivot: {x: 0.45940593, y: 0.0794702}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ebf0d6065488e40800000000000000
+      internalID: 5658849212239953413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (7)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1736
+        width: 511
+        height: 157
+      alignment: 9
+      pivot: {x: 0.4598826, y: 0.07643312}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5bf1478bf082f40800000000000000
+      internalID: 5703826212961367545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (8)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1581
+        width: 511
+        height: 153
+      alignment: 9
+      pivot: {x: 0.45792565, y: 0.09150327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113f4cc6286dd8f30800000000000000
+      internalID: 4579552251764601617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (9)
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1275
+        width: 509
+        height: 152
+      alignment: 9
+      pivot: {x: 0.45972496, y: 0.08552632}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a647bf0d2c7322b0800000000000000
+      internalID: -5610504177794464089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (10)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1895
+        width: 512
+        height: 152
+      alignment: 9
+      pivot: {x: 0.45898438, y: 0.08552632}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad4adf5bcfdc2d90800000000000000
+      internalID: -7121070846200099409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (11)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1270
+        width: 510
+        height: 156
+      alignment: 9
+      pivot: {x: 0.46078432, y: 0.08974359}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9596b16d961aa6cf0800000000000000
+      internalID: -258216552684623527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_base (12)
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1585
+        width: 509
+        height: 156
+      alignment: 9
+      pivot: {x: 0.45972496, y: 0.08974359}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0302ada8734149ef0800000000000000
+      internalID: -102434662737371088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_forestSpitter_core
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 863
+        width: 229
+        height: 255
+      alignment: 9
+      pivot: {x: 0.49344978, y: 0.06666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110d7569a046beb70800000000000000
+      internalID: 8929340682826928145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

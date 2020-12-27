@@ -158,7 +158,8 @@ public abstract class LifeController : MonoBehaviour
 
     public void TakeDamage(int damage, string attackerName, Vector2 hitPosition, bool bypassShield = false)
     {
-        if (_shieldController != null && !bypassShield){
+        if (_shieldController != null && !bypassShield)
+        {
             if (_shieldController.AbsorbHit(damage, out var newDamage)) return;
             damage = Convert.ToInt32(newDamage);
         }
@@ -168,14 +169,12 @@ public abstract class LifeController : MonoBehaviour
             Instantiate(blood, transform.position + new Vector3(bloodOffset.x, bloodOffset.y, 0f), Quaternion.identity, transform);
         }
         if (contactPrefab != null && hitPosition != Vector2.negativeInfinity)
-        {            
-            var contact = Instantiate(contactPrefab, hitPosition, Quaternion.identity);
-            GameObject.Destroy(contact, 0.05f);
-
+        {
+            Instantiate(contactPrefab, hitPosition, Quaternion.identity);
         }
         SetHp(GetHp() - damage);
         _damageFlashTimeRemaining = _damageFlashTimeTotal;
-        Debug.Log($"{attackerName} damages {gameObject.name} for {damage} damage, {GetHp()} hp remaining");
+        Debug.Log($"{attackerName} hits {gameObject.name} for {damage} damage");
     }
 
     public void Heal(int value)

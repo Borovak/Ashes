@@ -21,6 +21,7 @@ public class PlayerPlatformerController : PhysicsObject
     public bool isDashing;
     public GameObject landingPuffPrefab;
     public static Vector3 transitionMovement;
+    public float timeBetweenDashes = 1f;
 
     private SpriteRenderer[] _spriteRenderers;
     private SpriteRenderer _spriteRenderer;
@@ -32,6 +33,8 @@ public class PlayerPlatformerController : PhysicsObject
     private PlayerInputs _inputs;
     private LifeController _lifeController;
     private float _timeSinceGrounded;
+    private bool _canDash;
+    private float _dashTimer;
 
     // Use this for initialization
     void Awake()
@@ -82,7 +85,10 @@ public class PlayerPlatformerController : PhysicsObject
         }
         if (grounded)
         {
-            _animator.SetBool("canDash", true);
+            _canDash = true;
+        }
+        if (_dashTimer > 0){
+            _dashTimer -= Time.deltaTime;
         }
         _animator.SetBool("horizontalMoveDesired", Mathf.Abs(move.x) > 0.1);
         if (!grounded)
@@ -150,7 +156,9 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void Dash()
     {
-        if (!_lifeController.IsAlive) return;
-        _animator.SetTrigger("dash");
+        if (!_lifeController.IsAlive || !_canDash || _dashTimer > 0) return;
+        _animator.SetBool("dash", true);
+        _canDash = false;
+        _dashTimer = timeBetweenDashes;
     }
 }

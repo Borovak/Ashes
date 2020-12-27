@@ -48,7 +48,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""id"": ""398e4370-ba97-4ae5-ae25-e2610f298994"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press(behavior=2)""
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""AttackSpell"",

@@ -5,19 +5,20 @@ tpsheetFileNames:
 - Assets/Sprites/Ash/ash.tpsheet
 - Assets/Sprites/Ash/ash_attack.tpsheet
 - Assets/Sprites/Ash/ash_dash.tpsheet
+- Assets/Sprites/Ash/ash_hit.tpsheet
+- Assets/Sprites/Attacks/attack_00.tpsheet
 - Assets/Sprites/AutoDecor/filters.tpsheet
 - Assets/Sprites/AutoDecor/forest.tpsheet
 - Assets/Sprites/AutoDecor/forest_filters.tpsheet
 - Assets/Sprites/AutoDecor/town.tpsheet
 - Assets/Sprites/BackgroundDecor/backgroundDecor_forest.tpsheet
 - Assets/Sprites/Boss1/Boss1.tpsheet
-- Assets/Sprites/CornerLeft/forest.tpsheet
-- Assets/Sprites/CornerRight/forest.tpsheet
+- Assets/Sprites/Contacts/contacts.tpsheet
 - Assets/Sprites/Decor/Flag1/flag1.tpsheet
 - Assets/Sprites/Enemies/bosswolf.tpsheet
+- Assets/Sprites/Enemies/enemy_forestSpitter.tpsheet
 - Assets/Sprites/Ground/forest.tpsheet
 - Assets/Sprites/GroundOverlay/CathedralFloor.tpsheet
-- Assets/Sprites/Hits/contacts.tpsheet
 - Assets/Sprites/MainMenu/Ash/Ash_sit.tpsheet
 - Assets/Sprites/Overhang/forest.tpsheet
 - Assets/Sprites/UI/SaveIcon/SaveIcon.tpsheet
@@ -26,24 +27,26 @@ textureFileNames:
 - Assets/Sprites/Ash/ash.png
 - Assets/Sprites/Ash/ash_attack.png
 - Assets/Sprites/Ash/ash_dash.png
+- Assets/Sprites/Ash/ash_hit.png
+- Assets/Sprites/Attacks/attack_00.png
 - Assets/Sprites/AutoDecor/forest_filters.png
 - Assets/Sprites/AutoDecor/forest.png
 - Assets/Sprites/AutoDecor/forest_filters.png
 - Assets/Sprites/AutoDecor/town.png
 - Assets/Sprites/BackgroundDecor/backgroundDecor_forest.png
 - Assets/Sprites/Boss1/Boss1.png
-- Assets/Sprites/CornerLeft/forest.png
-- Assets/Sprites/CornerRight/forest.png
+- Assets/Sprites/Contacts/contacts.png
 - Assets/Sprites/Decor/Flag1/waving.png
 - Assets/Sprites/Enemies/bosswolf.png
+- Assets/Sprites/Enemies/enemy_forestSpitter.png
 - Assets/Sprites/Ground/forest.png
 - Assets/Sprites/GroundOverlay/CathedralFloor.png
-- Assets/Sprites/Hits/contacts.png
 - Assets/Sprites/MainMenu/Ash/Ash_sit.png
 - Assets/Sprites/Overhang/forest.png
 - Assets/Sprites/UI/SaveIcon/SaveIcon.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 

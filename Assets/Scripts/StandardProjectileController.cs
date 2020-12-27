@@ -18,10 +18,12 @@ public class StandardProjectileController : MonoBehaviour
     public Transform target;
 
     private List<LayerMask> _layerMaskToConsider;
+    private Rigidbody2D _rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        _rb = GetComponent<Rigidbody2D>();
         _layerMaskToConsider = new List<LayerMask>();
         if (canHitPlayer)
         {
@@ -32,25 +34,34 @@ public class StandardProjectileController : MonoBehaviour
             _layerMaskToConsider.Add(LayerManagement.Enemies);
         }
         transform.localScale = new Vector3(diameter, diameter, 1f);
-        UpdateAngle(true);
+        if (target == null)
+        {
+            UpdateAngle(true);
+        }
     }
 
-    // Update is called once per frame
+    // Update is called once per frame 
     void Update()
     {
         if (target != null)
-        {            
+        {
             direction = (target.position - transform.position).normalized;
-            UpdateAngle(false);
+            var a = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            var rotateToTarget = Quaternion.AngleAxis(a, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotateToTarget, Time.deltaTime * angleChangeRate);
+            //UpdateAngle(false);
         }
-        transform.Translate(direction * speed * Time.deltaTime);
+        _rb.velocity = direction * speed;
+        //transform.Translate(direction * speed * Time.deltaTime);
         foreach (var layer in _layerMaskToConsider)
         {
-        var hits = Physics2D.CircleCastAll(transform.position, diameter / 2f, Vector2.zero, 0f, layer);
+            var enemiesHit = new HashSet<GameObject>();
+            var hits = Physics2D.CircleCastAll(transform.position, diameter / 2f, Vector2.zero, 0f, layer);
             for (int i = 0; i < hits.Length; i++)
             {
                 var hit = hits[i];
-                if (!hit.collider.gameObject.TryGetComponent<LifeController>(out var entity)) continue;
+                if (!hit.collider.gameObject.TryGetComponent<LifeController>(out var entity) || enemiesHit.Contains(hit.collider.gameObject)) continue;
+                enemiesHit.Add(hit.collider.gameObject);
                 entity.TakeDamage(damage, gameObject.name, hit.point);
                 if (splashPrefab != null)
                 {
@@ -63,7 +74,8 @@ public class StandardProjectileController : MonoBehaviour
         }
     }
 
-    private void UpdateAngle(bool instantChange){         
+    private void UpdateAngle(bool instantChange)
+    {
         desiredAngle = GlobalFunctions.GetAngleFromPoints(Vector3.zero, direction);
         currentAngle = instantChange ? desiredAngle : currentAngle + (angleChangeRate * Time.deltaTime * (desiredAngle > currentAngle ? 1f : -1f));
         if (particleSystemTransform != null)
