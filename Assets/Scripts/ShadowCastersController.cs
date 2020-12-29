@@ -9,6 +9,8 @@ public class ShadowCastersController : MonoBehaviour
     public GameObject shadowCasterPrefab;
     public bool removePreviouslyGenerated = true;
 
+    private GameOption _gameOptionShadowEnable;
+
     private class HorizontalGroup
     {
         internal int x;
@@ -70,6 +72,20 @@ public class ShadowCastersController : MonoBehaviour
         Debug.Log($"{itemRemovedCount} items removed, {newItemCount} items added");
     }
 
+    void Start()
+    {
+        GameOptionsManager.TryGetOption(GameOptionsManager.OPTION_SHADOWS_ENABLE, out _gameOptionShadowEnable);
+        _gameOptionShadowEnable.ValueChanged += OnShadowsEnableOptionChanged;
+        OnShadowsEnableOptionChanged(_gameOptionShadowEnable != null ? _gameOptionShadowEnable.value : false.ToString());
+    }
+
+    private void OnShadowsEnableOptionChanged(string value)
+    {
+        foreach (Transform item in transform)
+        {
+            item.gameObject.SetActive(value == true.ToString());
+        }
+    }
 
 }
 

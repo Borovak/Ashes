@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
         deathScreen = GameObject.FindGameObjectWithTag("DeathScreen");
         _fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
         _fadeInOutController.FadeOutCompleted += SpawnPlayer;
+        GameOptionsManager.Init();
         DataHandling.Init();
         LocationInformation.Init(out _);
         var loadSuccessful = SaveSystem.Load(out SaveSystem.LastLoadedSave, out var errorMessage);

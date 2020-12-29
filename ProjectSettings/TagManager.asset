@@ -30,6 +30,7 @@ TagManager:
   - EnvironmentContainer
   - DeathScreen
   - ShadowsContainer
+  - GameMenuSection
   layers:
   - Default
   - TransparentFX

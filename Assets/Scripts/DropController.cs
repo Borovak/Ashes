@@ -49,7 +49,7 @@ public static class DropController
                 _enemies[monsterId].Add(itemId, dropRate);
             }
         }
-        Debug.Log($"Drops loaded: {_items.Count} items for {_enemies.Count} enemies");
+        //Debug.Log($"Drops loaded: {_items.Count} items for {_enemies.Count} enemies");
     }
 
     public static bool GetDrops(Vector3 position, int enemyId, out List<GameObject> currentDrops)

@@ -57,7 +57,7 @@ public class ChamberController : MonoBehaviour
             if (obj == null) continue;
             _containersToEnableDisable.Add(obj.gameObject);
         }
-        Debug.Log($"{chamberName}: {_containersToEnableDisable.Count} containers");
+        //Debug.Log($"{chamberName}: {_containersToEnableDisable.Count} containers");
         foreach (var container in _containersToEnableDisable)
         {
             container.SetActive(false);
@@ -70,7 +70,7 @@ public class ChamberController : MonoBehaviour
         //Spawning/despawning enemies
         if (_isPlayerInsideChamber && !_virtualCameraPlayerBinding.isPlayerInsideChamber)
         {
-            Debug.Log($"Chamber {chamber.Name} exited");
+            //Debug.Log($"Chamber {chamber.Name} exited");
             var enemiesToDelete = GlobalFunctions.FindChildrenWithTag(_enemyFolder.gameObject, "Enemy", false);
             foreach (var enemy in enemiesToDelete)
             {
@@ -84,7 +84,7 @@ public class ChamberController : MonoBehaviour
         }
         else if (!_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
         {
-            Debug.Log($"Chamber {chamber.Name} entered, {chamber.Enemies.Count} enemies present");
+            //Debug.Log($"Chamber {chamber.Name} entered, {chamber.Enemies.Count} enemies present");
             if (_lastZoneEntered == null || _lastZoneEntered.Guid != chamber.ZoneGuid)
             {
                 _lastZoneEntered = chamber.Zone;
