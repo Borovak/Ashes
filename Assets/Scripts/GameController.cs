@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     public GameObject playerPrefab;
     public GameStates gameState;
     public float gameTime;
+    public GameObject gameUiGameObject;
     public static GameObject deathScreen;
 
     private FadeInOutController _fadeInOutController;
@@ -31,6 +32,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        gameUiGameObject.SetActive(true);
         deathScreen = GameObject.FindGameObjectWithTag("DeathScreen");
         _fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
         _fadeInOutController.FadeOutCompleted += SpawnPlayer;

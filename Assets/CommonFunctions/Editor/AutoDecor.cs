@@ -76,7 +76,7 @@ public class AutoDecor
             }
             var workingMap = CopyMap(map);
             //Getting base prefab
-            var autoDecorPrefab = Resources.Load<GameObject>("AutoDecor/AutoDecor");
+            var autoDecorPrefab = Resources.Load<GameObject>("AutoDecor");
             //Loading assets
             var assetGroups = GetDecorAssets(chamberController.theme, "AutoDecor", 32);
             var sortingOrder = 31000;
@@ -179,7 +179,7 @@ public class AutoDecor
         }
         var y = chamberGameObject.GetComponentInChildren<Grid>().gameObject.transform.position.y - chamberController.size.y;
         decorContainer.localPosition = new Vector3(chamberController.position.x, y + 0.5f);
-        map = CopyMap(chamberController.map);
+        map = CopyMap(chamberController.GetMap());
         return map != null;
     }
 

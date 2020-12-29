@@ -29,6 +29,7 @@ TagManager:
   - Campsite
   - EnvironmentContainer
   - DeathScreen
+  - ShadowsContainer
   layers:
   - Default
   - TransparentFX

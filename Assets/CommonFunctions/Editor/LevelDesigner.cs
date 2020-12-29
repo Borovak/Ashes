@@ -102,8 +102,7 @@ public static class LevelDesigner
             chamber.colorShiftG = colorShiftG;
             chamber.colorShiftB = colorShiftB;
             var chamberPosition = new Vector2(Convert.ToSingle(chamberX) * scale, -Convert.ToSingle(chamberY) * scale);
-            var chamberSize = new Vector2(Convert.ToSingle(chamberWidth) * scale, Convert.ToSingle(chamberHeight) * scale);
-            chamber.SetBasicSettings(chamberGuid, chamberPosition, chamberSize, scale);
+            chamber.SetBasicSettings(chamberGuid, chamberPosition, chamberWidth, chamberHeight, scale);
             gridGameObject.transform.position = new Vector3(chamberPosition.x, chamberPosition.y + 50f, 0f);
             gridGameObject.transform.localScale = new Vector3(scale, -scale, 1f);
             var cells = new int[chamberWidth, chamberHeight];
@@ -119,7 +118,6 @@ public static class LevelDesigner
                     cells[x, y] = b;
                 }
             }
-            chamber.map = new int[cells.GetLength(0), cells.GetLength(1)];
             for (int x = 0; x < cells.GetLength(0); x++)
             {
                 for (int y = 0; y < cells.GetLength(1); y++)
@@ -127,7 +125,7 @@ public static class LevelDesigner
                     var b = cells[x, y];
                     var tile = tiles[b == 0 ? 0 : 1];
                     tilemap.SetTile(new Vector3Int(x, y, 0), tile);
-                    chamber.map[x, chamber.map.GetLength(1) - y - 1] = b;
+                    chamber.SetMapCell(x, chamber.cellCount.y - y - 1, b);
                 }
             }
             var savePointResource = Resources.Load<GameObject>("SavePoint");
@@ -144,9 +142,32 @@ public static class LevelDesigner
                 savePointController.forcedGuid = xeSavePoint.Attribute("guid").Value;
                 index++;
             }
+            ManageShadowsContainer(chamber);
         }
         Debug.Log($"Chambers updated successfully");
 
+    }
+
+    private static void ManageShadowsContainer(ChamberController chamberController)
+    {
+        const string CONTAINER_NAME = "Shadows";
+        //Removing old container
+        var shadowsContainerTransform = chamberController.transform.Find(CONTAINER_NAME);
+        if (shadowsContainerTransform != null)
+        {
+            GameObject.DestroyImmediate(shadowsContainerTransform.gameObject);
+        }
+        //Creating container
+        var shadowsContainerPrefab = Resources.Load<GameObject>("ShadowsContainer");
+        var shadowsContainer = GameObject.Instantiate(shadowsContainerPrefab, chamberController.transform);
+        shadowsContainer.name = CONTAINER_NAME;
+        //Positioning container
+        var x = chamberController.position.x;
+        var y = chamberController.gameObject.GetComponentInChildren<Grid>().gameObject.transform.position.y - chamberController.size.y + 0.5f;
+        shadowsContainer.transform.localPosition = new Vector3(x, y);
+        //Generating shadow casters
+        var shadowCastersController = shadowsContainer.GetComponent<ShadowCastersController>();
+        shadowCastersController.Generate();
     }
 
     private static bool TryGetExistingChamber(string guid, out GameObject chamberGameObject)

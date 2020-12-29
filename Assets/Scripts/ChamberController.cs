@@ -22,15 +22,15 @@ public class ChamberController : MonoBehaviour
     public GameObject chamberContainer;
     public Vector2 position;
     public Vector2 size;
+    public Vector2Int cellCount;
     public float scale;
-    [SerializeField] public int[,] map;
+    [SerializeField] public int[] map1D;
+
     [SerializeField] public string theme;
     [SerializeField] public float colorShiftR;
     [SerializeField] public float colorShiftG;
     [SerializeField] public float colorShiftB;
     public AudioClip ambientSound;
-
-
 
     private static LocationInformation.Zone _lastZoneEntered;
     private AudioSource _audioSource;
@@ -49,17 +49,18 @@ public class ChamberController : MonoBehaviour
         var tilemapRenderer = GetComponentInChildren<TilemapRenderer>();
         tilemapRenderer.enabled = false;
         //Find containers to enable/disable
-        var tags = new[] { "DecorContainer", "EnvironmentContainer" };
+        var containerNames = new[] { "AutoDecor", "Environment", "Shadows"};
         _containersToEnableDisable = new List<GameObject>();
-        foreach (var tag in tags)
+        foreach (var containerName in containerNames)
         {
-            var obj = GameObject.FindGameObjectsWithTag("DecorContainer").FirstOrDefault(x => x.transform.parent.name == gameObject.name);
+            var obj = transform.Find(containerName);
             if (obj == null) continue;
-            _containersToEnableDisable.Add(obj);
+            _containersToEnableDisable.Add(obj.gameObject);
         }
+        Debug.Log($"{chamberName}: {_containersToEnableDisable.Count} containers");
         foreach (var container in _containersToEnableDisable)
         {
-            container?.SetActive(false);
+            container.SetActive(false);
         }
     }
 
@@ -114,11 +115,13 @@ public class ChamberController : MonoBehaviour
         GlobalLightController.UpdateLights(BackgroundLightIntensity, BackgroundLightColor, TerrainLightIntensity, TerrainLightColor);
     }
 
-    public void SetBasicSettings(string guid, Vector2 position, Vector2 size, float scale)
+    public void SetBasicSettings(string guid, Vector2 position, int width, int height, float scale)
     {
         chamberGuid = guid;
         this.position = position;
-        this.size = size;
+        this.size = new Vector2(Convert.ToSingle(width) * scale, Convert.ToSingle(height) * scale);
+        this.cellCount = new Vector2Int(width, height);
+        this.map1D = new int[width * height];
         this.scale = scale;
         SetCollider();
     }
@@ -142,4 +145,35 @@ public class ChamberController : MonoBehaviour
         var collider = colliderGameObject.GetComponent<PolygonCollider2D>();
         collider.SetPath(0, points);
     }
+
+    public int[,] GetMap()
+    {
+        var map = new int[cellCount.x, cellCount.y];
+        for (int x = 0; x < cellCount.x; x++)
+        {
+            for (int y = 0; y < cellCount.y; y++)
+            {
+                map[x, y] = GetMapCell(x, y);
+            }
+        }
+        return map;
+    }
+
+    public int GetMapCell(int x, int y)
+    {
+        var index = GetMapIndex(x, y);
+        return map1D[index];
+    }
+
+    public void SetMapCell(int x, int y, int value)
+    {
+        var index = GetMapIndex(x, y);
+        map1D[index] = value;
+    }
+
+    private int GetMapIndex(int x, int y)
+    {
+        return x * cellCount.y + y;
+    }
+
 }
