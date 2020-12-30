@@ -80,13 +80,13 @@ public class AutoDecor
             //Loading assets
             var assetGroups = GetDecorAssets(chamberController.theme, "AutoDecor", 32);
             var sortingOrder = 31000;
-            foreach (var assetGroupKvp in assetGroups.OrderByDescending(x => _filters[x.Key].OccupiedCount).ThenByDescending(x => _filters[x.Key].EmptyCount).ThenByDescending(x => _filters[x.Key].PlaceholderCount))
+            foreach (var assetGroupKvp in assetGroups.OrderByDescending(x => _filters[x.Key].OccupiedCount).ThenByDescending(x => _filters[x.Key].EmptyCount).ThenByDescending(x => _filters[x.Key].PlaceholderCount + _filters[x.Key].DontCareCount))
             {
                 var assetGroup = assetGroupKvp.Value;
                 var w = assetGroup.First().W;
                 var h = assetGroup.First().H;
                 var filter = assetGroup.First().Filter;
-                //if (filter.Id != 0) continue;
+                Debug.Log($"{filter.Id} : {chamberController.chamberName}");
                 for (int y = 0; y < workingMap.GetLength(1); y++)
                 {
                     for (int x = 0; x < workingMap.GetLength(0); x++)

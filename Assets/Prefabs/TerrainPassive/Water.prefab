@@ -192,7 +192,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 524070
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 20eb2097a4c0a2c40921cf59283e523c, type: 2}
   m_TargetDisplay: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 0b0f6c5bbbb9c78f4f1c97a2c3e8a4eac7b3bdfd
+  m_ApplyToSortingLayers: bbb9c78fc3e8a4eac7b3bdfd
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0

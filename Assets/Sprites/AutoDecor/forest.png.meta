@@ -95,6 +95,9 @@ TextureImporter:
   - first:
       213: 7519042866597088590
     second: forest_016_00
+  - first:
+      213: -217099533139102528
+    second: forest_019_00
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -158,7 +161,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -170,7 +173,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -187,8 +190,8 @@ TextureImporter:
       name: forest_000_00
       rect:
         serializedVersion: 2
-        x: 1557
-        y: 1517
+        x: 1823
+        y: 3937
         width: 158
         height: 158
       alignment: 9
@@ -208,8 +211,8 @@ TextureImporter:
       name: forest_001_00
       rect:
         serializedVersion: 2
-        x: 1557
-        y: 1255
+        x: 1823
+        y: 3781
         width: 154
         height: 154
       alignment: 9
@@ -229,8 +232,8 @@ TextureImporter:
       name: forest_002_00
       rect:
         serializedVersion: 2
-        x: 1713
-        y: 1369
+        x: 1613
+        y: 3545
         width: 136
         height: 40
       alignment: 9
@@ -250,8 +253,8 @@ TextureImporter:
       name: forest_002_01
       rect:
         serializedVersion: 2
-        x: 1851
-        y: 1364
+        x: 1613
+        y: 3503
         width: 136
         height: 40
       alignment: 9
@@ -271,8 +274,8 @@ TextureImporter:
       name: forest_002_02
       rect:
         serializedVersion: 2
-        x: 1713
-        y: 1327
+        x: 1613
+        y: 3461
         width: 136
         height: 40
       alignment: 9
@@ -292,8 +295,8 @@ TextureImporter:
       name: forest_004_00
       rect:
         serializedVersion: 2
-        x: 1925
-        y: 1322
+        x: 1613
+        y: 3345
         width: 72
         height: 40
       alignment: 9
@@ -313,8 +316,8 @@ TextureImporter:
       name: forest_005_00
       rect:
         serializedVersion: 2
-        x: 1722
-        y: 1802
+        x: 1983
+        y: 4055
         width: 40
         height: 40
       alignment: 9
@@ -334,8 +337,8 @@ TextureImporter:
       name: forest_006_00
       rect:
         serializedVersion: 2
-        x: 1722
-        y: 1760
+        x: 1983
+        y: 4013
         width: 40
         height: 40
       alignment: 9
@@ -355,8 +358,8 @@ TextureImporter:
       name: forest_006_01
       rect:
         serializedVersion: 2
-        x: 1722
-        y: 1720
+        x: 1983
+        y: 3973
         width: 38
         height: 38
       alignment: 9
@@ -376,8 +379,8 @@ TextureImporter:
       name: forest_007_00
       rect:
         serializedVersion: 2
-        x: 1851
-        y: 1290
+        x: 1613
+        y: 3387
         width: 72
         height: 72
       alignment: 9
@@ -397,8 +400,8 @@ TextureImporter:
       name: forest_008_00
       rect:
         serializedVersion: 2
-        x: 1896
-        y: 1406
+        x: 1613
+        y: 3587
         width: 136
         height: 136
       alignment: 9
@@ -418,8 +421,8 @@ TextureImporter:
       name: forest_009_00
       rect:
         serializedVersion: 2
-        x: 1767
-        y: 1783
+        x: 1778
+        y: 3515
         width: 264
         height: 264
       alignment: 9
@@ -439,8 +442,8 @@ TextureImporter:
       name: forest_010_00
       rect:
         serializedVersion: 2
-        x: 1035
-        y: 889
+        x: 1091
+        y: 2937
         width: 520
         height: 264
       alignment: 9
@@ -460,8 +463,8 @@ TextureImporter:
       name: forest_011_00
       rect:
         serializedVersion: 2
-        x: 1035
-        y: 1155
+        x: 1091
+        y: 3203
         width: 520
         height: 520
       alignment: 9
@@ -482,7 +485,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 1015
+        y: 1973
         width: 1032
         height: 1032
       alignment: 9
@@ -502,8 +505,8 @@ TextureImporter:
       name: forest_013_00
       rect:
         serializedVersion: 2
-        x: 1035
-        y: 1844
+        x: 1091
+        y: 3892
         width: 730
         height: 203
       alignment: 9
@@ -523,8 +526,8 @@ TextureImporter:
       name: forest_014_00
       rect:
         serializedVersion: 2
-        x: 1764
-        y: 1544
+        x: 1751
+        y: 3276
         width: 235
         height: 237
       alignment: 9
@@ -544,8 +547,8 @@ TextureImporter:
       name: forest_015_00
       rect:
         serializedVersion: 2
-        x: 1035
-        y: 1677
+        x: 1091
+        y: 3725
         width: 685
         height: 165
       alignment: 9
@@ -565,8 +568,8 @@ TextureImporter:
       name: forest_016_00
       rect:
         serializedVersion: 2
-        x: 1557
-        y: 1411
+        x: 1613
+        y: 3170
         width: 337
         height: 104
       alignment: 9
@@ -578,6 +581,27 @@ TextureImporter:
       bones: []
       spriteID: e4d447a46a1095860800000000000000
       internalID: 7519042866597088590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_019_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3007
+        width: 1088
+        height: 1088
+      alignment: 9
+      pivot: {x: 0.029411765, y: 0.029411765}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c43756ff15bcfcf0800000000000000
+      internalID: -217099533139102528
       vertices: []
       indices: 
       edges: []

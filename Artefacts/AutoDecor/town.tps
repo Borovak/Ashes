@@ -256,6 +256,43 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">town_017_00.png</key>
+            <key type="filename">town_017_01.png</key>
+            <key type="filename">town_017_02.png</key>
+            <key type="filename">town_017_03.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.1,0.833333</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>80,48,160,96</rect>
+                <key>scale9Paddings</key>
+                <rect>80,48,160,96</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">town_018_00.png</key>
+            <key type="filename">town_018_01.png</key>
+            <key type="filename">town_018_02.png</key>
+            <key type="filename">town_018_03.png</key>
+            <key type="filename">town_018_04.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.25,0.666667</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>32,24,64,48</rect>
+                <key>scale9Paddings</key>
+                <rect>32,24,64,48</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
         </map>
         <key>fileList</key>
         <array>
@@ -264,6 +301,15 @@
             <filename>town_008_00.png</filename>
             <filename>town_009_00.png</filename>
             <filename>town_011_00.png</filename>
+            <filename>town_017_00.png</filename>
+            <filename>town_018_00.png</filename>
+            <filename>town_018_01.png</filename>
+            <filename>town_018_02.png</filename>
+            <filename>town_018_03.png</filename>
+            <filename>town_018_04.png</filename>
+            <filename>town_017_01.png</filename>
+            <filename>town_017_02.png</filename>
+            <filename>town_017_03.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

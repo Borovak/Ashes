@@ -32,6 +32,33 @@ TextureImporter:
   - first:
       213: -5267197729675032343
     second: town_011_00
+  - first:
+      213: 6769497834610923785
+    second: town_017_00
+  - first:
+      213: 7273882058169371298
+    second: town_018_00
+  - first:
+      213: 9181458623799192900
+    second: town_018_01
+  - first:
+      213: -3524967841419134377
+    second: town_018_02
+  - first:
+      213: 1658323105502378502
+    second: town_018_03
+  - first:
+      213: 5337405077636030888
+    second: town_018_04
+  - first:
+      213: -2403467051398671656
+    second: town_017_01
+  - first:
+      213: -4113309112356559831
+    second: town_017_02
+  - first:
+      213: -4115626916707895571
+    second: town_017_03
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -95,7 +122,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -107,7 +134,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -124,8 +151,8 @@ TextureImporter:
       name: town_006_00
       rect:
         serializedVersion: 2
-        x: 1
-        y: 23
+        x: 863
+        y: 861
         width: 32
         height: 32
       alignment: 6
@@ -145,8 +172,8 @@ TextureImporter:
       name: town_007_00
       rect:
         serializedVersion: 2
-        x: 1
-        y: 57
+        x: 783
+        y: 786
         width: 64
         height: 64
       alignment: 6
@@ -166,8 +193,8 @@ TextureImporter:
       name: town_008_00
       rect:
         serializedVersion: 2
-        x: 1
-        y: 123
+        x: 783
+        y: 895
         width: 128
         height: 128
       alignment: 6
@@ -188,7 +215,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 253
+        y: 203
         width: 256
         height: 256
       alignment: 6
@@ -221,6 +248,195 @@ TextureImporter:
       bones: []
       spriteID: 9e8c9f8529727e6b0800000000000000
       internalID: -5267197729675032343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: town_017_00
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 884
+        width: 266
+        height: 139
+      alignment: 9
+      pivot: {x: 0.018796992, y: 0.05035971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90992cb0a6612fd50800000000000000
+      internalID: 6769497834610923785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: town_017_01
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 743
+        width: 266
+        height: 139
+      alignment: 9
+      pivot: {x: 0.018796992, y: 0.05035971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2d60c637b25aed0800000000000000
+      internalID: -2403467051398671656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: town_017_02
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 602
+        width: 266
+        height: 139
+      alignment: 9
+      pivot: {x: 0.018796992, y: 0.05035971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9242c92d7279ae6c0800000000000000
+      internalID: -4113309112356559831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: town_017_03
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 461
+        width: 266
+        height: 139
+      alignment: 9
+      pivot: {x: 0.018796992, y: 0.05035971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de6f691ff1b52e6c0800000000000000
+      internalID: -4115626916707895571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: town_018_00
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 981
+        width: 79
+        height: 42
+      alignment: 9
+      pivot: {x: 0.088607594, y: 0.11904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aac547713502f460800000000000000
+      internalID: 7273882058169371298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: town_018_01
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 937
+        width: 78
+        height: 42
+      alignment: 9
+      pivot: {x: 0.08974359, y: 0.11904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d6f7f09f71b6f70800000000000000
+      internalID: 9181458623799192900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: town_018_02
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 894
+        width: 78
+        height: 41
+      alignment: 9
+      pivot: {x: 0.07692308, y: 0.09756097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75a798f9c6cc41fc0800000000000000
+      internalID: -3524967841419134377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: town_018_03
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 851
+        width: 77
+        height: 41
+      alignment: 9
+      pivot: {x: 0.077922076, y: 0.09756097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60aba4a041c830710800000000000000
+      internalID: 1658323105502378502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: town_018_04
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 852
+        width: 78
+        height: 41
+      alignment: 9
+      pivot: {x: 0.07692308, y: 0.09756097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a1acdaa3a5421a40800000000000000
+      internalID: 5337405077636030888
       vertices: []
       indices: 
       edges: []

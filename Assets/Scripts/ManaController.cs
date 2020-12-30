@@ -58,6 +58,6 @@ public class ManaController : MonoBehaviour
     private void OnGameSaved(bool healOnSave)
     {
         if (!healOnSave) return;
-        mp = SaveSystem.LastLoadedSave.MaxHp;
+        mp = SaveSystem.LastLoadedSave.MaxMp;
     }
 }

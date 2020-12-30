@@ -49,7 +49,7 @@ public class ChamberController : MonoBehaviour
         var tilemapRenderer = GetComponentInChildren<TilemapRenderer>();
         tilemapRenderer.enabled = false;
         //Find containers to enable/disable
-        var containerNames = new[] { "AutoDecor", "Environment", "Shadows"};
+        var containerNames = new[] { "AutoDecor", "Environment", "Shadows", "Npcs"};
         _containersToEnableDisable = new List<GameObject>();
         foreach (var containerName in containerNames)
         {

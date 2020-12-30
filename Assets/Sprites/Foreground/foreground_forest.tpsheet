@@ -1,0 +1,16 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:91b99be5e04ce1a50f53d20740db0b5c:723b17aab9eca5c5436d991c1f58bfb6:d56299ecbe4a93241ebfa3cc41a7a58d$
+#
+:format=40300
+:texture=foreground_forest.png
+:size=512x512
+:pivotpoints=enabled
+:borders=disabled
+:alphahandling=ClearTransparentPixels
+
+forest_fern_00;1;199;369;312; 0.6233062330623306;0.6153846153846154; 0;0;0;0; 21;196;307;208;263;248;299;319;300;345;271;369;216;369;110;296;124;286;87;234;81;213;52;183;42;139;0;95;78;85;86;83;120;45;132;53;165;0;183;42;264;146;312; 19;17;19;20;17;18;19;1;17;20;15;16;17;1;9;15;13;14;15;9;10;11;11;12;13;9;11;13;9;13;15;7;8;9;1;7;9;2;4;1;7;5;6;7;4;5;2;3;4;1;4;7;1;15;17;0;1;20
