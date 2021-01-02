@@ -59,7 +59,7 @@ public class ProjectileShooterController : MonoBehaviour
                 direction = (_playerTarget.position - movingCoreTransform.position).normalized;
                 var targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
                 var restrictedAngle = angleRestriction ? GlobalFunctions.Bound(targetAngle, minAngle, maxAngle) : targetAngle;
-                _targetInSight = targetAngle == restrictedAngle;
+                _targetInSight = Math.Abs(targetAngle - restrictedAngle) < 2f;
                 var rotateToTarget = Quaternion.AngleAxis(restrictedAngle, Vector3.forward);
                 movingCoreTransform.localRotation = Quaternion.Slerp(movingCoreTransform.localRotation, rotateToTarget, Time.deltaTime * 5f);
             }

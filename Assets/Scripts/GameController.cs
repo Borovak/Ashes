@@ -49,6 +49,7 @@ public class GameController : MonoBehaviour
                 SaveSystem.Load(out SaveSystem.LastLoadedSave, out errorMessage);
             }
         }
+        gameTime = SaveSystem.LastLoadedSave.GameTime;
         DropController.Init();
     }
 

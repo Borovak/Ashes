@@ -88,18 +88,3 @@ public class ShadowCastersController : MonoBehaviour
     }
 
 }
-
-[CustomEditor(typeof(ShadowCastersController))]
-public class ShadowCastersControllerEditor : Editor
-{
-
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-        if (GUILayout.Button("Generate"))
-        {
-            var generator = (ShadowCastersController)target;
-            generator.Generate();
-        }
-    }
-}

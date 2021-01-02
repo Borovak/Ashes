@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerDashBehaviour : StateMachineBehaviour
 {
-    public AudioClip rollingSound;
-
     private PlayerPlatformerController _player;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -14,9 +12,6 @@ public class PlayerDashBehaviour : StateMachineBehaviour
         animator.SetBool("dash", false);
         _player = animator.GetComponent<PlayerPlatformerController>();
         _player.isDashing = true;
-        var audioSource = animator.GetComponent<AudioSource>();
-        audioSource.PlayOneShot(rollingSound);
-        Debug.Log("Dashing");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

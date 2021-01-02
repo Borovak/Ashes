@@ -45,7 +45,6 @@ public class PlayerLifeController : LifeController
 
     protected override void OnDeath()
     {
-        LeanAudio.play(deathMusic);
         GameController.deathScreen.SetActive(true);
     }
 

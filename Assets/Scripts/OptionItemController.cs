@@ -6,42 +6,41 @@ using UnityEngine;
 
 public class OptionItemController : MonoBehaviour
 {
-    public string parameterId;
+    public GameOption gameOption
+    {
+        get => _gameOption;
+        set
+        {
+            _gameOption = value;
+            FindOptionItemControl();
+            _optionItemControl.ValueChanged += OnValueChanged;
+            if (gameOption != null)
+            {                
+                parameterTextControl.text = gameOption.name;
+                _optionItemControl.SetValue(gameOption.value);
+            }
+            else
+            {
+                Debug.Log("Option not found");
+                parameterTextControl.text = "Option not found";
+            }
+        }
+    }
     public TextMeshProUGUI parameterTextControl;
 
     private IOptionItemControl _optionItemControl;
     private GameOption _gameOption;
 
-    void OnEnable()
-    {
-        FindOptionItemControl();
-        _optionItemControl.ValueChanged += OnValueChanged;   
-        if (GameOptionsManager.TryGetOption(parameterId, out _gameOption))
-        { 
-            parameterTextControl.text = _gameOption.name;
-            _optionItemControl.SetValue(_gameOption.value);
-        }
-        else
-        {
-            parameterTextControl.text = "Option not found";
-        }
-    }
-
-    void OnDisable()
-    {
-        FindOptionItemControl();
-        _optionItemControl.ValueChanged -= OnValueChanged;
-    }
-
     private void OnValueChanged(string value)
     {
-        _gameOption.value = value;
+        if (gameOption == null) return;
+        gameOption.value = value;
     }
 
     private void FindOptionItemControl()
     {
         if (_optionItemControl != null) return;
-        var types = new[] { typeof(ToggleControlController) };
+        var types = new[] { typeof(ToggleControlController), typeof(SliderControlController) };
         foreach (Transform child in transform)
         {
             foreach (var type in types)

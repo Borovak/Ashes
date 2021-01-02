@@ -49,7 +49,7 @@ public class ChamberController : MonoBehaviour
         var tilemapRenderer = GetComponentInChildren<TilemapRenderer>();
         tilemapRenderer.enabled = false;
         //Find containers to enable/disable
-        var containerNames = new[] { "AutoDecor", "Environment", "Shadows", "Npcs"};
+        var containerNames = new[] { "AutoDecor", "Environment", "Shadows", "Npcs" };
         _containersToEnableDisable = new List<GameObject>();
         foreach (var containerName in containerNames)
         {
@@ -62,6 +62,7 @@ public class ChamberController : MonoBehaviour
         {
             container.SetActive(false);
         }
+        GameController.PlayerSpawned += OnPlayerSpawned;
     }
 
     // Update is called once per frame
@@ -70,12 +71,7 @@ public class ChamberController : MonoBehaviour
         //Spawning/despawning enemies
         if (_isPlayerInsideChamber && !_virtualCameraPlayerBinding.isPlayerInsideChamber)
         {
-            //Debug.Log($"Chamber {chamber.Name} exited");
-            var enemiesToDelete = GlobalFunctions.FindChildrenWithTag(_enemyFolder.gameObject, "Enemy", false);
-            foreach (var enemy in enemiesToDelete)
-            {
-                GameObject.Destroy(enemy);
-            }
+            DeleteEnemiesOnExit();
             foreach (var container in _containersToEnableDisable)
             {
                 container?.SetActive(false);
@@ -84,16 +80,12 @@ public class ChamberController : MonoBehaviour
         }
         else if (!_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
         {
-            //Debug.Log($"Chamber {chamber.Name} entered, {chamber.Enemies.Count} enemies present");
             if (_lastZoneEntered == null || _lastZoneEntered.Guid != chamber.ZoneGuid)
             {
                 _lastZoneEntered = chamber.Zone;
                 ZoneChanged?.Invoke(chamber.ZoneName, chamber.Name);
             }
-            foreach (var enemy in chamber.Enemies)
-            {
-                enemy.Instantiate(_enemyFolder, position, size, scale);
-            }
+            CreateEnemiesOnEnter();
             foreach (var container in _containersToEnableDisable)
             {
                 container?.SetActive(true);
@@ -102,6 +94,32 @@ public class ChamberController : MonoBehaviour
         }
         else return;
         _isPlayerInsideChamber = _virtualCameraPlayerBinding.isPlayerInsideChamber;
+    }
+
+    private void CreateEnemiesOnEnter()
+    {
+        foreach (var enemy in chamber.Enemies)
+        {
+            enemy.Instantiate(_enemyFolder, position, size, scale);
+        }
+    }
+
+    private void DeleteEnemiesOnExit()
+    {
+        var enemiesToDelete = GlobalFunctions.FindChildrenWithTag(_enemyFolder.gameObject, "Enemy", false);
+        foreach (var enemy in enemiesToDelete)
+        {
+            GameObject.Destroy(enemy);
+        }
+    }
+
+    private void OnPlayerSpawned(GameObject playerGameObject)
+    {
+        if (_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
+        {
+            DeleteEnemiesOnExit();
+            CreateEnemiesOnEnter();
+        }
     }
 
     void Apply()

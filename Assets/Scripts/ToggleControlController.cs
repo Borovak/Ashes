@@ -19,14 +19,17 @@ public class ToggleControlController : MonoBehaviour, IOptionItemControl
                 ValueChanged?.Invoke(GetValue());
             }
             var anchoredPosition = toggleControlButtonController.GetComponent<RectTransform>().anchoredPosition;
+            if (_positionIfOn == float.MinValue)
+            {
+                _positionIfOn = transform.GetComponent<RectTransform>().sizeDelta.x;
+            }
             anchoredPosition.x = value ? _positionIfOn : 0f;
             toggleControlButtonController.GetComponent<RectTransform>().anchoredPosition = anchoredPosition;
         }
     }
 
-
     private bool _state;
-    private float _positionIfOn;
+    private float _positionIfOn = float.MinValue;
 
     event Action<string> IOptionItemControl.ValueChanged
     {
@@ -39,12 +42,6 @@ public class ToggleControlController : MonoBehaviour, IOptionItemControl
         {
             ValueChanged -= value;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _positionIfOn = transform.GetComponent<RectTransform>().sizeDelta.x; 
     }
 
     void OnEnable()
