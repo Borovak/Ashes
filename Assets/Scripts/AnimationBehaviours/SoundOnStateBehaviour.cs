@@ -32,7 +32,7 @@ public class SoundOnStateBehaviour : StateMachineBehaviour
     private void CheckIfPlayNeeded(Positions currentPosition)
     {
         if (position != currentPosition || sound == null) return;
-        LeanAudio.play(sound);
+        AudioFunctions.PlaySound(sound);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

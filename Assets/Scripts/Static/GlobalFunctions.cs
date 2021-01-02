@@ -130,19 +130,6 @@ public static class GlobalFunctions
         return 360f - Convert.ToSingle((180 / Math.PI) * inRads);
     }
 
-    public static void PlaySound(AudioClip audioClip, Vector3 position)
-    {
-        if (audioClip == null) return;
-        LeanAudio.playClipAt(audioClip, position);
-    }
-
-    public static void PlayRandomSound(AudioClip[] audioClips, Vector3 position)
-    {
-        if (audioClips.Length == 0) return;
-        var index = UnityEngine.Random.Range(0, audioClips.Length);
-        LeanAudio.playClipAt(audioClips[index], position);
-    }
-
     public static void DeleteChildrenInTransform(Transform transform)
     {
         var security = 0;

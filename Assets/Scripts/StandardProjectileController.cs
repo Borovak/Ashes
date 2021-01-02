@@ -64,7 +64,7 @@ public class StandardProjectileController : MonoBehaviour
                     var splash = GameObject.Instantiate<GameObject>(splashPrefab, transform.position, Quaternion.identity);
                     GameObject.Destroy(splash, 2f);
                 }
-                GlobalFunctions.PlayRandomSound(contactSounds, transform.position);
+                AudioFunctions.PlayRandomSound(contactSounds, transform.position);
                 GameObject.Destroy(gameObject);
                 return;
             }

@@ -25,24 +25,26 @@ public class ChamberController : MonoBehaviour
     public Vector2Int cellCount;
     public float scale;
     [SerializeField] public int[] map1D;
-
     [SerializeField] public string theme;
     [SerializeField] public float colorShiftR;
     [SerializeField] public float colorShiftG;
     [SerializeField] public float colorShiftB;
-    public AudioClip ambientSound;
+    public AudioClip ambientAudioClip;
+    public AudioClip musicAudioClip;
 
     private static LocationInformation.Zone _lastZoneEntered;
-    private AudioSource _audioSource;
     private Transform _enemyFolder;
     private VirtualCameraPlayerBinding _virtualCameraPlayerBinding;
     private bool _isPlayerInsideChamber;
     private List<GameObject> _containersToEnableDisable;
+    private ChamberAudioManager _chamberAudioManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        _audioSource = gameObject.AddComponent<AudioSource>();
+        //Creating audio manager
+        _chamberAudioManager = new ChamberAudioManager(this, ambientAudioClip, musicAudioClip);
+        //
         _virtualCameraPlayerBinding = GetComponentInChildren<VirtualCameraPlayerBinding>();
         _enemyFolder = new GameObject("Enemies").transform;
         _enemyFolder.parent = transform;
@@ -76,7 +78,7 @@ public class ChamberController : MonoBehaviour
             {
                 container?.SetActive(false);
             }
-            _audioSource.Stop();
+            _chamberAudioManager.Stop();
         }
         else if (!_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
         {
@@ -124,12 +126,7 @@ public class ChamberController : MonoBehaviour
 
     void Apply()
     {
-        if (ambientSound != null)
-        {
-            _audioSource.loop = true;
-            _audioSource.clip = ambientSound;
-            _audioSource.Play();
-        }
+        _chamberAudioManager.Start();
         GlobalLightController.UpdateLights(BackgroundLightIntensity, BackgroundLightColor, TerrainLightIntensity, TerrainLightColor);
     }
 

@@ -104,7 +104,7 @@ public class ProjectileShooterController : MonoBehaviour
         projectileController.target = _playerTarget;
         projectileController.isHoming = homingProjectiles;
         shootingParticleSystem.Play();
-        GlobalFunctions.PlaySound(shootingSound, _shootsFrom);
+        AudioFunctions.PlaySound(shootingSound, _shootsFrom);
     }
 
     void OnDrawGizmos()

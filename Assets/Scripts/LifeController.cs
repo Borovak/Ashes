@@ -176,7 +176,7 @@ public abstract class LifeController : MonoBehaviour
         }
         if (hitPosition != Vector2.negativeInfinity)
         {
-            GlobalFunctions.PlayRandomSound(contactSounds, hitPosition);
+            AudioFunctions.PlayRandomSound(contactSounds, hitPosition);
         }
         SetHp(GetHp() - damage);
         _damageFlashTimeRemaining = _damageFlashTimeTotal;
