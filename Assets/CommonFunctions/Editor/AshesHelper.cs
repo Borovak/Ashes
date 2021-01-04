@@ -20,12 +20,13 @@ public class AshesHelper : EditorWindow
             {"Wipe save files", SaveSystem.WipeFiles},
             {"Load level designer file", LevelDesigner.LoadSpecific},
             {"Load default level designer file", LevelDesigner.LoadDefault},
-            {"Generate terrain decor", AutoDecor.Generate},
+            {"Generate terrain/grass/overhangs", AutoDecor.Generate},
         };
         foreach (var button in buttons)
         {
             if (GUILayout.Button(button.Key))
             {
+                Utils.ClearLogConsole();
                 button.Value.Invoke();
             }
         }

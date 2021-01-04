@@ -1,0 +1,3300 @@
+fileFormatVersion: 2
+guid: b5912b1d70a185e4bbe030924d4744ce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1689570496597372689
+    second: npc_hoboTom_dancing (1)
+  - first:
+      213: -2655653807679891217
+    second: npc_hoboTom_dancing (2)
+  - first:
+      213: -3585916454484867046
+    second: npc_hoboTom_dancing (3)
+  - first:
+      213: 3023660851190078082
+    second: npc_hoboTom_dancing (4)
+  - first:
+      213: 5303196088060374740
+    second: npc_hoboTom_dancing (5)
+  - first:
+      213: -7692088723152328514
+    second: npc_hoboTom_dancing (6)
+  - first:
+      213: -6755213411548454633
+    second: npc_hoboTom_dancing (7)
+  - first:
+      213: 3663867013529908510
+    second: npc_hoboTom_dancing (8)
+  - first:
+      213: -1384314070302965985
+    second: npc_hoboTom_dancing (9)
+  - first:
+      213: 4157871222380190351
+    second: npc_hoboTom_dancing (10)
+  - first:
+      213: -1834912566248896426
+    second: npc_hoboTom_dancing (11)
+  - first:
+      213: -7613052598453881665
+    second: npc_hoboTom_dancing (12)
+  - first:
+      213: 6627455237269821623
+    second: npc_hoboTom_dancing (13)
+  - first:
+      213: -8458667083203813629
+    second: npc_hoboTom_dancing (14)
+  - first:
+      213: -4522271936376700886
+    second: npc_hoboTom_dancing (15)
+  - first:
+      213: -1372888447892941929
+    second: npc_hoboTom_dancing (16)
+  - first:
+      213: 1572581730216391121
+    second: npc_hoboTom_dancing (17)
+  - first:
+      213: -5526161944587854348
+    second: npc_hoboTom_dancing (18)
+  - first:
+      213: -1894372112949397723
+    second: npc_hoboTom_dancing (19)
+  - first:
+      213: -7127137778464279715
+    second: npc_hoboTom_dancing (20)
+  - first:
+      213: -4268980197938022200
+    second: npc_hoboTom_dancing (21)
+  - first:
+      213: 4035596353435160484
+    second: npc_hoboTom_dancing (22)
+  - first:
+      213: 8732828436268214600
+    second: npc_hoboTom_dancing (23)
+  - first:
+      213: 689730188125380730
+    second: npc_hoboTom_dancing (24)
+  - first:
+      213: -516591875368760070
+    second: npc_hoboTom_dancing (25)
+  - first:
+      213: 3067861537271512961
+    second: npc_hoboTom_dancing (26)
+  - first:
+      213: -287092792721877946
+    second: npc_hoboTom_dancing (27)
+  - first:
+      213: -8916632933412391760
+    second: npc_hoboTom_dancing (28)
+  - first:
+      213: -4550194179460251867
+    second: npc_hoboTom_dancing (29)
+  - first:
+      213: 3322699488038380938
+    second: npc_hoboTom_dancing (30)
+  - first:
+      213: 7273285555881699774
+    second: npc_hoboTom_dancing (31)
+  - first:
+      213: -7267273262920305615
+    second: npc_hoboTom_dancing (32)
+  - first:
+      213: 8392191102963720239
+    second: npc_hoboTom_dancing (33)
+  - first:
+      213: 6987524831341438580
+    second: npc_hoboTom_dancing (34)
+  - first:
+      213: 933279887123192994
+    second: npc_hoboTom_dancing (35)
+  - first:
+      213: 3944502537414304040
+    second: npc_hoboTom_dancing (36)
+  - first:
+      213: 2310483056263494772
+    second: npc_hoboTom_dancing (37)
+  - first:
+      213: 7902767636698573670
+    second: npc_hoboTom_dancing (38)
+  - first:
+      213: 7216794826568604146
+    second: npc_hoboTom_dancing (39)
+  - first:
+      213: -7584138704104256394
+    second: npc_hoboTom_dancing (40)
+  - first:
+      213: -6843391230658737105
+    second: npc_hoboTom_dancing (41)
+  - first:
+      213: -2192400406742280347
+    second: npc_hoboTom_dancing (42)
+  - first:
+      213: 7048493886045865129
+    second: npc_hoboTom_dancing (43)
+  - first:
+      213: -2079525733901947038
+    second: npc_hoboTom_dancing (44)
+  - first:
+      213: 4067089734820430616
+    second: npc_hoboTom_dancing (45)
+  - first:
+      213: 2743136627297434173
+    second: npc_hoboTom_dancing (46)
+  - first:
+      213: -1125587183696590998
+    second: npc_hoboTom_dancing (47)
+  - first:
+      213: 482867630350564028
+    second: npc_hoboTom_dancing (48)
+  - first:
+      213: 1897692940508491150
+    second: npc_hoboTom_dancing (49)
+  - first:
+      213: 329222337902990104
+    second: npc_hoboTom_dancing (50)
+  - first:
+      213: -149463996300736172
+    second: npc_hoboTom_dancing (51)
+  - first:
+      213: 1369931688036039975
+    second: npc_hoboTom_dancing (52)
+  - first:
+      213: 8719485554292296853
+    second: npc_hoboTom_dancing (53)
+  - first:
+      213: -9100776304163236370
+    second: npc_hoboTom_dancing (54)
+  - first:
+      213: -7563050096441170312
+    second: npc_hoboTom_dancing (55)
+  - first:
+      213: -530896714093091819
+    second: npc_hoboTom_dancing (56)
+  - first:
+      213: -2725955643130560060
+    second: npc_hoboTom_dancing (57)
+  - first:
+      213: 8681331179918412513
+    second: npc_hoboTom_dancing (58)
+  - first:
+      213: -77748994832327587
+    second: npc_hoboTom_dancing (59)
+  - first:
+      213: 6848903187286388006
+    second: npc_hoboTom_dancing (60)
+  - first:
+      213: 8886243675366258765
+    second: npc_hoboTom_dancing (61)
+  - first:
+      213: 8527202083574055508
+    second: npc_hoboTom_dancing (62)
+  - first:
+      213: -2087709591070178588
+    second: npc_hoboTom_dancing (63)
+  - first:
+      213: -4608959586947959808
+    second: npc_hoboTom_dancing (64)
+  - first:
+      213: 2354351563448107774
+    second: npc_hoboTom_dancing (65)
+  - first:
+      213: 5988800003764487330
+    second: npc_hoboTom_dancing (66)
+  - first:
+      213: -3071209125571445408
+    second: npc_hoboTom_dancing (67)
+  - first:
+      213: 7235040035707689502
+    second: npc_hoboTom_dancing (68)
+  - first:
+      213: 6568892330885176405
+    second: npc_hoboTom_dancing (69)
+  - first:
+      213: 1191824157403537809
+    second: npc_hoboTom_dancing (70)
+  - first:
+      213: -8913034899857173628
+    second: npc_hoboTom_dancing (71)
+  - first:
+      213: -1350205912189726347
+    second: npc_hoboTom_dancing (72)
+  - first:
+      213: 5057138303457461273
+    second: npc_hoboTom_dancing (73)
+  - first:
+      213: 2870134389590662177
+    second: npc_hoboTom_dancing (74)
+  - first:
+      213: 7934418165118525369
+    second: npc_hoboTom_dancing (75)
+  - first:
+      213: -6025272295982992434
+    second: npc_hoboTom_dancing (76)
+  - first:
+      213: -895994897660986469
+    second: npc_hoboTom_dancing (77)
+  - first:
+      213: 3833416911374470086
+    second: npc_hoboTom_dancing (78)
+  - first:
+      213: -3269268429477018214
+    second: npc_hoboTom_dancing (79)
+  - first:
+      213: 8804918264386271095
+    second: npc_hoboTom_dancing (80)
+  - first:
+      213: -7773515630882061988
+    second: npc_hoboTom_dancing (81)
+  - first:
+      213: 2920236130731837823
+    second: npc_hoboTom_dancing (82)
+  - first:
+      213: 6410347939838812970
+    second: npc_hoboTom_dancing (83)
+  - first:
+      213: -4621829287377273819
+    second: npc_hoboTom_dancing (84)
+  - first:
+      213: -7397439845130622990
+    second: npc_hoboTom_dancing (85)
+  - first:
+      213: -8272019849460249390
+    second: npc_hoboTom_dancing (86)
+  - first:
+      213: 136830540971713223
+    second: npc_hoboTom_dancing (87)
+  - first:
+      213: -5807014098776166969
+    second: npc_hoboTom_dancing (88)
+  - first:
+      213: -998732026493836049
+    second: npc_hoboTom_dancing (89)
+  - first:
+      213: -7223709146052754482
+    second: npc_hoboTom_dancing (90)
+  - first:
+      213: 347599219834861191
+    second: npc_hoboTom_dancing (91)
+  - first:
+      213: 6490111241819760261
+    second: npc_hoboTom_dancing (92)
+  - first:
+      213: 5144333906868440227
+    second: npc_hoboTom_dancing (93)
+  - first:
+      213: 8599851227435699076
+    second: npc_hoboTom_dancing (94)
+  - first:
+      213: 1805033378714213376
+    second: npc_hoboTom_dancing (95)
+  - first:
+      213: -3599006050790873074
+    second: npc_hoboTom_dancing (96)
+  - first:
+      213: -986591113162521543
+    second: npc_hoboTom_dancing (97)
+  - first:
+      213: 6692572105807332078
+    second: npc_hoboTom_dancing (98)
+  - first:
+      213: 5468059717102850785
+    second: npc_hoboTom_dancing (99)
+  - first:
+      213: -6718573435379199637
+    second: npc_hoboTom_dancing (100)
+  - first:
+      213: 7567617163266681176
+    second: npc_hoboTom_dancing (101)
+  - first:
+      213: 3265781993236293724
+    second: npc_hoboTom_dancing (102)
+  - first:
+      213: 5202214143896968124
+    second: npc_hoboTom_dancing (103)
+  - first:
+      213: -5499409290160990548
+    second: npc_hoboTom_dancing (104)
+  - first:
+      213: -4206086413683385313
+    second: npc_hoboTom_dancing (105)
+  - first:
+      213: -5177656074223068009
+    second: npc_hoboTom_dancing (106)
+  - first:
+      213: 2342992931006947136
+    second: npc_hoboTom_dancing (107)
+  - first:
+      213: -639807718082798542
+    second: npc_hoboTom_dancing (108)
+  - first:
+      213: 1809618306632042819
+    second: npc_hoboTom_dancing (109)
+  - first:
+      213: 3162793604383184592
+    second: npc_hoboTom_dancing (110)
+  - first:
+      213: 2501327289824906709
+    second: npc_hoboTom_dancing (111)
+  - first:
+      213: -5444868906617604616
+    second: npc_hoboTom_dancing (112)
+  - first:
+      213: 8951844645440631036
+    second: npc_hoboTom_dancing (113)
+  - first:
+      213: 1573307209376363699
+    second: npc_hoboTom_dancing (114)
+  - first:
+      213: -3410152209844211995
+    second: npc_hoboTom_dancing (115)
+  - first:
+      213: 1856966606424488004
+    second: npc_hoboTom_dancing (116)
+  - first:
+      213: -4565887481460086713
+    second: npc_hoboTom_dancing (117)
+  - first:
+      213: -7135429096761089296
+    second: npc_hoboTom_dancing (118)
+  - first:
+      213: -2991451280888988935
+    second: npc_hoboTom_dancing (119)
+  - first:
+      213: 78130447461470735
+    second: npc_hoboTom_dancing (120)
+  - first:
+      213: 65013725852082359
+    second: npc_hoboTom_dancing (121)
+  - first:
+      213: 5721725213623463797
+    second: npc_hoboTom_dancing (122)
+  - first:
+      213: 5045724767116794247
+    second: npc_hoboTom_dancing (123)
+  - first:
+      213: -708045970531108610
+    second: npc_hoboTom_dancing (124)
+  - first:
+      213: 4284730500803749851
+    second: npc_hoboTom_dancing (125)
+  - first:
+      213: -3367619016491753338
+    second: npc_hoboTom_dancing (126)
+  - first:
+      213: -450042296361549487
+    second: npc_hoboTom_dancing (127)
+  - first:
+      213: -4376992449583128132
+    second: npc_hoboTom_dancing (128)
+  - first:
+      213: 6944543576212855408
+    second: npc_hoboTom_dancing (129)
+  - first:
+      213: 9065289063012755450
+    second: npc_hoboTom_dancing (130)
+  - first:
+      213: -5881549894174968242
+    second: npc_hoboTom_dancing (131)
+  - first:
+      213: 5832512943868445984
+    second: npc_hoboTom_dancing (132)
+  - first:
+      213: -1487466988362293626
+    second: npc_hoboTom_dancing (133)
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (1)
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 2343
+        width: 127
+        height: 249
+      alignment: 9
+      pivot: {x: 0.511811, y: 0.02811245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11faaa83a6f827710800000000000000
+      internalID: 1689570496597372689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (2)
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 2849
+        width: 128
+        height: 255
+      alignment: 9
+      pivot: {x: 0.5078125, y: 0.050980393}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe893d2aee8352bd0800000000000000
+      internalID: -2655653807679891217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (3)
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1850
+        width: 125
+        height: 255
+      alignment: 9
+      pivot: {x: 0.52, y: 0.050980393}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a188330dbf34c3ec0800000000000000
+      internalID: -3585916454484867046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (4)
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 2104
+        width: 126
+        height: 253
+      alignment: 9
+      pivot: {x: 0.515873, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a907c268336f920800000000000000
+      internalID: 3023660851190078082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (5)
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1602
+        width: 120
+        height: 253
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4de641b9ebcb89940800000000000000
+      internalID: 5303196088060374740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (6)
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1595
+        width: 120
+        height: 253
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb8a7bb8f06304590800000000000000
+      internalID: -7692088723152328514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (7)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1351
+        width: 120
+        height: 253
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71123be5139a042a0800000000000000
+      internalID: -6755213411548454633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (8)
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 1834
+        width: 120
+        height: 253
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e15b8b503aba8d230800000000000000
+      internalID: 3663867013529908510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (9)
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 2585
+        width: 127
+        height: 253
+      alignment: 9
+      pivot: {x: 0.52755904, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f340effade9cce0800000000000000
+      internalID: -1384314070302965985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (10)
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 2594
+        width: 128
+        height: 253
+      alignment: 9
+      pivot: {x: 0.5234375, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a5acfe8d9b3b930800000000000000
+      internalID: 4157871222380190351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (11)
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 2096
+        width: 124
+        height: 253
+      alignment: 9
+      pivot: {x: 0.5080645, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65885d62eb41986e0800000000000000
+      internalID: -1834912566248896426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (12)
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 2342
+        width: 124
+        height: 253
+      alignment: 9
+      pivot: {x: 0.5080645, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb4bac45ff0095690800000000000000
+      internalID: -7613052598453881665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (13)
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 2087
+        width: 124
+        height: 253
+      alignment: 9
+      pivot: {x: 0.516129, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8154eac6379fb50800000000000000
+      internalID: 6627455237269821623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (14)
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 2096
+        width: 124
+        height: 253
+      alignment: 9
+      pivot: {x: 0.516129, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30fd8509a17cc9a80800000000000000
+      internalID: -8458667083203813629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (15)
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 1844
+        width: 123
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5121951, y: 0.024193548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a208c8642a9ad31c0800000000000000
+      internalID: -4522271936376700886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (16)
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1844
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5081967, y: 0.024291499}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7939a130b3582fce0800000000000000
+      internalID: -1372888447892941929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (17)
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 2093
+        width: 124
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5080645, y: 0.024193548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d131d170cee2d510800000000000000
+      internalID: 1572581730216391121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (18)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2104
+        width: 126
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.020242915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd1f818df02f43b0800000000000000
+      internalID: -5526161944587854348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (19)
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 2358
+        width: 128
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5078125, y: 0.024193548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 527be3f9996d5b5e0800000000000000
+      internalID: -1894372112949397723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (20)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1606
+        width: 125
+        height: 247
+      alignment: 9
+      pivot: {x: 0.512, y: 0.020242915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d53be51a3f1571d90800000000000000
+      internalID: -7127137778464279715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (21)
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 2351
+        width: 125
+        height: 247
+      alignment: 9
+      pivot: {x: 0.512, y: 0.020242915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c83ab4c02981c4c0800000000000000
+      internalID: -4268980197938022200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (22)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2601
+        width: 131
+        height: 247
+      alignment: 9
+      pivot: {x: 0.52671754, y: 0.020242915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af4d5f7081510830800000000000000
+      internalID: 4035596353435160484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (23)
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 2348
+        width: 135
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5407407, y: 0.020576132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849623cb13d313970800000000000000
+      internalID: 8732828436268214600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (24)
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2610
+        width: 131
+        height: 245
+      alignment: 9
+      pivot: {x: 0.53435117, y: 0.028571429}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a70a316a3f9629900800000000000000
+      internalID: 689730188125380730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (25)
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 2598
+        width: 142
+        height: 243
+      alignment: 9
+      pivot: {x: 0.57042253, y: 0.024691358}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afccac62d62b4d8f0800000000000000
+      internalID: -516591875368760070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (26)
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 2339
+        width: 125
+        height: 244
+      alignment: 9
+      pivot: {x: 0.528, y: 0.020491803}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ff62d50db339a20800000000000000
+      internalID: 3067861537271512961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (27)
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 1849
+        width: 114
+        height: 245
+      alignment: 9
+      pivot: {x: 0.49122807, y: 0.020408163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644dc3840aa040cf0800000000000000
+      internalID: -287092792721877946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (28)
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1840
+        width: 119
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5294118, y: 0.020408163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b4b763e691c14480800000000000000
+      internalID: -8916632933412391760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (29)
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1857
+        width: 124
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5322581, y: 0.020408163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52fb83270867ad0c0800000000000000
+      internalID: -4550194179460251867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (30)
+      rect:
+        serializedVersion: 2
+        x: 1910
+        y: 3850
+        width: 137
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5182482, y: 0.020408163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8566e774999c1e20800000000000000
+      internalID: 3322699488038380938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (31)
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 3106
+        width: 130
+        height: 244
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0.020491803}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb9ee447da6efe460800000000000000
+      internalID: 7273285555881699774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (32)
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 2601
+        width: 145
+        height: 245
+      alignment: 9
+      pivot: {x: 0.56551725, y: 0.020408163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134f0f59875752b90800000000000000
+      internalID: -7267273262920305615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (33)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2353
+        width: 128
+        height: 246
+      alignment: 9
+      pivot: {x: 0.515625, y: 0.020325202}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20a85b285d077470800000000000000
+      internalID: 8392191102963720239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (34)
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 2094
+        width: 124
+        height: 243
+      alignment: 9
+      pivot: {x: 0.38709676, y: 0.020576132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 476e35700dca8f060800000000000000
+      internalID: 6987524831341438580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (35)
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 2107
+        width: 135
+        height: 243
+      alignment: 9
+      pivot: {x: 0.4888889, y: 0.020576132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac9ef3dc1da3fc00800000000000000
+      internalID: 933279887123192994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (36)
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 2848
+        width: 149
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5637584, y: 0.02016129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821e43ea820bdb630800000000000000
+      internalID: 3944502537414304040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (37)
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 2862
+        width: 150
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5733333, y: 0.020408163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47cf424291c701020800000000000000
+      internalID: 2310483056263494772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (38)
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 2857
+        width: 153
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5620915, y: 0.020576132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b2fdf7b454cad60800000000000000
+      internalID: 7902767636698573670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (39)
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 3105
+        width: 154
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5779221, y: 0.028571429}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f99f7698a4372460800000000000000
+      internalID: 7216794826568604146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (40)
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 3344
+        width: 160
+        height: 247
+      alignment: 9
+      pivot: {x: 0.6, y: 0.032388665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c0396f70abfb690800000000000000
+      internalID: -7584138704104256394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (41)
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 3357
+        width: 163
+        height: 243
+      alignment: 9
+      pivot: {x: 0.61349696, y: 0.020576132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2c009dfee36701a0800000000000000
+      internalID: -6843391230658737105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (42)
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 3348
+        width: 156
+        height: 242
+      alignment: 9
+      pivot: {x: 0.60897434, y: 0.020661157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56754b622770391e0800000000000000
+      internalID: -2192400406742280347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (43)
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 3109
+        width: 160
+        height: 246
+      alignment: 9
+      pivot: {x: 0.60625, y: 0.032520324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a4c64748d741d160800000000000000
+      internalID: 7048493886045865129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (44)
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 3112
+        width: 162
+        height: 243
+      alignment: 9
+      pivot: {x: 0.58641976, y: 0.020576132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26fad71ec5a0423e0800000000000000
+      internalID: -2079525733901947038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (45)
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 3354
+        width: 174
+        height: 243
+      alignment: 9
+      pivot: {x: 0.59770113, y: 0.020576132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8130c91c094317830800000000000000
+      internalID: 4067089734820430616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (46)
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 3604
+        width: 164
+        height: 243
+      alignment: 9
+      pivot: {x: 0.6097561, y: 0.020576132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a3d609a34911620800000000000000
+      internalID: 2743136627297434173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (47)
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 3852
+        width: 169
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5502958, y: 0.020576132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6748088b6c1160f0800000000000000
+      internalID: -1125587183696590998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (48)
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 3852
+        width: 171
+        height: 243
+      alignment: 9
+      pivot: {x: 0.6023392, y: 0.020576132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba749c2d8d73b600800000000000000
+      internalID: 482867630350564028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (49)
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 3598
+        width: 175
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6514286, y: 0.036144577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d66cbcca5f55a10800000000000000
+      internalID: 1897692940508491150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (50)
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 2851
+        width: 148
+        height: 247
+      alignment: 9
+      pivot: {x: 0.6148649, y: 0.02834008}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813d4d6d8f1a19400800000000000000
+      internalID: 329222337902990104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (51)
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 2857
+        width: 153
+        height: 246
+      alignment: 9
+      pivot: {x: 0.59477127, y: 0.024390243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459c8c9894ffcedf0800000000000000
+      internalID: -149463996300736172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (52)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3099
+        width: 155
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5612903, y: 0.020408163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d70ffac99f20310800000000000000
+      internalID: 1369931688036039975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (53)
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 3598
+        width: 141
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5248227, y: 0.036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c0ebfe9e5d10970800000000000000
+      internalID: 8719485554292296853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (54)
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 2335
+        width: 139
+        height: 251
+      alignment: 9
+      pivot: {x: 0.4964029, y: 0.03984064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee5de0a5b2c83b180800000000000000
+      internalID: -9100776304163236370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (55)
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 2614
+        width: 148
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5675676, y: 0.036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 876e32f0206aa0790800000000000000
+      internalID: -7563050096441170312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (56)
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 3343
+        width: 162
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5740741, y: 0.044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5142f085040e1a8f0800000000000000
+      internalID: -530896714093091819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (57)
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 3849
+        width: 171
+        height: 246
+      alignment: 9
+      pivot: {x: 0.61403507, y: 0.028455285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c14bb909c57b2ad0800000000000000
+      internalID: -2725955643130560060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (58)
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 3846
+        width: 181
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6629834, y: 0.036144577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ea4f8466b84a7870800000000000000
+      internalID: 8681331179918412513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (59)
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 3351
+        width: 156
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5897436, y: 0.024489796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c106d73b7cbeef0800000000000000
+      internalID: -77748994832327587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (60)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2850
+        width: 152
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04048583}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62dee3b69213c0f50800000000000000
+      internalID: 6848903187286388006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (61)
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 2107
+        width: 126
+        height: 249
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.032128513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4874c99a87425b70800000000000000
+      internalID: 8886243675366258765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (62)
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 1867
+        width: 112
+        height: 248
+      alignment: 9
+      pivot: {x: 0.33035713, y: 0.024193548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 452076fad15b65670800000000000000
+      internalID: 8527202083574055508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (63)
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2359
+        width: 128
+        height: 249
+      alignment: 9
+      pivot: {x: 0.34375, y: 0.024096385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e206162037f603e0800000000000000
+      internalID: -2087709591070178588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (64)
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 3102
+        width: 155
+        height: 250
+      alignment: 9
+      pivot: {x: 0.36774194, y: 0.052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004f5dbccafa900c0800000000000000
+      internalID: -4608959586947959808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (65)
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 3595
+        width: 174
+        height: 251
+      alignment: 9
+      pivot: {x: 0.37356323, y: 0.043824703}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef2c5b7e5465ca020800000000000000
+      internalID: 2354351563448107774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (66)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3598
+        width: 202
+        height: 247
+      alignment: 9
+      pivot: {x: 0.4108911, y: 0.02834008}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a48d379fdd7c1350800000000000000
+      internalID: 5988800003764487330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (67)
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 3599
+        width: 211
+        height: 249
+      alignment: 9
+      pivot: {x: 0.43601894, y: 0.02811245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d306f729fd065d0800000000000000
+      internalID: -3071209125571445408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (68)
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 3848
+        width: 218
+        height: 247
+      alignment: 9
+      pivot: {x: 0.42201835, y: 0.036437247}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a16106496086460800000000000000
+      internalID: 7235040035707689502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (69)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3847
+        width: 228
+        height: 248
+      alignment: 9
+      pivot: {x: 0.4385965, y: 0.028225806}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55cd23e75c4692b50800000000000000
+      internalID: 6568892330885176405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (70)
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 3850
+        width: 222
+        height: 245
+      alignment: 9
+      pivot: {x: 0.45495495, y: 0.040816326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19164c0b1c53a8010800000000000000
+      internalID: 1191824157403537809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (71)
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 3090
+        width: 158
+        height: 251
+      alignment: 9
+      pivot: {x: 0.43670887, y: 0.035856575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4839a5b5bf98e4480800000000000000
+      internalID: -8913034899857173628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (72)
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 1356
+        width: 104
+        height: 245
+      alignment: 9
+      pivot: {x: 0.35576922, y: 0.028571429}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5719c4660ea134de0800000000000000
+      internalID: -1350205912189726347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (73)
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 2089
+        width: 110
+        height: 253
+      alignment: 9
+      pivot: {x: 0.37272727, y: 0.03952569}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9148a9d3e709e2640800000000000000
+      internalID: 5057138303457461273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (74)
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 2117
+        width: 136
+        height: 251
+      alignment: 9
+      pivot: {x: 0.49264705, y: 0.03187251}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12c1f2d4504c4d720800000000000000
+      internalID: 2870134389590662177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (75)
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 3593
+        width: 164
+        height: 253
+      alignment: 9
+      pivot: {x: 0.37804878, y: 0.0513834}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bfdb476847bc1e60800000000000000
+      internalID: 7934418165118525369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (76)
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 3357
+        width: 167
+        height: 249
+      alignment: 9
+      pivot: {x: 0.36526945, y: 0.036144577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec37ee225cee16ca0800000000000000
+      internalID: -6025272295982992434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (77)
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 3093
+        width: 161
+        height: 250
+      alignment: 9
+      pivot: {x: 0.29813665, y: 0.044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9bba544369c093f0800000000000000
+      internalID: -895994897660986469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (78)
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 3849
+        width: 187
+        height: 246
+      alignment: 9
+      pivot: {x: 0.46524063, y: 0.032520324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb437ede58033530800000000000000
+      internalID: 3833416911374470086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (79)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3346
+        width: 172
+        height: 250
+      alignment: 9
+      pivot: {x: 0.4651163, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a958f994fa931a2d0800000000000000
+      internalID: -3269268429477018214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (80)
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 2609
+        width: 145
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5241379, y: 0.035856575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 777b711d28a513a70800000000000000
+      internalID: 8804918264386271095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (81)
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 2840
+        width: 147
+        height: 255
+      alignment: 9
+      pivot: {x: 0.53061223, y: 0.047058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51045538bcee1490800000000000000
+      internalID: -7773515630882061988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (82)
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 3349
+        width: 163
+        height: 253
+      alignment: 9
+      pivot: {x: 0.5766871, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f794880f943c68820800000000000000
+      internalID: 2920236130731837823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (83)
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 3595
+        width: 168
+        height: 255
+      alignment: 9
+      pivot: {x: 0.5833333, y: 0.047058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23efb0ec7126f850800000000000000
+      internalID: 6410347939838812970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (84)
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 3602
+        width: 167
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5748503, y: 0.03265306}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c716920c6fbdfb0800000000000000
+      internalID: -4621829287377273819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (85)
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 3848
+        width: 171
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5906433, y: 0.032388665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f72ba777a3075990800000000000000
+      internalID: -7397439845130622990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (86)
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 3608
+        width: 168
+        height: 242
+      alignment: 9
+      pivot: {x: 0.5833333, y: 0.02892562}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc01f126c1e33d80800000000000000
+      internalID: -8272019849460249390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (87)
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 3352
+        width: 156
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5192308, y: 0.020746889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c22b0de6ae16e100800000000000000
+      internalID: 136830540971713223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (88)
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 2588
+        width: 142
+        height: 251
+      alignment: 9
+      pivot: {x: 0.48591548, y: 0.05179283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cde2cca177596fa0800000000000000
+      internalID: -5807014098776166969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (89)
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1859
+        width: 109
+        height: 246
+      alignment: 9
+      pivot: {x: 0.35779816, y: 0.040650405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe4670f638ac322f0800000000000000
+      internalID: -998732026493836049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (90)
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 1603
+        width: 93
+        height: 246
+      alignment: 9
+      pivot: {x: 0.23655914, y: 0.032520324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec309c4fdca30cb90800000000000000
+      internalID: -7223709146052754482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (91)
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 3104
+        width: 82
+        height: 242
+      alignment: 9
+      pivot: {x: 0.25609756, y: 0.020661157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 786b57616abe2d400800000000000000
+      internalID: 347599219834861191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (92)
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 2841
+        width: 89
+        height: 253
+      alignment: 9
+      pivot: {x: 0.40449437, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 586af61d9c1811a50800000000000000
+      internalID: 6490111241819760261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (93)
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1829
+        width: 110
+        height: 251
+      alignment: 9
+      pivot: {x: 0.57272726, y: 0.03187251}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ac04e4be68546740800000000000000
+      internalID: 5144333906868440227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (94)
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1347
+        width: 102
+        height: 253
+      alignment: 9
+      pivot: {x: 0.5882353, y: 0.04743083}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48b038c902fc85770800000000000000
+      internalID: 8599851227435699076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (95)
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 1603
+        width: 104
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5673077, y: 0.020325202}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00cdbf16b44cc0910800000000000000
+      internalID: 1805033378714213376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (96)
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1588
+        width: 113
+        height: 250
+      alignment: 9
+      pivot: {x: 0.54867256, y: 0.032}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08e02ea013cd0ec0800000000000000
+      internalID: -3599006050790873074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (97)
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1829
+        width: 113
+        height: 254
+      alignment: 9
+      pivot: {x: 0.5840708, y: 0.051181104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93404691c9cee42f0800000000000000
+      internalID: -986591113162521543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (98)
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 1852
+        width: 107
+        height: 253
+      alignment: 9
+      pivot: {x: 0.6448598, y: 0.04743083}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee285581fdac0ec50800000000000000
+      internalID: 6692572105807332078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (99)
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1598
+        width: 103
+        height: 244
+      alignment: 9
+      pivot: {x: 0.65048546, y: 0.016393442}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e2d988775372eb40800000000000000
+      internalID: 5468059717102850785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (100)
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 2588
+        width: 100
+        height: 251
+      alignment: 9
+      pivot: {x: 0.66, y: 0.035856575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b61d8da9e05d2c2a0800000000000000
+      internalID: -6718573435379199637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (101)
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 1601
+        width: 104
+        height: 249
+      alignment: 9
+      pivot: {x: 0.66346157, y: 0.036144577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 859e8ac07b3950960800000000000000
+      internalID: 7567617163266681176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (102)
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1343
+        width: 102
+        height: 250
+      alignment: 9
+      pivot: {x: 0.65686274, y: 0.052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5867b48b63625d20800000000000000
+      internalID: 3265781993236293724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (103)
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 2344
+        width: 103
+        height: 254
+      alignment: 9
+      pivot: {x: 0.6407767, y: 0.051181104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbbdd7c833af13840800000000000000
+      internalID: 5202214143896968124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (104)
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 1851
+        width: 105
+        height: 251
+      alignment: 9
+      pivot: {x: 0.6761905, y: 0.03187251}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca69871436c2ea3b0800000000000000
+      internalID: -5499409290160990548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (105)
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 2597
+        width: 145
+        height: 247
+      alignment: 9
+      pivot: {x: 0.64827585, y: 0.024291499}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c1ec901baf0a5c0800000000000000
+      internalID: -4206086413683385313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (106)
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 2334
+        width: 121
+        height: 252
+      alignment: 9
+      pivot: {x: 0.58677685, y: 0.04761905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c5ace9b354528b0800000000000000
+      internalID: -5177656074223068009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (107)
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 2102
+        width: 117
+        height: 245
+      alignment: 9
+      pivot: {x: 0.6581197, y: 0.01632653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f9be338abf38020800000000000000
+      internalID: 2342992931006947136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (108)
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 2082
+        width: 114
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5964912, y: 0.043824703}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c1f1f2542fe17f0800000000000000
+      internalID: -639807718082798542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (109)
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1843
+        width: 123
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5609756, y: 0.03984064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349c8d9134e0d1910800000000000000
+      internalID: 1809618306632042819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (110)
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 2608
+        width: 133
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5338346, y: 0.032388665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d61327a60084eb20800000000000000
+      internalID: 3162793604383184592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (111)
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 2593
+        width: 132
+        height: 248
+      alignment: 9
+      pivot: {x: 0.6212121, y: 0.02016129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dd0101eaef76b220800000000000000
+      internalID: 2501327289824906709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (112)
+      rect:
+        serializedVersion: 2
+        x: 1869
+        y: 2104
+        width: 134
+        height: 242
+      alignment: 9
+      pivot: {x: 0.5671642, y: 0.024793388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f5fc7cd390ff64b0800000000000000
+      internalID: -5444868906617604616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (113)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1855
+        width: 125
+        height: 247
+      alignment: 9
+      pivot: {x: 0.592, y: 0.024291499}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf0b8ffa6475b3c70800000000000000
+      internalID: 8951844645440631036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (114)
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1622
+        width: 107
+        height: 243
+      alignment: 9
+      pivot: {x: 0.635514, y: 0.024691358}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b47079329285d510800000000000000
+      internalID: 1573307209376363699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (115)
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 1606
+        width: 106
+        height: 251
+      alignment: 9
+      pivot: {x: 0.6320755, y: 0.03187251}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eee83602a4bca0d0800000000000000
+      internalID: -3410152209844211995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (116)
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 1849
+        width: 114
+        height: 251
+      alignment: 9
+      pivot: {x: 0.6403509, y: 0.03984064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 448b1b73a4545c910800000000000000
+      internalID: 1856966606424488004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (117)
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 2085
+        width: 121
+        height: 247
+      alignment: 9
+      pivot: {x: 0.57024795, y: 0.024291499}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7482b27d685b2a0c0800000000000000
+      internalID: -4565887481460086713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (118)
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 3345
+        width: 142
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 0.035856575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f2a197aa0dd9fc90800000000000000
+      internalID: -7135429096761089296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (119)
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 2351
+        width: 144
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5486111, y: 0.05078125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa79bfc8ea3c76d0800000000000000
+      internalID: -2991451280888988935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (120)
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 2600
+        width: 145
+        height: 249
+      alignment: 9
+      pivot: {x: 0.56551725, y: 0.036144577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f02551f5a33951100800000000000000
+      internalID: 78130447461470735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (121)
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 2841
+        width: 149
+        height: 247
+      alignment: 9
+      pivot: {x: 0.6442953, y: 0.024291499}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b020f2a3a9f6e000800000000000000
+      internalID: 65013725852082359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (122)
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 2846
+        width: 146
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5684931, y: 0.032258064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f2c6c44c6a76f40800000000000000
+      internalID: 5721725213623463797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (123)
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 2352
+        width: 138
+        height: 244
+      alignment: 9
+      pivot: {x: 0.5942029, y: 0.024590164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 789136a31f3060640800000000000000
+      internalID: 5045724767116794247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (124)
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 2349
+        width: 142
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5633803, y: 0.052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef8b8d1f0f38c26f0800000000000000
+      internalID: -708045970531108610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (125)
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 2370
+        width: 142
+        height: 242
+      alignment: 9
+      pivot: {x: 0.57042253, y: 0.020661157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd760b260bb667b30800000000000000
+      internalID: 4284730500803749851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (126)
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 3097
+        width: 153
+        height: 252
+      alignment: 9
+      pivot: {x: 0.5620915, y: 0.04761905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680a82fc850d341d0800000000000000
+      internalID: -3367619016491753338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (127)
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 3592
+        width: 160
+        height: 252
+      alignment: 9
+      pivot: {x: 0.51875, y: 0.04761905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15108777ae021c9f0800000000000000
+      internalID: -450042296361549487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (128)
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 2866
+        width: 158
+        height: 244
+      alignment: 9
+      pivot: {x: 0.5253165, y: 0.032786883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1e702be8cc143c0800000000000000
+      internalID: -4376992449583128132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (129)
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 3100
+        width: 152
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5394737, y: 0.028455285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07a536bb699ff5060800000000000000
+      internalID: 6944543576212855408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (130)
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 3096
+        width: 152
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5263158, y: 0.036585364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af7eb137f506ecd70800000000000000
+      internalID: 9065289063012755450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (131)
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 2843
+        width: 156
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5448718, y: 0.04032258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e46f6f47889806ea0800000000000000
+      internalID: -5881549894174968242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (132)
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 3849
+        width: 171
+        height: 246
+      alignment: 9
+      pivot: {x: 0.50292397, y: 0.048780486}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0258527de9f31f050800000000000000
+      internalID: 5832512943868445984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_hoboTom_dancing (133)
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 3098
+        width: 159
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5031447, y: 0.04819277}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e9b8fa7a47b5be0800000000000000
+      internalID: -1487466988362293626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

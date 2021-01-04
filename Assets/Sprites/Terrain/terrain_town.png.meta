@@ -1,0 +1,501 @@
+fileFormatVersion: 2
+guid: e4b292f21c606934c943d112d19756a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5862220367406109909
+    second: town_00
+  - first:
+      213: -6974622811866879427
+    second: town_01
+  - first:
+      213: 1223147026232788959
+    second: town_02
+  - first:
+      213: -2521075387098986804
+    second: town_03
+  - first:
+      213: 3243353439765672964
+    second: town_04
+  - first:
+      213: -5099968521361031248
+    second: town_006_00
+  - first:
+      213: 2075210863113091766
+    second: town_007_00
+  - first:
+      213: 5171674002709370493
+    second: town_008_00
+  - first:
+      213: -3560056677928195433
+    second: town_009_00
+  - first:
+      213: -5267197729675032343
+    second: town_011_00
+  - first:
+      213: 6769497834610923785
+    second: town_017_00
+  - first:
+      213: 7273882058169371298
+    second: town_018_00
+  - first:
+      213: 9181458623799192900
+    second: town_018_01
+  - first:
+      213: -3524967841419134377
+    second: town_018_02
+  - first:
+      213: 1658323105502378502
+    second: town_018_03
+  - first:
+      213: 5337405077636030888
+    second: town_018_04
+  - first:
+      213: -2403467051398671656
+    second: town_017_01
+  - first:
+      213: -4113309112356559831
+    second: town_017_02
+  - first:
+      213: -4115626916707895571
+    second: town_017_03
+  - first:
+      213: 919158494495914412
+    second: terrain_town_006_00
+  - first:
+      213: -3632100455158075335
+    second: terrain_town_007_00
+  - first:
+      213: -2438756635311961372
+    second: terrain_town_008_00
+  - first:
+      213: 7533804036854870253
+    second: terrain_town_009_00
+  - first:
+      213: 7673223571311406668
+    second: terrain_town_011_00
+  - first:
+      213: 4143200192662733290
+    second: terrain_town_017_00
+  - first:
+      213: 4908617954814974006
+    second: terrain_town_017_01
+  - first:
+      213: 469454826673695120
+    second: terrain_town_017_02
+  - first:
+      213: -1766177032130902851
+    second: terrain_town_017_03
+  - first:
+      213: -4422683704057829628
+    second: terrain_town_018_00
+  - first:
+      213: 150947173980070400
+    second: terrain_town_018_01
+  - first:
+      213: -8165499510494447968
+    second: terrain_town_018_02
+  - first:
+      213: -3834823642067864144
+    second: terrain_town_018_03
+  - first:
+      213: -7614568499061518524
+    second: terrain_town_018_04
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: terrain_town_006_00
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 861
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca936b4e7c181cc00800000000000000
+      internalID: 919158494495914412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_007_00
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 786
+        width: 64
+        height: 64
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930b4c531ef289dc0800000000000000
+      internalID: -3632100455158075335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_008_00
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 895
+        width: 128
+        height: 128
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea8a92e2cbc72ed0800000000000000
+      internalID: -2438756635311961372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_009_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 203
+        width: 256
+        height: 256
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de073201bd27d8860800000000000000
+      internalID: 7533804036854870253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_011_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 511
+        width: 512
+        height: 512
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4eab220f24cc7a60800000000000000
+      internalID: 7673223571311406668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_017_00
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 884
+        width: 266
+        height: 139
+      alignment: 9
+      pivot: {x: 0.018796992, y: 0.05035971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae10ef4af9a9f7930800000000000000
+      internalID: 4143200192662733290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_017_01
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 743
+        width: 266
+        height: 139
+      alignment: 9
+      pivot: {x: 0.018796992, y: 0.05035971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638d9ded50aee1440800000000000000
+      internalID: 4908617954814974006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_017_02
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 602
+        width: 266
+        height: 139
+      alignment: 9
+      pivot: {x: 0.018796992, y: 0.05035971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0996af57da6d38600800000000000000
+      internalID: 469454826673695120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_017_03
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 461
+        width: 266
+        height: 139
+      alignment: 9
+      pivot: {x: 0.018796992, y: 0.05035971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db4426dc8574d77e0800000000000000
+      internalID: -1766177032130902851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_018_00
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 981
+        width: 79
+        height: 42
+      alignment: 9
+      pivot: {x: 0.088607594, y: 0.11904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40769b18a987f92c0800000000000000
+      internalID: -4422683704057829628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_018_01
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 937
+        width: 78
+        height: 42
+      alignment: 9
+      pivot: {x: 0.08974359, y: 0.11904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0026eeca7a5481200800000000000000
+      internalID: 150947173980070400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_018_02
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 894
+        width: 78
+        height: 41
+      alignment: 9
+      pivot: {x: 0.07692308, y: 0.09756097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a63a5735715eae80800000000000000
+      internalID: -8165499510494447968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_018_03
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 851
+        width: 77
+        height: 41
+      alignment: 9
+      pivot: {x: 0.077922076, y: 0.09756097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b5764e1738f7cac0800000000000000
+      internalID: -3834823642067864144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_018_04
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 852
+        width: 78
+        height: 41
+      alignment: 9
+      pivot: {x: 0.07692308, y: 0.09756097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f0f873b4e935690800000000000000
+      internalID: -7614568499061518524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -22,7 +22,6 @@ TagManager:
   - SavePointsFolder
   - Enemy
   - ChamberContainer
-  - DecorContainer
   - PlayerTarget
   - GameUI
   - Shop
@@ -31,6 +30,11 @@ TagManager:
   - DeathScreen
   - ShadowsContainer
   - GameMenuSection
+  - Grass
+  - GrassContainer
+  - TerrainContainer
+  - BackgroundContainer
+  - OverhangContainer
   layers:
   - Default
   - TransparentFX
@@ -53,7 +57,7 @@ TagManager:
   - GroundOverlay
   - Elevator
   - Ingredient
-  - 
+  - Grass
   - 
   - 
   - 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public static class GlobalFunctions
@@ -171,6 +172,25 @@ public static class GlobalFunctions
             GameObject.Destroy(objectsToDelete[0]);
             objectsToDelete.RemoveAt(0);
         }
+    }
+
+    public static List<Sprite> GetSpritesAtPath(string theme, Constants.AssetTypes assetType)
+    {
+        var type = new Dictionary<Constants.AssetTypes, string>{
+            {Constants.AssetTypes.Terrain, "terrain"},
+            {Constants.AssetTypes.Grass, "grass"},
+            {Constants.AssetTypes.Overhang, "overhang"},
+        }[assetType];
+        var path = $"Assets/Sprites/{type}/{type}_{theme}.png";
+        var data = AssetDatabase.LoadAllAssetsAtPath(path);
+        var sprites = new List<Sprite>();
+        foreach (var item in data)
+        {
+            var sprite = item as Sprite;
+            if (sprite == null) continue;
+            sprites.Add(sprite);
+        }
+        return sprites;
     }
 
 }

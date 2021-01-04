@@ -1,0 +1,636 @@
+fileFormatVersion: 2
+guid: 3d13c6fce570aa847aa0f0e0f6900766
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4963637932168608866
+    second: forest_01_01_00
+  - first:
+      213: 8097152755061295682
+    second: forest_02_02_00
+  - first:
+      213: 3944091114041215441
+    second: forest_04_02_00
+  - first:
+      213: 3887124155170217947
+    second: forest_04_04_00
+  - first:
+      213: 4907418069135741368
+    second: forest_00
+  - first:
+      213: 545006131806392606
+    second: forest_01
+  - first:
+      213: -4473492897187187222
+    second: forest_02
+  - first:
+      213: -4018840736970638598
+    second: forest_03
+  - first:
+      213: -8146886158725556268
+    second: forest_04
+  - first:
+      213: 6192439719300083833
+    second: forest_05
+  - first:
+      213: 543404554693034644
+    second: forest_06
+  - first:
+      213: -5281393174783135526
+    second: forest_00a
+  - first:
+      213: -2681844718685969217
+    second: forest_000_00
+  - first:
+      213: -3152835658081946906
+    second: forest_001_00
+  - first:
+      213: 6729204895458658437
+    second: forest_002_00
+  - first:
+      213: -1551455598480981259
+    second: forest_002_01
+  - first:
+      213: 1236179290662414219
+    second: forest_002_02
+  - first:
+      213: -1288841040705134959
+    second: forest_004_00
+  - first:
+      213: -7940496709992530646
+    second: forest_005_00
+  - first:
+      213: -7438086806157899583
+    second: forest_006_00
+  - first:
+      213: 3807896772343015587
+    second: forest_006_01
+  - first:
+      213: -6996558333888166306
+    second: forest_007_00
+  - first:
+      213: 205466588164598705
+    second: forest_008_00
+  - first:
+      213: 1982659067447771846
+    second: forest_009_00
+  - first:
+      213: 7344957435428393323
+    second: forest_010_00
+  - first:
+      213: -4653366048799350458
+    second: forest_011_00
+  - first:
+      213: -4447357004973091082
+    second: forest_012_00
+  - first:
+      213: 6831977154143218653
+    second: forest_013_00
+  - first:
+      213: -7255483428619155405
+    second: forest_014_00
+  - first:
+      213: -2020973159090366391
+    second: forest_015_00
+  - first:
+      213: 7519042866597088590
+    second: forest_016_00
+  - first:
+      213: -217099533139102528
+    second: forest_019_00
+  - first:
+      213: -789602463057978435
+    second: terrain_forest_000_00
+  - first:
+      213: -4689584425241767664
+    second: terrain_forest_001_00
+  - first:
+      213: -2801188325338974487
+    second: terrain_forest_002_00
+  - first:
+      213: -206802679314843275
+    second: terrain_forest_002_01
+  - first:
+      213: 3673288184278597877
+    second: terrain_forest_002_02
+  - first:
+      213: 2912273906934147490
+    second: terrain_forest_004_00
+  - first:
+      213: -7574966709769870788
+    second: terrain_forest_005_00
+  - first:
+      213: 363994689516146451
+    second: terrain_forest_006_00
+  - first:
+      213: 8240194606272562804
+    second: terrain_forest_006_01
+  - first:
+      213: -8835057346543498391
+    second: terrain_forest_007_00
+  - first:
+      213: -3742491387031369403
+    second: terrain_forest_008_00
+  - first:
+      213: 1283919307079499375
+    second: terrain_forest_009_00
+  - first:
+      213: 5908900833518205861
+    second: terrain_forest_010_00
+  - first:
+      213: 34887449454207041
+    second: terrain_forest_011_00
+  - first:
+      213: -337321134470408738
+    second: terrain_forest_013_00
+  - first:
+      213: -3899668865518475768
+    second: terrain_forest_014_00
+  - first:
+      213: 8805713637952968486
+    second: terrain_forest_015_00
+  - first:
+      213: 3850346533456558051
+    second: terrain_forest_016_00
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: terrain_forest_000_00
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1517
+        width: 158
+        height: 158
+      alignment: 9
+      pivot: {x: 0.088607594, y: 0.088607594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbbd7ab4eb4ca05f0800000000000000
+      internalID: -789602463057978435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_001_00
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1361
+        width: 154
+        height: 154
+      alignment: 9
+      pivot: {x: 0.09090909, y: 0.071428575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011924dcfcf3beeb0800000000000000
+      internalID: -4689584425241767664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_002_00
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1319
+        width: 136
+        height: 40
+      alignment: 9
+      pivot: {x: 0.0294118, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e6f2373f0e2029d0800000000000000
+      internalID: -2801188325338974487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_002_01
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1277
+        width: 136
+        height: 40
+      alignment: 9
+      pivot: {x: 0.0294118, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579f6d01f0a412df0800000000000000
+      internalID: -206802679314843275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_002_02
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 1396
+        width: 136
+        height: 40
+      alignment: 9
+      pivot: {x: 0.0294118, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f0c09544242af230800000000000000
+      internalID: 3673288184278597877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_004_00
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1354
+        width: 72
+        height: 40
+      alignment: 9
+      pivot: {x: 0.0555556, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9e27f30b97a6820800000000000000
+      internalID: 2912273906934147490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_005_00
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1802
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0.1, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32e1ce49ef40e690800000000000000
+      internalID: -7574966709769870788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_006_00
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1760
+        width: 40
+        height: 40
+      alignment: 9
+      pivot: {x: 0.1, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31f0db8dd3b2d0500800000000000000
+      internalID: 363994689516146451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_006_01
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1720
+        width: 38
+        height: 38
+      alignment: 9
+      pivot: {x: 0.105263, y: 0.105263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47647f2065d0b5270800000000000000
+      internalID: 8240194606272562804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_007_00
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 1322
+        width: 72
+        height: 72
+      alignment: 9
+      pivot: {x: 0.0555556, y: 0.055556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96bc1194722936580800000000000000
+      internalID: -8835057346543498391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_008_00
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 1300
+        width: 136
+        height: 136
+      alignment: 9
+      pivot: {x: 0.0294118, y: 0.029412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549490d79efff0cc0800000000000000
+      internalID: -3742491387031369403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_009_00
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1783
+        width: 264
+        height: 264
+      alignment: 9
+      pivot: {x: 0.0151515, y: 0.015152}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e3dbaaec561d110800000000000000
+      internalID: 1283919307079499375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_010_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 889
+        width: 520
+        height: 264
+      alignment: 9
+      pivot: {x: 0.00769231, y: 0.015152}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5abbcda5002a00250800000000000000
+      internalID: 5908900833518205861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_011_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1155
+        width: 520
+        height: 520
+      alignment: 9
+      pivot: {x: 0.00769231, y: 0.007692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14066df43f1fb7000800000000000000
+      internalID: 34887449454207041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_013_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1844
+        width: 730
+        height: 203
+      alignment: 9
+      pivot: {x: 0.045205478, y: 0.1773399}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed5d8a42738915bf0800000000000000
+      internalID: -337321134470408738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_014_00
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1544
+        width: 235
+        height: 237
+      alignment: 9
+      pivot: {x: 0.10212766, y: 0.07172996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 806ee1104d791e9c0800000000000000
+      internalID: -3899668865518475768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_015_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1677
+        width: 685
+        height: 165
+      alignment: 9
+      pivot: {x: 0.030656934, y: 0.1030303}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 627dff726ed243a70800000000000000
+      internalID: 8805713637952968486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_forest_016_00
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 1438
+        width: 337
+        height: 104
+      alignment: 9
+      pivot: {x: 0.017804155, y: 0.24038461}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e7b5dca5cd2f6530800000000000000
+      internalID: 3850346533456558051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

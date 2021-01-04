@@ -29,8 +29,19 @@ public class ChamberController : MonoBehaviour
     [SerializeField] public float colorShiftR;
     [SerializeField] public float colorShiftG;
     [SerializeField] public float colorShiftB;
+    [SerializeField] public string grass;
     public AudioClip ambientAudioClip;
     public AudioClip musicAudioClip;
+    public GrassManager grassManager
+    {
+        get {
+            if (_grassManager == null)
+            {
+                _grassManager = new GrassManager(this);
+            }
+            return _grassManager;
+        }
+    }
 
     private static LocationInformation.Zone _lastZoneEntered;
     private Transform _enemyFolder;
@@ -38,6 +49,7 @@ public class ChamberController : MonoBehaviour
     private bool _isPlayerInsideChamber;
     private List<GameObject> _containersToEnableDisable;
     private ChamberAudioManager _chamberAudioManager;
+    private GrassManager _grassManager;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +63,7 @@ public class ChamberController : MonoBehaviour
         var tilemapRenderer = GetComponentInChildren<TilemapRenderer>();
         tilemapRenderer.enabled = false;
         //Find containers to enable/disable
-        var containerNames = new[] { "AutoDecor", "Environment", "Shadows", "Npcs" };
+        var containerNames = new[] { Constants.NAME_TERRAINCONTAINER, Constants.NAME_ENVIRONMENTCONTAINER, Constants.NAME_SHADOWSCONTAINER, Constants.NAME_NPCCONTAINER, Constants.NAME_GRASSCONTAINER, Constants.NAME_OVERHANGCONTAINER, Constants.NAME_BACKGROUNDCONTAINER};
         _containersToEnableDisable = new List<GameObject>();
         foreach (var containerName in containerNames)
         {
@@ -190,5 +202,6 @@ public class ChamberController : MonoBehaviour
     {
         return x * cellCount.y + y;
     }
+
 
 }
