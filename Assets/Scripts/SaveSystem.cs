@@ -62,10 +62,10 @@ public static class SaveSystem
         var playerInventory = GlobalFunctions.GetPlayerInventory();
         saveData.GameTime = gameController.gameTime;
         saveData.HasDoubleJump = playerPlatformerController.hasDoubleJump;
-        saveData.Hp = healOnSave ? playerLifeController.maxHp : playerLifeController.hp;
-        saveData.MaxMp = playerLifeController.maxHp;
-        saveData.Mp = healOnSave ? playerManaController.maxMp : playerManaController.mp;
-        saveData.MaxMp = playerManaController.maxMp;
+        saveData.Hp = healOnSave ? playerLifeController.GetMaxHp() : playerLifeController.GetHp();
+        saveData.MaxMp = playerLifeController.GetMaxHp();
+        saveData.Mp = healOnSave ? playerManaController.GetMaxMp() : playerManaController.GetMp();
+        saveData.MaxMp = playerManaController.GetMaxMp();
         saveData.MpRegenPerSec = playerManaController.mpRegenPerSec;
         saveData.Inventory = playerInventory.GetInventoryString();
         saveData.SavePointGuid = savePointGuid;

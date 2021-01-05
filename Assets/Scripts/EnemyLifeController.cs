@@ -29,7 +29,7 @@ public class EnemyLifeController : LifeController
         maxHp = value;
     }
 
-    protected override int GetMaxHp()
+    public override int GetMaxHp()
     {
         return maxHp;
     }
@@ -39,7 +39,7 @@ public class EnemyLifeController : LifeController
         hp = value;
     }
 
-    protected override int GetHp()
+    public override int GetHp()
     {
         return hp;
     }

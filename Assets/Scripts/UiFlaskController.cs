@@ -23,13 +23,23 @@ public class UiFlaskController : MonoBehaviour
     public Image liquidBottom;
     public FlaskTypes flaskType;
 
-    private Func<float> _getValue;
-    private Func<float> _getMax;
+    private float _value;
+    private float _maxValue;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameController.PlayerSpawned += OnPlayerSpawned;
+        switch (flaskType)
+        {
+            case FlaskTypes.Health:
+                PlayerLifeController.HpChanged += OnValueChanged;
+                PlayerLifeController.MaxHpChanged += OnMaxValueChanged;
+                break;
+            case FlaskTypes.Mana:
+                ManaController.MpChanged += OnValueChanged;
+                ManaController.MaxMpChanged += OnMaxValueChanged;
+                break;
+        }
         index = Convert.ToInt32(UnityEngine.Random.Range(0f, 5000f));
         for (int i = 0; i < images.Length; i++)
         {
@@ -41,15 +51,13 @@ public class UiFlaskController : MonoBehaviour
         }
         liquidBottom.color = color;
         liquidLineImage.color = color;
-        OnPlayerSpawned(GameObject.FindGameObjectWithTag("Player"));
     }
 
     // Update is called once per fraame
     void Update()
     {
-        if (_getValue == null) return;
         var rect = quantityMaskRectTransform.rect;
-        var liquidHeight = _getValue() / _getMax() * heightAtFull;
+        var liquidHeight = _maxValue > 0 ? _value / _maxValue * heightAtFull : 0;
         quantityMaskRectTransform.sizeDelta = new Vector2(rect.width, liquidHeight);
         liquidLineRectTransform.anchoredPosition = new Vector2(liquidLineRectTransform.anchoredPosition.x, liquidHeight);
         for (int i = 0; i < images.Length; i++)
@@ -68,21 +76,14 @@ public class UiFlaskController : MonoBehaviour
         }
     }
 
-    private void OnPlayerSpawned(GameObject player)
+    private void OnValueChanged(float value)
     {
-        switch (flaskType)
-        {
-            case FlaskTypes.Health:
-                var playerLifeController = player.GetComponent<PlayerLifeController>();
-                _getValue = () => Convert.ToSingle(playerLifeController.hp);
-                _getMax = () => Convert.ToSingle(playerLifeController.maxHp);
-                break;
-            case FlaskTypes.Mana:
-                var playerManaController = player.GetComponent<ManaController>();
-                _getValue = () => Convert.ToSingle(playerManaController.mp);
-                _getMax = () => Convert.ToSingle(playerManaController.maxMp);
-                break;
-        }
+        _value = value;
+    }
+
+    private void OnMaxValueChanged(float maxValue)
+    {
+        _maxValue = maxValue;
     }
 
     private Vector2 GetDirection(int index)

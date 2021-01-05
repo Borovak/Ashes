@@ -6,16 +6,18 @@ using UnityEngine;
 
 public class PlayerLifeController : LifeController
 {
-    public int hp;
-    public int maxHp;
+    public static event Action<float> HpChanged;
+    public static event Action<float> MaxHpChanged;
+    private int _hp;
+    private int _maxHp;
     public AudioClip deathMusic;
 
     protected override void AfterStart()
     {
         _isPlayer = true;
         SaveSystem.GameSaved += OnGameSaved;
-        hp = SaveSystem.LastLoadedSave.Hp;
-        maxHp = SaveSystem.LastLoadedSave.MaxHp;
+        SetHp(SaveSystem.LastLoadedSave.Hp);
+        SetMaxHp(SaveSystem.LastLoadedSave.MaxHp);
     }
 
     // Update is called once per frame
@@ -25,22 +27,24 @@ public class PlayerLifeController : LifeController
 
     protected override void SetMaxHp(int value)
     {
-        maxHp = value;
+        _maxHp = value;
+        MaxHpChanged?.Invoke(_maxHp);
     }
 
-    protected override int GetMaxHp()
+    public override int GetMaxHp()
     {
-        return maxHp;
+        return _maxHp;
     }
 
     protected override void SetHp(int value)
     {
-        hp = value;
+        _hp = value;
+        HpChanged?.Invoke(_hp);
     }
 
-    protected override int GetHp()
+    public override int GetHp()
     {
-        return hp;
+        return _hp;
     }
 
     protected override void OnDeath()
@@ -51,6 +55,6 @@ public class PlayerLifeController : LifeController
     private void OnGameSaved(bool healOnSave)
     {
         if (!healOnSave) return;
-        hp = SaveSystem.LastLoadedSave.MaxHp;
+        SetHp(SaveSystem.LastLoadedSave.MaxHp);
     }
 }

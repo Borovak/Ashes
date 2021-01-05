@@ -27,9 +27,9 @@ public abstract class LifeController : MonoBehaviour
     public bool isInWater => _acidWaters.Count(x => !x.isAcid) > 0;
     protected abstract void AfterStart();
     protected abstract void AfterUpdate();
-    protected abstract int GetMaxHp();
+    public abstract int GetMaxHp();
     protected abstract void SetMaxHp(int value);
-    protected abstract int GetHp();
+    public abstract int GetHp();
     protected abstract void SetHp(int value);
     protected abstract void OnDeath();
     public bool IsAlive => GetHp() > 0;

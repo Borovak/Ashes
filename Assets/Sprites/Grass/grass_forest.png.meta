@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: 7528529303345238691
     second: grass_forest_05
+  - first:
+      213: -8234124232454937189
+    second: grass_forest_06
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,53 +112,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grass_forest_00
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 71
-        width: 179
-        height: 242
-      alignment: 9
-      pivot: {x: 0.54189944, y: 0.020661157}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e07aad290036ea0a0800000000000000
-      internalID: -6868443527578474738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grass_forest_01
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 315
-        width: 129
-        height: 252
-      alignment: 9
-      pivot: {x: 0.093023255, y: 0.055555556}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59b4da971c020dae0800000000000000
-      internalID: -1526684258336420971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: grass_forest_02
       rect:
         serializedVersion: 2
         x: 1
-        y: 769
+        y: 525
         width: 254
         height: 254
       alignment: 9
@@ -176,7 +137,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 257
-        y: 769
+        y: 369
         width: 254
         height: 254
       alignment: 9
@@ -196,8 +157,8 @@ TextureImporter:
       name: grass_forest_04
       rect:
         serializedVersion: 2
-        x: 1
-        y: 569
+        x: 258
+        y: 825
         width: 251
         height: 198
       alignment: 9
@@ -217,8 +178,8 @@ TextureImporter:
       name: grass_forest_05
       rect:
         serializedVersion: 2
-        x: 254
-        y: 569
+        x: 258
+        y: 625
         width: 251
         height: 198
       alignment: 9
@@ -230,6 +191,27 @@ TextureImporter:
       bones: []
       spriteID: 3a213077385ba7860800000000000000
       internalID: 7528529303345238691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass_forest_06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 781
+        width: 255
+        height: 242
+      alignment: 9
+      pivot: {x: 0.49803922, y: 0.049586777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b95661803a38abd80800000000000000
+      internalID: -8234124232454937189
       vertices: []
       indices: 
       edges: []
