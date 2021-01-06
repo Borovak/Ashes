@@ -174,6 +174,7 @@ public static class GlobalFunctions
         }
     }
 
+    #if UNITY_EDITOR
     public static List<Sprite> GetSpritesAtPath(string theme, Constants.AssetTypes assetType)
     {
         var type = new Dictionary<Constants.AssetTypes, string>{
@@ -192,5 +193,6 @@ public static class GlobalFunctions
         }
         return sprites;
     }
+    #endif
 
 }

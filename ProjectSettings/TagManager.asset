@@ -35,6 +35,7 @@ TagManager:
   - TerrainContainer
   - BackgroundContainer
   - OverhangContainer
+  - FoliageGroup
   layers:
   - Default
   - TransparentFX

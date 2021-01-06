@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System;
 using System.Xml.Linq;
 
+    #if UNITY_EDITOR
 public static class AutoDecor
 {
 
@@ -345,3 +346,4 @@ public static class AutoDecor
         }
     }
 }
+#endif

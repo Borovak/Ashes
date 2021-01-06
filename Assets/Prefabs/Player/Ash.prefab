@@ -324,8 +324,6 @@ MonoBehaviour:
   contactSounds:
   - {fileID: 8300000, guid: c6784fc88c11d2a45bf0096ef5821fc3, type: 3}
   bloodOffset: {x: 0, y: 0}
-  hp: 0
-  maxHp: 0
   deathMusic: {fileID: 8300000, guid: b6f1478fb19640b4b9f97bd1510bddbd, type: 3}
 --- !u!114 &483266623256006735
 MonoBehaviour:
@@ -394,8 +392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9c6d379f5567b4d9ad875fda85a471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMp: 0
-  mp: 0
   mpRegenPerSec: 1
 --- !u!114 &1680620163
 MonoBehaviour:
@@ -831,7 +827,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: bbb9c78f0b0f6c5b
+  m_ApplyToSortingLayers: bbb9c78f0b0f6c5ba9f2c30e
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0

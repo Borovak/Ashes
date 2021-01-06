@@ -26,7 +26,6 @@ public class SaveGamePanel : MonoBehaviour
         _zoneName = transform.Find("ZoneName").gameObject;
         _gameTime = transform.Find("GameTime").gameObject;
         _doubleJump = transform.Find("DoubleJump").gameObject;
-        Debug.Log(LocationInformation.Init(out var summary) ? $"LocationInformation init succeeded: {summary}" : "LocationInformation init failed");
         UpdateData();
     }
 
@@ -62,7 +61,6 @@ public class SaveGamePanel : MonoBehaviour
         _doubleJump.SetActive(data != null && data.HasDoubleJump);
         if (data != null)
         {
-            Debug.Log(LocationInformation.SavePoints.Count);
             var chamber = LocationInformation.SavePoints[data.SavePointGuid].Chamber;
             _zoneName.GetComponent<TextMeshProUGUI>().text = $"{chamber.ZoneName}/{chamber.Name}";
             var t = data.GameTime;

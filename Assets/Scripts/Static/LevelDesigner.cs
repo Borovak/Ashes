@@ -12,6 +12,7 @@ using System.Linq;
 
 public static class LevelDesigner
 {
+    #if UNITY_EDITOR
     public static void LoadSpecific()
     {
         var path = EditorUtility.OpenFilePanel("Select level designer file", "", "xml");
@@ -24,6 +25,7 @@ public static class LevelDesigner
         Debug.Log(path);
         Load(path);
     }
+    #endif
 
     public static void LoadDefault()
     {

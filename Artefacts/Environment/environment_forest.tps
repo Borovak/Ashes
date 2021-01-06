@@ -196,6 +196,36 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">environment_forest_fern_01.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.455078,0.421875</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">environment_forest_fern_02.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.501953,0.333984</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">environment_forest_tree_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -216,6 +246,8 @@
         <array>
             <filename>environment_forest_tree_00.png</filename>
             <filename>environment_forest_fern_00.png</filename>
+            <filename>environment_forest_fern_01.png</filename>
+            <filename>environment_forest_fern_02.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
