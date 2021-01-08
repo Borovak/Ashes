@@ -19,7 +19,6 @@ public class PlayerInputs : MonoBehaviour
     public Actions _actions;
 
     private Dictionary<InputAction, Action<InputAction.CallbackContext>> _pairingDictionary;
-    private GameController _gameController;
     
 
     void Awake()
@@ -36,7 +35,6 @@ public class PlayerInputs : MonoBehaviour
             {_actions.Player.Dash, OnDash},
             {_actions.Player.Shield, OnShield},
         };
-        _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     void OnEnable()
@@ -59,44 +57,44 @@ public class PlayerInputs : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (_gameController.gameState != GameController.GameStates.Running) return;
+        if (GameController.gameState != GameController.GameStates.Running) return;
         Attack?.Invoke();
     }
 
     public void OnAttackSpell(InputAction.CallbackContext context)
     {
-        if (_gameController.gameState != GameController.GameStates.Running) return;
+        if (GameController.gameState != GameController.GameStates.Running) return;
         AttackSpell?.Invoke();
     }
 
     public void OnSelfSpell(InputAction.CallbackContext context)
     {
-        if (_gameController.gameState != GameController.GameStates.Running) return;
+        if (GameController.gameState != GameController.GameStates.Running) return;
         SelfSpell?.Invoke();
     }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (_gameController.gameState != GameController.GameStates.Running) return;
+        if (GameController.gameState != GameController.GameStates.Running) return;
         Interact?.Invoke();
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (_gameController.gameState != GameController.GameStates.Running) return;
+        if (GameController.gameState != GameController.GameStates.Running) return;
         var a = context.ReadValue<float>() > 0.1f ? Jump : JumpRelease;
         a?.Invoke();
     }
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        if (_gameController.gameState != GameController.GameStates.Running) return;
+        if (GameController.gameState != GameController.GameStates.Running) return;
         movement = context.ReadValue<Vector2>();
     }
 
     public void OnDash(InputAction.CallbackContext context)
     {
-        if (_gameController.gameState != GameController.GameStates.Running) return;
+        if (GameController.gameState != GameController.GameStates.Running) return;
         if (movement.y < -0.1f){
             GroundBreak?.Invoke();
         } else {            
@@ -106,7 +104,7 @@ public class PlayerInputs : MonoBehaviour
 
     public void OnShield(InputAction.CallbackContext context)
     {
-        if (_gameController.gameState != GameController.GameStates.Running) return;
+        if (GameController.gameState != GameController.GameStates.Running) return;
         var a = context.ReadValue<float>() > 0.1f ? Shield : ShieldRelease;
         a?.Invoke();
     }

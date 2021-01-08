@@ -73,9 +73,6 @@ TagManager:
   - name: Sky
     uniqueID: 3934235945
     locked: 0
-  - name: Water
-    uniqueID: 4257067975
-    locked: 0
   - name: Background
     uniqueID: 3936676035
     locked: 0
@@ -91,8 +88,14 @@ TagManager:
   - name: Enemy
     uniqueID: 1533808395
     locked: 0
-  - name: GroundOverlay
+  - name: Terrain
     uniqueID: 2412231099
+    locked: 0
+  - name: TerrainProps
+    uniqueID: 3368110701
+    locked: 0
+  - name: Water
+    uniqueID: 4257067975
     locked: 0
   - name: Gates
     uniqueID: 1150357249

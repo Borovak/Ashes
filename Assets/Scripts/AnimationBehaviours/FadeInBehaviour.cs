@@ -19,8 +19,7 @@ public class FadeInBehaviour : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        var gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        gameController.gameState = GameController.GameStates.Running;
+        GameController.gameState = GameController.GameStates.Running;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

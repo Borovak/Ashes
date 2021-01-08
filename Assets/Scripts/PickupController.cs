@@ -19,10 +19,14 @@ public class PickupController : MonoBehaviour
         }[pickup];
         set
         {
-        new Dictionary<Pickups, System.Action<bool>>
-        {
-            {Pickups.DoubleJump, value => GlobalFunctions.GetPlayerPlatformerController().hasDoubleJump = value}
-        }[pickup].Invoke(value);
+            new Dictionary<Pickups, System.Action<bool>>
+            {
+                {Pickups.DoubleJump, value => {
+                    if (!GlobalFunctions.TryGetPlayerComponent<PlayerPlatformerController>(out var playerPlatformerController)) return;
+                    playerPlatformerController.hasDoubleJump = value;
+                }
+            }
+            }[pickup].Invoke(value);
         }
     }
 

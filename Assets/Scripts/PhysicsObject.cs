@@ -43,11 +43,7 @@ public abstract class PhysicsObject : MonoBehaviour
 
     void Update()
     {
-        if (_gameController == null)
-        {
-            _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        }
-        if (_gameController.gameState != GameController.GameStates.Running) return;
+        if (GameController.gameState != GameController.GameStates.Running) return;
         targetVelocity = Vector2.zero;
         ComputeVelocity();
     }
@@ -59,11 +55,7 @@ public abstract class PhysicsObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_gameController == null)
-        {
-            _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        }
-        if (_gameController.gameState != GameController.GameStates.Running) return;
+        if (GameController.gameState != GameController.GameStates.Running) return;
         if (!PhysicsObject.PhysicsEnabled) return;
         if (isGravityEnabled)
         {

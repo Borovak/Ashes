@@ -12,6 +12,7 @@ public class CutsceneBehaviour : StateMachineBehaviour
         CutsceneManager.videoPlayer.enabled = true;
         CutsceneManager.videoPlayer.Play();
         CutsceneManager.videoPlayer.loopPointReached += OnEnd;
+        GameController.gameState = GameController.GameStates.Cutscene;
     }
 
     private void OnEnd(VideoPlayer videoPlayer)
@@ -39,7 +40,6 @@ public class CutsceneBehaviour : StateMachineBehaviour
     private void OnFadeOutCompleted()
     {
         FadeInOutController.FadeOutCompleted -= OnFadeOutCompleted;
-        FadeInOutController.FadeIn();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

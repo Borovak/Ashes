@@ -68,7 +68,7 @@ public class PlayerPlatformerController : PhysicsObject
 
         Vector2 move = Vector2.zero;
         isGravityEnabled = !isDashing;
-        if (_gameController.gameState == GameController.GameStates.TransitionIn || _gameController.gameState == GameController.GameStates.TransitionOut)
+        if (GameController.gameState == GameController.GameStates.TransitionIn || GameController.gameState == GameController.GameStates.TransitionOut)
         {
             transitionTime -= Time.deltaTime;
             move.x = transitionMovement.x;

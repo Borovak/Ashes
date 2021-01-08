@@ -49,7 +49,7 @@ public class PlayerLifeController : LifeController
 
     protected override void OnDeath()
     {
-        GameController.deathScreen.SetActive(true);
+        DeathScreenController.Show();
     }
 
     private void OnGameSaved(bool healOnSave)

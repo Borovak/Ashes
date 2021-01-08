@@ -9,7 +9,7 @@ using UnityEngine.Tilemaps;
 
 public class ChamberController : MonoBehaviour
 {
-    public static string[] ContainerNames => new[] { Constants.NAME_TERRAINCONTAINER, Constants.NAME_ENVIRONMENTCONTAINER, Constants.NAME_SHADOWSCONTAINER, Constants.NAME_NPCCONTAINER, Constants.NAME_GRASSCONTAINER, Constants.NAME_OVERHANGCONTAINER, Constants.NAME_BACKGROUNDCONTAINER};
+    public static string[] ContainerNames => new[] { Constants.NAME_TERRAINCONTAINER, Constants.NAME_ENVIRONMENTCONTAINER, Constants.NAME_SHADOWSCONTAINER, Constants.NAME_NPCCONTAINER, Constants.NAME_GRASSCONTAINER, Constants.NAME_OVERHANGCONTAINER, Constants.NAME_BACKGROUNDCONTAINER };
     public static event Action<string, string> ZoneChanged;
     public string chamberGuid;
     public LocationInformation.Chamber chamber => LocationInformation.Chambers[chamberGuid];
@@ -23,6 +23,7 @@ public class ChamberController : MonoBehaviour
     public GameObject chamberContainer;
     public Vector2 position;
     public Vector2 size;
+    public Rect chamberBounds;
     public Vector2Int cellCount;
     public float scale;
     [SerializeField] public int[] map1D;
@@ -33,9 +34,11 @@ public class ChamberController : MonoBehaviour
     [SerializeField] public string grass;
     public AudioClip ambientAudioClip;
     public AudioClip musicAudioClip;
+    public bool isPlayerHere;
     public GrassManager grassManager
     {
-        get {
+        get
+        {
             if (_grassManager == null)
             {
                 _grassManager = new GrassManager(this);
@@ -45,9 +48,10 @@ public class ChamberController : MonoBehaviour
     }
 
     private static LocationInformation.Zone _lastZoneEntered;
+    private bool _isPlayerInsideChamber => GlobalFunctions.TryGetPlayer(out var playerGameObject) ? chamberBounds.Contains(playerGameObject.transform.position) : false;
     private Transform _enemyFolder;
-    private VirtualCameraPlayerBinding _virtualCameraPlayerBinding;
-    private bool _isPlayerInsideChamber;
+    private VirtualCameraPlayerBinding _virtualCameraPlayerBinding;    
+    private bool _previousIsPlayerInsideChamber;
     private List<GameObject> _containersToEnableDisable;
     private ChamberAudioManager _chamberAudioManager;
     private GrassManager _grassManager;
@@ -82,8 +86,9 @@ public class ChamberController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameController.gameState != GameController.GameStates.Running || !GlobalFunctions.TryGetPlayer(out var playerGameObject)) return;
         //Spawning/despawning enemies
-        if (_isPlayerInsideChamber && !_virtualCameraPlayerBinding.isPlayerInsideChamber)
+        if (_previousIsPlayerInsideChamber && !_isPlayerInsideChamber)
         {
             DeleteEnemiesOnExit();
             foreach (var container in _containersToEnableDisable)
@@ -92,7 +97,7 @@ public class ChamberController : MonoBehaviour
             }
             _chamberAudioManager.Stop();
         }
-        else if (!_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
+        else if (!_previousIsPlayerInsideChamber && _isPlayerInsideChamber)
         {
             if (_lastZoneEntered == null || _lastZoneEntered.Guid != chamber.ZoneGuid)
             {
@@ -107,7 +112,7 @@ public class ChamberController : MonoBehaviour
             Apply();
         }
         else return;
-        _isPlayerInsideChamber = _virtualCameraPlayerBinding.isPlayerInsideChamber;
+        _previousIsPlayerInsideChamber = _isPlayerInsideChamber;
     }
 
     private void CreateEnemiesOnEnter()
@@ -117,6 +122,7 @@ public class ChamberController : MonoBehaviour
         {
             enemy.Instantiate(_enemyFolder, position, size, scale);
         }
+        FadeInOutController.FadeIn();
     }
 
     private void DeleteEnemiesOnExit()
@@ -131,7 +137,7 @@ public class ChamberController : MonoBehaviour
 
     private void OnPlayerSpawned(GameObject playerGameObject)
     {
-        if (_isPlayerInsideChamber && _virtualCameraPlayerBinding.isPlayerInsideChamber)
+        if (_previousIsPlayerInsideChamber && _isPlayerInsideChamber)
         {
             DeleteEnemiesOnExit();
             CreateEnemiesOnEnter();
@@ -162,6 +168,7 @@ public class ChamberController : MonoBehaviour
         var biasY = 50f - size.y;
         var minY = position.y + biasY;
         var maxY = position.y + size.y + biasY;
+        chamberBounds = new Rect(minX, minY, maxX - minX, maxY - minY);
         var points = new List<Vector2>
         {
             { new Vector2(minX, minY) },

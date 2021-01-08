@@ -155,8 +155,11 @@ public class CraftingDescriptionController : MonoBehaviour
 
     private void CheckIfRecipeCanBeMade()
     {
+        if (!TryGetComponent<PlayerInventory>(out var playerInventory)){
+            craftButton.SetActive(false);
+            return;
+        }
         var possible = true;
-        var playerInventory = GlobalFunctions.GetPlayerInventory();
         foreach (var ingredient in _currentIngredients)
         {
             var playerQuantity = playerInventory.GetCount(ingredient.Key);
@@ -173,7 +176,7 @@ public class CraftingDescriptionController : MonoBehaviour
     public void Craft()
     {
         if (_item == null) return;
-        var playerInventory = GlobalFunctions.GetPlayerInventory();
+        if (!TryGetComponent<PlayerInventory>(out var playerInventory)) return;
         foreach (var ingredient in _currentIngredients)
         {
             playerInventory.Remove(ingredient.Key, ingredient.Value);

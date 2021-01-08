@@ -6,35 +6,55 @@ using UnityEngine.UI;
 
 public class DeathScreenController : MonoBehaviour
 {
+    private readonly Color transparent = new Color(0f, 0f, 0f, 0f);
+
     public Image backImage;
     public TextMeshProUGUI youDiedText;
     public float fadeInDuration = 1f;
     public Color backColor;
     public Color textColor;
 
-    private readonly Color transparent = new Color(0,0,0,0);
-    public float _timer;
-
-    public float ratio;
+    private static DeathScreenController _instance;
+    private float _timer;
+    private float _ratio;
 
     // Start is called before the first frame update
     void Start()
     {
+        _instance = this; 
+        Hide();
     }
 
     void Update()
     {
         if (_timer >= fadeInDuration) return;
         _timer += Time.deltaTime;
-        ratio = _timer / fadeInDuration;
-        backImage.color = Color.Lerp(transparent, backColor, ratio);
-        youDiedText.color = Color.Lerp(transparent, textColor, ratio);
+        _ratio = _timer / fadeInDuration;
+        backImage.color = Color.Lerp(transparent, backColor, _ratio);
+        youDiedText.color = Color.Lerp(transparent, textColor, _ratio);
     }
 
-    void OnEnable()
+    private void ChangeVisibility(bool visible)
     {
-        _timer = 0;
-        backImage.color = transparent;
-        youDiedText.color = transparent;
+        if (visible)
+        {
+            _timer = 0;
+        }
+        else
+        {
+            _timer = fadeInDuration;
+            backImage.color = transparent;
+            youDiedText.color = transparent;
+        }
+    }
+
+    public static void Show()
+    {
+        _instance.ChangeVisibility(true);
+    }
+
+    public static void Hide()
+    {
+        _instance.ChangeVisibility(false);
     }
 }

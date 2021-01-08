@@ -35,34 +35,65 @@ public static class GlobalFunctions
         return dt;
     }
 
-    public static GameController GetGameController()
+    public static bool TryGetPlayer(out GameObject playerGameObject)
     {
-        var gameObject = GameObject.FindGameObjectWithTag("GameController");
-        return gameObject.GetComponent<GameController>();
+        playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        return playerGameObject != null;
     }
 
-    public static PlayerPlatformerController GetPlayerPlatformerController()
-    {
-        var gameObject = GameObject.FindGameObjectWithTag("Player");
-        return gameObject.GetComponent<PlayerPlatformerController>();
-    }
+    // public static bool TryGetPlayerPlatformerController(out PlayerPlatformerController playerPlatformerController)
+    // {
+    //     if (!TryGetPlayer(out var playerGameObject))
+    //     {
+    //         playerPlatformerController = null;
+    //         return false;
+    //     }
+    //     playerPlatformerController = playerGameObject.GetComponent<PlayerPlatformerController>();
+    //     return true;
+    // }
 
-    public static PlayerLifeController GetPlayerLifeController()
-    {
-        var gameObject = GameObject.FindGameObjectWithTag("Player");
-        return gameObject.GetComponent<PlayerLifeController>();
-    }
+    // public static bool GetPlayerLifeController(out PlayerLifeController playerLifeController)
+    // {
+    //     if (!TryGetPlayer(out var playerGameObject))
+    //     {
+    //         playerLifeController = null;
+    //         return false;
+    //     }
+    //     playerLifeController = playerGameObject.GetComponent<PlayerLifeController>();
+    //     return true;
+    // }
 
-    public static ManaController GetPlayerManaController()
-    {
-        var gameObject = GameObject.FindGameObjectWithTag("Player");
-        return gameObject.GetComponent<ManaController>();
-    }
+    // public static bool GetPlayerManaController(out ManaController manaController)
+    // {
+    //     if (!TryGetPlayer(out var playerGameObject))
+    //     {
+    //         manaController = null;
+    //         return false;
+    //     }
+    //     manaController = playerGameObject.GetComponent<ManaController>();
+    //     return true;
+    // }
 
-    public static PlayerInventory GetPlayerInventory()
+    // public static bool GetPlayerInventory(out PlayerInventory playerInventory)
+    // {
+    //     if (!TryGetPlayer(out var playerGameObject))
+    //     {
+    //         playerInventory = null;
+    //         return false;
+    //     }
+    //     playerInventory = playerGameObject.GetComponent<PlayerInventory>();
+    //     return true;
+    // }
+
+    public static bool TryGetPlayerComponent<T>(out T component)
     {
-        var gameObject = GameObject.FindGameObjectWithTag("Player");
-        return gameObject.GetComponent<PlayerInventory>();
+        if (!TryGetPlayer(out var playerGameObject))
+        {
+            component = default(T);
+            return false;
+        }
+        component = playerGameObject.GetComponent<T>();
+        return true;
     }
 
     public static List<GameObject> FindChildrenWithTag(GameObject parent, string tag, bool includeParent)
@@ -174,7 +205,7 @@ public static class GlobalFunctions
         }
     }
 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     public static List<Sprite> GetSpritesAtPath(string theme, Constants.AssetTypes assetType)
     {
         var type = new Dictionary<Constants.AssetTypes, string>{
@@ -193,6 +224,6 @@ public static class GlobalFunctions
         }
         return sprites;
     }
-    #endif
+#endif
 
 }

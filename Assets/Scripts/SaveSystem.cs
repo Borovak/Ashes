@@ -55,18 +55,17 @@ public static class SaveSystem
     private static SaveData PrepareSaveData(bool isVirginSave, string savePointGuid, bool healOnSave){
         var saveData = new SaveData();
         if (isVirginSave) return saveData;
-        var gameController = GlobalFunctions.GetGameController();
-        var playerPlatformerController = GlobalFunctions.GetPlayerPlatformerController();
-        var playerLifeController = GlobalFunctions.GetPlayerLifeController();
-        var playerManaController = GlobalFunctions.GetPlayerManaController();
-        var playerInventory = GlobalFunctions.GetPlayerInventory();
-        saveData.GameTime = gameController.gameTime;
+        if (!GlobalFunctions.TryGetPlayerComponent<PlayerPlatformerController>(out var playerPlatformerController)) return saveData;
+        if (!GlobalFunctions.TryGetPlayerComponent<PlayerLifeController>(out var playerLifeController)) return saveData;
+        if (!GlobalFunctions.TryGetPlayerComponent<ManaController>(out var manaController)) return saveData;
+        if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return saveData;
+        saveData.GameTime = GameController.gameTime;
         saveData.HasDoubleJump = playerPlatformerController.hasDoubleJump;
         saveData.Hp = healOnSave ? playerLifeController.GetMaxHp() : playerLifeController.GetHp();
         saveData.MaxMp = playerLifeController.GetMaxHp();
-        saveData.Mp = healOnSave ? playerManaController.GetMaxMp() : playerManaController.GetMp();
-        saveData.MaxMp = playerManaController.GetMaxMp();
-        saveData.MpRegenPerSec = playerManaController.mpRegenPerSec;
+        saveData.Mp = healOnSave ? manaController.GetMaxMp() : manaController.GetMp();
+        saveData.MaxMp = manaController.GetMaxMp();
+        saveData.MpRegenPerSec = manaController.mpRegenPerSec;
         saveData.Inventory = playerInventory.GetInventoryString();
         saveData.SavePointGuid = savePointGuid;
         return saveData;

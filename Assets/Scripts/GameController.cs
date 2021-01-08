@@ -10,36 +10,37 @@ public class GameController : MonoBehaviour
 {
     public enum GameStates
     {
+        Init,
         TransitionIn,
         Paused,
         Running,
         ActionMenu,
         TransitionOut,
+        Cutscene
     }
 
     public static bool loadedAlone;
     public static ChamberController currentChamber = null;
     public static event Action<GameObject> PlayerSpawned;
+    public static GameStates gameState = GameStates.Init;
+    public static float gameTime;
+    
     public GameObject playerPrefab;
-    public GameStates gameState;
-    public float gameTime;
     public GameObject gameUiGameObject;
-    public static GameObject deathScreen;
 
+    private Animator _animator;
     private CinemachineVirtualCamera _virtualCamera;
 
     // Start is called before the first frame update
     void Awake()
-    {   
+    {   _animator = GetComponent<Animator>();
         KillPlayer();
         gameUiGameObject.SetActive(true);
-        deathScreen = GameObject.FindGameObjectWithTag("DeathScreen");
         FadeInOutController.FadeOutCompleted += SpawnPlayer;
         GameOptionsManager.Init();
         DataHandling.Init();
         LocationInformation.Init(out _);
-        var loadSuccessful = SaveSystem.Load(out SaveSystem.LastLoadedSave, out var errorMessage);
-        if (!loadSuccessful)
+        if (!SaveSystem.Load(out SaveSystem.LastLoadedSave, out var errorMessage))
         {
             Debug.Log(errorMessage);
             var saveSuccess = SaveSystem.SaveVirgin(out var saveErrorMessage);
@@ -61,6 +62,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            _animator.SetTrigger("StartGame");
             SpawnPlayer();
         }
     }
@@ -77,7 +79,7 @@ public class GameController : MonoBehaviour
     private void SpawnPlayer()
     {
         KillPlayer();
-        deathScreen.SetActive(false);
+        DeathScreenController.Hide();
         var playerSpawnPosition = Vector3.zero;
         if (SaveSystem.LastLoadedSave.SavePointGuid != string.Empty)
         {
@@ -98,7 +100,6 @@ public class GameController : MonoBehaviour
         _virtualCamera = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         _virtualCamera.Follow = playerTransform;
         _virtualCamera.LookAt = playerTransform;
-        FadeInOutController.FadeIn();
     }
 
     // Update is called once per frame
