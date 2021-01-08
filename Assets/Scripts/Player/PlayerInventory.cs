@@ -89,7 +89,7 @@ public class PlayerInventory : MonoBehaviour
     public void SetInventoryFromString(string data)
     {
         _items.Clear();
-        if (string.IsNullOrEmpty(data)) return;
+        if (string.IsNullOrEmpty(data) || data == "|0") return;
         var groups = data.Split('|');
         var items = groups[0].Split(';');
         foreach (var item in items)

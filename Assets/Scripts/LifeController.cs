@@ -79,7 +79,7 @@ public abstract class LifeController : MonoBehaviour
         {
             _dead = true;
             OnDeath();
-            Debug.Log($"{gameObject.name} dies");
+            //Debug.Log($"{gameObject.name} dies");
             if (TryGetComponent<Animator>(out var animator))
             {
                 animator.SetTrigger("dying");

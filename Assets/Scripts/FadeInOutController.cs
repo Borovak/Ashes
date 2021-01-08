@@ -6,9 +6,9 @@ using UnityEngine;
 public class FadeInOutController : MonoBehaviour
 {
 
-    public event Action FadeOutCompleted;
+    public static event Action FadeOutCompleted;
 
-    private Animator _animator;
+    private static Animator _animator;
 
     // Start is called before the first frame update
     void Start()
@@ -22,20 +22,18 @@ public class FadeInOutController : MonoBehaviour
 
     }
 
-    public void FadeIn()
+    public static void FadeIn()
     {
         _animator.SetTrigger("FadeIn");
     }
 
-    public void FadeOut()
+    public static void FadeOut()
     {
         _animator.SetTrigger("FadeOut");
     }
 
-    public void TriggerFadeOutCompleted(){
+    public static void TriggerFadeOutCompleted(){
         FadeOutCompleted?.Invoke();
-        var player = GameObject.FindGameObjectWithTag("Player");
-        GameObject.Destroy(player);
     }
     
 }

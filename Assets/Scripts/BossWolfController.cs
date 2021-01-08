@@ -52,7 +52,9 @@ public class BossWolfController : MonoBehaviour
     {
         if (_playerTransform == null)
         {
-            _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            var playerGameObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerGameObject == null) return;
+            _playerTransform = playerGameObject.transform;
         }
         switch (state)
         {

@@ -5,25 +5,22 @@ using UnityEngine.Video;
 
 public class CutsceneBehaviour : StateMachineBehaviour
 {
-    public UnityEngine.Video.VideoClip videoClip;
-    private UnityEngine.Video.VideoPlayer _videoPlayer;
-
-    private Animator _animator;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _animator = animator;
-        if (_videoPlayer == null)
-        {
-            _videoPlayer = animator.gameObject.AddComponent<VideoPlayer>();
-            _videoPlayer.renderMode = VideoRenderMode.CameraFarPlane;
-        }
-        _videoPlayer.targetCamera = GameObject.FindGameObjectWithTag("SubCamera").GetComponent<Camera>();
-        _videoPlayer.playOnAwake = false;
-        _videoPlayer.loopPointReached += CancelAnimation;
-        _videoPlayer.clip = videoClip;
-        _videoPlayer.Play();
+        CutsceneManager.videoPlayer.enabled = true;
+        CutsceneManager.videoPlayer.Play();
+        CutsceneManager.videoPlayer.loopPointReached += OnEnd;
+    }
+
+    private void OnEnd(VideoPlayer videoPlayer)
+    {
+        videoPlayer.loopPointReached -= OnEnd;
+        videoPlayer.Stop();
+        videoPlayer.targetCamera = null;
+        videoPlayer.enabled = false;
+        videoPlayer.GetComponent<Animator>().SetBool("Cutscene", false);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -35,8 +32,14 @@ public class CutsceneBehaviour : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _videoPlayer.targetCamera = null;
-        _videoPlayer.loopPointReached -= CancelAnimation;
+        FadeInOutController.FadeOutCompleted += OnFadeOutCompleted;
+        FadeInOutController.FadeOut();
+    }
+
+    private void OnFadeOutCompleted()
+    {
+        FadeInOutController.FadeOutCompleted -= OnFadeOutCompleted;
+        FadeInOutController.FadeIn();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
@@ -50,9 +53,4 @@ public class CutsceneBehaviour : StateMachineBehaviour
     //{
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
-
-    private void CancelAnimation(VideoPlayer videoPlayer)
-    {
-        _animator.SetBool("Cutscene", false);
-    }
 }

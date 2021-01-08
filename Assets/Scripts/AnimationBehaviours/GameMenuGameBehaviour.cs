@@ -12,7 +12,11 @@ public class GameMenuGameBehaviour : StateMachineBehaviour
         {
             gameController.gameState = GameController.GameStates.Running;
         }
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().enabled = true;
+        var playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerGameObject != null)
+        {
+            playerGameObject.GetComponent<Animator>().enabled = true;
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

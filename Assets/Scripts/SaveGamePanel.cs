@@ -59,7 +59,7 @@ public class SaveGamePanel : MonoBehaviour
         _zoneName.SetActive(data != null);
         _gameTime.SetActive(data != null);
         _doubleJump.SetActive(data != null && data.HasDoubleJump);
-        if (data != null)
+        if (data != null && LocationInformation.SavePoints.ContainsKey(data.SavePointGuid))
         {
             var chamber = LocationInformation.SavePoints[data.SavePointGuid].Chamber;
             _zoneName.GetComponent<TextMeshProUGUI>().text = $"{chamber.ZoneName}/{chamber.Name}";

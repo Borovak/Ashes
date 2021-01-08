@@ -26,16 +26,15 @@ public class GameController : MonoBehaviour
     public GameObject gameUiGameObject;
     public static GameObject deathScreen;
 
-    private FadeInOutController _fadeInOutController;
     private CinemachineVirtualCamera _virtualCamera;
 
     // Start is called before the first frame update
     void Awake()
-    {
+    {   
+        KillPlayer();
         gameUiGameObject.SetActive(true);
         deathScreen = GameObject.FindGameObjectWithTag("DeathScreen");
-        _fadeInOutController = GameObject.FindGameObjectWithTag("FadeInOut").GetComponent<FadeInOutController>();
-        _fadeInOutController.FadeOutCompleted += SpawnPlayer;
+        FadeInOutController.FadeOutCompleted += SpawnPlayer;
         GameOptionsManager.Init();
         DataHandling.Init();
         LocationInformation.Init(out _);
@@ -45,7 +44,8 @@ public class GameController : MonoBehaviour
             Debug.Log(errorMessage);
             var saveSuccess = SaveSystem.SaveVirgin(out var saveErrorMessage);
             Debug.Log(saveSuccess ? $"Game saved" : $"Game save unsuccessful : {saveErrorMessage}");
-            if (saveSuccess){
+            if (saveSuccess)
+            {
                 SaveSystem.Load(out SaveSystem.LastLoadedSave, out errorMessage);
             }
         }
@@ -55,16 +55,28 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        SpawnPlayer();
+        if (SaveSystem.LastLoadedSave.SavePointGuid == string.Empty)
+        {
+            CutsceneManager.Play(CutsceneManager.Cutscenes.Intro);
+        }
+        else
+        {
+            SpawnPlayer();
+        }
     }
 
-    private void SpawnPlayer()
-    {
+    private void KillPlayer()
+    {        
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             Destroy(player);
         }
+    }
+
+    private void SpawnPlayer()
+    {
+        KillPlayer();
         deathScreen.SetActive(false);
         var playerSpawnPosition = Vector3.zero;
         if (SaveSystem.LastLoadedSave.SavePointGuid != string.Empty)
@@ -86,7 +98,7 @@ public class GameController : MonoBehaviour
         _virtualCamera = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         _virtualCamera.Follow = playerTransform;
         _virtualCamera.LookAt = playerTransform;
-        _fadeInOutController.FadeIn();
+        FadeInOutController.FadeIn();
     }
 
     // Update is called once per frame

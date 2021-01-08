@@ -32,6 +32,7 @@ public class VirtualCameraPlayerBinding : MonoBehaviour
     }
 
     private bool IsPlayerInsideChamber(){
+        if (PlayerPlatformerController.Instance == null) return false;
         var position = PlayerPlatformerController.Instance.transform.position;
         return _confiner.m_BoundingShape2D.OverlapPoint(new Vector2(position.x, position.y));
     }

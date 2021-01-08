@@ -9,6 +9,7 @@ using UnityEngine.Tilemaps;
 
 public class ChamberController : MonoBehaviour
 {
+    public static string[] ContainerNames => new[] { Constants.NAME_TERRAINCONTAINER, Constants.NAME_ENVIRONMENTCONTAINER, Constants.NAME_SHADOWSCONTAINER, Constants.NAME_NPCCONTAINER, Constants.NAME_GRASSCONTAINER, Constants.NAME_OVERHANGCONTAINER, Constants.NAME_BACKGROUNDCONTAINER};
     public static event Action<string, string> ZoneChanged;
     public string chamberGuid;
     public LocationInformation.Chamber chamber => LocationInformation.Chambers[chamberGuid];
@@ -62,10 +63,9 @@ public class ChamberController : MonoBehaviour
         _enemyFolder.parent = transform;
         var tilemapRenderer = GetComponentInChildren<TilemapRenderer>();
         tilemapRenderer.enabled = false;
-        //Find containers to enable/disable
-        var containerNames = new[] { Constants.NAME_TERRAINCONTAINER, Constants.NAME_ENVIRONMENTCONTAINER, Constants.NAME_SHADOWSCONTAINER, Constants.NAME_NPCCONTAINER, Constants.NAME_GRASSCONTAINER, Constants.NAME_OVERHANGCONTAINER, Constants.NAME_BACKGROUNDCONTAINER};
+        //Find containers to enable/disable        
         _containersToEnableDisable = new List<GameObject>();
-        foreach (var containerName in containerNames)
+        foreach (var containerName in ContainerNames)
         {
             var obj = transform.Find(containerName);
             if (obj == null) continue;
@@ -112,6 +112,7 @@ public class ChamberController : MonoBehaviour
 
     private void CreateEnemiesOnEnter()
     {
+        Debug.Log($"{chamberName} enemies created");
         foreach (var enemy in chamber.Enemies)
         {
             enemy.Instantiate(_enemyFolder, position, size, scale);
@@ -120,6 +121,7 @@ public class ChamberController : MonoBehaviour
 
     private void DeleteEnemiesOnExit()
     {
+        if (_enemyFolder == null) return;
         var enemiesToDelete = GlobalFunctions.FindChildrenWithTag(_enemyFolder.gameObject, "Enemy", false);
         foreach (var enemy in enemiesToDelete)
         {
