@@ -24,19 +24,21 @@ public class GameController : MonoBehaviour
     public static event Action<GameObject> PlayerSpawned;
     public static GameStates gameState = GameStates.Init;
     public static float gameTime;
-    
+
     public GameObject playerPrefab;
     public GameObject gameUiGameObject;
 
     private Animator _animator;
     private CinemachineVirtualCamera _virtualCamera;
+    private static GameController _instance;
 
     // Start is called before the first frame update
     void Awake()
-    {   _animator = GetComponent<Animator>();
+    {
+        _instance = this;
+        _animator = GetComponent<Animator>();
         KillPlayer();
         gameUiGameObject.SetActive(true);
-        FadeInOutController.FadeOutCompleted += SpawnPlayer;
         GameOptionsManager.Init();
         DataHandling.Init();
         LocationInformation.Init(out _);
@@ -58,7 +60,7 @@ public class GameController : MonoBehaviour
     {
         if (SaveSystem.LastLoadedSave.SavePointGuid == string.Empty)
         {
-            CutsceneManager.Play(CutsceneManager.Cutscenes.Intro);
+            CutsceneManager.Play(CutsceneManager.Cutscenes.Intro, SpawnPlayer);
         }
         else
         {
@@ -68,7 +70,7 @@ public class GameController : MonoBehaviour
     }
 
     private void KillPlayer()
-    {        
+    {
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -78,6 +80,7 @@ public class GameController : MonoBehaviour
 
     private void SpawnPlayer()
     {
+        //Debug.Log("Spawn");
         KillPlayer();
         DeathScreenController.Hide();
         var playerSpawnPosition = Vector3.zero;
@@ -109,6 +112,11 @@ public class GameController : MonoBehaviour
         {
             gameTime += Time.deltaTime;
         }
+    }
+
+    public static void Spawn()
+    {
+        _instance.SpawnPlayer();
     }
 
 }

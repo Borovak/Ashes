@@ -21,6 +21,8 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
     public TextMeshProUGUI textDialog;
     public DialogChoicePanel[] dialogChoicePanels;
 
+    private Vector3 _initialPlayerPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +31,17 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
         ClearDialog();
     }
 
+    void Update()
+    {
+        if (dialogItem != null && GlobalFunctions.TryGetPlayer(out var player) ? Vector3.Distance(player.transform.position, _initialPlayerPosition) > 2f : false)
+        {
+            ClearDialog();
+        }
+    }
+
     private void RefreshDialog(IDialogItem newDialogItem)
     {
+        _initialPlayerPosition = GlobalFunctions.TryGetPlayer(out var player) ? player.transform.position : Vector3.zero;
         dialogItem = newDialogItem;
         panel.enabled = true;
         foliage.enabled = true;

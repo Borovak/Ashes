@@ -117,7 +117,7 @@ public class ChamberController : MonoBehaviour
 
     private void CreateEnemiesOnEnter()
     {
-        Debug.Log($"{chamberName} enemies created");
+        //Debug.Log($"{chamberName} enemies created");
         foreach (var enemy in chamber.Enemies)
         {
             enemy.Instantiate(_enemyFolder, position, size, scale);
