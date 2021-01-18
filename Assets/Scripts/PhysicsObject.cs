@@ -22,7 +22,7 @@ public abstract class PhysicsObject : MonoBehaviour
     protected ContactFilter2D contactFilter;
     protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
-
+    protected bool droppingThrough;
 
     protected const float minMoveDistance = 0.001f;
     protected const float shellRadius = 0.01f;
@@ -98,10 +98,14 @@ public abstract class PhysicsObject : MonoBehaviour
             hitBufferCount = hitBufferList.Count;
             for (int i = 0; i < hitBufferList.Count; i++)
             {
-                if (!hitBufferList[i].transform.name.Contains("Tilemap"))
+                if (hitBufferList[i].transform.tag == "Platform" && (droppingThrough || PlatformController.platformsTouchedWhileGoingUp.Contains(hitBufferList[i].transform) || velocity.y > 0 || move.y > 0)) 
                 {
+                    if (!PlatformController.platformsTouchedWhileGoingUp.Contains(hitBufferList[i].transform))
+                    {
+                        PlatformController.platformsTouchedWhileGoingUp.Add(hitBufferList[i].transform);
+                    }
                     continue;
-                }
+                } else if (hitBufferList[i].transform.tag == "Interaction") continue;
                 Vector2 currentNormal = hitBufferList[i].normal;
                 if (currentNormal.y > minGroundNormalY)
                 {

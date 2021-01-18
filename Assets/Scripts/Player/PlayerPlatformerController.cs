@@ -35,6 +35,8 @@ public class PlayerPlatformerController : PhysicsObject
     private float _timeSinceGrounded;
     private bool _canDash;
     private float _dashTimer;
+    private float _droppingThroughTime;
+    private float _droppingThroughMaxTime = 0.1f;
 
     // Use this for initialization
     void Awake()
@@ -49,6 +51,7 @@ public class PlayerPlatformerController : PhysicsObject
         _inputs.Jump += Jump;
         _inputs.JumpRelease += JumpRelease;
         _inputs.Dash += Dash;
+        _inputs.DropThrough += DropThrough;
     }
 
     void OnDisable()
@@ -65,6 +68,19 @@ public class PlayerPlatformerController : PhysicsObject
     protected override void ComputeVelocity()
     {
         CheckIfLanding();
+
+        //drop through logic
+        if (!droppingThrough)
+        {
+            _droppingThroughTime = 0f;
+        } else {
+            
+            _droppingThroughTime += Time.deltaTime;
+            if (_droppingThroughTime >= _droppingThroughMaxTime)
+            {
+                droppingThrough = false;
+            }
+        }
 
         Vector2 move = Vector2.zero;
         isGravityEnabled = !isDashing;
@@ -160,5 +176,10 @@ public class PlayerPlatformerController : PhysicsObject
         _animator.SetBool("dash", true);
         _canDash = false;
         _dashTimer = timeBetweenDashes;
+    }
+
+    private void DropThrough()
+    {
+        droppingThrough = true;
     }
 }

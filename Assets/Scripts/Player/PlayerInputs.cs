@@ -10,6 +10,7 @@ public class PlayerInputs : MonoBehaviour
     public event Action Interact;
     public event Action Jump;
     public event Action JumpRelease;
+    public event Action DropThrough;
     public event Action Dash;
     public event Action GroundBreak;
     public event Action SelfSpell;
@@ -19,7 +20,7 @@ public class PlayerInputs : MonoBehaviour
     public Actions _actions;
 
     private Dictionary<InputAction, Action<InputAction.CallbackContext>> _pairingDictionary;
-    
+
 
     void Awake()
     {
@@ -82,7 +83,15 @@ public class PlayerInputs : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         if (GameController.gameState != GameController.GameStates.Running) return;
-        var a = context.ReadValue<float>() > 0.1f ? Jump : JumpRelease;
+        Action a;
+        if (movement.y < 0f && context.ReadValue<float>() > 0.1f)
+        {
+            a = DropThrough;
+        }
+        else
+        {
+            a = context.ReadValue<float>() > 0.1f ? Jump : JumpRelease;
+        }
         a?.Invoke();
     }
 
@@ -95,9 +104,12 @@ public class PlayerInputs : MonoBehaviour
     public void OnDash(InputAction.CallbackContext context)
     {
         if (GameController.gameState != GameController.GameStates.Running) return;
-        if (movement.y < -0.1f){
+        if (movement.y < -0.1f)
+        {
             GroundBreak?.Invoke();
-        } else {            
+        }
+        else
+        {
             Dash?.Invoke();
         }
     }

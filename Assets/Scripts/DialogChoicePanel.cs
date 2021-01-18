@@ -51,6 +51,7 @@ public class DialogChoicePanel : MonoBehaviour, IPointerEnterHandler, IPointerCl
     {
         var backColor = selectedPanel == this ? color : _colorTransparent;
         var foreColor = selectedPanel == this ? Color.black : color;
+        _image = GetComponent<Image>();
         _image.color = backColor;
         textControl.color = foreColor;
     }
