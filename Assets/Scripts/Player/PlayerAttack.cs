@@ -77,7 +77,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        if (!_lifeController.IsAlive || _attackCooldown > 0) return;
+        if (!_lifeController.IsAlive || _attackCooldown > 0 || DialogController.inDialog) return;
         _animator.SetTrigger("attack");
         MeleeAttack();
         _attackCooldown = 1f / attackRate;
@@ -87,7 +87,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void AttackSpell()
     {
-        if (!_lifeController.IsAlive || _attackCooldown > 0) return;
+        if (!_lifeController.IsAlive || _attackCooldown > 0 || DialogController.inDialog) return;
         if (!_manaController.TryCastSpell(3f)) return;
         _animator.SetTrigger("fireball");
         _attackCooldown = 1f / attackRate;
@@ -95,7 +95,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void SelfSpell()
     {
-        if (!_lifeController.IsAlive || _attackCooldown > 0) return;
+        if (!_lifeController.IsAlive || _attackCooldown > 0 || DialogController.inDialog) return;
         if (!_manaController.TryCastSpell(5f)) return;
         _animator.SetTrigger("heal");
         _lifeController.Heal(1);
@@ -104,7 +104,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void GroundBreak()
     {
-        if (!_lifeController.IsAlive || _attackCooldown > 0) return;
+        if (!_lifeController.IsAlive || _attackCooldown > 0 || DialogController.inDialog) return;
         if (!_manaController.TryCastSpell(5f)) return;
         _animator.SetTrigger("groundBreak");
         _attackCooldown = 1f / attackRate;

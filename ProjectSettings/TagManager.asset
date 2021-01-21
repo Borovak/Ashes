@@ -37,6 +37,7 @@ TagManager:
   - OverhangContainer
   - FoliageGroup
   - Platform
+  - MapRoom
   layers:
   - Default
   - TransparentFX

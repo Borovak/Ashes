@@ -43,7 +43,7 @@ public class InventoryPanel : MonoBehaviour
     {
         if (!refreshNeeded) return;
         refreshNeeded = false;
-        if (!TryGetComponent<PlayerInventory>(out var playerInventory)) return;
+        if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return;
         playerInventory.GetItemsAndCounts(out var itemBundles);
         var index = 0;
         foreach (var inventoryItemController in _inventoryItemControllers)

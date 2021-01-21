@@ -37,6 +37,7 @@ public class DeathScreenController : MonoBehaviour
     private void ChangeVisibility(bool visible)
     {
         backImage.enabled = true;
+        youDiedText.enabled = true;
         if (visible)
         {
             _timer = 0;

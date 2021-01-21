@@ -12,6 +12,7 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
     public static event Action<IDialogItem> DialogUpdated;
     public static event Action<Action> ActionToBeExecuted;
     public static bool isVisible;
+    public static bool inDialog;
 
     public IDialogItem dialogItem;
     public Image panel;
@@ -73,6 +74,7 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
         {
             DesactivateChoices();
         }
+        inDialog = true;
     }
 
     private void ClearDialog()
@@ -83,6 +85,7 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
         textNpcName.text = "";
         textDialog.text = "";
         isVisible = false;
+        inDialog = false;
         DesactivateChoices();
     }
 

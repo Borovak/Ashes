@@ -374,6 +374,14 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""0f49247f-0d31-41af-a537-e7b4dfdc6ff6"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""OK"",
                     ""type"": ""Button"",
                     ""id"": ""a2f7b40b-4c5d-46ce-a32d-c8c855dc2a8f"",
@@ -401,6 +409,38 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""name"": ""Select"",
                     ""type"": ""Button"",
                     ""id"": ""a36ab08a-a456-49c4-9d52-e879d0198f7d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""SectionPrevious"",
+                    ""type"": ""Button"",
+                    ""id"": ""73135f96-fb79-4869-9465-be820cb57f3a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""SectionNext"",
+                    ""type"": ""Button"",
+                    ""id"": ""f825c761-529f-4089-891c-f4cae751cb7d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""MapZoomIn"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2afb073-b029-40c7-a331-ace487d429ed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""MapZoomOut"",
+                    ""type"": ""Button"",
+                    ""id"": ""c233f7c5-bfaf-460c-9f45-6e445b1fbdb6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
@@ -531,7 +571,7 @@ public class @Actions : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Up"",
                     ""id"": ""7c2ec27a-c71b-47c2-8892-7dbd68b642d1"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
@@ -542,7 +582,7 @@ public class @Actions : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Down"",
                     ""id"": ""b6a620da-154a-476b-885c-d68aba14806d"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
@@ -553,7 +593,7 @@ public class @Actions : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Left"",
                     ""id"": ""cff9cf58-400a-45a0-8ebf-8abb2c327e18"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -564,7 +604,7 @@ public class @Actions : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Right"",
                     ""id"": ""76105637-e735-4436-b810-1230b6d3d547"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -659,6 +699,204 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb32f62b-bc00-4ea8-b782-a6c1705ac5f5"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""SectionPrevious"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ecef1dd5-4737-4644-90ee-5b8eecff8e37"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""SectionPrevious"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59b467ac-9f02-4de5-ae9d-d1f2aee7b854"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""SectionNext"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cdf6464e-593d-4564-a84d-cb7916dbac60"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""SectionNext"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d720873f-ca7e-4122-a6a4-d7bfa752bba9"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""MapZoomIn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66359c4e-b178-4229-949b-5a22a18a41a2"",
+                    ""path"": ""<Keyboard>/numpadPlus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""MapZoomIn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b6aa5285-fcd7-4e8e-acb3-01349721a9b9"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""MapZoomOut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""917e1ecb-e581-467c-bb76-a08df450690d"",
+                    ""path"": ""<Keyboard>/numpadMinus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""MapZoomOut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""b6fe5f39-6f3e-48a4-84c2-10a0d829aba1"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""cbeb8a4f-618a-43e2-bfb0-2c3691b7672b"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""f1016c69-4121-4daa-87e5-6419cf256c22"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""6654d512-e589-4e9d-82d2-fc440ff3f2f5"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""dc1239ff-00cf-4c52-b308-6a167df00f42"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Gamepad Stick"",
+                    ""id"": ""289c0c7b-33bd-472b-affe-3a3a17b3e15b"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""0680833e-23e9-4fa3-907b-b8fdf0009a9e"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""391e5dc1-4307-4d82-9f0b-b18d308a9608"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""801921e3-6ff2-41d5-a5c0-de142f001c09"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""5a083e47-449e-48f1-9805-67f7abca79e8"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -705,10 +943,15 @@ public class @Actions : IInputActionCollection, IDisposable
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_SelectionChange = m_Menu.FindAction("Selection Change", throwIfNotFound: true);
+        m_Menu_Movement = m_Menu.FindAction("Movement", throwIfNotFound: true);
         m_Menu_OK = m_Menu.FindAction("OK", throwIfNotFound: true);
         m_Menu_Back = m_Menu.FindAction("Back", throwIfNotFound: true);
         m_Menu_Start = m_Menu.FindAction("Start", throwIfNotFound: true);
         m_Menu_Select = m_Menu.FindAction("Select", throwIfNotFound: true);
+        m_Menu_SectionPrevious = m_Menu.FindAction("SectionPrevious", throwIfNotFound: true);
+        m_Menu_SectionNext = m_Menu.FindAction("SectionNext", throwIfNotFound: true);
+        m_Menu_MapZoomIn = m_Menu.FindAction("MapZoomIn", throwIfNotFound: true);
+        m_Menu_MapZoomOut = m_Menu.FindAction("MapZoomOut", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -848,19 +1091,29 @@ public class @Actions : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Menu;
     private IMenuActions m_MenuActionsCallbackInterface;
     private readonly InputAction m_Menu_SelectionChange;
+    private readonly InputAction m_Menu_Movement;
     private readonly InputAction m_Menu_OK;
     private readonly InputAction m_Menu_Back;
     private readonly InputAction m_Menu_Start;
     private readonly InputAction m_Menu_Select;
+    private readonly InputAction m_Menu_SectionPrevious;
+    private readonly InputAction m_Menu_SectionNext;
+    private readonly InputAction m_Menu_MapZoomIn;
+    private readonly InputAction m_Menu_MapZoomOut;
     public struct MenuActions
     {
         private @Actions m_Wrapper;
         public MenuActions(@Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @SelectionChange => m_Wrapper.m_Menu_SelectionChange;
+        public InputAction @Movement => m_Wrapper.m_Menu_Movement;
         public InputAction @OK => m_Wrapper.m_Menu_OK;
         public InputAction @Back => m_Wrapper.m_Menu_Back;
         public InputAction @Start => m_Wrapper.m_Menu_Start;
         public InputAction @Select => m_Wrapper.m_Menu_Select;
+        public InputAction @SectionPrevious => m_Wrapper.m_Menu_SectionPrevious;
+        public InputAction @SectionNext => m_Wrapper.m_Menu_SectionNext;
+        public InputAction @MapZoomIn => m_Wrapper.m_Menu_MapZoomIn;
+        public InputAction @MapZoomOut => m_Wrapper.m_Menu_MapZoomOut;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -873,6 +1126,9 @@ public class @Actions : IInputActionCollection, IDisposable
                 @SelectionChange.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
                 @SelectionChange.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
                 @SelectionChange.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
+                @Movement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
                 @OK.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
                 @OK.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
                 @OK.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
@@ -885,6 +1141,18 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Select.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
                 @Select.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
                 @Select.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
+                @SectionPrevious.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
+                @SectionPrevious.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
+                @SectionPrevious.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
+                @SectionNext.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
+                @SectionNext.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
+                @SectionNext.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
+                @MapZoomIn.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
+                @MapZoomIn.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
+                @MapZoomIn.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
+                @MapZoomOut.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
+                @MapZoomOut.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
+                @MapZoomOut.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -892,6 +1160,9 @@ public class @Actions : IInputActionCollection, IDisposable
                 @SelectionChange.started += instance.OnSelectionChange;
                 @SelectionChange.performed += instance.OnSelectionChange;
                 @SelectionChange.canceled += instance.OnSelectionChange;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
                 @OK.started += instance.OnOK;
                 @OK.performed += instance.OnOK;
                 @OK.canceled += instance.OnOK;
@@ -904,6 +1175,18 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
+                @SectionPrevious.started += instance.OnSectionPrevious;
+                @SectionPrevious.performed += instance.OnSectionPrevious;
+                @SectionPrevious.canceled += instance.OnSectionPrevious;
+                @SectionNext.started += instance.OnSectionNext;
+                @SectionNext.performed += instance.OnSectionNext;
+                @SectionNext.canceled += instance.OnSectionNext;
+                @MapZoomIn.started += instance.OnMapZoomIn;
+                @MapZoomIn.performed += instance.OnMapZoomIn;
+                @MapZoomIn.canceled += instance.OnMapZoomIn;
+                @MapZoomOut.started += instance.OnMapZoomOut;
+                @MapZoomOut.performed += instance.OnMapZoomOut;
+                @MapZoomOut.canceled += instance.OnMapZoomOut;
             }
         }
     }
@@ -931,9 +1214,14 @@ public class @Actions : IInputActionCollection, IDisposable
     public interface IMenuActions
     {
         void OnSelectionChange(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
         void OnOK(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
         void OnStart(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
+        void OnSectionPrevious(InputAction.CallbackContext context);
+        void OnSectionNext(InputAction.CallbackContext context);
+        void OnMapZoomIn(InputAction.CallbackContext context);
+        void OnMapZoomOut(InputAction.CallbackContext context);
     }
 }

@@ -149,7 +149,7 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void Jump()
     {
-        if (!_lifeController.IsAlive) return;
+        if (!_lifeController.IsAlive || DialogController.inDialog) return;
         if (grounded || (velocity.y <= 0.1f && _timeSinceGrounded <= 0.2f))
         {
             _animator.SetBool("jump", true);
@@ -172,7 +172,7 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void Dash()
     {
-        if (!_lifeController.IsAlive || !_canDash || _dashTimer > 0) return;
+        if (!_lifeController.IsAlive || !_canDash || _dashTimer > 0 || DialogController.inDialog) return;
         _animator.SetBool("dash", true);
         _canDash = false;
         _dashTimer = timeBetweenDashes;

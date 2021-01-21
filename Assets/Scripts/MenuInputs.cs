@@ -13,6 +13,12 @@ public class MenuInputs : MonoBehaviour
     public static event Action SelectionChangeDown;
     public static event Action SelectionChangeLeft;
     public static event Action SelectionChangeRight;
+    public static event Action MapZoomIn;
+    public static event Action MapZoomOut;
+    public static event Action SectionPrevious;
+    public static event Action SectionNext;
+    public static Vector2 movement;
+
 
     private Actions _actions;
     private Dictionary<InputAction, Action<InputAction.CallbackContext>> _pairingDictionary;
@@ -26,7 +32,12 @@ public class MenuInputs : MonoBehaviour
             {_actions.Menu.Select, OnSelect},
             {_actions.Menu.OK, OnOK},
             {_actions.Menu.Back, OnBack},
-            {_actions.Menu.SelectionChange, OnSelectionChange}
+            {_actions.Menu.Movement, OnMovement},
+            {_actions.Menu.SelectionChange, OnSelectionChange},
+            {_actions.Menu.SectionNext, OnSectionNext},
+            {_actions.Menu.SectionPrevious, OnSectionPrevious},
+            {_actions.Menu.MapZoomIn, OnMapZoomIn},
+            {_actions.Menu.MapZoomOut, OnMapZoomOut},
         };
     }
 
@@ -80,5 +91,30 @@ public class MenuInputs : MonoBehaviour
         } else if (value.x > 0.1f){
             SelectionChangeRight?.Invoke();
         }
+    }
+
+    public void OnMovement(InputAction.CallbackContext context)
+    {
+        movement = context.ReadValue<Vector2>();
+    }
+
+    public void OnSectionNext(InputAction.CallbackContext context)
+    {
+        SectionNext?.Invoke();
+    }
+
+    public void OnSectionPrevious(InputAction.CallbackContext context)
+    {
+        SectionPrevious?.Invoke();
+    }
+
+    public void OnMapZoomIn(InputAction.CallbackContext context)
+    {
+        MapZoomIn?.Invoke();
+    }
+
+    public void OnMapZoomOut(InputAction.CallbackContext context)
+    {
+        MapZoomOut?.Invoke();
     }
 }
