@@ -431,6 +431,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Map",
+                    "type": "Button",
+                    "id": "99aee9de-de17-4acb-8c4c-746abaa86978",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Crafting",
+                    "type": "Button",
+                    "id": "037bc527-0756-4604-8af8-7f4e1aec7da2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -667,17 +683,6 @@
                 },
                 {
                     "name": "",
-                    "id": "b9ca0538-155d-492e-94a6-8da90ed64b9a",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "Select",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "228f4c78-723d-42f5-bea4-2583b7beaf71",
                     "path": "<Gamepad>/select",
                     "interactions": "",
@@ -884,6 +889,28 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e0144557-76af-40a7-9cba-7ff6df373a4f",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Map",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3418a5d-20bc-4d9b-838c-e78727550744",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Crafting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

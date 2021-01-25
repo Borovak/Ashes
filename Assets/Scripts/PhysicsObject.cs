@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class PhysicsObject : MonoBehaviour
 {
+    private readonly HashSet<string> NonBlockingTags = new HashSet<string> {"Enemy", "Player"};
 
     public static bool PhysicsEnabled = true;
     public float minGroundNormalY = .65f;
@@ -96,6 +97,7 @@ public abstract class PhysicsObject : MonoBehaviour
                 hitBufferList.Add(hitBuffer[i]);
             }
             hitBufferCount = hitBufferList.Count;
+
             for (int i = 0; i < hitBufferList.Count; i++)
             {
                 if (hitBufferList[i].transform.tag == "Platform" && (droppingThrough || PlatformController.platformsTouchedWhileGoingUp.Contains(hitBufferList[i].transform) || velocity.y > 0 || move.y > 0)) 
@@ -105,7 +107,8 @@ public abstract class PhysicsObject : MonoBehaviour
                         PlatformController.platformsTouchedWhileGoingUp.Add(hitBufferList[i].transform);
                     }
                     continue;
-                } else if (hitBufferList[i].transform.tag == "Interaction") continue;
+                } 
+                else if (NonBlockingTags.Contains(hitBufferList[i].transform.tag)) continue;
                 Vector2 currentNormal = hitBufferList[i].normal;
                 if (currentNormal.y > minGroundNormalY)
                 {

@@ -19,6 +19,10 @@ public class MenuController : MonoBehaviour
     {
         _choices = new List<Vector2>();
         _animator = GetComponent<Animator>();
+    }
+
+    void OnEnable()
+    {
         MenuInputs.Start += StartPressed;
         MenuInputs.Select += SelectPressed;
         MenuInputs.OK += OKPressed;
@@ -27,10 +31,8 @@ public class MenuController : MonoBehaviour
         MenuInputs.SelectionChangeDown += MoveDownPressed;
         MenuInputs.SelectionChangeLeft += MoveLeftPressed;
         MenuInputs.SelectionChangeRight += MoveRightPressed;
-    }
-
-    void OnEnable()
-    {
+        MenuInputs.Crafting += CraftingPressed;
+        MenuInputs.Map += MapPressed;
     }
 
     void OnDisable()
@@ -43,6 +45,8 @@ public class MenuController : MonoBehaviour
         MenuInputs.SelectionChangeDown -= MoveDownPressed;
         MenuInputs.SelectionChangeLeft -= MoveLeftPressed;
         MenuInputs.SelectionChangeRight -= MoveRightPressed;
+        MenuInputs.Crafting -= CraftingPressed;
+        MenuInputs.Map -= MapPressed;
     }
 
     private void BackPressed()
@@ -89,5 +93,17 @@ public class MenuController : MonoBehaviour
     private void MoveRightPressed()
     {
         _animator.SetBool("OK", false);
+    }
+
+    private void CraftingPressed()
+    {
+        ActionMenuManager.ChangeSection(0);
+        SelectPressed();
+    }
+
+    private void MapPressed()
+    {
+        ActionMenuManager.ChangeSection(1);
+        SelectPressed();
     }
 }

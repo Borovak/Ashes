@@ -21,17 +21,20 @@ public class SaveGamePanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _panel = GetComponent<Image>();
-        _newGame = transform.Find("NewGame").gameObject;
-        _zoneName = transform.Find("ZoneName").gameObject;
-        _gameTime = transform.Find("GameTime").gameObject;
-        _doubleJump = transform.Find("DoubleJump").gameObject;
-        UpdateData();
     }
 
     void OnEnable()
     {
+        if (_panel == null)
+        {
+            _panel = GetComponent<Image>();
+            _newGame = transform.Find("NewGame").gameObject;
+            _zoneName = transform.Find("ZoneName").gameObject;
+            _gameTime = transform.Find("GameTime").gameObject;
+            _doubleJump = transform.Find("DoubleJump").gameObject;
+        }
         SaveSystem.SaveDeleted += Reload;
+        UpdateData();
     }
 
     void OnDiable()
@@ -52,6 +55,7 @@ public class SaveGamePanel : MonoBehaviour
 
     public void UpdateData()
     {
+        LocationInformation.Init(out _);
         SaveSystem.index = index;
         transform.Find("Id").GetComponent<TextMeshProUGUI>().text = $"Save {index + 1}";
         dataPresent = SaveSystem.Load(out var data, out var errorMessage);
@@ -69,6 +73,11 @@ public class SaveGamePanel : MonoBehaviour
             var m = Convert.ToInt32(t / 60f);
             _gameTime.GetComponent<TextMeshProUGUI>().text = $"{h}:{m.ToString("00")}";
         }
+        else
+        {
+            _zoneName.GetComponent<TextMeshProUGUI>().text = $"Ferry";
+            _gameTime.GetComponent<TextMeshProUGUI>().text = $"0:00";
+        }
     }
 
     public void LoadSaveFile()
@@ -76,12 +85,12 @@ public class SaveGamePanel : MonoBehaviour
         SaveSystem.index = index;
         var dataPresent = GetComponent<SaveGamePanel>().dataPresent;
         if (!dataPresent)
-        {            
+        {
             SaveSystem.SaveVirgin(out _);
         }
         if (SaveSystem.Load(out var data, out var errorMessage))
         {
-            SceneManager.LoadScene("LevelDesignerLoader");
+            SceneManager.LoadScene("Game");
         }
         else
         {

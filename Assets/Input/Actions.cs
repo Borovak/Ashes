@@ -444,6 +444,22 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Map"",
+                    ""type"": ""Button"",
+                    ""id"": ""99aee9de-de17-4acb-8c4c-746abaa86978"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Crafting"",
+                    ""type"": ""Button"",
+                    ""id"": ""037bc527-0756-4604-8af8-7f4e1aec7da2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -680,17 +696,6 @@ public class @Actions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b9ca0538-155d-492e-94a6-8da90ed64b9a"",
-                    ""path"": ""<Keyboard>/i"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""228f4c78-723d-42f5-bea4-2583b7beaf71"",
                     ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
@@ -897,6 +902,28 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e0144557-76af-40a7-9cba-7ff6df373a4f"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Map"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3418a5d-20bc-4d9b-838c-e78727550744"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Crafting"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -952,6 +979,8 @@ public class @Actions : IInputActionCollection, IDisposable
         m_Menu_SectionNext = m_Menu.FindAction("SectionNext", throwIfNotFound: true);
         m_Menu_MapZoomIn = m_Menu.FindAction("MapZoomIn", throwIfNotFound: true);
         m_Menu_MapZoomOut = m_Menu.FindAction("MapZoomOut", throwIfNotFound: true);
+        m_Menu_Map = m_Menu.FindAction("Map", throwIfNotFound: true);
+        m_Menu_Crafting = m_Menu.FindAction("Crafting", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1100,6 +1129,8 @@ public class @Actions : IInputActionCollection, IDisposable
     private readonly InputAction m_Menu_SectionNext;
     private readonly InputAction m_Menu_MapZoomIn;
     private readonly InputAction m_Menu_MapZoomOut;
+    private readonly InputAction m_Menu_Map;
+    private readonly InputAction m_Menu_Crafting;
     public struct MenuActions
     {
         private @Actions m_Wrapper;
@@ -1114,6 +1145,8 @@ public class @Actions : IInputActionCollection, IDisposable
         public InputAction @SectionNext => m_Wrapper.m_Menu_SectionNext;
         public InputAction @MapZoomIn => m_Wrapper.m_Menu_MapZoomIn;
         public InputAction @MapZoomOut => m_Wrapper.m_Menu_MapZoomOut;
+        public InputAction @Map => m_Wrapper.m_Menu_Map;
+        public InputAction @Crafting => m_Wrapper.m_Menu_Crafting;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1153,6 +1186,12 @@ public class @Actions : IInputActionCollection, IDisposable
                 @MapZoomOut.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
                 @MapZoomOut.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
                 @MapZoomOut.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
+                @Map.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
+                @Map.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
+                @Map.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
+                @Crafting.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
+                @Crafting.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
+                @Crafting.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -1187,6 +1226,12 @@ public class @Actions : IInputActionCollection, IDisposable
                 @MapZoomOut.started += instance.OnMapZoomOut;
                 @MapZoomOut.performed += instance.OnMapZoomOut;
                 @MapZoomOut.canceled += instance.OnMapZoomOut;
+                @Map.started += instance.OnMap;
+                @Map.performed += instance.OnMap;
+                @Map.canceled += instance.OnMap;
+                @Crafting.started += instance.OnCrafting;
+                @Crafting.performed += instance.OnCrafting;
+                @Crafting.canceled += instance.OnCrafting;
             }
         }
     }
@@ -1223,5 +1268,7 @@ public class @Actions : IInputActionCollection, IDisposable
         void OnSectionNext(InputAction.CallbackContext context);
         void OnMapZoomIn(InputAction.CallbackContext context);
         void OnMapZoomOut(InputAction.CallbackContext context);
+        void OnMap(InputAction.CallbackContext context);
+        void OnCrafting(InputAction.CallbackContext context);
     }
 }
