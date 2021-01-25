@@ -8,7 +8,7 @@ tpsheetFileNames:
 - Assets/Sprites/Ash/ash_hit.tpsheet
 - Assets/Sprites/Attacks/attack_00.tpsheet
 - Assets/Sprites/Contacts/contacts.tpsheet
-- Assets/Sprites/Enemies/bosswolf.tpsheet
+- Assets/Sprites/Enemies/enemy_bosswolf.tpsheet
 - Assets/Sprites/Enemies/enemy_forestLarva.tpsheet
 - Assets/Sprites/Enemies/enemy_forestSpitter.tpsheet
 - Assets/Sprites/Environment/environment_forest.tpsheet
@@ -31,7 +31,7 @@ textureFileNames:
 - Assets/Sprites/Ash/ash_hit.png
 - Assets/Sprites/Attacks/attack_00.png
 - Assets/Sprites/Contacts/contacts.png
-- Assets/Sprites/Enemies/bosswolf.png
+- Assets/Sprites/Enemies/enemy_bosswolf.png
 - Assets/Sprites/Enemies/enemy_forestLarva.png
 - Assets/Sprites/Enemies/enemy_forestSpitter.png
 - Assets/Sprites/Environment/environment_forest.png
