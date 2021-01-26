@@ -18,11 +18,19 @@ public class GameController : MonoBehaviour
         TransitionOut,
         Cutscene
     }
+    public static GameStates gameState
+    {
+        get => _gameState;
+        set
+        {
+            _gameState = value;
+            Debug.Log($"Game state changed to {value}");
+        }
+    }
 
     public static bool loadedAlone;
     public static ChamberController currentChamber = null;
     public static event Action<GameObject> PlayerSpawned;
-    public static GameStates gameState = GameStates.Init;
     public static float gameTime;
 
     public GameObject playerPrefab;
@@ -31,6 +39,7 @@ public class GameController : MonoBehaviour
     private Animator _animator;
     private CinemachineVirtualCamera _virtualCamera;
     private static GameController _instance;
+    private static GameStates _gameState = GameStates.Init;
 
     // Start is called before the first frame update
     void Awake()

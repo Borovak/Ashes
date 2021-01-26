@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class BossWolfMoveBehaviour : StateMachineBehaviour
 {
+    public float metersPerAnim = 5f;
     private BossWolfController _bossWolfController;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _bossWolfController = animator.GetComponent<BossWolfController>();
-        LeanTween.move(_bossWolfController.gameObject, _bossWolfController.currentWaypoint.position, animator.GetCurrentAnimatorStateInfo(0).length);
-        Debug.Log($"Boss going from {_bossWolfController.transform.position.x} to {_bossWolfController.currentWaypoint.position.x} in {animator.GetCurrentAnimatorStateInfo(0).length} seconds");
+        if (stateInfo.IsName("Jump"))
+        {
+            LeanTween.move(_bossWolfController.gameObject, _bossWolfController.currentDestination, animator.GetCurrentAnimatorStateInfo(0).length);
+        }
+        else
+        {
+            var time = Vector3.Distance(_bossWolfController.gameObject.transform.position, _bossWolfController.currentDestination) / metersPerAnim;
+            LeanTween.move(_bossWolfController.gameObject, _bossWolfController.currentDestination, time).setOnComplete(() => animator.SetTrigger("arrived"));
+        }
+        //Debug.Log($"Boss going from {_bossWolfController.transform.position.x} to {_bossWolfController.currentWaypoint.position.x} in {animator.GetCurrentAnimatorStateInfo(0).length} seconds");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

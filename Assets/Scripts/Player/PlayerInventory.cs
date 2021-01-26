@@ -38,7 +38,10 @@ public class PlayerInventory : MonoBehaviour
         }
         InventoryChanged?.Invoke();
         //Instantiate item gained panel
-        _itemGainedQueue.Add(new ItemBundle(id, quantity));
+        if (GameController.gameState == GameController.GameStates.Running)
+        {
+            _itemGainedQueue.Add(new ItemBundle(id, quantity));
+        }
     }
 
     public void Add(Item item, int quantity = 1)
@@ -120,12 +123,7 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {
-        if (AddItemTest)
-        {
-            AddItemTest = false;
-            Add(1, 1);
-        }
-        if (_timeSinceLastItemGainedPanel <= 0)
+        if (_timeSinceLastItemGainedPanel <= 0 && GameController.gameState == GameController.GameStates.Running)
         {
             if (_itemGainedQueue.Count > 0)   
             {
@@ -142,8 +140,9 @@ public class PlayerInventory : MonoBehaviour
 
     private void InstantiateItemGainedPanel(ItemBundle itemBundle)
     {
-        var gameUITransform = GameObject.FindGameObjectWithTag("GameUI").transform;
-        var itemGained = GameObject.Instantiate(ItemGainedPrefab, gameUITransform);
+        if (GameController.gameState != GameController.GameStates.Running) return;
+        var gameUIGameObject = GameObject.FindGameObjectWithTag("GameUI");
+        var itemGained = GameObject.Instantiate(ItemGainedPrefab, gameUIGameObject.transform);
         var itemGainedController = itemGained.GetComponent<ItemGainedController>();
         itemGainedController.itemBundle = itemBundle;
     }

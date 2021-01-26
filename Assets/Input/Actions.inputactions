@@ -447,6 +447,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Special",
+                    "type": "Button",
+                    "id": "06a9b880-2a1f-4103-92c6-74ab2edc2ddf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -909,6 +917,28 @@
                     "processors": "",
                     "groups": "Control Scheme Alpha",
                     "action": "Crafting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2713365a-ab23-4b35-ad26-8b952ac5c5cd",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Special",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e1d38bf6-b126-4c27-aec8-2d55620b0474",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Special",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

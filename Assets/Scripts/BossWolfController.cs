@@ -13,9 +13,6 @@ public class BossWolfController : MonoBehaviour
 
     public float minX;
     public float maxX;
-    public float minY;
-    public float maxY;
-    public float playerYThreshold;
     public float minDelay;
     public float maxDelay;
     public float delay;
@@ -24,11 +21,7 @@ public class BossWolfController : MonoBehaviour
     public float speed;
     public float positionSpeed;
     public float positionRatio;
-    public AnimationCurve speedCurve;
-    public AnimationCurve jumpCurve;
-    public Rect wakesUpWhenPlayerIsInRectangle;
-    public Transform currentWaypoint;
-    public Transform[] waypoints;
+    public Vector3 currentDestination;
 
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
@@ -41,7 +34,6 @@ public class BossWolfController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentWaypoint = waypoints[0];
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _lifeController = GetComponent<LifeController>();

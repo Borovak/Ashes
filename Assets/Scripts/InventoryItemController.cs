@@ -18,6 +18,10 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
         set
         {
             _item = value;
+            if (_image == null)
+            {
+                FindSubControls();
+            }
             if (_item == null)
             {
                 _image.sprite = null;
@@ -39,8 +43,14 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
         {
             _count = value;
             _text.text = _count >= 0 ? _count.ToString() : "";
+            if (_text == null)
+            {
+                FindSubControls();
+            }
         }
     }
+
+    public int index;
 
     private Item _item;
     private int _count;
@@ -56,9 +66,10 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
     // Start is called before the first frame update
     void Start()
     {
-        _back = GetComponent<Image>();
-        _image = GetComponentsInChildren<Image>().Where(x => x.gameObject.name == "ItemImage").FirstOrDefault();
-        _text = GetComponentsInChildren<TextMeshProUGUI>().Where(x => x.gameObject.name == "ItemCount").FirstOrDefault();
+        if (_back == null)
+        {
+            FindSubControls();
+        }
     }
 
     // Update is called once per frame
@@ -74,6 +85,15 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
         }
     }
 
+    public void Select()
+    {
+        if (_item != null)
+        {
+            SelectedItemChanged?.Invoke(_item);
+            CraftingDescriptionController.SelectedItem = Item;
+        }
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (_item != null)
@@ -84,11 +104,7 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
-        if (_item != null)
-        {
-            SelectedItemChanged?.Invoke(_item);
-            CraftingDescriptionController.SelectedItem = Item;
-        }
+        Select();
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -97,5 +113,12 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
         {
             _isHovered = false;
         }
+    }
+
+    private void FindSubControls()
+    {        
+        _back = GetComponent<Image>();
+        _image = GetComponentsInChildren<Image>().Where(x => x.gameObject.name == "ItemImage").FirstOrDefault();
+        _text = GetComponentsInChildren<TextMeshProUGUI>().Where(x => x.gameObject.name == "ItemCount").FirstOrDefault();
     }
 }

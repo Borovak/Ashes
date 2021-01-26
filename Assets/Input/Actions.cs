@@ -460,6 +460,14 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""06a9b880-2a1f-4103-92c6-74ab2edc2ddf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -924,6 +932,28 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""action"": ""Crafting"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2713365a-ab23-4b35-ad26-8b952ac5c5cd"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e1d38bf6-b126-4c27-aec8-2d55620b0474"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -981,6 +1011,7 @@ public class @Actions : IInputActionCollection, IDisposable
         m_Menu_MapZoomOut = m_Menu.FindAction("MapZoomOut", throwIfNotFound: true);
         m_Menu_Map = m_Menu.FindAction("Map", throwIfNotFound: true);
         m_Menu_Crafting = m_Menu.FindAction("Crafting", throwIfNotFound: true);
+        m_Menu_Special = m_Menu.FindAction("Special", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1131,6 +1162,7 @@ public class @Actions : IInputActionCollection, IDisposable
     private readonly InputAction m_Menu_MapZoomOut;
     private readonly InputAction m_Menu_Map;
     private readonly InputAction m_Menu_Crafting;
+    private readonly InputAction m_Menu_Special;
     public struct MenuActions
     {
         private @Actions m_Wrapper;
@@ -1147,6 +1179,7 @@ public class @Actions : IInputActionCollection, IDisposable
         public InputAction @MapZoomOut => m_Wrapper.m_Menu_MapZoomOut;
         public InputAction @Map => m_Wrapper.m_Menu_Map;
         public InputAction @Crafting => m_Wrapper.m_Menu_Crafting;
+        public InputAction @Special => m_Wrapper.m_Menu_Special;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1192,6 +1225,9 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Crafting.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
                 @Crafting.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
                 @Crafting.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
+                @Special.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
+                @Special.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
+                @Special.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -1232,6 +1268,9 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Crafting.started += instance.OnCrafting;
                 @Crafting.performed += instance.OnCrafting;
                 @Crafting.canceled += instance.OnCrafting;
+                @Special.started += instance.OnSpecial;
+                @Special.performed += instance.OnSpecial;
+                @Special.canceled += instance.OnSpecial;
             }
         }
     }
@@ -1270,5 +1309,6 @@ public class @Actions : IInputActionCollection, IDisposable
         void OnMapZoomOut(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
         void OnCrafting(InputAction.CallbackContext context);
+        void OnSpecial(InputAction.CallbackContext context);
     }
 }

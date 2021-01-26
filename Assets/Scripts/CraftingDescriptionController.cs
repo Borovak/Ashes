@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -17,6 +18,7 @@ public class CraftingDescriptionController : MonoBehaviour
     public TextMeshProUGUI itemValue;
     public Image currencySymbol;
     public GameObject craftButton;
+    public GameObject craftMaxButton;
 
     private List<RecipeIngredient> _recipeIngredients;
     private Item _item;
@@ -45,12 +47,16 @@ public class CraftingDescriptionController : MonoBehaviour
     void OnEnable()
     {
         Clear();
-        PlayerInventory.InventoryChanged += CheckIfRecipeCanBeMade;
+        PlayerInventory.InventoryChanged += SetCraftButtonsVisibility;
+        MenuInputs.OK += Craft;
+        MenuInputs.Special += CraftMax;
     }
 
     void OnDisable()
     {
-        PlayerInventory.InventoryChanged -= CheckIfRecipeCanBeMade;
+        PlayerInventory.InventoryChanged -= SetCraftButtonsVisibility;
+        MenuInputs.OK -= Craft;
+        MenuInputs.Special -= CraftMax;
         SelectedItem = null;
     }
 
@@ -118,7 +124,7 @@ public class CraftingDescriptionController : MonoBehaviour
             recipeIngredient.Item = null;
         }
         _currentIngredients = null;
-        craftButton.SetActive(false);
+        ChangeCraftButtonsVisibility(false, 0);
     }
 
     private void CheckForRecipe(Item item)
@@ -150,16 +156,18 @@ public class CraftingDescriptionController : MonoBehaviour
                 _recipeIngredients[i].Item = null;
             }
         }
-        CheckIfRecipeCanBeMade();
+        SetCraftButtonsVisibility();
     }
 
-    private void CheckIfRecipeCanBeMade()
+    private bool CanRecipeCanBeMade(out int itemCount)
     {
-        if (!TryGetComponent<PlayerInventory>(out var playerInventory)){
-            craftButton.SetActive(false);
-            return;
+        if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory))
+        {
+            itemCount = 0;
+            return false;
         }
         var possible = true;
+        itemCount = int.MaxValue;
         foreach (var ingredient in _currentIngredients)
         {
             var playerQuantity = playerInventory.GetCount(ingredient.Key);
@@ -169,19 +177,47 @@ public class CraftingDescriptionController : MonoBehaviour
             {
                 possible = false;
             }
+            else
+            {
+                itemCount = System.Math.Min(itemCount, Convert.ToInt32(playerQuantity / ingredient.Value));
+            }
         }
-        craftButton.SetActive(possible);
+        return possible;
+    }
+
+    private void SetCraftButtonsVisibility()
+    {
+        ChangeCraftButtonsVisibility(CanRecipeCanBeMade(out var itemCount), itemCount);
+    }
+
+    private void ChangeCraftButtonsVisibility(bool isVisible, int itemCount)
+    {
+        craftButton.SetActive(isVisible);
+        craftMaxButton.SetActive(isVisible);
+        if (isVisible)
+        {
+            craftMaxButton.GetComponentInChildren<TextMeshProUGUI>().text = $"Craft Max ({itemCount})";
+        }
     }
 
     public void Craft()
     {
-        if (_item == null) return;
-        if (!TryGetComponent<PlayerInventory>(out var playerInventory)) return;
+        if (_item == null || !_item.isCraftable) return;
+        if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return;
         foreach (var ingredient in _currentIngredients)
         {
             playerInventory.Remove(ingredient.Key, ingredient.Value);
         }
         playerInventory.Add(_item);
+    }
+
+    public void CraftMax()
+    {
+        if (_item == null || !_item.isCraftable) return;
+        while (CanRecipeCanBeMade(out _))
+        {
+            Craft();
+        }
     }
 
 }

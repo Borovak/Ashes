@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class RecipeSlotController : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
     public static event Action<Item> SelectedRecipeChanged;
+    public int index;
 
     public Item Item
     {
@@ -56,6 +57,15 @@ public class RecipeSlotController : MonoBehaviour, IPointerEnterHandler, IPointe
     {
         backImage.color = CraftingDescriptionController.SelectedItem == Item && Item != null ? _colorWhenSelected : (_isHovered ? _colorWhenHovered : _colorWhenNotSelected);
     }
+    
+    public void Select()
+    {
+        if (_item != null)
+        {
+            SelectedRecipeChanged?.Invoke(_item);
+            CraftingDescriptionController.SelectedItem = Item;
+        }
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -67,11 +77,7 @@ public class RecipeSlotController : MonoBehaviour, IPointerEnterHandler, IPointe
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
-        if (_item != null)
-        {
-            SelectedRecipeChanged?.Invoke(_item);
-            CraftingDescriptionController.SelectedItem = Item;
-        }
+        Select();
     }
 
     public void OnPointerExit(PointerEventData eventData)
