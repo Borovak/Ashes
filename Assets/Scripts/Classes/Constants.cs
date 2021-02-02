@@ -26,6 +26,15 @@ public static class Constants
         Grass,
         Overhang
     }
+    
+    [Serializable]
+    public enum PanelTypes
+    {
+        Craftables,
+        Inventory,
+        ShopBuy,
+        ShopSell
+    }
 
     public const int MONEY_ID = 0;
     public const string TAG_CHAMBER = "Chamber";

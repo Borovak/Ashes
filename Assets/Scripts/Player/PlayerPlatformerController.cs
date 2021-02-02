@@ -52,6 +52,7 @@ public class PlayerPlatformerController : PhysicsObject
         _inputs.JumpRelease += JumpRelease;
         _inputs.Dash += Dash;
         _inputs.DropThrough += DropThrough;
+        GameController.GameStateChanged += OnGameStateChanged;
     }
 
     void OnDisable()
@@ -73,8 +74,10 @@ public class PlayerPlatformerController : PhysicsObject
         if (!droppingThrough)
         {
             _droppingThroughTime = 0f;
-        } else {
-            
+        }
+        else
+        {
+
             _droppingThroughTime += Time.deltaTime;
             if (_droppingThroughTime >= _droppingThroughMaxTime)
             {
@@ -103,7 +106,8 @@ public class PlayerPlatformerController : PhysicsObject
         {
             _canDash = true;
         }
-        if (_dashTimer > 0){
+        if (_dashTimer > 0)
+        {
             _dashTimer -= Time.deltaTime;
         }
         _animator.SetBool("horizontalMoveDesired", Mathf.Abs(move.x) > 0.1);
@@ -181,5 +185,19 @@ public class PlayerPlatformerController : PhysicsObject
     private void DropThrough()
     {
         droppingThrough = true;
+    }
+
+    private void OnGameStateChanged(GameController.GameStates gameState)
+    {
+        if (_animator == null) return;
+        switch (gameState)
+        {
+            case GameController.GameStates.Running:
+                _animator.enabled = true;
+                break;
+            case GameController.GameStates.Paused:
+                _animator.enabled = false;
+                break;
+        }
     }
 }

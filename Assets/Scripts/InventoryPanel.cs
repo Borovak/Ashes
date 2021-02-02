@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class InventoryPanel : MonoBehaviour
 {
-
+    public static event Action<int> SelectedIndexChanged;
     public static bool isFocused;
     public float placementBiasX;
     public float placementBiasY;
@@ -16,6 +16,15 @@ public class InventoryPanel : MonoBehaviour
     public int placementYCount;
     public GameObject inventorySlotPrefab;
     public bool refreshNeeded = true;
+    public int selectedIndex
+    {
+        get => _selectedIndex;
+        set
+        {
+            _selectedIndex = value;
+            SelectedIndexChanged.Invoke(value);
+        }
+    }
 
     private bool _previousIsFocused;
     private List<InventoryItemController> _inventoryItemControllers;
@@ -39,7 +48,7 @@ public class InventoryPanel : MonoBehaviour
             _inventoryItemControllers = inventoryItemControllers.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ThenBy(x => x.transform.GetComponent<RectTransform>().anchoredPosition.x).ToList();
         }
         PlayerInventory.InventoryChanged += RequestRefresh;
-        RecipeSlotController.SelectedRecipeChanged += OnSelectedRecipeChanged;
+        LongSlotController.SelectedSlotChanged += OnSelectedRecipeChanged;
         MenuInputs.SelectionChangeUp += OnSelectionChangeUp;
         MenuInputs.SelectionChangeDown += OnSelectionChangeDown;
         MenuInputs.SelectionChangeLeft += OnSelectionChangeLeft;
@@ -50,7 +59,7 @@ public class InventoryPanel : MonoBehaviour
     void OnDisable()
     {
         PlayerInventory.InventoryChanged -= RequestRefresh;
-        RecipeSlotController.SelectedRecipeChanged -= OnSelectedRecipeChanged;
+        LongSlotController.SelectedSlotChanged -= OnSelectedRecipeChanged;
         MenuInputs.SelectionChangeUp -= OnSelectionChangeUp;
         MenuInputs.SelectionChangeDown -= OnSelectionChangeDown;
         MenuInputs.SelectionChangeLeft -= OnSelectionChangeLeft;
@@ -85,7 +94,7 @@ public class InventoryPanel : MonoBehaviour
         if (isFocused && !_previousIsFocused)
         {
             _inventoryItemControllers[0].Select();
-            _selectedIndex = 0;
+            selectedIndex = 0;
             _x = 0;
             _y = 0;
         }
@@ -120,7 +129,7 @@ public class InventoryPanel : MonoBehaviour
     {
         if (!isFocused) return;
         var slot = _inventoryItemControllers.FirstOrDefault(x => x.Item == item);
-        _selectedIndex = slot != null ? slot.index : -1;
+        selectedIndex = slot != null ? slot.index : -1;
     }
 
     private void OnSelectionChangeUp()
@@ -129,7 +138,7 @@ public class InventoryPanel : MonoBehaviour
         var tempIndex = (_y + 1) * placementXCount + _x;
         if (tempIndex >= _itemCount || _inventoryItemControllers[tempIndex].Item == null) return;
         _y += 1;
-        _selectedIndex = tempIndex;
+        selectedIndex = tempIndex;
         _inventoryItemControllers[tempIndex].Select();
     }
 
@@ -139,7 +148,7 @@ public class InventoryPanel : MonoBehaviour
         var tempIndex = (_y - 1) * placementXCount + _x;
         if (tempIndex >= _itemCount || _inventoryItemControllers[tempIndex].Item == null) return;
         _y -= 1;
-        _selectedIndex = tempIndex;
+        selectedIndex = tempIndex;
         _inventoryItemControllers[tempIndex].Select();
     }
 
@@ -149,7 +158,7 @@ public class InventoryPanel : MonoBehaviour
         var tempIndex = _y * placementXCount + _x + 1;
         if (tempIndex >= _itemCount || _inventoryItemControllers[tempIndex].Item == null) return;
         _x += 1;
-        _selectedIndex = tempIndex;
+        selectedIndex = tempIndex;
         _inventoryItemControllers[tempIndex].Select();
     }
 
@@ -158,14 +167,14 @@ public class InventoryPanel : MonoBehaviour
         if (_x - 1 < 0)
         {
             isFocused = false;
-            RecipePanel.isFocused = true;
+            LongSlotPanel.isFocused = true;
             return;
         }
         if (!isFocused) return;
         var tempIndex = _y * placementXCount + _x - 1;
         if (tempIndex >= _itemCount || _inventoryItemControllers[tempIndex].Item == null) return;
         _x -= 1;
-        _selectedIndex = tempIndex;
+        selectedIndex = tempIndex;
         _inventoryItemControllers[tempIndex].Select();
     }
 }

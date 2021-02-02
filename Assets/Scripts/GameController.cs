@@ -14,9 +14,7 @@ public class GameController : MonoBehaviour
         TransitionIn,
         Paused,
         Running,
-        ActionMenu,
         TransitionOut,
-        Cutscene
     }
     public static GameStates gameState
     {
@@ -24,13 +22,15 @@ public class GameController : MonoBehaviour
         set
         {
             _gameState = value;
-            Debug.Log($"Game state changed to {value}");
+            GameStateChanged?.Invoke(value);
+            //Debug.Log($"Game state changed to {value}");
         }
     }
 
     public static bool loadedAlone;
     public static ChamberController currentChamber = null;
     public static event Action<GameObject> PlayerSpawned;
+    public static event Action<GameStates> GameStateChanged;
     public static float gameTime;
 
     public GameObject playerPrefab;

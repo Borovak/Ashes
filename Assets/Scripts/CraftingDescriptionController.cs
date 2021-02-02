@@ -9,9 +9,6 @@ using UnityEngine.UI;
 
 public class CraftingDescriptionController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public static Item SelectedItem;
-
     public Image itemImage;
     public TextMeshProUGUI itemTitle;
     public TextMeshProUGUI itemDescription;
@@ -19,7 +16,10 @@ public class CraftingDescriptionController : MonoBehaviour
     public Image currencySymbol;
     public GameObject craftButton;
     public GameObject craftMaxButton;
+    public Constants.PanelTypes panelType;
+    public GameObject itemManagerObject;
 
+    private IItemManager _itemManager;
     private List<RecipeIngredient> _recipeIngredients;
     private Item _item;
     private List<KeyValuePair<Item, int>> _currentIngredients;
@@ -38,8 +38,6 @@ public class CraftingDescriptionController : MonoBehaviour
 
     void Start()
     {
-        InventoryItemController.SelectedItemChanged += OnSelectedItemChanged;
-        RecipeSlotController.SelectedRecipeChanged += OnSelectedRecipeChanged;
         itemImage.sprite = null;
         Clear();
     }
@@ -47,23 +45,26 @@ public class CraftingDescriptionController : MonoBehaviour
     void OnEnable()
     {
         Clear();
-        PlayerInventory.InventoryChanged += SetCraftButtonsVisibility;
+        if (craftButton != null)
+        {
+            PlayerInventory.InventoryChanged += SetCraftButtonsVisibility;
+        }
+        _itemManager = itemManagerObject.GetComponent<IItemManager>();
+        _itemManager.SelectedItemChanged += OnSelectedItemChanged;
         MenuInputs.OK += Craft;
         MenuInputs.Special += CraftMax;
     }
 
     void OnDisable()
     {
-        PlayerInventory.InventoryChanged -= SetCraftButtonsVisibility;
+        if (craftButton != null)
+        {
+            PlayerInventory.InventoryChanged -= SetCraftButtonsVisibility;
+        }        
+        _itemManager.SelectedItemChanged -= OnSelectedItemChanged;
         MenuInputs.OK -= Craft;
         MenuInputs.Special -= CraftMax;
-        SelectedItem = null;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        _item = null;
     }
 
     private void OnSelectedItemChanged(Item item)
@@ -101,6 +102,14 @@ public class CraftingDescriptionController : MonoBehaviour
             {
                 ClearIngredients();
             }
+        }
+    }
+
+    private void OnSelectedIndexChanged(int selectedIndex)
+    {
+        if (selectedIndex == -1)
+        {
+            OnSelectedItemChanged(null);
         }
     }
 
@@ -192,6 +201,7 @@ public class CraftingDescriptionController : MonoBehaviour
 
     private void ChangeCraftButtonsVisibility(bool isVisible, int itemCount)
     {
+        if (craftButton == null) return;
         craftButton.SetActive(isVisible);
         craftMaxButton.SetActive(isVisible);
         if (isVisible)

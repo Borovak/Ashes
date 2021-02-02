@@ -63,8 +63,7 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
     private Color _colorWhenNull = new Color(0f, 0f, 0f, 0f);
     private bool _isHovered;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         if (_back == null)
         {
@@ -73,9 +72,9 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
     }
 
     // Update is called once per frame
-    void Update()
+    private void OnSelectedIndexChanged(int selectedIndex)
     {
-        if (CraftingDescriptionController.SelectedItem == Item && Item != null)
+        if (selectedIndex == index && Item != null)
         {
             _back.color = _colorWhenSelected;
         }
@@ -90,7 +89,6 @@ public class InventoryItemController : MonoBehaviour, IPointerEnterHandler, IPoi
         if (_item != null)
         {
             SelectedItemChanged?.Invoke(_item);
-            CraftingDescriptionController.SelectedItem = Item;
         }
     }
 

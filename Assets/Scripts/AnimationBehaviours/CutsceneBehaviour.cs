@@ -16,7 +16,6 @@ public class CutsceneBehaviour : StateMachineBehaviour
         _videoPlayer.enabled = true;
         _videoPlayer.Play();
         _videoPlayer.loopPointReached += OnEnd;
-        GameController.gameState = GameController.GameStates.Cutscene;
         FadeInOutController.FadeIn();
     }
 

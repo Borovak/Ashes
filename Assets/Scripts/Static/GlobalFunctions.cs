@@ -7,7 +7,6 @@ using UnityEngine;
 
 public static class GlobalFunctions
 {
-    public static event Action OpenShopTriggered;
 
     public static DataTable ParseCsv(string path)
     {
@@ -138,12 +137,6 @@ public static class GlobalFunctions
         }
         sprite = Resources.Load<Sprite>($"Npc/{resourceName}");
         return sprite != null;
-    }
-
-    public static void OpenShop()
-    {
-        Debug.Log("Shop interface test");
-        OpenShopTriggered?.Invoke();
     }
 
     public static float GetAngleFromPoints(Vector3 reference, Vector3 target)

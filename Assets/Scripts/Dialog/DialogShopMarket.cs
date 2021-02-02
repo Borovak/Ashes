@@ -13,7 +13,7 @@ public class DialogShopMarket : IDialogItemChoices
 
     Dictionary<string, Action> IDialogItemChoices.followUp => new Dictionary<string, Action>
     {
-        {"Shop", () => DialogController.DoAction(GlobalFunctions.OpenShop)},
+        {"Shop", () => DialogController.DoAction(ShopController.Open)},
         {"Who are you?", () => DialogController.UpdateDialog(new DialogShopMarket0())}
     };
 }

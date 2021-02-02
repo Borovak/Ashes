@@ -8,11 +8,11 @@ public class PlayerInventory : MonoBehaviour
     public GameObject ItemGainedPrefab;
     public bool AddItemTest;
     public float timeBetweenItemGainedPanel = 0.5f;
-    public int money = 0;
 
     private List<ItemBundle> _itemGainedQueue;
     private Dictionary<int, int> _items;
     private float _timeSinceLastItemGainedPanel = 0f;
+    private int _money = 0;
 
     void Start()
     {
@@ -25,23 +25,24 @@ public class PlayerInventory : MonoBehaviour
     {
         if (id == Constants.MONEY_ID)
         {
-            money += quantity;
-            return;
-        }
-        if (!_items.ContainsKey(id))
-        {
-            _items.Add(id, quantity);
+            _money += quantity;
         }
         else
         {
-            _items[id] = _items[id] + quantity;
+            if (!_items.ContainsKey(id))
+            {
+                _items.Add(id, quantity);
+            }
+            else
+            {
+                _items[id] = _items[id] + quantity;
+            }
+            if (GameController.gameState == GameController.GameStates.Running)
+            {
+                _itemGainedQueue.Add(new ItemBundle(id, quantity));
+            }
         }
         InventoryChanged?.Invoke();
-        //Instantiate item gained panel
-        if (GameController.gameState == GameController.GameStates.Running)
-        {
-            _itemGainedQueue.Add(new ItemBundle(id, quantity));
-        }
     }
 
     public void Add(Item item, int quantity = 1)
@@ -49,32 +50,48 @@ public class PlayerInventory : MonoBehaviour
         Add(item.id, quantity);
     }
 
-    public void Remove(int id, int quantity = 1)
+    public int Remove(int id, int quantity = 1)
     {
+        int quantityBefore;
+        int quantityAfter;
         if (id == Constants.MONEY_ID)
         {
-            money = System.Math.Max(money - quantity, 0);
-            return;
+            quantityBefore = _money;
+            _money = System.Math.Max(_money - quantity, 0);
+            quantityAfter = _money;
         }
         if (!_items.ContainsKey(id))
         {
+            quantityBefore = 0;
+            quantityAfter = 0;
             _items.Add(id, 0);
         }
         else
         {
+            quantityBefore = _items[id];
             _items[id] = System.Math.Max(_items[id] - quantity, 0);
+            quantityAfter = _items[id];
         }
         InventoryChanged?.Invoke();
+        return quantityBefore - quantityAfter;
     }
 
-    public void Remove(Item item, int quantity = 1)
+    public int Remove(Item item, int quantity = 1)
     {
-        Remove(item.id, quantity);
+        return Remove(item.id, quantity);
     }
 
     public int GetCount(int id)
     {
-        return _items.TryGetValue(id, out var count) ? count : 0;
+        if (id == Constants.MONEY_ID)
+        {
+            return _money;
+        }
+        else
+        {
+            if (_items == null) return -1;
+            return _items.TryGetValue(id, out var count) ? count : 0;
+        }
     }
 
     public string GetInventoryString()
@@ -85,7 +102,7 @@ public class PlayerInventory : MonoBehaviour
             if (item.Value == 0) continue;
             lst.Add($"{item.Key},{item.Value}");
         }
-        return string.Join(";", lst) + $"|{money}";
+        return string.Join(";", lst) + $"|{_money}";
     }
 
 
@@ -102,7 +119,7 @@ public class PlayerInventory : MonoBehaviour
         }
         if (groups.Length > 1)
         {
-            money = Convert.ToInt32(groups[1]);
+            _money = Convert.ToInt32(groups[1]);
         }
     }
 
@@ -125,7 +142,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (_timeSinceLastItemGainedPanel <= 0 && GameController.gameState == GameController.GameStates.Running)
         {
-            if (_itemGainedQueue.Count > 0)   
+            if (_itemGainedQueue.Count > 0)
             {
                 _timeSinceLastItemGainedPanel = timeBetweenItemGainedPanel;
                 InstantiateItemGainedPanel(_itemGainedQueue[0]);
