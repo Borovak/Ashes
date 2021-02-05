@@ -34,6 +34,7 @@ public class ChamberController : MonoBehaviour
     [SerializeField] public string grass;
     public AudioClip ambientAudioClip;
     public AudioClip musicAudioClip;
+    public bool showTerrain = true;
     public bool isPlayerHere;
     public GrassManager grassManager
     {
@@ -52,7 +53,7 @@ public class ChamberController : MonoBehaviour
     private Transform _enemyFolder;
     private VirtualCameraPlayerBinding _virtualCameraPlayerBinding;    
     private bool _previousIsPlayerInsideChamber;
-    private List<GameObject> _containersToEnableDisable;
+    private Dictionary<GameObject, Func<bool>> _containersToEnableDisable;
     private ChamberAudioManager _chamberAudioManager;
     private GrassManager _grassManager;
 
@@ -68,17 +69,18 @@ public class ChamberController : MonoBehaviour
         var tilemapRenderer = GetComponentInChildren<TilemapRenderer>();
         tilemapRenderer.enabled = false;
         //Find containers to enable/disable        
-        _containersToEnableDisable = new List<GameObject>();
+        _containersToEnableDisable = new Dictionary<GameObject, Func<bool>>();
         foreach (var containerName in ContainerNames)
         {
             var obj = transform.Find(containerName);
             if (obj == null) continue;
-            _containersToEnableDisable.Add(obj.gameObject);
+            _containersToEnableDisable.Add(obj.gameObject, () => true);
         }
+        _containersToEnableDisable[transform.Find(Constants.NAME_TERRAINCONTAINER).gameObject] = () => showTerrain;
         //Debug.Log($"{chamberName}: {_containersToEnableDisable.Count} containers");
         foreach (var container in _containersToEnableDisable)
         {
-            container.SetActive(false);
+            container.Key.SetActive(false);
         }
         GameController.PlayerSpawned += OnPlayerSpawned;
     }
@@ -93,7 +95,7 @@ public class ChamberController : MonoBehaviour
             DeleteEnemiesOnExit();
             foreach (var container in _containersToEnableDisable)
             {
-                container?.SetActive(false);
+                container.Key?.SetActive(false);
             }
             _chamberAudioManager.Stop();
         }
@@ -107,7 +109,7 @@ public class ChamberController : MonoBehaviour
             CreateEnemiesOnEnter();
             foreach (var container in _containersToEnableDisable)
             {
-                container?.SetActive(true);
+                container.Key?.SetActive(container.Value.Invoke());
             }
             Apply();
         }
