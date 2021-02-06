@@ -33,6 +33,25 @@ public static class SaveSystem
         }
     }
 
+    public static bool EditorSave(string savePointGuid, out string errorMessage)
+    {
+        var filePath = _filePath;
+        try
+        {
+            var saveData = PrepareSaveData(true, savePointGuid, false);
+            saveData.SavePointGuid = savePointGuid;
+            //SaveBinary(filePath);
+            SaveXml(filePath, saveData);
+            errorMessage = "";
+            return true;
+        }
+        catch (System.Exception ex)
+        {
+            errorMessage = ex.ToString();
+            return false;
+        }
+    }
+
     public static bool SaveVirgin(out string errorMessage)
     {
         var filePath = _filePath;
