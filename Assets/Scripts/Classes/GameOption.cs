@@ -1,29 +1,33 @@
 using System;
 using System.Collections.Generic;
+using Static;
 
-public class GameOption
+namespace Classes
 {
-
-    public event Action<string> ValueChanged;
-    public string id;
-    public string name;
-    public Type type;
-    public string value
+    public class GameOption
     {
-        get => _init ? _value : defaultValue;
-        set{
-            _value = value;
-            _init = true;
-            ValueChanged?.Invoke(value);
-            GameOptionsManager.Save(out _);
+
+        public event Action<string> ValueChanged;
+        public string id;
+        public string name;
+        public Type type;
+        public string value
+        {
+            get => _init ? _value : defaultValue;
+            set{
+                _value = value;
+                _init = true;
+                ValueChanged?.Invoke(value);
+                GameOptionsManager.Save(out _);
+            }
         }
-    }
-    public string defaultValue => new Dictionary<Type, string> {
-        {typeof(float), "0"}, 
-        {typeof(bool), false.ToString()}
+        public string defaultValue => new Dictionary<Type, string> {
+            {typeof(float), "0"}, 
+            {typeof(bool), false.ToString()}
         }[type];
 
 
-    private string _value;
-    private bool _init;
+        private string _value;
+        private bool _init;
+    }
 }

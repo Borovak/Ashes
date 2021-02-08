@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Static;
 using UnityEngine;
 
 public class GroundedEnemyController : Enemy

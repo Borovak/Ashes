@@ -1,6 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Classes;
+using Interfaces;
+using Player;
+using Static;
 using TMPro;
 using UnityEngine;
 
@@ -17,7 +21,7 @@ public class ShopController : MonoBehaviour, IItemManager
     public static event Action<ShopModes> ShopModeChanged;
     public static event Action OpenShopRequired;
     public static event Action CloseShopRequired;
-    public event Action<Item> SelectedItemChanged;
+    public event Action<Item, Constants.PanelTypes> SelectedItemChanged;
     public static ShopController instance;
 
     public static ShopModes shopMode
@@ -34,27 +38,31 @@ public class ShopController : MonoBehaviour, IItemManager
     public MenuButton[] modeButtons;
     public GameObject[] buyButtons;
     public GameObject[] sellButtons;
+    public GameObject itemListPanelObject;
     public TextMeshProUGUI walletValueControl;
     public Item selectedItem { get; set; }
 
     private MenuGroup _menuGroup;
     private static ShopModes _shopMode;
     private Item _item;
+    private INavigablePanel _itemListPanel;
 
     void OnEnable()
     {
         if (_menuGroup == null)
         {
             _menuGroup = GetComponent<MenuGroup>();
+            _itemListPanel = itemListPanelObject.GetComponent<INavigablePanel>();
         }
         instance = this;
         shopMode = ShopModes.Buy;
         MenuInputs.SectionPrevious += OnSectionPrevious;
         MenuInputs.SectionNext += OnSectionNext;
         MenuInputs.Back += OnBack;
-        LongSlotController.SelectedSlotChanged += OnSelectedSlotChanged;
         PlayerInventory.InventoryChanged += OnInventoryChanged;
-        LongSlotPanel.SelectedIndexChanged += OnSelectedIndexChanged;
+        _itemListPanel.SelectedIndexChanged += OnSelectedIndexChanged;
+        _itemListPanel.SelectedItemChanged += OnSelectedItemChanged;
+        _itemListPanel.HasFocus = true;
         OnInventoryChanged();
     }
 
@@ -63,9 +71,9 @@ public class ShopController : MonoBehaviour, IItemManager
         MenuInputs.SectionPrevious -= OnSectionPrevious;
         MenuInputs.SectionNext -= OnSectionNext;
         MenuInputs.Back -= OnBack;
-        LongSlotController.SelectedSlotChanged -= OnSelectedSlotChanged;
         PlayerInventory.InventoryChanged -= OnInventoryChanged;
-        LongSlotPanel.SelectedIndexChanged -= OnSelectedIndexChanged;
+        _itemListPanel.SelectedIndexChanged -= OnSelectedIndexChanged;
+        _itemListPanel.SelectedItemChanged -= OnSelectedItemChanged;
     }
 
     private void OnSectionPrevious()
@@ -83,14 +91,14 @@ public class ShopController : MonoBehaviour, IItemManager
         CloseShopRequired?.Invoke();
     }
 
-    public void ChangeShopMode(ShopModes shopMode)
+    public void ChangeShopMode(ShopModes newShopMode)
     {
-        ShopController.shopMode = shopMode;
+        ShopController.shopMode = newShopMode;
     }
 
-    public void ChangeShopMode(int shopMode)
+    public void ChangeShopMode(int newShopMode)
     {
-        ChangeShopMode((ShopModes)shopMode);
+        ChangeShopMode((ShopModes)newShopMode);
     }
 
     public static void Open()
@@ -98,10 +106,10 @@ public class ShopController : MonoBehaviour, IItemManager
         OpenShopRequired?.Invoke();
     }
 
-    private void OnSelectedSlotChanged(Item item)
+    private void OnSelectedItemChanged(Item item, Constants.PanelTypes panelType)
     {
         _item = item;
-        SelectedItemChanged?.Invoke(item);
+        SelectedItemChanged?.Invoke(item, panelType);
         UpdateBuySellButtons(item != null);
     }
 
@@ -138,12 +146,12 @@ public class ShopController : MonoBehaviour, IItemManager
         walletValueControl.text = inventory.GetCount(Constants.MONEY_ID).ToString();
     }
 
-    private void OnSelectedIndexChanged(int selectedIndex)
+    private void OnSelectedIndexChanged(int selectedIndex, Constants.PanelTypes panelType)
     {
         if (selectedIndex >= 0) return;
         _item = null;
         UpdateBuySellButtons(false);
-        SelectedItemChanged?.Invoke(null);
+        SelectedItemChanged?.Invoke(null, Constants.PanelTypes.ShopBuy);
     }
 
     private void UpdateBuySellButtons(bool canBeVisible)

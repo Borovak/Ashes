@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Classes;
+using Dialog;
+using Interfaces;
 using UnityEngine;
 
 public class TalkInteraction : InteractionController

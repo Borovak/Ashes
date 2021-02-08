@@ -90,6 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0716bd7f949012d49a6ce722b1c68046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backImage: {fileID: 180689040568618142}
+  iconImage: {fileID: 5196625815656368418}
+  countText: {fileID: 7180914652690009553}
+  index: 0
 --- !u!1 &5291279035247869354
 GameObject:
   m_ObjectHideFlags: 0

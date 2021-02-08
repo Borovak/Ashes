@@ -1,17 +1,22 @@
-    public class ItemBundle
+    using Static;
+
+    namespace Classes
     {
-        public Item Item;
-        public int Quantity;
-
-        public ItemBundle(int id, int quantity)
+        public class ItemBundle
         {
-            Item = DropController.GetDropInfo(id);
-            Quantity = quantity;
-        }
+            public Item Item;
+            public int Quantity;
 
-        public ItemBundle(Item item, int quantity)
-        {
-            Item = item;
-            Quantity = quantity;
+            public ItemBundle(int id, int quantity)
+            {
+                Item = DropController.GetDropInfo(id);
+                Quantity = quantity;
+            }
+
+            public ItemBundle(Item item, int quantity)
+            {
+                Item = item;
+                Quantity = quantity;
+            }
         }
     }

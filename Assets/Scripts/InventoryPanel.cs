@@ -2,68 +2,48 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Classes;
+using Interfaces;
+using Player;
+using Static;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryPanel : MonoBehaviour
+public class InventoryPanel : NavigablePanel
 {
-    public static event Action<int> SelectedIndexChanged;
-    public static bool isFocused;
     public float placementBiasX;
     public float placementBiasY;
     public float placementMargin;
     public int placementXCount;
     public int placementYCount;
     public GameObject inventorySlotPrefab;
-    public bool refreshNeeded = true;
-    public int selectedIndex
-    {
-        get => _selectedIndex;
-        set
-        {
-            _selectedIndex = value;
-            SelectedIndexChanged.Invoke(value);
-        }
-    }
-
-    private bool _previousIsFocused;
-    private List<InventoryItemController> _inventoryItemControllers;
-    private int _selectedIndex;
+    
     private int _itemCount;
-    private int _x;
-    private int _y;
+    private Vector2Int _index2D;
 
-    void OnEnable()
+    protected override void OnEnableSpecific()
     {
-        if (_inventoryItemControllers == null)
-        {
-            Place();
-            var inventoryItemControllers = new List<InventoryItemController>();
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                var t = transform.GetChild(i);
-                if (!t.TryGetComponent<InventoryItemController>(out var inventoryItemController)) continue;
-                inventoryItemControllers.Add(inventoryItemController);
-            }
-            _inventoryItemControllers = inventoryItemControllers.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ThenBy(x => x.transform.GetComponent<RectTransform>().anchoredPosition.x).ToList();
-        }
+        // if (_inventoryItemControllers == null)
+        // {
+        //     var inventoryItemControllers = new List<InventorySlotController>();
+        //     for (int i = 0; i < transform.childCount; i++)
+        //     {
+        //         var t = transform.GetChild(i);
+        //         if (!t.TryGetComponent<InventorySlotController>(out var inventoryItemController)) continue;
+        //         inventoryItemControllers.Add(inventoryItemController);
+        //     }
+        //     _inventoryItemControllers = inventoryItemControllers.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ThenBy(x => x.transform.GetComponent<RectTransform>().anchoredPosition.x).ToList();
+        // }
+        _index2D = Vector2Int.zero;
         PlayerInventory.InventoryChanged += RequestRefresh;
-        LongSlotController.SelectedSlotChanged += OnSelectedRecipeChanged;
-        MenuInputs.SelectionChangeUp += OnSelectionChangeUp;
-        MenuInputs.SelectionChangeDown += OnSelectionChangeDown;
-        MenuInputs.SelectionChangeLeft += OnSelectionChangeLeft;
-        MenuInputs.SelectionChangeRight += OnSelectionChangeRight;
+        SelectedIndexChanged += OnSelectedIndexChanged;
         refreshNeeded = true;
     }
 
-    void OnDisable()
+    protected override void OnDisableSpecific()
     {
         PlayerInventory.InventoryChanged -= RequestRefresh;
-        LongSlotController.SelectedSlotChanged -= OnSelectedRecipeChanged;
-        MenuInputs.SelectionChangeUp -= OnSelectionChangeUp;
-        MenuInputs.SelectionChangeDown -= OnSelectionChangeDown;
-        MenuInputs.SelectionChangeLeft -= OnSelectionChangeLeft;
-        MenuInputs.SelectionChangeRight -= OnSelectionChangeRight;
+        SelectedIndexChanged -= OnSelectedIndexChanged;
     }
 
     private void RequestRefresh()
@@ -74,107 +54,116 @@ public class InventoryPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (refreshNeeded)
+        if (!refreshNeeded) return;
+        refreshNeeded = false;
+        if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return;
+        playerInventory.GetItemsAndCounts(out var itemBundles);
+        var index = 0;
+        foreach (Transform t in transform)
         {
-            refreshNeeded = false;
-            if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return;
-            playerInventory.GetItemsAndCounts(out var itemBundles);
-            var index = 0;
-            _inventoryItemControllers.Clear();
-            foreach (Transform t in transform)
-            {
-                var inventoryItemController = t.GetComponent<InventoryItemController>();
-                _inventoryItemControllers.Add(inventoryItemController);
-                inventoryItemController.Item = index < itemBundles.Count ? itemBundles[index].Item : null;
-                inventoryItemController.Count = index < itemBundles.Count ? itemBundles[index].Quantity : -1;
-                index++;
-            }
-            _itemCount = index;
+            if (!t.TryGetComponent<InventorySlotController>(out var inventoryItemController)) continue;
+            inventoryItemController.Item = index < itemBundles.Count ? itemBundles[index].Item : null;
+            inventoryItemController.Count = index < itemBundles.Count ? itemBundles[index].Quantity : -1;
+            index++;
         }
-        if (isFocused && !_previousIsFocused)
-        {
-            _inventoryItemControllers[0].Select();
-            selectedIndex = 0;
-            _x = 0;
-            _y = 0;
-        }
-        _previousIsFocused = isFocused;
+        _itemCount = index;
     }
 
-    private void Place()
+    protected override List<ItemSlot> GetItemSlots()
     {
         foreach (Transform t in transform)
         {
+            if (!t.gameObject.name.Contains("InventorySlot")) continue;
             GameObject.Destroy(t.gameObject);
         }
         var index = 0;
+        var slots = new List<ItemSlot>();
         for (int y = 0; y < placementYCount; y++)
         {
             for (int x = 0; x < placementXCount; x++)
             {
                 var inventorySlot = GameObject.Instantiate(inventorySlotPrefab, transform);
                 var rectTransform = inventorySlot.GetComponent<RectTransform>();
-                var inventoryItemController = inventorySlot.GetComponent<InventoryItemController>();
+                var inventoryItemController = inventorySlot.GetComponent<InventorySlotController>();
                 var ap = rectTransform.anchoredPosition;
                 ap.x = placementBiasX + (placementMargin * x);
                 ap.y = placementBiasY - (placementMargin * y);
                 rectTransform.anchoredPosition = ap;
                 inventoryItemController.index = index;
+                slots.Add(inventoryItemController);
                 index++;
             }
         }
+        return slots;
     }
 
-    private void OnSelectedRecipeChanged(Item item)
+    protected override void OnSelectedItemChanged(Item item)
     {
-        if (!isFocused) return;
-        var slot = _inventoryItemControllers.FirstOrDefault(x => x.Item == item);
-        selectedIndex = slot != null ? slot.index : -1;
+        var slot = itemSlots.FirstOrDefault(x => x.Item == item);
+        SelectedIndex = slot != null ? slot.index : -1;
     }
 
-    private void OnSelectionChangeUp()
+    protected override void OnSelectionChangeUp()
     {
-        if (!isFocused || _y + 1 >= placementYCount) return;
-        var tempIndex = (_y + 1) * placementXCount + _x;
-        if (tempIndex >= _itemCount || _inventoryItemControllers[tempIndex].Item == null) return;
-        _y += 1;
-        selectedIndex = tempIndex;
-        _inventoryItemControllers[tempIndex].Select();
-    }
-
-    private void OnSelectionChangeDown()
-    {
-        if (!isFocused || _y - 1 < 0) return;
-        var tempIndex = (_y - 1) * placementXCount + _x;
-        if (tempIndex >= _itemCount || _inventoryItemControllers[tempIndex].Item == null) return;
-        _y -= 1;
-        selectedIndex = tempIndex;
-        _inventoryItemControllers[tempIndex].Select();
-    }
-
-    private void OnSelectionChangeRight()
-    {
-        if (!isFocused || _x + 1 >= placementXCount) return;
-        var tempIndex = _y * placementXCount + _x + 1;
-        if (tempIndex >= _itemCount || _inventoryItemControllers[tempIndex].Item == null) return;
-        _x += 1;
-        selectedIndex = tempIndex;
-        _inventoryItemControllers[tempIndex].Select();
-    }
-
-    private void OnSelectionChangeLeft()
-    {
-        if (_x - 1 < 0)
+        if (_index2D.y + 1 >= placementYCount)
         {
-            isFocused = false;
-            LongSlotPanel.isFocused = true;
+            TryExitUp();
             return;
         }
-        if (!isFocused) return;
-        var tempIndex = _y * placementXCount + _x - 1;
-        if (tempIndex >= _itemCount || _inventoryItemControllers[tempIndex].Item == null) return;
-        _x -= 1;
-        selectedIndex = tempIndex;
-        _inventoryItemControllers[tempIndex].Select();
+        var tempIndex = (_index2D.y + 1) * placementXCount + _index2D.x;
+        if (tempIndex >= _itemCount || itemSlots[tempIndex].Item == null) return;
+        SelectedIndex = tempIndex;
+    }
+
+    protected override void OnSelectionChangeDown()
+    {
+        if (_index2D.y - 1 < 0)
+        {
+            TryExitDown();
+            return;
+        }
+        var tempIndex = (_index2D.y - 1) * placementXCount + _index2D.x;
+        if (tempIndex >= _itemCount || itemSlots[tempIndex].Item == null) return;
+        SelectedIndex = tempIndex;
+    }
+
+    protected override void OnSelectionChangeRight()
+    {
+        if (_index2D.x + 1 >= placementXCount)
+        {
+            TryExitRight();
+            return;
+        }
+        var tempIndex = _index2D.y * placementXCount + _index2D.x + 1;
+        if (tempIndex >= _itemCount || itemSlots[tempIndex].Item == null) return;
+        SelectedIndex = tempIndex;
+    }
+
+    protected override void OnSelectionChangeLeft()
+    {
+        if (_index2D.x - 1 < 0)
+        {
+            TryExitLeft();
+            return;
+        }
+        var tempIndex = _index2D.y * placementXCount + _index2D.x - 1;
+        if (tempIndex >= _itemCount || itemSlots[tempIndex].Item == null) return;
+        SelectedIndex = tempIndex;
+    }
+
+    private void OnSelectedIndexChanged(int index, Constants.PanelTypes panelType)
+    {
+        SetIndex2DFromIndex();
+    }
+
+    private void SetIndex2DFromIndex()
+    {
+        if (SelectedIndex == -1)
+        {
+            _index2D = Vector2Int.zero;
+            return;
+        }
+        _index2D.x = SelectedIndex % placementXCount;
+        _index2D.y = SelectedIndex / placementXCount;
     }
 }

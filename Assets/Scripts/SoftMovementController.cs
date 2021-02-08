@@ -21,6 +21,6 @@ public class SoftMovementController : MonoBehaviour
 
     private void Move(bool phase)
     {
-        LeanTween.moveLocal(gameObject, phase ? amplitude : -amplitude, period).setEaseInOutSine().setOnComplete(() => Move(!phase));
+        LeanTween.Framework.LeanTween.moveLocal(gameObject, phase ? amplitude : -amplitude, period).setEaseInOutSine().setOnComplete(() => Move(!phase));
     }
 }

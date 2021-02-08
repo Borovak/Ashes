@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using Classes;
 using UnityEngine;
 
 public static class LocationInformation

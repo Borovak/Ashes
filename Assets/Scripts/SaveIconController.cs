@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using LeanTween.Framework;
 using UnityEngine;
 
 public class SaveIconController : MonoBehaviour
@@ -30,12 +31,12 @@ public class SaveIconController : MonoBehaviour
     private void OnGameSaved(bool healOnSave)
     {
         _animator.SetTrigger("active");
-        var lt = LeanTween.scale(gameObject, new Vector3(1f,1f,1f), InDuration);
+        var lt = LeanTween.Framework.LeanTween.scale(gameObject, new Vector3(1f,1f,1f), InDuration);
         lt.setEase(LeanTweenType.easeInOutSine);
         lt.setOnComplete(() => {
-            lt = LeanTween.scale(gameObject, new Vector3(1f,1f,1f), Duration);
+            lt = LeanTween.Framework.LeanTween.scale(gameObject, new Vector3(1f,1f,1f), Duration);
             lt.setOnComplete(() => {
-                lt = LeanTween.scale(gameObject, Vector3.zero, OutDuration);
+                lt = LeanTween.Framework.LeanTween.scale(gameObject, Vector3.zero, OutDuration);
                 lt.setEase(LeanTweenType.easeInOutSine);
             });
         });

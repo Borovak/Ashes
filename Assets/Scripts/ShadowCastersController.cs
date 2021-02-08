@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 using System;
+using Classes;
+using Static;
 
 public class ShadowCastersController : MonoBehaviour
 {

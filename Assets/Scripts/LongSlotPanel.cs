@@ -2,108 +2,66 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Classes;
+using Interfaces;
+using Player;
+using Static;
 using UnityEngine;
 
-public class LongSlotPanel : MonoBehaviour
+public class LongSlotPanel : NavigablePanel
 {
-    public static event Action<int> SelectedIndexChanged;
-    public static event Action SelectionExitOnLeft;
-    public static event Action SelectionExitOnRight;
-    public static bool isFocused;
-    public bool canExitOnLeft;
-    public bool canExitOnRight;
-    public bool refreshNeeded = true;
-    public int selectedIndex
-    {
-        get => _selectedIndex;
-        set
-        {
-            _selectedIndex = value;
-            SelectedIndexChanged?.Invoke(_selectedIndex);
-        }
-    }
     public int offset = 0;
     public Constants.PanelTypes panelType;
     public int slotCount;
     public GameObject slotPrefab;
     public int shopIndex;
 
-    private bool _previousIsFocused;
-    private List<LongSlotController> _slotControllers;
-    private int _selectedIndex;
-
-    void OnEnable()
+    protected override List<ItemSlot> GetItemSlots()
     {
-        if (_slotControllers == null)
+        var recipeSlotControllers = new List<ItemSlot>();
+        for (int i = 0; i < slotCount; i++)
         {
-            var recipeSlotControllers = new List<LongSlotController>();
-            for (int i = 0; i < slotCount; i++)
-            {
-                var slotGameObject = GameObject.Instantiate(slotPrefab, transform);
-                var slotRectTransform = slotGameObject.GetComponent<RectTransform>();
-                slotRectTransform.anchoredPosition = new Vector2(0, i * -100f - 150f);
-                if (!slotGameObject.TryGetComponent<LongSlotController>(out var recipeSlotController)) continue;
-                recipeSlotController.panelType = panelType;
-                recipeSlotControllers.Add(recipeSlotController);
-                recipeSlotController.index = i;
-                recipeSlotController.panel = this;
-            }
-            _slotControllers = recipeSlotControllers.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ToList();
+            var slotGameObject = GameObject.Instantiate(slotPrefab, transform);
+            var slotRectTransform = slotGameObject.GetComponent<RectTransform>();
+            slotRectTransform.anchoredPosition = new Vector2(0, i * -100f - 150f);
+            if (!slotGameObject.TryGetComponent<LongSlotController>(out var recipeSlotController)) continue;
+            recipeSlotControllers.Add(recipeSlotController);
+            recipeSlotController.index = i;
         }
+        return recipeSlotControllers.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ToList();
+    }
+    
+    protected override void OnEnableSpecific()
+    {
         ShopController.ShopModeChanged += OnShopModeChanged;
-        LongSlotController.SlotClicked += OnSlotClicked;
-        MenuInputs.SelectionChangeUp += OnSelectionChangeUp;
-        MenuInputs.SelectionChangeDown += OnSelectionChangeDown;
-        MenuInputs.SelectionChangeRight += OnSelectionChangeRight;
-        if (panelType != Constants.PanelTypes.Craftables)
-        {
-            PlayerInventory.InventoryChanged += RequestRefresh;
-        }
-        _previousIsFocused = false;
-        isFocused = true;
-        refreshNeeded = true;
+        
     }
 
-    void OnDisable()
+    protected override void OnDisableSpecific()
     {
         ShopController.ShopModeChanged -= OnShopModeChanged;
-        LongSlotController.SlotClicked -= OnSlotClicked;
-        MenuInputs.SelectionChangeUp -= OnSelectionChangeUp;
-        MenuInputs.SelectionChangeDown -= OnSelectionChangeDown;
-        MenuInputs.SelectionChangeRight -= OnSelectionChangeRight;
-        if (panelType != Constants.PanelTypes.Craftables)
-        {
-            PlayerInventory.InventoryChanged += RequestRefresh;
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (refreshNeeded)
+        if (!refreshNeeded) return;
+        refreshNeeded = false;
+        var items = GetItems(out var quantities);
+        for (int i = 0; i < itemSlots.Count; i++)
         {
-            refreshNeeded = false;
-            var items = GetItems(out var quantities);
-            for (int i = 0; i < _slotControllers.Count; i++)
+            itemSlots[i].Item = i < items.Count ? items[i] : null;
+            if (quantities != null && itemSlots[i].Item != null)
             {
-                _slotControllers[i].Item = i < items.Count ? items[i] : null;
-                if (quantities != null && _slotControllers[i].Item != null)
-                {
-                    _slotControllers[i].Count = quantities[i];
-                }
+                itemSlots[i].Count = quantities[i];
             }
-            var tempIndex = System.Math.Max(selectedIndex, 0);
-            while (tempIndex >= 0 && _slotControllers[tempIndex].Item == null)
-            {
-                tempIndex--;
-            }
-            selectedIndex = tempIndex;
         }
-        if (isFocused && !_previousIsFocused)
+        var tempIndex = System.Math.Max(SelectedIndex, 0);
+        while (tempIndex >= 0 && itemSlots[tempIndex].Item == null)
         {
-            selectedIndex = 0;
+            tempIndex--;
         }
-        _previousIsFocused = isFocused;
+        SelectedIndex = tempIndex;
     }
 
     private List<Item> GetItems(out List<int> quantities)
@@ -124,48 +82,52 @@ public class LongSlotPanel : MonoBehaviour
 
     private void OnSlotClicked(int index)
     {
-        if (!isFocused) return;
-        selectedIndex = index;
+        if (!HasFocus) return;
+        SelectedIndex = index;
     }
 
-    private void OnSelectionChangeUp()
+    protected override void OnSelectionChangeUp()
     {
-        if (!isFocused || selectedIndex - 1 < 0 || _slotControllers[selectedIndex - 1].Item == null) return;
-        var slot = _slotControllers[selectedIndex - 1];
-        selectedIndex = slot.index;
+        if (SelectedIndex - 1 < 0 || itemSlots[SelectedIndex - 1].Item == null)
+        {
+            TryExitUp();
+            return;
+        }
+        var slot = itemSlots[SelectedIndex - 1];
+        SelectedIndex = slot.index;
     }
 
-    private void OnSelectionChangeDown()
+    protected override void OnSelectionChangeDown()
     {
-        if (!isFocused || selectedIndex + 1 >= _slotControllers.Count || _slotControllers[selectedIndex + 1].Item == null) return;
-        var slot = _slotControllers[selectedIndex + 1];
-        selectedIndex = slot.index;
+        if (SelectedIndex + 1 >= itemSlots.Count || itemSlots[SelectedIndex + 1].Item == null) 
+        {
+            TryExitDown();
+            return;
+        }
+        var slot = itemSlots[SelectedIndex + 1];
+        SelectedIndex = slot.index;
     }
 
-    private void OnSelectionChangeLeft()
+    protected override void OnSelectionChangeLeft()
     {
-        if (!canExitOnLeft) return;
-        isFocused = false;
-        SelectionExitOnLeft?.Invoke();
+        TryExitLeft();
     }
 
-    private void OnSelectionChangeRight()
+    protected override void OnSelectionChangeRight()
     {
-        if (!canExitOnRight) return;
-        selectedIndex = -1;
-        isFocused = false;
-        SelectionExitOnRight?.Invoke();
+        TryExitRight();
+    }
+
+    protected override void OnSelectedItemChanged(Item item)
+    {
+        var slot = itemSlots.FirstOrDefault(x => x.Item == item);
+        SelectedIndex = slot != null ? slot.index : -1;
     }
 
     private void OnShopModeChanged(ShopController.ShopModes shopMode)
     {
         panelType = shopMode == ShopController.ShopModes.Buy ? Constants.PanelTypes.ShopBuy : Constants.PanelTypes.ShopSell;
-        selectedIndex = -1;
-        RequestRefresh();
-    }
-
-    public void RequestRefresh()
-    {
+        SelectedIndex = -1;
         refreshNeeded = true;
     }
 }

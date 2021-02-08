@@ -1,37 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using Static;
 using UnityEngine;
 
-public class PlayerInteractionController : MonoBehaviour
+namespace Player
 {
-
-    public static PlayerInteractionController Instance;
-    public InteractionController interactionController;
-
-    private PlayerInputs _inputs;
-
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerInteractionController : MonoBehaviour
     {
-        Instance = this;
-        _inputs = GetComponent<PlayerInputs>();
-        _inputs.Interact += Interact;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        var interactionColliders = Physics2D.OverlapCircleAll(transform.position, 1f, LayerManagement.Interaction);
-        if (interactionColliders.Length == 0 || !interactionColliders.First().gameObject.TryGetComponent<InteractionController>(out interactionController))
+        public static PlayerInteractionController Instance;
+        public InteractionController interactionController;
+
+        private PlayerInputs _inputs;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            interactionController = null;
+            Instance = this;
+            _inputs = GetComponent<PlayerInputs>();
+            _inputs.Interact += Interact;
         }
-    }
 
-    public void Interact()
-    {
-        if (interactionController == null) return;
-        interactionController.Interact();
+        // Update is called once per frame
+        void Update()
+        {
+            var interactionColliders = Physics2D.OverlapCircleAll(transform.position, 1f, LayerManagement.Interaction);
+            if (interactionColliders.Length == 0 || !interactionColliders.First().gameObject.TryGetComponent<InteractionController>(out interactionController))
+            {
+                interactionController = null;
+            }
+        }
+
+        public void Interact()
+        {
+            if (interactionController == null) return;
+            interactionController.Interact();
+        }
     }
 }

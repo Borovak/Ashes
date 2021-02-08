@@ -2,25 +2,28 @@ using System;
 using System.Reflection;
 using UnityEditor;
 
-public static class Utils
+namespace CommonFunctions.Editor
 {
-    static MethodInfo _clearConsoleMethod;
-    static MethodInfo clearConsoleMethod
+    public static class Utils
     {
-        get
+        static MethodInfo _clearConsoleMethod;
+        static MethodInfo clearConsoleMethod
         {
-            if (_clearConsoleMethod == null)
+            get
             {
-                Assembly assembly = Assembly.GetAssembly(typeof(SceneView));
-                Type logEntries = assembly.GetType("UnityEditor.LogEntries");
-                _clearConsoleMethod = logEntries.GetMethod("Clear");
+                if (_clearConsoleMethod == null)
+                {
+                    Assembly assembly = Assembly.GetAssembly(typeof(SceneView));
+                    Type logEntries = assembly.GetType("UnityEditor.LogEntries");
+                    _clearConsoleMethod = logEntries.GetMethod("Clear");
+                }
+                return _clearConsoleMethod;
             }
-            return _clearConsoleMethod;
         }
-    }
 
-    public static void ClearLogConsole()
-    {
-        clearConsoleMethod.Invoke(new object(), null);
+        public static void ClearLogConsole()
+        {
+            clearConsoleMethod.Invoke(new object(), null);
+        }
     }
 }

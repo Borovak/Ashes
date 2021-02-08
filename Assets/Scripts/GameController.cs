@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Static;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.SceneManagement;

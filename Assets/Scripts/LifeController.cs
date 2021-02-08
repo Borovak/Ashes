@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Static;
 using UnityEngine;
 
 public abstract class LifeController : MonoBehaviour

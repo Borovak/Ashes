@@ -1,15 +1,19 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using Classes;
+using Interfaces;
+using Static;
 using UnityEngine;
 
-public class DialogShopMarket0 : IDialogItemSimple
+namespace Dialog
 {
-    Sprite IDialogItem.npcSprite => GlobalFunctions.TryGetNpcSprite(Constants.Npc.Shopkeeper, out var sprite) ? sprite : null;
+    public class DialogShopMarket0 : IDialogItemSimple
+    {
+        Sprite IDialogItem.npcSprite => GlobalFunctions.TryGetNpcSprite(Constants.Npc.Shopkeeper, out var sprite) ? sprite : null;
 
-    string IDialogItem.npcName => "Shopkeeper";
+        string IDialogItem.npcName => "Shopkeeper";
 
-    string IDialogItem.text => "I am, but a humble shopkeeper";
+        string IDialogItem.text => "I am, but a humble shopkeeper";
 
-    Action IDialogItemSimple.ActionOnOk => () => DialogController.UpdateDialog(new DialogShopMarket());
+        Action IDialogItemSimple.ActionOnOk => () => DialogController.UpdateDialog(new DialogShopMarket());
+    }
 }

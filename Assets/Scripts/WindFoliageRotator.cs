@@ -17,11 +17,11 @@ public class WindFoliageRotator : MonoBehaviour
         _max = transform.eulerAngles.z + range;
         var ratio = UnityEngine.Random.Range(0f, 1f);
         var startPoint = ratio * range + _min;
-        LeanTween.rotateZ(gameObject, _max, (1f - ratio) * time).setEaseOutSine().setOnComplete(() => NextRotation(_min));
+        LeanTween.Framework.LeanTween.rotateZ(gameObject, _max, (1f - ratio) * time).setEaseOutSine().setOnComplete(() => NextRotation(_min));
     }
 
     private void NextRotation(float target)
     {
-        LeanTween.rotateZ(gameObject, target, time).setEaseInOutSine().setOnComplete(() => NextRotation(target == _min ? _max : _min));
+        LeanTween.Framework.LeanTween.rotateZ(gameObject, target, time).setEaseInOutSine().setOnComplete(() => NextRotation(target == _min ? _max : _min));
     }
 }

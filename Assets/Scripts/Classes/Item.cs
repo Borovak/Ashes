@@ -1,41 +1,44 @@
 using UnityEngine;
 
-public class Item
+namespace Classes
 {
-
-    public int id;
-    public string name;
-    public string artFilePath;
-    public string description;
-    public int value;
-    public bool isCraftable;
-
-    public GameObject _baseDrop;
-
-    public GameObject Instantiate(Vector3 position)
+    public class Item
     {
-        if (_baseDrop == null)
-        {
-            _baseDrop = Resources.Load<GameObject>("baseDrop");
-        }
-        var currentDrop = GameObject.Instantiate(_baseDrop, position, Quaternion.identity);
-        var itemController = currentDrop.GetComponent<ItemController>();
-        itemController.id = id;
-        var spriteRenderer = currentDrop.GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = GetArt();
-        var colliders2D = currentDrop.GetComponents<BoxCollider2D>();
-        foreach (var collider2D in colliders2D)
-        {
-            collider2D.size = spriteRenderer.bounds.size + (collider2D.isTrigger ? new Vector3(0.05f, 0.05f, 0f) : Vector3.zero);
-        }
-        return currentDrop;
-    }
 
-    public Sprite GetArt(){
-        var sprite = Resources.Load<Sprite>($"{artFilePath}");
-        if (sprite == null){
-            Debug.Log($"Art not found: {artFilePath}");
+        public int id;
+        public string name;
+        public string artFilePath;
+        public string description;
+        public int value;
+        public bool isCraftable;
+
+        public GameObject _baseDrop;
+
+        public GameObject Instantiate(Vector3 position)
+        {
+            if (_baseDrop == null)
+            {
+                _baseDrop = Resources.Load<GameObject>("baseDrop");
+            }
+            var currentDrop = GameObject.Instantiate(_baseDrop, position, Quaternion.identity);
+            var itemController = currentDrop.GetComponent<ItemController>();
+            itemController.id = id;
+            var spriteRenderer = currentDrop.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = GetArt();
+            var colliders2D = currentDrop.GetComponents<BoxCollider2D>();
+            foreach (var collider2D in colliders2D)
+            {
+                collider2D.size = spriteRenderer.bounds.size + (collider2D.isTrigger ? new Vector3(0.05f, 0.05f, 0f) : Vector3.zero);
+            }
+            return currentDrop;
         }
-        return sprite;
+
+        public Sprite GetArt(){
+            var sprite = Resources.Load<Sprite>($"{artFilePath}");
+            if (sprite == null){
+                Debug.Log($"Art not found: {artFilePath}");
+            }
+            return sprite;
+        }
     }
 }

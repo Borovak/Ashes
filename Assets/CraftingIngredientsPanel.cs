@@ -3,52 +3,39 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using Classes;
+using Interfaces;
+using Player;
+using Static;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class CraftingDescriptionController : MonoBehaviour
+public class CraftingIngredientsPanel : MonoBehaviour
 {
-    public Image itemImage;
-    public TextMeshProUGUI itemTitle;
-    public TextMeshProUGUI itemDescription;
-    public TextMeshProUGUI itemValue;
-    public Image currencySymbol;
-    public GameObject craftButton;
-    public GameObject craftMaxButton;
     public Constants.PanelTypes panelType;
     public GameObject itemManagerObject;
+    public GameObject craftButton;
+    public GameObject craftMaxButton;
 
     private IItemManager _itemManager;
     private List<RecipeIngredient> _recipeIngredients;
     private Item _item;
     private List<KeyValuePair<Item, int>> _currentIngredients;
 
-    void Awake()
-    {
-        var recipeIngredients = new List<RecipeIngredient>();
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            var t = transform.GetChild(i);
-            if (!t.TryGetComponent<RecipeIngredient>(out var recipeIngredient)) continue;
-            recipeIngredients.Add(recipeIngredient);
-        }
-        _recipeIngredients = recipeIngredients.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ThenBy(x => x.transform.GetComponent<RectTransform>().anchoredPosition.x).ToList();
-    }
-
-    void Start()
-    {
-        itemImage.sprite = null;
-        Clear();
-    }
-
     void OnEnable()
     {
-        Clear();
-        if (craftButton != null)
+        if (_itemManager == null)
         {
-            PlayerInventory.InventoryChanged += SetCraftButtonsVisibility;
+            var recipeIngredients = new List<RecipeIngredient>();
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                var t = transform.GetChild(i);
+                if (!t.TryGetComponent<RecipeIngredient>(out var recipeIngredient)) continue;
+                recipeIngredients.Add(recipeIngredient);
+            }
+            _recipeIngredients = recipeIngredients.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ThenBy(x => x.transform.GetComponent<RectTransform>().anchoredPosition.x).ToList();
         }
+        PlayerInventory.InventoryChanged += SetCraftButtonsVisibility;
         _itemManager = itemManagerObject.GetComponent<IItemManager>();
         _itemManager.SelectedItemChanged += OnSelectedItemChanged;
         MenuInputs.OK += Craft;
@@ -57,73 +44,22 @@ public class CraftingDescriptionController : MonoBehaviour
 
     void OnDisable()
     {
-        if (craftButton != null)
-        {
-            PlayerInventory.InventoryChanged -= SetCraftButtonsVisibility;
-        }        
+        PlayerInventory.InventoryChanged -= SetCraftButtonsVisibility;
         _itemManager.SelectedItemChanged -= OnSelectedItemChanged;
         MenuInputs.OK -= Craft;
         MenuInputs.Special -= CraftMax;
         _item = null;
     }
 
-    private void OnSelectedItemChanged(Item item)
-    {
-        OnSelectedItemChanged(item, false);
-    }
-
-    private void OnSelectedRecipeChanged(Item item)
-    {
-        OnSelectedItemChanged(item, true);
-    }
-
-    private void OnSelectedItemChanged(Item item, bool isRecipe)
+    private void OnSelectedItemChanged(Item item, Constants.PanelTypes panelType)
     {
         _item = item;
-        if (item == null)
+        if (item == null || !item.isCraftable || panelType != Constants.PanelTypes.Craftables)
         {
-            Clear();
+            ClearIngredients();
+            return;
         }
-        else
-        {
-            itemImage.sprite = item.GetArt();
-            var c = itemImage.color;
-            c.a = 1f;
-            itemImage.color = c;
-            itemTitle.text = item.name;
-            itemDescription.text = item.description;
-            itemValue.text = item.value.ToString();
-            currencySymbol.enabled = true;
-            if (isRecipe)
-            {
-                CheckForRecipe(item);
-            }
-            else
-            {
-                ClearIngredients();
-            }
-        }
-    }
-
-    private void OnSelectedIndexChanged(int selectedIndex)
-    {
-        if (selectedIndex == -1)
-        {
-            OnSelectedItemChanged(null);
-        }
-    }
-
-    private void Clear()
-    {
-        _item = null;
-        var c = itemImage.color;
-        c.a = 0f;
-        itemImage.color = c;
-        itemTitle.text = "";
-        itemDescription.text = "";
-        itemValue.text = "";
-        currencySymbol.enabled = false;
-        ClearIngredients();
+        CheckForRecipe(item);
     }
 
     private void ClearIngredients()
@@ -140,7 +76,7 @@ public class CraftingDescriptionController : MonoBehaviour
     {
         const string ingredientColumn = "ingredient";
         const string quantityColumn = "quantity";
-        if (!item.isCraftable || !DataHandling.GetInfo($"SELECT {ingredientColumn}, {quantityColumn} FROM recipes WHERE items_id = '{item.id}'", out var dtRecipe))
+        if (!DataHandling.GetInfo($"SELECT {ingredientColumn}, {quantityColumn} FROM recipes WHERE items_id = '{item.id}'", out var dtRecipe))
         {
             ClearIngredients();
             return;

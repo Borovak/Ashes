@@ -1,46 +1,50 @@
 using System.Collections.Generic;
+using Static;
 using UnityEngine;
 
-public class EnemyInformation
+namespace Classes
 {
-    public static Dictionary<int, GameObject> EnemyPrefabs = new Dictionary<int, GameObject>();
-
-    public string Guid;
-    public string ChamberGuid;
-    public int Id;
-    public int X;
-    public int Y;
-
-    public void Instantiate(Transform parent, Vector2 chamberOffset, Vector2 chamberSize, float chamberScale)
+    public class EnemyInformation
     {
-        if (!EnemyPrefabs.TryGetValue(Id, out var enemyPrefab))
-        {
-            if (!LoadResource(Id, out enemyPrefab)) return;
-        }
-        var position = new Vector3(chamberOffset.x + (X * chamberScale), chamberOffset.y + 50f - Y * chamberScale - 0.5f, 0f);
-        GameObject.Instantiate<GameObject>(enemyPrefab, position, Quaternion.identity, parent);
-    }
+        public static Dictionary<int, GameObject> EnemyPrefabs = new Dictionary<int, GameObject>();
 
-    private bool LoadResource(int id, out GameObject enemyPrefab)
-    {
-        if (!GetResourceName(id, out var resourceName))
-        {
-            enemyPrefab = null;
-            return false;
-        }
-        enemyPrefab = Resources.Load<GameObject>($"Enemies/{resourceName}");
-        return true;
-    }
+        public string Guid;
+        public string ChamberGuid;
+        public int Id;
+        public int X;
+        public int Y;
 
-    private bool GetResourceName(int id, out string resourceName)
-    {
-        if (!DataHandling.GetInfo($"SELECT prefabname FROM enemies WHERE id = {id}", out var dt) || dt.Rows.Count == 0)
+        public void Instantiate(Transform parent, Vector2 chamberOffset, Vector2 chamberSize, float chamberScale)
         {
-            resourceName = string.Empty;
-            return false;
+            if (!EnemyPrefabs.TryGetValue(Id, out var enemyPrefab))
+            {
+                if (!LoadResource(Id, out enemyPrefab)) return;
+            }
+            var position = new Vector3(chamberOffset.x + (X * chamberScale), chamberOffset.y + 50f - Y * chamberScale - 0.5f, 0f);
+            GameObject.Instantiate<GameObject>(enemyPrefab, position, Quaternion.identity, parent);
         }
-        resourceName = dt.Rows[0][0].ToString();
-        return true;
-    }
 
+        private bool LoadResource(int id, out GameObject enemyPrefab)
+        {
+            if (!GetResourceName(id, out var resourceName))
+            {
+                enemyPrefab = null;
+                return false;
+            }
+            enemyPrefab = Resources.Load<GameObject>($"Enemies/{resourceName}");
+            return true;
+        }
+
+        private bool GetResourceName(int id, out string resourceName)
+        {
+            if (!DataHandling.GetInfo($"SELECT prefabname FROM enemies WHERE id = {id}", out var dt) || dt.Rows.Count == 0)
+            {
+                resourceName = string.Empty;
+                return false;
+            }
+            resourceName = dt.Rows[0][0].ToString();
+            return true;
+        }
+
+    }
 }

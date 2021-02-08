@@ -92,12 +92,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backImage: {fileID: 4331921038862679896}
-  itemImage: {fileID: 3743531804837497700}
-  itemTitle: {fileID: 8968464655349832503}
-  itemCount: {fileID: 4299396687781068363}
-  panelType: 0
+  iconImage: {fileID: 3743531804837497700}
+  itemText: {fileID: 8968464655349832503}
+  countText: {fileID: 4299396687781068363}
   index: 0
-  panel: {fileID: 0}
 --- !u!1 &2411006937732167681
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x000
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33530eaa843494d448d55d24443e71bd, type: 2}
   m_sharedMaterial: {fileID: 6474459672818450053, guid: 33530eaa843494d448d55d24443e71bd,

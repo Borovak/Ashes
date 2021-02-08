@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Static;
 using UnityEngine;
 
 public class MusicController : MonoBehaviour

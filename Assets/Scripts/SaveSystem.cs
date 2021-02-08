@@ -4,6 +4,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using System.Xml.Linq;
 using System.Collections.Generic;
+using Player;
+using Static;
 
 public static class SaveSystem
 {
