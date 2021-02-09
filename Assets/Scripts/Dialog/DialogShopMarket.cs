@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Classes;
 using Interfaces;
 using Static;
+using UI;
 using UnityEngine;
 
 namespace Dialog
@@ -17,7 +18,12 @@ namespace Dialog
 
         Dictionary<string, Action> IDialogItemChoices.followUp => new Dictionary<string, Action>
         {
-            {"Shop", () => DialogController.DoAction(ShopController.Open)},
+            {"Shop", () =>
+                {
+                    GlobalShopManager.currentShopId = 0;
+                    DialogController.DoAction(UIShopController.Open);
+                }
+            },
             {"Who are you?", () => DialogController.UpdateDialog(new DialogShopMarket0())}
         };
     }

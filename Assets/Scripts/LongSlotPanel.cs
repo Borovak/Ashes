@@ -6,6 +6,7 @@ using Classes;
 using Interfaces;
 using Player;
 using Static;
+using UI;
 using UnityEngine;
 
 public class LongSlotPanel : NavigablePanel
@@ -14,7 +15,6 @@ public class LongSlotPanel : NavigablePanel
     public Constants.PanelTypes panelType;
     public int slotCount;
     public GameObject slotPrefab;
-    public int shopIndex;
 
     protected override List<ItemSlot> GetItemSlots()
     {
@@ -33,13 +33,14 @@ public class LongSlotPanel : NavigablePanel
     
     protected override void OnEnableSpecific()
     {
-        ShopController.ShopModeChanged += OnShopModeChanged;
-        
+        UIShopController.ShopModeChanged += OnShopModeChanged;
+        refreshNeeded = true;
+
     }
 
     protected override void OnDisableSpecific()
     {
-        ShopController.ShopModeChanged -= OnShopModeChanged;
+        UIShopController.ShopModeChanged -= OnShopModeChanged;
     }
 
     // Update is called once per frame
@@ -70,6 +71,10 @@ public class LongSlotPanel : NavigablePanel
         switch (panelType)
         {
             case Constants.PanelTypes.Craftables: return DropController.GetCraftables();
+            case Constants.PanelTypes.ShopBuy:
+                if (!GlobalShopManager.TryGetShopInfo(GlobalShopManager.currentShopId, out var shopItemInfos)) return new List<Item>();
+                quantities = shopItemInfos.Where(x => x.item.id != Constants.MONEY_ID).Select(x => x.quantity).ToList();
+                return shopItemInfos.Where(x => x.item.id != Constants.MONEY_ID).Select(x => x.item).ToList();
             case Constants.PanelTypes.ShopSell:
                 if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return new List<Item>();
                 playerInventory.GetItemsAndCounts(out var itemBundles);
@@ -124,9 +129,9 @@ public class LongSlotPanel : NavigablePanel
         SelectedIndex = slot != null ? slot.index : -1;
     }
 
-    private void OnShopModeChanged(ShopController.ShopModes shopMode)
+    private void OnShopModeChanged(UIShopController.ShopModes shopMode)
     {
-        panelType = shopMode == ShopController.ShopModes.Buy ? Constants.PanelTypes.ShopBuy : Constants.PanelTypes.ShopSell;
+        panelType = shopMode == UIShopController.ShopModes.Buy ? Constants.PanelTypes.ShopBuy : Constants.PanelTypes.ShopSell;
         SelectedIndex = -1;
         refreshNeeded = true;
     }

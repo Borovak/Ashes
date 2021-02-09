@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UI;
 using UnityEngine;
 
 public class MenuController : MonoBehaviour
@@ -30,6 +31,7 @@ public class MenuController : MonoBehaviour
     public GameObject SystemMenuOptions;
 
     private static MenuController _instance;
+    private static CanvasModes _previousCanvasMode;
     private Animator _animator;
     private List<Vector2> _choices;
     private int _maxIndex;
@@ -60,8 +62,8 @@ public class MenuController : MonoBehaviour
         MenuInputs.SelectionChangeRight += MoveRightPressed;
         MenuInputs.Crafting += CraftingPressed;
         MenuInputs.Map += MapPressed;
-        ShopController.OpenShopRequired += OnOpenShopRequired;
-        ShopController.CloseShopRequired += OnCloseShopRequired;
+        UIShopController.OpenShopRequired += OnOpenShopRequired;
+        UIShopController.CloseShopRequired += OnCloseShopRequired;
     }
 
     void OnDisable()
@@ -76,8 +78,8 @@ public class MenuController : MonoBehaviour
         MenuInputs.SelectionChangeRight -= MoveRightPressed;
         MenuInputs.Crafting -= CraftingPressed;
         MenuInputs.Map -= MapPressed;
-        ShopController.OpenShopRequired -= OnOpenShopRequired;
-        ShopController.CloseShopRequired -= OnCloseShopRequired;
+        UIShopController.OpenShopRequired -= OnOpenShopRequired;
+        UIShopController.CloseShopRequired -= OnCloseShopRequired;
     }
 
     private void BackPressed()
@@ -142,6 +144,11 @@ public class MenuController : MonoBehaviour
 
     public static void ChangeCanvasMode(CanvasModes canvasMode)
     {
+        if (_previousCanvasMode == CanvasModes.Shop)
+        {
+            GlobalShopManager.currentShopId = -1;
+        }
+        _previousCanvasMode = canvasMode;
         var menuObjects = new List<GameObject> { _instance.ActionMenu, _instance.ActionMenuCrafting, _instance.ActionMenuMap, _instance.SystemMenu, _instance.SystemMenuRoot, _instance.SystemMenuOptions, _instance.GameUI, _instance.ShopUI };
         var menuObjectsForEveryCanvasMode = new Dictionary<CanvasModes, List<GameObject>>{
             {CanvasModes.Game, new List<GameObject> {_instance.GameUI}},
