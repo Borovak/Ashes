@@ -18,22 +18,22 @@ public class CraftingIngredientsPanel : MonoBehaviour
     public GameObject craftMaxButton;
 
     private IItemManager _itemManager;
-    private List<RecipeIngredient> _recipeIngredients;
+    private List<UI.UIRecipeIngredient> _uiRecipeIngredients;
     private Item _item;
-    private List<KeyValuePair<Item, int>> _currentIngredients;
+    private List<ItemBundle> _requiredIngredients;
 
     void OnEnable()
     {
         if (_itemManager == null)
         {
-            var recipeIngredients = new List<RecipeIngredient>();
+            var recipeIngredients = new List<UI.UIRecipeIngredient>();
             for (int i = 0; i < transform.childCount; i++)
             {
                 var t = transform.GetChild(i);
-                if (!t.TryGetComponent<RecipeIngredient>(out var recipeIngredient)) continue;
+                if (!t.TryGetComponent<UI.UIRecipeIngredient>(out var recipeIngredient)) continue;
                 recipeIngredients.Add(recipeIngredient);
             }
-            _recipeIngredients = recipeIngredients.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ThenBy(x => x.transform.GetComponent<RectTransform>().anchoredPosition.x).ToList();
+            _uiRecipeIngredients = recipeIngredients.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ThenBy(x => x.transform.GetComponent<RectTransform>().anchoredPosition.x).ToList();
         }
         PlayerInventory.InventoryChanged += SetCraftButtonsVisibility;
         _itemManager = itemManagerObject.GetComponent<IItemManager>();
@@ -64,41 +64,34 @@ public class CraftingIngredientsPanel : MonoBehaviour
 
     private void ClearIngredients()
     {
-        foreach (var recipeIngredient in _recipeIngredients)
+        foreach (var recipeIngredient in _uiRecipeIngredients)
         {
             recipeIngredient.Item = null;
         }
-        _currentIngredients = null;
+        _requiredIngredients = null;
         ChangeCraftButtonsVisibility(false, 0);
     }
 
     private void CheckForRecipe(Item item)
     {
-        const string ingredientColumn = "ingredient";
-        const string quantityColumn = "quantity";
-        if (!DataHandling.GetInfo($"SELECT {ingredientColumn}, {quantityColumn} FROM recipes WHERE items_id = '{item.id}'", out var dtRecipe))
+        if (!DataHandling.TryConnectToDb(out var connection)) return;
+        var ingredients = connection.Table<DB.Recipe>().AsEnumerable().Where(x => x.ItemId == item.id).OrderBy(x => x.Ingredient).ToList();
+        if (!ingredients.Any())
         {
             ClearIngredients();
             return;
         }
-        var ingredients = new Dictionary<Item, int>();
-        foreach (DataRow dr in dtRecipe.Rows)
+        _requiredIngredients = ingredients.Select(x => new ItemBundle(DropController.GetDropInfo(x.Ingredient), x.Quantity)).ToList();
+        for (int i = 0; i < _uiRecipeIngredients.Count; i++)
         {
-            var id = int.TryParse(dr[ingredientColumn].ToString(), out var tempId) ? tempId : 0;
-            var quantity = int.TryParse(dr[quantityColumn].ToString(), out var tempQuantity) ? tempQuantity : 0;
-            ingredients.Add(DropController.GetDropInfo(id), quantity);
-        }
-        _currentIngredients = ingredients.OrderBy(x => x.Key.id).ToList();
-        for (int i = 0; i < _recipeIngredients.Count; i++)
-        {
-            if (i < _currentIngredients.Count)
+            if (i < _requiredIngredients.Count)
             {
-                _recipeIngredients[i].Item = _currentIngredients[i].Key;
-                _recipeIngredients[i].Quantity = _currentIngredients[i].Value;
+                _uiRecipeIngredients[i].Item = _requiredIngredients[i].Item;
+                _uiRecipeIngredients[i].Quantity = _requiredIngredients[i].Quantity;
             }
             else
             {
-                _recipeIngredients[i].Item = null;
+                _uiRecipeIngredients[i].Item = null;
             }
         }
         SetCraftButtonsVisibility();
@@ -113,18 +106,18 @@ public class CraftingIngredientsPanel : MonoBehaviour
         }
         var possible = true;
         itemCount = int.MaxValue;
-        foreach (var ingredient in _currentIngredients)
+        foreach (var ingredient in _requiredIngredients)
         {
-            var playerQuantity = playerInventory.GetCount(ingredient.Key);
-            var recipeIngredient = _recipeIngredients.First(x => x.Item == ingredient.Key);
+            var playerQuantity = playerInventory.GetCount(ingredient.Item);
+            var recipeIngredient = _uiRecipeIngredients.First(x => x.Item == ingredient.Item);
             recipeIngredient.PlayerInventory = playerQuantity;
-            if (ingredient.Value > playerQuantity)
+            if (ingredient.Quantity > playerQuantity)
             {
                 possible = false;
             }
             else
             {
-                itemCount = System.Math.Min(itemCount, Convert.ToInt32(playerQuantity / ingredient.Value));
+                itemCount = Math.Min(itemCount, MathFunctions.DivFloorInt(playerQuantity, ingredient.Quantity));
             }
         }
         return possible;
@@ -150,9 +143,9 @@ public class CraftingIngredientsPanel : MonoBehaviour
     {
         if (_item == null || !_item.isCraftable) return;
         if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return;
-        foreach (var ingredient in _currentIngredients)
+        foreach (var ingredient in _requiredIngredients)
         {
-            playerInventory.Remove(ingredient.Key, ingredient.Value);
+            playerInventory.Remove(ingredient.Item, ingredient.Quantity);
         }
         playerInventory.Add(_item);
     }

@@ -17,39 +17,19 @@ namespace Static
         {
             if (_initDone) return;
             _initDone = true;
-            if (DataHandling.GetTable("items", out var dtItems))
+            if (!DataHandling.TryConnectToDb(out var connection)) return;
+            foreach (var item in connection.Table<DB.Item>().AsEnumerable())
             {
-                foreach (DataRow dr in dtItems.Rows)
-                {
-                    var id = Convert.ToInt32(dr["id"]);
-                    var name = dr["name"].ToString();
-                    var description = dr["description"].ToString();
-                    var value = int.TryParse(dr["value"].ToString(), out var valueTemp) ? valueTemp : 0;
-                    var isCraftable = bool.TryParse(dr["iscraftable"].ToString(), out var isCraftableTemp) ? isCraftableTemp : false;
-                    var artFilePath = $"Items/{dr["path"].ToString()}";
-                    _items.Add(id, new Item { id = id, name = name, description = description, value = value, isCraftable = isCraftable, artFilePath = artFilePath });
-                }
+                var artFilePath = $"Items/{item.Path}";
+                _items.Add(item.Id, new Item { id = item.Id, name = item.Name, description = item.Description, value = item.Value, isCraftable = item.IsCraftable, artFilePath = artFilePath });
             }
-            if (DataHandling.GetTable("enemies", out var dtEnemies))
+            foreach (var enemy in connection.Table<DB.Enemy>().AsEnumerable())
             {
-                foreach (DataRow dr in dtEnemies.Rows)
-                {
-                    var id = Convert.ToInt32(dr["id"]);
-                    var name = dr["name"].ToString();
-                    var description = dr["description"].ToString();
-                    var artFilePath = $"Ingredients/{dr["path"].ToString()}";
-                    _enemies.Add(id, new Dictionary<int, float>());
-                }
+                _enemies.Add(enemy.Id, new Dictionary<int, float>());
             }
-            if (DataHandling.GetTable("drops", out var dtDrops))
+            foreach (var drop in connection.Table<DB.Drop>().AsEnumerable())
             {
-                foreach (DataRow dr in dtDrops.Rows)
-                {
-                    var monsterId = Convert.ToInt32(dr["enemies_id"]);
-                    var itemId = Convert.ToInt32(dr["items_id"]);
-                    var dropRate = Convert.ToSingle(dr["droprate"]);
-                    _enemies[monsterId].Add(itemId, dropRate);
-                }
+                _enemies[drop.EnemyId].Add(drop.ItemId, drop.DropRate);
             }
             //Debug.Log($"Drops loaded: {_items.Count} items for {_enemies.Count} enemies");
         }

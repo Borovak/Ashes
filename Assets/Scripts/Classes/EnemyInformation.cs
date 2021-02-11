@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Static;
 using UnityEngine;
 
@@ -37,13 +38,13 @@ namespace Classes
 
         private bool GetResourceName(int id, out string resourceName)
         {
-            if (!DataHandling.GetInfo($"SELECT prefabname FROM enemies WHERE id = {id}", out var dt) || dt.Rows.Count == 0)
+            if (!DataHandling.TryConnectToDb(out var connection))
             {
                 resourceName = string.Empty;
                 return false;
             }
-            resourceName = dt.Rows[0][0].ToString();
-            return true;
+            resourceName = connection.Table<DB.Enemy>().AsEnumerable().FirstOrDefault(x => x.Id == id)?.PrefabName ?? string.Empty;
+            return resourceName != string.Empty;
         }
 
     }

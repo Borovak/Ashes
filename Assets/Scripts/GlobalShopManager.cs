@@ -20,41 +20,26 @@ public class GlobalShopManager : MonoBehaviour
     {
         _instance = this;
         _shopControllers = new Dictionary<int, ShopController>();
-        if (!Static.DataHandling.GetTable("shops", out var dtShops))
+        if (!DataHandling.TryConnectToDb(out var connection)) return;
+        var shops = connection.Table<DB.Shop>();
+        foreach(var shop in shops)
         {
-            Debug.Log("Couldn't get data from table 'shops'");
-            return;
+            var shopController = new ShopController(shop.Id, shop.Name);
+            _shopControllers.Add(shop.Id, shopController);
         }
-
-        foreach (DataRow dr in dtShops.Rows)
-        {
-            var shopId = Convert.ToInt32(dr["id"]);
-            var shopName = dr["id"].ToString();
-            var shopController = new ShopController(shopId, shopName);
-            _shopControllers.Add(shopId, shopController);
-        }
-        if (!Static.DataHandling.GetTable("shop_items", out var dtShopItems))
-        {
-            Debug.Log("Couldn't get data from table 'shop_items'");
-            return;
-        }
+        var shopItems = connection.Table<DB.ShopItem>();
         foreach (var shopController in _shopControllers.Values)
         {
-            foreach (DataRow dr in dtShopItems.Rows)
+            foreach (var shopItem in shopItems.Where(x => x.ShopId == shopController.Id))
             {
-                var shopId = Convert.ToInt32(dr["shops_id"]);
-                if (shopId != shopController.Id) continue;
-                var itemId = Convert.ToInt32(dr["items_id"]);
-                var minimum = Convert.ToInt32(dr["min"]);
-                var maximum = Convert.ToInt32(dr["max"]);
-                var quantity = UnityEngine.Random.Range(minimum, maximum);
-                shopController.ShopItemInfos.Add(itemId,
+                var quantity = UnityEngine.Random.Range(shopItem.Min, shopItem.Max);
+                shopController.ShopItemInfos.Add(shopItem.ItemId,
                     new ShopItemInfo
                     {
-                        item = DropController.GetDropInfo(itemId), 
+                        item = DropController.GetDropInfo(shopItem.ItemId), 
                         quantity = quantity, 
-                        minimum = minimum, 
-                        maximum = maximum
+                        minimum = shopItem.Min, 
+                        maximum = shopItem.Max
                     }
                 );
             }
