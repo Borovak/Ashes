@@ -10,5 +10,8 @@ namespace DB
 
         [Column("name")]
         public string Name { get; set; }
+
+        [Column("npcs_id")]
+        public int NpcId { get; set; }
     }
 }

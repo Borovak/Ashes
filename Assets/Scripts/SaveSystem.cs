@@ -12,18 +12,29 @@ public static class SaveSystem
     public static int index = 0;
     public static event Action<int> SaveDeleted; 
     public static event Action<bool> GameSaved;
-    public static SaveData LastLoadedSave;
+    public static event Action GameLoaded;
+
+    public static SaveData LastLoadedSave
+    {
+        get => _lastLoadedSave;
+        set
+        {
+            _lastLoadedSave = value;
+            GameLoaded?.Invoke();
+        }
+    }
 
     private static string _filePath => Application.persistentDataPath + $"/ashes_{index}.sav";
+    private static SaveData _lastLoadedSave;
 
     public static bool Save(string savePointGuid, bool healOnSave, out string errorMessage)
     {
         var filePath = _filePath;
         try
         {
-            var saveData = PrepareSaveData(false, savePointGuid, healOnSave);
+            LastLoadedSave = PrepareSaveData(savePointGuid, healOnSave);
             //SaveBinary(filePath);
-            SaveXml(filePath, saveData);
+            SaveXml(filePath, LastLoadedSave);
             errorMessage = "";
             GameSaved?.Invoke(healOnSave);
             return true;
@@ -40,10 +51,10 @@ public static class SaveSystem
         var filePath = _filePath;
         try
         {
-            var saveData = PrepareSaveData(true, savePointGuid, false);
-            saveData.SavePointGuid = savePointGuid;
+            LastLoadedSave = new SaveData();
+            LastLoadedSave.SavePointGuid = savePointGuid;
             //SaveBinary(filePath);
-            SaveXml(filePath, saveData);
+            SaveXml(filePath, LastLoadedSave);
             errorMessage = "";
             return true;
         }
@@ -59,9 +70,9 @@ public static class SaveSystem
         var filePath = _filePath;
         try
         {
-            var saveData = PrepareSaveData(true, "", false);
             //SaveBinary(filePath);
-            SaveXml(filePath, saveData);
+            LastLoadedSave = new SaveData();
+            SaveXml(filePath, LastLoadedSave);
             errorMessage = "";
             GameSaved?.Invoke(false);
             return true;
@@ -73,13 +84,11 @@ public static class SaveSystem
         }
     }
 
-    private static SaveData PrepareSaveData(bool isVirginSave, string savePointGuid, bool healOnSave){
+    private static SaveData PrepareSaveData(string savePointGuid, bool healOnSave){
         var saveData = new SaveData();
-        if (isVirginSave) return saveData;
         if (!GlobalFunctions.TryGetPlayerComponent<PlayerPlatformerController>(out var playerPlatformerController)) return saveData;
         if (!GlobalFunctions.TryGetPlayerComponent<PlayerLifeController>(out var playerLifeController)) return saveData;
         if (!GlobalFunctions.TryGetPlayerComponent<ManaController>(out var manaController)) return saveData;
-        if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return saveData;
         saveData.GameTime = GameController.gameTime;
         saveData.HasDoubleJump = playerPlatformerController.hasDoubleJump;
         saveData.Hp = healOnSave ? playerLifeController.GetMaxHp() : playerLifeController.GetHp();
@@ -87,7 +96,7 @@ public static class SaveSystem
         saveData.Mp = healOnSave ? manaController.GetMaxMp() : manaController.GetMp();
         saveData.MaxMp = manaController.GetMaxMp();
         saveData.MpRegenPerSec = manaController.mpRegenPerSec;
-        saveData.Inventory = playerInventory.GetInventoryString();
+        saveData.XeInventories = GlobalInventoryManager.GetXeFromInventories();
         saveData.SavePointGuid = savePointGuid;
         return saveData;
     }
@@ -107,6 +116,7 @@ public static class SaveSystem
         xeRoot.SetAttributeValue("gameTime", saveData.GameTime);
         var xePlayer = new XElement("Player");
         xeRoot.Add(xePlayer);
+        xeRoot.Add(saveData.XeInventories);
         xePlayer.SetAttributeValue("maxHp", saveData.MaxHp);
         xePlayer.SetAttributeValue("hp", saveData.Hp);
         xePlayer.SetAttributeValue("maxMp", saveData.MaxMp);
@@ -114,7 +124,6 @@ public static class SaveSystem
         xePlayer.SetAttributeValue("mpRegenPerSec", saveData.MpRegenPerSec);
         xePlayer.SetAttributeValue("hasDoubleJump", saveData.HasDoubleJump);
         xePlayer.SetAttributeValue("savePointGuid", saveData.SavePointGuid);
-        xePlayer.SetAttributeValue("inventory", saveData.Inventory);
         var xeGates = new XElement("Gates");
         xeRoot.Add(xeGates);
         if (saveData.gatesId != null)
@@ -130,7 +139,7 @@ public static class SaveSystem
         xeRoot.Save(filePath);
     }
 
-    public static bool Load(out SaveData data, out string errorMessage)
+    public static bool Load(out string errorMessage)
     {
         var filePath = _filePath;
         try
@@ -138,22 +147,24 @@ public static class SaveSystem
             if (!File.Exists(filePath))
             {
                 errorMessage = "Game file not found";
-                data = null;
+                LastLoadedSave = null;
                 return false;
             }
             //LoadBinary(filePath, out data);
-            if (!LoadXml(filePath, out data))
+            if (!LoadXml(filePath, out var data))
             {
                 errorMessage = "Game file load failed (XML)";
+                LastLoadedSave = null;
                 return false;
             }
+            LastLoadedSave = data;
             errorMessage = "";
             return true;
         }
         catch (Exception ex)
         {
             errorMessage = ex.ToString();
-            data = null;
+            LastLoadedSave = null;
             return false;
         }
     }
@@ -170,30 +181,51 @@ public static class SaveSystem
     private static bool LoadXml(string filePath, out SaveData saveData)
     {
         saveData = new SaveData();
-        var xeRoot = XElement.Load(filePath);
-        if (!float.TryParse(xeRoot.Attribute("gameTime").Value, out saveData.GameTime)) return false;
+        XElement xeRoot;
+        try
+        {
+            xeRoot = XElement.Load(filePath);
+        }
+        catch (Exception e)
+        {
+            Debug.Log($"Cannot load xml: {e}");
+            return false;
+        }
+        if (!float.TryParse(xeRoot.Attribute("gameTime")?.Value ?? "_", out saveData.GameTime)) return false;
+        //Player
         var xePlayer = xeRoot.Element("Player");
-        if (!int.TryParse(xePlayer.Attribute("maxHp").Value, out saveData.MaxHp)) return false;
-        if (!int.TryParse(xePlayer.Attribute("hp").Value, out saveData.Hp)) return false;
-        if (!float.TryParse(xePlayer.Attribute("maxMp").Value, out saveData.MaxMp)) return false;
-        if (!float.TryParse(xePlayer.Attribute("mp").Value, out saveData.Mp)) return false;
-        if (!float.TryParse(xePlayer.Attribute("mpRegenPerSec").Value, out saveData.MpRegenPerSec)) return false;
-        if (!bool.TryParse(xePlayer.Attribute("hasDoubleJump").Value, out saveData.HasDoubleJump)) return false;
-        saveData.SavePointGuid = xePlayer.Attribute("savePointGuid").Value ?? string.Empty;
-        saveData.Inventory = xePlayer.Attribute("inventory").Value ?? string.Empty;
+        if (xePlayer != null)
+        {
+            if (!int.TryParse(xePlayer.Attribute("maxHp")?.Value ?? "_", out saveData.MaxHp)) return false;
+            if (!int.TryParse(xePlayer.Attribute("hp")?.Value ?? "_", out saveData.Hp)) return false;
+            if (!float.TryParse(xePlayer.Attribute("maxMp")?.Value ?? "_", out saveData.MaxMp)) return false;
+            if (!float.TryParse(xePlayer.Attribute("mp")?.Value ?? "_", out saveData.Mp)) return false;
+            if (!float.TryParse(xePlayer.Attribute("mpRegenPerSec")?.Value ?? "_", out saveData.MpRegenPerSec)) return false;
+            if (!bool.TryParse(xePlayer.Attribute("hasDoubleJump")?.Value ?? "_", out saveData.HasDoubleJump)) return false;
+            saveData.SavePointGuid = xePlayer.Attribute("savePointGuid")?.Value ?? string.Empty;
+        }
+
+        //Inventories
+        saveData.XeInventories = xeRoot.Element("Inventories");
+        GlobalInventoryManager.SetInventoriesFromXe(saveData.XeInventories);
+        //Gates
         var xeGates = xeRoot.Element("Gates");
         var gatesId = new List<string>();
         var gatesStatus = new List<bool>();
-        foreach (var xeGate in xeGates.Elements("Gate"))
+        if (xeGates != null)
         {
-
-            if (xePlayer.Attribute("id") == null) return false;
-            gatesId.Add(xePlayer.Attribute("id").Value);
-            if (!bool.TryParse(xePlayer.Attribute("status").Value, out var status)) return false;
-            gatesStatus.Add(status);
-            saveData.gatesId = gatesId.ToArray();
-            saveData.gatesStatus = gatesStatus.ToArray();
+            foreach (var xeGate in xeGates.Elements("Gate"))
+            {
+                var gateId = xeGate.Attribute("id")?.Value;
+                if (string.IsNullOrEmpty(gateId)) continue;
+                if (!bool.TryParse(xeGate.Attribute("status")?.Value ?? "_", out var gateStatus)) continue;
+                gatesId.Add(gateId);
+                gatesStatus.Add(gateStatus);
+                saveData.gatesId = gatesId.ToArray();
+                saveData.gatesStatus = gatesStatus.ToArray();
+            }
         }
+        Debug.Log("Load successful");
         return true;
     }
 

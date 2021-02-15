@@ -52,15 +52,16 @@ public class GameController : MonoBehaviour
         GameOptionsManager.Init();
         DataHandling.Init();
         LocationInformation.Init(out _);
-        if (!SaveSystem.Load(out SaveSystem.LastLoadedSave, out var errorMessage))
+        if (!SaveSystem.Load(out var errorMessage))
         {
             Debug.Log(errorMessage);
             var saveSuccess = SaveSystem.SaveVirgin(out var saveErrorMessage);
             Debug.Log(saveSuccess ? $"Game saved" : $"Game save unsuccessful : {saveErrorMessage}");
             if (saveSuccess)
             {
-                SaveSystem.Load(out SaveSystem.LastLoadedSave, out errorMessage);
+                SaveSystem.Load(out errorMessage);
             }
+            Debug.Log(SaveSystem.LastLoadedSave);
         }
         gameTime = SaveSystem.LastLoadedSave.GameTime;
         DropController.Init();

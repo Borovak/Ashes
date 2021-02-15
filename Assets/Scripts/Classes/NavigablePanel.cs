@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Interfaces;
+using UI;
 using UnityEngine;
 
 namespace Classes
@@ -88,13 +89,21 @@ namespace Classes
                     itemSlot.SlotClicked += OnSlotClicked;
                 }
             }
-            Player.PlayerInventory.InventoryChanged += OnRefreshNeeded;
+            GlobalInventoryManager.RegisterToInventoryChange(-1, OnRefreshNeeded);
+            if (GlobalShopManager.currentShopId != -1)
+            {
+                GlobalInventoryManager.RegisterToInventoryChange(GlobalShopManager.currentShopId, OnRefreshNeeded);
+            }
             OnEnableSpecific();
         }
         
         void OnDisable()
         {
-            Player.PlayerInventory.InventoryChanged -= OnRefreshNeeded;
+            GlobalInventoryManager.UnregisterToInventoryChange(-1, OnRefreshNeeded);
+            if (GlobalShopManager.currentShopId != -1)
+            {
+                GlobalInventoryManager.UnregisterToInventoryChange(GlobalShopManager.currentShopId, OnRefreshNeeded);
+            }
             OnDisableSpecific();
         }
 

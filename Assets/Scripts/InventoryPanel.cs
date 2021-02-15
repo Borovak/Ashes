@@ -35,14 +35,14 @@ public class InventoryPanel : NavigablePanel
         //     _inventoryItemControllers = inventoryItemControllers.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ThenBy(x => x.transform.GetComponent<RectTransform>().anchoredPosition.x).ToList();
         // }
         _index2D = Vector2Int.zero;
-        PlayerInventory.InventoryChanged += RequestRefresh;
+        GlobalInventoryManager.RegisterToInventoryChange(-1, RequestRefresh);
         SelectedIndexChanged += OnSelectedIndexChanged;
         refreshNeeded = true;
     }
 
     protected override void OnDisableSpecific()
     {
-        PlayerInventory.InventoryChanged -= RequestRefresh;
+        GlobalInventoryManager.UnregisterToInventoryChange(-1, RequestRefresh);
         SelectedIndexChanged -= OnSelectedIndexChanged;
     }
 
@@ -56,8 +56,8 @@ public class InventoryPanel : NavigablePanel
     {
         if (!refreshNeeded) return;
         refreshNeeded = false;
-        if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return;
-        playerInventory.GetItemsAndCounts(out var itemBundles);
+        if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
+        var itemBundles = inventory.GetItemBundles();
         var index = 0;
         foreach (Transform t in transform)
         {

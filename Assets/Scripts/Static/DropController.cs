@@ -58,9 +58,12 @@ namespace Static
             return _items[id];
         }
 
-        public static List<Item> GetCraftables()
+        public static List<ItemBundle> GetCraftables()
         {
-            return _items.Where(x => x.Value.isCraftable).OrderBy(x => x.Value.id).Select(x => x.Value).ToList();
+            return _items.Where(x => x.Value.isCraftable)
+                .OrderBy(x => x.Value.id)
+                .Select(x => new ItemBundle(x.Value, 1))
+                .ToList();
         }
     }
 }

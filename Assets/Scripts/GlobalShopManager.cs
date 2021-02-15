@@ -6,6 +6,7 @@ using UnityEngine;
 using Classes;
 using Static;
 using UI;
+using UnityEngine.InputSystem.iOS;
 
 public class GlobalShopManager : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class GlobalShopManager : MonoBehaviour
         var shops = connection.Table<DB.Shop>();
         foreach(var shop in shops)
         {
-            var shopController = new ShopController(shop.Id, shop.Name);
+            var path = connection.Table<DB.Npc>().FirstOrDefault(x => x.Id == shop.NpcId)?.Path ?? "";
+            var shopController = new ShopController(shop.Id, shop.Name, path);
             _shopControllers.Add(shop.Id, shopController);
         }
         var shopItems = connection.Table<DB.ShopItem>();
@@ -32,17 +34,19 @@ public class GlobalShopManager : MonoBehaviour
         {
             foreach (var shopItem in shopItems.Where(x => x.ShopId == shopController.Id))
             {
-                var quantity = UnityEngine.Random.Range(shopItem.Min, shopItem.Max);
                 shopController.ShopItemInfos.Add(shopItem.ItemId,
                     new ShopItemInfo
                     {
                         item = DropController.GetDropInfo(shopItem.ItemId), 
-                        quantity = quantity, 
-                        minimum = shopItem.Min, 
+                        initial = shopItem.Initial, 
                         maximum = shopItem.Max
                     }
                 );
             }
+        }
+        foreach (var shopController in _shopControllers.Values.Where(x => x.Inventory == null))
+        {
+            GlobalInventoryManager.AddShopInventory(shopController.Id, shopController.ShopItemInfos.Values.ToList());
         }
     }
 
@@ -51,55 +55,51 @@ public class GlobalShopManager : MonoBehaviour
         var currentMinute = DateTime.Now.Minute;
         if (currentMinute == _lastUpdateOnMinute) return;
         _lastUpdateOnMinute = currentMinute;
-        foreach (var shopController in _shopControllers.Values)
+        foreach (var shopController in _shopControllers.Values.Where(x => x.Id != currentShopId))
         {
-            if (currentShopId == shopController.Id) continue;
-            foreach (var shopItemInfo in shopController.ShopItemInfos.Values.Where(x => x.quantity < x.maximum))
+            var itemBundlesToAdd = shopController.ShopItemInfos.Values.Join(
+                shopController.Inventory.GetItemBundles(),
+                x => x.item.id,
+                y => y.Item.id,
+                (x, y) => new ItemBundle(x.item, GetQuantityToAdd(y.Quantity, x.maximum))
+                ).Where(x => x.Quantity > 0).ToList();
+            foreach (var itemBundle in itemBundlesToAdd)
             {
-                var quantityToAdd = Convert.ToInt32(Convert.ToSingle(shopItemInfo.maximum - shopItemInfo.minimum) * 0.1f);
-                var newQuantity = shopItemInfo.quantity + quantityToAdd;
-                shopItemInfo.quantity = System.Math.Min(newQuantity, shopItemInfo.maximum);
+                if (!GlobalInventoryManager.TryGetInventory(shopController.Id, out var inventory)) continue;
+                inventory.Add(itemBundle);
             }
         }
     }
 
-    public static bool TryGetShopInfo(int shopId, out List<ShopItemInfo> shopItemInfos)
+    private int GetQuantityToAdd(int quantity, int maximum)
     {
-        if (!_instance._shopControllers.TryGetValue(shopId, out var shopController))
-        {
-            shopItemInfos = null;
-            return false;
-        }
-        shopItemInfos = shopController.ShopItemInfos.Values.ToList();
-        return true;
+        var quantityToAdd = Convert.ToInt32(Math.Floor(Convert.ToSingle(maximum) * 0.1f));
+        var newQuantity = quantity + quantityToAdd;
+        return Math.Min(newQuantity, maximum) - quantity;
     }
     
     public static int GetItemQuantity(int shopId, int itemId)
     {
-        if (!_instance._shopControllers.TryGetValue(shopId, out var shopController)) return 0;
-        if (!shopController.ShopItemInfos.TryGetValue(itemId, out var shopItemInfo)) return 0;
-        return shopItemInfo.quantity;
+        return _instance._shopControllers.TryGetValue(shopId, out var shopController) ? shopController.Inventory.GetQuantity(itemId) : 0;
     }
     
-    public static int AddItemToShop(int shopId, int itemId, int quantity)
+    public static bool AddItemToShop(int shopId, int itemId, int quantity)
     {
-        if (!_instance._shopControllers.TryGetValue(shopId, out var shopController)) return 0;
-        if (!shopController.ShopItemInfos.TryGetValue(itemId, out var shopItemInfo)) return 0;
-        shopItemInfo.quantity += quantity;
-        return quantity;
+        if (!_instance._shopControllers.TryGetValue(shopId, out var shopController)) return false;
+        shopController.Inventory.Add(itemId, quantity);
+        return true;
     }
     
     public static int RemoveItemFromShop(int shopId, int itemId, int quantity)
     {
         if (!_instance._shopControllers.TryGetValue(shopId, out var shopController)) return 0;
-        if (!shopController.ShopItemInfos.TryGetValue(itemId, out var shopItemInfo)) return 0;
-        if (quantity > shopItemInfo.quantity)
-        {
-            var quantityRemoved = shopItemInfo.quantity;
-            shopItemInfo.quantity = 0;
-            return quantityRemoved;
-        }
-        shopItemInfo.quantity -= quantity;
-        return quantity;
+        return shopController.Inventory.Remove(itemId, quantity);
+    }
+
+    public static Sprite GetCurrentShopImage()
+    {
+        if (!_instance._shopControllers.TryGetValue(currentShopId, out var shopController)) return null;
+        var sprite = Resources.Load<Sprite>($"Npc/{shopController.Path}");
+        return sprite;
     }
 }

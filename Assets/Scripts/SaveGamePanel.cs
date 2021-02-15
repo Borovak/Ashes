@@ -58,16 +58,16 @@ public class SaveGamePanel : MonoBehaviour
         LocationInformation.Init(out _);
         SaveSystem.index = index;
         transform.Find("Id").GetComponent<TextMeshProUGUI>().text = $"Save {index + 1}";
-        dataPresent = SaveSystem.Load(out var data, out var errorMessage);
-        _newGame.SetActive(data == null);
-        _zoneName.SetActive(data != null);
-        _gameTime.SetActive(data != null);
-        _doubleJump.SetActive(data != null && data.HasDoubleJump);
-        if (data != null && LocationInformation.SavePoints.ContainsKey(data.SavePointGuid))
+        dataPresent = SaveSystem.Load(out var errorMessage);
+        _newGame.SetActive(SaveSystem.LastLoadedSave == null);
+        _zoneName.SetActive(SaveSystem.LastLoadedSave != null);
+        _gameTime.SetActive(SaveSystem.LastLoadedSave != null);
+        _doubleJump.SetActive(SaveSystem.LastLoadedSave != null && SaveSystem.LastLoadedSave.HasDoubleJump);
+        if (SaveSystem.LastLoadedSave != null && LocationInformation.SavePoints.ContainsKey(SaveSystem.LastLoadedSave.SavePointGuid))
         {
-            var chamber = LocationInformation.SavePoints[data.SavePointGuid].Chamber;
+            var chamber = LocationInformation.SavePoints[SaveSystem.LastLoadedSave.SavePointGuid].Chamber;
             _zoneName.GetComponent<TextMeshProUGUI>().text = $"{chamber.ZoneName}/{chamber.Name}";
-            var t = data.GameTime;
+            var t = SaveSystem.LastLoadedSave.GameTime;
             var h = Convert.ToInt32(t / 3600f);
             t -= h * 3600f;
             var m = Convert.ToInt32(t / 60f);
@@ -88,7 +88,7 @@ public class SaveGamePanel : MonoBehaviour
         {
             SaveSystem.SaveVirgin(out _);
         }
-        if (SaveSystem.Load(out var data, out var errorMessage))
+        if (SaveSystem.Load(out var errorMessage))
         {
             SceneManager.LoadScene("Game");
         }

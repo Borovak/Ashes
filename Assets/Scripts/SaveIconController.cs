@@ -11,15 +11,11 @@ public class SaveIconController : MonoBehaviour
 
     private Animator _animator;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        _animator = GetComponent<Animator>();
-        gameObject.transform.LeanScale(Vector3.zero, 0f);
-    }
 
     void OnEnable()
     {
+        _animator ??= GetComponent<Animator>();
+        gameObject.transform.LeanScale(Vector3.zero, 0f);
         SaveSystem.GameSaved += OnGameSaved;
     }
 
@@ -30,6 +26,7 @@ public class SaveIconController : MonoBehaviour
 
     private void OnGameSaved(bool healOnSave)
     {
+        _animator ??= GetComponent<Animator>();
         _animator.SetTrigger("active");
         var lt = LeanTween.Framework.LeanTween.scale(gameObject, new Vector3(1f,1f,1f), InDuration);
         lt.setEase(LeanTweenType.easeInOutSine);

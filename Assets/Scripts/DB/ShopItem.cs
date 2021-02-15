@@ -11,8 +11,8 @@ namespace DB
         [Column("items_id")]
         public int ItemId { get; set; }
 
-        [Column("min")]
-        public int Min { get; set; }
+        [Column("initial")]
+        public int Initial { get; set; }
 
         [Column("max")]
         public int Max { get; set; }

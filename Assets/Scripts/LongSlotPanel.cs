@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Classes;
-using Interfaces;
-using Player;
 using Static;
 using UI;
 using UnityEngine;
@@ -48,13 +44,13 @@ public class LongSlotPanel : NavigablePanel
     {
         if (!refreshNeeded) return;
         refreshNeeded = false;
-        var items = GetItems(out var quantities);
+        var itemBundles = GetItemBundles();
         for (int i = 0; i < itemSlots.Count; i++)
         {
-            itemSlots[i].Item = i < items.Count ? items[i] : null;
-            if (quantities != null && itemSlots[i].Item != null)
+            itemSlots[i].Item = i < itemBundles.Count ? itemBundles[i].Item : null;
+            if (itemSlots[i].Item != null)
             {
-                itemSlots[i].Count = quantities[i];
+                itemSlots[i].Count = itemBundles[i].Quantity;
             }
         }
         var tempIndex = System.Math.Max(SelectedIndex, 0);
@@ -65,30 +61,20 @@ public class LongSlotPanel : NavigablePanel
         SelectedIndex = tempIndex;
     }
 
-    private List<Item> GetItems(out List<int> quantities)
+    private List<ItemBundle> GetItemBundles()
     {
-        quantities = null;
         switch (panelType)
         {
             case Constants.PanelTypes.Craftables: return DropController.GetCraftables();
             case Constants.PanelTypes.ShopBuy:
-                if (!GlobalShopManager.TryGetShopInfo(GlobalShopManager.currentShopId, out var shopItemInfos)) return new List<Item>();
-                quantities = shopItemInfos.Where(x => x.item.id != Constants.MONEY_ID).Select(x => x.quantity).ToList();
-                return shopItemInfos.Where(x => x.item.id != Constants.MONEY_ID).Select(x => x.item).ToList();
+                if (!GlobalInventoryManager.TryGetInventory(GlobalShopManager.currentShopId, out var shopInventory)) return new List<ItemBundle>();
+                return shopInventory.GetItemBundles().Where(x => x.Item.id != Constants.MONEY_ID).ToList();
             case Constants.PanelTypes.ShopSell:
-                if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return new List<Item>();
-                playerInventory.GetItemsAndCounts(out var itemBundles);
-                quantities = itemBundles.Select(x => x.Quantity).ToList();
-                return itemBundles.Select(x => x.Item).ToList();
+                if (!GlobalInventoryManager.TryGetInventory(-1, out var playerInventory)) return new List<ItemBundle>();
+                return playerInventory.GetItemBundles().Where(x => x.Item.id != Constants.MONEY_ID).ToList();
         }
-        return new List<Item>();
+        return new List<ItemBundle>();
 
-    }
-
-    private void OnSlotClicked(int index)
-    {
-        if (!HasFocus) return;
-        SelectedIndex = index;
     }
 
     protected override void OnSelectionChangeUp()

@@ -3,8 +3,7 @@
     public class ShopItemInfo
     {
         public Item item;
-        public int quantity;
-        public int minimum;
+        public int initial;
         public int maximum;
     }
 }

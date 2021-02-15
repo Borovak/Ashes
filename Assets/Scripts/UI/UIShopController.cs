@@ -5,6 +5,7 @@ using Player;
 using Static;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -39,7 +40,9 @@ namespace UI
         public GameObject[] buyButtons;
         public GameObject[] sellButtons;
         public GameObject itemListPanelObject;
-        public TextMeshProUGUI walletValueControl;
+        public Image shopPortraitImageControl;
+        public TextMeshProUGUI playerWalletValueControl;
+        public TextMeshProUGUI shopWalletValueControl;
         public Item selectedItem { get; set; }
 
         private MenuGroup _menuGroup;
@@ -59,10 +62,15 @@ namespace UI
             MenuInputs.SectionPrevious += OnSectionPrevious;
             MenuInputs.SectionNext += OnSectionNext;
             MenuInputs.Back += OnBack;
-            PlayerInventory.InventoryChanged += OnInventoryChanged;
             _itemListPanel.SelectedIndexChanged += OnSelectedIndexChanged;
             _itemListPanel.SelectedItemChanged += OnSelectedItemChanged;
             _itemListPanel.HasFocus = true;
+            GlobalInventoryManager.RegisterToInventoryChange(-1, OnInventoryChanged);
+            if (GlobalShopManager.currentShopId != -1)
+            {
+                GlobalInventoryManager.RegisterToInventoryChange(GlobalShopManager.currentShopId, OnInventoryChanged);
+                shopPortraitImageControl.sprite = GlobalShopManager.GetCurrentShopImage();
+            }
             OnInventoryChanged();
         }
 
@@ -71,9 +79,13 @@ namespace UI
             MenuInputs.SectionPrevious -= OnSectionPrevious;
             MenuInputs.SectionNext -= OnSectionNext;
             MenuInputs.Back -= OnBack;
-            PlayerInventory.InventoryChanged -= OnInventoryChanged;
             _itemListPanel.SelectedIndexChanged -= OnSelectedIndexChanged;
             _itemListPanel.SelectedItemChanged -= OnSelectedItemChanged;
+            GlobalInventoryManager.UnregisterToInventoryChange(-1, OnInventoryChanged);
+            if (GlobalShopManager.currentShopId != -1)
+            {
+                GlobalInventoryManager.UnregisterToInventoryChange(GlobalShopManager.currentShopId, OnInventoryChanged);
+            }
         }
 
         private void OnSectionPrevious()
@@ -123,9 +135,9 @@ namespace UI
         public void BuyMax()
         {
             if (_item == null) return;
-            GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var inventory);
+            if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
             var quantityInInventory = GlobalShopManager.GetItemQuantity(GlobalShopManager.currentShopId, _item.id);
-            var playerMoney = inventory.GetCount(Constants.MONEY_ID);
+            var playerMoney = inventory.GetMoneyQuantity();
             var quantityThatPlayerCanAfford = Convert.ToInt32(Math.Floor(Convert.ToSingle(playerMoney) / Convert.ToSingle(_item.value)));
             var quantity = System.Math.Min(quantityInInventory, quantityThatPlayerCanAfford);
             Buy(_item, quantity);
@@ -134,8 +146,8 @@ namespace UI
         private void Buy(Item item, int quantity)
         {
             var cost = item.value * quantity;
-            GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var inventory);
-            if (inventory.GetCount(Constants.MONEY_ID) < cost) return; //Check if player can afford
+            if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
+            if (inventory.GetMoneyQuantity() < cost) return; //Check if player can afford
             if (GlobalShopManager.GetItemQuantity(GlobalShopManager.currentShopId, item.id) < quantity) return; //Check if shop has enough items
             GlobalShopManager.RemoveItemFromShop(GlobalShopManager.currentShopId, item.id, quantity);
             GlobalShopManager.AddItemToShop(GlobalShopManager.currentShopId, Constants.MONEY_ID, cost);
@@ -146,15 +158,14 @@ namespace UI
         public void SellOne()
         {
             if (_item == null) return;
-            GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var inventory);
             Sell(_item, 1);
         }
 
         public void SellMax()
         {
             if (_item == null) return;
-            GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var inventory);
-            var quantityInInventory = inventory.GetCount(_item);
+            if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
+            var quantityInInventory = inventory.GetQuantity(_item);
             var shopMoney = GlobalShopManager.GetItemQuantity(GlobalShopManager.currentShopId, Constants.MONEY_ID);
             var quantityThatShopCanAfford = Convert.ToInt32(Math.Floor(Convert.ToSingle(shopMoney) / Convert.ToSingle(_item.value)));
             var quantity = System.Math.Min(quantityInInventory, quantityThatShopCanAfford);
@@ -164,9 +175,9 @@ namespace UI
         private void Sell(Item item, int quantity)
         {
             var cost = item.value * quantity;
-            GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var inventory);
+            if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
             if (GlobalShopManager.GetItemQuantity(GlobalShopManager.currentShopId, Constants.MONEY_ID) < cost) return; //Check if shop can afford
-            if (inventory.GetCount(item.id) < quantity) return; //Check if player has enough items
+            if (inventory.GetQuantity(item.id) < quantity) return; //Check if player has enough items
             GlobalShopManager.AddItemToShop(GlobalShopManager.currentShopId, item.id, quantity);
             GlobalShopManager.RemoveItemFromShop(GlobalShopManager.currentShopId, Constants.MONEY_ID, cost);
             inventory.Remove(_item, quantity);
@@ -175,8 +186,10 @@ namespace UI
 
         private void OnInventoryChanged()
         {
-            if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var inventory)) return;
-            walletValueControl.text = inventory.GetCount(Constants.MONEY_ID).ToString();
+            if (!GlobalInventoryManager.TryGetInventory(-1, out var playerInventory)) return;
+            if (!GlobalInventoryManager.TryGetInventory(GlobalShopManager.currentShopId, out var shopInventory)) return;
+            playerWalletValueControl.text = playerInventory.GetMoneyQuantity().ToString();
+            shopWalletValueControl.text = shopInventory.GetMoneyQuantity().ToString();
         }
 
         private void OnSelectedIndexChanged(int selectedIndex, Constants.PanelTypes panelType)

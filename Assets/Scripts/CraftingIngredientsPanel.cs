@@ -35,7 +35,7 @@ public class CraftingIngredientsPanel : MonoBehaviour
             }
             _uiRecipeIngredients = recipeIngredients.OrderByDescending(x => x.transform.GetComponent<RectTransform>().anchoredPosition.y).ThenBy(x => x.transform.GetComponent<RectTransform>().anchoredPosition.x).ToList();
         }
-        PlayerInventory.InventoryChanged += SetCraftButtonsVisibility;
+        GlobalInventoryManager.RegisterToInventoryChange(-1, SetCraftButtonsVisibility);
         _itemManager = itemManagerObject.GetComponent<IItemManager>();
         _itemManager.SelectedItemChanged += OnSelectedItemChanged;
         MenuInputs.OK += Craft;
@@ -44,7 +44,7 @@ public class CraftingIngredientsPanel : MonoBehaviour
 
     void OnDisable()
     {
-        PlayerInventory.InventoryChanged -= SetCraftButtonsVisibility;
+        GlobalInventoryManager.UnregisterToInventoryChange(-1, SetCraftButtonsVisibility);
         _itemManager.SelectedItemChanged -= OnSelectedItemChanged;
         MenuInputs.OK -= Craft;
         MenuInputs.Special -= CraftMax;
@@ -99,7 +99,7 @@ public class CraftingIngredientsPanel : MonoBehaviour
 
     private bool CanRecipeCanBeMade(out int itemCount)
     {
-        if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory))
+        if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory))
         {
             itemCount = 0;
             return false;
@@ -108,7 +108,7 @@ public class CraftingIngredientsPanel : MonoBehaviour
         itemCount = int.MaxValue;
         foreach (var ingredient in _requiredIngredients)
         {
-            var playerQuantity = playerInventory.GetCount(ingredient.Item);
+            var playerQuantity = inventory.GetQuantity(ingredient.Item);
             var recipeIngredient = _uiRecipeIngredients.First(x => x.Item == ingredient.Item);
             recipeIngredient.PlayerInventory = playerQuantity;
             if (ingredient.Quantity > playerQuantity)
@@ -142,12 +142,12 @@ public class CraftingIngredientsPanel : MonoBehaviour
     public void Craft()
     {
         if (_item == null || !_item.isCraftable) return;
-        if (!GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var playerInventory)) return;
+        if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
         foreach (var ingredient in _requiredIngredients)
         {
-            playerInventory.Remove(ingredient.Item, ingredient.Quantity);
+            inventory.Remove(ingredient.Item, ingredient.Quantity);
         }
-        playerInventory.Add(_item);
+        inventory.Add(_item, 1);
     }
 
     public void CraftMax()

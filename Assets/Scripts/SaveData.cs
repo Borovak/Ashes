@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 [Serializable]
 public class SaveData
@@ -18,7 +19,7 @@ public class SaveData
     public string[] gatesId;
     public bool[] gatesStatus;
     public float GameTime;
-    public string Inventory;
+    public XElement XeInventories;
 
     public SaveData()
     {
@@ -30,7 +31,7 @@ public class SaveData
         MpRegenPerSec = defaultMpRegenPerSec;
         HasDoubleJump = false;
         SavePointGuid = string.Empty;
-        Inventory = string.Empty;
+        XeInventories = new XElement("Inventories");
         GameTime = 0;
         //World
         var count = GateController.gates?.Count ?? 0;
