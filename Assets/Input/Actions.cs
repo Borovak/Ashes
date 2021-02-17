@@ -6,14 +6,12 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace Input
+public class @Actions : IInputActionCollection, IDisposable
 {
-    public class @Actions : IInputActionCollection, IDisposable
+    public InputActionAsset asset { get; }
+    public @Actions()
     {
-        public InputActionAsset asset { get; }
-        public @Actions()
-        {
-            asset = InputActionAsset.FromJson(@"{
+        asset = InputActionAsset.FromJson(@"{
     ""name"": ""Actions"",
     ""maps"": [
         {
@@ -989,329 +987,328 @@ namespace Input
         }
     ]
 }");
-            // Player
-            m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-            m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
-            m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-            m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
-            m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
-            m_Player_AttackSpell = m_Player.FindAction("AttackSpell", throwIfNotFound: true);
-            m_Player_SelfSpell = m_Player.FindAction("SelfSpell", throwIfNotFound: true);
-            m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-            m_Player_Shield = m_Player.FindAction("Shield", throwIfNotFound: true);
-            // Menu
-            m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
-            m_Menu_SelectionChange = m_Menu.FindAction("Selection Change", throwIfNotFound: true);
-            m_Menu_Movement = m_Menu.FindAction("Movement", throwIfNotFound: true);
-            m_Menu_OK = m_Menu.FindAction("OK", throwIfNotFound: true);
-            m_Menu_Back = m_Menu.FindAction("Back", throwIfNotFound: true);
-            m_Menu_Start = m_Menu.FindAction("Start", throwIfNotFound: true);
-            m_Menu_Select = m_Menu.FindAction("Select", throwIfNotFound: true);
-            m_Menu_SectionPrevious = m_Menu.FindAction("SectionPrevious", throwIfNotFound: true);
-            m_Menu_SectionNext = m_Menu.FindAction("SectionNext", throwIfNotFound: true);
-            m_Menu_MapZoomIn = m_Menu.FindAction("MapZoomIn", throwIfNotFound: true);
-            m_Menu_MapZoomOut = m_Menu.FindAction("MapZoomOut", throwIfNotFound: true);
-            m_Menu_Map = m_Menu.FindAction("Map", throwIfNotFound: true);
-            m_Menu_Crafting = m_Menu.FindAction("Crafting", throwIfNotFound: true);
-            m_Menu_Special = m_Menu.FindAction("Special", throwIfNotFound: true);
-        }
-
-        public void Dispose()
-        {
-            UnityEngine.Object.Destroy(asset);
-        }
-
-        public InputBinding? bindingMask
-        {
-            get => asset.bindingMask;
-            set => asset.bindingMask = value;
-        }
-
-        public ReadOnlyArray<InputDevice>? devices
-        {
-            get => asset.devices;
-            set => asset.devices = value;
-        }
-
-        public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
-
-        public bool Contains(InputAction action)
-        {
-            return asset.Contains(action);
-        }
-
-        public IEnumerator<InputAction> GetEnumerator()
-        {
-            return asset.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-        public void Enable()
-        {
-            asset.Enable();
-        }
-
-        public void Disable()
-        {
-            asset.Disable();
-        }
-
         // Player
-        private readonly InputActionMap m_Player;
-        private IPlayerActions m_PlayerActionsCallbackInterface;
-        private readonly InputAction m_Player_Movement;
-        private readonly InputAction m_Player_Jump;
-        private readonly InputAction m_Player_Attack;
-        private readonly InputAction m_Player_Dash;
-        private readonly InputAction m_Player_AttackSpell;
-        private readonly InputAction m_Player_SelfSpell;
-        private readonly InputAction m_Player_Interact;
-        private readonly InputAction m_Player_Shield;
-        public struct PlayerActions
-        {
-            private @Actions m_Wrapper;
-            public PlayerActions(@Actions wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Movement => m_Wrapper.m_Player_Movement;
-            public InputAction @Jump => m_Wrapper.m_Player_Jump;
-            public InputAction @Attack => m_Wrapper.m_Player_Attack;
-            public InputAction @Dash => m_Wrapper.m_Player_Dash;
-            public InputAction @AttackSpell => m_Wrapper.m_Player_AttackSpell;
-            public InputAction @SelfSpell => m_Wrapper.m_Player_SelfSpell;
-            public InputAction @Interact => m_Wrapper.m_Player_Interact;
-            public InputAction @Shield => m_Wrapper.m_Player_Shield;
-            public InputActionMap Get() { return m_Wrapper.m_Player; }
-            public void Enable() { Get().Enable(); }
-            public void Disable() { Get().Disable(); }
-            public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-            public void SetCallbacks(IPlayerActions instance)
-            {
-                if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
-                {
-                    @Movement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
-                    @Movement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
-                    @Movement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
-                    @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                    @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                    @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                    @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
-                    @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
-                    @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
-                    @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                    @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                    @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                    @AttackSpell.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackSpell;
-                    @AttackSpell.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackSpell;
-                    @AttackSpell.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackSpell;
-                    @SelfSpell.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelfSpell;
-                    @SelfSpell.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelfSpell;
-                    @SelfSpell.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelfSpell;
-                    @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                    @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                    @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                    @Shield.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShield;
-                    @Shield.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShield;
-                    @Shield.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShield;
-                }
-                m_Wrapper.m_PlayerActionsCallbackInterface = instance;
-                if (instance != null)
-                {
-                    @Movement.started += instance.OnMovement;
-                    @Movement.performed += instance.OnMovement;
-                    @Movement.canceled += instance.OnMovement;
-                    @Jump.started += instance.OnJump;
-                    @Jump.performed += instance.OnJump;
-                    @Jump.canceled += instance.OnJump;
-                    @Attack.started += instance.OnAttack;
-                    @Attack.performed += instance.OnAttack;
-                    @Attack.canceled += instance.OnAttack;
-                    @Dash.started += instance.OnDash;
-                    @Dash.performed += instance.OnDash;
-                    @Dash.canceled += instance.OnDash;
-                    @AttackSpell.started += instance.OnAttackSpell;
-                    @AttackSpell.performed += instance.OnAttackSpell;
-                    @AttackSpell.canceled += instance.OnAttackSpell;
-                    @SelfSpell.started += instance.OnSelfSpell;
-                    @SelfSpell.performed += instance.OnSelfSpell;
-                    @SelfSpell.canceled += instance.OnSelfSpell;
-                    @Interact.started += instance.OnInteract;
-                    @Interact.performed += instance.OnInteract;
-                    @Interact.canceled += instance.OnInteract;
-                    @Shield.started += instance.OnShield;
-                    @Shield.performed += instance.OnShield;
-                    @Shield.canceled += instance.OnShield;
-                }
-            }
-        }
-        public PlayerActions @Player => new PlayerActions(this);
-
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+        m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_AttackSpell = m_Player.FindAction("AttackSpell", throwIfNotFound: true);
+        m_Player_SelfSpell = m_Player.FindAction("SelfSpell", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Shield = m_Player.FindAction("Shield", throwIfNotFound: true);
         // Menu
-        private readonly InputActionMap m_Menu;
-        private IMenuActions m_MenuActionsCallbackInterface;
-        private readonly InputAction m_Menu_SelectionChange;
-        private readonly InputAction m_Menu_Movement;
-        private readonly InputAction m_Menu_OK;
-        private readonly InputAction m_Menu_Back;
-        private readonly InputAction m_Menu_Start;
-        private readonly InputAction m_Menu_Select;
-        private readonly InputAction m_Menu_SectionPrevious;
-        private readonly InputAction m_Menu_SectionNext;
-        private readonly InputAction m_Menu_MapZoomIn;
-        private readonly InputAction m_Menu_MapZoomOut;
-        private readonly InputAction m_Menu_Map;
-        private readonly InputAction m_Menu_Crafting;
-        private readonly InputAction m_Menu_Special;
-        public struct MenuActions
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_SelectionChange = m_Menu.FindAction("Selection Change", throwIfNotFound: true);
+        m_Menu_Movement = m_Menu.FindAction("Movement", throwIfNotFound: true);
+        m_Menu_OK = m_Menu.FindAction("OK", throwIfNotFound: true);
+        m_Menu_Back = m_Menu.FindAction("Back", throwIfNotFound: true);
+        m_Menu_Start = m_Menu.FindAction("Start", throwIfNotFound: true);
+        m_Menu_Select = m_Menu.FindAction("Select", throwIfNotFound: true);
+        m_Menu_SectionPrevious = m_Menu.FindAction("SectionPrevious", throwIfNotFound: true);
+        m_Menu_SectionNext = m_Menu.FindAction("SectionNext", throwIfNotFound: true);
+        m_Menu_MapZoomIn = m_Menu.FindAction("MapZoomIn", throwIfNotFound: true);
+        m_Menu_MapZoomOut = m_Menu.FindAction("MapZoomOut", throwIfNotFound: true);
+        m_Menu_Map = m_Menu.FindAction("Map", throwIfNotFound: true);
+        m_Menu_Crafting = m_Menu.FindAction("Crafting", throwIfNotFound: true);
+        m_Menu_Special = m_Menu.FindAction("Special", throwIfNotFound: true);
+    }
+
+    public void Dispose()
+    {
+        UnityEngine.Object.Destroy(asset);
+    }
+
+    public InputBinding? bindingMask
+    {
+        get => asset.bindingMask;
+        set => asset.bindingMask = value;
+    }
+
+    public ReadOnlyArray<InputDevice>? devices
+    {
+        get => asset.devices;
+        set => asset.devices = value;
+    }
+
+    public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
+
+    public bool Contains(InputAction action)
+    {
+        return asset.Contains(action);
+    }
+
+    public IEnumerator<InputAction> GetEnumerator()
+    {
+        return asset.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    public void Enable()
+    {
+        asset.Enable();
+    }
+
+    public void Disable()
+    {
+        asset.Disable();
+    }
+
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_Movement;
+    private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_Attack;
+    private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_AttackSpell;
+    private readonly InputAction m_Player_SelfSpell;
+    private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_Shield;
+    public struct PlayerActions
+    {
+        private @Actions m_Wrapper;
+        public PlayerActions(@Actions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Player_Movement;
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @Attack => m_Wrapper.m_Player_Attack;
+        public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @AttackSpell => m_Wrapper.m_Player_AttackSpell;
+        public InputAction @SelfSpell => m_Wrapper.m_Player_SelfSpell;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @Shield => m_Wrapper.m_Player_Shield;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
         {
-            private @Actions m_Wrapper;
-            public MenuActions(@Actions wrapper) { m_Wrapper = wrapper; }
-            public InputAction @SelectionChange => m_Wrapper.m_Menu_SelectionChange;
-            public InputAction @Movement => m_Wrapper.m_Menu_Movement;
-            public InputAction @OK => m_Wrapper.m_Menu_OK;
-            public InputAction @Back => m_Wrapper.m_Menu_Back;
-            public InputAction @Start => m_Wrapper.m_Menu_Start;
-            public InputAction @Select => m_Wrapper.m_Menu_Select;
-            public InputAction @SectionPrevious => m_Wrapper.m_Menu_SectionPrevious;
-            public InputAction @SectionNext => m_Wrapper.m_Menu_SectionNext;
-            public InputAction @MapZoomIn => m_Wrapper.m_Menu_MapZoomIn;
-            public InputAction @MapZoomOut => m_Wrapper.m_Menu_MapZoomOut;
-            public InputAction @Map => m_Wrapper.m_Menu_Map;
-            public InputAction @Crafting => m_Wrapper.m_Menu_Crafting;
-            public InputAction @Special => m_Wrapper.m_Menu_Special;
-            public InputActionMap Get() { return m_Wrapper.m_Menu; }
-            public void Enable() { Get().Enable(); }
-            public void Disable() { Get().Disable(); }
-            public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
-            public void SetCallbacks(IMenuActions instance)
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                if (m_Wrapper.m_MenuActionsCallbackInterface != null)
-                {
-                    @SelectionChange.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
-                    @SelectionChange.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
-                    @SelectionChange.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
-                    @Movement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
-                    @Movement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
-                    @Movement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
-                    @OK.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
-                    @OK.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
-                    @OK.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
-                    @Back.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
-                    @Back.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
-                    @Back.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
-                    @Start.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
-                    @Start.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
-                    @Start.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
-                    @Select.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
-                    @Select.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
-                    @Select.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
-                    @SectionPrevious.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
-                    @SectionPrevious.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
-                    @SectionPrevious.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
-                    @SectionNext.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
-                    @SectionNext.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
-                    @SectionNext.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
-                    @MapZoomIn.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
-                    @MapZoomIn.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
-                    @MapZoomIn.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
-                    @MapZoomOut.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
-                    @MapZoomOut.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
-                    @MapZoomOut.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
-                    @Map.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
-                    @Map.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
-                    @Map.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
-                    @Crafting.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
-                    @Crafting.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
-                    @Crafting.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
-                    @Special.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
-                    @Special.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
-                    @Special.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
-                }
-                m_Wrapper.m_MenuActionsCallbackInterface = instance;
-                if (instance != null)
-                {
-                    @SelectionChange.started += instance.OnSelectionChange;
-                    @SelectionChange.performed += instance.OnSelectionChange;
-                    @SelectionChange.canceled += instance.OnSelectionChange;
-                    @Movement.started += instance.OnMovement;
-                    @Movement.performed += instance.OnMovement;
-                    @Movement.canceled += instance.OnMovement;
-                    @OK.started += instance.OnOK;
-                    @OK.performed += instance.OnOK;
-                    @OK.canceled += instance.OnOK;
-                    @Back.started += instance.OnBack;
-                    @Back.performed += instance.OnBack;
-                    @Back.canceled += instance.OnBack;
-                    @Start.started += instance.OnStart;
-                    @Start.performed += instance.OnStart;
-                    @Start.canceled += instance.OnStart;
-                    @Select.started += instance.OnSelect;
-                    @Select.performed += instance.OnSelect;
-                    @Select.canceled += instance.OnSelect;
-                    @SectionPrevious.started += instance.OnSectionPrevious;
-                    @SectionPrevious.performed += instance.OnSectionPrevious;
-                    @SectionPrevious.canceled += instance.OnSectionPrevious;
-                    @SectionNext.started += instance.OnSectionNext;
-                    @SectionNext.performed += instance.OnSectionNext;
-                    @SectionNext.canceled += instance.OnSectionNext;
-                    @MapZoomIn.started += instance.OnMapZoomIn;
-                    @MapZoomIn.performed += instance.OnMapZoomIn;
-                    @MapZoomIn.canceled += instance.OnMapZoomIn;
-                    @MapZoomOut.started += instance.OnMapZoomOut;
-                    @MapZoomOut.performed += instance.OnMapZoomOut;
-                    @MapZoomOut.canceled += instance.OnMapZoomOut;
-                    @Map.started += instance.OnMap;
-                    @Map.performed += instance.OnMap;
-                    @Map.canceled += instance.OnMap;
-                    @Crafting.started += instance.OnCrafting;
-                    @Crafting.performed += instance.OnCrafting;
-                    @Crafting.canceled += instance.OnCrafting;
-                    @Special.started += instance.OnSpecial;
-                    @Special.performed += instance.OnSpecial;
-                    @Special.canceled += instance.OnSpecial;
-                }
+                @Movement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
+                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @AttackSpell.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackSpell;
+                @AttackSpell.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackSpell;
+                @AttackSpell.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackSpell;
+                @SelfSpell.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelfSpell;
+                @SelfSpell.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelfSpell;
+                @SelfSpell.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelfSpell;
+                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Shield.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShield;
+                @Shield.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShield;
+                @Shield.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShield;
+            }
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
+                @AttackSpell.started += instance.OnAttackSpell;
+                @AttackSpell.performed += instance.OnAttackSpell;
+                @AttackSpell.canceled += instance.OnAttackSpell;
+                @SelfSpell.started += instance.OnSelfSpell;
+                @SelfSpell.performed += instance.OnSelfSpell;
+                @SelfSpell.canceled += instance.OnSelfSpell;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @Shield.started += instance.OnShield;
+                @Shield.performed += instance.OnShield;
+                @Shield.canceled += instance.OnShield;
             }
         }
-        public MenuActions @Menu => new MenuActions(this);
-        private int m_ControlSchemeAlphaSchemeIndex = -1;
-        public InputControlScheme ControlSchemeAlphaScheme
+    }
+    public PlayerActions @Player => new PlayerActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_SelectionChange;
+    private readonly InputAction m_Menu_Movement;
+    private readonly InputAction m_Menu_OK;
+    private readonly InputAction m_Menu_Back;
+    private readonly InputAction m_Menu_Start;
+    private readonly InputAction m_Menu_Select;
+    private readonly InputAction m_Menu_SectionPrevious;
+    private readonly InputAction m_Menu_SectionNext;
+    private readonly InputAction m_Menu_MapZoomIn;
+    private readonly InputAction m_Menu_MapZoomOut;
+    private readonly InputAction m_Menu_Map;
+    private readonly InputAction m_Menu_Crafting;
+    private readonly InputAction m_Menu_Special;
+    public struct MenuActions
+    {
+        private @Actions m_Wrapper;
+        public MenuActions(@Actions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SelectionChange => m_Wrapper.m_Menu_SelectionChange;
+        public InputAction @Movement => m_Wrapper.m_Menu_Movement;
+        public InputAction @OK => m_Wrapper.m_Menu_OK;
+        public InputAction @Back => m_Wrapper.m_Menu_Back;
+        public InputAction @Start => m_Wrapper.m_Menu_Start;
+        public InputAction @Select => m_Wrapper.m_Menu_Select;
+        public InputAction @SectionPrevious => m_Wrapper.m_Menu_SectionPrevious;
+        public InputAction @SectionNext => m_Wrapper.m_Menu_SectionNext;
+        public InputAction @MapZoomIn => m_Wrapper.m_Menu_MapZoomIn;
+        public InputAction @MapZoomOut => m_Wrapper.m_Menu_MapZoomOut;
+        public InputAction @Map => m_Wrapper.m_Menu_Map;
+        public InputAction @Crafting => m_Wrapper.m_Menu_Crafting;
+        public InputAction @Special => m_Wrapper.m_Menu_Special;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
         {
-            get
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
             {
-                if (m_ControlSchemeAlphaSchemeIndex == -1) m_ControlSchemeAlphaSchemeIndex = asset.FindControlSchemeIndex("Control Scheme Alpha");
-                return asset.controlSchemes[m_ControlSchemeAlphaSchemeIndex];
+                @SelectionChange.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
+                @SelectionChange.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
+                @SelectionChange.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
+                @Movement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
+                @OK.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
+                @OK.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
+                @OK.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
+                @Back.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
+                @Back.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
+                @Back.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
+                @Start.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
+                @Select.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
+                @SectionPrevious.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
+                @SectionPrevious.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
+                @SectionPrevious.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
+                @SectionNext.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
+                @SectionNext.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
+                @SectionNext.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
+                @MapZoomIn.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
+                @MapZoomIn.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
+                @MapZoomIn.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
+                @MapZoomOut.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
+                @MapZoomOut.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
+                @MapZoomOut.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
+                @Map.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
+                @Map.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
+                @Map.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
+                @Crafting.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
+                @Crafting.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
+                @Crafting.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
+                @Special.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
+                @Special.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
+                @Special.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
+            }
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @SelectionChange.started += instance.OnSelectionChange;
+                @SelectionChange.performed += instance.OnSelectionChange;
+                @SelectionChange.canceled += instance.OnSelectionChange;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @OK.started += instance.OnOK;
+                @OK.performed += instance.OnOK;
+                @OK.canceled += instance.OnOK;
+                @Back.started += instance.OnBack;
+                @Back.performed += instance.OnBack;
+                @Back.canceled += instance.OnBack;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+                @SectionPrevious.started += instance.OnSectionPrevious;
+                @SectionPrevious.performed += instance.OnSectionPrevious;
+                @SectionPrevious.canceled += instance.OnSectionPrevious;
+                @SectionNext.started += instance.OnSectionNext;
+                @SectionNext.performed += instance.OnSectionNext;
+                @SectionNext.canceled += instance.OnSectionNext;
+                @MapZoomIn.started += instance.OnMapZoomIn;
+                @MapZoomIn.performed += instance.OnMapZoomIn;
+                @MapZoomIn.canceled += instance.OnMapZoomIn;
+                @MapZoomOut.started += instance.OnMapZoomOut;
+                @MapZoomOut.performed += instance.OnMapZoomOut;
+                @MapZoomOut.canceled += instance.OnMapZoomOut;
+                @Map.started += instance.OnMap;
+                @Map.performed += instance.OnMap;
+                @Map.canceled += instance.OnMap;
+                @Crafting.started += instance.OnCrafting;
+                @Crafting.performed += instance.OnCrafting;
+                @Crafting.canceled += instance.OnCrafting;
+                @Special.started += instance.OnSpecial;
+                @Special.performed += instance.OnSpecial;
+                @Special.canceled += instance.OnSpecial;
             }
         }
-        public interface IPlayerActions
+    }
+    public MenuActions @Menu => new MenuActions(this);
+    private int m_ControlSchemeAlphaSchemeIndex = -1;
+    public InputControlScheme ControlSchemeAlphaScheme
+    {
+        get
         {
-            void OnMovement(InputAction.CallbackContext context);
-            void OnJump(InputAction.CallbackContext context);
-            void OnAttack(InputAction.CallbackContext context);
-            void OnDash(InputAction.CallbackContext context);
-            void OnAttackSpell(InputAction.CallbackContext context);
-            void OnSelfSpell(InputAction.CallbackContext context);
-            void OnInteract(InputAction.CallbackContext context);
-            void OnShield(InputAction.CallbackContext context);
+            if (m_ControlSchemeAlphaSchemeIndex == -1) m_ControlSchemeAlphaSchemeIndex = asset.FindControlSchemeIndex("Control Scheme Alpha");
+            return asset.controlSchemes[m_ControlSchemeAlphaSchemeIndex];
         }
-        public interface IMenuActions
-        {
-            void OnSelectionChange(InputAction.CallbackContext context);
-            void OnMovement(InputAction.CallbackContext context);
-            void OnOK(InputAction.CallbackContext context);
-            void OnBack(InputAction.CallbackContext context);
-            void OnStart(InputAction.CallbackContext context);
-            void OnSelect(InputAction.CallbackContext context);
-            void OnSectionPrevious(InputAction.CallbackContext context);
-            void OnSectionNext(InputAction.CallbackContext context);
-            void OnMapZoomIn(InputAction.CallbackContext context);
-            void OnMapZoomOut(InputAction.CallbackContext context);
-            void OnMap(InputAction.CallbackContext context);
-            void OnCrafting(InputAction.CallbackContext context);
-            void OnSpecial(InputAction.CallbackContext context);
-        }
+    }
+    public interface IPlayerActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
+        void OnAttackSpell(InputAction.CallbackContext context);
+        void OnSelfSpell(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnShield(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnSelectionChange(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
+        void OnOK(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
+        void OnSectionPrevious(InputAction.CallbackContext context);
+        void OnSectionNext(InputAction.CallbackContext context);
+        void OnMapZoomIn(InputAction.CallbackContext context);
+        void OnMapZoomOut(InputAction.CallbackContext context);
+        void OnMap(InputAction.CallbackContext context);
+        void OnCrafting(InputAction.CallbackContext context);
+        void OnSpecial(InputAction.CallbackContext context);
     }
 }

@@ -1,12 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using UnityEngine;
 using Classes;
 using Static;
-using UI;
-using UnityEngine.InputSystem.iOS;
 
 public class GlobalShopManager : MonoBehaviour
 {
