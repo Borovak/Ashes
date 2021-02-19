@@ -165,7 +165,7 @@ SpriteRenderer:
   m_SortingLayerID: -1567155121
   m_SortingLayer: -8
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3117347838018342036, guid: e23c16e194cf0f049b615fe9c4ba291f,
+  m_Sprite: {fileID: -6830014305002191819, guid: e23c16e194cf0f049b615fe9c4ba291f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -929,7 +929,7 @@ MonoBehaviour:
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 2
   m_PointLightOuterRadius: 5
-  m_PointLightDistance: 3
+  m_PointLightDistance: 0.75
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0

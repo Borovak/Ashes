@@ -23,6 +23,7 @@ public class MenuController : MonoBehaviour
     public List<Vector2> choices => _choices.ToList();
     public GameObject GameUI;
     public GameObject ShopUI;
+    public GameObject CutsceneUI;
     public GameObject ActionMenu;
     public GameObject ActionMenuCrafting;
     public GameObject ActionMenuMap;
@@ -54,7 +55,7 @@ public class MenuController : MonoBehaviour
         _instance = this;
         MenuInputs.Start += StartPressed;
         MenuInputs.Select += SelectPressed;
-        MenuInputs.OK += OKPressed;
+        MenuInputs.Ok += OKPressed;
         MenuInputs.Back += BackPressed;
         MenuInputs.SelectionChangeUp += MoveUpPressed;
         MenuInputs.SelectionChangeDown += MoveDownPressed;
@@ -68,7 +69,7 @@ public class MenuController : MonoBehaviour
 
     void OnDisable()
     {
-        MenuInputs.OK -= OKPressed;
+        MenuInputs.Ok -= OKPressed;
         MenuInputs.Back -= BackPressed;
         MenuInputs.Start -= StartPressed;
         MenuInputs.Select -= SelectPressed;
@@ -149,11 +150,11 @@ public class MenuController : MonoBehaviour
             GlobalShopManager.currentShopId = -1;
         }
         _previousCanvasMode = canvasMode;
-        var menuObjects = new List<GameObject> { _instance.ActionMenu, _instance.ActionMenuCrafting, _instance.ActionMenuMap, _instance.SystemMenu, _instance.SystemMenuRoot, _instance.SystemMenuOptions, _instance.GameUI, _instance.ShopUI };
+        var menuObjects = new List<GameObject> { _instance.ActionMenu, _instance.ActionMenuCrafting, _instance.ActionMenuMap, _instance.SystemMenu, _instance.SystemMenuRoot, _instance.SystemMenuOptions, _instance.GameUI, _instance.ShopUI, _instance.CutsceneUI };
         var menuObjectsForEveryCanvasMode = new Dictionary<CanvasModes, List<GameObject>>{
             {CanvasModes.Game, new List<GameObject> {_instance.GameUI}},
             {CanvasModes.Shop, new List<GameObject> {_instance.ShopUI}},            
-            {CanvasModes.Cutscene, new List<GameObject> {}},
+            {CanvasModes.Cutscene, new List<GameObject> {_instance.CutsceneUI}},
             {CanvasModes.SystemMenu, new List<GameObject> {_instance.SystemMenu, _instance.SystemMenuRoot}},
             {CanvasModes.SystemMenuOptions, new List<GameObject> {_instance.SystemMenu, _instance.SystemMenuOptions}},
             {CanvasModes.ActionMenuCrafting, new List<GameObject> {_instance.ActionMenu, _instance.ActionMenuCrafting}},

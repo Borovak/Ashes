@@ -7,7 +7,7 @@ namespace AnimationBehaviours
 
         public int maxIndex;
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-        override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             animator.SetTrigger(animator.transform.localPosition.z > 0.1f ? "Far" : "Near");
             animator.SetInteger("Index", UnityEngine.Random.Range(0, maxIndex));

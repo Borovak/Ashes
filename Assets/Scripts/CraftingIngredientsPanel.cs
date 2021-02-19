@@ -38,7 +38,7 @@ public class CraftingIngredientsPanel : MonoBehaviour
         GlobalInventoryManager.RegisterToInventoryChange(-1, SetCraftButtonsVisibility);
         _itemManager = itemManagerObject.GetComponent<IItemManager>();
         _itemManager.SelectedItemChanged += OnSelectedItemChanged;
-        MenuInputs.OK += Craft;
+        MenuInputs.Ok += Craft;
         MenuInputs.Special += CraftMax;
     }
 
@@ -46,7 +46,7 @@ public class CraftingIngredientsPanel : MonoBehaviour
     {
         GlobalInventoryManager.UnregisterToInventoryChange(-1, SetCraftButtonsVisibility);
         _itemManager.SelectedItemChanged -= OnSelectedItemChanged;
-        MenuInputs.OK -= Craft;
+        MenuInputs.Ok -= Craft;
         MenuInputs.Special -= CraftMax;
         _item = null;
     }

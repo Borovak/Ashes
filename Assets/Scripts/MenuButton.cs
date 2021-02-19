@@ -38,13 +38,13 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
             if (!transform.parent.gameObject.TryGetComponent<MenuGroup>(out _menuGroup)) return;
             _menuGroup.Register(this);
         }
-        MenuInputs.OK += OnOk;
+        MenuInputs.Ok += OnOk;
     }
 
     void OnDisable()
     {
         if (_menuGroup == null) return;
-        MenuInputs.OK -= OnOk;
+        MenuInputs.Ok -= OnOk;
     }
 
     // Update is called once per frame

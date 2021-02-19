@@ -374,7 +374,7 @@
                     "id": "a2f7b40b-4c5d-46ce-a32d-c8c855dc2a8f",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press(behavior=2)"
                 },
                 {
                     "name": "Back",

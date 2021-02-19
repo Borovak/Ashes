@@ -38,6 +38,7 @@ TagManager:
   - FoliageGroup
   - Platform
   - MapRoom
+  - CutsceneSkipFillControl
   layers:
   - Default
   - TransparentFX

@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class MenuInputs : MonoBehaviour
 {
     public static event Action Start;
     public static event Action Select;
-    public static event Action OK;
+    public static event Action Ok;
     public static event Action Back;
     public static event Action Special;
     public static event Action SelectionChangeUp;
@@ -21,11 +22,18 @@ public class MenuInputs : MonoBehaviour
     public static event Action Crafting;
     public static event Action Map;
     public static Vector2 movement;
+    public static float okButtonPressedTimer;
 
 
     private Actions _actions;
     private Dictionary<InputAction, Action<InputAction.CallbackContext>> _pairingDictionary;
+    private bool _okButtonPressed;
 
+    void Update()
+    {
+        okButtonPressedTimer = _okButtonPressed ? okButtonPressedTimer + Time.deltaTime : 0f;
+    }
+    
     void OnEnable()
     {
         if (_actions == null)
@@ -76,7 +84,11 @@ public class MenuInputs : MonoBehaviour
 
     public void OnOK(InputAction.CallbackContext context)
     {
-        OK?.Invoke();
+        _okButtonPressed = context.ReadValueAsButton();
+        if (_okButtonPressed)
+        {
+            Ok?.Invoke();
+        }
     }
 
     public void OnBack(InputAction.CallbackContext context)

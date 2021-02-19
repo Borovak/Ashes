@@ -82,7 +82,7 @@ namespace SQLite4Unity3d
 			}
 		}
 
-		public static new NotNullConstraintViolationException New (SQLite3.Result r, string message)
+		public new static NotNullConstraintViolationException New (SQLite3.Result r, string message)
 		{
 			return new NotNullConstraintViolationException (r, message);
 		}

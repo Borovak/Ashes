@@ -7,7 +7,7 @@ namespace AnimationBehaviours
         private Transform _playerTransform;
     
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-        override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             var spriteRenderer = animator.GetComponent<SpriteRenderer>();
             var bossWolfController = animator.GetComponent<BossWolfController>();

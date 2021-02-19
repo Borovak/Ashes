@@ -16,7 +16,7 @@ namespace AnimationBehaviours
         // }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-        override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (stepSounds.Length == 0) return;
             if (_countdown > 0)
