@@ -462,6 +462,14 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": ""Press""
                 },
                 {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""45a288c3-f035-4fa9-ada0-fba338364e59"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
                     ""name"": ""Special"",
                     ""type"": ""Button"",
                     ""id"": ""06a9b880-2a1f-4103-92c6-74ab2edc2ddf"",
@@ -954,6 +962,17 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""action"": ""Special"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa0fedcb-668b-4309-bf61-8e992d6450ae"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1011,6 +1030,7 @@ public class @Actions : IInputActionCollection, IDisposable
         m_Menu_MapZoomOut = m_Menu.FindAction("MapZoomOut", throwIfNotFound: true);
         m_Menu_Map = m_Menu.FindAction("Map", throwIfNotFound: true);
         m_Menu_Crafting = m_Menu.FindAction("Crafting", throwIfNotFound: true);
+        m_Menu_Inventory = m_Menu.FindAction("Inventory", throwIfNotFound: true);
         m_Menu_Special = m_Menu.FindAction("Special", throwIfNotFound: true);
     }
 
@@ -1162,6 +1182,7 @@ public class @Actions : IInputActionCollection, IDisposable
     private readonly InputAction m_Menu_MapZoomOut;
     private readonly InputAction m_Menu_Map;
     private readonly InputAction m_Menu_Crafting;
+    private readonly InputAction m_Menu_Inventory;
     private readonly InputAction m_Menu_Special;
     public struct MenuActions
     {
@@ -1179,6 +1200,7 @@ public class @Actions : IInputActionCollection, IDisposable
         public InputAction @MapZoomOut => m_Wrapper.m_Menu_MapZoomOut;
         public InputAction @Map => m_Wrapper.m_Menu_Map;
         public InputAction @Crafting => m_Wrapper.m_Menu_Crafting;
+        public InputAction @Inventory => m_Wrapper.m_Menu_Inventory;
         public InputAction @Special => m_Wrapper.m_Menu_Special;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
@@ -1225,6 +1247,9 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Crafting.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
                 @Crafting.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
                 @Crafting.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnCrafting;
+                @Inventory.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnInventory;
                 @Special.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
                 @Special.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
                 @Special.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
@@ -1268,6 +1293,9 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Crafting.started += instance.OnCrafting;
                 @Crafting.performed += instance.OnCrafting;
                 @Crafting.canceled += instance.OnCrafting;
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
                 @Special.started += instance.OnSpecial;
                 @Special.performed += instance.OnSpecial;
                 @Special.canceled += instance.OnSpecial;
@@ -1309,6 +1337,7 @@ public class @Actions : IInputActionCollection, IDisposable
         void OnMapZoomOut(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
         void OnCrafting(InputAction.CallbackContext context);
+        void OnInventory(InputAction.CallbackContext context);
         void OnSpecial(InputAction.CallbackContext context);
     }
 }

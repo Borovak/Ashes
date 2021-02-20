@@ -449,6 +449,14 @@
                     "interactions": "Press"
                 },
                 {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "45a288c3-f035-4fa9-ada0-fba338364e59",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
                     "name": "Special",
                     "type": "Button",
                     "id": "06a9b880-2a1f-4103-92c6-74ab2edc2ddf",
@@ -939,6 +947,17 @@
                     "processors": "",
                     "groups": "Control Scheme Alpha",
                     "action": "Special",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa0fedcb-668b-4309-bf61-8e992d6450ae",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

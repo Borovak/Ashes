@@ -75,7 +75,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Glowing Hand Left
+    path: InvertOnFlipX/Glowing Hand Left
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -136,7 +136,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Glowing Hand Right
+    path: InvertOnFlipX/Glowing Hand Right
   m_ScaleCurves: []
   m_FloatCurves:
   - curve:
@@ -168,26 +168,6 @@ AnimationClip:
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves:
-  - curve:
-    - time: 0
-      value: {fileID: 622738868588470769, guid: e23c16e194cf0f049b615fe9c4ba291f,
-        type: 3}
-    - time: 0.016666668
-      value: {fileID: -7540680019638797904, guid: e23c16e194cf0f049b615fe9c4ba291f,
-        type: 3}
-    - time: 0.033333335
-      value: {fileID: 4976508487674317374, guid: e23c16e194cf0f049b615fe9c4ba291f,
-        type: 3}
-    - time: 0.2
-      value: {fileID: 5800297508529863251, guid: e23c16e194cf0f049b615fe9c4ba291f,
-        type: 3}
-    - time: 0.26666668
-      value: {fileID: -4258129344449941546, guid: e23c16e194cf0f049b615fe9c4ba291f,
-        type: 3}
-    attribute: m_Sprite
-    path: 
-    classID: 212
-    script: {fileID: 0}
   - curve:
     - time: 0
       value: {fileID: -3538375142266293011, guid: e23c16e194cf0f049b615fe9c4ba291f,
@@ -223,6 +203,21 @@ AnimationClip:
     path: Dash
     classID: 212
     script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 0}
+    - time: 0.016666668
+      value: {fileID: 0}
+    - time: 0.033333335
+      value: {fileID: 0}
+    - time: 0.2
+      value: {fileID: 0}
+    - time: 0.26666668
+      value: {fileID: 0}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -231,14 +226,14 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3335259645
+      path: 2736546381
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 873707837
+      path: 4279753430
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -252,25 +247,20 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    - serializedVersion: 2
       path: 995914302
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 622738868588470769, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
-    - {fileID: -7540680019638797904, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
-    - {fileID: 4976508487674317374, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
-    - {fileID: 5800297508529863251, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
-    - {fileID: -4258129344449941546, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
     - {fileID: -3538375142266293011, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
     - {fileID: -1130147413755469729, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
     - {fileID: -9144256488797163237, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
@@ -281,6 +271,11 @@ AnimationClip:
     - {fileID: 3143264172091800612, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
     - {fileID: 3143264172091800612, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
     - {fileID: -6990168213470648336, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -363,7 +358,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Glowing Hand Left
+    path: InvertOnFlipX/Glowing Hand Left
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -427,7 +422,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Glowing Hand Left
+    path: InvertOnFlipX/Glowing Hand Left
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -491,7 +486,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Glowing Hand Left
+    path: InvertOnFlipX/Glowing Hand Left
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -555,7 +550,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Glowing Hand Right
+    path: InvertOnFlipX/Glowing Hand Right
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -619,7 +614,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Glowing Hand Right
+    path: InvertOnFlipX/Glowing Hand Right
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -683,7 +678,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Glowing Hand Right
+    path: InvertOnFlipX/Glowing Hand Right
     classID: 4
     script: {fileID: 0}
   - curve:

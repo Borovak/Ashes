@@ -16,7 +16,8 @@ public class MenuController : MonoBehaviour
         SystemMenu,
         SystemMenuOptions,
         ActionMenuCrafting,
-        ActionMenuMap
+        ActionMenuMap,
+        ActionMenuInventory,
     }
 
     public static event Action OnOK;
@@ -25,6 +26,7 @@ public class MenuController : MonoBehaviour
     public GameObject ShopUI;
     public GameObject CutsceneUI;
     public GameObject ActionMenu;
+    public GameObject ActionMenuInventory;
     public GameObject ActionMenuCrafting;
     public GameObject ActionMenuMap;
     public GameObject SystemMenu;
@@ -61,6 +63,7 @@ public class MenuController : MonoBehaviour
         MenuInputs.SelectionChangeDown += MoveDownPressed;
         MenuInputs.SelectionChangeLeft += MoveLeftPressed;
         MenuInputs.SelectionChangeRight += MoveRightPressed;
+        MenuInputs.Inventory += InventoryPressed;
         MenuInputs.Crafting += CraftingPressed;
         MenuInputs.Map += MapPressed;
         UIShopController.OpenShopRequired += OnOpenShopRequired;
@@ -77,6 +80,7 @@ public class MenuController : MonoBehaviour
         MenuInputs.SelectionChangeDown -= MoveDownPressed;
         MenuInputs.SelectionChangeLeft -= MoveLeftPressed;
         MenuInputs.SelectionChangeRight -= MoveRightPressed;
+        MenuInputs.Inventory -= InventoryPressed;
         MenuInputs.Crafting -= CraftingPressed;
         MenuInputs.Map -= MapPressed;
         UIShopController.OpenShopRequired -= OnOpenShopRequired;
@@ -129,17 +133,24 @@ public class MenuController : MonoBehaviour
         _animator.SetBool("OK", false);
     }
 
+    private void InventoryPressed()
+    {
+        _animator.SetTrigger("Inventory");
+        ActionMenuManager.ChangeSection(0);
+        //SelectPressed();
+    }
+
     private void CraftingPressed()
     {
         _animator.SetTrigger("Crafting");
-        ActionMenuManager.ChangeSection(0);
+        ActionMenuManager.ChangeSection(1);
         //SelectPressed();
     }
 
     private void MapPressed()
     {
         _animator.SetTrigger("Map");
-        ActionMenuManager.ChangeSection(1);
+        ActionMenuManager.ChangeSection(2);
         //SelectPressed();
     }
 
@@ -150,13 +161,14 @@ public class MenuController : MonoBehaviour
             GlobalShopManager.currentShopId = -1;
         }
         _previousCanvasMode = canvasMode;
-        var menuObjects = new List<GameObject> { _instance.ActionMenu, _instance.ActionMenuCrafting, _instance.ActionMenuMap, _instance.SystemMenu, _instance.SystemMenuRoot, _instance.SystemMenuOptions, _instance.GameUI, _instance.ShopUI, _instance.CutsceneUI };
+        var menuObjects = new List<GameObject> { _instance.ActionMenu, _instance.ActionMenuInventory, _instance.ActionMenuCrafting, _instance.ActionMenuMap, _instance.SystemMenu, _instance.SystemMenuRoot, _instance.SystemMenuOptions, _instance.GameUI, _instance.ShopUI, _instance.CutsceneUI };
         var menuObjectsForEveryCanvasMode = new Dictionary<CanvasModes, List<GameObject>>{
             {CanvasModes.Game, new List<GameObject> {_instance.GameUI}},
             {CanvasModes.Shop, new List<GameObject> {_instance.ShopUI}},            
             {CanvasModes.Cutscene, new List<GameObject> {_instance.CutsceneUI}},
             {CanvasModes.SystemMenu, new List<GameObject> {_instance.SystemMenu, _instance.SystemMenuRoot}},
             {CanvasModes.SystemMenuOptions, new List<GameObject> {_instance.SystemMenu, _instance.SystemMenuOptions}},
+            {CanvasModes.ActionMenuInventory, new List<GameObject> {_instance.ActionMenu, _instance.ActionMenuInventory}},
             {CanvasModes.ActionMenuCrafting, new List<GameObject> {_instance.ActionMenu, _instance.ActionMenuCrafting}},
             {CanvasModes.ActionMenuMap, new List<GameObject> {_instance.ActionMenu, _instance.ActionMenuMap}},
         };

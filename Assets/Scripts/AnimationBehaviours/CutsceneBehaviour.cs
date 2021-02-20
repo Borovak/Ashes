@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UI;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
@@ -6,19 +7,18 @@ namespace AnimationBehaviours
 {
     public class CutsceneBehaviour : StateMachineBehaviour
     {
-        private const float SkipDelay = 2f;
-        
         private bool _cutsceneDone;
         private bool _skip;
-        private Image _skipFillControl;
+        private CutsceneSkipController _cutsceneSkipController;
         private VideoPlayer _videoPlayer;
 
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            _cutsceneSkipController = GameObject.FindGameObjectWithTag("CutsceneSkipControl").GetComponent<CutsceneSkipController>();
+            _cutsceneSkipController.Reset();
             _cutsceneDone = false;
             _skip = false;
-            _skipFillControl = GameObject.FindGameObjectWithTag("CutsceneSkipFillControl").GetComponent<Image>();
             _videoPlayer = animator.GetComponent<VideoPlayer>();
             _videoPlayer.enabled = true;
             _videoPlayer.Play();
@@ -40,8 +40,7 @@ namespace AnimationBehaviours
         {
             if (_cutsceneDone) return;
             //Skip
-            _skipFillControl.fillAmount = MenuInputs.okButtonPressedTimer / SkipDelay;
-            if (MenuInputs.okButtonPressedTimer > SkipDelay)
+            if (MenuInputs.okButtonPressedTimer > CutsceneSkipController.SkipDelay)
             {
                 _cutsceneDone = true;
                 _skip = true;

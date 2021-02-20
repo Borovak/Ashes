@@ -84,7 +84,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Glowing Hand Left
+    path: InvertOnFlipX/Glowing Hand Left
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -154,7 +154,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Glowing Hand Right
+    path: InvertOnFlipX/Glowing Hand Right
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
@@ -204,14 +204,14 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3335259645
+      path: 2736546381
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 873707837
+      path: 4279753430
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -327,7 +327,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Glowing Hand Left
+    path: InvertOnFlipX/Glowing Hand Left
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -400,7 +400,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Glowing Hand Left
+    path: InvertOnFlipX/Glowing Hand Left
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -473,7 +473,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Glowing Hand Left
+    path: InvertOnFlipX/Glowing Hand Left
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -546,7 +546,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Glowing Hand Right
+    path: InvertOnFlipX/Glowing Hand Right
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -619,7 +619,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Glowing Hand Right
+    path: InvertOnFlipX/Glowing Hand Right
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -692,7 +692,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Glowing Hand Right
+    path: InvertOnFlipX/Glowing Hand Right
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []

@@ -12,6 +12,7 @@ namespace Player
         public float transitionTime = 1f;
         public bool isGrounded;
         public bool hasDoubleJump;
+        public Transform invertOnFlipXGroup;
 
         public override bool canFly => false;
 
@@ -124,13 +125,21 @@ namespace Player
 
         private void SpriteFlipping(ref Vector2 move)
         {
-            bool flipSprite = (transform.localScale.x == -1f ? (move.x > 0.01f) : (move.x < -0.01f));
+            // bool flipSprite = (transform.localScale.x == -1f ? (move.x > 0.01f) : (move.x < -0.01f));
+            // if (flipSprite)
+            // {
+            //     var scale = transform.localScale;
+            //     scale.x = -scale.x;
+            //     transform.localScale = scale;
+            // }
+            bool flipSprite = _spriteRenderer.flipX ? move.x > 0.01f : move.x < -0.01f;
             if (flipSprite)
             {
-                var scale = transform.localScale;
-                scale.x = -scale.x;
-                transform.localScale = scale;
+                _spriteRenderer.flipX = !_spriteRenderer.flipX;
             }
+            var scale = invertOnFlipXGroup.localScale;
+            scale.x = _spriteRenderer.flipX ? -1f : 1f;
+            invertOnFlipXGroup.localScale = scale;
         }
 
         private void CheckIfLanding()

@@ -19,6 +19,7 @@ public class MenuInputs : MonoBehaviour
     public static event Action MapZoomOut;
     public static event Action SectionPrevious;
     public static event Action SectionNext;
+    public static event Action Inventory;
     public static event Action Crafting;
     public static event Action Map;
     public static Vector2 movement;
@@ -52,6 +53,7 @@ public class MenuInputs : MonoBehaviour
                 {_actions.Menu.SectionPrevious, OnSectionPrevious},
                 {_actions.Menu.MapZoomIn, OnMapZoomIn},
                 {_actions.Menu.MapZoomOut, OnMapZoomOut},
+                {_actions.Menu.Inventory, OnInventory},
                 {_actions.Menu.Crafting, OnCrafting},
                 {_actions.Menu.Map, OnMap},
             };
@@ -145,6 +147,11 @@ public class MenuInputs : MonoBehaviour
     public void OnMapZoomOut(InputAction.CallbackContext context)
     {
         MapZoomOut?.Invoke();
+    }
+
+    public void OnInventory(InputAction.CallbackContext context)
+    {
+        Inventory?.Invoke();
     }
 
     public void OnMap(InputAction.CallbackContext context)

@@ -38,7 +38,7 @@ TagManager:
   - FoliageGroup
   - Platform
   - MapRoom
-  - CutsceneSkipFillControl
+  - CutsceneSkipControl
   layers:
   - Default
   - TransparentFX
@@ -81,6 +81,9 @@ TagManager:
     locked: 0
   - name: GroundBackground
     uniqueID: 247722665
+    locked: 0
+  - name: SavePoints
+    uniqueID: 2972933451
     locked: 0
   - name: Player
     uniqueID: 2727812175

@@ -137,7 +137,7 @@ namespace Static
                 var savePointResource = Resources.Load<GameObject>("SavePoint");
                 foreach (var xeSavePoint in xeRoom.Elements("SavePoint"))
                 {
-                    var savePointGameObject = GameObject.Instantiate<GameObject>(savePointResource, savePointsFolder.transform);
+                    var savePointGameObject = PrefabUtility.InstantiatePrefab(savePointResource, savePointsFolder.transform) as GameObject;
                     var savePointUnscaledX = int.TryParse(xeSavePoint.Attribute("x")?.Value ?? "", out var x) ? Convert.ToSingle(x + 1) : 0f;
                     var savePointUnscaledY = int.TryParse(xeSavePoint.Attribute("y")?.Value ?? "", out var y) ? Convert.ToSingle(y + 1) : 0f;
                     var savePointX = savePointUnscaledX * scale;

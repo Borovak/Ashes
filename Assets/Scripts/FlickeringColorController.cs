@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class FlickeringColorController : MonoBehaviour
 {
@@ -13,8 +14,10 @@ public class FlickeringColorController : MonoBehaviour
     public Color colorA;
     public Color colorB;
     public float period = 0.5f;
+    public Light2D light;
 
     private bool _isDisabled;
+    private SpriteRenderer _spriteRenderer;
     
     void OnEnable()
     {
@@ -25,6 +28,19 @@ public class FlickeringColorController : MonoBehaviour
     void OnDisable()
     {
         _isDisabled = true;
+    }
+
+    void Start()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    
+    void Update()
+    {
+        if (light != null)
+        {
+            light.color = _spriteRenderer.color;
+        }
     }
 
     private void ChangeColor()
