@@ -5,10 +5,9 @@ namespace UI
 {
     public class CutsceneSkipController : MonoBehaviour
     {
-        public const float SkipDelay = 2f;
         private const float SkipVisibilityTimeout = 3f;
-    
-        public Image fillImage;
+
+        public UIControllerButton uiControllerButton;
 
         private float _skipTimer;
         private bool _visibility;
@@ -25,8 +24,7 @@ namespace UI
         void Update()
         {
             //Change fill amount on circle
-            fillImage.fillAmount = MenuInputs.okButtonPressedTimer / SkipDelay;
-            if (fillImage.fillAmount > 0)
+            if (uiControllerButton.IsPressed)
             {
                 _skipTimer = SkipVisibilityTimeout;
             }

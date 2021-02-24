@@ -8,49 +8,47 @@ using UnityEngine.UI;
 
 public class DialogChoicePanel : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
-    public static event Action<DialogChoicePanel> SelectedDialogChoiceChanged;
-    public Color color;
+    public event Action<int> SelectionChanged;
+    public event Action<int> DialogClicked;
     public TextMeshProUGUI textControl;
 
-    private Action _onClick;
     private Image _image;
+    private int _index;
+    private readonly Color _colorSelected = new Color(1f, 1f, 0f, 1f);
     private readonly Color _colorTransparent = new Color(0f, 0f, 0f, 0f);
 
-
-    public void UpdateContent(string text, Action onClick)
+    public void UpdateContent(string text, int index)
     {
         textControl.text = text;
-        _onClick = onClick;
-        OnSelectedDialogChoiceChanged(null);
+        _index = index;
+        UpdateControls(index == 0);
     }
 
+    private void OnEnable()
+    {
+        DialogController.SelectedDialogChanged += OnSelectedDialogChanged;
+    }
+
+    private void OnDisable()
+    {
+        DialogController.SelectedDialogChanged -= OnSelectedDialogChanged;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         _image = GetComponent<Image>();
-        OnSelectedDialogChoiceChanged(null);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnSelectedDialogChanged(int selectedIndex)
     {
+        UpdateControls(_index == selectedIndex);
     }
 
-    void OnEnable()
+    private void UpdateControls(bool isSelected)
     {
-        SelectedDialogChoiceChanged += OnSelectedDialogChoiceChanged;
-    }
-
-    void OnDisable()
-    {
-        SelectedDialogChoiceChanged -= OnSelectedDialogChoiceChanged;
-    }
-
-    private void OnSelectedDialogChoiceChanged(DialogChoicePanel selectedPanel)
-    {
-        var backColor = selectedPanel == this ? color : _colorTransparent;
-        var foreColor = selectedPanel == this ? Color.black : color;
+        var backColor = isSelected ? _colorSelected : _colorTransparent;
+        var foreColor = isSelected ? Color.black : _colorSelected;
         _image = GetComponent<Image>();
         _image.color = backColor;
         textControl.color = foreColor;
@@ -58,16 +56,16 @@ public class DialogChoicePanel : MonoBehaviour, IPointerEnterHandler, IPointerCl
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
-        SelectedDialogChoiceChanged?.Invoke(this);
+        SelectionChanged?.Invoke(_index);
     }
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
-        _onClick?.Invoke();
+        DialogClicked?.Invoke(_index);
     }
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
-        SelectedDialogChoiceChanged?.Invoke(this);
+        SelectionChanged?.Invoke(_index);
     }
 }

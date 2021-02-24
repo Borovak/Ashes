@@ -382,70 +382,6 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""OK"",
-                    ""type"": ""Button"",
-                    ""id"": ""a2f7b40b-4c5d-46ce-a32d-c8c855dc2a8f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press(behavior=2)""
-                },
-                {
-                    ""name"": ""Back"",
-                    ""type"": ""Button"",
-                    ""id"": ""0a1456cc-ad1c-47b8-9756-cf26ae0464a0"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""Start"",
-                    ""type"": ""Button"",
-                    ""id"": ""d7b16516-bd5e-4777-968d-d1797892724d"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""Select"",
-                    ""type"": ""Button"",
-                    ""id"": ""a36ab08a-a456-49c4-9d52-e879d0198f7d"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""SectionPrevious"",
-                    ""type"": ""Button"",
-                    ""id"": ""73135f96-fb79-4869-9465-be820cb57f3a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""SectionNext"",
-                    ""type"": ""Button"",
-                    ""id"": ""f825c761-529f-4089-891c-f4cae751cb7d"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""MapZoomIn"",
-                    ""type"": ""Button"",
-                    ""id"": ""d2afb073-b029-40c7-a331-ace487d429ed"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""MapZoomOut"",
-                    ""type"": ""Button"",
-                    ""id"": ""c233f7c5-bfaf-460c-9f45-6e445b1fbdb6"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
                     ""name"": ""Map"",
                     ""type"": ""Button"",
                     ""id"": ""99aee9de-de17-4acb-8c4c-746abaa86978"",
@@ -470,12 +406,84 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": ""Press""
                 },
                 {
-                    ""name"": ""Special"",
+                    ""name"": ""A"",
                     ""type"": ""Button"",
-                    ""id"": ""06a9b880-2a1f-4103-92c6-74ab2edc2ddf"",
+                    ""id"": ""f37c53cb-019d-44b2-b992-f7e12373acba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""X"",
+                    ""type"": ""Button"",
+                    ""id"": ""b40950f1-fc23-4600-bd51-611b7f645b0f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""B"",
+                    ""type"": ""Button"",
+                    ""id"": ""74baa7c8-c802-4971-8531-d26e0ba98ec2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""Y"",
+                    ""type"": ""Button"",
+                    ""id"": ""2a23dc54-7fb9-43ec-a75a-9c2b2f7c6f78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7b16516-bd5e-4777-968d-d1797892724d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""a36ab08a-a456-49c4-9d52-e879d0198f7d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""LB"",
+                    ""type"": ""Button"",
+                    ""id"": ""73135f96-fb79-4869-9465-be820cb57f3a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""RB"",
+                    ""type"": ""Button"",
+                    ""id"": ""f825c761-529f-4089-891c-f4cae751cb7d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""LT"",
+                    ""type"": ""Button"",
+                    ""id"": ""c233f7c5-bfaf-460c-9f45-6e445b1fbdb6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""RT"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2afb073-b029-40c7-a331-ace487d429ed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
                 }
             ],
             ""bindings"": [
@@ -645,171 +653,6 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""62c0fa14-9093-46de-a930-2627ce6e28e9"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""OK"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""989256fb-fab2-4a74-99d7-d71b758d941f"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""OK"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c44926d6-1a93-4b63-9212-2d8a3beee978"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Back"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""25018f8c-970f-4fc7-b25d-8b151d02035f"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Back"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5c623395-cf4b-4fbe-b166-973a84af560f"",
-                    ""path"": ""<Gamepad>/start"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Start"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""13fab130-7a11-4d68-9622-63ccf38c16a5"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Start"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""228f4c78-723d-42f5-bea4-2583b7beaf71"",
-                    ""path"": ""<Gamepad>/select"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cb32f62b-bc00-4ea8-b782-a6c1705ac5f5"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""SectionPrevious"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ecef1dd5-4737-4644-90ee-5b8eecff8e37"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""SectionPrevious"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""59b467ac-9f02-4de5-ae9d-d1f2aee7b854"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""SectionNext"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cdf6464e-593d-4564-a84d-cb7916dbac60"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""SectionNext"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d720873f-ca7e-4122-a6a4-d7bfa752bba9"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""MapZoomIn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""66359c4e-b178-4229-949b-5a22a18a41a2"",
-                    ""path"": ""<Keyboard>/numpadPlus"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""MapZoomIn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b6aa5285-fcd7-4e8e-acb3-01349721a9b9"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""MapZoomOut"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""917e1ecb-e581-467c-bb76-a08df450690d"",
-                    ""path"": ""<Keyboard>/numpadMinus"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""MapZoomOut"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""WASD"",
                     ""id"": ""b6fe5f39-6f3e-48a4-84c2-10a0d829aba1"",
                     ""path"": ""2DVector"",
@@ -943,12 +786,133 @@ public class @Actions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2713365a-ab23-4b35-ad26-8b952ac5c5cd"",
+                    ""id"": ""fa0fedcb-668b-4309-bf61-8e992d6450ae"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""411af6c6-ffa4-4167-b91f-5ed214b5f5a0"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2978a2fc-c6f3-46a5-8285-5d29306131ab"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Special"",
+                    ""action"": ""X"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""777513f4-792b-45bb-a161-12b4c07a03ea"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""B"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c67abd0a-797e-4b2f-8371-45c3ad5dc20a"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Y"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c623395-cf4b-4fbe-b166-973a84af560f"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""13fab130-7a11-4d68-9622-63ccf38c16a5"",
+                    ""path"": ""<Keyboard>/f10"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb32f62b-bc00-4ea8-b782-a6c1705ac5f5"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""LB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ecef1dd5-4737-4644-90ee-5b8eecff8e37"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""LB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""228f4c78-723d-42f5-bea4-2583b7beaf71"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59b467ac-9f02-4de5-ae9d-d1f2aee7b854"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cdf6464e-593d-4564-a84d-cb7916dbac60"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RB"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -959,18 +923,73 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Special"",
+                    ""action"": ""X"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fa0fedcb-668b-4309-bf61-8e992d6450ae"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""id"": ""989256fb-fab2-4a74-99d7-d71b758d941f"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Inventory"",
+                    ""action"": ""A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25018f8c-970f-4fc7-b25d-8b151d02035f"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""B"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d720873f-ca7e-4122-a6a4-d7bfa752bba9"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RT"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66359c4e-b178-4229-949b-5a22a18a41a2"",
+                    ""path"": ""<Keyboard>/numpadPlus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RT"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b6aa5285-fcd7-4e8e-acb3-01349721a9b9"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""LT"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""917e1ecb-e581-467c-bb76-a08df450690d"",
+                    ""path"": ""<Keyboard>/numpadMinus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""LT"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1020,18 +1039,19 @@ public class @Actions : IInputActionCollection, IDisposable
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_SelectionChange = m_Menu.FindAction("Selection Change", throwIfNotFound: true);
         m_Menu_Movement = m_Menu.FindAction("Movement", throwIfNotFound: true);
-        m_Menu_OK = m_Menu.FindAction("OK", throwIfNotFound: true);
-        m_Menu_Back = m_Menu.FindAction("Back", throwIfNotFound: true);
-        m_Menu_Start = m_Menu.FindAction("Start", throwIfNotFound: true);
-        m_Menu_Select = m_Menu.FindAction("Select", throwIfNotFound: true);
-        m_Menu_SectionPrevious = m_Menu.FindAction("SectionPrevious", throwIfNotFound: true);
-        m_Menu_SectionNext = m_Menu.FindAction("SectionNext", throwIfNotFound: true);
-        m_Menu_MapZoomIn = m_Menu.FindAction("MapZoomIn", throwIfNotFound: true);
-        m_Menu_MapZoomOut = m_Menu.FindAction("MapZoomOut", throwIfNotFound: true);
         m_Menu_Map = m_Menu.FindAction("Map", throwIfNotFound: true);
         m_Menu_Crafting = m_Menu.FindAction("Crafting", throwIfNotFound: true);
         m_Menu_Inventory = m_Menu.FindAction("Inventory", throwIfNotFound: true);
-        m_Menu_Special = m_Menu.FindAction("Special", throwIfNotFound: true);
+        m_Menu_A = m_Menu.FindAction("A", throwIfNotFound: true);
+        m_Menu_X = m_Menu.FindAction("X", throwIfNotFound: true);
+        m_Menu_B = m_Menu.FindAction("B", throwIfNotFound: true);
+        m_Menu_Y = m_Menu.FindAction("Y", throwIfNotFound: true);
+        m_Menu_Start = m_Menu.FindAction("Start", throwIfNotFound: true);
+        m_Menu_Select = m_Menu.FindAction("Select", throwIfNotFound: true);
+        m_Menu_LB = m_Menu.FindAction("LB", throwIfNotFound: true);
+        m_Menu_RB = m_Menu.FindAction("RB", throwIfNotFound: true);
+        m_Menu_LT = m_Menu.FindAction("LT", throwIfNotFound: true);
+        m_Menu_RT = m_Menu.FindAction("RT", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1172,36 +1192,38 @@ public class @Actions : IInputActionCollection, IDisposable
     private IMenuActions m_MenuActionsCallbackInterface;
     private readonly InputAction m_Menu_SelectionChange;
     private readonly InputAction m_Menu_Movement;
-    private readonly InputAction m_Menu_OK;
-    private readonly InputAction m_Menu_Back;
-    private readonly InputAction m_Menu_Start;
-    private readonly InputAction m_Menu_Select;
-    private readonly InputAction m_Menu_SectionPrevious;
-    private readonly InputAction m_Menu_SectionNext;
-    private readonly InputAction m_Menu_MapZoomIn;
-    private readonly InputAction m_Menu_MapZoomOut;
     private readonly InputAction m_Menu_Map;
     private readonly InputAction m_Menu_Crafting;
     private readonly InputAction m_Menu_Inventory;
-    private readonly InputAction m_Menu_Special;
+    private readonly InputAction m_Menu_A;
+    private readonly InputAction m_Menu_X;
+    private readonly InputAction m_Menu_B;
+    private readonly InputAction m_Menu_Y;
+    private readonly InputAction m_Menu_Start;
+    private readonly InputAction m_Menu_Select;
+    private readonly InputAction m_Menu_LB;
+    private readonly InputAction m_Menu_RB;
+    private readonly InputAction m_Menu_LT;
+    private readonly InputAction m_Menu_RT;
     public struct MenuActions
     {
         private @Actions m_Wrapper;
         public MenuActions(@Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @SelectionChange => m_Wrapper.m_Menu_SelectionChange;
         public InputAction @Movement => m_Wrapper.m_Menu_Movement;
-        public InputAction @OK => m_Wrapper.m_Menu_OK;
-        public InputAction @Back => m_Wrapper.m_Menu_Back;
-        public InputAction @Start => m_Wrapper.m_Menu_Start;
-        public InputAction @Select => m_Wrapper.m_Menu_Select;
-        public InputAction @SectionPrevious => m_Wrapper.m_Menu_SectionPrevious;
-        public InputAction @SectionNext => m_Wrapper.m_Menu_SectionNext;
-        public InputAction @MapZoomIn => m_Wrapper.m_Menu_MapZoomIn;
-        public InputAction @MapZoomOut => m_Wrapper.m_Menu_MapZoomOut;
         public InputAction @Map => m_Wrapper.m_Menu_Map;
         public InputAction @Crafting => m_Wrapper.m_Menu_Crafting;
         public InputAction @Inventory => m_Wrapper.m_Menu_Inventory;
-        public InputAction @Special => m_Wrapper.m_Menu_Special;
+        public InputAction @A => m_Wrapper.m_Menu_A;
+        public InputAction @X => m_Wrapper.m_Menu_X;
+        public InputAction @B => m_Wrapper.m_Menu_B;
+        public InputAction @Y => m_Wrapper.m_Menu_Y;
+        public InputAction @Start => m_Wrapper.m_Menu_Start;
+        public InputAction @Select => m_Wrapper.m_Menu_Select;
+        public InputAction @LB => m_Wrapper.m_Menu_LB;
+        public InputAction @RB => m_Wrapper.m_Menu_RB;
+        public InputAction @LT => m_Wrapper.m_Menu_LT;
+        public InputAction @RT => m_Wrapper.m_Menu_RT;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1217,30 +1239,6 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Movement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
-                @OK.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
-                @OK.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
-                @OK.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnOK;
-                @Back.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
-                @Back.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
-                @Back.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
-                @Start.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
-                @Start.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
-                @Start.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
-                @Select.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
-                @Select.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
-                @Select.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
-                @SectionPrevious.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
-                @SectionPrevious.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
-                @SectionPrevious.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionPrevious;
-                @SectionNext.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
-                @SectionNext.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
-                @SectionNext.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSectionNext;
-                @MapZoomIn.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
-                @MapZoomIn.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
-                @MapZoomIn.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomIn;
-                @MapZoomOut.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
-                @MapZoomOut.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
-                @MapZoomOut.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMapZoomOut;
                 @Map.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
                 @Map.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
                 @Map.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
@@ -1250,9 +1248,36 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Inventory.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnInventory;
                 @Inventory.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnInventory;
                 @Inventory.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnInventory;
-                @Special.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
-                @Special.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
-                @Special.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSpecial;
+                @A.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnA;
+                @A.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnA;
+                @A.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnA;
+                @X.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnX;
+                @X.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnX;
+                @X.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnX;
+                @B.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnB;
+                @B.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnB;
+                @B.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnB;
+                @Y.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnY;
+                @Y.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnY;
+                @Y.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnY;
+                @Start.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
+                @Select.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
+                @LB.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnLB;
+                @LB.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnLB;
+                @LB.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnLB;
+                @RB.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnRB;
+                @RB.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnRB;
+                @RB.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnRB;
+                @LT.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnLT;
+                @LT.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnLT;
+                @LT.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnLT;
+                @RT.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnRT;
+                @RT.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnRT;
+                @RT.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnRT;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -1263,30 +1288,6 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @OK.started += instance.OnOK;
-                @OK.performed += instance.OnOK;
-                @OK.canceled += instance.OnOK;
-                @Back.started += instance.OnBack;
-                @Back.performed += instance.OnBack;
-                @Back.canceled += instance.OnBack;
-                @Start.started += instance.OnStart;
-                @Start.performed += instance.OnStart;
-                @Start.canceled += instance.OnStart;
-                @Select.started += instance.OnSelect;
-                @Select.performed += instance.OnSelect;
-                @Select.canceled += instance.OnSelect;
-                @SectionPrevious.started += instance.OnSectionPrevious;
-                @SectionPrevious.performed += instance.OnSectionPrevious;
-                @SectionPrevious.canceled += instance.OnSectionPrevious;
-                @SectionNext.started += instance.OnSectionNext;
-                @SectionNext.performed += instance.OnSectionNext;
-                @SectionNext.canceled += instance.OnSectionNext;
-                @MapZoomIn.started += instance.OnMapZoomIn;
-                @MapZoomIn.performed += instance.OnMapZoomIn;
-                @MapZoomIn.canceled += instance.OnMapZoomIn;
-                @MapZoomOut.started += instance.OnMapZoomOut;
-                @MapZoomOut.performed += instance.OnMapZoomOut;
-                @MapZoomOut.canceled += instance.OnMapZoomOut;
                 @Map.started += instance.OnMap;
                 @Map.performed += instance.OnMap;
                 @Map.canceled += instance.OnMap;
@@ -1296,9 +1297,36 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
-                @Special.started += instance.OnSpecial;
-                @Special.performed += instance.OnSpecial;
-                @Special.canceled += instance.OnSpecial;
+                @A.started += instance.OnA;
+                @A.performed += instance.OnA;
+                @A.canceled += instance.OnA;
+                @X.started += instance.OnX;
+                @X.performed += instance.OnX;
+                @X.canceled += instance.OnX;
+                @B.started += instance.OnB;
+                @B.performed += instance.OnB;
+                @B.canceled += instance.OnB;
+                @Y.started += instance.OnY;
+                @Y.performed += instance.OnY;
+                @Y.canceled += instance.OnY;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+                @LB.started += instance.OnLB;
+                @LB.performed += instance.OnLB;
+                @LB.canceled += instance.OnLB;
+                @RB.started += instance.OnRB;
+                @RB.performed += instance.OnRB;
+                @RB.canceled += instance.OnRB;
+                @LT.started += instance.OnLT;
+                @LT.performed += instance.OnLT;
+                @LT.canceled += instance.OnLT;
+                @RT.started += instance.OnRT;
+                @RT.performed += instance.OnRT;
+                @RT.canceled += instance.OnRT;
             }
         }
     }
@@ -1327,17 +1355,18 @@ public class @Actions : IInputActionCollection, IDisposable
     {
         void OnSelectionChange(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
-        void OnOK(InputAction.CallbackContext context);
-        void OnBack(InputAction.CallbackContext context);
-        void OnStart(InputAction.CallbackContext context);
-        void OnSelect(InputAction.CallbackContext context);
-        void OnSectionPrevious(InputAction.CallbackContext context);
-        void OnSectionNext(InputAction.CallbackContext context);
-        void OnMapZoomIn(InputAction.CallbackContext context);
-        void OnMapZoomOut(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
         void OnCrafting(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
-        void OnSpecial(InputAction.CallbackContext context);
+        void OnA(InputAction.CallbackContext context);
+        void OnX(InputAction.CallbackContext context);
+        void OnB(InputAction.CallbackContext context);
+        void OnY(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
+        void OnLB(InputAction.CallbackContext context);
+        void OnRB(InputAction.CallbackContext context);
+        void OnLT(InputAction.CallbackContext context);
+        void OnRT(InputAction.CallbackContext context);
     }
 }

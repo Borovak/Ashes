@@ -1,4 +1,5 @@
-﻿using UI;
+﻿using Classes;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -15,7 +16,7 @@ namespace AnimationBehaviours
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            _cutsceneSkipController = GameObject.FindGameObjectWithTag("CutsceneSkipControl").GetComponent<CutsceneSkipController>();
+            _cutsceneSkipController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<MenuController>().CutsceneUISkipControl.GetComponent<CutsceneSkipController>();
             _cutsceneSkipController.Reset();
             _cutsceneDone = false;
             _skip = false;
@@ -40,7 +41,7 @@ namespace AnimationBehaviours
         {
             if (_cutsceneDone) return;
             //Skip
-            if (MenuInputs.okButtonPressedTimer > CutsceneSkipController.SkipDelay)
+            if (ControllerInputs.controllerButtons[Constants.ControllerButtons.A].PressedTime > Constants.BUTTON_FILLRATE)
             {
                 _cutsceneDone = true;
                 _skip = true;

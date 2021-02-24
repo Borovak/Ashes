@@ -55,18 +55,23 @@ public class GlobalInventoryManager : MonoBehaviour
 
     public static bool TryGetInventory(int id, out Inventory inventory)
     {
+        if (_inventories == null)
+        {
+            inventory = null;
+            return false;
+        }
         return _inventories.TryGetValue(id, out inventory);
     }
 
     public static void RegisterToInventoryChange(int id, Action onInventoryChanged)
     {
-        if (!_inventories.TryGetValue(id, out var inventory)) return;
+        if (_inventories == null || !_inventories.TryGetValue(id, out var inventory)) return;
         inventory.InventoryChanged += onInventoryChanged;
     }
 
     public static void UnregisterToInventoryChange(int id, Action onInventoryChanged)
     {
-        if (!_inventories.TryGetValue(id, out var inventory)) return;
+        if (_inventories == null || !_inventories.TryGetValue(id, out var inventory)) return;
         inventory.InventoryChanged -= onInventoryChanged;
     }
 

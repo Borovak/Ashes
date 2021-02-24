@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Classes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -38,13 +39,13 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
             if (!transform.parent.gameObject.TryGetComponent<MenuGroup>(out _menuGroup)) return;
             _menuGroup.Register(this);
         }
-        MenuInputs.Ok += OnOk;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed += OnOk;
     }
 
     void OnDisable()
     {
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed -= OnOk;
         if (_menuGroup == null) return;
-        MenuInputs.Ok -= OnOk;
     }
 
     // Update is called once per frame

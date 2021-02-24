@@ -369,70 +369,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "OK",
-                    "type": "Button",
-                    "id": "a2f7b40b-4c5d-46ce-a32d-c8c855dc2a8f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press(behavior=2)"
-                },
-                {
-                    "name": "Back",
-                    "type": "Button",
-                    "id": "0a1456cc-ad1c-47b8-9756-cf26ae0464a0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press"
-                },
-                {
-                    "name": "Start",
-                    "type": "Button",
-                    "id": "d7b16516-bd5e-4777-968d-d1797892724d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press"
-                },
-                {
-                    "name": "Select",
-                    "type": "Button",
-                    "id": "a36ab08a-a456-49c4-9d52-e879d0198f7d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press"
-                },
-                {
-                    "name": "SectionPrevious",
-                    "type": "Button",
-                    "id": "73135f96-fb79-4869-9465-be820cb57f3a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press"
-                },
-                {
-                    "name": "SectionNext",
-                    "type": "Button",
-                    "id": "f825c761-529f-4089-891c-f4cae751cb7d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press"
-                },
-                {
-                    "name": "MapZoomIn",
-                    "type": "Button",
-                    "id": "d2afb073-b029-40c7-a331-ace487d429ed",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press"
-                },
-                {
-                    "name": "MapZoomOut",
-                    "type": "Button",
-                    "id": "c233f7c5-bfaf-460c-9f45-6e445b1fbdb6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press"
-                },
-                {
                     "name": "Map",
                     "type": "Button",
                     "id": "99aee9de-de17-4acb-8c4c-746abaa86978",
@@ -457,12 +393,84 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "Special",
+                    "name": "A",
                     "type": "Button",
-                    "id": "06a9b880-2a1f-4103-92c6-74ab2edc2ddf",
+                    "id": "f37c53cb-019d-44b2-b992-f7e12373acba",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "X",
+                    "type": "Button",
+                    "id": "b40950f1-fc23-4600-bd51-611b7f645b0f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "B",
+                    "type": "Button",
+                    "id": "74baa7c8-c802-4971-8531-d26e0ba98ec2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "Y",
+                    "type": "Button",
+                    "id": "2a23dc54-7fb9-43ec-a75a-9c2b2f7c6f78",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "d7b16516-bd5e-4777-968d-d1797892724d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "a36ab08a-a456-49c4-9d52-e879d0198f7d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "LB",
+                    "type": "Button",
+                    "id": "73135f96-fb79-4869-9465-be820cb57f3a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "RB",
+                    "type": "Button",
+                    "id": "f825c761-529f-4089-891c-f4cae751cb7d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "LT",
+                    "type": "Button",
+                    "id": "c233f7c5-bfaf-460c-9f45-6e445b1fbdb6",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "RT",
+                    "type": "Button",
+                    "id": "d2afb073-b029-40c7-a331-ace487d429ed",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
                 }
             ],
             "bindings": [
@@ -632,171 +640,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "62c0fa14-9093-46de-a930-2627ce6e28e9",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "OK",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "989256fb-fab2-4a74-99d7-d71b758d941f",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "OK",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c44926d6-1a93-4b63-9212-2d8a3beee978",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "Back",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "25018f8c-970f-4fc7-b25d-8b151d02035f",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "Back",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5c623395-cf4b-4fbe-b166-973a84af560f",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "Start",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "13fab130-7a11-4d68-9622-63ccf38c16a5",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "Start",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "228f4c78-723d-42f5-bea4-2583b7beaf71",
-                    "path": "<Gamepad>/select",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "Select",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cb32f62b-bc00-4ea8-b782-a6c1705ac5f5",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "SectionPrevious",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ecef1dd5-4737-4644-90ee-5b8eecff8e37",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "SectionPrevious",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "59b467ac-9f02-4de5-ae9d-d1f2aee7b854",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "SectionNext",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cdf6464e-593d-4564-a84d-cb7916dbac60",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "SectionNext",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d720873f-ca7e-4122-a6a4-d7bfa752bba9",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "MapZoomIn",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "66359c4e-b178-4229-949b-5a22a18a41a2",
-                    "path": "<Keyboard>/numpadPlus",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "MapZoomIn",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b6aa5285-fcd7-4e8e-acb3-01349721a9b9",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "MapZoomOut",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "917e1ecb-e581-467c-bb76-a08df450690d",
-                    "path": "<Keyboard>/numpadMinus",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control Scheme Alpha",
-                    "action": "MapZoomOut",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "WASD",
                     "id": "b6fe5f39-6f3e-48a4-84c2-10a0d829aba1",
                     "path": "2DVector",
@@ -930,12 +773,133 @@
                 },
                 {
                     "name": "",
-                    "id": "2713365a-ab23-4b35-ad26-8b952ac5c5cd",
+                    "id": "fa0fedcb-668b-4309-bf61-8e992d6450ae",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "411af6c6-ffa4-4167-b91f-5ed214b5f5a0",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "A",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2978a2fc-c6f3-46a5-8285-5d29306131ab",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Special",
+                    "action": "X",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "777513f4-792b-45bb-a161-12b4c07a03ea",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "B",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c67abd0a-797e-4b2f-8371-45c3ad5dc20a",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Y",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c623395-cf4b-4fbe-b166-973a84af560f",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "13fab130-7a11-4d68-9622-63ccf38c16a5",
+                    "path": "<Keyboard>/f10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb32f62b-bc00-4ea8-b782-a6c1705ac5f5",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "LB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ecef1dd5-4737-4644-90ee-5b8eecff8e37",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "LB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "228f4c78-723d-42f5-bea4-2583b7beaf71",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59b467ac-9f02-4de5-ae9d-d1f2aee7b854",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cdf6464e-593d-4564-a84d-cb7916dbac60",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RB",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -946,18 +910,73 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Special",
+                    "action": "X",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "fa0fedcb-668b-4309-bf61-8e992d6450ae",
-                    "path": "<Keyboard>/i",
+                    "id": "989256fb-fab2-4a74-99d7-d71b758d941f",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Inventory",
+                    "action": "A",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "25018f8c-970f-4fc7-b25d-8b151d02035f",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "B",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d720873f-ca7e-4122-a6a4-d7bfa752bba9",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "66359c4e-b178-4229-949b-5a22a18a41a2",
+                    "path": "<Keyboard>/numpadPlus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b6aa5285-fcd7-4e8e-acb3-01349721a9b9",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "LT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "917e1ecb-e581-467c-bb76-a08df450690d",
+                    "path": "<Keyboard>/numpadMinus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "LT",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

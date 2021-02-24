@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Classes;
 using UI;
 using UnityEngine;
 
@@ -25,6 +26,7 @@ public class MenuController : MonoBehaviour
     public GameObject GameUI;
     public GameObject ShopUI;
     public GameObject CutsceneUI;
+    public GameObject CutsceneUISkipControl;
     public GameObject ActionMenu;
     public GameObject ActionMenuInventory;
     public GameObject ActionMenuCrafting;
@@ -55,10 +57,10 @@ public class MenuController : MonoBehaviour
     void OnEnable()
     {
         _instance = this;
-        MenuInputs.Start += StartPressed;
-        MenuInputs.Select += SelectPressed;
-        MenuInputs.Ok += OKPressed;
-        MenuInputs.Back += BackPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed += OKPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed += BackPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.Start].Pressed += StartPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.Select].Pressed += SelectPressed;
         MenuInputs.SelectionChangeUp += MoveUpPressed;
         MenuInputs.SelectionChangeDown += MoveDownPressed;
         MenuInputs.SelectionChangeLeft += MoveLeftPressed;
@@ -72,10 +74,10 @@ public class MenuController : MonoBehaviour
 
     void OnDisable()
     {
-        MenuInputs.Ok -= OKPressed;
-        MenuInputs.Back -= BackPressed;
-        MenuInputs.Start -= StartPressed;
-        MenuInputs.Select -= SelectPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed -= OKPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed -= BackPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.Start].Pressed -= StartPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.Select].Pressed -= SelectPressed;
         MenuInputs.SelectionChangeUp -= MoveUpPressed;
         MenuInputs.SelectionChangeDown -= MoveDownPressed;
         MenuInputs.SelectionChangeLeft -= MoveLeftPressed;
@@ -161,11 +163,11 @@ public class MenuController : MonoBehaviour
             GlobalShopManager.currentShopId = -1;
         }
         _previousCanvasMode = canvasMode;
-        var menuObjects = new List<GameObject> { _instance.ActionMenu, _instance.ActionMenuInventory, _instance.ActionMenuCrafting, _instance.ActionMenuMap, _instance.SystemMenu, _instance.SystemMenuRoot, _instance.SystemMenuOptions, _instance.GameUI, _instance.ShopUI, _instance.CutsceneUI };
+        var menuObjects = new List<GameObject> { _instance.ActionMenu, _instance.ActionMenuInventory, _instance.ActionMenuCrafting, _instance.ActionMenuMap, _instance.SystemMenu, _instance.SystemMenuRoot, _instance.SystemMenuOptions, _instance.GameUI, _instance.ShopUI, _instance.CutsceneUI, _instance.CutsceneUISkipControl };
         var menuObjectsForEveryCanvasMode = new Dictionary<CanvasModes, List<GameObject>>{
             {CanvasModes.Game, new List<GameObject> {_instance.GameUI}},
             {CanvasModes.Shop, new List<GameObject> {_instance.ShopUI}},            
-            {CanvasModes.Cutscene, new List<GameObject> {_instance.CutsceneUI}},
+            {CanvasModes.Cutscene, new List<GameObject> {_instance.CutsceneUI, _instance.CutsceneUISkipControl}},
             {CanvasModes.SystemMenu, new List<GameObject> {_instance.SystemMenu, _instance.SystemMenuRoot}},
             {CanvasModes.SystemMenuOptions, new List<GameObject> {_instance.SystemMenu, _instance.SystemMenuOptions}},
             {CanvasModes.ActionMenuInventory, new List<GameObject> {_instance.ActionMenu, _instance.ActionMenuInventory}},

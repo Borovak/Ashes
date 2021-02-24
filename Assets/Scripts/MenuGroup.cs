@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Classes;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -43,7 +44,7 @@ public class MenuGroup : MonoBehaviour
             HoveredButton = MenuButtons?.FirstOrDefault();
             MenuInputs.SelectionChangeUp += OnSelectionChangeUp;
             MenuInputs.SelectionChangeDown += OnSelectionChangeDown;
-            MenuInputs.Back += OnEventOnBack;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed += OnEventOnBack;
         }
         UpdateVisuals();
     }
@@ -54,7 +55,7 @@ public class MenuGroup : MonoBehaviour
         {
             MenuInputs.SelectionChangeUp -= OnSelectionChangeUp;
             MenuInputs.SelectionChangeDown -= OnSelectionChangeDown;
-            MenuInputs.Back -= OnEventOnBack;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed -= OnEventOnBack;
         }
     }
 

@@ -57,7 +57,7 @@ public class InventoryPanel : NavigablePanel
         if (!refreshNeeded) return;
         refreshNeeded = false;
         if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
-        var itemBundles = inventory.GetItemBundles();
+        var itemBundles = inventory.GetItemBundles(false);
         var index = 0;
         foreach (Transform t in transform)
         {

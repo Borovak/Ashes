@@ -68,10 +68,10 @@ public class LongSlotPanel : NavigablePanel
             case Constants.PanelTypes.Craftables: return DropController.GetCraftables();
             case Constants.PanelTypes.ShopBuy:
                 if (!GlobalInventoryManager.TryGetInventory(GlobalShopManager.currentShopId, out var shopInventory)) return new List<ItemBundle>();
-                return shopInventory.GetItemBundles().Where(x => x.Item.id != Constants.MONEY_ID).ToList();
+                return shopInventory.GetItemBundles(false);
             case Constants.PanelTypes.ShopSell:
                 if (!GlobalInventoryManager.TryGetInventory(-1, out var playerInventory)) return new List<ItemBundle>();
-                return playerInventory.GetItemBundles().Where(x => x.Item.id != Constants.MONEY_ID).ToList();
+                return playerInventory.GetItemBundles(false);
         }
         return new List<ItemBundle>();
 

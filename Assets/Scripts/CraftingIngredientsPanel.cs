@@ -38,16 +38,16 @@ public class CraftingIngredientsPanel : MonoBehaviour
         GlobalInventoryManager.RegisterToInventoryChange(-1, SetCraftButtonsVisibility);
         _itemManager = itemManagerObject.GetComponent<IItemManager>();
         _itemManager.SelectedItemChanged += OnSelectedItemChanged;
-        MenuInputs.Ok += Craft;
-        MenuInputs.Special += CraftMax;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed += CraftOne;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.X].Pressed += CraftMax;
     }
 
     void OnDisable()
     {
         GlobalInventoryManager.UnregisterToInventoryChange(-1, SetCraftButtonsVisibility);
         _itemManager.SelectedItemChanged -= OnSelectedItemChanged;
-        MenuInputs.Ok -= Craft;
-        MenuInputs.Special -= CraftMax;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed -= CraftOne;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.X].Pressed -= CraftMax;
         _item = null;
     }
 
@@ -139,23 +139,29 @@ public class CraftingIngredientsPanel : MonoBehaviour
         }
     }
 
-    public void Craft()
+    private bool Craft()
     {
-        if (_item == null || !_item.isCraftable) return;
-        if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
+        if (_item == null || !_item.isCraftable) return false;
+        if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory) || !CanRecipeCanBeMade(out _)) return false;
         foreach (var ingredient in _requiredIngredients)
         {
             inventory.Remove(ingredient.Item, ingredient.Quantity);
         }
         inventory.Add(_item, 1);
+        return true;
     }
 
-    public void CraftMax()
+    private void CraftOne()
     {
         if (_item == null || !_item.isCraftable) return;
-        while (CanRecipeCanBeMade(out _))
+        Craft();
+    }
+    
+    private void CraftMax()
+    {
+        if (_item == null || !_item.isCraftable) return;
+        while (Craft())
         {
-            Craft();
         }
     }
 

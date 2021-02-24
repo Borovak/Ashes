@@ -37,8 +37,8 @@ namespace UI
         }
 
         public MenuButton[] modeButtons;
-        public GameObject[] buyButtons;
-        public GameObject[] sellButtons;
+        public GameObject buySellOneButton;
+        public GameObject buySellMaxButton;
         public GameObject itemListPanelObject;
         public Image shopPortraitImageControl;
         public TextMeshProUGUI playerWalletValueControl;
@@ -59,9 +59,11 @@ namespace UI
             }
             instance = this;
             shopMode = ShopModes.Buy;
-            MenuInputs.SectionPrevious += OnSectionPrevious;
-            MenuInputs.SectionNext += OnSectionNext;
-            MenuInputs.Back += OnBack;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed += OnOk;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed += OnBack;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.X].Pressed += OnSpecial;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.LB].Pressed += OnSectionPrevious;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.RB].Pressed += OnSectionNext;
             _itemListPanel.SelectedIndexChanged += OnSelectedIndexChanged;
             _itemListPanel.SelectedItemChanged += OnSelectedItemChanged;
             _itemListPanel.HasFocus = true;
@@ -76,9 +78,11 @@ namespace UI
 
         void OnDisable()
         {
-            MenuInputs.SectionPrevious -= OnSectionPrevious;
-            MenuInputs.SectionNext -= OnSectionNext;
-            MenuInputs.Back -= OnBack;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed -= OnOk;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed -= OnBack;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.X].Pressed -= OnSpecial;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.LB].Pressed -= OnSectionPrevious;
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.RB].Pressed -= OnSectionNext;
             _itemListPanel.SelectedIndexChanged -= OnSelectedIndexChanged;
             _itemListPanel.SelectedItemChanged -= OnSelectedItemChanged;
             GlobalInventoryManager.UnregisterToInventoryChange(-1, OnInventoryChanged);
@@ -125,14 +129,38 @@ namespace UI
             UpdateBuySellButtons(item != null);
         }
 
-        public void BuyOne()
+        public void ButtonOne()
+        {
+            if (shopMode == ShopModes.Buy)
+            {
+                BuyOne();
+            }
+            else
+            {
+                SellOne();
+            }
+        }
+
+        public void ButtonMax()
+        {
+            if (shopMode == ShopModes.Buy)
+            {
+                BuyMax();
+            }
+            else
+            {
+                SellMax();
+            }
+        }
+
+        private void BuyOne()
         {
             if (_item == null) return;
             GlobalFunctions.TryGetPlayerComponent<PlayerInventory>(out var inventory);
             Buy(_item, 1);
         }
 
-        public void BuyMax()
+        private void BuyMax()
         {
             if (_item == null) return;
             if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
@@ -155,13 +183,13 @@ namespace UI
             inventory.Add(item, quantity);
         }
 
-        public void SellOne()
+        private void SellOne()
         {
             if (_item == null) return;
             Sell(_item, 1);
         }
 
-        public void SellMax()
+        private void SellMax()
         {
             if (_item == null) return;
             if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
@@ -202,14 +230,33 @@ namespace UI
 
         private void UpdateBuySellButtons(bool canBeVisible)
         {
-            buyButtons[0].transform.parent.gameObject.SetActive(canBeVisible);
-            foreach (var button in buyButtons)
+            buySellOneButton.SetActive(canBeVisible);
+            buySellOneButton.GetComponentInChildren<TextMeshProUGUI>().text = shopMode == ShopModes.Buy ? "Buy one" : "Sell one";
+            buySellMaxButton.SetActive(canBeVisible);
+            buySellMaxButton.GetComponentInChildren<TextMeshProUGUI>().text = shopMode == ShopModes.Buy ? "Buy max" : "Sell max";
+        }
+
+        private void OnOk()
+        {
+            if (shopMode == ShopModes.Buy)
             {
-                button.SetActive(canBeVisible && shopMode == ShopModes.Buy);
+                BuyOne();
             }
-            foreach (var button in sellButtons)
+            else
             {
-                button.SetActive(canBeVisible && shopMode == ShopModes.Sell);
+                SellOne();
+            }
+        }
+
+        private void OnSpecial()
+        {
+            if (shopMode == ShopModes.Buy)
+            {
+                BuyMax();
+            }
+            else
+            {
+                SellMax();
             }
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Classes;
 using UnityEngine;
 
 public class ActionMenuManager : MonoBehaviour
@@ -16,8 +17,18 @@ public class ActionMenuManager : MonoBehaviour
     {
         _menuGroup = GetComponent<MenuGroup>();
         _sectionCount = sectionButtons.Length;
-        MenuInputs.SectionPrevious += SectionPrevious;
-        MenuInputs.SectionNext += SectionNext;
+    }
+
+    void OnEnable()
+    {
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.LB].Pressed += SectionPrevious;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.RB].Pressed += SectionNext;
+    }
+
+    void OnDisable()
+    {
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.LB].Pressed -= SectionPrevious;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.RB].Pressed -= SectionNext;
     }
 
     // Update is called once per frame

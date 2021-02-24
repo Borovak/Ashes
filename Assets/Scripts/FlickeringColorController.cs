@@ -14,7 +14,7 @@ public class FlickeringColorController : MonoBehaviour
     public Color colorA;
     public Color colorB;
     public float period = 0.5f;
-    public Light2D light;
+    public Light2D light2D;
 
     private bool _isDisabled;
     private SpriteRenderer _spriteRenderer;
@@ -37,9 +37,9 @@ public class FlickeringColorController : MonoBehaviour
     
     void Update()
     {
-        if (light != null)
+        if (light2D != null)
         {
-            light.color = _spriteRenderer.color;
+            light2D.color = _spriteRenderer.color;
         }
     }
 

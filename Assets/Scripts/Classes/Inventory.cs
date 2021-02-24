@@ -113,9 +113,14 @@ namespace Classes
             return inventory;
         }
 
-        public List<ItemBundle> GetItemBundles()
+        public List<ItemBundle> GetItemBundles(bool includeMoney)
         {
-            return _items.Where(x => x.Value > 0).Select(x => new ItemBundle(x.Key, x.Value)).ToList();
+            var items = _items.Where(x => x.Value > 0).ToList();
+            if (!includeMoney)
+            {
+                items = items.Where(x => x.Key != Constants.MONEY_ID).ToList();
+            }
+            return items.Select(x => new ItemBundle(x.Key, x.Value)).ToList();
         }
 
         public int GetQuantity(Item item)

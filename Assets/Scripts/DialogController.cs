@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Classes;
 using Interfaces;
 using Static;
 using TMPro;
@@ -13,6 +14,7 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
 {
     public static event Action<IDialogItem> DialogUpdated;
     public static event Action<Action> ActionToBeExecuted;
+    public static event Action<int> SelectedDialogChanged;
     public static bool isVisible;
     public static bool inDialog;
 
@@ -24,8 +26,46 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
     public TextMeshProUGUI textDialog;
     public DialogChoicePanel[] dialogChoicePanels;
 
-    private Vector3 _initialPlayerPosition;
+    public int Index
+    {
+        get => _index;
+        set
+        {
+            _index = value;
+            SelectedDialogChanged?.Invoke(Index);
+        }
+    }
 
+    private Vector3 _initialPlayerPosition;
+    private int _index;
+    private List<KeyValuePair<string, Action>> _choices;
+
+    void OnEnable()
+    {
+        _choices = new List<KeyValuePair<string, Action>>();
+        Index = 0;
+        foreach (var p in dialogChoicePanels)
+        {
+            p.SelectionChanged += UpdateIndex;
+            p.DialogClicked += ExecuteDialog;
+        }
+        MenuInputs.SelectionChangeDown += OnSelectionChangeDown;
+        MenuInputs.SelectionChangeUp += OnSelectionChangeUp;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed += OnButtonPressed;
+    }
+    
+    void OnDisable()
+    {
+        foreach (var p in dialogChoicePanels)
+        {
+            p.SelectionChanged -= UpdateIndex;
+            p.DialogClicked -= ExecuteDialog;
+        }
+        MenuInputs.SelectionChangeDown -= OnSelectionChangeDown;
+        MenuInputs.SelectionChangeUp -= OnSelectionChangeUp;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed -= OnButtonPressed;
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +82,11 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    private void UpdateIndex(int i)
+    {
+        Index = i;
+    }
+
     private void RefreshDialog(IDialogItem newDialogItem)
     {
         _initialPlayerPosition = GlobalFunctions.TryGetPlayer(out var player) ? player.transform.position : Vector3.zero;
@@ -56,19 +101,28 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
         SetFollowUp();
     }
 
+    private void OnButtonPressed()
+    {
+        _choices[Index].Value.Invoke();
+    }
+
+    private void ExecuteDialog(int index)
+    {
+        _choices[index].Value.Invoke();
+    }
+
     private void SetFollowUp()
     {
-        var dialogItemChoices = dialogItem as IDialogItemChoices;
-        if (dialogItemChoices != null)
+        if (dialogItem is IDialogItemChoices dialogItemChoices)
         {
-            var choices = dialogItemChoices.followUp.ToList();
+            _choices = dialogItemChoices.followUp.ToList();
             for (int i = 0; i < dialogChoicePanels.Length; i++)
             {
-                var isActive = i < choices.Count;
+                var isActive = i < _choices.Count;
                 dialogChoicePanels[i].gameObject.SetActive(isActive);
                 if (isActive)
                 {
-                    dialogChoicePanels[i].UpdateContent(choices[i].Key, choices[i].Value);
+                    dialogChoicePanels[i].UpdateContent(_choices[i].Key, i);
                 }
             }
         }
@@ -121,5 +175,15 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
     {
         ClearDialog();
         action.Invoke();
+    }
+
+    private void OnSelectionChangeDown()
+    {
+        Index = Index >= _choices.Count - 1 ? 0 : Index + 1;
+    }
+
+    private void OnSelectionChangeUp()
+    {
+        Index = Index == 0 ? _choices.Count - 1 : Index - 1;
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Classes;
 using Static;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,8 +55,8 @@ public class MapManager : MonoBehaviour
 
     void OnEnable()
     {
-        MenuInputs.MapZoomIn += ZoomIn;
-        MenuInputs.MapZoomOut += ZoomOut;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.LT].Pressed += ZoomOut;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.RT].Pressed += ZoomIn;
         sizeMultiplier = sizeMultiplierInit;
         centeringBias = centeringBiasInit;
         if (_mapRooms == null)
@@ -106,8 +107,8 @@ public class MapManager : MonoBehaviour
 
     void OnDisable()
     {
-        MenuInputs.MapZoomIn -= ZoomIn;
-        MenuInputs.MapZoomOut -= ZoomOut;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.LT].Pressed -= ZoomOut;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.RT].Pressed -= ZoomIn;
     }
 
     private void ZoomIn()

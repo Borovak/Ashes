@@ -37,8 +37,32 @@ namespace Classes
             ShopBuy,
             ShopSell
         }
+        
+        [Serializable]
+        public enum ControllerButtons
+        {
+            A,
+            B,
+            X,
+            Y,
+            Start,
+            Select,
+            LB,
+            RB,
+            LT,
+            RT,
+            LJ,
+            RJ,
+            DUp,
+            DDown,
+            DLeft,
+            DRight,
+            L3,
+            R3
+        }
 
         public const int MONEY_ID = 0;
+        public const float BUTTON_FILLRATE = 2f;
         public const string TAG_CHAMBER = "Chamber";
         public const string TAG_TERRAINCONTAINER = "TerrainContainer";
         public const string TAG_GRASSCONTAINER = "GrassContainer";
@@ -50,5 +74,6 @@ namespace Classes
         public const string NAME_SHADOWSCONTAINER = "Shadows";
         public const string NAME_NPCCONTAINER = "Npcs";
         public const string NAME_BACKGROUNDCONTAINER = "Background";
+        
     }
 }
