@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace Interfaces
+namespace Dialog
 {
     public interface IDialogItemChoices : IDialogItem
     {
-        Dictionary<string, Action> followUp { get; }
+        Dictionary<string, Action> FollowUp { get; }
     }
 }

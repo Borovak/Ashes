@@ -20,8 +20,6 @@ namespace UI
         }
 
         public static event Action<ShopModes> ShopModeChanged;
-        public static event Action OpenShopRequired;
-        public static event Action CloseShopRequired;
         public event Action<Item, Constants.PanelTypes> SelectedItemChanged;
         public static UIShopController instance;
 
@@ -104,7 +102,7 @@ namespace UI
 
         private void OnBack()
         {
-            CloseShopRequired?.Invoke();
+            MenuController.ReturnToGame();
         }
 
         public void ChangeShopMode(ShopModes newShopMode)
@@ -115,11 +113,6 @@ namespace UI
         public void ChangeShopMode(int newShopMode)
         {
             ChangeShopMode((ShopModes)newShopMode);
-        }
-
-        public static void Open()
-        {
-            OpenShopRequired?.Invoke();
         }
 
         private void OnSelectedItemChanged(Item item, Constants.PanelTypes panelType)

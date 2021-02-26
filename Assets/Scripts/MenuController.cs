@@ -5,6 +5,7 @@ using System.Linq;
 using Classes;
 using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MenuController : MonoBehaviour
 {
@@ -19,25 +20,33 @@ public class MenuController : MonoBehaviour
         ActionMenuCrafting,
         ActionMenuMap,
         ActionMenuInventory,
+        Dialog
     }
 
-    public static event Action OnOK;
-    public List<Vector2> choices => _choices.ToList();
-    public GameObject GameUI;
-    public GameObject ShopUI;
-    public GameObject CutsceneUI;
-    public GameObject CutsceneUISkipControl;
-    public GameObject ActionMenu;
-    public GameObject ActionMenuInventory;
-    public GameObject ActionMenuCrafting;
-    public GameObject ActionMenuMap;
-    public GameObject SystemMenu;
-    public GameObject SystemMenuRoot;
-    public GameObject SystemMenuOptions;
+    public static CanvasModes CanvasMode
+    {
+        get => _canvasMode;
+        set => ChangeCanvasMode(value);
+    }
+    
+    public static event Action OnOk;
+    public List<Vector2> Choices => _choices.ToList();
+    public GameObject gameUI;
+    public GameObject actionMenu;
+    public GameObject actionMenuInventory;
+    public GameObject actionMenuCrafting;
+    public GameObject actionMenuMap;
+    public GameObject systemMenu;
+    public GameObject systemMenuRoot;
+    public GameObject systemMenuOptions;
+    public GameObject shopPanelPrefab;
+    public GameObject dialogPanelPrefab;
+    public GameObject cutscenePanelPrefab;
 
     private static MenuController _instance;
-    private static CanvasModes _previousCanvasMode;
-    private Animator _animator;
+    private static CanvasModes _canvasMode;
+    private static GameObject _currentPanel;
+    private static Animator _animator;
     private List<Vector2> _choices;
     private int _maxIndex;
     private int _maxSubIndex;
@@ -57,7 +66,7 @@ public class MenuController : MonoBehaviour
     void OnEnable()
     {
         _instance = this;
-        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed += OKPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed += OkPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed += BackPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.Start].Pressed += StartPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.Select].Pressed += SelectPressed;
@@ -68,13 +77,11 @@ public class MenuController : MonoBehaviour
         MenuInputs.Inventory += InventoryPressed;
         MenuInputs.Crafting += CraftingPressed;
         MenuInputs.Map += MapPressed;
-        UIShopController.OpenShopRequired += OnOpenShopRequired;
-        UIShopController.CloseShopRequired += OnCloseShopRequired;
     }
 
     void OnDisable()
     {
-        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed -= OKPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed -= OkPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed -= BackPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.Start].Pressed -= StartPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.Select].Pressed -= SelectPressed;
@@ -85,8 +92,6 @@ public class MenuController : MonoBehaviour
         MenuInputs.Inventory -= InventoryPressed;
         MenuInputs.Crafting -= CraftingPressed;
         MenuInputs.Map -= MapPressed;
-        UIShopController.OpenShopRequired -= OnOpenShopRequired;
-        UIShopController.CloseShopRequired -= OnCloseShopRequired;
     }
 
     private void BackPressed()
@@ -110,9 +115,9 @@ public class MenuController : MonoBehaviour
         _animator.SetBool("Select", true);
     }
 
-    private void OKPressed()
+    private void OkPressed()
     {
-        OnOK?.Invoke();
+        OnOk?.Invoke();
     }
 
     private void MoveUpPressed()
@@ -156,42 +161,72 @@ public class MenuController : MonoBehaviour
         //SelectPressed();
     }
 
-    public static void ChangeCanvasMode(CanvasModes canvasMode)
+    private static void ChangeCanvasMode(CanvasModes canvasMode)
     {
-        if (_previousCanvasMode == CanvasModes.Shop)
-        {
-            GlobalShopManager.currentShopId = -1;
-        }
-        _previousCanvasMode = canvasMode;
-        var menuObjects = new List<GameObject> { _instance.ActionMenu, _instance.ActionMenuInventory, _instance.ActionMenuCrafting, _instance.ActionMenuMap, _instance.SystemMenu, _instance.SystemMenuRoot, _instance.SystemMenuOptions, _instance.GameUI, _instance.ShopUI, _instance.CutsceneUI, _instance.CutsceneUISkipControl };
-        var menuObjectsForEveryCanvasMode = new Dictionary<CanvasModes, List<GameObject>>{
-            {CanvasModes.Game, new List<GameObject> {_instance.GameUI}},
-            {CanvasModes.Shop, new List<GameObject> {_instance.ShopUI}},            
-            {CanvasModes.Cutscene, new List<GameObject> {_instance.CutsceneUI, _instance.CutsceneUISkipControl}},
-            {CanvasModes.SystemMenu, new List<GameObject> {_instance.SystemMenu, _instance.SystemMenuRoot}},
-            {CanvasModes.SystemMenuOptions, new List<GameObject> {_instance.SystemMenu, _instance.SystemMenuOptions}},
-            {CanvasModes.ActionMenuInventory, new List<GameObject> {_instance.ActionMenu, _instance.ActionMenuInventory}},
-            {CanvasModes.ActionMenuCrafting, new List<GameObject> {_instance.ActionMenu, _instance.ActionMenuCrafting}},
-            {CanvasModes.ActionMenuMap, new List<GameObject> {_instance.ActionMenu, _instance.ActionMenuMap}},
+        var previousCanvasMode = _canvasMode;
+        _canvasMode = canvasMode;
+        //Changing what is enabled
+        var objectsToEnableDisable = new List<GameObject> { _instance.actionMenu, _instance.actionMenuInventory, _instance.actionMenuCrafting, _instance.actionMenuMap, _instance.systemMenu, _instance.systemMenuRoot, _instance.systemMenuOptions, _instance.gameUI};
+        var objectsToEnable = new Dictionary<CanvasModes, List<GameObject>>{
+            {CanvasModes.Game, new List<GameObject> {_instance.gameUI}},   
+            {CanvasModes.SystemMenu, new List<GameObject> {_instance.systemMenu, _instance.systemMenuRoot}},
+            {CanvasModes.SystemMenuOptions, new List<GameObject> {_instance.systemMenu, _instance.systemMenuOptions}},
+            {CanvasModes.ActionMenuInventory, new List<GameObject> {_instance.actionMenu, _instance.actionMenuInventory}},
+            {CanvasModes.ActionMenuCrafting, new List<GameObject> {_instance.actionMenu, _instance.actionMenuCrafting}},
+            {CanvasModes.ActionMenuMap, new List<GameObject> {_instance.actionMenu, _instance.actionMenuMap}},
         };
-        if (!menuObjectsForEveryCanvasMode.TryGetValue(canvasMode, out var menuObjectsForCurrentCanvasMode))
+        if (!objectsToEnable.TryGetValue(canvasMode, out var menuObjectsForCurrentCanvasMode))
         {
             menuObjectsForCurrentCanvasMode = new List<GameObject>();
         }
-        foreach (var menuObject in menuObjects)
+        foreach (var menuObject in objectsToEnableDisable)
         {
             menuObject.SetActive(menuObjectsForCurrentCanvasMode.Contains(menuObject));
         }
-
+        //Deleting previous panel
+        if (_currentPanel != null)
+        {
+            Destroy(_currentPanel);
+        }
+        //Creating new panel
+        var panelsToCreate = new Dictionary<CanvasModes, GameObject>
+        {
+            {CanvasModes.Dialog, _instance.dialogPanelPrefab},
+            {CanvasModes.Shop, _instance.shopPanelPrefab},
+            {CanvasModes.Cutscene, _instance.cutscenePanelPrefab}
+        };
+        if (panelsToCreate.TryGetValue(canvasMode, out var panelToCreate))
+        {
+            _currentPanel = Instantiate(panelToCreate, _instance.transform);
+        }
+        //Setting specific parameters on exit state
+        switch (previousCanvasMode)
+        {
+            case CanvasModes.Shop:
+                GlobalShopManager.currentShopId = -1;
+                break;
+        }
     }
 
-    private void OnOpenShopRequired()
+    public static void OpenDialog()
     {
+        _animator.SetTrigger("Dialog");
+    }
+    
+    public static void OpenShop(int shopId)
+    {
+        GlobalShopManager.currentShopId = shopId;
         _animator.SetTrigger("Shop");
     }
 
-    private void OnCloseShopRequired()
+    public static void ReturnToGame()
     {
         _animator.SetTrigger("Back");
+    }
+
+    public static void OpenCutscene(CutsceneController.Cutscenes cutscene, Action actionOnEnd)
+    {
+        CutsceneController.Init(cutscene, actionOnEnd);
+        FadeInOutController.FadeOut(() => _animator.SetTrigger("Cutscene"));
     }
 }

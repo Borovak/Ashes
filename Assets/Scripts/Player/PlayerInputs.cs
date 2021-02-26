@@ -84,15 +84,16 @@ namespace Player
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            if (GameController.gameState != GameController.GameStates.Running) return;
+            if (GameController.gameState != GameController.GameStates.Running || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             Action a;
-            if (movement.y < 0f && context.ReadValue<float>() > 0.1f)
+            var buttonState = context.ReadValueAsButton();
+            if (movement.y < 0f && buttonState)
             {
                 a = DropThrough;
             }
             else
             {
-                a = context.ReadValue<float>() > 0.1f ? Jump : JumpRelease;
+                a = buttonState ? Jump : JumpRelease;
             }
             a?.Invoke();
         }

@@ -225,7 +225,7 @@ public static class SaveSystem
                 saveData.gatesStatus = gatesStatus.ToArray();
             }
         }
-        Debug.Log("Load successful");
+        //Debug.Log("Load successful");
         return true;
     }
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Classes;
+using Dialog;
 using Interfaces;
 using Static;
 using TMPro;
@@ -10,15 +11,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DialogController : MonoBehaviour, IPointerClickHandler
+public class DialogController : MonoBehaviour
 {
     public static event Action<IDialogItem> DialogUpdated;
     public static event Action<Action> ActionToBeExecuted;
     public static event Action<int> SelectedDialogChanged;
-    public static bool isVisible;
-    public static bool inDialog;
-
-    public IDialogItem dialogItem;
+    public static IDialogItem DialogItem;
+    
     public Image panel;
     public Image foliage;
     public Image imageNpcPortrait;
@@ -43,15 +42,17 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
     void OnEnable()
     {
         _choices = new List<KeyValuePair<string, Action>>();
-        Index = 0;
         foreach (var p in dialogChoicePanels)
         {
             p.SelectionChanged += UpdateIndex;
             p.DialogClicked += ExecuteDialog;
         }
+        DialogUpdated += RefreshDialog;
+        ActionToBeExecuted += OnActionToBeExecuted;
         MenuInputs.SelectionChangeDown += OnSelectionChangeDown;
         MenuInputs.SelectionChangeUp += OnSelectionChangeUp;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed += OnButtonPressed;
+        UpdateDialog(DialogItem);
     }
     
     void OnDisable()
@@ -61,24 +62,18 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
             p.SelectionChanged -= UpdateIndex;
             p.DialogClicked -= ExecuteDialog;
         }
+        DialogUpdated -= RefreshDialog;
+        ActionToBeExecuted -= OnActionToBeExecuted;
         MenuInputs.SelectionChangeDown -= OnSelectionChangeDown;
         MenuInputs.SelectionChangeUp -= OnSelectionChangeUp;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed -= OnButtonPressed;
     }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        DialogUpdated += RefreshDialog;
-        ActionToBeExecuted += OnActionToBeExecuted;
-        ClearDialog();
-    }
 
     void Update()
     {
-        if (dialogItem != null && GlobalFunctions.TryGetPlayer(out var player) ? Vector3.Distance(player.transform.position, _initialPlayerPosition) > 2f : false)
+        if (DialogItem != null && GlobalFunctions.TryGetPlayer(out var player) && Vector3.Distance(player.transform.position, _initialPlayerPosition) > 2f)
         {
-            ClearDialog();
+            MenuController.ReturnToGame();
         }
     }
 
@@ -89,20 +84,21 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
 
     private void RefreshDialog(IDialogItem newDialogItem)
     {
+        Index = 0;
         _initialPlayerPosition = GlobalFunctions.TryGetPlayer(out var player) ? player.transform.position : Vector3.zero;
-        dialogItem = newDialogItem;
+        DialogItem = newDialogItem;
         panel.enabled = true;
         foliage.enabled = true;
         imageNpcPortrait.enabled = true;
-        imageNpcPortrait.sprite = dialogItem.npcSprite;
-        textNpcName.text = dialogItem.npcName;
-        textDialog.text = dialogItem.text;
-        isVisible = true;
+        imageNpcPortrait.sprite = DialogItem.NpcSprite;
+        textNpcName.text = DialogItem.NpcName;
+        textDialog.text = DialogItem.Text;
         SetFollowUp();
     }
 
     private void OnButtonPressed()
     {
+        if (Index < 0 || Index >= _choices.Count) return;
         _choices[Index].Value.Invoke();
     }
 
@@ -113,9 +109,9 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
 
     private void SetFollowUp()
     {
-        if (dialogItem is IDialogItemChoices dialogItemChoices)
+        if (DialogItem is IDialogItemChoices dialogItemChoices)
         {
-            _choices = dialogItemChoices.followUp.ToList();
+            _choices = dialogItemChoices.FollowUp.ToList();
             for (int i = 0; i < dialogChoicePanels.Length; i++)
             {
                 var isActive = i < _choices.Count;
@@ -130,7 +126,6 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
         {
             DesactivateChoices();
         }
-        inDialog = true;
     }
 
     private void ClearDialog()
@@ -140,8 +135,6 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
         imageNpcPortrait.enabled = false;
         textNpcName.text = "";
         textDialog.text = "";
-        isVisible = false;
-        inDialog = false;
         DesactivateChoices();
     }
 
@@ -155,15 +148,11 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
 
     public static void UpdateDialog(IDialogItem dialogItem)
     {
+        if (dialogItem == null)
+        {
+            MenuController.ReturnToGame();
+        }
         DialogUpdated?.Invoke(dialogItem);
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        var dialogItemSimple = dialogItem as IDialogItemSimple;
-        if (dialogItemSimple == null) return;
-        ClearDialog();
-        dialogItemSimple.ActionOnOk?.Invoke();
     }
 
     public static void DoAction(Action action)
@@ -171,7 +160,7 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
         ActionToBeExecuted?.Invoke(action);
     }
 
-    public void OnActionToBeExecuted(Action action)
+    private void OnActionToBeExecuted(Action action)
     {
         ClearDialog();
         action.Invoke();
@@ -179,11 +168,17 @@ public class DialogController : MonoBehaviour, IPointerClickHandler
 
     private void OnSelectionChangeDown()
     {
-        Index = Index >= _choices.Count - 1 ? 0 : Index + 1;
+        if (Index + 1 < _choices.Count)
+        {
+            Index++;
+        }
     }
 
     private void OnSelectionChangeUp()
     {
-        Index = Index == 0 ? _choices.Count - 1 : Index - 1;
+        if (Index - 1 >= 0)
+        {
+            Index--;
+        }
     }
 }

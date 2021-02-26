@@ -17,12 +17,6 @@ public class FadeInOutController : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public static void FadeIn()
     {
         //Debug.Log("Fade in");

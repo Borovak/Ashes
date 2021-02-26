@@ -10,20 +10,15 @@ namespace Dialog
 {
     public class DialogShopMarket : IDialogItemChoices
     {
-        Sprite IDialogItem.npcSprite => GlobalFunctions.TryGetNpcSprite(Constants.Npc.Shopkeeper, out var sprite) ? sprite : null;
+        Sprite IDialogItem.NpcSprite => GlobalFunctions.TryGetNpcSprite(Constants.Npc.Shopkeeper, out var sprite) ? sprite : null;
 
-        string IDialogItem.npcName => "Shopkeeper";
+        string IDialogItem.NpcName => "Shopkeeper";
 
-        string IDialogItem.text => "Welcome to my shop youngling";
+        string IDialogItem.Text => "Welcome to my shop youngling";
 
-        Dictionary<string, Action> IDialogItemChoices.followUp => new Dictionary<string, Action>
+        Dictionary<string, Action> IDialogItemChoices.FollowUp => new Dictionary<string, Action>
         {
-            {"Shop", () =>
-                {
-                    GlobalShopManager.currentShopId = 0;
-                    DialogController.DoAction(UIShopController.Open);
-                }
-            },
+            {"Shop", () => MenuController.OpenShop(0)},
             {"Who are you?", () => DialogController.UpdateDialog(new DialogShopMarket0())}
         };
     }

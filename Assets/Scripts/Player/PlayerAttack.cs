@@ -77,7 +77,7 @@ namespace Player
 
         private void Attack()
         {
-            if (!_lifeController.IsAlive || _attackCooldown > 0 || DialogController.inDialog) return;
+            if (!_lifeController.IsAlive || _attackCooldown > 0 || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             _animator.SetTrigger("attack");
             MeleeAttack();
             _attackCooldown = 1f / attackRate;
@@ -87,7 +87,7 @@ namespace Player
 
         private void AttackSpell()
         {
-            if (!_lifeController.IsAlive || _attackCooldown > 0 || DialogController.inDialog) return;
+            if (!_lifeController.IsAlive || _attackCooldown > 0 || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             if (!_manaController.TryCastSpell(3f)) return;
             _animator.SetTrigger("fireball");
             _attackCooldown = 1f / attackRate;
@@ -95,7 +95,7 @@ namespace Player
 
         private void SelfSpell()
         {
-            if (!_lifeController.IsAlive || _attackCooldown > 0 || DialogController.inDialog) return;
+            if (!_lifeController.IsAlive || _attackCooldown > 0 || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             if (!_manaController.TryCastSpell(5f)) return;
             _animator.SetTrigger("heal");
             _lifeController.Heal(1);
@@ -104,7 +104,7 @@ namespace Player
 
         private void GroundBreak()
         {
-            if (!_lifeController.IsAlive || _attackCooldown > 0 || DialogController.inDialog) return;
+            if (!_lifeController.IsAlive || _attackCooldown > 0 || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             if (!_manaController.TryCastSpell(5f)) return;
             _animator.SetTrigger("groundBreak");
             _attackCooldown = 1f / attackRate;

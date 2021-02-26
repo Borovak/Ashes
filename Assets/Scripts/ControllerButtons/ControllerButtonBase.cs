@@ -13,8 +13,11 @@ namespace ControllerButtons
         public abstract InputAction InputAction { get; }
         public event Action Pressed;
         public event Action Released;
+        public event Action Filled;
         public bool IsPressed { get; set; }
         public float PressedTime { get; set; }
+
+        private bool _fillLatch;
 
         public void OnPerformed(InputAction.CallbackContext context)
         {
@@ -26,6 +29,17 @@ namespace ControllerButtons
             else
             {
                 Released?.Invoke();
+                _fillLatch = false;
+            }
+        }
+
+        public void Update()
+        {
+            PressedTime = IsPressed ? PressedTime + Time.deltaTime : 0f;
+            if (!_fillLatch && PressedTime > Constants.BUTTON_FILLRATE)
+            {
+                _fillLatch = true;
+                Filled?.Invoke();
             }
         }
     }

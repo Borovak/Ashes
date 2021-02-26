@@ -66,6 +66,6 @@ public class DialogChoicePanel : MonoBehaviour, IPointerEnterHandler, IPointerCl
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
-        SelectionChanged?.Invoke(_index);
+        //SelectionChanged?.Invoke(_index);
     }
 }

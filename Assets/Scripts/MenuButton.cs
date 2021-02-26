@@ -40,11 +40,19 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
             _menuGroup.Register(this);
         }
         ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed += OnOk;
+        if (IsBackButton)
+        {
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed += OnBack;
+        }
     }
 
     void OnDisable()
     {
         ControllerInputs.controllerButtons[Constants.ControllerButtons.A].Pressed -= OnOk;
+        if (IsBackButton)
+        {
+            ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed -= OnBack;
+        }
         if (_menuGroup == null) return;
     }
 
@@ -70,6 +78,12 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
+        EventOnClick?.Invoke();
+    }
+
+    private void OnBack()
+    {
+        if (_menuGroup == null) return;
         EventOnClick?.Invoke();
     }
 

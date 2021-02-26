@@ -13,7 +13,7 @@ namespace UI
         private bool _visibility;
         private bool _previousVisibility;
 
-        public void Reset()
+        void Start()
         {
             _skipTimer = SkipVisibilityTimeout;
             _previousVisibility = false;

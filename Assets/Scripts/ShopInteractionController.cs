@@ -12,6 +12,7 @@ public class ShopInteractionController : InteractionController
 
     public override void Interact()
     {
-        DialogController.UpdateDialog(new DialogShopMarket());
+        DialogController.DialogItem = new DialogShopMarket();
+        MenuController.OpenDialog();
     }
 }

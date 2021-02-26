@@ -55,7 +55,7 @@ public class ControllerInputs : MonoBehaviour
     {
         foreach (var controllerButton in controllerButtons.Values)
         {
-            controllerButton.PressedTime = controllerButton.IsPressed ? controllerButton.PressedTime + Time.deltaTime : 0f;
+            controllerButton.Update();
         }
     }
     

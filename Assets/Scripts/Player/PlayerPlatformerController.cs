@@ -160,7 +160,7 @@ namespace Player
 
         private void Jump()
         {
-            if (!_lifeController.IsAlive || DialogController.inDialog) return;
+            if (!_lifeController.IsAlive || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             if (grounded || (velocity.y <= 0.1f && _timeSinceGrounded <= 0.2f))
             {
                 _animator.SetBool("jump", true);
@@ -183,7 +183,7 @@ namespace Player
 
         private void Dash()
         {
-            if (!_lifeController.IsAlive || !_canDash || _dashTimer > 0 || DialogController.inDialog) return;
+            if (!_lifeController.IsAlive || !_canDash || _dashTimer > 0 || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             _animator.SetBool("dash", true);
             _canDash = false;
             _dashTimer = timeBetweenDashes;

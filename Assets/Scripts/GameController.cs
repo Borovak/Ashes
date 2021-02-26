@@ -71,7 +71,7 @@ public class GameController : MonoBehaviour
     {
         if (SaveSystem.LastLoadedSave.SavePointGuid == string.Empty)
         {
-            CutsceneManager.Play(CutsceneManager.Cutscenes.Intro, SpawnPlayer);
+            MenuController.OpenCutscene(CutsceneController.Cutscenes.Intro, SpawnPlayer);
         }
         else
         {
