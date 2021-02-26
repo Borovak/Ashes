@@ -8,9 +8,9 @@ public class ActionMenuManager : MonoBehaviour
     public GameObject[] sectionButtons;
 
     public static int sectionIndex;
-    private static int _previousSectionIndex = -1;
     private static int _sectionCount;
     private MenuGroup _menuGroup;
+    private int _previousSectionIndex = -1;
 
     // Start is called before the first frame update
     void Start()

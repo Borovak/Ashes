@@ -15,7 +15,7 @@ public class MenuController : MonoBehaviour
         Game,
         Shop,
         Cutscene,
-        SystemMenu,
+        SystemMenuRoot,
         SystemMenuOptions,
         ActionMenuCrafting,
         ActionMenuMap,
@@ -32,16 +32,14 @@ public class MenuController : MonoBehaviour
     public static event Action OnOk;
     public List<Vector2> Choices => _choices.ToList();
     public GameObject gameUI;
-    public GameObject actionMenu;
-    public GameObject actionMenuInventory;
-    public GameObject actionMenuCrafting;
-    public GameObject actionMenuMap;
-    public GameObject systemMenu;
-    public GameObject systemMenuRoot;
-    public GameObject systemMenuOptions;
     public GameObject shopPanelPrefab;
     public GameObject dialogPanelPrefab;
     public GameObject cutscenePanelPrefab;
+    public GameObject systemMenuRootPanelPrefab;
+    public GameObject systemMenuOptionsPanelPrefab;
+    public GameObject actionMenuInventoryPanelPrefab;
+    public GameObject actionMenuCraftingPanelPrefab;
+    public GameObject actionMenuMapPanelPrefab;
 
     private static MenuController _instance;
     private static CanvasModes _canvasMode;
@@ -166,23 +164,7 @@ public class MenuController : MonoBehaviour
         var previousCanvasMode = _canvasMode;
         _canvasMode = canvasMode;
         //Changing what is enabled
-        var objectsToEnableDisable = new List<GameObject> { _instance.actionMenu, _instance.actionMenuInventory, _instance.actionMenuCrafting, _instance.actionMenuMap, _instance.systemMenu, _instance.systemMenuRoot, _instance.systemMenuOptions, _instance.gameUI};
-        var objectsToEnable = new Dictionary<CanvasModes, List<GameObject>>{
-            {CanvasModes.Game, new List<GameObject> {_instance.gameUI}},   
-            {CanvasModes.SystemMenu, new List<GameObject> {_instance.systemMenu, _instance.systemMenuRoot}},
-            {CanvasModes.SystemMenuOptions, new List<GameObject> {_instance.systemMenu, _instance.systemMenuOptions}},
-            {CanvasModes.ActionMenuInventory, new List<GameObject> {_instance.actionMenu, _instance.actionMenuInventory}},
-            {CanvasModes.ActionMenuCrafting, new List<GameObject> {_instance.actionMenu, _instance.actionMenuCrafting}},
-            {CanvasModes.ActionMenuMap, new List<GameObject> {_instance.actionMenu, _instance.actionMenuMap}},
-        };
-        if (!objectsToEnable.TryGetValue(canvasMode, out var menuObjectsForCurrentCanvasMode))
-        {
-            menuObjectsForCurrentCanvasMode = new List<GameObject>();
-        }
-        foreach (var menuObject in objectsToEnableDisable)
-        {
-            menuObject.SetActive(menuObjectsForCurrentCanvasMode.Contains(menuObject));
-        }
+        _instance.gameUI.SetActive(canvasMode == CanvasModes.Game);
         //Deleting previous panel
         if (_currentPanel != null)
         {
@@ -193,7 +175,12 @@ public class MenuController : MonoBehaviour
         {
             {CanvasModes.Dialog, _instance.dialogPanelPrefab},
             {CanvasModes.Shop, _instance.shopPanelPrefab},
-            {CanvasModes.Cutscene, _instance.cutscenePanelPrefab}
+            {CanvasModes.Cutscene, _instance.cutscenePanelPrefab},
+            {CanvasModes.SystemMenuRoot, _instance.systemMenuRootPanelPrefab},
+            {CanvasModes.SystemMenuOptions, _instance.systemMenuOptionsPanelPrefab},
+            {CanvasModes.ActionMenuInventory, _instance.actionMenuInventoryPanelPrefab},
+            {CanvasModes.ActionMenuCrafting, _instance.actionMenuCraftingPanelPrefab},
+            {CanvasModes.ActionMenuMap, _instance.actionMenuMapPanelPrefab}
         };
         if (panelsToCreate.TryGetValue(canvasMode, out var panelToCreate))
         {

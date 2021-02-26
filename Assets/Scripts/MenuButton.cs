@@ -22,11 +22,6 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
     private Image _image;
     private TextMeshProUGUI[] _texts;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     void OnEnable()
     {
         if (_image == null)

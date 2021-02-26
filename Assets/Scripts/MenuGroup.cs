@@ -136,4 +136,9 @@ public class MenuGroup : MonoBehaviour
         var menuButton = MenuButtons.FirstOrDefault(x => x.name == name);
         HoveredButton = menuButton;
     }
+
+    public void SetCanvasTrigger(string triggerName)
+    {
+        GameObject.FindGameObjectWithTag("Canvas").GetComponent<Animator>().SetTrigger(triggerName);
+    }
 }
