@@ -102,9 +102,12 @@ MonoBehaviour:
     type: 3}
   SliderPrefab: {fileID: 3810027123688587146, guid: 53ea2208f092d0d4a824e7ec3571fd1c,
     type: 3}
+  SectionNamePrefab: {fileID: 7609343701235246297, guid: f6e10ff2783bfe14b9e9fbd41e49807e,
+    type: 3}
   BackButton: {fileID: 5324794882603333146}
-  initialY: -500
-  interval: 100
+  initialY: -200
+  interval: -100
+  _index: 0
 --- !u!222 &3882342353953011018
 CanvasRenderer:
   m_ObjectHideFlags: 0

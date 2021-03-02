@@ -1,16 +1,17 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Interfaces;
+using TMPro;
 using UnityEngine;
 
 public class ToggleControlController : MonoBehaviour, IOptionItemControl
 {
 
-    public ToggleControlButtonController toggleControlButtonController;
+    public TextMeshProUGUI textControl;
+    public GameObject changeLeft;
+    public GameObject changeRight;
     public event Action<string> ValueChanged;
 
-    public bool state
+    private bool State
     {
         get => _state;
         set {
@@ -19,18 +20,13 @@ public class ToggleControlController : MonoBehaviour, IOptionItemControl
                 _state = value;
                 ValueChanged?.Invoke(GetValue());
             }
-            var anchoredPosition = toggleControlButtonController.GetComponent<RectTransform>().anchoredPosition;
-            if (_positionIfOn == float.MinValue)
-            {
-                _positionIfOn = transform.GetComponent<RectTransform>().sizeDelta.x;
-            }
-            anchoredPosition.x = value ? _positionIfOn : 0f;
-            toggleControlButtonController.GetComponent<RectTransform>().anchoredPosition = anchoredPosition;
+            changeLeft.SetActive(_state);
+            changeRight.SetActive(!_state);
+            textControl.text = _state ? "Yes" : "No";
         }
     }
 
     private bool _state;
-    private float _positionIfOn = float.MinValue;
 
     event Action<string> IOptionItemControl.ValueChanged
     {
@@ -47,26 +43,33 @@ public class ToggleControlController : MonoBehaviour, IOptionItemControl
 
     void OnEnable()
     {
-        toggleControlButtonController.MouseClick += OnMouseClick;
+        changeLeft.GetComponent<ClickableController>().Clicked += OnDLeftPressed;
+        changeRight.GetComponent<ClickableController>().Clicked += OnDRightPressed;
     }
 
     void OnDisable()
     {
-        toggleControlButtonController.MouseClick -= OnMouseClick;
-    }
-
-    void OnMouseClick()
-    {
-        state = !state;
+        changeLeft.GetComponent<ClickableController>().Clicked -= OnDLeftPressed;
+        changeRight.GetComponent<ClickableController>().Clicked -= OnDRightPressed;
     }
 
     public void SetValue(string value)
     {
-        state = value == true.ToString();
+        State = value == true.ToString();
     }
 
     public string GetValue()
     {
-        return state ? true.ToString() : false.ToString();
+        return State ? true.ToString() : false.ToString();
+    }
+
+    public void OnDLeftPressed()
+    {
+        State = false;
+    }
+
+    public void OnDRightPressed()
+    {
+        State = true;
     }
 }

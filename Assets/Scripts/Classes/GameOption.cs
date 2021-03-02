@@ -10,7 +10,9 @@ namespace Classes
         public event Action<string> ValueChanged;
         public string id;
         public string name;
+        public string section;
         public Type type;
+        public int index;
         public string value
         {
             get => _init ? _value : defaultValue;

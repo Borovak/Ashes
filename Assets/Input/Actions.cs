@@ -484,6 +484,38 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""DUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""393840c1-80b8-4d13-a840-68eaf4545a95"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""DDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""abfaaa92-5f7c-49d2-a755-a776aa21d9ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""DLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""b63255cf-d342-4ab2-9841-a7747bfcf406"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""DRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""1b11cf16-2e9d-4bfe-9402-ffffc9761846"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
                 }
             ],
             ""bindings"": [
@@ -992,6 +1024,94 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""action"": ""LT"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f71675b-d810-47ec-9b66-5b11ad904096"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""DUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9e72ee29-784a-404f-b152-8dc912434556"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""DUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18c76510-4d5b-4c5e-b537-da6c222a6e30"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""DDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0159778-c258-4f30-9eb0-ef029c9b8548"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""DDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5713cc57-3177-4610-a55d-153f81ae183c"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""DLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f24f7317-166c-41bc-a757-8a33fef42a76"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""DLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""156a7091-4528-46e2-a6fa-deb1bb9f7a12"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""DRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6fd6a69e-f6d3-4e94-857a-10a6d7f9699f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""DRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1052,6 +1172,10 @@ public class @Actions : IInputActionCollection, IDisposable
         m_Menu_RB = m_Menu.FindAction("RB", throwIfNotFound: true);
         m_Menu_LT = m_Menu.FindAction("LT", throwIfNotFound: true);
         m_Menu_RT = m_Menu.FindAction("RT", throwIfNotFound: true);
+        m_Menu_DUp = m_Menu.FindAction("DUp", throwIfNotFound: true);
+        m_Menu_DDown = m_Menu.FindAction("DDown", throwIfNotFound: true);
+        m_Menu_DLeft = m_Menu.FindAction("DLeft", throwIfNotFound: true);
+        m_Menu_DRight = m_Menu.FindAction("DRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1205,6 +1329,10 @@ public class @Actions : IInputActionCollection, IDisposable
     private readonly InputAction m_Menu_RB;
     private readonly InputAction m_Menu_LT;
     private readonly InputAction m_Menu_RT;
+    private readonly InputAction m_Menu_DUp;
+    private readonly InputAction m_Menu_DDown;
+    private readonly InputAction m_Menu_DLeft;
+    private readonly InputAction m_Menu_DRight;
     public struct MenuActions
     {
         private @Actions m_Wrapper;
@@ -1224,6 +1352,10 @@ public class @Actions : IInputActionCollection, IDisposable
         public InputAction @RB => m_Wrapper.m_Menu_RB;
         public InputAction @LT => m_Wrapper.m_Menu_LT;
         public InputAction @RT => m_Wrapper.m_Menu_RT;
+        public InputAction @DUp => m_Wrapper.m_Menu_DUp;
+        public InputAction @DDown => m_Wrapper.m_Menu_DDown;
+        public InputAction @DLeft => m_Wrapper.m_Menu_DLeft;
+        public InputAction @DRight => m_Wrapper.m_Menu_DRight;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1278,6 +1410,18 @@ public class @Actions : IInputActionCollection, IDisposable
                 @RT.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnRT;
                 @RT.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnRT;
                 @RT.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnRT;
+                @DUp.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnDUp;
+                @DUp.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnDUp;
+                @DUp.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnDUp;
+                @DDown.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnDDown;
+                @DDown.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnDDown;
+                @DDown.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnDDown;
+                @DLeft.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnDLeft;
+                @DLeft.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnDLeft;
+                @DLeft.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnDLeft;
+                @DRight.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnDRight;
+                @DRight.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnDRight;
+                @DRight.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnDRight;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -1327,6 +1471,18 @@ public class @Actions : IInputActionCollection, IDisposable
                 @RT.started += instance.OnRT;
                 @RT.performed += instance.OnRT;
                 @RT.canceled += instance.OnRT;
+                @DUp.started += instance.OnDUp;
+                @DUp.performed += instance.OnDUp;
+                @DUp.canceled += instance.OnDUp;
+                @DDown.started += instance.OnDDown;
+                @DDown.performed += instance.OnDDown;
+                @DDown.canceled += instance.OnDDown;
+                @DLeft.started += instance.OnDLeft;
+                @DLeft.performed += instance.OnDLeft;
+                @DLeft.canceled += instance.OnDLeft;
+                @DRight.started += instance.OnDRight;
+                @DRight.performed += instance.OnDRight;
+                @DRight.canceled += instance.OnDRight;
             }
         }
     }
@@ -1368,5 +1524,9 @@ public class @Actions : IInputActionCollection, IDisposable
         void OnRB(InputAction.CallbackContext context);
         void OnLT(InputAction.CallbackContext context);
         void OnRT(InputAction.CallbackContext context);
+        void OnDUp(InputAction.CallbackContext context);
+        void OnDDown(InputAction.CallbackContext context);
+        void OnDLeft(InputAction.CallbackContext context);
+        void OnDRight(InputAction.CallbackContext context);
     }
 }

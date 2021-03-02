@@ -5,10 +5,11 @@ using Classes;
 using Interfaces;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class OptionItemController : MonoBehaviour
 {
-    public GameOption gameOption
+    public GameOption GameOption
     {
         get => _gameOption;
         set
@@ -16,10 +17,10 @@ public class OptionItemController : MonoBehaviour
             _gameOption = value;
             FindOptionItemControl();
             _optionItemControl.ValueChanged += OnValueChanged;
-            if (gameOption != null)
+            if (GameOption != null)
             {                
-                parameterTextControl.text = gameOption.name;
-                _optionItemControl.SetValue(gameOption.value);
+                parameterTextControl.text = GameOption.name;
+                _optionItemControl.SetValue(GameOption.value);
             }
             else
             {
@@ -29,14 +30,62 @@ public class OptionItemController : MonoBehaviour
         }
     }
     public TextMeshProUGUI parameterTextControl;
+    public GameObject selectionObject;
+    
+    private int Index => GameOption.index;
+    private bool IsSelected
+    {
+        get => _isSelected;
+        set
+        {
+            _isSelected = value;
+            selectionObject.SetActive(_isSelected);
+        }
 
+    }
+    
+    private bool _isSelected;
     private IOptionItemControl _optionItemControl;
     private GameOption _gameOption;
 
+    private void OnEnable()
+    {
+        selectionObject.SetActive(false);
+        OptionsMenuController.SelectedIndexChanged += OnSelectedIndexChanged;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.DLeft].Pressed += OnDLeftPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.DRight].Pressed += OnDRightPressed;
+    }
+
+    private void OnDisable()
+    {
+        OptionsMenuController.SelectedIndexChanged -= OnSelectedIndexChanged;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.DLeft].Pressed -= OnDLeftPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.DRight].Pressed -= OnDRightPressed;
+    }
+
+    private void OnSelectedIndexChanged(int selectedIndex)
+    {
+        IsSelected = selectedIndex == Index;
+    }
+
     private void OnValueChanged(string value)
     {
-        if (gameOption == null) return;
-        gameOption.value = value;
+        if (GameOption == null) return;
+        GameOption.value = value;
+    }
+
+    private void OnDLeftPressed()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        if (!IsSelected) return;
+        _optionItemControl.OnDLeftPressed();
+    }
+
+    private void OnDRightPressed()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        if (!IsSelected) return;
+        _optionItemControl.OnDRightPressed();
     }
 
     private void FindOptionItemControl()

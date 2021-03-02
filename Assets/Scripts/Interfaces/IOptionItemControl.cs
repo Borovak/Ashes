@@ -7,5 +7,7 @@ namespace Interfaces
         event Action<string> ValueChanged;
         void SetValue(string value);
         string GetValue();
+        void OnDLeftPressed();
+        void OnDRightPressed();
     }
 }

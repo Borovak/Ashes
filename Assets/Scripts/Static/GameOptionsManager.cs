@@ -15,17 +15,17 @@ namespace Static
         public const string OPTION_SFX_VOLUME = "sfxVolume";
 
         private static Dictionary<string, GameOption> _gameOptions;
-        private static string _filePath => Application.persistentDataPath + $"/options.xml";
-        private static object saveLoadInterlock;
+        private static string FilePath => Application.persistentDataPath + $"/options.xml";
+        private static object _saveLoadInterlock;
 
         public static void Init()
         {
-            saveLoadInterlock = new object();
+            _saveLoadInterlock = new object();
             _gameOptions = new Dictionary<string, GameOption>();
-            Add(OPTION_SHADOWS_ENABLE, "Shadows", typeof(bool));
-            Add(OPTION_MUSIC_VOLUME, "Music Volume", typeof(float));
-            Add(OPTION_AMBIENT_VOLUME, "Ambient Volume", typeof(float));
-            Add(OPTION_SFX_VOLUME, "SFX Volume", typeof(float));
+            Add(OPTION_MUSIC_VOLUME, "Music Volume","Sound", typeof(float));
+            Add(OPTION_AMBIENT_VOLUME, "Ambient Volume","Sound", typeof(float));
+            Add(OPTION_SFX_VOLUME, "SFX Volume","Sound", typeof(float));
+            Add(OPTION_SHADOWS_ENABLE, "Shadows","Graphics", typeof(bool));
             Load(out var loadNote);
             if (!string.IsNullOrEmpty(loadNote))
             {
@@ -35,7 +35,7 @@ namespace Static
 
         public static bool Save(out string note)
         {
-            lock (saveLoadInterlock)
+            lock (_saveLoadInterlock)
             {
                 var xeRoot = new XElement("Options");
                 foreach (var gameOption in _gameOptions)
@@ -47,7 +47,7 @@ namespace Static
                 }
                 try
                 {
-                    xeRoot.Save(_filePath);
+                    xeRoot.Save(FilePath);
                     note = "Options saved";
                     return true;
                 }
@@ -61,10 +61,10 @@ namespace Static
 
         public static bool Load(out string note)
         {
-            lock (saveLoadInterlock)
+            lock (_saveLoadInterlock)
             {
                 XElement xeRoot;
-                if (!System.IO.File.Exists(_filePath))
+                if (!System.IO.File.Exists(FilePath))
                 {
                     note = "Options did not exist";
                     if (Save(out var noteIfError))
@@ -80,7 +80,7 @@ namespace Static
                 }
                 try
                 {
-                    xeRoot = XElement.Load(_filePath);
+                    xeRoot = XElement.Load(FilePath);
                 }
                 catch (Exception)
                 {
@@ -110,9 +110,9 @@ namespace Static
             }
         }
 
-        private static void Add(string id, string name, Type type)
+        private static void Add(string id, string name, string section, Type type)
         {
-            _gameOptions.Add(id, new GameOption { id = id, name = name, type = type });
+            _gameOptions.Add(id, new GameOption { id = id, name = name, type = type, section = section, index = _gameOptions.Count });
         }
 
         public static bool TryGetOption(string id, out GameOption gameOption)
@@ -127,10 +127,8 @@ namespace Static
 
         public static bool TryGetAllOptions(out List<GameOption> gameOptions)
         {
-            gameOptions = new List<GameOption>();
-            if (_gameOptions == null) return false;
-            gameOptions = _gameOptions.Values.ToList();
-            return true;
+            gameOptions = _gameOptions != null ? _gameOptions.Values.OrderBy(gameOption => gameOption.index).ToList() : new List<GameOption>();
+            return _gameOptions != null;
         }
     }
 }
