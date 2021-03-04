@@ -1336,6 +1336,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9006081809503177477}
     m_Modifications:
+    - target: {fileID: 1267462353191641259, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267462353191641259, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267462354619318711, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267462355188145516, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: index
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2351001726127742344, guid: f655701b957537b4e89906e093e1618c,
         type: 3}
       propertyPath: m_Pivot.x

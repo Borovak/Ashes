@@ -35,15 +35,9 @@ public class MenuController : MonoBehaviour
     public GameObject shopPanelPrefab;
     public GameObject dialogPanelPrefab;
     public GameObject cutscenePanelPrefab;
-    public GameObject systemMenuRootPanelPrefab;
-    public GameObject systemMenuOptionsPanelPrefab;
-    public GameObject actionMenuInventoryPanelPrefab;
-    public GameObject actionMenuCraftingPanelPrefab;
-    public GameObject actionMenuMapPanelPrefab;
 
     private static MenuController _instance;
     private static CanvasModes _canvasMode;
-    private static GameObject _currentPanel;
     private static Animator _animator;
     private List<Vector2> _choices;
     private int _maxIndex;
@@ -165,27 +159,6 @@ public class MenuController : MonoBehaviour
         _canvasMode = canvasMode;
         //Changing what is enabled
         _instance.gameUI.SetActive(canvasMode == CanvasModes.Game);
-        //Deleting previous panel
-        if (_currentPanel != null)
-        {
-            Destroy(_currentPanel);
-        }
-        //Creating new panel
-        var panelsToCreate = new Dictionary<CanvasModes, GameObject>
-        {
-            {CanvasModes.Dialog, _instance.dialogPanelPrefab},
-            {CanvasModes.Shop, _instance.shopPanelPrefab},
-            {CanvasModes.Cutscene, _instance.cutscenePanelPrefab},
-            {CanvasModes.SystemMenuRoot, _instance.systemMenuRootPanelPrefab},
-            {CanvasModes.SystemMenuOptions, _instance.systemMenuOptionsPanelPrefab},
-            {CanvasModes.ActionMenuInventory, _instance.actionMenuInventoryPanelPrefab},
-            {CanvasModes.ActionMenuCrafting, _instance.actionMenuCraftingPanelPrefab},
-            {CanvasModes.ActionMenuMap, _instance.actionMenuMapPanelPrefab}
-        };
-        if (panelsToCreate.TryGetValue(canvasMode, out var panelToCreate))
-        {
-            _currentPanel = Instantiate(panelToCreate, _instance.transform);
-        }
         //Setting specific parameters on exit state
         switch (previousCanvasMode)
         {

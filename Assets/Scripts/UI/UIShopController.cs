@@ -29,7 +29,7 @@ namespace UI
             set
             {
                 _shopMode = value;
-                instance._menuGroup.ActiveButton = instance.modeButtons[(int)shopMode];
+                //instance._menuGroup.ActiveButton = instance.modeButtons[(int)shopMode];
                 ShopModeChanged?.Invoke(value);
             }
         }

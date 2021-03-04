@@ -151,13 +151,13 @@ public class CraftingIngredientsPanel : MonoBehaviour
         return true;
     }
 
-    private void CraftOne()
+    public void CraftOne()
     {
         if (_item == null || !_item.isCraftable) return;
         Craft();
     }
     
-    private void CraftMax()
+    public void CraftMax()
     {
         if (_item == null || !_item.isCraftable) return;
         while (Craft())

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Classes;
+using Static;
 using UnityEngine;
 
 public class ActionMenuManager : MonoBehaviour
@@ -36,10 +37,6 @@ public class ActionMenuManager : MonoBehaviour
     {
         if (sectionIndex == _previousSectionIndex) return;
         _previousSectionIndex = sectionIndex;
-        for (int i = 0; i < sectionButtons.Length; i++)
-        {            
-            _menuGroup.ActiveButton = sectionButtons[sectionIndex].GetComponent<MenuButton>();
-        }
     }
 
     public static void ChangeSection(int index)
@@ -47,14 +44,16 @@ public class ActionMenuManager : MonoBehaviour
         sectionIndex = index;
     }
 
-    public static void SectionNext()
+    public void SectionNext()
     {
         sectionIndex = sectionIndex + 1 < _sectionCount ? sectionIndex + 1 : 0;
+        GetComponent<MenuFunctions>().SetCanvasTrigger("Select");
     }
 
-    public static void SectionPrevious()
+    public void SectionPrevious()
     {
         sectionIndex = sectionIndex - 1 >= 0 ? sectionIndex - 1 : _sectionCount - 1;
+        GetComponent<MenuFunctions>().SetCanvasTrigger("Select");
     }
 
 }

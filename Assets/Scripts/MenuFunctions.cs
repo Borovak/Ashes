@@ -18,4 +18,14 @@ public class MenuFunctions : MonoBehaviour
     {
         SaveSystem.Delete(index);
     }
+    
+    public void SetCanvasTrigger(string triggerName)
+    {
+        GameObject.FindGameObjectWithTag("Canvas").GetComponent<Animator>().SetTrigger(triggerName);
+    }
+    
+    public void SetLoadCreateTrigger(string triggerName)
+    {
+        GameObject.FindGameObjectWithTag("LoadCreatePanel").GetComponent<Animator>().SetTrigger(triggerName);
+    }
 }

@@ -1387,7 +1387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cfcd80adbc78994a926709c3ed4f250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeActive: 0
   isNavigable: 0
 --- !u!114 &5300373806091402210
 MonoBehaviour:
@@ -1775,6 +1774,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4117493193781924267}
     m_Modifications:
+    - target: {fileID: 1267462353191641259, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267462354619318711, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267462355188145516, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267462355188145516, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2351001726127742344, guid: f655701b957537b4e89906e093e1618c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1885,6 +1904,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ActionMenuCommonButtons
       objectReference: {fileID: 0}
+    - target: {fileID: 8517313948357476677, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517313948357476677, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517313948357476677, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517313948357476677, guid: f655701b957537b4e89906e093e1618c,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4291940817
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f655701b957537b4e89906e093e1618c, type: 3}
 --- !u!224 &854548516857698251 stripped
@@ -1907,9 +1946,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
         type: 3}
+      propertyPath: index
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
       propertyPath: EventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5300373806091402210}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5300373806091402210}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
         type: 3}
       propertyPath: EventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1917,8 +1981,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
         type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CraftMax
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
       propertyPath: EventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CraftingIngredientsPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CraftingIngredientsPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5801646557443539037, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
         type: 3}
@@ -2003,7 +2082,7 @@ PrefabInstance:
     - target: {fileID: 5801646557443539037, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 305
+      value: 387.41
       objectReference: {fileID: 0}
     - target: {fileID: 5801646557443539037, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
         type: 3}
@@ -2307,9 +2386,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
         type: 3}
+      propertyPath: index
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
       propertyPath: EventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5300373806091402210}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5300373806091402210}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
         type: 3}
       propertyPath: EventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2317,8 +2421,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
         type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CraftOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
       propertyPath: EventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CraftingIngredientsPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CraftingIngredientsPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801646557443539036, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
+        type: 3}
+      propertyPath: eventOnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5801646557443539037, guid: 9a46bf15fdc75284d8785d4c19eb39bb,
         type: 3}

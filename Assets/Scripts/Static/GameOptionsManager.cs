@@ -127,6 +127,10 @@ namespace Static
 
         public static bool TryGetAllOptions(out List<GameOption> gameOptions)
         {
+            if (_gameOptions == null)
+            {
+                Init();
+            }
             gameOptions = _gameOptions != null ? _gameOptions.Values.OrderBy(gameOption => gameOption.index).ToList() : new List<GameOption>();
             return _gameOptions != null;
         }

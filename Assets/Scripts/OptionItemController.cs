@@ -1,20 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Classes;
 using Interfaces;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OptionItemController : MonoBehaviour
+public class OptionItemController : SelectableItem
 {
+    
     public GameOption GameOption
     {
         get => _gameOption;
         set
         {
             _gameOption = value;
+            index = GameOption.index;
             FindOptionItemControl();
             _optionItemControl.ValueChanged += OnValueChanged;
             if (GameOption != null)
@@ -30,42 +30,20 @@ public class OptionItemController : MonoBehaviour
         }
     }
     public TextMeshProUGUI parameterTextControl;
-    public GameObject selectionObject;
     
-    private int Index => GameOption.index;
-    private bool IsSelected
-    {
-        get => _isSelected;
-        set
-        {
-            _isSelected = value;
-            selectionObject.SetActive(_isSelected);
-        }
-
-    }
-    
-    private bool _isSelected;
     private IOptionItemControl _optionItemControl;
     private GameOption _gameOption;
 
-    private void OnEnable()
+    protected override void OnEnableAfter()
     {
-        selectionObject.SetActive(false);
-        OptionsMenuController.SelectedIndexChanged += OnSelectedIndexChanged;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.DLeft].Pressed += OnDLeftPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.DRight].Pressed += OnDRightPressed;
     }
 
-    private void OnDisable()
+    protected override void OnDisableAfter()
     {
-        OptionsMenuController.SelectedIndexChanged -= OnSelectedIndexChanged;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.DLeft].Pressed -= OnDLeftPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.DRight].Pressed -= OnDRightPressed;
-    }
-
-    private void OnSelectedIndexChanged(int selectedIndex)
-    {
-        IsSelected = selectedIndex == Index;
     }
 
     private void OnValueChanged(string value)
