@@ -24,7 +24,6 @@ namespace Static
             Debug.Log(path);
             Load(path);
         }
-#endif  
 
         public static void LoadDefault()
         {
@@ -253,5 +252,6 @@ namespace Static
                 throw (new Exception($"Invalid type for attribute '{xa.Name}'"));
             }
         }
+#endif  
     }
 }
