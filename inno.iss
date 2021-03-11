@@ -6,6 +6,7 @@
 #define MyAppPublisher "Studio Boreli Inc."
 #define MyAppURL "http://www.studioboreli.com/"
 #define MyAppExeName "Ashes.exe"
+#define FilesSource "C:\Users\braba\Ashes\build\*"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -35,7 +36,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\AshesLatestBuild\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
+Source: "{#FilesSource}"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
