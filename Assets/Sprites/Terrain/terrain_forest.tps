@@ -88,9 +88,9 @@
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>2048</int>
+            <int>4096</int>
             <key>height</key>
-            <int>2048</int>
+            <int>4096</int>
         </QSize>
         <key>fixedTextureSize</key>
         <QSize>
@@ -132,7 +132,7 @@
             <key>datafile</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../../Assets/Sprites/Terrain/terrain_town.tpsheet</filename>
+                <filename>terrain_forest.tpsheet</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -181,151 +181,241 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">terrain_town_006_00.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_000_00.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_001_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0,1</point_f>
+                <point_f>0.0875,0.9125</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>8,8,16,16</rect>
+                <rect>40,40,80,80</rect>
                 <key>scale9Paddings</key>
-                <rect>8,8,16,16</rect>
+                <rect>40,40,80,80</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">terrain_town_007_00.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_002_00.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_002_01.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_002_02.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0,1</point_f>
+                <point_f>0.0294118,0.9</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>16,16,32,32</rect>
+                <rect>34,10,68,20</rect>
                 <key>scale9Paddings</key>
-                <rect>16,16,32,32</rect>
+                <rect>34,10,68,20</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">terrain_town_008_00.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_004_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0,1</point_f>
+                <point_f>0.0555556,0.9</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>32,32,64,64</rect>
+                <rect>18,10,36,20</rect>
                 <key>scale9Paddings</key>
-                <rect>32,32,64,64</rect>
+                <rect>18,10,36,20</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">terrain_town_009_00.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_005_00.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_006_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0,1</point_f>
+                <point_f>0.1,0.9</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>64,64,128,128</rect>
+                <rect>10,10,20,20</rect>
                 <key>scale9Paddings</key>
-                <rect>64,64,128,128</rect>
+                <rect>10,10,20,20</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">terrain_town_011_00.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_006_01.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0,1</point_f>
+                <point_f>0.105263,0.894737</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>128,128,256,256</rect>
+                <rect>10,10,19,19</rect>
                 <key>scale9Paddings</key>
-                <rect>128,128,256,256</rect>
+                <rect>10,10,19,19</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">terrain_town_017_00.png</key>
-            <key type="filename">terrain_town_017_01.png</key>
-            <key type="filename">terrain_town_017_02.png</key>
-            <key type="filename">terrain_town_017_03.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_007_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.1,0.833333</point_f>
+                <point_f>0.0555556,0.944444</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>80,48,160,96</rect>
+                <rect>18,18,36,36</rect>
                 <key>scale9Paddings</key>
-                <rect>80,48,160,96</rect>
+                <rect>18,18,36,36</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">terrain_town_018_00.png</key>
-            <key type="filename">terrain_town_018_01.png</key>
-            <key type="filename">terrain_town_018_02.png</key>
-            <key type="filename">terrain_town_018_03.png</key>
-            <key type="filename">terrain_town_018_04.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_008_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.25,0.666667</point_f>
+                <point_f>0.0294118,0.970588</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>32,24,64,48</rect>
+                <rect>34,34,68,68</rect>
                 <key>scale9Paddings</key>
-                <rect>32,24,64,48</rect>
+                <rect>34,34,68,68</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">terrain_town_019_00.png</key>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_009_00.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0,0.666667</point_f>
+                <point_f>0.0151515,0.984848</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>40,24,80,48</rect>
+                <rect>66,66,132,132</rect>
                 <key>scale9Paddings</key>
-                <rect>40,24,80,48</rect>
+                <rect>66,66,132,132</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_010_00.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.00769231,0.984848</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>130,66,260,132</rect>
+                <key>scale9Paddings</key>
+                <rect>130,66,260,132</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_011_00.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.00769231,0.992308</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>130,130,260,260</rect>
+                <key>scale9Paddings</key>
+                <rect>130,130,260,260</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_013_00.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.048913,0.839286</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>184,56,368,112</rect>
+                <key>scale9Paddings</key>
+                <rect>184,56,368,112</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_014_00.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.125,0.875</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>40,40,80,80</rect>
+                <key>scale9Paddings</key>
+                <rect>40,40,80,80</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_015_00.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0454546,0.833333</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>176,48,352,96</rect>
+                <key>scale9Paddings</key>
+                <rect>176,48,352,96</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_016_00.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.0833333,0.75</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>96,32,192,64</rect>
+                <key>scale9Paddings</key>
+                <rect>96,32,192,64</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>terrain_town_006_00.png</filename>
-            <filename>terrain_town_007_00.png</filename>
-            <filename>terrain_town_008_00.png</filename>
-            <filename>terrain_town_009_00.png</filename>
-            <filename>terrain_town_011_00.png</filename>
-            <filename>terrain_town_017_00.png</filename>
-            <filename>terrain_town_018_00.png</filename>
-            <filename>terrain_town_018_01.png</filename>
-            <filename>terrain_town_018_02.png</filename>
-            <filename>terrain_town_018_03.png</filename>
-            <filename>terrain_town_018_04.png</filename>
-            <filename>terrain_town_017_01.png</filename>
-            <filename>terrain_town_017_02.png</filename>
-            <filename>terrain_town_017_03.png</filename>
-            <filename>terrain_town_019_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_000_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_001_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_002_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_002_01.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_002_02.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_004_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_005_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_006_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_006_01.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_007_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_008_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_009_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_010_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_011_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_013_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_014_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_015_00.png</filename>
+            <filename>//boreli-nas/Studio Boreli/Ashes/Artefacts/Terrain/Forest/terrain_forest_016_00.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

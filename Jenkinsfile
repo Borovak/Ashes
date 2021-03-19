@@ -13,10 +13,10 @@ node () {
     }
     stage ('Inno package build') {
         bat 'rd /s /q "C:\\Users\\Public\\Documents\\AshesBuild\\Ashes_BackUpThisFolder_ButDontShipItWithYourGame"'
-        bat '"C:\\Program Files (x86)\\Inno Setup 6\\iscc.exe" inno.iss /O"C:\\Users\\jenkins\\jenkins\\" /DApplicationVersion=0.1.%BUILD_NUMBER%' 
+        bat '"C:\\Program Files (x86)\\Inno Setup 6\\iscc.exe" inno.iss /O"C:\\Users\\jenkins\\jenkins\\" /DApplicationVersion=0.2.%BUILD_NUMBER%' 
 	}
 	stage ('Moving package to NAS') {
-	    bat 'move "C:\\Users\\jenkins\\jenkins\\Ashes 0.1.%BUILD_NUMBER%.exe" "\\\\boreli-nas\\Studio Boreli\\Releases\\Ashes\\Ashes 0.1.%BUILD_NUMBER%.exe"'
+	    bat 'move "C:\\Users\\jenkins\\jenkins\\Ashes 0.1.%BUILD_NUMBER%.exe" "\\\\boreli-nas\\Studio Boreli\\Releases\\Ashes\\Ashes 0.2.%BUILD_NUMBER%.exe"'
 	}
 	
 }
