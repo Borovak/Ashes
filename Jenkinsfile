@@ -9,7 +9,7 @@ node () {
         bat 'del /P "C:\\Users\\Public\\Documents\\AshesBuild\\*.*"'
     }
     stage ('Unity build') {
-        bat '"C:\\Program Files\\Unity\\Hub\\Editor\\2020.2.7f1\\Editor\\Unity.exe" -projectPath "C:\\Program Files\\Jenkins\\workspace\\Ashes" -quit -batchmode -nographics -logFile Editor.log -executeMethod CommonFunctions.Editor.CommandLineBuild.BuildPlayer'
+        bat '"C:\\Program Files\\Unity\\Hub\\Editor\\2020.2.7f1\\Editor\\Unity.exe" -projectPath "C:\\Program Files\\Jenkins\\workspace\\Ashes-pipeline" -quit -batchmode -nographics -logFile Editor.log -executeMethod CommonFunctions.Editor.CommandLineBuild.BuildPlayer'
     }
     stage ('Inno package build') {
         bat 'rd /s /q "C:\\Users\\Public\\Documents\\AshesBuild\\Ashes_BackUpThisFolder_ButDontShipItWithYourGame"'
