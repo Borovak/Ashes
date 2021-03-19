@@ -6,7 +6,7 @@
 #define MyAppPublisher "Studio Boreli Inc."
 #define MyAppURL "http://www.studioboreli.com/"
 #define MyAppExeName "Ashes.exe"
-#define FilesSource "C:\Users\braba\Ashes\build\*"
+#define FilesSource "C:\Users\Public\Documents\AshesBuild\*"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
