@@ -6,7 +6,7 @@ node () {
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '3900d60a-c466-4a06-b15c-72dde9fea58f', url: 'https://github.com/Borovak/Ashes.git']]]) 
 	}
 	stage ('Deleting previous build output') {
-        bat 'del /P "C:\\Users\\Public\\Documents\\AshesBuild\\*.*"'
+        bat 'if exist "C:\Users\Public\Documents\AshesBuild\" rmdir /S /Q "C:\Users\Public\Documents\AshesBuild\"'
     }
     stage ('Unity build') {
         bat '"C:\\Program Files\\Unity\\Hub\\Editor\\2020.2.7f1\\Editor\\Unity.exe" -projectPath "C:\\Program Files\\Jenkins\\workspace\\Ashes-pipeline" -quit -batchmode -nographics -logFile Editor.log -executeMethod CommonFunctions.Editor.CommandLineBuild.BuildPlayer'
