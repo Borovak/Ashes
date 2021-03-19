@@ -10,6 +10,7 @@ node () {
     }
     stage ('Unity build') {
         bat '"C:\\Program Files\\Unity\\Hub\\Editor\\2020.2.7f1\\Editor\\Unity.exe" -projectPath "C:\\Program Files\\Jenkins\\workspace\\Ashes-pipeline" -quit -batchmode -nographics -logFile Editor.log -executeMethod CommonFunctions.Editor.CommandLineBuild.BuildPlayer'
+		cd "C:\\Users\\Public\\Documents\\AshesBuild\\"
     }
     stage ('Inno package build') {
         bat 'rd /s /q "C:\\Users\\Public\\Documents\\AshesBuild\\Ashes_BackUpThisFolder_ButDontShipItWithYourGame"'
