@@ -101,6 +101,9 @@ TextureImporter:
   - first:
       213: -7614568499061518524
     second: terrain_town_018_04
+  - first:
+      213: -3106493420879433406
+    second: terrain_town_019_00
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -214,8 +217,8 @@ TextureImporter:
       name: terrain_town_007_00
       rect:
         serializedVersion: 2
-        x: 783
-        y: 786
+        x: 862
+        y: 784
         width: 64
         height: 64
       alignment: 6
@@ -383,7 +386,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 913
-        y: 981
+        y: 937
         width: 79
         height: 42
       alignment: 9
@@ -404,7 +407,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 913
-        y: 937
+        y: 893
         width: 78
         height: 42
       alignment: 9
@@ -424,8 +427,8 @@ TextureImporter:
       name: terrain_town_018_02
       rect:
         serializedVersion: 2
-        x: 913
-        y: 894
+        x: 783
+        y: 852
         width: 78
         height: 41
       alignment: 9
@@ -445,8 +448,8 @@ TextureImporter:
       name: terrain_town_018_03
       rect:
         serializedVersion: 2
-        x: 897
-        y: 851
+        x: 783
+        y: 809
         width: 77
         height: 41
       alignment: 9
@@ -466,8 +469,8 @@ TextureImporter:
       name: terrain_town_018_04
       rect:
         serializedVersion: 2
-        x: 783
-        y: 852
+        x: 897
+        y: 850
         width: 78
         height: 41
       alignment: 9
@@ -479,6 +482,27 @@ TextureImporter:
       bones: []
       spriteID: 44f0f873b4e935690800000000000000
       internalID: -7614568499061518524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: terrain_town_019_00
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 981
+        width: 96
+        height: 42
+      alignment: 9
+      pivot: {x: 0, y: 0.11904762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241b46f41b483e4d0800000000000000
+      internalID: -3106493420879433406
       vertices: []
       indices: 
       edges: []

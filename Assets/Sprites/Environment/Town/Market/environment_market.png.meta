@@ -1,0 +1,522 @@
+fileFormatVersion: 2
+guid: 12a8ade9b2810df438df39542db33fb0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4091587737128425876
+    second: environment_market_animTree
+  - first:
+      213: -487865960798246725
+    second: environment_market_broom
+  - first:
+      213: 8087848326174149441
+    second: environment_market_calderon
+  - first:
+      213: -3384695165060832920
+    second: environment_market_cat
+  - first:
+      213: -4217615000616751775
+    second: environment_market_cookFIsh
+  - first:
+      213: 8581547903064706904
+    second: environment_market_curves
+  - first:
+      213: 3080664468203069209
+    second: environment_market_dryingRope
+  - first:
+      213: -7228419607475169200
+    second: environment_market_hongo
+  - first:
+      213: -7024494397861571868
+    second: environment_market_house2
+  - first:
+      213: 519500826169410767
+    second: environment_market_house3
+  - first:
+      213: -5380304675211748380
+    second: environment_market_house4
+  - first:
+      213: 2577907618127725082
+    second: environment_market_house5
+  - first:
+      213: 3082528992414712606
+    second: environment_market_house6
+  - first:
+      213: -1464197202173193049
+    second: environment_market_house7
+  - first:
+      213: 2474899381774491671
+    second: environment_market_market
+  - first:
+      213: 750953007848695996
+    second: environment_market_potionMarket
+  - first:
+      213: 6205775692893832806
+    second: environment_market_shopHouse
+  - first:
+      213: 4850853755005931848
+    second: environment_market_store
+  - first:
+      213: 7759060904050081458
+    second: environment_market_tree2
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: environment_market_broom
+      rect:
+        serializedVersion: 2
+        x: 3872
+        y: 3203
+        width: 86
+        height: 478
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb8ad945e70ca39f0800000000000000
+      internalID: -487865960798246725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_calderon
+      rect:
+        serializedVersion: 2
+        x: 2327
+        y: 926
+        width: 250
+        height: 265
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14b09de833fcd3070800000000000000
+      internalID: 8087848326174149441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_cat
+      rect:
+        serializedVersion: 2
+        x: 3872
+        y: 3683
+        width: 173
+        height: 104
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86121952ea52701d0800000000000000
+      internalID: -3384695165060832920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_cookFIsh
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 773
+        width: 480
+        height: 418
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d21e8b0850875c0800000000000000
+      internalID: -4217615000616751775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_dryingRope
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 3168
+        width: 1889
+        height: 927
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f59630308b0ca20800000000000000
+      internalID: 3080664468203069209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_hongo
+      rect:
+        serializedVersion: 2
+        x: 3872
+        y: 3789
+        width: 188
+        height: 306
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05859f03aae7fab90800000000000000
+      internalID: -7228419607475169200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_house2
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 1193
+        width: 1123
+        height: 1106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e25db0009bf38e90800000000000000
+      internalID: -7024494397861571868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_house3
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 2301
+        width: 1152
+        height: 865
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc4895cbf33a53700800000000000000
+      internalID: 519500826169410767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_house4
+      rect:
+        serializedVersion: 2
+        x: 3135
+        y: 2277
+        width: 919
+        height: 889
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eb51aa67615555b0800000000000000
+      internalID: -5380304675211748380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_house5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 533
+        width: 1105
+        height: 1024
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a12c642025196c320800000000000000
+      internalID: 2577907618127725082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_house6
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 627
+        width: 706
+        height: 1037
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e13c8b269c757ca20800000000000000
+      internalID: 3082528992414712606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_house7
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 1666
+        width: 831
+        height: 891
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a4985bf6602eabe0800000000000000
+      internalID: -1464197202173193049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_market
+      rect:
+        serializedVersion: 2
+        x: 2156
+        y: 20
+        width: 638
+        height: 751
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710a08900eb985220800000000000000
+      internalID: 2474899381774491671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_potionMarket
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 27
+        width: 1060
+        height: 504
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb825db28cbeb6a00800000000000000
+      internalID: 750953007848695996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_shopHouse
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2559
+        width: 1978
+        height: 1536
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666c0b2fc185f1650800000000000000
+      internalID: 6205775692893832806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_store
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 68
+        width: 1091
+        height: 463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8419f7c0ac1b15340800000000000000
+      internalID: 4850853755005931848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_market_tree2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1559
+        width: 1134
+        height: 998
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2beb68078c8bdab60800000000000000
+      internalID: 7759060904050081458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

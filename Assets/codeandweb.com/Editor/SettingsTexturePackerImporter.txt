@@ -15,6 +15,7 @@ tpsheetFileNames:
 - Assets/Sprites/Environment/environment_town.tpsheet
 - Assets/Sprites/Environment/Flag1/flag1.tpsheet
 - Assets/Sprites/Environment/Forest/backgroundDecor_forest.tpsheet
+- Assets/Sprites/Environment/Town/Market/environment_market.tpsheet
 - Assets/Sprites/Environment/Town/Market/environment_town_market_tree1.tpsheet
 - Assets/Sprites/Foreground/foreground_forest.tpsheet
 - Assets/Sprites/Grass/grass_forest.tpsheet
@@ -39,6 +40,7 @@ textureFileNames:
 - Assets/Sprites/Environment/environment_town.png
 - Assets/Sprites/Environment/Flag1/waving.png
 - Assets/Sprites/Environment/Forest/backgroundDecor_forest.png
+- Assets/Sprites/Environment/Town/Market/environment_market.png
 - Assets/Sprites/Environment/Town/Market/environment_town_market_tree1.png
 - Assets/Sprites/Foreground/foreground_forest.png
 - Assets/Sprites/Grass/grass_forest.png
@@ -50,6 +52,7 @@ textureFileNames:
 - Assets/Sprites/UI/SaveIcon/SaveIcon.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 
