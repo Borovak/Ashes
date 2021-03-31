@@ -59,6 +59,9 @@ TextureImporter:
   - first:
       213: 7759060904050081458
     second: environment_market_tree2
+  - first:
+      213: -7375448385480229310
+    second: environment_market_candle
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,8 +154,8 @@ TextureImporter:
       name: environment_market_broom
       rect:
         serializedVersion: 2
-        x: 3872
-        y: 3203
+        x: 3970
+        y: 3099
         width: 86
         height: 478
       alignment: 7
@@ -172,8 +175,8 @@ TextureImporter:
       name: environment_market_calderon
       rect:
         serializedVersion: 2
-        x: 2327
-        y: 926
+        x: 1845
+        y: 2034
         width: 250
         height: 265
       alignment: 7
@@ -190,11 +193,32 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: environment_market_candle
+      rect:
+        serializedVersion: 2
+        x: 3872
+        y: 3685
+        width: 183
+        height: 410
+      alignment: 9
+      pivot: {x: 0.46994534, y: 0.036585364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ef83c25c425a990800000000000000
+      internalID: -7375448385480229310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: environment_market_cat
       rect:
         serializedVersion: 2
         x: 3872
-        y: 3683
+        y: 3579
         width: 173
         height: 104
       alignment: 7
@@ -214,12 +238,12 @@ TextureImporter:
       name: environment_market_cookFIsh
       rect:
         serializedVersion: 2
-        x: 1845
-        y: 773
-        width: 480
-        height: 418
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3235
+        y: 1854
+        width: 484
+        height: 419
+      alignment: 9
+      pivot: {x: 0.50103307, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,11 +281,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3872
-        y: 3789
-        width: 188
-        height: 306
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 3441
+        width: 96
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.029411765}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,12 +301,12 @@ TextureImporter:
       name: environment_market_house2
       rect:
         serializedVersion: 2
-        x: 1970
-        y: 1193
-        width: 1123
-        height: 1106
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2156
+        y: 286
+        width: 1077
+        height: 1122
+      alignment: 9
+      pivot: {x: 0.49675024, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -319,8 +343,8 @@ TextureImporter:
       name: environment_market_house4
       rect:
         serializedVersion: 2
-        x: 3135
-        y: 2277
+        x: 2156
+        y: 1410
         width: 919
         height: 889
       alignment: 7
@@ -362,7 +386,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1137
-        y: 627
+        y: 1520
         width: 706
         height: 1037
       alignment: 7
@@ -382,8 +406,8 @@ TextureImporter:
       name: environment_market_house7
       rect:
         serializedVersion: 2
-        x: 1137
-        y: 1666
+        x: 3135
+        y: 2275
         width: 831
         height: 891
       alignment: 7
@@ -403,8 +427,8 @@ TextureImporter:
       name: environment_market_market
       rect:
         serializedVersion: 2
-        x: 2156
-        y: 20
+        x: 1108
+        y: 657
         width: 638
         height: 751
       alignment: 7
