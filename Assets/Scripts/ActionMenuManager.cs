@@ -10,13 +10,11 @@ public class ActionMenuManager : MonoBehaviour
 
     public static int sectionIndex;
     private static int _sectionCount;
-    private MenuGroup _menuGroup;
     private int _previousSectionIndex = -1;
 
     // Start is called before the first frame update
     void Start()
     {
-        _menuGroup = GetComponent<MenuGroup>();
         _sectionCount = sectionButtons.Length;
     }
 
@@ -47,13 +45,13 @@ public class ActionMenuManager : MonoBehaviour
     public void SectionNext()
     {
         sectionIndex = sectionIndex + 1 < _sectionCount ? sectionIndex + 1 : 0;
-        GetComponent<MenuFunctions>().SetCanvasTrigger("Select");
+        GetComponent<MenuFunctions>().SetCanvasTrigger("SectionNext");
     }
 
     public void SectionPrevious()
     {
         sectionIndex = sectionIndex - 1 >= 0 ? sectionIndex - 1 : _sectionCount - 1;
-        GetComponent<MenuFunctions>().SetCanvasTrigger("Select");
+        GetComponent<MenuFunctions>().SetCanvasTrigger("SectionPrevious");
     }
 
 }

@@ -13,6 +13,7 @@ namespace ControllerButtons
         public abstract InputAction InputAction { get; }
         public event Action Pressed;
         public event Action Released;
+        public event Action<bool> StateChanged;
         public event Action Filled;
         public bool IsPressed { get; set; }
         public float PressedTime { get; set; }
@@ -31,6 +32,7 @@ namespace ControllerButtons
                 Released?.Invoke();
                 _fillLatch = false;
             }
+            StateChanged?.Invoke(IsPressed);
         }
 
         public void Update()

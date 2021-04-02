@@ -475,7 +475,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""id"": ""c233f7c5-bfaf-460c-9f45-6e445b1fbdb6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press""
+                    ""interactions"": ""Press(behavior=2)""
                 },
                 {
                     ""name"": ""RT"",

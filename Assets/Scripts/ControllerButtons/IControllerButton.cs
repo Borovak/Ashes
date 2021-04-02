@@ -13,6 +13,7 @@ namespace ControllerButtons
         InputAction InputAction { get; }
         event Action Pressed;
         event Action Released;
+        event Action<bool> StateChanged;
         event Action Filled;
         bool IsPressed { get; set; }
         float PressedTime { get; set; }

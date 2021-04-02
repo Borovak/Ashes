@@ -55,7 +55,7 @@ MonoBehaviour:
   sizeMultiplierInit: 5
   centeringBiasInit: {x: 375, y: 187.5}
   moveSpeed: 2
-  zoomSpeed: 1.2
+  zoomSpeed: 0.75
   zoomMinimum: 2
   zoomMaximum: 16
   sizeMultiplier: 0

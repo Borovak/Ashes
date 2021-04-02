@@ -22,11 +22,8 @@ public class MapManager : MonoBehaviour
 
     private List<GameObject> _mapRooms;
     private Dictionary<GameObject, Transform> _pins;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    private bool _zoomIn;
+    private bool _zoomOut;
 
     // Update is called once per frame
     void Update()
@@ -51,12 +48,20 @@ public class MapManager : MonoBehaviour
                 pinRectTransform.anchoredPosition = new Vector2(offset.x, offset.y) * sizeMultiplier - centeringOffset + playerOffset;
             }
         }
+
+        if (_zoomIn)
+        {
+            Zoom(true);
+        } else if (_zoomOut)
+        {
+            Zoom(false);
+        }
     }
 
     void OnEnable()
     {
-        ControllerInputs.controllerButtons[Constants.ControllerButtons.LT].Pressed += ZoomOut;
-        ControllerInputs.controllerButtons[Constants.ControllerButtons.RT].Pressed += ZoomIn;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.LT].StateChanged += ZoomOutAffected;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.RT].StateChanged += ZoomInAffected;
         sizeMultiplier = sizeMultiplierInit;
         centeringBias = centeringBiasInit;
         if (_mapRooms == null)
@@ -107,25 +112,26 @@ public class MapManager : MonoBehaviour
 
     void OnDisable()
     {
-        ControllerInputs.controllerButtons[Constants.ControllerButtons.LT].Pressed -= ZoomOut;
-        ControllerInputs.controllerButtons[Constants.ControllerButtons.RT].Pressed -= ZoomIn;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.LT].StateChanged -= ZoomOutAffected;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.RT].StateChanged -= ZoomInAffected;
     }
 
-    private void ZoomIn()
+    private void ZoomInAffected(bool state)
     {
-        Zoom(true);
+        _zoomIn = state;
     }
 
-    private void ZoomOut()
+    private void ZoomOutAffected(bool state)
     {
-        Zoom(false);
+        _zoomOut = state;
     }
 
     private void Zoom(bool direction)
     {
-        zoomFactor = direction ? zoomSpeed : 1f / zoomSpeed;
+        var speed = zoomSpeed * Time.deltaTime + 1f;
+        zoomFactor = direction ? speed : 1f / speed;
         sizeMultiplier *= zoomFactor;
-        sizeMultiplier = System.Math.Max(zoomMinimum, sizeMultiplier);
-        sizeMultiplier = System.Math.Min(zoomMaximum, sizeMultiplier);
+        sizeMultiplier = Math.Max(zoomMinimum, sizeMultiplier);
+        sizeMultiplier = Math.Min(zoomMaximum, sizeMultiplier);
     }
 }
