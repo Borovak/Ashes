@@ -154,8 +154,8 @@ TextureImporter:
       name: environment_market_broom
       rect:
         serializedVersion: 2
-        x: 3970
-        y: 3099
+        x: 3872
+        y: 3373
         width: 86
         height: 478
       alignment: 7
@@ -175,8 +175,8 @@ TextureImporter:
       name: environment_market_calderon
       rect:
         serializedVersion: 2
-        x: 1845
-        y: 2034
+        x: 487
+        y: 321
         width: 250
         height: 265
       alignment: 7
@@ -196,12 +196,12 @@ TextureImporter:
       name: environment_market_candle
       rect:
         serializedVersion: 2
-        x: 3872
-        y: 3685
-        width: 183
-        height: 410
+        x: 4047
+        y: 3815
+        width: 37
+        height: 280
       alignment: 9
-      pivot: {x: 0.46994534, y: 0.036585364}
+      pivot: {x: 0.3783784, y: 0.007142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,7 +218,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3872
-        y: 3579
+        y: 3991
         width: 173
         height: 104
       alignment: 7
@@ -238,8 +238,8 @@ TextureImporter:
       name: environment_market_cookFIsh
       rect:
         serializedVersion: 2
-        x: 3235
-        y: 1854
+        x: 1
+        y: 167
         width: 484
         height: 419
       alignment: 9
@@ -281,7 +281,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3872
-        y: 3441
+        y: 3853
         width: 96
         height: 136
       alignment: 9
@@ -301,8 +301,8 @@ TextureImporter:
       name: environment_market_house2
       rect:
         serializedVersion: 2
-        x: 2156
-        y: 286
+        x: 1845
+        y: 151
         width: 1077
         height: 1122
       alignment: 9
@@ -343,8 +343,8 @@ TextureImporter:
       name: environment_market_house4
       rect:
         serializedVersion: 2
-        x: 2156
-        y: 1410
+        x: 3135
+        y: 2277
         width: 919
         height: 889
       alignment: 7
@@ -364,8 +364,8 @@ TextureImporter:
       name: environment_market_house5
       rect:
         serializedVersion: 2
-        x: 1
-        y: 533
+        x: 1970
+        y: 1275
         width: 1105
         height: 1024
       alignment: 7
@@ -386,7 +386,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1137
-        y: 1520
+        y: 627
         width: 706
         height: 1037
       alignment: 7
@@ -406,8 +406,8 @@ TextureImporter:
       name: environment_market_house7
       rect:
         serializedVersion: 2
-        x: 3135
-        y: 2275
+        x: 1137
+        y: 1666
         width: 831
         height: 891
       alignment: 7
@@ -427,8 +427,8 @@ TextureImporter:
       name: environment_market_market
       rect:
         serializedVersion: 2
-        x: 1108
-        y: 657
+        x: 3077
+        y: 1524
         width: 638
         height: 751
       alignment: 7
@@ -449,7 +449,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 27
+        y: 588
         width: 1060
         height: 504
       alignment: 7
@@ -490,8 +490,8 @@ TextureImporter:
       name: environment_market_store
       rect:
         serializedVersion: 2
-        x: 1063
-        y: 68
+        x: 1
+        y: 1094
         width: 1091
         height: 463
       alignment: 7

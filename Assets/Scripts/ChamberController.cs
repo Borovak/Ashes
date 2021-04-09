@@ -18,10 +18,11 @@ public class ChamberController : MonoBehaviour
     public string chamberName;
     public LocationInformation.Zone zone => LocationInformation.Zones[chamber.ZoneGuid];
     public string zoneGuid => chamber.ZoneGuid;
-    public float BackgroundLightIntensity;
-    public Color BackgroundLightColor;
-    public float TerrainLightIntensity;
-    public Color TerrainLightColor;
+    public float backgroundLightIntensity = 1f;
+    public Color backgroundLightColor = Color.white;
+    public float terrainLightIntensity = 1f;
+    public Color terrainLightColor = Color.white;
+    public Color fogColor = Color.black;
     public GameObject chamberContainer;
     public Vector2 position;
     public Vector2 size;
@@ -30,9 +31,6 @@ public class ChamberController : MonoBehaviour
     public float scale;
     [SerializeField] public int[] map1D;
     [SerializeField] public string theme;
-    [SerializeField] public float colorShiftR;
-    [SerializeField] public float colorShiftG;
-    [SerializeField] public float colorShiftB;
     [SerializeField] public string grass;
     public AudioClip ambientAudioClip;
     public AudioClip musicAudioClip;
@@ -151,7 +149,7 @@ public class ChamberController : MonoBehaviour
     void Apply()
     {
         _chamberAudioManager.Start();
-        GlobalLightController.UpdateLights(BackgroundLightIntensity, BackgroundLightColor, TerrainLightIntensity, TerrainLightColor);
+        GlobalLightController.UpdateLights(backgroundLightIntensity, backgroundLightColor, terrainLightIntensity, terrainLightColor);
     }
 
     public void SetBasicSettings(string guid, Vector2 position, int width, int height, float scale)

@@ -7,9 +7,9 @@ public class ChamberLightController : MonoBehaviour
     public ChamberController chamberController;
 
     private UnityEngine.Experimental.Rendering.Universal.Light2D _light;
-    private const float intensity = 2f;
-    private const float intensityVariation = 0.5f;
-    private const float intensityVariationSpeed = 2f;
+    private const float Intensity = 2f;
+    private const float IntensityVariation = 0.5f;
+    private const float IntensityVariationSpeed = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class ChamberLightController : MonoBehaviour
     void Update()
     {
         if (chamberController == null) return;
-        _light.color = chamberController.BackgroundLightColor;
-        _light.intensity = intensity + Mathf.Sin(Time.time * intensityVariationSpeed) * intensityVariation;
+        _light.color = chamberController.backgroundLightColor;
+        _light.intensity = Intensity + Mathf.Sin(Time.time * IntensityVariationSpeed) * IntensityVariation;
     }
 }

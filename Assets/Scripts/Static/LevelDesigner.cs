@@ -91,15 +91,6 @@ namespace Static
                 var chamber = chamberGameObject.GetComponentInChildren<ChamberController>();
                 chamber.chamberName = chamberName;
                 chamber.theme = theme;
-                chamber.colorShiftR = colorShiftR;
-                chamber.colorShiftG = colorShiftG;
-                chamber.colorShiftB = colorShiftB;
-                chamber.BackgroundLightIntensity = backgroundLightIntensity;
-                chamber.BackgroundLightColor = new Color(backgroundLightColorR, backgroundLightColorG, backgroundLightColorB);
-                chamber.TerrainLightIntensity = terrainLightIntensity;
-                chamber.TerrainLightColor = new Color(terrainLightColorR, terrainLightColorG, terrainLightColorB);
-                chamber.colorShiftG = colorShiftG;
-                chamber.colorShiftB = colorShiftB;
                 var chamberPosition = new Vector2(Convert.ToSingle(chamberX) * scale, -Convert.ToSingle(chamberY) * scale);
                 chamber.SetBasicSettings(chamberGuid, chamberPosition, chamberWidth, chamberHeight, scale);
                 gridGameObject.transform.position = new Vector3(chamberPosition.x, chamberPosition.y + 50f, 0f);

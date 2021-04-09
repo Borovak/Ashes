@@ -279,11 +279,6 @@ namespace Static
             obj.transform.localPosition = new Vector3(x * scale + offset.x, y * scale - scale + offset.y, 0);
             var spriteRenderer = obj.GetComponentInChildren<SpriteRenderer>();
             spriteRenderer.transform.localEulerAngles = new Vector3(0f, 0f, angle);
-            var c = spriteRenderer.color;
-            c.r -= UnityEngine.Random.Range(0f, chamber.colorShiftR);
-            c.g -= UnityEngine.Random.Range(0f, chamber.colorShiftG);
-            c.b -= UnityEngine.Random.Range(0f, chamber.colorShiftB);
-            spriteRenderer.color = c;
             spriteRenderer.sprite = sprite;
             spriteRenderer.flipX = flipSprite;
             spriteRenderer.sortingOrder = UnityEngine.Random.Range(sortingOrder - 1000, sortingOrder);
