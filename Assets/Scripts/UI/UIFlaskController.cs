@@ -1,5 +1,6 @@
 ﻿using System;
 using Player;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,10 +15,12 @@ using UnityEngine.UI;
         public RawImage[] images;
         public float offsetScale = 1f;
         public int index;
-        public float heightAtFull;
+        public float widthPerPoint = 100f;
         public Color color;
-        public RectTransform quantityMaskRectTransform;
-        public RectTransform liquidLineRectTransform;
+        public Image textBackImage;
+        public TextMeshProUGUI valueText;
+        public RectTransform barBackRectTransform;
+        public RectTransform barMaskRectTransform;
         public Image liquidLineImage;
         public Image liquidBottom;
         public FlaskTypes flaskType;
@@ -39,6 +42,14 @@ using UnityEngine.UI;
                     ManaController.MaxMpChanged += OnMaxValueChanged;
                     break;
             }
+            InitLiquidAnimation();
+            textBackImage.color = color;
+            liquidLineImage.color = color;
+            liquidBottom.color = color;
+        }
+
+        private void InitLiquidAnimation()
+        {
             index = Convert.ToInt32(UnityEngine.Random.Range(0f, 5000f));
             for (int i = 0; i < images.Length; i++)
             {
@@ -48,17 +59,19 @@ using UnityEngine.UI;
                 offset.y = UnityEngine.Random.Range(0f, 1f);
                 image.uvRect = offset;
             }
-            liquidBottom.color = color;
-            liquidLineImage.color = color;
         }
 
-        // Update is called once per fraame
+        // Update is called once per frame
         void Update()
         {
-            var rect = quantityMaskRectTransform.rect;
-            var liquidHeight = _maxValue > 0 ? _value / _maxValue * heightAtFull : 0;
-            quantityMaskRectTransform.sizeDelta = new Vector2(rect.width, liquidHeight);
-            liquidLineRectTransform.anchoredPosition = new Vector2(liquidLineRectTransform.anchoredPosition.x, liquidHeight);
+            valueText.text = Math.Min(_value, 9999).ToString("0");
+            barBackRectTransform.sizeDelta = new Vector2(_maxValue * widthPerPoint, barBackRectTransform.rect.height);
+            barMaskRectTransform.sizeDelta = new Vector2(_value * widthPerPoint - 4f, barMaskRectTransform.rect.height);
+            UpdateLiquidAnimation();
+        }
+
+        private void UpdateLiquidAnimation()
+        {
             for (int i = 0; i < images.Length; i++)
             {
                 var image = images[i];

@@ -1,0 +1,540 @@
+fileFormatVersion: 2
+guid: 63f3cf466ea973345a9014a83bbd06f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2200782657258891858
+    second: environment_town_market_tree02_leaf01
+  - first:
+      213: 2768792074047360606
+    second: environment_town_market_tree02_leaf02
+  - first:
+      213: -50442190959964710
+    second: environment_town_market_tree02_leaf03
+  - first:
+      213: 1562669564503687250
+    second: environment_town_market_tree02_leaf04
+  - first:
+      213: -865625796714203956
+    second: environment_town_market_tree02_leaf05
+  - first:
+      213: -7690704160683079750
+    second: environment_town_market_tree02_leaf06
+  - first:
+      213: 2144076563529392009
+    second: environment_town_market_tree02_leaf07
+  - first:
+      213: -8674480235585444847
+    second: environment_town_market_tree02_leaf08
+  - first:
+      213: -3232895605850682726
+    second: environment_town_market_tree02_leaf09
+  - first:
+      213: 6605376581969687035
+    second: environment_town_market_tree02_leaf10
+  - first:
+      213: 6358906696263426026
+    second: environment_town_market_tree02_leaf11
+  - first:
+      213: -3212387314516157671
+    second: environment_town_market_tree02_leaf12
+  - first:
+      213: -6377593627869408100
+    second: environment_town_market_tree02_trunk01
+  - first:
+      213: -3471267620449950389
+    second: environment_town_market_tree02_trunk02
+  - first:
+      213: -2554768030186562889
+    second: environment_town_market_tree02_trunk03
+  - first:
+      213: 4543639965163987584
+    second: environment_town_market_tree02_trunk04
+  - first:
+      213: -2108772857081057049
+    second: environment_town_market_tree02_trunk05
+  - first:
+      213: -342709616858801522
+    second: environment_town_market_tree02_trunk06
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf01
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 1605
+        width: 385
+        height: 442
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25aa1c1aa20ca8e10800000000000000
+      internalID: 2200782657258891858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf02
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 789
+        width: 241
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5e828eb8b9bc6620800000000000000
+      internalID: 2768792074047360606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 70
+        width: 94
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add8326381bcc4ff0800000000000000
+      internalID: -50442190959964710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf04
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 9
+        width: 180
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2508e8580b7bfa510800000000000000
+      internalID: 1562669564503687250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf05
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 1605
+        width: 385
+        height: 442
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc47f669cedacf3f0800000000000000
+      internalID: -865625796714203956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf06
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 1161
+        width: 385
+        height: 442
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab7cddd1051254590800000000000000
+      internalID: -7690704160683079750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf07
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 159
+        width: 279
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98fd864564a41cd10800000000000000
+      internalID: 2144076563529392009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf08
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 159
+        width: 279
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11468c26f2e0e9780800000000000000
+      internalID: -8674480235585444847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf09
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 9
+        width: 180
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9a495933927223d0800000000000000
+      internalID: -3232895605850682726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf10
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 154
+        width: 227
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1bcf721030bab50800000000000000
+      internalID: 6605376581969687035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf11
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 74
+        width: 95
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef52a603ff5f3850800000000000000
+      internalID: 6358906696263426026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_leaf12
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1030
+        width: 242
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b1b45e1ce4b63d0800000000000000
+      internalID: -3212387314516157671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_trunk01
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 411
+        width: 348
+        height: 786
+      alignment: 9
+      pivot: {x: 0.658046, y: 0.01017812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c949c09a26c3e77a0800000000000000
+      internalID: -6377593627869408100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_trunk02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 179
+        width: 347
+        height: 921
+      alignment: 9
+      pivot: {x: 0.54178673, y: 0.00977199}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45e3c2ad7493dfc0800000000000000
+      internalID: -3471267620449950389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_trunk03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1102
+        width: 533
+        height: 945
+      alignment: 9
+      pivot: {x: 0.5947467, y: 0.01693122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ba94352304ab8cd0800000000000000
+      internalID: -2554768030186562889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_trunk04
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1199
+        width: 388
+        height: 848
+      alignment: 9
+      pivot: {x: 0.4201031, y: 0.0129717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0822ede99704e0f30800000000000000
+      internalID: 4543639965163987584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_trunk05
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 199
+        width: 290
+        height: 901
+      alignment: 9
+      pivot: {x: 0.4448276, y: 0.0099889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e0b2bd52422cb2e0800000000000000
+      internalID: -2108772857081057049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_town_market_tree02_trunk06
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 1271
+        width: 641
+        height: 776
+      alignment: 9
+      pivot: {x: 0.5943838, y: 0.01417526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a55025b637e3bf0800000000000000
+      internalID: -342709616858801522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
