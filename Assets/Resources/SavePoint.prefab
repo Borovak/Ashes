@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 5122066783476055865}
   - component: {fileID: 5122066783476055864}
   - component: {fileID: 3090968148940637770}
-  - component: {fileID: -5323213333435226068}
   m_Layer: 12
   m_Name: SavePoint
   m_TagString: SavePoint
@@ -5009,19 +5008,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 5510954782458654863}
   forcedGuid: 
---- !u!114 &-5323213333435226068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5122066783476055747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ceba7b6aa2736c4e916b677ce0f8147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchToThisSavePoint: 0
 --- !u!1 &5790091933480767099
 GameObject:
   m_ObjectHideFlags: 0

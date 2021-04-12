@@ -1,0 +1,540 @@
+fileFormatVersion: 2
+guid: 03da95f738f99f942ac7ad100c2a66cb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5593498231500419656
+    second: effects_fire00_00
+  - first:
+      213: 7369342658764748450
+    second: effects_fire00_01
+  - first:
+      213: -8396901800210713437
+    second: effects_fire00_02
+  - first:
+      213: -7151211145300834594
+    second: effects_fire00_03
+  - first:
+      213: -4692342328375671061
+    second: effects_fire00_04
+  - first:
+      213: 7919740632242197879
+    second: effects_fire00_05
+  - first:
+      213: -8168465809552139214
+    second: effects_fire00_06
+  - first:
+      213: -4383787878332960991
+    second: effects_fire00_07
+  - first:
+      213: 3460834287043654938
+    second: effects_fire00_08
+  - first:
+      213: -885984002491724082
+    second: effects_fire00_09
+  - first:
+      213: -6528071856791344149
+    second: effects_fire00_10
+  - first:
+      213: 7454766129156054574
+    second: effects_fire00_11
+  - first:
+      213: -4452535044854529624
+    second: effects_fire00_12
+  - first:
+      213: 7219751984002043532
+    second: effects_fire00_13
+  - first:
+      213: -847811046461308240
+    second: effects_fire00_14
+  - first:
+      213: -8316261207026223230
+    second: effects_fire00_15
+  - first:
+      213: -5010911429397368776
+    second: effects_fire00_16
+  - first:
+      213: -5534077803969877540
+    second: effects_fire00_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: effects_fire00_00
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 717
+        width: 131
+        height: 306
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd44ab7ef6ef52b0800000000000000
+      internalID: -5593498231500419656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_01
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 362
+        width: 133
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a63ecb8a1a254660800000000000000
+      internalID: 7369342658764748450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_02
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 335
+        width: 133
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a43a982d46387b80800000000000000
+      internalID: -8396901800210713437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_03
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 400
+        width: 134
+        height: 310
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed687822a5bc1cc90800000000000000
+      internalID: -7151211145300834594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_04
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 424
+        width: 131
+        height: 294
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be683a0738371eeb0800000000000000
+      internalID: -4692342328375671061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_05
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 712
+        width: 133
+        height: 311
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 775160af42298ed60800000000000000
+      internalID: 7919740632242197879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_06
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 6
+        width: 137
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c98b5ef97c3ae80800000000000000
+      internalID: -8168465809552139214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_07
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 289
+        width: 134
+        height: 349
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12fec45a628a923c0800000000000000
+      internalID: -4383787878332960991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_08
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 441
+        width: 135
+        height: 287
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a15bab1a27a570030800000000000000
+      internalID: 3460834287043654938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_09
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 720
+        width: 135
+        height: 303
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ece4dce6e3a54b3f0800000000000000
+      internalID: -885984002491724082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_10
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 5
+        width: 132
+        height: 328
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beb2ab3cb31a765a0800000000000000
+      internalID: -6528071856791344149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_11
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 676
+        width: 135
+        height: 347
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ed5f32c46a47760800000000000000
+      internalID: 7454766129156054574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_12
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 686
+        width: 133
+        height: 337
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a1c77d97fa6532c0800000000000000
+      internalID: -4452535044854529624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 280
+        width: 136
+        height: 358
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e0dd47d26b13460800000000000000
+      internalID: 7219751984002043532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 640
+        width: 137
+        height: 383
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2850b5858fb34f0800000000000000
+      internalID: -847811046461308240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_15
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 730
+        width: 136
+        height: 293
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28737df5e74b69c80800000000000000
+      internalID: -8316261207026223230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_16
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 7
+        width: 131
+        height: 280
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83033d99a9aa57ab0800000000000000
+      internalID: -5010911429397368776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_fire00_17
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 148
+        width: 130
+        height: 291
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9600fde810333b0800000000000000
+      internalID: -5534077803969877540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

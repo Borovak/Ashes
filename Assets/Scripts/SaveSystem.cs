@@ -112,6 +112,7 @@ public static class SaveSystem
 
     private static void SaveXml(string filePath, SaveData saveData)
     {
+        Debug.Log($"Save at {saveData.SavePointGuid}");
         var xeRoot = new XElement("Ashes");
         xeRoot.SetAttributeValue("gameTime", saveData.GameTime);
         var xePlayer = new XElement("Player");

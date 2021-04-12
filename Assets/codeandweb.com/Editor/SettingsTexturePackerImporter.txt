@@ -4,11 +4,12 @@ tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 - Assets/Sprites/Ash/ash.tpsheet
 - Assets/Sprites/Ash/ash_attack.tpsheet
-- Assets/Sprites/Ash/ash_dash.tpsheet
-- Assets/Sprites/Ash/ash_hit.tpsheet
-- Assets/Sprites/Attacks/attack_00.tpsheet
-- Assets/Sprites/Contacts/contacts.tpsheet
-- Assets/Sprites/Effects/effects_fire_01.tpsheet
+- Assets/Sprites/Effects/effects_electricAttack.tpsheet
+- Assets/Sprites/Effects/effects_fire00.tpsheet
+- Assets/Sprites/Effects/effects_hit00.tpsheet
+- Assets/Sprites/Effects/effects_hit01.tpsheet
+- Assets/Sprites/Effects/effects_playerDash.tpsheet
+- Assets/Sprites/Effects/effects_playerHit00.tpsheet
 - Assets/Sprites/Enemies/enemy_bosswolf.tpsheet
 - Assets/Sprites/Enemies/enemy_forestLarva.tpsheet
 - Assets/Sprites/Enemies/enemy_forestSpitter.tpsheet
@@ -16,26 +17,33 @@ tpsheetFileNames:
 - Assets/Sprites/Environment/environment_town.tpsheet
 - Assets/Sprites/Environment/Flag1/flag1.tpsheet
 - Assets/Sprites/Environment/Forest/backgroundDecor_forest.tpsheet
+- Assets/Sprites/Environment/Forest/environment_forest_generic.tpsheet
+- Assets/Sprites/Environment/Town/Marina/environment_town_marina.tpsheet
 - Assets/Sprites/Environment/Town/Market/environment_market.tpsheet
 - Assets/Sprites/Environment/Town/Market/environment_town_market_tree01.tpsheet
 - Assets/Sprites/Environment/Town/Market/environment_town_market_tree02.tpsheet
 - Assets/Sprites/Foreground/foreground_forest.tpsheet
+- Assets/Sprites/Grass/Forest/grass_forest_generic.tpsheet
 - Assets/Sprites/Grass/grass_forest.tpsheet
+- Assets/Sprites/Lights/lights.tpsheet
 - Assets/Sprites/Npcs/npc_hoboTom.tpsheet
+- Assets/Sprites/Overhang/Forest/overhang_forest_generic.tpsheet
 - Assets/Sprites/Overhang/overhang_forest.tpsheet
 - Assets/Sprites/SpriteLights/spriteLights.tpsheet
 - Assets/Sprites/Terrain/terrain_forest.tpsheet
 - Assets/Sprites/Terrain/terrain_town.tpsheet
 - Assets/Sprites/UI/SaveIcon/SaveIcon.tpsheet
+- Assets/Sprites/UI/SaveIcon/ui_saveIcon.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Ash/ash.png
 - Assets/Sprites/Ash/ash_attack.png
-- Assets/Sprites/Ash/ash_dash.png
-- Assets/Sprites/Ash/ash_hit.png
-- Assets/Sprites/Attacks/attack_00.png
-- Assets/Sprites/Contacts/contacts.png
-- Assets/Sprites/Effects/effects_fire_01.png
+- Assets/Sprites/Effects/effects_electricAttack.png
+- Assets/Sprites/Effects/effects_fire00.png
+- Assets/Sprites/Effects/effects_hit00.png
+- Assets/Sprites/Effects/effects_hit01.png
+- Assets/Sprites/Effects/effects_playerDash.png
+- Assets/Sprites/Effects/effects_playerHit00.png
 - Assets/Sprites/Enemies/enemy_bosswolf.png
 - Assets/Sprites/Enemies/enemy_forestLarva.png
 - Assets/Sprites/Enemies/enemy_forestSpitter.png
@@ -43,19 +51,32 @@ textureFileNames:
 - Assets/Sprites/Environment/environment_town.png
 - Assets/Sprites/Environment/Flag1/waving.png
 - Assets/Sprites/Environment/Forest/backgroundDecor_forest.png
+- Assets/Sprites/Environment/Forest/environment_forest_generic.png
+- Assets/Sprites/Environment/Town/Marina/environment_town_marina.png
 - Assets/Sprites/Environment/Town/Market/environment_market.png
 - Assets/Sprites/Environment/Town/Market/environment_town_market_tree01.png
 - Assets/Sprites/Environment/Town/Market/environment_town_market_tree02.png
 - Assets/Sprites/Foreground/foreground_forest.png
+- Assets/Sprites/Grass/Forest/grass_forest_generic.png
 - Assets/Sprites/Grass/grass_forest.png
+- Assets/Sprites/Lights/lights.png
 - Assets/Sprites/Npcs/npc_hoboTom.png
+- Assets/Sprites/Overhang/Forest/overhang_forest_generic.png
 - Assets/Sprites/Overhang/overhang_forest.png
 - Assets/Sprites/SpriteLights/spriteLights.png
 - Assets/Sprites/Terrain/terrain_forest.png
 - Assets/Sprites/Terrain/terrain_town.png
 - Assets/Sprites/UI/SaveIcon/SaveIcon.png
+- Assets/Sprites/UI/SaveIcon/ui_saveIcon.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - 
 - 
 - 

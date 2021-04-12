@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: 357fc1cd209db6249bfb3d93a9c21e8b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3752155910612618014
+    second: effects_playerDash00
+  - first:
+      213: 1326773230721249145
+    second: effects_playerDash01
+  - first:
+      213: -2455201304653695370
+    second: effects_playerDash02
+  - first:
+      213: 5001786165761108576
+    second: effects_playerDash03
+  - first:
+      213: 8492329792287310477
+    second: effects_playerDash04
+  - first:
+      213: 8552233192519013791
+    second: effects_playerDash05
+  - first:
+      213: 4259832678081881385
+    second: effects_playerDash06
+  - first:
+      213: 5294857324165334119
+    second: effects_playerDash07
+  - first:
+      213: 8993642679279224162
+    second: effects_playerDash08
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: effects_playerDash00
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 835
+        width: 137
+        height: 187
+      alignment: 9
+      pivot: {x: 1, y: 0.5508021}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1b82f1cbe5521430800000000000000
+      internalID: 3752155910612618014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_playerDash01
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 815
+        width: 206
+        height: 267
+      alignment: 9
+      pivot: {x: 1, y: 0.5805243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97f23aa4935a96210800000000000000
+      internalID: 1326773230721249145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_playerDash02
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 644
+        width: 292
+        height: 378
+      alignment: 9
+      pivot: {x: 1, y: 0.56349206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6767a00fb6f5dedd0800000000000000
+      internalID: -2455201304653695370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_playerDash03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1046
+        width: 384
+        height: 487
+      alignment: 9
+      pivot: {x: 1, y: 0.52566737}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a67a4640ae96540800000000000000
+      internalID: 5001786165761108576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_playerDash04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1535
+        width: 508
+        height: 512
+      alignment: 9
+      pivot: {x: 1.007874, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8280c8a3f0dad570800000000000000
+      internalID: 8492329792287310477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_playerDash05
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1535
+        width: 448
+        height: 512
+      alignment: 9
+      pivot: {x: 1.1428572, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f959664e6c2afa670800000000000000
+      internalID: 8552233192519013791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_playerDash06
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1024
+        width: 367
+        height: 509
+      alignment: 9
+      pivot: {x: 1.3460491, y: 0.502947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 925ebab4047fd1b30800000000000000
+      internalID: 4259832678081881385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_playerDash07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 561
+        width: 297
+        height: 483
+      alignment: 9
+      pivot: {x: 1.6632997, y: 0.48033127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7640047deac1b7940800000000000000
+      internalID: 5294857324165334119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effects_playerDash08
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 1084
+        width: 228
+        height: 449
+      alignment: 9
+      pivot: {x: 2.1447368, y: 0.46993318}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2650b3fcd56dfcc70800000000000000
+      internalID: 8993642679279224162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,35 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:c3f5708e1ed62d9fac50f80be5973085:0c075f681c4f2bb58413b3571543a6aa:4827313e767c9b8febc8c0e23fd2c5b3$
+#
+:format=40300
+:texture=ui_saveIcon.png
+:size=1024x2048
+:pivotpoints=enabled
+:borders=disabled
+:alphahandling=KeepTransparentPixels
+
+ui_saveIcon00;1;1791;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon01;259;1791;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon02;517;1791;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon03;1;1533;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon04;259;1533;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon05;517;1533;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon06;1;1275;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon07;259;1275;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon08;517;1275;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon09;1;1017;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon10;259;1017;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon11;517;1017;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon12;1;759;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon13;1;501;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon14;1;243;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon15;259;759;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon16;517;759;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon17;259;501;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon18;259;243;256;256; 0.5;0.5; 0;0;0;0
+ui_saveIcon19;517;501;256;256; 0.5;0.5; 0;0;0;0

@@ -1,0 +1,26 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:be9b9dfc24b2b0c1db629ef60a972168:f0044f389be070db918fdba6a885328e:003554f7b8816b71e2d04c2ddb86826f$
+#
+:format=40300
+:texture=effects_electricAttack.png
+:size=2048x4096
+:pivotpoints=enabled
+:borders=disabled
+:alphahandling=ClearTransparentPixels
+
+effects_electricAttack00;1;3583;512;512; 0.5;0.5; 0;0;0;0
+effects_electricAttack01;515;3583;512;512; 0.5;0.5; 0;0;0;0
+effects_electricAttack02;1029;3583;512;512; 0.5;0.5; 0;0;0;0
+effects_electricAttack03;1;3069;512;512; 0.5;0.5; 0;0;0;0
+effects_electricAttack04;515;3069;512;512; 0.5;0.5; 0;0;0;0
+effects_electricAttack05;1029;3069;512;512; 0.5;0.5; 0;0;0;0
+effects_electricAttack06;1;2555;512;512; 0.5;0.5; 0;0;0;0
+effects_electricAttack07;515;2555;512;512; 0.5;0.5; 0;0;0;0
+effects_electricAttack08;1029;2555;512;512; 0.5;0.5; 0;0;0;0
+effects_electricAttack09;1;2041;512;512; 0.5;0.5; 0;0;0;0
+effects_electricAttack10;515;2041;512;512; 0.5;0.5; 0;0;0;0
