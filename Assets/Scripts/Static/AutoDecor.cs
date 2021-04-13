@@ -321,7 +321,9 @@ namespace Static
             var prefab = Resources.Load<GameObject>("Grass");
             ManageContainer(chamberController, Constants.TAG_GRASSCONTAINER, Constants.NAME_GRASSCONTAINER, position, out var container);
             var workingMap = CopyMap(map);
-            var sprites = GlobalFunctions.GetSpritesAtPath(chamberController.theme, Constants.AssetTypes.Grass);
+            var sprites = new List<Sprite>();
+            sprites.AddRange(GlobalFunctions.GetSpritesAtPath($"Assets/Sprites/Grass/{chamberController.theme}/{chamberController.chamberName}/grass_{chamberController.theme}_{chamberController.chamberName}.png"));
+            sprites.AddRange(GlobalFunctions.GetSpritesAtPath($"Assets/Sprites/Grass/{chamberController.theme}/grass_{chamberController.theme}_generic.png"));
             if (!sprites.Any()) return;
             if (!chamberController.grassManager.IsThereAnyGrass()) return;
             for (int y = 0; y < workingMap.GetLength(1) - 3; y++)

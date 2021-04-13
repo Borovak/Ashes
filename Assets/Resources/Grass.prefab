@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 477341950152530312}
-  angleRange: 10
 --- !u!61 &477341948813531733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -161,8 +160,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 247722665
-  m_SortingLayer: -7
+  m_SortingLayerID: -1319190303
+  m_SortingLayer: -9
   m_SortingOrder: 0
   m_Sprite: {fileID: -6868443527578474738, guid: 3ce117a64e3c51847a40b89a1cac0880,
     type: 3}
@@ -173,6 +172,6 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

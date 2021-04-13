@@ -86,6 +86,9 @@ TagManager:
   - name: SavePoints
     uniqueID: 2972933451
     locked: 0
+  - name: Grass
+    uniqueID: 2975776993
+    locked: 0
   - name: Player
     uniqueID: 2727812175
     locked: 0
@@ -97,6 +100,9 @@ TagManager:
     locked: 0
   - name: Terrain
     uniqueID: 2412231099
+    locked: 0
+  - name: CustomTerrain
+    uniqueID: 1334713749
     locked: 0
   - name: TerrainProps
     uniqueID: 3368110701

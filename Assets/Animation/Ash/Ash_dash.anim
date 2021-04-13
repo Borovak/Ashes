@@ -164,7 +164,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Dash
+    path: InvertOnFlipX/Dash
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves:
@@ -199,20 +199,28 @@ AnimationClip:
       value: {fileID: 8993642679279224162, guid: 357fc1cd209db6249bfb3d93a9c21e8b,
         type: 3}
     attribute: m_Sprite
-    path: Dash
+    path: InvertOnFlipX/Dash
     classID: 212
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: 0}
+      value: {fileID: -3538375142266293011, guid: e23c16e194cf0f049b615fe9c4ba291f,
+        type: 3}
     - time: 0.016666668
-      value: {fileID: 0}
+      value: {fileID: -1130147413755469729, guid: e23c16e194cf0f049b615fe9c4ba291f,
+        type: 3}
     - time: 0.033333335
-      value: {fileID: 0}
+      value: {fileID: -9144256488797163237, guid: e23c16e194cf0f049b615fe9c4ba291f,
+        type: 3}
     - time: 0.2
-      value: {fileID: 0}
+      value: {fileID: 6422448976366860695, guid: e23c16e194cf0f049b615fe9c4ba291f,
+        type: 3}
     - time: 0.26666668
-      value: {fileID: 0}
+      value: {fileID: -2521439468591556518, guid: e23c16e194cf0f049b615fe9c4ba291f,
+        type: 3}
+    - time: 0.33333334
+      value: {fileID: 8104345329520778005, guid: e23c16e194cf0f049b615fe9c4ba291f,
+        type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -239,14 +247,14 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 995914302
+      path: 1751657481
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 995914302
+      path: 1751657481
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -270,17 +278,18 @@ AnimationClip:
     - {fileID: 4259832678081881385, guid: 357fc1cd209db6249bfb3d93a9c21e8b, type: 3}
     - {fileID: 5294857324165334119, guid: 357fc1cd209db6249bfb3d93a9c21e8b, type: 3}
     - {fileID: 8993642679279224162, guid: 357fc1cd209db6249bfb3d93a9c21e8b, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: -3538375142266293011, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
+    - {fileID: -1130147413755469729, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
+    - {fileID: -9144256488797163237, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
+    - {fileID: 6422448976366860695, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
+    - {fileID: -2521439468591556518, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
+    - {fileID: 8104345329520778005, guid: e23c16e194cf0f049b615fe9c4ba291f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.35000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -705,7 +714,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Dash
+    path: InvertOnFlipX/Dash
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []

@@ -13,18 +13,20 @@ tpsheetFileNames:
 - Assets/Sprites/Enemies/enemy_bosswolf.tpsheet
 - Assets/Sprites/Enemies/enemy_forestLarva.tpsheet
 - Assets/Sprites/Enemies/enemy_forestSpitter.tpsheet
-- Assets/Sprites/Environment/environment_forest.tpsheet
-- Assets/Sprites/Environment/environment_town.tpsheet
 - Assets/Sprites/Environment/Flag1/flag1.tpsheet
 - Assets/Sprites/Environment/Forest/backgroundDecor_forest.tpsheet
+- Assets/Sprites/Environment/Forest/environment_forest.tpsheet
 - Assets/Sprites/Environment/Forest/environment_forest_generic.tpsheet
+- Assets/Sprites/Environment/Town/environment_town.tpsheet
 - Assets/Sprites/Environment/Town/Marina/environment_town_marina.tpsheet
 - Assets/Sprites/Environment/Town/Market/environment_market.tpsheet
 - Assets/Sprites/Environment/Town/Market/environment_town_market_tree01.tpsheet
 - Assets/Sprites/Environment/Town/Market/environment_town_market_tree02.tpsheet
+- Assets/Sprites/Floor/Town/Market/floor_town_market.tpsheet
 - Assets/Sprites/Foreground/foreground_forest.tpsheet
 - Assets/Sprites/Grass/Forest/grass_forest_generic.tpsheet
 - Assets/Sprites/Grass/grass_forest.tpsheet
+- Assets/Sprites/Grass/Town/Market/grass_town_market.tpsheet
 - Assets/Sprites/Lights/lights.tpsheet
 - Assets/Sprites/Npcs/npc_hoboTom.tpsheet
 - Assets/Sprites/Overhang/Forest/overhang_forest_generic.tpsheet
@@ -47,18 +49,20 @@ textureFileNames:
 - Assets/Sprites/Enemies/enemy_bosswolf.png
 - Assets/Sprites/Enemies/enemy_forestLarva.png
 - Assets/Sprites/Enemies/enemy_forestSpitter.png
-- Assets/Sprites/Environment/environment_forest.png
-- Assets/Sprites/Environment/environment_town.png
 - Assets/Sprites/Environment/Flag1/waving.png
 - Assets/Sprites/Environment/Forest/backgroundDecor_forest.png
+- Assets/Sprites/Environment/Forest/environment_forest.png
 - Assets/Sprites/Environment/Forest/environment_forest_generic.png
+- Assets/Sprites/Environment/Town/environment_town.png
 - Assets/Sprites/Environment/Town/Marina/environment_town_marina.png
 - Assets/Sprites/Environment/Town/Market/environment_market.png
 - Assets/Sprites/Environment/Town/Market/environment_town_market_tree01.png
 - Assets/Sprites/Environment/Town/Market/environment_town_market_tree02.png
+- Assets/Sprites/Floor/Town/Market/floor_town_market.png
 - Assets/Sprites/Foreground/foreground_forest.png
 - Assets/Sprites/Grass/Forest/grass_forest_generic.png
 - Assets/Sprites/Grass/grass_forest.png
+- Assets/Sprites/Grass/Town/Market/grass_town_market.png
 - Assets/Sprites/Lights/lights.png
 - Assets/Sprites/Npcs/npc_hoboTom.png
 - Assets/Sprites/Overhang/Forest/overhang_forest_generic.png
@@ -70,6 +74,8 @@ textureFileNames:
 - Assets/Sprites/UI/SaveIcon/ui_saveIcon.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
 - 
 - 
 - 

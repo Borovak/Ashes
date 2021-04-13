@@ -159,7 +159,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1567155121
-  m_SortingLayer: -8
+  m_SortingLayer: -9
   m_SortingOrder: 0
   m_Sprite: {fileID: -6830014305002191819, guid: e23c16e194cf0f049b615fe9c4ba291f,
     type: 3}
@@ -167,7 +167,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7777778, y: 2.0718954}
+  m_Size: {x: 0.86928105, y: 1.9542483}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -247,7 +247,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.60084, y: 0.009464}
     oldSize: {x: 0.7777778, y: 2.0718954}
-    newSize: {x: 0.7777778, y: 2.0718954}
+    newSize: {x: 0.86928105, y: 1.9542483}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.5
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: bbb9c78f0b0f6c5ba9f2c30e69b3c9036d4ac1c8
+  m_ApplyToSortingLayers: bbb9c78f0b0f6c5ba9f2c30e69b3c9036d4ac1c8951d8e4fe1c05eb1
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 1
   m_LightOrder: 0
@@ -5834,7 +5834,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1567155121
-  m_SortingLayer: -8
+  m_SortingLayer: -9
   m_SortingOrder: 0
   m_Sprite: {fileID: 3752155910612618014, guid: 357fc1cd209db6249bfb3d93a9c21e8b,
     type: 3}
@@ -5842,7 +5842,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.37, y: 1.87}
+  m_Size: {x: 1.0703125, y: 1.4609375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

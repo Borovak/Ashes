@@ -220,6 +220,19 @@ namespace Static
             }
             return sprites;
         }
+        
+        public static List<Sprite> GetSpritesAtPath(string path)
+        {
+            var data = AssetDatabase.LoadAllAssetsAtPath(path);
+            var sprites = new List<Sprite>();
+            foreach (var item in data)
+            {
+                var sprite = item as Sprite;
+                if (sprite == null) continue;
+                sprites.Add(sprite);
+            }
+            return sprites;
+        }
 #endif
 
     }

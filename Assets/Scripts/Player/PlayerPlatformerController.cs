@@ -99,7 +99,7 @@ namespace Player
             }
             else if (isDashing)
             {
-                move.x = transform.localScale.x * dashSpeed;
+                move.x = dashSpeed * (_spriteRenderer.flipX ? -1f : 1f);
             }
             if (grounded)
             {
