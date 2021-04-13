@@ -3,26 +3,15 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[ExecuteInEditMode]
 public class TreeMaker : MonoBehaviour
 {
     public Vector2 span = new Vector2(1f, 2f);
     public Vector2 center = new Vector2(0f, 7f);
     public float spacing = 5f;
     public int count = 1;
-    public bool regenerate;
-    public bool duplicate;
 
-    // Update is called once per frame
-    void Update()
+    public void Regenerate()
     {
-        if (regenerate) Regenerate();
-        if (duplicate) Duplicate();
-    }
-
-    private void Regenerate()
-    {
-        regenerate = false;
         var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.flipX = Random.Range(0, 2) == 0;
         var leafTransforms = transform.Cast<Transform>().ToList();
@@ -36,11 +25,24 @@ public class TreeMaker : MonoBehaviour
             var leafSpriteRenderer = leafTransform.GetComponent<SpriteRenderer>();
             leafSpriteRenderer.flipX = Random.Range(0, 2) == 0;
         }
+        Reorder();
     }
 
-    private void Duplicate()
+    public void Reorder()
     {
-        duplicate = false;
+        var leafTransforms = transform.Cast<Transform>().ToList();
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        var index = spriteRenderer.sortingOrder;
+        foreach (var leafTransform in leafTransforms)
+        {
+            var leafSpriteRenderer = leafTransform.GetComponent<SpriteRenderer>();
+            leafSpriteRenderer.sortingLayerID = spriteRenderer.sortingLayerID;
+            leafSpriteRenderer.sortingOrder = ++index;
+        }
+    }
+
+    public void Duplicate()
+    {
         for (int i = 0; i < count; i++)
         {
             var newTree = Instantiate(gameObject, transform.position + Vector3.right * (spacing * Convert.ToSingle(i)), Quaternion.identity, transform.parent);

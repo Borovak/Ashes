@@ -67,6 +67,7 @@ namespace Classes
         public const string TAG_TERRAINCONTAINER = "TerrainContainer";
         public const string TAG_GRASSCONTAINER = "GrassContainer";
         public const string TAG_OVERHANGCONTAINER = "OverhangContainer";    
+        public const string TAG_SAVEPOINT = "SavePoint";  
         public const string NAME_TERRAINCONTAINER = "Terrain";
         public const string NAME_GRASSCONTAINER = "Grass";
         public const string NAME_OVERHANGCONTAINER = "Overhangs";

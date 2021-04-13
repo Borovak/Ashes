@@ -19,7 +19,7 @@ public class DeathScreenController : MonoBehaviour
     private float _ratio;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _instance = this; 
         Hide();

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using Classes;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -34,7 +35,11 @@ namespace Static
         {
             //Find or create folders
             var chambersFolder = FindCreateFolder("ChambersFolder", "Chambers", false);
-            var savePointsFolder = FindCreateFolder("SavePointsFolder", "SavePoints", true);
+            //Destroying current save points
+            foreach (var savePointGameObject in GameObject.FindGameObjectsWithTag(Constants.TAG_SAVEPOINT))
+            {
+                GameObject.DestroyImmediate(savePointGameObject);
+            }
             //Reading xml layout
             XElement xeRoot = null;
             try
@@ -127,12 +132,12 @@ namespace Static
                 var savePointResource = Resources.Load<GameObject>("SavePoint");
                 foreach (var xeSavePoint in xeRoom.Elements("SavePoint"))
                 {
-                    var savePointGameObject = PrefabUtility.InstantiatePrefab(savePointResource, savePointsFolder.transform) as GameObject;
+                    var savePointGameObject = PrefabUtility.InstantiatePrefab(savePointResource, chamberGameObject.transform) as GameObject;
                     var savePointUnscaledX = int.TryParse(xeSavePoint.Attribute("x")?.Value ?? "", out var x) ? Convert.ToSingle(x + 1) : 0f;
                     var savePointUnscaledY = int.TryParse(xeSavePoint.Attribute("y")?.Value ?? "", out var y) ? Convert.ToSingle(y + 1) : 0f;
                     var savePointX = savePointUnscaledX * scale;
                     var savePointY = savePointUnscaledY * scale;
-                    var ay = (chamberPosition.y + 50f - savePointUnscaledY * scale);
+                    var ay = chamberPosition.y + 50f - savePointUnscaledY * scale;
                     savePointGameObject.transform.position = new Vector3(chamberPosition.x + savePointX, ay, 0f);
                     var savePointController = savePointGameObject.GetComponent<SavePointController>();
                     savePointController.forcedGuid = xeSavePoint.Attribute("guid").Value;

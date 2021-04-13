@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
 
     public GameObject playerPrefab;
     public GameObject gameUiGameObject;
+    public GameObject canvas;
 
     private Animator _animator;
     private CinemachineVirtualCamera _virtualCamera;
@@ -46,7 +47,8 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         _instance = this;
-        _animator = GetComponent<Animator>();
+        canvas.SetActive(true);
+        _animator = canvas.GetComponent<Animator>();
         KillPlayer();
         gameUiGameObject.SetActive(true);
         GameOptionsManager.Init();

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Classes;
+using Static;
 using UI;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -47,7 +48,7 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         _choices = new List<Vector2>();
-        _animator = GetComponent<Animator>();
+        _animator = GetComponent<GameController>().canvas.GetComponent<Animator>();
     }
 
     void Update()
