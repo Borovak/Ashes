@@ -24,8 +24,7 @@ public class ShieldController : MonoBehaviour
         _inputs = GetComponent<PlayerInputs>();
         _manaController = GetComponent<ManaController>();
         _emissionModule = shield.emission;
-        _inputs.Shield += OnShieldActivated;
-        _inputs.ShieldRelease += OnShieldDesactivated;
+        ActionAssignmentController.Attach(2, OnShieldActivated, OnShieldDesactivated);
     }
 
     // Update is called once per frame

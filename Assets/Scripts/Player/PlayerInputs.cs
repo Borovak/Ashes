@@ -7,17 +7,12 @@ namespace Player
 {
     public class PlayerInputs : MonoBehaviour
     {
-        public event Action Attack;
-        public event Action AttackSpell;
         public event Action Interact;
         public event Action Jump;
         public event Action JumpRelease;
         public event Action DropThrough;
         public event Action Dash;
         public event Action GroundBreak;
-        public event Action SelfSpell;
-        public event Action Shield;
-        public event Action ShieldRelease;
         public Vector2 movement;
         public Actions _actions;
 
@@ -29,14 +24,10 @@ namespace Player
             _actions = new Actions();
             _pairingDictionary = new Dictionary<InputAction, Action<InputAction.CallbackContext>>
             {
-                {_actions.Player.Attack, OnAttack},
-                {_actions.Player.AttackSpell, OnAttackSpell},
-                {_actions.Player.SelfSpell, OnSelfSpell},
                 {_actions.Player.Interact, OnInteract},
                 {_actions.Player.Jump, OnJump},
                 {_actions.Player.Movement, OnMovement},
                 {_actions.Player.Dash, OnDash},
-                {_actions.Player.Shield, OnShield},
             };
         }
 
@@ -56,24 +47,6 @@ namespace Player
             {
                 item.Key.performed -= item.Value;
             }
-        }
-
-        public void OnAttack(InputAction.CallbackContext context)
-        {
-            if (GameController.gameState != GameController.GameStates.Running) return;
-            Attack?.Invoke();
-        }
-
-        public void OnAttackSpell(InputAction.CallbackContext context)
-        {
-            if (GameController.gameState != GameController.GameStates.Running) return;
-            AttackSpell?.Invoke();
-        }
-
-        public void OnSelfSpell(InputAction.CallbackContext context)
-        {
-            if (GameController.gameState != GameController.GameStates.Running) return;
-            SelfSpell?.Invoke();
         }
 
         public void OnInteract(InputAction.CallbackContext context)
@@ -115,13 +88,6 @@ namespace Player
             {
                 Dash?.Invoke();
             }
-        }
-
-        public void OnShield(InputAction.CallbackContext context)
-        {
-            if (GameController.gameState != GameController.GameStates.Running) return;
-            var a = context.ReadValue<float>() > 0.1f ? Shield : ShieldRelease;
-            a?.Invoke();
         }
     }
 }

@@ -35,33 +35,9 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": ""Press(behavior=2)""
                 },
                 {
-                    ""name"": ""Attack"",
-                    ""type"": ""Button"",
-                    ""id"": ""c26e9aaf-70a1-4051-9ccb-b7ea3eff8887"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
                     ""name"": ""Dash"",
                     ""type"": ""Button"",
                     ""id"": ""398e4370-ba97-4ae5-ae25-e2610f298994"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""AttackSpell"",
-                    ""type"": ""Button"",
-                    ""id"": ""92f1c34b-6fc8-42ba-b240-77d5c0fbbd0d"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""SelfSpell"",
-                    ""type"": ""Button"",
-                    ""id"": ""36e0cb63-3bee-42b5-96a0-d935ab6cfe26"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
@@ -73,14 +49,6 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""Shield"",
-                    ""type"": ""Button"",
-                    ""id"": ""34143677-6945-4869-a85d-6d0aa2872df6"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press(behavior=2)""
                 }
             ],
             ""bindings"": [
@@ -218,39 +186,6 @@ public class @Actions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4761bc3f-6bd5-44ce-92b5-98a512357ea0"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8852de19-d0f5-4fe6-8125-5c7961b14725"",
-                    ""path"": ""<Keyboard>/leftCtrl"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0dadef5c-d3a9-41fe-a13d-1587e6b68be0"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""8e55a037-1e57-42f1-b4c3-5615691b8e5e"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
@@ -290,72 +225,6 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
                     ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ae775212-d1ae-49f1-a66c-598a3c64d9bb"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""SelfSpell"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""81f02893-9718-4033-a7a2-7b8e6ea827d2"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""SelfSpell"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""319fe034-4fa5-4514-bacc-85c5fd5c932d"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""AttackSpell"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4a3c0b58-9d86-42b9-86ae-712a9f778a24"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""AttackSpell"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""548618ea-927f-496b-9e49-8b617b7921ed"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Shield"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""79f9bb0d-aa25-4221-8797-4e1c0437c8eb"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Shield"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1149,12 +1018,8 @@ public class @Actions : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
-        m_Player_AttackSpell = m_Player.FindAction("AttackSpell", throwIfNotFound: true);
-        m_Player_SelfSpell = m_Player.FindAction("SelfSpell", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_Shield = m_Player.FindAction("Shield", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_SelectionChange = m_Menu.FindAction("Selection Change", throwIfNotFound: true);
@@ -1227,24 +1092,16 @@ public class @Actions : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Dash;
-    private readonly InputAction m_Player_AttackSpell;
-    private readonly InputAction m_Player_SelfSpell;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_Shield;
     public struct PlayerActions
     {
         private @Actions m_Wrapper;
         public PlayerActions(@Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
-        public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
-        public InputAction @AttackSpell => m_Wrapper.m_Player_AttackSpell;
-        public InputAction @SelfSpell => m_Wrapper.m_Player_SelfSpell;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        public InputAction @Shield => m_Wrapper.m_Player_Shield;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1260,24 +1117,12 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
-                @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
-                @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                 @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                @AttackSpell.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackSpell;
-                @AttackSpell.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackSpell;
-                @AttackSpell.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackSpell;
-                @SelfSpell.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelfSpell;
-                @SelfSpell.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelfSpell;
-                @SelfSpell.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelfSpell;
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @Shield.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShield;
-                @Shield.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShield;
-                @Shield.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShield;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1288,24 +1133,12 @@ public class @Actions : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Attack.started += instance.OnAttack;
-                @Attack.performed += instance.OnAttack;
-                @Attack.canceled += instance.OnAttack;
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
-                @AttackSpell.started += instance.OnAttackSpell;
-                @AttackSpell.performed += instance.OnAttackSpell;
-                @AttackSpell.canceled += instance.OnAttackSpell;
-                @SelfSpell.started += instance.OnSelfSpell;
-                @SelfSpell.performed += instance.OnSelfSpell;
-                @SelfSpell.canceled += instance.OnSelfSpell;
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
-                @Shield.started += instance.OnShield;
-                @Shield.performed += instance.OnShield;
-                @Shield.canceled += instance.OnShield;
             }
         }
     }
@@ -1500,12 +1333,8 @@ public class @Actions : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnAttack(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
-        void OnAttackSpell(InputAction.CallbackContext context);
-        void OnSelfSpell(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnShield(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {

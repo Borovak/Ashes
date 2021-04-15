@@ -41,9 +41,9 @@ namespace Player
             _inputs = GetComponent<PlayerInputs>();
             _manaController = GetComponent<ManaController>();
             _lifeController = GetComponent<PlayerLifeController>();
-            _inputs.Attack += Attack;
-            _inputs.AttackSpell += AttackSpell;
-            _inputs.SelfSpell += SelfSpell;
+            ActionAssignmentController.Attach(1, Attack);
+            ActionAssignmentController.Attach(3, SelfSpell);
+            ActionAssignmentController.Attach(4, AttackSpell);
             _inputs.GroundBreak += GroundBreak;
         }
 
