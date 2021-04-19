@@ -26,12 +26,12 @@ namespace Classes
 
         public void Add(ItemBundle itemBundle)
         {
-            Add(itemBundle.Item.id, itemBundle.Quantity);
+            Add(itemBundle.Item.Id, itemBundle.Quantity);
         }
 
-        public void Add(Item item, int quantity)
+        public void Add(DB.Item item, int quantity)
         {
-            Add(item.id, quantity);
+            Add(item.Id, quantity);
         }
 
         public void Add(int id, int quantity)
@@ -47,9 +47,9 @@ namespace Classes
             InventoryChanged?.Invoke();
         }
 
-        public int Remove(Item item, int quantity)
+        public int Remove(DB.Item item, int quantity)
         {
-            return Remove(item.id, quantity);
+            return Remove(item.Id, quantity);
         }
 
         public int Remove(int id, int quantity)
@@ -123,9 +123,9 @@ namespace Classes
             return items.Select(x => new ItemBundle(x.Key, x.Value)).ToList();
         }
 
-        public int GetQuantity(Item item)
+        public int GetQuantity(DB.Item item)
         {
-            return GetQuantity(item.id);
+            return GetQuantity(item.Id);
         }
     }
 }

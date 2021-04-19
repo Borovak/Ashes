@@ -19,7 +19,7 @@ public class LongSlotController : ItemSlot
     protected override void UpdateVisuals()
     {
         backImage.color = Item != null && isSelected ? colorWhenSelected : (isHovered ? colorWhenHovered : colorWhenNotSelected);
-        itemText.text = Item != null ? Item.name : "";
+        itemText.text = Item != null ? Item.Name : "";
         iconImage.sprite = Item?.GetArt();
         iconImage.color = Item != null ? Color.white : colorWhenNull;
     }

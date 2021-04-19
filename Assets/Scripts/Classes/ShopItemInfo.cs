@@ -2,7 +2,7 @@
 {
     public class ShopItemInfo
     {
-        public Item item;
+        public DB.Item item;
         public int initial;
         public int maximum;
     }

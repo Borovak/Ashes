@@ -97,7 +97,7 @@ public class InventoryPanel : NavigablePanel
         return slots;
     }
 
-    protected override void OnSelectedItemChanged(Item item)
+    protected override void OnSelectedItemChanged(DB.Item item)
     {
         var slot = itemSlots.FirstOrDefault(x => x.Item == item);
         SelectedIndex = slot != null ? slot.index : -1;

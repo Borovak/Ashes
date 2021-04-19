@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Classes;
+using ItemActions;
 using UnityEngine;
 
 namespace Static
 {
     public static class DropController
     {
-        private static Dictionary<int, Item> _items = new Dictionary<int, Item>();
+        private static Dictionary<int, DB.Item> _items = new Dictionary<int, DB.Item>();
         private static Dictionary<int, Dictionary<int, float>> _enemies = new Dictionary<int, Dictionary<int, float>>();
         private static bool _initDone;
 
@@ -20,8 +21,10 @@ namespace Static
             if (!DataHandling.TryConnectToDb(out var connection)) return;
             foreach (var item in connection.Table<DB.Item>().AsEnumerable())
             {
-                var artFilePath = $"Items/{item.Path}";
-                _items.Add(item.Id, new Item { id = item.Id, name = item.Name, description = item.Description, value = item.Value, isCraftable = item.IsCraftable, artFilePath = artFilePath });
+                _items.Add(item.Id, item);
+                var t = Type.GetType($"ItemActions.Item{item.Id.ToString("0000")}");
+                if (t == null) continue;
+                item.itemAction = (IItemAction)Activator.CreateInstance(t);
             }
             foreach (var enemy in connection.Table<DB.Enemy>().AsEnumerable())
             {
@@ -46,22 +49,22 @@ namespace Static
                 if (diceRoll <= dropRate.Value)
                 {
                     var currentDrop = drop.Instantiate(position);
-                    currentDrop.name = drop.name;
+                    currentDrop.name = drop.Name;
                     currentDrops.Add(currentDrop);
                 }
             }
             return currentDrops.Any();
         } 
 
-        public static Item GetDropInfo(int id)
+        public static DB.Item GetDropInfo(int id)
         {
             return _items[id];
         }
 
         public static List<ItemBundle> GetCraftables()
         {
-            return _items.Where(x => x.Value.isCraftable)
-                .OrderBy(x => x.Value.id)
+            return _items.Where(x => x.Value.IsCraftable)
+                .OrderBy(x => x.Value.Id)
                 .Select(x => new ItemBundle(x.Value, 1))
                 .ToList();
         }

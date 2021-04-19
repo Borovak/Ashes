@@ -56,8 +56,8 @@ public class GlobalShopManager : MonoBehaviour
         {
             var itemBundlesToAdd = shopController.ShopItemInfos.Values.Join(
                 shopController.Inventory.GetItemBundles(true),
-                x => x.item.id,
-                y => y.Item.id,
+                x => x.item.Id,
+                y => y.Item.Id,
                 (x, y) => new ItemBundle(x.item, GetQuantityToAdd(y.Quantity, x.maximum))
                 ).Where(x => x.Quantity > 0).ToList();
             foreach (var itemBundle in itemBundlesToAdd)

@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 public class ActionAssignmentController : MonoBehaviour
 {
+    public static event System.Action AssignmentChanged;
     private class PlayerActionButtonAssoc
     {
         internal Constants.ControllerButtons button;
@@ -47,6 +48,7 @@ public class ActionAssignmentController : MonoBehaviour
         _playerActionButtonAssocs.Add(new PlayerActionButtonAssoc {button = button, action = action});
         ControllerInputs.controllerButtons[button].Pressed += action.Press;
         ControllerInputs.controllerButtons[button].Released += action.Release;
+        AssignmentChanged?.Invoke();
     }
 
     public static void Attach(int id, System.Action actionOnPressed, System.Action actionOnReleased = null)
@@ -69,6 +71,7 @@ public class ActionAssignmentController : MonoBehaviour
 
     public static GameObject GetArtObject(Constants.ControllerButtons button, Transform parentTransform, GameObject imageGameObject)
     {
+        if (_playerActionButtonAssocs == null) return null;
         var playerActionButtonAssoc = _playerActionButtonAssocs.FirstOrDefault(x => x.button == button);
         if (playerActionButtonAssoc == null) return null;
         var res = Resources.Load(playerActionButtonAssoc.action.Path);
@@ -77,7 +80,6 @@ public class ActionAssignmentController : MonoBehaviour
             Debug.Log($"Missing resource: {playerActionButtonAssoc.action.Path}");
             return null;
         }
-        Debug.Log($"{playerActionButtonAssoc.action.Path}: {res.GetType()}");
         if (res is Texture2D texture)
         {
             var image = imageGameObject.GetComponent<Image>();

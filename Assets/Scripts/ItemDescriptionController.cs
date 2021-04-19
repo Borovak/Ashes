@@ -18,7 +18,7 @@ public class ItemDescriptionController : MonoBehaviour
     public Image currencySymbol;
     public GameObject itemManagerObject;
 
-    private Item _item;
+    private DB.Item _item;
     private IItemManager _itemManager;
 
     void Start()
@@ -40,7 +40,7 @@ public class ItemDescriptionController : MonoBehaviour
         _item = null;
     }
 
-    private void OnSelectedItemChanged(Item item, Constants.PanelTypes panelType)
+    private void OnSelectedItemChanged(DB.Item item, Constants.PanelTypes panelType)
     {
         _item = item;
         if (item == null)
@@ -53,9 +53,9 @@ public class ItemDescriptionController : MonoBehaviour
             var c = itemImage.color;
             c.a = 1f;
             itemImage.color = c;
-            itemTitle.text = item.name;
-            itemDescription.text = item.description;
-            itemValue.text = item.value.ToString();
+            itemTitle.text = item.Name;
+            itemDescription.text = item.Description;
+            itemValue.text = item.Value.ToString();
             currencySymbol.enabled = true;
         }
     }

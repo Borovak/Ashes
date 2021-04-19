@@ -4,7 +4,7 @@
     {
         public class ItemBundle
         {
-            public Item Item;
+            public DB.Item Item;
             public int Quantity;
 
             public ItemBundle(int id, int quantity)
@@ -13,7 +13,7 @@
                 Quantity = quantity;
             }
 
-            public ItemBundle(Item item, int quantity)
+            public ItemBundle(DB.Item item, int quantity)
             {
                 Item = item;
                 Quantity = quantity;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Player;
 using UnityEngine;
 
-public class ItemController : MonoBehaviour
+public class DroppedItemController : MonoBehaviour
 {
     public int id;
     public Vector2 spawnForce;

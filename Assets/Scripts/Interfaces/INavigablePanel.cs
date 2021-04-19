@@ -6,7 +6,7 @@ namespace Interfaces
     public interface INavigablePanel
     {
         event Action<int, Constants.PanelTypes> SelectedIndexChanged;
-        event Action<Item, Constants.PanelTypes> SelectedItemChanged;
+        event Action<DB.Item, Constants.PanelTypes> SelectedItemChanged;
         event Action ExitUp;
         event Action ExitDown;
         event Action ExitLeft;

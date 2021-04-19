@@ -8,8 +8,8 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour, IItemManager
     {
     public GameObject panelObject;
-    public Item selectedItem { get; set; }
-    public event Action<Item, Constants.PanelTypes> SelectedItemChanged;
+    public DB.Item selectedItem { get; set; }
+    public event Action<DB.Item, Constants.PanelTypes> SelectedItemChanged;
 
     private INavigablePanel _itemPanel;
 
@@ -36,7 +36,7 @@ public class InventoryController : MonoBehaviour, IItemManager
         SelectedItemChanged?.Invoke(null, panelType);
     }
 
-    private void OnSelectedItemChanged(Item item, Constants.PanelTypes panelType)
+    private void OnSelectedItemChanged(DB.Item item, Constants.PanelTypes panelType)
     {
         SelectedItemChanged?.Invoke(item, panelType);
     }

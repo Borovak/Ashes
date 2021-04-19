@@ -27,7 +27,7 @@ public class ItemGainedController : MonoBehaviour
         _rectTransform = GetComponent<RectTransform>();
         //Setting initial info
         image.sprite = itemBundle.Item.GetArt();
-        text.text = $"x{itemBundle.Quantity} {itemBundle.Item.name} acquired";
+        text.text = $"x{itemBundle.Quantity} {itemBundle.Item.Name} acquired";
         //Getting default colors
         var panelColor = _panel.color;
         var imageColor = image.color;

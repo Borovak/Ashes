@@ -9,7 +9,7 @@ namespace Classes
     public abstract class NavigablePanel : MonoBehaviour, INavigablePanel
     {    
         public event Action<int, Constants.PanelTypes> SelectedIndexChanged;
-        public event Action<Item, Constants.PanelTypes> SelectedItemChanged;
+        public event Action<DB.Item, Constants.PanelTypes> SelectedItemChanged;
         public event Action ExitUp;
         public event Action ExitDown;
         public event Action ExitLeft;
@@ -23,7 +23,7 @@ namespace Classes
         protected abstract void OnSelectionChangeDown();
         protected abstract void OnSelectionChangeLeft();
         protected abstract void OnSelectionChangeRight();
-        protected abstract void OnSelectedItemChanged(Item item);
+        protected abstract void OnSelectedItemChanged(DB.Item item);
         protected abstract List<ItemSlot> GetItemSlots();
 
         public int SelectedIndex

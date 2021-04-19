@@ -7,7 +7,7 @@ namespace UI
 {
     public class UIRecipeIngredient : MonoBehaviour
     {
-        public Item Item
+        public DB.Item Item
         {
             get => _item;
             set
@@ -25,7 +25,7 @@ namespace UI
                 {
                     itemImage.sprite = _item.GetArt();
                     itemImage.color = Color.white;
-                    itemName.text = _item.name;
+                    itemName.text = _item.Name;
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace UI
         public TextMeshProUGUI itemName;
         public TextMeshProUGUI itemQuantity;
 
-        private Item _item;
+        private DB.Item _item;
         private int _quantity;
         private int _playerInventory;
         private readonly Color _colorWhenEnoughQuantity = new Color(0.2f, 0.6f, 0.2f, 0.4f);

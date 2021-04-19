@@ -125,13 +125,6 @@ namespace Player
 
         private void SpriteFlipping(ref Vector2 move)
         {
-            // bool flipSprite = (transform.localScale.x == -1f ? (move.x > 0.01f) : (move.x < -0.01f));
-            // if (flipSprite)
-            // {
-            //     var scale = transform.localScale;
-            //     scale.x = -scale.x;
-            //     transform.localScale = scale;
-            // }
             bool flipSprite = _spriteRenderer.flipX ? move.x > 0.01f : move.x < -0.01f;
             if (flipSprite)
             {

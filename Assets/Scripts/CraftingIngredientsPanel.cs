@@ -19,7 +19,7 @@ public class CraftingIngredientsPanel : MonoBehaviour
 
     private IItemManager _itemManager;
     private List<UI.UIRecipeIngredient> _uiRecipeIngredients;
-    private Item _item;
+    private DB.Item _item;
     private List<ItemBundle> _requiredIngredients;
 
     void OnEnable()
@@ -51,10 +51,10 @@ public class CraftingIngredientsPanel : MonoBehaviour
         _item = null;
     }
 
-    private void OnSelectedItemChanged(Item item, Constants.PanelTypes panelType)
+    private void OnSelectedItemChanged(DB.Item item, Constants.PanelTypes panelType)
     {
         _item = item;
-        if (item == null || !item.isCraftable || panelType != Constants.PanelTypes.Craftables)
+        if (item == null || !item.IsCraftable || panelType != Constants.PanelTypes.Craftables)
         {
             ClearIngredients();
             return;
@@ -72,10 +72,10 @@ public class CraftingIngredientsPanel : MonoBehaviour
         ChangeCraftButtonsVisibility(false, 0);
     }
 
-    private void CheckForRecipe(Item item)
+    private void CheckForRecipe(DB.Item item)
     {
         if (!DataHandling.TryConnectToDb(out var connection)) return;
-        var ingredients = connection.Table<DB.Recipe>().AsEnumerable().Where(x => x.ItemId == item.id).OrderBy(x => x.Ingredient).ToList();
+        var ingredients = connection.Table<DB.Recipe>().AsEnumerable().Where(x => x.ItemId == item.Id).OrderBy(x => x.Ingredient).ToList();
         if (!ingredients.Any())
         {
             ClearIngredients();
@@ -141,7 +141,7 @@ public class CraftingIngredientsPanel : MonoBehaviour
 
     private bool Craft()
     {
-        if (_item == null || !_item.isCraftable) return false;
+        if (_item == null || !_item.IsCraftable) return false;
         if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory) || !CanRecipeCanBeMade(out _)) return false;
         foreach (var ingredient in _requiredIngredients)
         {
@@ -153,13 +153,13 @@ public class CraftingIngredientsPanel : MonoBehaviour
 
     public void CraftOne()
     {
-        if (_item == null || !_item.isCraftable) return;
+        if (_item == null || !_item.IsCraftable) return;
         Craft();
     }
     
     public void CraftMax()
     {
-        if (_item == null || !_item.isCraftable) return;
+        if (_item == null || !_item.IsCraftable) return;
         while (Craft())
         {
         }

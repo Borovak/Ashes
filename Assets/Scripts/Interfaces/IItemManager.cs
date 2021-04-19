@@ -5,7 +5,7 @@ namespace Interfaces
 {
     public interface IItemManager
     {
-        event Action<Item, Constants.PanelTypes> SelectedItemChanged;
-        Item selectedItem { get; set; }
+        event Action<DB.Item, Constants.PanelTypes> SelectedItemChanged;
+        DB.Item selectedItem { get; set; }
     }
 }

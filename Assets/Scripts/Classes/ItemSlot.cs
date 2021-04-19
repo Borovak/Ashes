@@ -17,7 +17,7 @@ namespace Classes
         public TextMeshProUGUI countText;
         public int index;
         
-        public Item Item
+        public DB.Item Item
         {
             get => _item;
             set
@@ -60,7 +60,7 @@ namespace Classes
         protected bool isSelected;
         protected bool isHovered;
         
-        private Item _item;
+        private DB.Item _item;
         private int _count;
         private INavigablePanel _parentPanel;
         private bool _showCount;

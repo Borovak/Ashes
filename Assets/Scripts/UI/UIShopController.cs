@@ -20,7 +20,7 @@ namespace UI
         }
 
         public static event Action<ShopModes> ShopModeChanged;
-        public event Action<Item, Constants.PanelTypes> SelectedItemChanged;
+        public event Action<DB.Item, Constants.PanelTypes> SelectedItemChanged;
         public static UIShopController instance;
 
         public static ShopModes shopMode
@@ -41,11 +41,11 @@ namespace UI
         public Image shopPortraitImageControl;
         public TextMeshProUGUI playerWalletValueControl;
         public TextMeshProUGUI shopWalletValueControl;
-        public Item selectedItem { get; set; }
+        public DB.Item selectedItem { get; set; }
 
         private MenuGroup _menuGroup;
         private static ShopModes _shopMode;
-        private Item _item;
+        private DB.Item _item;
         private INavigablePanel _itemListPanel;
 
         void OnEnable()
@@ -115,7 +115,7 @@ namespace UI
             ChangeShopMode((ShopModes)newShopMode);
         }
 
-        private void OnSelectedItemChanged(Item item, Constants.PanelTypes panelType)
+        private void OnSelectedItemChanged(DB.Item item, Constants.PanelTypes panelType)
         {
             _item = item;
             SelectedItemChanged?.Invoke(item, panelType);
@@ -157,20 +157,20 @@ namespace UI
         {
             if (_item == null) return;
             if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
-            var quantityInInventory = GlobalShopManager.GetItemQuantity(GlobalShopManager.currentShopId, _item.id);
+            var quantityInInventory = GlobalShopManager.GetItemQuantity(GlobalShopManager.currentShopId, _item.Id);
             var playerMoney = inventory.GetMoneyQuantity();
-            var quantityThatPlayerCanAfford = Convert.ToInt32(Math.Floor(Convert.ToSingle(playerMoney) / Convert.ToSingle(_item.value)));
+            var quantityThatPlayerCanAfford = Convert.ToInt32(Math.Floor(Convert.ToSingle(playerMoney) / Convert.ToSingle(_item.Value)));
             var quantity = System.Math.Min(quantityInInventory, quantityThatPlayerCanAfford);
             Buy(_item, quantity);
         }
 
-        private void Buy(Item item, int quantity)
+        private void Buy(DB.Item item, int quantity)
         {
-            var cost = item.value * quantity;
+            var cost = item.Value * quantity;
             if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
             if (inventory.GetMoneyQuantity() < cost) return; //Check if player can afford
-            if (GlobalShopManager.GetItemQuantity(GlobalShopManager.currentShopId, item.id) < quantity) return; //Check if shop has enough items
-            GlobalShopManager.RemoveItemFromShop(GlobalShopManager.currentShopId, item.id, quantity);
+            if (GlobalShopManager.GetItemQuantity(GlobalShopManager.currentShopId, item.Id) < quantity) return; //Check if shop has enough items
+            GlobalShopManager.RemoveItemFromShop(GlobalShopManager.currentShopId, item.Id, quantity);
             GlobalShopManager.AddItemToShop(GlobalShopManager.currentShopId, Constants.MONEY_ID, cost);
             inventory.Remove(Constants.MONEY_ID, cost);
             inventory.Add(item, quantity);
@@ -188,18 +188,18 @@ namespace UI
             if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
             var quantityInInventory = inventory.GetQuantity(_item);
             var shopMoney = GlobalShopManager.GetItemQuantity(GlobalShopManager.currentShopId, Constants.MONEY_ID);
-            var quantityThatShopCanAfford = Convert.ToInt32(Math.Floor(Convert.ToSingle(shopMoney) / Convert.ToSingle(_item.value)));
+            var quantityThatShopCanAfford = Convert.ToInt32(Math.Floor(Convert.ToSingle(shopMoney) / Convert.ToSingle(_item.Value)));
             var quantity = System.Math.Min(quantityInInventory, quantityThatShopCanAfford);
             Sell(_item, quantity);
         }
 
-        private void Sell(Item item, int quantity)
+        private void Sell(DB.Item item, int quantity)
         {
-            var cost = item.value * quantity;
+            var cost = item.Value * quantity;
             if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
             if (GlobalShopManager.GetItemQuantity(GlobalShopManager.currentShopId, Constants.MONEY_ID) < cost) return; //Check if shop can afford
-            if (inventory.GetQuantity(item.id) < quantity) return; //Check if player has enough items
-            GlobalShopManager.AddItemToShop(GlobalShopManager.currentShopId, item.id, quantity);
+            if (inventory.GetQuantity(item.Id) < quantity) return; //Check if player has enough items
+            GlobalShopManager.AddItemToShop(GlobalShopManager.currentShopId, item.Id, quantity);
             GlobalShopManager.RemoveItemFromShop(GlobalShopManager.currentShopId, Constants.MONEY_ID, cost);
             inventory.Remove(_item, quantity);
             inventory.Add(Constants.MONEY_ID, cost);
