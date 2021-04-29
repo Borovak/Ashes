@@ -148,12 +148,12 @@ TextureImporter:
       name: effects_fire00_00
       rect:
         serializedVersion: 2
-        x: 547
-        y: 717
-        width: 131
-        height: 306
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 146
+        y: 313
+        width: 46
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48913044, y: -0.020833334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -169,12 +169,12 @@ TextureImporter:
       name: effects_fire00_01
       rect:
         serializedVersion: 2
-        x: 410
-        y: 362
-        width: 133
-        height: 322
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 98
+        y: 310
+        width: 46
+        height: 99
+      alignment: 9
+      pivot: {x: 0.48913044, y: -0.01010101}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,12 +190,12 @@ TextureImporter:
       name: effects_fire00_02
       rect:
         serializedVersion: 2
-        x: 275
-        y: 335
-        width: 133
-        height: 339
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 49
+        y: 211
+        width: 43
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5232558, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -211,12 +211,12 @@ TextureImporter:
       name: effects_fire00_03
       rect:
         serializedVersion: 2
-        x: 545
-        y: 400
-        width: 134
-        height: 310
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 214
+        width: 43
+        height: 91
+      alignment: 9
+      pivot: {x: 0.45348838, y: -0.021978023}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -232,12 +232,12 @@ TextureImporter:
       name: effects_fire00_04
       rect:
         serializedVersion: 2
-        x: 681
-        y: 424
-        width: 131
-        height: 294
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 146
+        y: 220
+        width: 44
+        height: 91
+      alignment: 9
+      pivot: {x: 0.4659091, y: -0.010989011}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -253,12 +253,12 @@ TextureImporter:
       name: effects_fire00_05
       rect:
         serializedVersion: 2
-        x: 412
-        y: 712
-        width: 133
-        height: 311
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 407
+        width: 47
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: -0.01923077}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -274,12 +274,12 @@ TextureImporter:
       name: effects_fire00_06
       rect:
         serializedVersion: 2
-        x: 409
-        y: 6
-        width: 137
-        height: 327
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 50
+        y: 309
+        width: 46
+        height: 99
+      alignment: 9
+      pivot: {x: 0.51086956, y: -0.01010101}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -295,12 +295,12 @@ TextureImporter:
       name: effects_fire00_07
       rect:
         serializedVersion: 2
-        x: 139
-        y: 289
-        width: 134
-        height: 349
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 194
+        y: 314
+        width: 46
+        height: 95
+      alignment: 9
+      pivot: {x: 0.51086956, y: -0.021052632}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -316,12 +316,12 @@ TextureImporter:
       name: effects_fire00_08
       rect:
         serializedVersion: 2
-        x: 817
-        y: 441
-        width: 135
-        height: 287
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 307
+        width: 46
+        height: 98
+      alignment: 9
+      pivot: {x: 0.48913044, y: -0.020408163}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -337,12 +337,12 @@ TextureImporter:
       name: effects_fire00_09
       rect:
         serializedVersion: 2
-        x: 680
-        y: 720
-        width: 135
-        height: 303
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 115
+        width: 42
+        height: 97
+      alignment: 9
+      pivot: {x: 0.5119048, y: -0.010309278}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -358,12 +358,12 @@ TextureImporter:
       name: effects_fire00_10
       rect:
         serializedVersion: 2
-        x: 275
-        y: 5
-        width: 132
-        height: 328
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 98
+        y: 411
+        width: 46
+        height: 100
+      alignment: 9
+      pivot: {x: 0.48913044, y: -0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -379,12 +379,12 @@ TextureImporter:
       name: effects_fire00_11
       rect:
         serializedVersion: 2
-        x: 140
-        y: 676
-        width: 135
-        height: 347
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 194
+        y: 211
+        width: 44
+        height: 101
+      alignment: 9
+      pivot: {x: 0.53409094, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -400,12 +400,12 @@ TextureImporter:
       name: effects_fire00_12
       rect:
         serializedVersion: 2
-        x: 277
-        y: 686
-        width: 133
-        height: 337
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 146
+        y: 411
+        width: 46
+        height: 100
+      alignment: 9
+      pivot: {x: 0.51086956, y: -0.01}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -421,12 +421,12 @@ TextureImporter:
       name: effects_fire00_13
       rect:
         serializedVersion: 2
-        x: 1
-        y: 280
-        width: 136
-        height: 358
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 98
+        y: 209
+        width: 43
+        height: 99
+      alignment: 9
+      pivot: {x: 0.45348838, y: -0.030303031}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -443,11 +443,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 640
-        width: 137
-        height: 383
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 8
+        width: 41
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5, y: -0.00952381}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -463,12 +463,12 @@ TextureImporter:
       name: effects_fire00_15
       rect:
         serializedVersion: 2
-        x: 817
-        y: 730
-        width: 136
-        height: 293
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 143
+        y: 131
+        width: 41
+        height: 87
+      alignment: 9
+      pivot: {x: 0.47560975, y: -0.03448276}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -484,12 +484,12 @@ TextureImporter:
       name: effects_fire00_16
       rect:
         serializedVersion: 2
-        x: 139
-        y: 7
-        width: 131
-        height: 280
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 194
+        y: 411
+        width: 46
+        height: 100
+      alignment: 9
+      pivot: {x: 0.51086956, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -505,12 +505,12 @@ TextureImporter:
       name: effects_fire00_17
       rect:
         serializedVersion: 2
-        x: 814
-        y: 148
-        width: 130
-        height: 291
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 50
+        y: 410
+        width: 46
+        height: 101
+      alignment: 9
+      pivot: {x: 0.51086956, y: -0.00990099}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
