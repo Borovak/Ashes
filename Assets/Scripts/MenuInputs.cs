@@ -13,9 +13,6 @@ public class MenuInputs : MonoBehaviour
     public static event Action Inventory;
     public static event Action Crafting;
     public static event Action Map;
-    
-    public static Vector2 movement;
-
 
     private Dictionary<InputAction, Action<InputAction.CallbackContext>> _pairingDictionary;
     
@@ -23,7 +20,6 @@ public class MenuInputs : MonoBehaviour
     {
         _pairingDictionary ??= new Dictionary<InputAction, Action<InputAction.CallbackContext>>
         {
-            {ControllerInputs.actions.Menu.Movement, OnMovement},
             {ControllerInputs.actions.Menu.SelectionChange, OnSelectionChange},
             {ControllerInputs.actions.Menu.Inventory, OnInventory},
             {ControllerInputs.actions.Menu.Crafting, OnCrafting},
@@ -64,11 +60,6 @@ public class MenuInputs : MonoBehaviour
         {
             SelectionChangeRight?.Invoke();
         }
-    }
-
-    public void OnMovement(InputAction.CallbackContext context)
-    {
-        movement = context.ReadValue<Vector2>();
     }
 
     public void OnInventory(InputAction.CallbackContext context)

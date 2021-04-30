@@ -12,9 +12,6 @@ namespace DB
         [Column("name")]
         public string Name { get; set; }
 
-        [Column("iscraftable")]
-        public bool IsCraftable { get; set; }
-
         [Column("path")]
         public string Path { get; set; }
 
@@ -23,6 +20,15 @@ namespace DB
         
         [Column("value")]
         public int Value { get; set; }
+
+        [Column("iscraftable")]
+        public bool IsCraftable { get; set; }
+
+        [Column("isdrinkable")]
+        public bool IsDrinkable { get; set; }
+
+        [Column("isspell")]
+        public bool IsSpell { get; set; }
 
         public ItemActions.IItemAction itemAction;
         public GameObject _baseDrop;

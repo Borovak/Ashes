@@ -4,11 +4,14 @@ using System.Linq;
 using Classes;
 using ControllerButtons;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ControllerInputs : MonoBehaviour
 {
     public static Dictionary<Constants.ControllerButtons, IControllerButton> controllerButtons;
     public static Actions actions;
+    public static ControllerJoystick leftJoystick;
+    public static ControllerJoystick rightJoystick;
 
     void Awake()
     {
@@ -31,6 +34,9 @@ public class ControllerInputs : MonoBehaviour
             if (instance == null) return;
             controllerButtons.Add(instance.Button, instance);
         }
+        //Joysticks
+        leftJoystick = new ControllerJoystick(actions.Menu.LeftJoystick);
+        rightJoystick = new ControllerJoystick(actions.Menu.RightJoystick);
     }
     
     void OnEnable()
@@ -40,6 +46,9 @@ public class ControllerInputs : MonoBehaviour
         {
             controllerButton.InputAction.performed += controllerButton.OnPerformed;
         }
+        //Joysticks
+        leftJoystick.Enable();
+        rightJoystick.Enable();
     }
 
     void OnDisable()
@@ -49,6 +58,9 @@ public class ControllerInputs : MonoBehaviour
         {
             controllerButton.InputAction.performed -= controllerButton.OnPerformed;
         }
+        //Joysticks
+        leftJoystick.Disable();
+        rightJoystick.Disable();
     }
 
     void Update()

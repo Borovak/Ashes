@@ -230,9 +230,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Movement",
+                    "name": "LeftJoystick",
                     "type": "PassThrough",
                     "id": "0f49247f-0d31-41af-a537-e7b4dfdc6ff6",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightJoystick",
+                    "type": "PassThrough",
+                    "id": "c90c6134-3ac8-4ca7-9264-96bfaf18bd57",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -547,7 +555,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Movement",
+                    "action": "LeftJoystick",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -558,7 +566,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Movement",
+                    "action": "LeftJoystick",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -569,7 +577,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Movement",
+                    "action": "LeftJoystick",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -580,7 +588,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Movement",
+                    "action": "LeftJoystick",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -591,7 +599,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Movement",
+                    "action": "LeftJoystick",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -602,7 +610,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Movement",
+                    "action": "LeftJoystick",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -613,7 +621,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Movement",
+                    "action": "LeftJoystick",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -624,7 +632,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Movement",
+                    "action": "LeftJoystick",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -635,7 +643,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Movement",
+                    "action": "LeftJoystick",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -646,7 +654,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Control Scheme Alpha",
-                    "action": "Movement",
+                    "action": "LeftJoystick",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -968,6 +976,116 @@
                     "action": "DRight",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Arrows",
+                    "id": "8bc7a2a5-4885-4157-956e-3f2b3f8da44a",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RightJoystick",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "88b73c49-1008-4dd1-9599-75f31ccf2833",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RightJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "caf198c0-24cc-4ef5-a0cb-1a7cd79941c0",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RightJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "32aa92ed-94d6-41be-9bbe-2c37ec6ab7b1",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RightJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "ed5d3e21-60e8-4565-a12d-4df11ac37021",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RightJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Gamepad Stick",
+                    "id": "954f958d-1bd0-483e-a7cd-c788547a1e97",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RightJoystick",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "99b3340a-f5b1-45fb-bee1-d055baebf5b9",
+                    "path": "<Gamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RightJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "191495c0-bdde-4bc5-ae4c-8eacc29edcd3",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RightJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "215bed8b-295d-4436-b321-a4c2f4c0266f",
+                    "path": "<Gamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RightJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "42471c9c-7aed-416c-a74e-988057372c75",
+                    "path": "<Gamepad>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control Scheme Alpha",
+                    "action": "RightJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

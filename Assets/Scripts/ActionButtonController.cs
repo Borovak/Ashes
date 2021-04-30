@@ -29,11 +29,11 @@ public class ActionButtonController : MonoBehaviour
 
     private void Awake()
     {
-        if (new[] {Constants.ControllerButtons.X, Constants.ControllerButtons.B, Constants.ControllerButtons.LB, Constants.ControllerButtons.RB}.Contains(button))
+        if (new[] {Constants.ControllerButtons.X, Constants.ControllerButtons.B}.Contains(button))
         {
             _type = Types.Action;
         } 
-        else if (new[] {Constants.ControllerButtons.DUp, Constants.ControllerButtons.DDown, Constants.ControllerButtons.DLeft, Constants.ControllerButtons.DRight}.Contains(button))
+        else if (new[] {Constants.ControllerButtons.Y, Constants.ControllerButtons.RB}.Contains(button))
         {
             _type = Types.Item;
         }
@@ -63,11 +63,14 @@ public class ActionButtonController : MonoBehaviour
         {
             case Types.Action:
                 ActionAssignmentController.AssignmentChanged += OnActionAssignmentChanged;
+                OnActionAssignmentChanged();
                 break;
             case Types.Item:
                 ItemAssignmentController.AssignmentChanged += OnItemAssignmentChanged;
                 GameController.PlayerSpawned += RegisterPlayerInventory;
                 RegisterPlayerInventory(null);
+                OnItemAssignmentChanged();
+                OnInventoryChanged();
                 break; 
         }
     }

@@ -32,8 +32,6 @@ public class ActionAssignmentController : MonoBehaviour
         }
         Assign(Constants.ControllerButtons.X, _actions.First(x => x.Id == 1));
         Assign(Constants.ControllerButtons.B, _actions.First(x => x.Id == 2));
-        Assign(Constants.ControllerButtons.LB, _actions.First(x => x.Id == 3));
-        Assign(Constants.ControllerButtons.RB, _actions.First(x => x.Id == 4));
     }
 
     public static void Assign(Constants.ControllerButtons button, DB.Action action)

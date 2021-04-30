@@ -28,7 +28,7 @@ public class MapManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        centeringBias += MenuInputs.movement * moveSpeed;
+        centeringBias += ControllerInputs.leftJoystick.value * moveSpeed;
         foreach (var mapRoom in _mapRooms)
         {
             var mapRoomController = mapRoom.GetComponent<MapRoomController>();

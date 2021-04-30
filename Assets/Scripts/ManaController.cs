@@ -71,7 +71,7 @@ public class ManaController : MonoBehaviour
 
     public void SetMp(float value)
     {
-        _mp = value;
+        _mp = Math.Min(value, _maxMp);
         MpChanged?.Invoke(value);
     }
 
@@ -79,6 +79,11 @@ public class ManaController : MonoBehaviour
     {
         _maxMp = maxValue;
         MaxMpChanged?.Invoke(maxValue);
+    }
+
+    public void Gain(float value)
+    {
+        SetMp(_mp + value);
     }
 
     private void OnGameSaved(bool healOnSave)

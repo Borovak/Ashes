@@ -243,9 +243,17 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Movement"",
+                    ""name"": ""LeftJoystick"",
                     ""type"": ""PassThrough"",
                     ""id"": ""0f49247f-0d31-41af-a537-e7b4dfdc6ff6"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RightJoystick"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""c90c6134-3ac8-4ca7-9264-96bfaf18bd57"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -560,7 +568,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Movement"",
+                    ""action"": ""LeftJoystick"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -571,7 +579,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Movement"",
+                    ""action"": ""LeftJoystick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -582,7 +590,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Movement"",
+                    ""action"": ""LeftJoystick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -593,7 +601,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Movement"",
+                    ""action"": ""LeftJoystick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -604,7 +612,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Movement"",
+                    ""action"": ""LeftJoystick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -615,7 +623,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Movement"",
+                    ""action"": ""LeftJoystick"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -626,7 +634,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Movement"",
+                    ""action"": ""LeftJoystick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -637,7 +645,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Movement"",
+                    ""action"": ""LeftJoystick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -648,7 +656,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Movement"",
+                    ""action"": ""LeftJoystick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -659,7 +667,7 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control Scheme Alpha"",
-                    ""action"": ""Movement"",
+                    ""action"": ""LeftJoystick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -981,6 +989,116 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""action"": ""DRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""8bc7a2a5-4885-4157-956e-3f2b3f8da44a"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""88b73c49-1008-4dd1-9599-75f31ccf2833"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""caf198c0-24cc-4ef5-a0cb-1a7cd79941c0"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""32aa92ed-94d6-41be-9bbe-2c37ec6ab7b1"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""ed5d3e21-60e8-4565-a12d-4df11ac37021"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Gamepad Stick"",
+                    ""id"": ""954f958d-1bd0-483e-a7cd-c788547a1e97"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""99b3340a-f5b1-45fb-bee1-d055baebf5b9"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""191495c0-bdde-4bc5-ae4c-8eacc29edcd3"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""215bed8b-295d-4436-b321-a4c2f4c0266f"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""42471c9c-7aed-416c-a74e-988057372c75"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control Scheme Alpha"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -1023,7 +1141,8 @@ public class @Actions : IInputActionCollection, IDisposable
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_SelectionChange = m_Menu.FindAction("Selection Change", throwIfNotFound: true);
-        m_Menu_Movement = m_Menu.FindAction("Movement", throwIfNotFound: true);
+        m_Menu_LeftJoystick = m_Menu.FindAction("LeftJoystick", throwIfNotFound: true);
+        m_Menu_RightJoystick = m_Menu.FindAction("RightJoystick", throwIfNotFound: true);
         m_Menu_Map = m_Menu.FindAction("Map", throwIfNotFound: true);
         m_Menu_Crafting = m_Menu.FindAction("Crafting", throwIfNotFound: true);
         m_Menu_Inventory = m_Menu.FindAction("Inventory", throwIfNotFound: true);
@@ -1148,7 +1267,8 @@ public class @Actions : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Menu;
     private IMenuActions m_MenuActionsCallbackInterface;
     private readonly InputAction m_Menu_SelectionChange;
-    private readonly InputAction m_Menu_Movement;
+    private readonly InputAction m_Menu_LeftJoystick;
+    private readonly InputAction m_Menu_RightJoystick;
     private readonly InputAction m_Menu_Map;
     private readonly InputAction m_Menu_Crafting;
     private readonly InputAction m_Menu_Inventory;
@@ -1171,7 +1291,8 @@ public class @Actions : IInputActionCollection, IDisposable
         private @Actions m_Wrapper;
         public MenuActions(@Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @SelectionChange => m_Wrapper.m_Menu_SelectionChange;
-        public InputAction @Movement => m_Wrapper.m_Menu_Movement;
+        public InputAction @LeftJoystick => m_Wrapper.m_Menu_LeftJoystick;
+        public InputAction @RightJoystick => m_Wrapper.m_Menu_RightJoystick;
         public InputAction @Map => m_Wrapper.m_Menu_Map;
         public InputAction @Crafting => m_Wrapper.m_Menu_Crafting;
         public InputAction @Inventory => m_Wrapper.m_Menu_Inventory;
@@ -1201,9 +1322,12 @@ public class @Actions : IInputActionCollection, IDisposable
                 @SelectionChange.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
                 @SelectionChange.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
                 @SelectionChange.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelectionChange;
-                @Movement.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
-                @Movement.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
-                @Movement.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMovement;
+                @LeftJoystick.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnLeftJoystick;
+                @LeftJoystick.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnLeftJoystick;
+                @LeftJoystick.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnLeftJoystick;
+                @RightJoystick.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnRightJoystick;
+                @RightJoystick.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnRightJoystick;
+                @RightJoystick.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnRightJoystick;
                 @Map.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
                 @Map.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
                 @Map.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnMap;
@@ -1262,9 +1386,12 @@ public class @Actions : IInputActionCollection, IDisposable
                 @SelectionChange.started += instance.OnSelectionChange;
                 @SelectionChange.performed += instance.OnSelectionChange;
                 @SelectionChange.canceled += instance.OnSelectionChange;
-                @Movement.started += instance.OnMovement;
-                @Movement.performed += instance.OnMovement;
-                @Movement.canceled += instance.OnMovement;
+                @LeftJoystick.started += instance.OnLeftJoystick;
+                @LeftJoystick.performed += instance.OnLeftJoystick;
+                @LeftJoystick.canceled += instance.OnLeftJoystick;
+                @RightJoystick.started += instance.OnRightJoystick;
+                @RightJoystick.performed += instance.OnRightJoystick;
+                @RightJoystick.canceled += instance.OnRightJoystick;
                 @Map.started += instance.OnMap;
                 @Map.performed += instance.OnMap;
                 @Map.canceled += instance.OnMap;
@@ -1339,7 +1466,8 @@ public class @Actions : IInputActionCollection, IDisposable
     public interface IMenuActions
     {
         void OnSelectionChange(InputAction.CallbackContext context);
-        void OnMovement(InputAction.CallbackContext context);
+        void OnLeftJoystick(InputAction.CallbackContext context);
+        void OnRightJoystick(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
         void OnCrafting(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);

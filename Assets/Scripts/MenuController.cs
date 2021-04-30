@@ -15,6 +15,7 @@ public class MenuController : MonoBehaviour
     {
         Game,
         Shop,
+        RadialSelection,
         Cutscene,
         SystemMenuRoot,
         SystemMenuOptions,
@@ -63,6 +64,7 @@ public class MenuController : MonoBehaviour
         ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed += BackPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.Start].Pressed += StartPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.Select].Pressed += SelectPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.LT].StateChanged += OnButtonLTStateChanged;
         MenuInputs.SelectionChangeUp += MoveUpPressed;
         MenuInputs.SelectionChangeDown += MoveDownPressed;
         MenuInputs.SelectionChangeLeft += MoveLeftPressed;
@@ -78,6 +80,7 @@ public class MenuController : MonoBehaviour
         ControllerInputs.controllerButtons[Constants.ControllerButtons.B].Pressed -= BackPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.Start].Pressed -= StartPressed;
         ControllerInputs.controllerButtons[Constants.ControllerButtons.Select].Pressed -= SelectPressed;
+        ControllerInputs.controllerButtons[Constants.ControllerButtons.LT].StateChanged -= OnButtonLTStateChanged;
         MenuInputs.SelectionChangeUp -= MoveUpPressed;
         MenuInputs.SelectionChangeDown -= MoveDownPressed;
         MenuInputs.SelectionChangeLeft -= MoveLeftPressed;
@@ -85,6 +88,11 @@ public class MenuController : MonoBehaviour
         MenuInputs.Inventory -= InventoryPressed;
         MenuInputs.Crafting -= CraftingPressed;
         MenuInputs.Map -= MapPressed;
+    }
+
+    private void OnButtonLTStateChanged(bool state)
+    {
+        _animator.SetBool("RadialSelection", state);
     }
 
     private void BackPressed()

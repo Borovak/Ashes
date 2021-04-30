@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Classes;
 using Static;
+using UI;
 using UnityEngine;
 
 public class ItemAssignmentController : MonoBehaviour
@@ -16,7 +17,7 @@ public class ItemAssignmentController : MonoBehaviour
 
         internal void Use()
         {
-            if (itemId <= 0) return;
+            if (itemId <= 0 || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
             if (inventory.GetQuantity(itemId) <= 0) return;
             var item = DropController.GetDropInfo(itemId);
@@ -30,11 +31,9 @@ public class ItemAssignmentController : MonoBehaviour
     void Awake()
     {
         _playerItemButtonAssocs = new Dictionary<Constants.ControllerButtons, PlayerItemButtonAssoc>();
-        Assign(Constants.ControllerButtons.DUp);
-        Assign(Constants.ControllerButtons.DDown);
-        Assign(Constants.ControllerButtons.DLeft);
-        Assign(Constants.ControllerButtons.DRight);
-        Attach(Constants.ControllerButtons.DUp, 1000);
+        Assign(Constants.ControllerButtons.Y);
+        Assign(Constants.ControllerButtons.RB);
+        Attach(Constants.ControllerButtons.Y, 1000);
     }
 
     private static void Assign(Constants.ControllerButtons button)
