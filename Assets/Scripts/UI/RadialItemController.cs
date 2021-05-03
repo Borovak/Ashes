@@ -9,12 +9,16 @@ namespace UI
     public class RadialItemController : MonoBehaviour
     {
         public Image backImageControl;
+        public Image borderImageControl;
         public Image imageControl;
         public TextMeshProUGUI nameTextControl;
         public TextMeshProUGUI quantityTextControl;
         public bool isSelected;
-        public Color colorWhenSelected;
-        public Color colorWhenNotSelected;
+        public Color backColorWhenSelected;
+        public Color backColorWhenNotSelected;
+        public Color borderColorWhenSelected;
+        public Color borderColorWhenNotSelected;
+        public GameObject assignNoticeControl;
 
         private ItemBundle _itemBundle;
         private bool _isSelected;
@@ -29,11 +33,13 @@ namespace UI
             if (isSelected == _isSelected) return;
             _isSelected = isSelected;
             UpdateColor();
+            assignNoticeControl.SetActive(isSelected);
         }
 
         private void UpdateColor()
         {
-            backImageControl.color = _isSelected ? colorWhenSelected : colorWhenNotSelected;
+            backImageControl.color = _isSelected ? backColorWhenSelected : backColorWhenNotSelected;
+            borderImageControl.color = _isSelected ? borderColorWhenSelected : borderColorWhenNotSelected;
         }
     
         public void UpdateContent(ItemBundle itemBundle, float angle, float vectorMultiplier)
@@ -42,7 +48,8 @@ namespace UI
             imageControl.sprite = _itemBundle.Item.GetArt();
             nameTextControl.text = _itemBundle.Item.Name;
             quantityTextControl.text = _itemBundle.Quantity.ToString();
-            var position = MathFunctions.DegreeToVector2(angle) * vectorMultiplier;
+            var position = MathFunctions.DegreeToVector2(angle + 90f) * vectorMultiplier;
+            position.x = -position.x;
             var rectTransform = GetComponent<RectTransform>();
             rectTransform.anchoredPosition = position;
         }

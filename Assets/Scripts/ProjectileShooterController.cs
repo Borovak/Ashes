@@ -14,7 +14,7 @@ public class ProjectileShooterController : MonoBehaviour
     public Vector3 forcedDirection;
     public float projectilesPerSecond;
     public float projectileSpeed;
-    public int projectileDamage;
+    public float projectileDamage;
     public float projectileDiameter;
     public bool canHitPlayer;
     public bool canHitEnemies;

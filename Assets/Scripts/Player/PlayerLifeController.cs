@@ -7,13 +7,12 @@ namespace Player
     {
         public static event Action<float> HpChanged;
         public static event Action<float> MaxHpChanged;
-        private int _hp;
-        private int _maxHp;
+        private float _hp;
+        private float _maxHp;
         public AudioClip deathMusic;
 
         protected override void AfterStart()
         {
-            _isPlayer = true;
             SaveSystem.GameSaved += OnGameSaved;
             SetHp(SaveSystem.LastLoadedSave.Hp);
             SetMaxHp(SaveSystem.LastLoadedSave.MaxHp);
@@ -24,24 +23,24 @@ namespace Player
         {
         }
 
-        protected override void SetMaxHp(int value)
+        protected override void SetMaxHp(float value)
         {
             _maxHp = value;
             MaxHpChanged?.Invoke(_maxHp);
         }
 
-        public override int GetMaxHp()
+        public override float GetMaxHp()
         {
             return _maxHp;
         }
 
-        protected override void SetHp(int value)
+        protected override void SetHp(float value)
         {
             _hp = value;
             HpChanged?.Invoke(_hp);
         }
 
-        public override int GetHp()
+        public override float GetHp()
         {
             return _hp;
         }

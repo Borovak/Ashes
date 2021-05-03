@@ -8,7 +8,7 @@ public class DirectionalFireball : MonoBehaviour
     public Vector3 destination;
     public float speed;
     public float diameter;
-    public int damage;
+    public float damage;
     public bool emitFromPlayer;
     private Vector3 _direction;
 

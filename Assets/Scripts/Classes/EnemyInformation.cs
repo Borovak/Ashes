@@ -14,6 +14,8 @@ namespace Classes
         public int Id;
         public int X;
         public int Y;
+        
+        private static int _generationIndex;
 
         public void Instantiate(Transform parent, Vector2 chamberOffset, Vector2 chamberSize, float chamberScale)
         {
@@ -22,7 +24,8 @@ namespace Classes
                 if (!LoadResource(Id, out enemyPrefab)) return;
             }
             var position = new Vector3(chamberOffset.x + (X * chamberScale), chamberOffset.y + 50f - Y * chamberScale - 0.5f, 0f);
-            GameObject.Instantiate<GameObject>(enemyPrefab, position, Quaternion.identity, parent);
+            var enemyGameObject = GameObject.Instantiate<GameObject>(enemyPrefab, position, Quaternion.identity, parent);
+            enemyGameObject.name = $"{enemyPrefab.name} {_generationIndex++}";
         }
 
         private bool LoadResource(int id, out GameObject enemyPrefab)

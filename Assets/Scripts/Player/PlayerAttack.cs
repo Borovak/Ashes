@@ -98,7 +98,7 @@ namespace Player
             if (!_lifeController.IsAlive || _attackCooldown > 0 || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             if (!_manaController.TryCastSpell(5f)) return;
             _animator.SetTrigger("heal");
-            _lifeController.Heal(1);
+            _lifeController.Heal(10f);
             _attackCooldown = 1f / attackRate;
         }
 
@@ -128,7 +128,7 @@ namespace Player
             var fireballObject = Instantiate(fireballPrefab, attackLight.transform.position, Quaternion.identity);
             var fireball = fireballObject.GetComponent<DirectionalFireball>();
             fireball.speed = 20f;
-            fireball.damage = 3;
+            fireball.damage = 3f;
             fireball.diameter = 0.3f;
             fireball.destination = attackLight.transform.transform.position.x > transform.position.x ? attackLight.transform.transform.position + Vector3.right * 1000f : attackLight.transform.transform.position + Vector3.left * 1000f;
             fireball.emitFromPlayer = true;

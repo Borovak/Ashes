@@ -8,7 +8,7 @@ namespace ItemActions
         public void Use()
         {
             if (!GlobalFunctions.TryGetPlayerComponent<ManaController>(out var manaController)) return;
-            manaController.Gain(10);
+            manaController.Gain(10f);
         }
     }
 }

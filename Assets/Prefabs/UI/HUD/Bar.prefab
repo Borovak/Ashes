@@ -430,7 +430,7 @@ MonoBehaviour:
   - {fileID: 7792126506157214979}
   offsetScale: 0.005
   index: 0
-  widthPerPoint: 100
+  widthPerPoint: 10
   color: {r: 0.745283, g: 0.20038268, b: 0.233376, a: 1}
   textBackImage: {fileID: 6429724610682036121}
   valueText: {fileID: 249943610194409542}

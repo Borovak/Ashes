@@ -8,7 +8,7 @@ namespace ItemActions
         public void Use()
         {
             if (!GlobalFunctions.TryGetPlayerComponent<PlayerLifeController>(out var lifeController)) return;
-            lifeController.Heal(2);
+            lifeController.Heal(6f);
         }
     }
 }

@@ -7,7 +7,7 @@ public class StandardProjectileController : MonoBehaviour
 {
     public Vector3 direction;
     public float speed;
-    public int damage;
+    public float damage;
     public float diameter = 1f;
     public float desiredAngle;
     public float currentAngle;

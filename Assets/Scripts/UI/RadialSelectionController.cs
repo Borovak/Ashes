@@ -9,6 +9,7 @@ namespace UI
     {
 
         public GameObject radialItemPrefab;
+        public Transform radialItemsFolder;
     
         private float vectorMultiplier = 800f;
         private List<RadialItem> _radialItems;
@@ -78,8 +79,8 @@ namespace UI
         {
             if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
             _radialItems.Clear();
-            var itemBundles = inventory.GetItemBundles(false).Where(x => x.Item.IsDrinkable).ToList();
-            var transforms = transform.Cast<Transform>().ToList();
+            var itemBundles = inventory.GetItemBundles(false).Where(x => x.Item.IsDrinkable).OrderBy(x => x.Item.Id).ToList();
+            var transforms = radialItemsFolder.transform.Cast<Transform>().ToList();
             foreach (Transform child in transforms)
             {
                 Destroy(child.gameObject);
@@ -88,11 +89,11 @@ namespace UI
             _angleStep = 360f / itemBundles.Count;
             foreach (var itemBundle in itemBundles)
             {
-                angle += _angleStep;
-                var radialItemGameObject = Instantiate(radialItemPrefab, transform);
+                var radialItemGameObject = Instantiate(radialItemPrefab, radialItemsFolder.transform);
                 var radialItemController = radialItemGameObject.GetComponent<RadialItemController>();
                 radialItemController.UpdateContent(itemBundle, angle, vectorMultiplier);
                 _radialItems.Add(new RadialItem {angle = angle, itemBundle = itemBundle, radialItemController = radialItemController});
+                angle += _angleStep;
             }
         }
 

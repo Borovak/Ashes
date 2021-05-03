@@ -197,8 +197,8 @@ public static class SaveSystem
         var xePlayer = xeRoot.Element("Player");
         if (xePlayer != null)
         {
-            if (!int.TryParse(xePlayer.Attribute("maxHp")?.Value ?? "_", out saveData.MaxHp)) return false;
-            if (!int.TryParse(xePlayer.Attribute("hp")?.Value ?? "_", out saveData.Hp)) return false;
+            if (!float.TryParse(xePlayer.Attribute("maxHp")?.Value ?? "_", out saveData.MaxHp)) return false;
+            if (!float.TryParse(xePlayer.Attribute("hp")?.Value ?? "_", out saveData.Hp)) return false;
             if (!float.TryParse(xePlayer.Attribute("maxMp")?.Value ?? "_", out saveData.MaxMp)) return false;
             if (!float.TryParse(xePlayer.Attribute("mp")?.Value ?? "_", out saveData.Mp)) return false;
             if (!float.TryParse(xePlayer.Attribute("mpRegenPerSec")?.Value ?? "_", out saveData.MpRegenPerSec)) return false;

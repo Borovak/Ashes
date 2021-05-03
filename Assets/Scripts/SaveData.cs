@@ -5,12 +5,12 @@ using System.Xml.Linq;
 [Serializable]
 public class SaveData
 {
-    const int defaultHp = 3;
+    const float defaultHp = 30f;
     const float defaultMp = 30f;
-    const float defaultMpRegenPerSec = 0.2f;
+    const float defaultMpRegenPerSec = 1f;
 
-    public int MaxHp;
-    public int Hp;
+    public float MaxHp;
+    public float Hp;
     public float MaxMp;
     public float Mp;
     public float MpRegenPerSec;

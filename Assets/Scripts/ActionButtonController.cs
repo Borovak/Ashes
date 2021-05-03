@@ -109,6 +109,7 @@ public class ActionButtonController : MonoBehaviour
         image.sprite = ItemAssignmentController.GetArt(button);
         imageGameObject.SetActive(image.sprite != null);
         quantityGameObject.SetActive(image.sprite != null);
+        OnInventoryChanged();
     }
 
     private void OnInventoryChanged()

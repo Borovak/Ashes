@@ -15,8 +15,8 @@ public class ManaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetMp(SaveSystem.LastLoadedSave.Mp);
         SetMaxMp(SaveSystem.LastLoadedSave.MaxMp);
+        SetMp(SaveSystem.LastLoadedSave.Mp);
         mpRegenPerSec = SaveSystem.LastLoadedSave.MpRegenPerSec;
         SaveSystem.GameSaved += OnGameSaved;
     }
@@ -72,7 +72,7 @@ public class ManaController : MonoBehaviour
     public void SetMp(float value)
     {
         _mp = Math.Min(value, _maxMp);
-        MpChanged?.Invoke(value);
+        MpChanged?.Invoke(_mp);
     }
 
     public void SetMaxMp(float maxValue)

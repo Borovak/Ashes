@@ -15,7 +15,7 @@ public abstract class LifeController : MonoBehaviour
         internal bool hasColorOverride;
     }
 
-    public const int AcidDamage = 1;
+    public const float AcidDamage = 3f;
     public const float _damageFlashTimeTotal = 1f;
     public const float _damageFlashRate = 0.5f;
     public Color _damageColor = Color.red;
@@ -28,10 +28,10 @@ public abstract class LifeController : MonoBehaviour
     public bool isInWater => _acidWaters.Count(x => !x.isAcid) > 0;
     protected abstract void AfterStart();
     protected abstract void AfterUpdate();
-    public abstract int GetMaxHp();
-    protected abstract void SetMaxHp(int value);
-    public abstract int GetHp();
-    protected abstract void SetHp(int value);
+    public abstract float GetMaxHp();
+    protected abstract void SetMaxHp(float value);
+    public abstract float GetHp();
+    protected abstract void SetHp(float value);
     protected abstract void OnDeath();
     public bool IsAlive => GetHp() > 0;
     public float HealthRatio => Convert.ToSingle(GetHp()) / Convert.ToSingle(GetMaxHp());
@@ -40,7 +40,6 @@ public abstract class LifeController : MonoBehaviour
     public AudioClip[] contactSounds;
     public Vector2 bloodOffset;
 
-    protected bool _isPlayer;
     private InvinsibilityController _invinsibilityController;
     private ShieldController _shieldController;
     private bool _dead;
@@ -158,7 +157,7 @@ public abstract class LifeController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage, string attackerName, Vector2 hitPosition, bool bypassShield = false)
+    public void TakeDamage(float damage, string attackerName, Vector2 hitPosition, bool bypassShield = false)
     {
         if (_dead) return;
         if (_shieldController != null && !bypassShield)
@@ -184,9 +183,9 @@ public abstract class LifeController : MonoBehaviour
         //Debug.Log($"{attackerName} hits {gameObject.name} for {damage} damage");
     }
 
-    public void Heal(int value)
+    public void Heal(float value)
     {
-        var newHp = System.Math.Min(GetHp() + value, GetMaxHp());
+        var newHp = Math.Min(GetHp() + value, GetMaxHp());
         SetHp(newHp);
     }
 

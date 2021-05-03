@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4576902517986676342}
   - component: {fileID: 6987412189762833751}
   m_Layer: 9
-  m_Name: EnemyBird
+  m_Name: EnemyForestBird
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1533808395
-  m_SortingLayer: -4
+  m_SortingLayer: -7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 94ca80ae521cf7b40831a9a690133ebb, type: 3}
   m_Color: {r: 0.52798903, g: 0.8962264, b: 0.46925062, a: 1}
@@ -182,6 +182,7 @@ MonoBehaviour:
   blood: {fileID: 3752627110417903709, guid: f2ca1030ad645484c91d58e2ff493935, type: 3}
   contactPrefab: {fileID: 3434948392850978845, guid: c6e39aa7fa3b5114296dd683b03d45e1,
     type: 3}
+  contactSounds: []
   bloodOffset: {x: 0, y: 0}
   id: 3
   maxHp: 3
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064185161a255f34ebc42dc6ce174b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 10
 --- !u!114 &6987412189762833751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +231,7 @@ MonoBehaviour:
   gravityModifier: 3
   distance: 0
   hitBufferCount: 0
+  isGravityEnabled: 1
   targetVelocity: {x: 0, y: 0}
   maxSpeed: 1
   direction: 1

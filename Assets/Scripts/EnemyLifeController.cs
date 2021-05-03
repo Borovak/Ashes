@@ -8,14 +8,13 @@ using UnityEngine;
 public class EnemyLifeController : LifeController
 {    
     public int id;
-    public int maxHp = 3;
-    public int hp;
+    public float maxHp = 3;
+    public float hp;
     public bool isBoss;
     public bool awake;
 
     protected override void AfterStart(){
         hp = maxHp;
-        _isPlayer = false;
         SetHp(hp);
         SetMaxHp(maxHp);
     }
@@ -25,22 +24,22 @@ public class EnemyLifeController : LifeController
     {
     }
 
-    protected override void SetMaxHp(int value)
+    protected override void SetMaxHp(float value)
     {
         maxHp = value;
     }
 
-    public override int GetMaxHp()
+    public override float GetMaxHp()
     {
         return maxHp;
     }
 
-    protected override void SetHp(int value)
+    protected override void SetHp(float value)
     {
         hp = value;
     }
 
-    public override int GetHp()
+    public override float GetHp()
     {
         return hp;
     }
