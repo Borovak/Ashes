@@ -1,10 +1,12 @@
-﻿using SQLite4Unity3d;
+﻿using Interfaces;
+using ItemCode;
+using SQLite4Unity3d;
 using UnityEngine;
 
 namespace DB
 {
     [Table("items")]
-    public class Item
+    public class Item : IActionable
     {
         [Column("id")]
         public int Id { get; set; }
@@ -30,7 +32,6 @@ namespace DB
         [Column("isspell")]
         public bool IsSpell { get; set; }
 
-        public ItemActions.IItemAction itemAction;
         public GameObject _baseDrop;
 
         public GameObject Instantiate(Vector3 position)
@@ -61,5 +62,7 @@ namespace DB
             }
             return sprite;
         }
+
+        public IAction Action { get; set; }
     }
 }

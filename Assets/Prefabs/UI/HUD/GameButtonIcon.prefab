@@ -167,10 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: 0
-  imageGameObject: {fileID: 6204454128300170787}
+  imageControl: {fileID: 6204454128300170785}
   uiControllerButton: {fileID: 6422481299166934509}
   quantityGameObject: {fileID: 8937436009277623785}
   quantityTextControl: {fileID: 2113284348769432728}
+  iconElementType: 0
 --- !u!1 &8743540136578493888
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +393,7 @@ PrefabInstance:
     - target: {fileID: 719626532379727176, guid: e539ca9c682444c458161d88d0924012,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 719626532379727176, guid: e539ca9c682444c458161d88d0924012,
         type: 3}
@@ -407,7 +408,7 @@ PrefabInstance:
     - target: {fileID: 719626532379727176, guid: e539ca9c682444c458161d88d0924012,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 719626532379727176, guid: e539ca9c682444c458161d88d0924012,
         type: 3}
@@ -417,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 719626532379727176, guid: e539ca9c682444c458161d88d0924012,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 719626532379727176, guid: e539ca9c682444c458161d88d0924012,
         type: 3}

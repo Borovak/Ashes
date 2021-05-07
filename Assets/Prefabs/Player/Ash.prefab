@@ -340,13 +340,13 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 512
-  fireballPrefab: {fileID: 4753841195644973797, guid: 291ba0976ff906943a0444bd7cb0b592,
+  energySwipePrefab: {fileID: 6981070067011891609, guid: e50320793cdb9c54ba2e80c40b2d8358,
+    type: 3}
+  energyBallPrefab: {fileID: 4753841195644973797, guid: 291ba0976ff906943a0444bd7cb0b592,
     type: 3}
   chargingDuration: 0.05
   attackDuration: 0.1
   attackLight: {fileID: 3585850078581350041}
-  attackPrefab: {fileID: 6981070067011891609, guid: e50320793cdb9c54ba2e80c40b2d8358,
-    type: 3}
 --- !u!114 &2443589945988948346
 MonoBehaviour:
   m_ObjectHideFlags: 0

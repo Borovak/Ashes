@@ -1,9 +1,12 @@
-﻿using SQLite4Unity3d;
+﻿using Classes;
+using Interfaces;
+using SQLite4Unity3d;
+using UnityEngine;
 
 namespace DB
 {
     [Table("actions")]
-    public class Action
+    public class ActionElement : IIconElement, IActionable
     {
         [Column("id")]
         public int Id { get; set; }
@@ -28,6 +31,12 @@ namespace DB
         {
             Released?.Invoke();
         }
-        
+
+        public Sprite sprite { get; }
+        public int id => Id;
+        public string name => Name;
+        public int quantity => -1;
+        public Constants.IconElementTypes iconElementType => Constants.IconElementTypes.Action;
+        public IAction Action { get; set; }
     }
 }

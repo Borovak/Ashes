@@ -24,7 +24,7 @@ public class ShieldController : MonoBehaviour
         _inputs = GetComponent<PlayerInputs>();
         _manaController = GetComponent<ManaController>();
         _emissionModule = shield.emission;
-        ActionAssignmentController.Attach(2, OnShieldActivated, OnShieldDesactivated);
+        //ActionAssignmentController.Attach(2, OnShieldActivated, OnShieldDesactivated);
     }
 
     // Update is called once per frame
@@ -56,16 +56,6 @@ public class ShieldController : MonoBehaviour
         }
         damageNotAbsorbed = 0;
         return true;
-    }
-
-    private void OnShieldActivated()
-    {
-        shieldWantedState = true;
-    }
-
-    private void OnShieldDesactivated()
-    {
-        shieldWantedState = false;
     }
 
     public void ShowContact(Vector2 point){

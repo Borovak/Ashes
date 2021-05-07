@@ -14,25 +14,19 @@ namespace Player
         public event Action Dash;
         public event Action GroundBreak;
         public Vector2 movement;
-        public Actions _actions;
+        private Actions _actions;
 
         private Dictionary<InputAction, Action<InputAction.CallbackContext>> _pairingDictionary;
 
 
         void Awake()
         {
-            _actions = new Actions();
-            _pairingDictionary = new Dictionary<InputAction, Action<InputAction.CallbackContext>>
-            {
-                {_actions.Player.Interact, OnInteract},
-                {_actions.Player.Jump, OnJump},
-                {_actions.Player.Movement, OnMovement},
-                {_actions.Player.Dash, OnDash},
-            };
+            Init();
         }
 
         void OnEnable()
         {
+            Init();
             _actions.Enable();
             foreach (var item in _pairingDictionary)
             {
@@ -42,11 +36,25 @@ namespace Player
 
         void OnDisable()
         {
+            Init();
             _actions.Disable();
             foreach (var item in _pairingDictionary)
             {
                 item.Key.performed -= item.Value;
             }
+        }
+
+        private void Init()
+        {
+            if (_actions != null) return;
+            _actions = new Actions();
+            _pairingDictionary = new Dictionary<InputAction, Action<InputAction.CallbackContext>>
+            {
+                {_actions.Player.Interact, OnInteract},
+                {_actions.Player.Jump, OnJump},
+                {_actions.Player.Movement, OnMovement},
+                {_actions.Player.Dash, OnDash},
+            };
         }
 
         public void OnInteract(InputAction.CallbackContext context)

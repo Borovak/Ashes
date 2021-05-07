@@ -60,6 +60,23 @@ namespace Classes
             L3,
             R3
         }
+        
+        [Serializable]
+        public enum IconElementTypes
+        {
+            None,
+            Item,
+            Action
+        }
+        
+        public enum SpellElements
+        {
+            None,
+            Fire,
+            Electric,
+            Ice,
+            Water
+        }
 
         public const int MONEY_ID = 0;
         public const float BUTTON_FILLRATE = 2f;

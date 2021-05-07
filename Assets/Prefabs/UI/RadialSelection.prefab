@@ -139,6 +139,11 @@ PrefabInstance:
       propertyPath: button
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3825456302235860169, guid: 04455b92546bdec4399080a1dd54de5c,
+        type: 3}
+      propertyPath: iconElementType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6204454129074637832, guid: 04455b92546bdec4399080a1dd54de5c,
         type: 3}
       propertyPath: m_Name
@@ -272,6 +277,11 @@ PrefabInstance:
     - target: {fileID: 3825456302235860169, guid: 04455b92546bdec4399080a1dd54de5c,
         type: 3}
       propertyPath: button
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825456302235860169, guid: 04455b92546bdec4399080a1dd54de5c,
+        type: 3}
+      propertyPath: iconElementType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6204454129074637832, guid: 04455b92546bdec4399080a1dd54de5c,
@@ -409,6 +419,11 @@ PrefabInstance:
       propertyPath: button
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3825456302235860169, guid: 04455b92546bdec4399080a1dd54de5c,
+        type: 3}
+      propertyPath: iconElementType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6204454129074637832, guid: 04455b92546bdec4399080a1dd54de5c,
         type: 3}
       propertyPath: m_Name
@@ -543,6 +558,11 @@ PrefabInstance:
         type: 3}
       propertyPath: button
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825456302235860169, guid: 04455b92546bdec4399080a1dd54de5c,
+        type: 3}
+      propertyPath: iconElementType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6204454129074637832, guid: 04455b92546bdec4399080a1dd54de5c,
         type: 3}

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Classes;
+using Static;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
@@ -6,6 +8,7 @@ namespace Player
 {
     public class PlayerAttack : MonoBehaviour
     {
+        
         private enum AttackStates
         {
             Idle,
@@ -17,33 +20,29 @@ namespace Player
         public int attackDamage;
         public float attackRate;
         public LayerMask whatIsEnemies;
-        public GameObject fireballPrefab;
+        public GameObject energySwipePrefab;
+        public GameObject energyBallPrefab;
         public float chargingDuration = 0.05f;
         public float attackDuration = 0.05f;
         public Light2D attackLight;
-        public GameObject attackPrefab;
 
         private float _attackCooldown;
         private Animator _animator;
-        private AudioSource _audioSource;
         private PlayerInputs _inputs;
         private ManaController _manaController;
         private PlayerLifeController _lifeController;
         private AttackStates _attackState;
         private float _attackStateTimeRemaining;
+        private Constants.SpellElements _nextSpellElement;
 
 
         // Start is called before the first frame update
         void Start()
         {
             _animator = GetComponent<Animator>();
-            _audioSource = GetComponent<AudioSource>();
             _inputs = GetComponent<PlayerInputs>();
             _manaController = GetComponent<ManaController>();
             _lifeController = GetComponent<PlayerLifeController>();
-            ActionAssignmentController.Attach(1, Attack);
-            ActionAssignmentController.Attach(3, SelfSpell);
-            ActionAssignmentController.Attach(4, AttackSpell);
             _inputs.GroundBreak += GroundBreak;
         }
 
@@ -55,45 +54,45 @@ namespace Player
                 _attackCooldown -= Time.deltaTime;
             }
             attackLight.enabled = _attackState == AttackStates.Attack;
-            if (_attackState != AttackStates.Idle)
+            if (_attackState == AttackStates.Idle) return;
+            _attackStateTimeRemaining -= Time.deltaTime;
+            if (!(_attackStateTimeRemaining <= 0)) return;
+            switch (_attackState)
             {
-                _attackStateTimeRemaining -= Time.deltaTime;
-                if (_attackStateTimeRemaining <= 0)
-                {
-                    switch (_attackState)
-                    {
-                        case AttackStates.Charging:
-                            _attackState = AttackStates.Attack;
-                            _attackStateTimeRemaining = attackDuration;
-                            GameObject.Instantiate(attackPrefab, attackLight.transform.position, Quaternion.identity, attackLight.transform);
-                            break;
-                        case AttackStates.Attack:
-                            _attackState = AttackStates.Idle;
-                            break;
-                    }
-                }
+                case AttackStates.Charging:
+                    _attackState = AttackStates.Attack;
+                    _attackStateTimeRemaining = attackDuration;
+                    var energySwipeObject = Instantiate(energySwipePrefab, attackLight.transform.position, Quaternion.identity, attackLight.transform);
+                    var energySwipeSpriteRenderer = energySwipeObject.GetComponent<SpriteRenderer>();
+                    energySwipeSpriteRenderer.color = SpellElementManager.GetColorFromSpellElement(_nextSpellElement);
+                    break;
+                case AttackStates.Attack:
+                    _attackState = AttackStates.Idle;
+                    break;
             }
         }
 
-        private void Attack()
+        public void EnergySwipe(Constants.SpellElements spellElement)
         {
             if (!_lifeController.IsAlive || _attackCooldown > 0 || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
-            _animator.SetTrigger("attack");
-            MeleeAttack();
+            _nextSpellElement = spellElement;
+            _animator.SetTrigger("energySwipe");
+            MeleeAttack(spellElement);
             _attackCooldown = 1f / attackRate;
             _attackState = AttackStates.Charging;
             _attackStateTimeRemaining = chargingDuration;
         }
 
-        private void AttackSpell()
+        public void EnergyBall(Constants.SpellElements spellElement)
         {
             if (!_lifeController.IsAlive || _attackCooldown > 0 || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             if (!_manaController.TryCastSpell(3f)) return;
-            _animator.SetTrigger("fireball");
+            _nextSpellElement = spellElement;
+            _animator.SetTrigger("energyBall");
             _attackCooldown = 1f / attackRate;
         }
 
-        private void SelfSpell()
+        public void Heal()
         {
             if (!_lifeController.IsAlive || _attackCooldown > 0 || MenuController.CanvasMode != MenuController.CanvasModes.Game) return;
             if (!_manaController.TryCastSpell(5f)) return;
@@ -110,7 +109,7 @@ namespace Player
             _attackCooldown = 1f / attackRate;
         }
 
-        private void MeleeAttack()
+        private void MeleeAttack(Constants.SpellElements spellElement)
         {
             var enemiesHit = new HashSet<GameObject>();
             var hits = Physics2D.CircleCastAll(attackLight.transform.position, attackRange, Vector2.zero, 0f, whatIsEnemies);
@@ -119,19 +118,20 @@ namespace Player
                 var hit = hits[i];            
                 if (!hit.collider.gameObject.TryGetComponent<EnemyLifeController>(out var enemy) || enemiesHit.Contains(hit.collider.gameObject)) continue;
                 enemiesHit.Add(hit.collider.gameObject);
-                enemy.TakeDamage(attackDamage, gameObject.name, hit.point);
+                enemy.TakeDamage(attackDamage, gameObject.name, hit.point, false, spellElement);
             }
         }
 
-        void CastFireball()
+        void InstantiateEnergyBall()
         {
-            var fireballObject = Instantiate(fireballPrefab, attackLight.transform.position, Quaternion.identity);
-            var fireball = fireballObject.GetComponent<DirectionalFireball>();
-            fireball.speed = 20f;
-            fireball.damage = 3f;
-            fireball.diameter = 0.3f;
-            fireball.destination = attackLight.transform.transform.position.x > transform.position.x ? attackLight.transform.transform.position + Vector3.right * 1000f : attackLight.transform.transform.position + Vector3.left * 1000f;
-            fireball.emitFromPlayer = true;
+            var energyBallObject = Instantiate(energyBallPrefab, attackLight.transform.position, Quaternion.identity);
+            var controller = energyBallObject.GetComponent<EnergyBallController>();
+            controller.speed = 20f;
+            controller.damage = 3f;
+            controller.diameter = 0.5f;
+            controller.spellElement = _nextSpellElement;
+            controller.destination = attackLight.transform.transform.position.x > transform.position.x ? attackLight.transform.transform.position + Vector3.right * 1000f : attackLight.transform.transform.position + Vector3.left * 1000f;
+            controller.emitFromPlayer = true;
         }
 
         void OnDrawGizmosSelected()

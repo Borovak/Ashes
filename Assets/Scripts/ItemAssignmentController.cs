@@ -22,7 +22,7 @@ public class ItemAssignmentController : MonoBehaviour
             if (inventory.GetQuantity(itemId) <= 0) return;
             var item = DropController.GetDropInfo(itemId);
             if (item == null) return;
-            item.itemAction.Use();
+            item.Action.Act();
             inventory.Remove(itemId, 1);
         }
     }
@@ -72,5 +72,13 @@ public class ItemAssignmentController : MonoBehaviour
         if (_playerItemButtonAssocs == null || !_playerItemButtonAssocs.ContainsKey(button)) return -1;
         var assoc = _playerItemButtonAssocs[button];
         return assoc.Quantity;
+    }
+
+    public static ItemBundle GetItemBundle(Constants.ControllerButtons button)
+    {
+        if (_playerItemButtonAssocs == null || !_playerItemButtonAssocs.ContainsKey(button)) return null;
+        var assoc = _playerItemButtonAssocs[button];
+        GlobalInventoryManager.TryGetInventory(-1, out var inventory);
+        return inventory?.GetItemBundles(false).FirstOrDefault(x => x.id == assoc.itemId);
     }
 }

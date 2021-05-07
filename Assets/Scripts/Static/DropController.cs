@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Classes;
-using ItemActions;
+using Interfaces;
+using ItemCode;
 using UnityEngine;
 
 namespace Static
@@ -22,9 +23,9 @@ namespace Static
             foreach (var item in connection.Table<DB.Item>().AsEnumerable())
             {
                 _items.Add(item.Id, item);
-                var t = Type.GetType($"ItemActions.Item{item.Id.ToString("0000")}");
+                var t = Type.GetType($"ItemCode.Item{item.Id.ToString("0000")}");
                 if (t == null) continue;
-                item.itemAction = (IItemAction)Activator.CreateInstance(t);
+                item.Action = (IAction)Activator.CreateInstance(t);
             }
             foreach (var enemy in connection.Table<DB.Enemy>().AsEnumerable())
             {

@@ -1,4 +1,5 @@
 using Classes;
+using Interfaces;
 using Static;
 using TMPro;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace UI
         public Color borderColorWhenNotSelected;
         public GameObject assignNoticeControl;
 
-        private ItemBundle _itemBundle;
+        private IIconElement _iconElement;
         private bool _isSelected;
 
         void OnEnable()
@@ -42,12 +43,12 @@ namespace UI
             borderImageControl.color = _isSelected ? borderColorWhenSelected : borderColorWhenNotSelected;
         }
     
-        public void UpdateContent(ItemBundle itemBundle, float angle, float vectorMultiplier)
+        public void UpdateContent(IIconElement iconElement, float angle, float vectorMultiplier)
         {
-            _itemBundle = itemBundle;
-            imageControl.sprite = _itemBundle.Item.GetArt();
-            nameTextControl.text = _itemBundle.Item.Name;
-            quantityTextControl.text = _itemBundle.Quantity.ToString();
+            _iconElement = iconElement;
+            imageControl.sprite = _iconElement.sprite;
+            nameTextControl.text = _iconElement.name;
+            quantityTextControl.text = _iconElement.iconElementType == Constants.IconElementTypes.Item ? _iconElement.quantity.ToString() : "";
             var position = MathFunctions.DegreeToVector2(angle + 90f) * vectorMultiplier;
             position.x = -position.x;
             var rectTransform = GetComponent<RectTransform>();

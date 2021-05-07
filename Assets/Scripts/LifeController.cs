@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Classes;
+using Player;
 using Static;
 using UnityEngine;
 
@@ -157,7 +159,7 @@ public abstract class LifeController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage, string attackerName, Vector2 hitPosition, bool bypassShield = false)
+    public void TakeDamage(float damage, string attackerName, Vector2 hitPosition, bool bypassShield = false, Constants.SpellElements spellElement = Constants.SpellElements.None)
     {
         if (_dead) return;
         if (_shieldController != null && !bypassShield)

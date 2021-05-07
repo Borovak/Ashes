@@ -1,55 +1,30 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using Classes;
-using Player;
-using Static;
+using Interfaces;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ActionButtonController : MonoBehaviour
 {
-    private enum Types
-    {
-        None,
-        Action,
-        Item
-    }
-    
     public Constants.ControllerButtons button;
-    public GameObject imageGameObject;
+    public Image imageControl;
     public UIControllerButton uiControllerButton;
     public GameObject quantityGameObject;
     public TextMeshProUGUI quantityTextControl;
-
-    private Types _type;
-
-
-    private void Awake()
-    {
-        if (new[] {Constants.ControllerButtons.X, Constants.ControllerButtons.B}.Contains(button))
-        {
-            _type = Types.Action;
-        } 
-        else if (new[] {Constants.ControllerButtons.Y, Constants.ControllerButtons.RB}.Contains(button))
-        {
-            _type = Types.Item;
-        }
-    }
+    public Constants.IconElementTypes iconElementType;
+    public IIconElement iconElement;
 
     // Start is called before the first frame update
     void Start()
     {
-        uiControllerButton.button = button;
-        switch (_type)
+         uiControllerButton.button = button;
+        switch (iconElementType)
         {
-            case Types.Action:
+            case Constants.IconElementTypes.Action:
                 quantityGameObject.SetActive(false);
                 OnActionAssignmentChanged();
                 break;
-            case Types.Item:
+            case Constants.IconElementTypes.Item:
                 quantityGameObject.SetActive(true);
                 OnItemAssignmentChanged();
                 OnInventoryChanged();
@@ -59,13 +34,13 @@ public class ActionButtonController : MonoBehaviour
 
     void OnEnable()
     {
-        switch (_type)
+        switch (iconElementType)
         {
-            case Types.Action:
+            case Constants.IconElementTypes.Action:
                 ActionAssignmentController.AssignmentChanged += OnActionAssignmentChanged;
                 OnActionAssignmentChanged();
                 break;
-            case Types.Item:
+            case Constants.IconElementTypes.Item:
                 ItemAssignmentController.AssignmentChanged += OnItemAssignmentChanged;
                 GameController.PlayerSpawned += RegisterPlayerInventory;
                 RegisterPlayerInventory(null);
@@ -77,12 +52,12 @@ public class ActionButtonController : MonoBehaviour
 
     void OnDisable()
     {
-        switch (_type)
+        switch (iconElementType)
         {
-            case Types.Action:
+            case Constants.IconElementTypes.Action:
                 ActionAssignmentController.AssignmentChanged -= OnActionAssignmentChanged;
                 break;
-            case Types.Item:
+            case Constants.IconElementTypes.Item:
                 ItemAssignmentController.AssignmentChanged -= OnItemAssignmentChanged;
                 GameController.PlayerSpawned -= RegisterPlayerInventory;
                 if (!GlobalInventoryManager.TryGetInventory(-1, out var inventory)) return;
@@ -100,20 +75,20 @@ public class ActionButtonController : MonoBehaviour
     
     private void OnActionAssignmentChanged()
     {
-        ActionAssignmentController.GetArtObject(button, transform, imageGameObject);
+        imageControl.sprite = iconElement?.sprite ?? ActionAssignmentController.GetArt(button, transform);
     }
 
     private void OnItemAssignmentChanged()
     {
-        var image = imageGameObject.GetComponent<Image>();
-        image.sprite = ItemAssignmentController.GetArt(button);
-        imageGameObject.SetActive(image.sprite != null);
-        quantityGameObject.SetActive(image.sprite != null);
+        imageControl.gameObject.SetActive(imageControl.sprite != null);
+        quantityGameObject.SetActive(imageControl.sprite != null);
         OnInventoryChanged();
     }
 
     private void OnInventoryChanged()
     {
-        quantityTextControl.text = ItemAssignmentController.GetQuantity(button).ToString();
+        iconElement = ItemAssignmentController.GetItemBundle(button);
+        imageControl.sprite = iconElement?.sprite ?? ItemAssignmentController.GetArt(button);
+        quantityTextControl.text = iconElement?.quantity.ToString() ?? "";
     }
 }
